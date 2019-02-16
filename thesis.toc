@@ -1,5 +1,5 @@
-\contentsline {chapter}{List of Tables}{2}
-\contentsline {chapter}{List of Figures}{3}
+\contentsline {chapter}{List of Tables}{3}
+\contentsline {chapter}{List of Figures}{4}
 \contentsline {chapter}{\numberline {1}Introduction}{5}
 \contentsline {chapter}{\numberline {2}Gravitational Wave Astronomy in a Nutshell}{6}
 \contentsline {section}{\numberline {2.1}General Relativity}{6}
@@ -8,29 +8,40 @@
 \contentsline {subsection}{\numberline {2.2.2}Gauge Transformation}{7}
 \contentsline {subsection}{\numberline {2.2.3}Physical Effects of Gravitational Waves}{8}
 \contentsline {section}{\numberline {2.3}Gravitational Waves Sources}{10}
-\contentsline {section}{\numberline {2.4}How to Detect Gravitational Waves}{10}
+\contentsline {section}{\numberline {2.4}Gravitational Wave Detectors}{10}
 \contentsline {subsection}{\numberline {2.4.1}How to find something interesting in all that noise}{10}
-\contentsline {chapter}{\numberline {3}The Compact Binary Coalescence Search}{11}
-\contentsline {section}{\numberline {3.1}PyCBC overview}{11}
-\contentsline {section}{\numberline {3.2}PyGRB}{11}
-\contentsline {section}{\numberline {3.3}O2 PyGRB Search}{11}
-\contentsline {section}{\numberline {3.4}The O3 PyCBC search}{11}
-\contentsline {chapter}{\numberline {4}Undmodelled Search}{12}
-\contentsline {section}{\numberline {4.1}Xpipeline}{12}
-\contentsline {section}{\numberline {4.2}Subthreshold GRBs}{12}
-\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{13}
-\contentsline {section}{\numberline {5.1}Introduction}{13}
-\contentsline {section}{\numberline {5.2}Xpipeline}{13}
-\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{14}
-\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{17}
-\contentsline {subsection}{\numberline {5.2.3}Null Energy}{18}
-\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{19}
-\contentsline {section}{\numberline {5.3}Machine Learning}{19}
-\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{20}
-\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{20}
-\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{23}
-\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{25}
-\contentsline {subsubsection}{Training Set}{25}
-\contentsline {subsubsection}{BDT Parameters}{26}
-\contentsline {subsubsection}{Result of Optimisation}{27}
+\contentsline {chapter}{\numberline {3}Gamma-Ray Bursts}{11}
+\contentsline {section}{\numberline {3.1}GRB Sources}{11}
+\contentsline {subsection}{\numberline {3.1.1}Compact Binary Coalescence}{11}
+\contentsline {subsection}{\numberline {3.1.2}Core Collapse}{11}
+\contentsline {subsection}{\numberline {3.1.3}Other Sources}{11}
+\contentsline {section}{\numberline {3.2}GRB Gravitational Wave Searches}{12}
+\contentsline {subsection}{\numberline {3.2.1}Modelled search for CBCs}{12}
+\contentsline {subsection}{\numberline {3.2.2}Unmodelled Search}{12}
+\contentsline {section}{\numberline {3.3}GRB Astrophysics with Gravitational Waves}{12}
+\contentsline {chapter}{\numberline {4}The Compact Binary Coalescence Search}{13}
+\contentsline {section}{\numberline {4.1}Introduction}{13}
+\contentsline {section}{\numberline {4.2}PyCBC overview}{13}
+\contentsline {section}{\numberline {4.3}PyGRB}{13}
+\contentsline {subsection}{\numberline {4.3.1}A Coherent Search for Coalescing Binary Systems}{13}
+\contentsline {subsection}{\numberline {4.3.2}Binary Coalescence Waveform}{13}
+\contentsline {subsection}{\numberline {4.3.3}Coherent SNR}{14}
+\contentsline {subsection}{\numberline {4.3.4}Comparison to Coincident Search}{15}
+\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{17}
+\contentsline {section}{\numberline {4.5}Future Plans}{17}
+\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{18}
+\contentsline {section}{\numberline {5.1}Introduction}{18}
+\contentsline {section}{\numberline {5.2}Xpipeline}{18}
+\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{19}
+\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{22}
+\contentsline {subsection}{\numberline {5.2.3}Null Energy}{23}
+\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{24}
+\contentsline {section}{\numberline {5.3}Machine Learning}{24}
+\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{25}
+\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{27}
+\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{30}
+\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{31}
+\contentsline {subsubsection}{Training Set}{32}
+\contentsline {subsubsection}{BDT Parameters}{32}
+\contentsline {subsubsection}{Result of Optimisation}{33}
 \contentsfinish 

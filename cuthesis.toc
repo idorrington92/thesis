@@ -1,0 +1,44 @@
+\contentsline {chapter}{\numberline {1}Introduction}{1}
+\contentsline {chapter}{\numberline {2}Gravitational Wave Astronomy in a Nutshell}{2}
+\contentsline {section}{\numberline {2.1}General Relativity}{2}
+\contentsline {section}{\numberline {2.2}Gravitational waves}{2}
+\contentsline {subsection}{\numberline {2.2.1}Linearised Gravity}{3}
+\contentsline {subsection}{\numberline {2.2.2}Gauge Transformation}{3}
+\contentsline {subsection}{\numberline {2.2.3}Physical Effects of Gravitational Waves}{4}
+\contentsline {section}{\numberline {2.3}Gravitational Waves Sources}{7}
+\contentsline {section}{\numberline {2.4}Gravitational Wave Detectors}{7}
+\contentsline {subsection}{\numberline {2.4.1}How to find something interesting in all that noise}{7}
+\contentsline {chapter}{\numberline {3}Gamma-Ray Bursts}{8}
+\contentsline {section}{\numberline {3.1}GRB Sources}{8}
+\contentsline {subsection}{\numberline {3.1.1}Compact Binary Coalescence}{8}
+\contentsline {subsection}{\numberline {3.1.2}Core Collapse}{8}
+\contentsline {subsection}{\numberline {3.1.3}Other Sources}{9}
+\contentsline {section}{\numberline {3.2}GRB Gravitational Wave Searches}{9}
+\contentsline {subsection}{\numberline {3.2.1}Modelled search for CBCs}{9}
+\contentsline {subsection}{\numberline {3.2.2}Unmodelled Search}{9}
+\contentsline {section}{\numberline {3.3}GRB Astrophysics with Gravitational Waves}{9}
+\contentsline {chapter}{\numberline {4}The Compact Binary Coalescence Search}{10}
+\contentsline {section}{\numberline {4.1}Introduction}{10}
+\contentsline {section}{\numberline {4.2}PyCBC overview}{10}
+\contentsline {section}{\numberline {4.3}PyGRB}{10}
+\contentsline {subsection}{\numberline {4.3.1}A Coherent Search for Coalescing Binary Systems}{10}
+\contentsline {subsection}{\numberline {4.3.2}Binary Coalescence Waveform}{10}
+\contentsline {subsection}{\numberline {4.3.3}Coherent SNR}{11}
+\contentsline {subsection}{\numberline {4.3.4}Comparison to Coincident Search}{12}
+\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{14}
+\contentsline {section}{\numberline {4.5}Future Plans}{14}
+\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{15}
+\contentsline {section}{\numberline {5.1}Introduction}{15}
+\contentsline {section}{\numberline {5.2}Xpipeline}{15}
+\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{16}
+\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{19}
+\contentsline {subsection}{\numberline {5.2.3}Null Energy}{20}
+\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{20}
+\contentsline {section}{\numberline {5.3}Machine Learning}{21}
+\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{21}
+\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{24}
+\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{25}
+\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{28}
+\contentsline {subsubsection}{Training Set}{28}
+\contentsline {subsubsection}{BDT Parameters}{29}
+\contentsline {subsubsection}{Result of Optimisation}{30}

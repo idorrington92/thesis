@@ -1,0 +1,9 @@
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces \textbf {Xpipeline Time-Frequency Map} This figure shows a time-frequency map from Xpipeline for a $1.4-10M_\odot $ NSBH merger. The top figure shows the $E_+$ energy and the bottom figure shows the top 1\% of pixels. }}{16}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces \textbf {Xpipeline Cut} This figure shows Xpipeline making a cut to eliminate many spurious signals. }}{17}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces \textbf {A decision tree example} To determine if a trigger is a signal or noise event the tree makes a series of cuts on the attributes x[N]. If the inequality in a node is true, then the next node is the branch to the left. Otherwise the next node is the one to the right. }}{25}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces \textbf {Visualising the Classifier} In the bottom plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the top plot. As you can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the xpipeline cut shown in fig.5.2\hbox {}. }}{26}

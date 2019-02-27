@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  16 FEB 2019 14:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  19 FEB 2019 10:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -172,11 +172,7 @@ Package: placeins 2005/04/18  v 2.2
 )
 \c@theorem=\count102
 
-(./thesis.aux
-
-LaTeX Warning: Label `intro' multiply defined.
-
-)
+(./thesis.aux)
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -191,7 +187,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 27.
 LaTeX Font Info:    ... okay on input line 27.
- (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count103
 \scratchdimen=\dimen120
@@ -331,7 +328,74 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 Chapter 2.
 [6
 
-] [7] [8] [9] [10]
+]
+
+LaTeX Warning: Reference `rt' on page 7 undefined on input line 110.
+
+
+LaTeX Warning: Reference `rs' on page 7 undefined on input line 114.
+
+
+LaTeX Warning: Reference `pert metric' on page 7 undefined on input line 132.
+
+[7]
+
+LaTeX Warning: Reference `harmonic gauge' on page 8 undefined on input line 149
+.
+
+
+LaTeX Warning: Reference `harmonic gauge' on page 8 undefined on input line 154
+.
+
+
+LaTeX Warning: Reference `lin Einstein' on page 8 undefined on input line 161.
+
+
+LaTeX Warning: Reference `alt einstein' on page 8 undefined on input line 165.
+
+
+LaTeX Warning: Reference `plane wave' on page 8 undefined on input line 182.
+
+
+LaTeX Warning: Reference `harmonic gauge' on page 8 undefined on input line 182
+.
+
+
+LaTeX Warning: Reference `harmonic gauge2' on page 8 undefined on input line 18
+6.
+
+
+LaTeX Warning: Reference `harmonic chi' on page 8 undefined on input line 186.
+
+[8]
+
+LaTeX Warning: Reference `chi form' on page 9 undefined on input line 190.
+
+
+LaTeX Warning: Reference `plane wave' on page 9 undefined on input line 190.
+
+
+LaTeX Warning: Reference `pert transf' on page 9 undefined on input line 190.
+
+
+LaTeX Warning: Reference `epsilon tranform' on page 9 undefined on input line 1
+98.
+
+
+LaTeX Warning: Reference `plane wave' on page 9 undefined on input line 204.
+
+
+LaTeX Warning: Reference `harmonic gauge' on page 9 undefined on input line 204
+.
+
+
+LaTeX Warning: Reference `harmonic gauge2' on page 9 undefined on input line 21
+4.
+
+
+LaTeX Warning: Reference `plane wave' on page 9 undefined on input line 214.
+
+[9] [10]
 Chapter 3.
 [11
 
@@ -344,8 +408,56 @@ Overfull \hbox (5.06151pt too wide) in paragraph at lines 311--311
 Chapter 4.
 [13
 
-] [14] [15] [16] [17]
+]
+
+LaTeX Warning: Reference `A1' on page 14 undefined on input line 365.
+
+
+LaTeX Warning: Reference `A4' on page 14 undefined on input line 365.
+
+
+LaTeX Warning: Reference `hdet' on page 14 undefined on input line 371.
+
+
+LaTeX Warning: Reference `hp' on page 14 undefined on input line 371.
+
+
+LaTeX Warning: Reference `hx' on page 14 undefined on input line 371.
+
+[14]
+
+LaTeX Warning: Reference `hdet' on page 15 undefined on input line 415.
+
+
+LaTeX Warning: Reference `loglike' on page 15 undefined on input line 423.
+
+
+LaTeX Warning: Reference `rhocoh1' on page 15 undefined on input line 437.
+
+
+LaTeX Warning: Reference `rhocoh' on page 15 undefined on input line 438.
+
+[15]
+
+LaTeX Warning: Reference `rhocoh1' on page 16 undefined on input line 445.
+
+
+LaTeX Warning: Reference `rhocoinc' on page 16 undefined on input line 445.
+
+[16] [17]
 Chapter 5.
+
+LaTeX Warning: Reference `CBC search' on page 18 undefined on input line 484.
+
+
+LaTeX Warning: Reference `fig:tfmap' on page 18 undefined on input line 497.
+
+
+LaTeX Warning: Reference `fig:xcuts' on page 18 undefined on input line 497.
+
+
+LaTeX Warning: Reference `ML' on page 18 undefined on input line 497.
+
 [18
 
 ] <xpipelineTFmap.png, id=97, 325.215pt x 337.26pt>
@@ -364,17 +476,55 @@ Package pdftex.def Info: xpipeline_cut.png used on input line 509.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-[22] [23] [24]
+
+LaTeX Warning: Reference `det_output' on page 22 undefined on input line 575.
+
+[22]
+
+LaTeX Warning: Reference `det_output' on page 23 undefined on input line 615.
+
+[23]
+
+LaTeX Warning: Reference `Enull' on page 24 undefined on input line 630.
+
+
+LaTeX Warning: Reference `glitch energy' on page 24 undefined on input line 642
+.
+
+
+LaTeX Warning: Reference `GW energy' on page 24 undefined on input line 642.
+
+
+LaTeX Warning: Reference `cut' on page 24 undefined on input line 649.
+
+[24]
+
+LaTeX Warning: Reference `table:1' on page 25 undefined on input line 652.
+
+
+LaTeX Warning: Reference `xtriggers' on page 25 undefined on input line 652.
+
+
+LaTeX Warning: Reference `coherent energy table' on page 25 undefined on input 
+line 652.
+
+
 Overfull \hbox (5.95174pt too wide) in paragraph at lines 680--743
 [][] 
  []
 
-[25] [26] <Decision_tree.png, id=133, 722.7pt x 542.025pt>
-File: Decision_tree.png Graphic file (type png)
+[25] [26]
 
-<use Decision_tree.png>
+LaTeX Warning: Reference `fig:tree' on page 27 undefined on input line 750.
+
+<Decision_tree.png, id=133, 722.7pt x 542.025pt>
+File: Decision_tree.png Graphic file (type png)
+ <use Decision_tree.png>
 Package pdftex.def Info: Decision_tree.png used on input line 753.
 (pdftex.def)             Requested size: 346.89731pt x 260.16904pt.
+
+
+LaTeX Warning: Reference `fig:mvacuts' on page 27 undefined on input line 759.
 
 <mva_trigger_and_score.png, id=134, 644.4075pt x 781.92125pt>
 File: mva_trigger_and_score.png Graphic file (type png)
@@ -382,16 +532,45 @@ File: mva_trigger_and_score.png Graphic file (type png)
 <use mva_trigger_and_score.png>
 Package pdftex.def Info: mva_trigger_and_score.png used on input line 763.
 (pdftex.def)             Requested size: 346.89731pt x 420.94263pt.
- [27] [28 <./Decision_tree.png>] [29 <./mva_trigger_and_score.png>] [30] [31] [
-32] [33] (./thesis.aux)
 
-LaTeX Warning: There were multiply-defined labels.
+
+LaTeX Warning: Reference `fig:xcuts' on page 27 undefined on input line 765.
+
+
+LaTeX Warning: Reference `fig:xcuts' on page 27 undefined on input line 765.
+
+[27] [28 <./Decision_tree.png>] [29 <./mva_trigger_and_score.png>]
+
+LaTeX Warning: Reference `fig:tfmap' on page 30 undefined on input line 793.
+
+[30]
+
+LaTeX Warning: Reference `ML' on page 31 undefined on input line 804.
+
+
+LaTeX Warning: Reference `data-preprocessing' on page 31 undefined on input lin
+e 806.
+
+[31]
+
+LaTeX Warning: Reference `data-preprocessing' on page 32 undefined on input lin
+e 809.
+
+
+LaTeX Warning: Reference `bdt' on page 32 undefined on input line 825.
+
+[32] [33] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
  3501 strings out of 493089
  45548 string characters out of 6134842
- 121823 words of memory out of 5000000
+ 121262 words of memory out of 5000000
  6912 multiletter control sequences out of 15000+600000
  17010 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -417,7 +596,7 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/tex
 mf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (40 pages, 698748 bytes).
+Output written on thesis.pdf (40 pages, 699765 bytes).
 PDF statistics:
  228 PDF objects out of 1000 (max. 8388607)
  155 compressed objects within 2 object streams

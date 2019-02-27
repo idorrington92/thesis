@@ -343,6 +343,11 @@ Can cite soaulson and the noises paper
 \item Progenitors
 \item populations
 \item jet structure 
+\item Opening angle
+\begin{itemize}
+\item Degenerate with distance
+\item Probably need a whole population of BNS/NSBH events to determine by comparing EM short GRBs with  
+\end{itemize}
 \item NS EoS
 \item Multi-messenger astronomy, Neurtinos, EM followup, BNS
 \end{itemize}
@@ -356,6 +361,13 @@ Can cite soaulson and the noises paper
 \begin{itemize}
 \item Overview of pipeline based on technical paper
 \item Consistency checks
+\begin{itemize}
+\item Frequency bins
+\item Template bank
+\item Autocorrelation 
+\item Need to learn about the effective degrees of freedom stuff. 
+\item Does the frequency bin chi2 test use other waveforms? How? 
+\end{itemize}
 \item The O2 search (coincident)
 \end{itemize}
 
@@ -372,7 +384,7 @@ Can cite soaulson and the noises paper
 \end{itemize}
 
 \subsection{Binary Coalescence Waveform}
-PyGRB searches for CBC signals with circular orbits and non-spinning components. These waveforms depend on 9 parameters: The two component masses $M_1$ and $M_2$, the sky location $(\theta, \phi)$, the distance $D$, the coalescence time $t_0$, the orientation $\iota$, the polarisaton angle $\psi$, and the coalescence phase $\phi_0$. Of these, the distance, binary inclination, polarisation, and coalescence phase only affect the phase and amplitude of the waveform and not the signal morphology. That is, the waveform can be written as
+PyGRB searches for CBC signals with circular orbits and non-spinning components. These waveforms depend on 9 parameters: The two component masses $M_1$ and $M_2$, the sky location $(\theta, \phi)$, the distance $D$, the coalescence time $t_0$, the orientation $\iota$, the polarisaton angle $\psi$, and the coalescence phase $\phi_0$. We can reduce to seven parameters if we assume the sky position is known. Of these, the distance, binary inclination, polarisation, and coalescence phase affect the phase and amplitude of the waveform and not the signal morphology. That is, the waveform can be written as
 \begin{equation} \label{hp}
 h_+(t) = \mathcal{A}^1 h_0(t) + \mathcal{A}^3 h_{\pi/2}(t)
 \end{equation}
@@ -456,19 +468,14 @@ The values for $\mathcal{A}^\mu$ for which the log-likelihood \ref{loglike} is m
 \end{equation}
 where $\mathcal{M}^{\mu\nu}$ is the inverse of $\mathcal{M}_{\mu\nu}$. We define the \textit{coherent SNR} to be
 \begin{equation} \label{rhocoh1}
-\rho^2_\text{coh} = 2\ln \Lambda |_\text{max} = (\textbf{s}|\textbf{h}_\mu)\mathcal{M}^{\mu\nu}(\textbf{s}|\textbf{h}_\nu)
+\rho^2_\text{coh} = 2\ln \Lambda |_\text{max} = (\textbf{s}|\textbf{h}_\mu)\mathcal{M}^{\mu\nu}(\textbf{s}|\textbf{h}_\nu) \fs
 \end{equation}
+The  $\mathcal{A}^\mu$ terms have been maximised over, leaving only three of our original seven waveform parameters to search over. 
+
+
 
 \subsection{Comparison to Coincident Search}
-\begin{itemize}
-\item Many cycles are detectable, so the two phases are approximately orthogonal. Define the M matrix given this
-\item Define the DP frame
-\item Make M diagonal
-\item Invert M and put in equation \ref{rhocoh1}
-\item Derive \ref{rhocoh}
-\end{itemize}
-
-In this section we will put the coherent SNR into a form such that it is easy to compare to the coincident SNR. The coincident SNR is given by
+In this section we will put the coherent SNR into a form such that it is easy to compare to the coincident SNR. The coincident SNR is defined to be the quadrature sum of the matched filter of the individual detectors
 \begin{equation} \label{rhocoinc}
 \rho^2_\text{coinc} = \sum_\text{X,Y} \sum_{i=0,\pi/2} \left( s^X \bigg| \frac{h_i}{\sigma^X} \right)[\delta^{XY}]\left( s^Y \bigg| \frac{h_i}{\sigma^Y} \right) \textbf{.}
 \end{equation}
@@ -479,24 +486,134 @@ We can make \ref{rhocoh1} more easily comparable to \ref{rhocoinc} by making $\m
 \begin{equation}
 (h_{\pi/2}^X|h_{\pi/2}^X)\approx (h_0^X|h_0^X) = (\sigma^X)^2 \textbf{.}
 \end{equation}
-This simplifies $\mathcal{M}$ a lot. We can simplify further by rotating the detector frame to the \textit{Dominant Polarization Frame}. 
+Using these, we see that $\mathcal{M}$  simplifies to
+\[
+\mathcal{M}
+=
+\begin{bmatrix}
+A & C & 0 & 0 \\
+C & B & 0 & 0 \\
+0 & 0 & A & C \\
+0 & 0 & C & B 
+\end{bmatrix}
+\] 
+with 
+\begin{equation}
+A = \sum_X (\sigma^X F_+^X)^2
+\end{equation}
+\begin{equation}
+B = \sum_X (\sigma^X F_\times^X)^2
+\end{equation}
+\begin{equation} \label{C eqn}
+C = \sum_X (\sigma^X F_+^X)(\sigma^X F_\times^X) \fs
+\end{equation}
 
-\newpage
-
-The coherent SNR is given by
+We can simplify further by rotating the detector frame to the \textit{Dominant Polarization Frame}. In this frame, the antenna response functions to the plus and cross polarisation are orthogonal, and hence $C=0$, making $\mathcal{M}$ diagonal. As we included a polarisation angle between the equatorial and radiation frame ($\chi$) and the radiation and source frame ($\psi$), we can rotate our network frame without placing further constraints on the system. In particular, we can rotate through an angle $\chi^\text{DP}$ such that $C=0$. This gives us the following antenna response functions 
+\begin{equation}
+F_+^{\text{DP},X} = F_+^\text{X} \cos 2\chi^\text{DP} + F^\text{X}_\times \sin 2\chi^\text{DP}
+\end{equation}
+\begin{equation}
+F_\times^{\text{DP},X} = -F_+^\text{X} \sin 2\chi^\text{DP} + F^\text{X}_\times \cos 2\chi^\text{DP} \fs
+\end{equation}
+Using these antenna response functions in (\ref{C eqn}) and solving for $\chi^\text{DP}$, we find
+\begin{equation}
+\chi^\text{DP} = \frac{1}{4} \arctan \left( \frac{2\sum_X (\sigma^X F^X_+)(\sigma^X F^X_\times)}{\sum_X \left[ (\sigma^X F^X_+)^2 - (\sigma^X F^X_\times)^2 \right] }  \right) \fs
+\end{equation}
+This does not uniquely define the dominant polarisation frame, so we also require the network to be more sensitive to the plus polarisation
+\begin{equation}
+|F^\text{DP,X}_+ | \geq | F^\text{DP,X}_\times | \fs
+\end{equation}
+In what follows, we assume we are in the dominant polarisation frame and drop the DP superscript. Inverting $\mathcal{M}$ and using (\ref{rhocoh1}), we see the coherent SNR in the dominant polarisation frame is
+\begin{equation}
+\rho_\text{coh}^2 = \frac{(\textbf{s}|\textbf{F}_+ \textbf{h}_0)^2 + (\textbf{s}|\textbf{F}_+ \textbf{h}_{\pi/2})^2}{(\textbf{F}_+\textbf{h}_0|\textbf{F}_+\textbf{h}_0)^2} + \frac{(\textbf{s}|\textbf{F}_\times \textbf{h}_0)^2 + (\textbf{s}|\textbf{F}_\times \textbf{h}_{\pi/2})^2}{(\textbf{F}_\times\textbf{h}_0|\textbf{F}_\times\textbf{h}_0)^2} \fs
+\end{equation}
+We can rewrite this as
 \begin{equation} \label{rhocoh}
 \rho_\text{coh}^2 = \sum_{X,Y} \sum_{i=0,\pi/2} \left( s^X \bigg| \frac{h_i}{\sigma^X} \right) [f_+^X f_+^Y + f_\times^X f_\times^Y]  \left( s^Y \bigg| \frac{h_i}{\sigma^Y} \right)
 \end{equation}
-where 
+where we define the orthonormal vectors
 \begin{equation}
 f^X_{+,\times} = \frac{\sigma^X F^X_{+,\times}}{\sqrt{\sum_Y( \sigma^Y F^Y_{+,\times})^2}} \textbf{ .}
 \end{equation}
+We can now compare the coherent SNR as given in (\ref{rhocoh}) to the coincident SNR given by (\ref{rhocoinc}). The coincident SNR is the quadrature sum of all the energy in each detector. In the space spanned by individual detector SNRs, where each trigger is represented by a point in this space, it is the distance from the origin to the trigger. It is the total energy of that trigger. 
+
+The coherent SNR is a projection of the total energy of a trigger onto the subspace spanned by $f_+$ and $f_\times$. This subspace is the space consistent with a gravitational wave signal from the given sky location and with the PSD of the detectors at the given time. Orthogonal to this space is the space inconsistent with a signal. Noise contributes energy to all components of the coincident SNR, and so projecting it onto the signal space will reduce its amplitude. The energy due to a GW signal lays entirely in the signal plane, so the projection does not change the distance to the point representing the trigger. In the case of a real GW detection, the coherent and coincident SNR are approximately the same as most of the energy of the trigger is due to the GW, though the coherent SNR will be slightly lower as some energy will be due to noise, and so is removed. 
+
+Another way to think of the difference between coherent and coincident SNR is in terms of the number of degrees of freedom. The coincident SNR has noise contributions from the $0$ and $\pi/2$ phase measurements in each detector, resulting in $2N$ degrees of freedom, where $N$ is the number of detectors. The coherent SNR has four degrees of freedom, the $0$ and $\pi/2$ phases of the $F_+$ and $F_\times$ antenna response functions in the dominant polarisation frame. In the case where we have a non-degenerate (i.e. sensitive to both plus and cross polarisations) two detector network, then both the coincident and coherent SNR have four degrees of freedom. In this case, we can show that the coherent and coincident SNRs are identical by calculating $f^X_{+}f^Y_{+}+f^X_{\times}f^Y_{\times}=\delta^{XY}$.
+
+
+\subsection{Null SNR}
+
+\subsection{Reweighted SNR}
+
+\subsection{Rejecting Noise Transients}
+\begin{itemize}
+\item Thresholds on single detectors, coinc SNR, null SNR, and coherent SNR
+\item chi2 tests
+\item reweighted SNR
+\end{itemize}
+
+\subsection{Event Significance}
+\begin{itemize}
+\item On source and off source
+\begin{itemize}
+\item Onsource is -5 to +1 seconds
+\item Offsource is approximately one hour of data around the GRB, varies slightly depending on data available 
+\end{itemize}
+\item Loudest event with loudest template in the onsource is taken as the trigger
+\item p-value for this event is calculated by comparing to the number of off source trials with a louder event in 
+\item The FAP is the number of 6s off trials with a higher reweighted SNR than than the onsource, divided by the number of background trials
+\item The number of offtrials is as high as possible so that $N=T_\text{off} / T_\text{on}$.
+\item Standard analysis is only capable of achieving a FAP of $10^{-3}$. Enough to reject signal hypothesis, but not enough to for a confirmed detection. 
+\item We then timeshift the data to get a lower FAP if needed. Time shifts are done by more than the light travel time between the detectors to make sure a true GW signal consistent with the sky position is highly unlikely to appear. 
+\item Short slides are timeslides of the matched filtered segments before calculating the coherent SNR. As the MF is the most computationally expensive part, this is relatively cheap to do.
+\item Long time slides shift the segments before analysis and then repeating the whole analysis again (as saving who segments of data is too memory intensive). Short slides are then done on each long slide so that only 10 long slides are needed to reach a FAP of $10^-5$.
+\item Time slides are not truely independent so this overestimates the FAP
+\end{itemize}
+
+\subsection{Calculating Search Sensitivity}
+\begin{itemize}
+\item Inject signals into the offsource
+\item signal distance, inclination etc. of injections is astrophysically motivated
+\item This is used to give a lower limit on the distance we are sensitive to
+\end{itemize}
+
+\subsection{Searching for Face on Signals}
+\begin{itemize}
+\item Short GRBs are expected to have narrow opening angles ($<30$ degrees) which means we can assume they are approximately face on
+\item Go through calculation in Andrew's paper, to reduce A1-4 to B1 and B2
+\item These signals are circularly polarised
+\item New null stream -- Can search single detector data as well as better noise rejection
+\item Go through the FAP and sensitivity increases in Andrew's paper
+\end{itemize}
+
+\subsection{Searching over a Sky Patch}
+\begin{itemize}
+\item Using the BAT instrument on swift, we get a single sky point as the sky position error is much smaller than the localisation of GW detectors
+\item Other instruments can have sky patches of thousands of square degrees (specifically IPN)
+\item Getting sky position wrong is bad because it affects time delay, so we can't find coincidence, and (less important) it can lead the the wrong antenna response function being used
+\item Go through calculation of when a single sky point is ok - this depends on our own sense of how much SNR we are willing to lose
+\item Different sky grid for circularly polarised search
+\end{itemize}
 
 \section{O2 PyGRB Search} 
 \begin{itemize}
 \item GRB sample
+\begin{itemize}
+\item Fermi, swift, IPN, others?
+\item Need enough science quality data for off source
+\item Can analyse single detector data
+\end{itemize}
+\item Template bank used
 \item No new detections (just BNS) - state BNS p-value
 \item median exclusion distances
+\end{itemize}
+
+\section{Improvements to PyGRB}
+\begin{itemize}
+\item Made faster -- matched filter engine and post processing
+\item Re-optimised the cuts and reweighted snr
+\item Ran on GRB with bigger sky grid than was previously possible or ran 170817 to be 5 sigma
 \end{itemize}
 
 

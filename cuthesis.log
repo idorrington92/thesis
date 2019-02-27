@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  19 FEB 2019 10:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  27 FEB 2019 09:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -377,9 +377,6 @@ Overfull \hbox (8.45317pt too wide) in paragraph at lines 6--6
 s fig-ure shows a time-frequency 
  []
 
-
-LaTeX Warning: Reference `fig:xcuts' on page 25 undefined on input line 9.
-
 )
 \tf@lof=\write4
 \openout4 = `cuthesis.lof'.
@@ -425,67 +422,73 @@ Chapter 4.
 [10
 
 ]
-Underfull \vbox (badness 4779) has occurred while \output is active []
+Underfull \vbox (badness 8189) has occurred while \output is active []
 
  [11]
-[12] [13] [14]
-Chapter 5.
-[15
+Underfull \vbox (badness 3058) has occurred while \output is active []
 
-] <xpipelineTFmap.png, id=104, 325.215pt x 337.26pt>
+ [12]
+[13]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+[15] [16] [17]
+Chapter 5.
+[18
+
+] <xpipelineTFmap.png, id=114, 325.215pt x 337.26pt>
 File: xpipelineTFmap.png Graphic file (type png)
 
 <use xpipelineTFmap.png>
-Package pdftex.def Info: xpipelineTFmap.png used on input line 531.
+Package pdftex.def Info: xpipelineTFmap.png used on input line 648.
 (pdftex.def)             Requested size: 318.67209pt x 330.4971pt.
- <xpipeline_cut.png, id=106, 899.36pt x 737.75626pt>
+ <xpipeline_cut.png, id=116, 899.36pt x 737.75626pt>
 File: xpipeline_cut.png Graphic file (type png)
 
 <use xpipeline_cut.png>
-Package pdftex.def Info: xpipeline_cut.png used on input line 539.
+Package pdftex.def Info: xpipeline_cut.png used on input line 656.
 (pdftex.def)             Requested size: 318.67209pt x 261.40436pt.
- [16 <./xpipelineTFmap.png>] [17 <./xpipeline_cut.png>]
+ [19 <./xpipelineTFmap.png>] [20 <./xpipeline_cut.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [18]
+ [21]
 Underfull \vbox (badness 1845) has occurred while \output is active []
 
- [19]
-[20] [21]
-Overfull \hbox (13.23029pt too wide) in paragraph at lines 710--773
+ [22]
+[23] [24]
+Overfull \hbox (13.23029pt too wide) in paragraph at lines 827--890
 [][] 
  []
 
-[22] [23] <Decision_tree.png, id=139, 722.7pt x 542.025pt>
+[25] [26] <Decision_tree.png, id=148, 722.7pt x 542.025pt>
 File: Decision_tree.png Graphic file (type png)
 
 <use Decision_tree.png>
-Package pdftex.def Info: Decision_tree.png used on input line 783.
+Package pdftex.def Info: Decision_tree.png used on input line 900.
 (pdftex.def)             Requested size: 318.67209pt x 239.0045pt.
 
-<mva_trigger_and_score.png, id=140, 644.4075pt x 781.92125pt>
+<mva_trigger_and_score.png, id=149, 644.4075pt x 781.92125pt>
 File: mva_trigger_and_score.png Graphic file (type png)
 
 <use mva_trigger_and_score.png>
-Package pdftex.def Info: mva_trigger_and_score.png used on input line 793.
+Package pdftex.def Info: mva_trigger_and_score.png used on input line 910.
 (pdftex.def)             Requested size: 318.67209pt x 386.68831pt.
- [24] [25 <./Decision_tree.png>] [26 <./mva_trigger_and_score.png>] [27] [28] [
-29] [30] (./cuthesis.aux)
+ [27] [28 <./Decision_tree.png>] [29 <./mva_trigger_and_score.png>] [30] [31] [
+32] [33] [34
 
-LaTeX Warning: There were undefined references.
-
+] (./cuthesis.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3246 strings out of 493089
- 43721 string characters out of 6134842
- 120296 words of memory out of 5000000
- 6650 multiletter control sequences out of 15000+600000
+ 3247 strings out of 493089
+ 43728 string characters out of 6134842
+ 120308 words of memory out of 5000000
+ 6651 multiletter control sequences out of 15000+600000
  15120 words of font info for 56 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,13n,47p,1285b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 38i,13n,45p,1285b,370s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></
@@ -507,10 +510,10 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on cuthesis.pdf (39 pages, 720331 bytes).
+Output written on cuthesis.pdf (43 pages, 732187 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 160 compressed objects within 2 object streams
+ 247 PDF objects out of 1000 (max. 8388607)
+ 169 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 

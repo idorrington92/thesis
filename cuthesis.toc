@@ -13,40 +13,44 @@
 \contentsline {subsection}{\numberline {3.1.1}Compact Binary Coalescence}{8}
 \contentsline {subsection}{\numberline {3.1.2}Core Collapse}{8}
 \contentsline {subsection}{\numberline {3.1.3}Other Sources}{9}
-\contentsline {section}{\numberline {3.2}GRB Gravitational Wave Searches}{9}
-\contentsline {subsection}{\numberline {3.2.1}Modelled search for CBCs}{9}
-\contentsline {subsection}{\numberline {3.2.2}Unmodelled Search}{9}
-\contentsline {section}{\numberline {3.3}GRB Astrophysics with Gravitational Waves}{9}
-\contentsline {chapter}{\numberline {4}The Compact Binary Coalescence Search}{10}
-\contentsline {section}{\numberline {4.1}Introduction}{10}
-\contentsline {section}{\numberline {4.2}PyCBC overview}{10}
-\contentsline {section}{\numberline {4.3}PyGRB}{10}
-\contentsline {subsection}{\numberline {4.3.1}A Coherent Search for Coalescing Binary Systems}{10}
-\contentsline {subsection}{\numberline {4.3.2}Binary Coalescence Waveform}{11}
-\contentsline {subsection}{\numberline {4.3.3}Coherent SNR}{12}
-\contentsline {subsection}{\numberline {4.3.4}Comparison to Coincident Search}{13}
-\contentsline {subsection}{\numberline {4.3.5}Null SNR}{15}
-\contentsline {subsection}{\numberline {4.3.6}Reweighted SNR}{15}
-\contentsline {subsection}{\numberline {4.3.7}Rejecting Noise Transients}{15}
-\contentsline {subsection}{\numberline {4.3.8}Event Significance}{15}
-\contentsline {subsection}{\numberline {4.3.9}Calculating Search Sensitivity}{16}
-\contentsline {subsection}{\numberline {4.3.10}Searching for Face on Signals}{16}
-\contentsline {subsection}{\numberline {4.3.11}Searching over a Sky Patch}{16}
-\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{17}
-\contentsline {section}{\numberline {4.5}Improvements to PyGRB}{17}
-\contentsline {section}{\numberline {4.6}Future Plans}{17}
-\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{18}
-\contentsline {section}{\numberline {5.1}Introduction}{18}
-\contentsline {section}{\numberline {5.2}Xpipeline}{18}
-\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{19}
-\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{22}
-\contentsline {subsection}{\numberline {5.2.3}Null Energy}{23}
-\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{23}
-\contentsline {section}{\numberline {5.3}Machine Learning}{24}
-\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{24}
-\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{27}
-\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{28}
-\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{31}
-\contentsline {subsubsection}{Training Set}{31}
-\contentsline {subsubsection}{BDT Parameters}{32}
-\contentsline {subsubsection}{Result of Optimisation}{33}
+\contentsline {section}{\numberline {3.2}GRB Detectors}{9}
+\contentsline {section}{\numberline {3.3}GRB Gravitational Wave Searches}{9}
+\contentsline {subsection}{\numberline {3.3.1}Modelled search for CBCs}{9}
+\contentsline {subsection}{\numberline {3.3.2}Unmodelled Search}{9}
+\contentsline {section}{\numberline {3.4}GRB Astrophysics with Gravitational Waves}{9}
+\contentsline {chapter}{\numberline {4}The Compact Binary Coalescence Search}{11}
+\contentsline {section}{\numberline {4.1}Introduction}{11}
+\contentsline {section}{\numberline {4.2}PyCBC overview}{11}
+\contentsline {subsection}{\numberline {4.2.1}Matched Filter Search}{12}
+\contentsline {subsection}{\numberline {4.2.2}Consistency Checks}{12}
+\contentsline {subsection}{\numberline {4.2.3}PyCBC Results}{12}
+\contentsline {section}{\numberline {4.3}PyGRB}{12}
+\contentsline {subsection}{\numberline {4.3.1}A Coherent Search for Coalescing Binary Systems}{13}
+\contentsline {subsection}{\numberline {4.3.2}Binary Coalescence Waveform}{13}
+\contentsline {subsection}{\numberline {4.3.3}Coherent SNR}{14}
+\contentsline {subsection}{\numberline {4.3.4}Comparison to Coincident Search}{15}
+\contentsline {subsection}{\numberline {4.3.5}Null SNR}{17}
+\contentsline {subsection}{\numberline {4.3.6}The PyGRB Workflow}{18}
+\contentsline {subsection}{\numberline {4.3.7}Reweighted SNR}{19}
+\contentsline {subsection}{\numberline {4.3.8}Searching for Face on Signals}{20}
+\contentsline {subsection}{\numberline {4.3.9}Searching over a Sky Patch}{21}
+\contentsline {subsection}{\numberline {4.3.10}Event Significance}{22}
+\contentsline {subsection}{\numberline {4.3.11}Calculating Search Sensitivity}{23}
+\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{24}
+\contentsline {section}{\numberline {4.5}Improvements to PyGRB}{24}
+\contentsline {section}{\numberline {4.6}Future Plans}{24}
+\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{25}
+\contentsline {section}{\numberline {5.1}Introduction}{25}
+\contentsline {section}{\numberline {5.2}Xpipeline}{25}
+\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{26}
+\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{29}
+\contentsline {subsection}{\numberline {5.2.3}Null Energy}{30}
+\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{30}
+\contentsline {section}{\numberline {5.3}Machine Learning}{31}
+\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{31}
+\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{34}
+\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{35}
+\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{38}
+\contentsline {subsubsection}{Training Set}{38}
+\contentsline {subsubsection}{BDT Parameters}{39}
+\contentsline {subsubsection}{Result of Optimisation}{40}

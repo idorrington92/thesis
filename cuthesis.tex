@@ -290,7 +290,7 @@ Can cite soaulson and the noises paper
 \item Network statistics (coincident and coherent) 
 \end{itemize}
 
-\chapter{Gamma-Ray Bursts}
+\chapter{Gamma-Ray Bursts} \label{chap:GRBs}
 \begin{itemize}
 \item History of GRB search
 \item What GRBs are, short long, etc. with population plot
@@ -319,6 +319,12 @@ Can cite soaulson and the noises paper
 \item Others
 \end{itemize}
 
+\section{GRB Detectors} \label{GRB detectors}
+\begin{itemize}
+\item IPN
+\item Swift
+\item Fermi
+\end{itemize}
 
 \section{GRB Gravitational Wave Searches}
 \begin{itemize}
@@ -355,12 +361,34 @@ Can cite soaulson and the noises paper
 
 
 \chapter{The Compact Binary Coalescence Search} \label{CBC search}
-\section{\label{intro}Introduction}
+\section{\label{CBCintro}Introduction}
+\begin{itemize}
+\item CBC search for GRBs
+\item For short GRBs
+\item Integrating into PyCBC
+\item Coherent
+\item Targeted - Better sensitivity but slower search method
+\item Matched filter
+\item Detected BNS with FAP of XX
+\item Used in O1 and O2 - no other detections
+\item Chapter summary
+\end{itemize}
+
 
 \section{PyCBC overview}
 \begin{itemize}
-\item Overview of pipeline based on technical paper
-\item Consistency checks
+\item Just the parts of the CBC search that are relevant for PyGRB
+\item Highlight some of the differences
+\item All sky all time
+\item Searches for a bigger population - i.e. not just BNS and low mass NSBH
+\end{itemize}
+\subsection{Matched Filter Search}
+\begin{itemize}
+\item Contents of this section depends on what goes into the background chapter. I think the mathematical formalism of matched filtering should go earlier in the thesis
+\end{itemize}
+
+\subsection{Consistency Checks} \label{sec:chi2}
+\textbf{Chisq tests}
 \begin{itemize}
 \item Frequency bins
 \item Template bank
@@ -368,22 +396,26 @@ Can cite soaulson and the noises paper
 \item Need to learn about the effective degrees of freedom stuff. 
 \item Does the frequency bin chi2 test use other waveforms? How? 
 \end{itemize}
-\item The O2 search (coincident)
-\end{itemize}
 
-\section{PyGRB}
+\subsection{PyCBC Results}
 \begin{itemize}
-\item Has sky position 
-\item Coherent
+\item Detections made in O1 and O2 - Use catalog paper
+\item Sensitivity of search - Useful later for comparison between PyCBC and PyGRB
 \end{itemize}
 
+\section{PyGRB} \label{sec:PyGRB}
+The PyCBC pipeline discussed above is an all-time, all-sky search. Some CBC signals (those with one neutron star component and either a low mass black hole or another neutron star as the second component) are expected to produce a short GRB (see chapter \ref{chap:GRBs}). \textit{Targeted searches}, where the time and sky position of the source is known, are not only computationally cheaper, but can make use of improved methods of GW detection that are too computationally expensive to use on an all-sky, all-time search.
+
+One of these improved methods, used by PyGRB, is to calculate the \textit{Coherent SNR}. Knowing the sky position and time a candidate GW source, as well as the antenna response function and PSD of each detector in the network allows us to calculate the amount of signal power expected in each detector. For example, detectors are most sensitive to GW sources that are directly overhead. This means a GW source that is directly above one of the detectors in a network of identical detectors will have more power in that detector than any other. If one of the other detectors in the network has more power, then it is less likely that this trigger is a true GW source. Candidate GW signals with the expected ratio of signal power in each detector will have a higher coherent SNR. 
+
+This qualitative description of coherence is made rigorous in the following sections up to \ref{sec:coh snr}. In section \ref{sec:null snr} we discuss the \textit{null SNR}, another coherent statistic that is useful for identifying background triggers. The rest of this section is about the PyGRB workflow and how to use coherent statistics to confidently detect GWs associated with GRBs. 
 
 \subsection{A Coherent Search for Coalescing Binary Systems}
 \begin{itemize}
 \item Show where the A's come from (don't know how to do this yet)
 \end{itemize}
 
-\subsection{Binary Coalescence Waveform}
+\subsection{Binary Coalescence Waveform} 
 PyGRB searches for CBC signals with circular orbits and non-spinning components. These waveforms depend on 9 parameters: The two component masses $M_1$ and $M_2$, the sky location $(\theta, \phi)$, the distance $D$, the coalescence time $t_0$, the orientation $\iota$, the polarisaton angle $\psi$, and the coalescence phase $\phi_0$. We can reduce to seven parameters if we assume the sky position is known. Of these, the distance, binary inclination, polarisation, and coalescence phase affect the phase and amplitude of the waveform and not the signal morphology. That is, the waveform can be written as
 \begin{equation} \label{hp}
 h_+(t) = \mathcal{A}^1 h_0(t) + \mathcal{A}^3 h_{\pi/2}(t)
@@ -428,7 +460,7 @@ h_3^X = F_+^X h_{\pi/2}(t^X)
 h_4^X = F_\times^X h_{\pi/2}(t^X) \textbf{ .} 
 \end{equation}
 
-\subsection{Coherent SNR}
+\subsection{Coherent SNR} \label{sec:coh snr}
 The matched-filter between a GW waveform $h$ and the above detector data $s$ is an inner product given by 
 \begin{equation}
 (s|h) = 4 \text{Re} \int^\infty_0 \frac{\tilde{s}^X(f) \cdot [\tilde{h}^X(f)]^*}{S^X_h (f)}
@@ -524,7 +556,7 @@ This does not uniquely define the dominant polarisation frame, so we also requir
 |F^\text{DP,X}_+ | \geq | F^\text{DP,X}_\times | \fs
 \end{equation}
 In what follows, we assume we are in the dominant polarisation frame and drop the DP superscript. Inverting $\mathcal{M}$ and using (\ref{rhocoh1}), we see the coherent SNR in the dominant polarisation frame is
-\begin{equation}
+\begin{equation} \label{rhocoh dof}
 \rho_\text{coh}^2 = \frac{(\textbf{s}|\textbf{F}_+ \textbf{h}_0)^2 + (\textbf{s}|\textbf{F}_+ \textbf{h}_{\pi/2})^2}{(\textbf{F}_+\textbf{h}_0|\textbf{F}_+\textbf{h}_0)^2} + \frac{(\textbf{s}|\textbf{F}_\times \textbf{h}_0)^2 + (\textbf{s}|\textbf{F}_\times \textbf{h}_{\pi/2})^2}{(\textbf{F}_\times\textbf{h}_0|\textbf{F}_\times\textbf{h}_0)^2} \fs
 \end{equation}
 We can rewrite this as
@@ -539,64 +571,159 @@ We can now compare the coherent SNR as given in (\ref{rhocoh}) to the coincident
 
 The coherent SNR is a projection of the total energy of a trigger onto the subspace spanned by $f_+$ and $f_\times$. This subspace is the space consistent with a gravitational wave signal from the given sky location and with the PSD of the detectors at the given time. Orthogonal to this space is the space inconsistent with a signal. Noise contributes energy to all components of the coincident SNR, and so projecting it onto the signal space will reduce its amplitude. The energy due to a GW signal lays entirely in the signal plane, so the projection does not change the distance to the point representing the trigger. In the case of a real GW detection, the coherent and coincident SNR are approximately the same as most of the energy of the trigger is due to the GW, though the coherent SNR will be slightly lower as some energy will be due to noise, and so is removed. 
 
-Another way to think of the difference between coherent and coincident SNR is in terms of the number of degrees of freedom. The coincident SNR has noise contributions from the $0$ and $\pi/2$ phase measurements in each detector, resulting in $2N$ degrees of freedom, where $N$ is the number of detectors. The coherent SNR has four degrees of freedom, the $0$ and $\pi/2$ phases of the $F_+$ and $F_\times$ antenna response functions in the dominant polarisation frame. In the case where we have a non-degenerate (i.e. sensitive to both plus and cross polarisations) two detector network, then both the coincident and coherent SNR have four degrees of freedom. In this case, we can show that the coherent and coincident SNRs are identical by calculating $f^X_{+}f^Y_{+}+f^X_{\times}f^Y_{\times}=\delta^{XY}$.
+Another way to think of the difference between coherent and coincident SNR is in terms of the number of degrees of freedom. The coincident SNR has noise contributions from the phase and amplitude measurements in each detector, resulting in $2N$ degrees of freedom, where $N$ is the number of detectors. From (\ref{rhocoh dof}) we can see that the coherent SNR has four degrees of freedom: the $0$ and $\pi/2$ phases of the plus and cross polarisation amplitudes of the gravitational wave. In the case where we have a non-degenerate\footnote{i.e. sensitive to both plus and cross polarisations.} two detector network, then both the coincident and coherent SNR have four degrees of freedom. In this case, we can show that the coherent and coincident SNRs are identical by calculating $f^X_{+}f^Y_{+}+f^X_{\times}f^Y_{\times}=\delta^{XY}$.
 
 
-\subsection{Null SNR}
+\subsection{Null SNR} \label{sec:null snr}
+Gravitational waves have two polarisations. Therefore we can fully describe the signal with two non-aligned detectors. Adding additional detectors to our network allows us to construct additional data streams that have the GW signal removed. We can easily construct a such a data stream by subtracting the coherent SNR (the energy consistent with a GW signal) from the coincident SNR (the total energy measured by the detectors). Any energy left from this is associated with noise, and we call this the \textit{null SNR}
+\begin{equation} \label{null snr}
+\rho_N^2 = \rho_\text{coinc}^2 - \rho_\text{coh}^2 = \sum_{X,Y} \sum_{i=0,\pi/2} \left( s^X \bigg| \frac{h_i}{\sigma^X} \right) [N^{XY}]  \left( s^Y \bigg| \frac{h_i}{\sigma^Y} \right)
+\end{equation} 
+where
+\begin{equation}
+N^{XY} = \delta^{XY} - f^X_{+}f^Y_{+} - f^X_{\times}f^Y_{\times} \fs
+\end{equation}
+Noise triggers are incoherent, and so for noise we expect $\rho_\text{coinc}^2\gg\rho_\text{coh}^2$. Thus the null SNR is high in this case. For a true GW signal, most of the energy will be coherent, and so we expect $\rho_\text{coinc}^2 \simeq \rho_\text{coh}^2$.  Thus, the null SNR is expected to be close to zero for a true GW signal. 
 
-\subsection{Reweighted SNR}
+The null SNR is similar to \textit{null streams}, which are used by burst searches (see section \ref{xtriggers}). The null stream in a burst search is made to remove a GW signal of any morphology. 
 
-\subsection{Rejecting Noise Transients}
+
+\subsection{The PyGRB Workflow} \label{sec:thresholds}
+We have seen several statistics that can indicate whether a trigger is a GW signal or noise. We apply cuts on these statistics, discarding any triggers that fail the cuts. This is especially important for the coherent search as the coherent statistics are slow to calculate and additional to all the statistics used in the coincident search. To speed up the coherent search, we discard as many triggers as possible at the earliest possible time in the workflow. In this section we will discuss the order of the workflow and the cuts made on each statistic. 
+
+The analysis begins with matched filtering the individual detector data. Using the known sky location of the GRB and the fact that gravitational waves travel at the speed of light, we timeshift the data from each detector so that a GW will be coincident in each detector. A list of triggers is formed for each detector by keeping only times when the individual detector SNR is greater than four, the rest of the data is discarded. We then discard any trigger that is not coincident in at least two detectors in the network. 
+
+The coincident SNR is then easy to calculate, and any trigger with a coincident SNR below six is discarded. The coherent SNR is then calculated for the remaining triggers. This reduces the SNR of noise, but not signals, and so we apply the same threshold of six to the coherent SNR. 
+
+Once we have the coincident and coherent SNR, the null SNR is easy to calculate. The null SNR of a trigger increases with the energy of the trigger for both noise and GW signals, so a very loud GW signal can still have a high null SNR. For this reason, we increase the null SNR threshold with the coherent SNR for loud triggers but keep the null SNR threshold is fixed for quiet triggers, as can be seen in fig.\ref{fig:nullcut}. To be precise, we keep triggers meeting either of the following criteria: 
+\begin{equation}
+\rho_N\leq5.25 \text{  and   } \rho_\text{coh}\leq 20
+\end{equation} 
+or
+\begin{equation}
+\rho_N \leq \frac{\rho_\text{coh}}{5}+5.25  \text{  and   } \rho_\text{coh}> 20 \fs
+\end{equation}
+
+The $\chi^2$ tests (described in \ref{sec:chi2}) are computationally expensive to calculate, so we calculate these only on those triggers that survive all the other tests. These tests are the same as used in the coincident search. In particular, they are not coherent but applied to the individual detector triggers. 
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{GRB170817A_null_stat2_vs_snr_zoom.png}
+\end{center}
+\caption{\textbf{Null Stat Cut.} Here we plot the coherent SNR against the null SNR. The blue crosses are background triggers. The red pluses are signal injections. The black line is the veto line, with all triggers in the shaded region above the line being discarded. The green line indicates the expected SNR for optimally oriented injections. The magenta and cyan lines show 1 and 2 sigma errors on the green line. }
+\label{fig:nullcut}
+\end{figure}
+
+
+
 \begin{itemize}
-\item Thresholds on single detectors, coinc SNR, null SNR, and coherent SNR
-\item chi2 tests
-\item reweighted SNR
+\item chi2 tests - Is this final? No coherent chi2 tests? Do we need to explain why we are no longer using coherent chi2 tests? 
+\item Go through plot caption with Steve
 \end{itemize}
 
-\subsection{Event Significance}
-\begin{itemize}
-\item On source and off source
-\begin{itemize}
-\item Onsource is -5 to +1 seconds
-\item Offsource is approximately one hour of data around the GRB, varies slightly depending on data available 
-\end{itemize}
-\item Loudest event with loudest template in the onsource is taken as the trigger
-\item p-value for this event is calculated by comparing to the number of off source trials with a louder event in 
-\item The FAP is the number of 6s off trials with a higher reweighted SNR than than the onsource, divided by the number of background trials
-\item The number of offtrials is as high as possible so that $N=T_\text{off} / T_\text{on}$.
-\item Standard analysis is only capable of achieving a FAP of $10^{-3}$. Enough to reject signal hypothesis, but not enough to for a confirmed detection. 
-\item We then timeshift the data to get a lower FAP if needed. Time shifts are done by more than the light travel time between the detectors to make sure a true GW signal consistent with the sky position is highly unlikely to appear. 
-\item Short slides are timeslides of the matched filtered segments before calculating the coherent SNR. As the MF is the most computationally expensive part, this is relatively cheap to do.
-\item Long time slides shift the segments before analysis and then repeating the whole analysis again (as saving who segments of data is too memory intensive). Short slides are then done on each long slide so that only 10 long slides are needed to reach a FAP of $10^-5$.
-\item Time slides are not truely independent so this overestimates the FAP
-\end{itemize}
+\subsection{Reweighted SNR} \label{sec:reweighted snr}
+After all the cuts have been made, the remaining triggers are then reweighted twice. First they are reweighted according to their $\chi^2$ values, according to (\ref{chi2 reweigth}), then they are reweighted again according to their null SNR, according to (\ref{null reweight}).  
+\begin{equation} \label{chi2 reweigth}
+\textbf{Chi2 reweighting goes here}
+\end{equation}
+\begin{equation} \label{null reweight}
+\textbf{null reweighting goes here}
+\end{equation}
+Note that this reweighting only down-weights triggers with a high $\chi^2$ or a high null SNR. The reweighting should not significantly alter the network SNR of a GW signal, but will reduce the SNR of noise. The reweighted SNR is detection statistic used by PyGRB. 
 
-\subsection{Calculating Search Sensitivity}
-\begin{itemize}
-\item Inject signals into the offsource
-\item signal distance, inclination etc. of injections is astrophysically motivated
-\item This is used to give a lower limit on the distance we are sensitive to
-\end{itemize}
+\subsection{Searching for Face on Signals} \label{sec:circ pol}
+The opening angle of the jet from a short GRB is expected to be $<30^\circ$, emitted perpendicular to the orbital plane. In a similar way to how the coherent SNR accounts for sky position and PSD of each detector to better reject noise, we can build a new detection statistic that takes into account that we expect a true GW signal to have an orbital inclination of $\iota ~ 0$ or $\iota ~ \pi$ with respect to the observer.
 
-\subsection{Searching for Face on Signals}
-\begin{itemize}
-\item Short GRBs are expected to have narrow opening angles ($<30$ degrees) which means we can assume they are approximately face on
-\item Go through calculation in Andrew's paper, to reduce A1-4 to B1 and B2
-\item These signals are circularly polarised
-\item New null stream -- Can search single detector data as well as better noise rejection
-\item Go through the FAP and sensitivity increases in Andrew's paper
-\end{itemize}
+We can see from equations (\ref{A1}) to (\ref{A4}) that the GW amplitude terms depend linearly on $\cos\iota$ and $(1+\cos^2\iota)/2$. For $0^\circ\leq\iota<30^\circ$, these are equal to within $1\%$. Thus, for $\iota~0$, we can use the approximation $\cos\iota \approx (1+\cos^2\iota)/2$. For $\iota~\pi$, the two terms are approximately equal in magnitude, but with opposite signs. 
+
+By defining 
+\begin{equation}
+\tilde{D} = \frac{D}{\cos\iota} \text{   and   } \chi_{l,r} = \phi_0 \pm \psi 
+\end{equation}
+we can rewrite the GW amplitudes  (\ref{A1}) to (\ref{A4}) for $\iota\approx 0$ as
+\begin{equation}
+\mathcal{A}^1 \approx \mathcal{A}^4 \approx -\frac{D_0}{\tilde{D}} \cos 2\chi_l \equiv \mathcal{B}_1
+\end{equation}
+\begin{equation}
+\mathcal{A}^2 \approx -\mathcal{A}^3 \approx \frac{D_0}{\tilde{D}} \sin 2\chi_l \equiv \mathcal{B}_2 \fs
+\end{equation}
+We see that now there are only two amplitude factors, $\mathcal{B}_1$ and $\mathcal{B}_2$. Therefore, the GW is circularly polarised. Similar results can be derived for the $\iota=\pi$ case. 
+
+Substituting these into (\ref{loglike}) and working in the dominant polarisation frame\footnote{And recalling that $(h_{\pi/2}^X|h_{\pi/2}^X)\approx (h_0^X|h_0^X)$ for CBC signals.}, we find
+\begin{align} 
+\ln \Lambda = & \mathcal{B}_1 (\textbf{s}|\textbf{F}_+\textbf{h}_0 + \textbf{F}_\times \textbf{h}_{\pi /2} ) + \mathcal{B}_2  (\textbf{s}|\textbf{F}_\times\textbf{h}_0 - \textbf{F}_+ \textbf{h}_{\pi /2} ) \\ & - \frac{1}{2} [\mathcal{B}_1^2 + \mathcal{B}_2^2 ] [ (\textbf{F}_+\textbf{h}_0|\textbf{F}_+\textbf{h}_0) + (\textbf{F}_\times \textbf{h}_0|\textbf{F}_\times \textbf{h}_0) ] \fs
+\end{align}
+Maximising the log likelihood with respect to $\mathcal{B}_1$ and $\mathcal{B}_2$, we find 
+\begin{equation}
+\rho_\text{coh}^2 = 2\ln \lambda_\text{max} = \frac{\alpha^2 + \beta^2}{ (\textbf{F}_+\textbf{h}_0|\textbf{F}_+\textbf{h}_0) + (\textbf{F}_\times \textbf{h}_0|\textbf{F}_\times \textbf{h}_0)}
+\end{equation}
+where
+\begin{equation}
+\alpha = (\textbf{s}|\textbf{F}_+\textbf{h}_0 + \textbf{F}_\times \textbf{h}_{\pi /2} )
+\end{equation}
+\begin{equation}
+\beta =  (\textbf{s}|\textbf{F}_\times\textbf{h}_0 - \textbf{F}_+ \textbf{h}_{\pi /2} ) \fs
+\end{equation}
+
+In the $\iota~180^\circ$ case, the SNR takes the same form, but with
+\begin{equation}
+\alpha = (\textbf{s}|\textbf{F}_+\textbf{h}_0 - \textbf{F}_\times \textbf{h}_{\pi /2} )
+\end{equation}
+\begin{equation}
+\beta =  (\textbf{s}|\textbf{F}_\times\textbf{h}_0 + \textbf{F}_+ \textbf{h}_{\pi /2} ) \fs
+\end{equation}
+
+We now have a detection statistic with only two degrees of freedom, as opposed to the four for the coherent SNR and 2N for the coincident SNR in the case of an N detector network. This gives us an additional null stream, and allows us to have a null stream even when analysing data from just two detectors. The circularly polarised coherent SNR allows for a $3\%$ increase in range for a given FAP when compared to the generic coherent SNR. This corresponds to a $10\%$ increase in the rate of GW signals detected.
+
 
 \subsection{Searching over a Sky Patch}
+The sky position of GRBs cannot be determined exactly. The uncertainty in sky position depends on which satellite detected the GRB. The BAT instrument on Swift (see section \ref{GRB detectors}) can localise to within 1-4 arcminutes [\textbf{citation in Andrew's paper}]. This is a small enough uncertainty that the GW search can use a single sky point [\textbf{cite Andrew's paper?}]. Other GRB detectors cannot provide as precise localisation. The GBM on the Fermi satellite often provides a location with a roughly circular uncertainty with a radius of several degrees. The IPN uses triangluation to determine sky position, so depending on the number of satellites in the IPN that make the detection, sky localisation and vary from under a square degree to thousands of square degrees. 
+
+It is important to have approximately the correct sky position for a coherent search. If the sky position is incorrect, then the detector antenna patterns will be incorrect for the GRB, hurting the search sensitivity. More crucially, with the wrong sky position we will calculate the wrong time delay between detectors in the network and make it impossible to correctly find coincident triggers between detectors. 
+
+To search over a sky patch we fill the patch with concentric circles of points separated by $\delta a$, such that each ring has $2\pi n / \delta a$ points with $n=0$ being the central point of the patch. These concentric circles extend to cover $3\sigma$ confidence region. The value of $\delta a$ depends on the depends on the timing uncertainty we are willing to accept. In practice, we use a timing uncertainty of $\delta t = 0.5$ms, which will limit the lost SNR to $<5\%$ [\textbf{cite andrew's paper}]. Searching over the sky grid is done after the computationally dominant step of matched filtering, so that searching over the sky grid does not significantly hurt analysis speed [\textbf{Need some analyses to back this up}].
+
+It is interesting to note that in a two detector network, there is a ring of sky points that give the same time delay between the detectors. In this case, only the antenna response of the detectors change with sky position, but the antenna response functions drop out of the coherent SNR in the two detector case\footnote{This is because in the two detector case, both the coherent and coincident SNR have four degrees of freedom. Thus, any observed amplitude and phase is consistent with an astrophysical signal.}. This would allow for us to analyse a greatly reduced set of sky points. Unfortunately, when we limit our search to looking for circularly polarised GWs, as discussed in section \ref{sec:circ pol}, then the antenna patterns again affect the detection statistic, and we must search over the sky grid.
+
 \begin{itemize}
-\item Using the BAT instrument on swift, we get a single sky point as the sky position error is much smaller than the localisation of GW detectors
-\item Other instruments can have sky patches of thousands of square degrees (specifically IPN)
-\item Getting sky position wrong is bad because it affects time delay, so we can't find coincidence, and (less important) it can lead the the wrong antenna response function being used
-\item Go through calculation of when a single sky point is ok - this depends on our own sense of how much SNR we are willing to lose
-\item Different sky grid for circularly polarised search
+\item Include image of sky grid
 \end{itemize}
 
+
+\subsection{Event Significance}
+Knowing the reweighted SNR of a trigger does not help us know if that trigger is a GW signal or not unless we know the false alarm probability (FAP) of that trigger. The FAP depends on many factors. For example, poor data quality at the time being analysed can lead to more high SNR triggers due to noise. Or the detectors may not be sensitive to the sky position of the GRB, which makes it less likely that a high SNR trigger is a GW signal. In this section we outline the process used to calculate the significance of an event. 
+
+As detector noise is not stationary, we calculate the FAP by using the data near the time of the GRB. A GW, if it is there, is assumed to be in the window starting five seconds before the GRB time and ending one second after the GRB time. This window would allow the detection of GWs from most GW models associated with short GRBs. We call this 6s window the \textit{on-source} window. The loudest event, with the loudest template, in the on-source is taken as our trigger. 
+
+To evaluate the p-value of this trigger, we analyse approximately\footnote{The amount of data used before and after the on-source varies depending on the data available. For example, sometimes a GRB will happen less than an hour before (after) an interferometer loses (acquires) lock.} one hour of data around the on-source, called the \textit{off-source} data. This data is assumed to not contain a GW signal. This data is divided up into as many 6s segments as possible, so that if we have $T_\text{off}$ seconds of data then we have $N=T_\text{off} / T_\text{on}$ segments, where $T_\text{on}$ is the length of the on-source. These segments are called the \textit{off-trials}. Using the same criteria as the for the on-source, we find the loudest trigger in each off-trial. As each off-trial is assumed to only contain noise, the FAP of the on-source trigger is the fraction of off-trials that have a louder trigger than the on-source, i.e. the probability that noise would produce a trigger with a reweighted SNR louder than the on-source. 
+
+This process alone is only capable of achieving a FAP of $10^{-3}$ [\textbf{Cite Andrew's paper}] as there is not enough off-trials to claim a lower FAP. This is low enough to reject a signal hypothesis, but not low enough to claim a detection, which requires a FAP of less than $10^{-5}$ [\textbf{Cite Andrew again}]. One way to get around this would be to use a longer off-source, but as detector noise is not stationary, it is possible that this extra off-source data would have different properties to the time of the GRB. It would also significantly increase the computational time required to complete the analysis. 
+
+To find a lower FAP, the off-source data from each detector is time-shifted relative to the other detectors in the network and the data is then reanalysed. The time-shifts are longer than the light travel time between the detectors in the network and also longer than the duration of a typical glitch (less than one second), so that triggers in the time shifted data are unlikely to appear coherently.  
+
+There are two types of time shifting. The first is call \textit{short slides} and the other \textit{long slides}. The difference between them stems from the fact that PyGRB analyses data in segments of 128s [\textbf{Is this still true after the rewrite}]. Short slides refers to when only the data within a segment is time shifted. To be precise, in a HLV analysis, the Hanford data is not shifted, the Livingston data is shifted in increments of 6s, and the Virgo data is shifted in increments of 12 seconds. Short slides do not require the data to be matched filtered again, as the time shift happens after the filtering step, so only the network statistics must be recalculated. This means short slides are computationally cheap and can allow for a FAP as low as $10^{-4}$. Long slides refers to when the segments themselves are shifted relative to one another. This requires the matched filtering to be redone, as the matched filter time series is not saved when moving to the next segment for analysis. This makes long slides much more computationally expensive than short slides. However, short slides can be done on top of the long slides, so that just 10 long slides are needed to show that a trigger has a FAP$<10^{-5}$.
+
+It should be noted that our treatment of time slides assumes that each combination of time shifted data is statistically independent of the others. This is not true, as each combination of time shifted data is still the same data being analysed. 
+
+\begin{itemize}
+\item check segment length
+\item Are we still doing time slides the same way?
+\end{itemize}
+
+
+\subsection{Calculating Search Sensitivity}
+It is useful to estimate the sensitivity of our search to GWs around the time of an analysed GRB. This allows us to know the range to which we are sensitive to GWs in the direction of the GRB, and so rule out the possibility that the GRB was within that distance and producing GWs. 
+
+To do this, we inject simulated signals into the off-source data and see if PyGRB can find them. The injected signals are CBC waveforms drawn from three populations: BNS mergers, NS-BH systems with spins aligned with the angular momentum, and NS-BH systems with spins generically aligned. The injections are drawn from an astrophysically motivated distribution of distances, component masses and spins, and binary inclination. The NS mass distribution is a normal distribution with mean $1.4\textup{M}_\odot$ and standard deviation of $0.2\textup{M}_\odot$ [\textbf{refs in O2 GRB paper}] restricted to the $1\textup{M}_\odot-3\textup{M}_\odot$ range [\textbf{refs in O2 GRB paper}]. The NS spins magnitude is restricted to be less than the fastest observed pulsar spin, i.e. $\leq 0.4$ [\textbf{refs in O2 GRB paper}]. The BH masses are drawn from a normal distribution of mean $10\textup{M}_\odot$ with standard deviation of 6$\textup{M}_\odot$, restricted to the range $3\textup{M}_\odot-15\textup{M}_\odot$. The BH spin magnitudes are $\leq 0.98$, motivated by X-ray observations [\textbf{refs in O2 GRB paper}]. The injections are limited to have binary inclinations or $0^\circ-30^\circ$ or $150^\circ-180^\circ$, as the opening angle for a CBC powered GRB is expected to be less than $30^\circ$. 
+
+We quantify the sensitivity of the search using the $50\%$ and $90\%$  exclusion distance. This is the distance at which $50\%$ and $90\%$ of the injected signals are recovered with a greater reweighted SNR than the most significant trigger in the on-source. 
+
+
+
 \section{O2 PyGRB Search} 
+
+
+
 \begin{itemize}
 \item GRB sample
 \begin{itemize}
@@ -626,7 +753,7 @@ Another way to think of the difference between coherent and coincident SNR is in
 
 
 \chapter{Machine Learning for GW Astronomy}
-\section{\label{intro}Introduction}
+\section{\label{MLintro}Introduction}
 % LIGO and virgo operate a network of ifos, looking for GWs. Detected BBH and BNS. Other sources have unknown WF morphology due to poorly understood physics of the sources. Hence, we need unmodelled searches. 
 The Laser Interferometer Gravitational Wave Observatory (LIGO) and Virgo collaborations operate ground-based Gravitational Wave (GW) detectors. They have detected signals of astrophysical origin, including the merger of a Binary Neutron Star (BNS) system and multiple Binary Black Hole (BBH) merger signals. As these sources have a known signal morphology, they can be found using a highly sensitive matched-filter search, as discussed in chapter \ref{CBC search}. But some of the most interesting possible sources, such as core collapse supernova, do not have a known waveform morphology. For this reason, it is important to develop unmodelled searches as well. 
 

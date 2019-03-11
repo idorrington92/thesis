@@ -40,7 +40,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.2}Core Collapse}{8}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.1.3}Other Sources}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}GRB Detectors}{9}}
-\newlabel{GRB detectors}{{3.2}{9}}
+\newlabel{sec:grb detectors}{{3.2}{9}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.3}GRB Gravitational Wave Searches}{9}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.1}Modelled search for CBCs}{9}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.3.2}Unmodelled Search}{9}}
@@ -49,8 +49,8 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{CBC search}{{4}{11}}
-\newlabel{CBCintro}{{4.1}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.1}Introduction}{11}}
+\newlabel{CBCintro}{{4.1}{11}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.2}PyCBC overview}{11}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Matched Filter Search}{12}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Consistency Checks}{12}}
@@ -91,47 +91,54 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.10}Event Significance}{22}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {4.3.11}Calculating Search Sensitivity}{23}}
 \@writefile{toc}{\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{24}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Improvements to PyGRB}{24}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.6}Future Plans}{24}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{25}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}GRB sample}{24}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Results}{24}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces \textbf  {P-value for each GRB.} This is the p-value distribution for the 41 GRBs other than GRB170817A. The GRBs with no trigger in the onsource window have upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of offsource trials that also had no trigger. The distribution lays within the $2\sigma $ range for a beta distribution, shown by the upper and lower dotted lines. }}{25}}
+\newlabel{fig:pvalue}{{4.2}{25}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces \textbf  {Cumulative exclusion distance.} This is the cumulative $90\%$ exclusion distance for every GRB analysed by PyGRB except GRB170817A. The $90\%$ exclusion distance is the distance at which $90\%$ of injected simulated signals are recovered with a greater coherent SNR than the loudest trigger in the onsource. }}{26}}
+\newlabel{fig:ex dist}{{4.3}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.5}Improvements to PyGRB}{26}}
+\newlabel{sec:pygrb improvements}{{4.5}{26}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.6}Future Plans}{27}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{28}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{MLintro}{{5.1}{25}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{25}}
-\newlabel{xtriggers}{{5.2}{25}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Xpipeline}{25}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces \textbf  {Xpipeline Time-Frequency Map} This figure shows a time-frequency map from Xpipeline for a $1.4-10M_\odot $ NSBH merger. The top figure shows the $E_+$ energy and the bottom figure shows the top 1\% of pixels. }}{26}}
-\newlabel{fig:tfmap}{{5.1}{26}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{26}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces \textbf  {Xpipeline Cut} This figure shows Xpipeline making a cut to eliminate many spurious signals. }}{27}}
-\newlabel{fig:xcuts}{{5.2}{27}}
-\newlabel{det_output}{{5.1}{27}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{29}}
-\newlabel{Esl}{{5.22}{29}}
-\newlabel{projOp1}{{5.23}{29}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Null Energy}{30}}
-\newlabel{Enull}{{5.25}{30}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{30}}
-\newlabel{glitch energy}{{5.27}{31}}
-\newlabel{GW energy}{{5.28}{31}}
-\newlabel{cut}{{5.29}{31}}
-\newlabel{ML}{{5.3}{31}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Machine Learning}{31}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{31}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces An example of MVA training data. Each event has a label and several attributes.}}{32}}
-\newlabel{table:1}{{5.1}{32}}
-\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces The attributes used by the machine learning classifier.}}{33}}
-\newlabel{coherent energy table}{{5.2}{33}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{34}}
-\newlabel{bdt}{{5.3.2}{34}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces \textbf  {A decision tree example} To determine if a trigger is a signal or noise event the tree makes a series of cuts on the attributes x[N]. If the inequality in a node is true, then the next node is the branch to the left. Otherwise the next node is the one to the right. }}{35}}
-\newlabel{fig:tree}{{5.3}{35}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{35}}
-\newlabel{data-preprocessing}{{5.3.3}{35}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces \textbf  {Visualising the Classifier} In the bottom plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the top plot. As you can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the xpipeline cut shown in fig.5.2\hbox {}. }}{36}}
-\newlabel{fig:mvacuts}{{5.4}{36}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{38}}
-\newlabel{opt}{{5.3.4}{38}}
-\@writefile{toc}{\contentsline {subsubsection}{Training Set}{38}}
-\@writefile{toc}{\contentsline {subsubsection}{BDT Parameters}{39}}
-\@writefile{toc}{\contentsline {subsubsection}{Result of Optimisation}{40}}
+\newlabel{MLintro}{{5.1}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Introduction}{28}}
+\newlabel{xtriggers}{{5.2}{28}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Xpipeline}{28}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces \textbf  {Xpipeline Time-Frequency Map} This figure shows a time-frequency map from Xpipeline for a $1.4-10M_\odot $ NSBH merger. The top figure shows the $E_+$ energy and the bottom figure shows the top 1\% of pixels. }}{29}}
+\newlabel{fig:tfmap}{{5.1}{29}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{29}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces \textbf  {Xpipeline Cut} This figure shows Xpipeline making a cut to eliminate many spurious signals. }}{30}}
+\newlabel{fig:xcuts}{{5.2}{30}}
+\newlabel{det_output}{{5.1}{30}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{32}}
+\newlabel{Esl}{{5.22}{32}}
+\newlabel{projOp1}{{5.23}{32}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Null Energy}{33}}
+\newlabel{Enull}{{5.25}{33}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{33}}
+\newlabel{glitch energy}{{5.27}{34}}
+\newlabel{GW energy}{{5.28}{34}}
+\newlabel{cut}{{5.29}{34}}
+\newlabel{ML}{{5.3}{34}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Machine Learning}{34}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{34}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.1}{\ignorespaces An example of MVA training data. Each event has a label and several attributes.}}{35}}
+\newlabel{table:1}{{5.1}{35}}
+\@writefile{lot}{\contentsline {table}{\numberline {5.2}{\ignorespaces The attributes used by the machine learning classifier.}}{36}}
+\newlabel{coherent energy table}{{5.2}{36}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{37}}
+\newlabel{bdt}{{5.3.2}{37}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces \textbf  {A decision tree example} To determine if a trigger is a signal or noise event the tree makes a series of cuts on the attributes x[N]. If the inequality in a node is true, then the next node is the branch to the left. Otherwise the next node is the one to the right. }}{38}}
+\newlabel{fig:tree}{{5.3}{38}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{38}}
+\newlabel{data-preprocessing}{{5.3.3}{38}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces \textbf  {Visualising the Classifier} In the bottom plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the top plot. As you can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the xpipeline cut shown in fig.5.2\hbox {}. }}{39}}
+\newlabel{fig:mvacuts}{{5.4}{39}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{41}}
+\newlabel{opt}{{5.3.4}{41}}
+\@writefile{toc}{\contentsline {subsubsection}{Training Set}{41}}
+\@writefile{toc}{\contentsline {subsubsection}{BDT Parameters}{42}}
+\@writefile{toc}{\contentsline {subsubsection}{Result of Optimisation}{43}}

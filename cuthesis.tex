@@ -293,7 +293,7 @@ Can cite soaulson and the noises paper
 \chapter{Gamma-Ray Bursts} \label{chap:GRBs}
 \begin{itemize}
 \item History of GRB search
-\item What GRBs are, short long, etc. with population plot
+\item What GRBs are, short, long, and ambiguous. with population plot
 \item Summary of physics that can be done with GW+GRB astronomy, as motivation
 \item Chapter summary
 \end{itemize}
@@ -319,7 +319,7 @@ Can cite soaulson and the noises paper
 \item Others
 \end{itemize}
 
-\section{GRB Detectors} \label{GRB detectors}
+\section{GRB Detectors} \label{sec:grb detectors}
 \begin{itemize}
 \item IPN
 \item Swift
@@ -361,19 +361,13 @@ Can cite soaulson and the noises paper
 
 
 \chapter{The Compact Binary Coalescence Search} \label{CBC search}
-\section{\label{CBCintro}Introduction}
-\begin{itemize}
-\item CBC search for GRBs
-\item For short GRBs
-\item Integrating into PyCBC
-\item Coherent
-\item Targeted - Better sensitivity but slower search method
-\item Matched filter
-\item Detected BNS with FAP of XX
-\item Used in O1 and O2 - no other detections
-\item Chapter summary
-\end{itemize}
+\section{Introduction}\label{CBCintro}
+In this chapter we describe PyGRB [\textbf{cite all the papers}], a matched filter search for compact binary coalescence (CBC) signals associated with gamma ray bursts (GRBs). Only short GRBs (those with $T_{90}<2s$) are expected to have a CBC progenitor, as discussed in chapter \ref{chap:GRBs}, so PyGRB is used to search for GWs associated with any short or ambiguous (those with $T_{90}<2s$) length GRB. 
 
+It is integrated into the PyCBC pipeline [\textbf{cite pycbc technical paper}], which is an all-time, all-sky search for CBC signals. As PyGRB is a targeted search (i.e. the time and direction of the GW candidate is known), we can use more powerful data analysis techniques in a reasonable amount of computer time. 
+
+In this chapter we will begin with an overview of the PyCBC pipeline, as this is the foundation that PyGRB is built upon. In section \ref{sec:PyGRB} we discuss the unique features of PyGRB that make it more sensitive to GRB signals than the all-sky, all-time search. Then we discuss the findings of PyGRB in the second advanced LIGO and advanced Virgo observing run. 
+In section \ref{sec:pygrb improvements} we will discuss some recent improvements in speed and sensitivity to the PyGRB pipeline. We then end this chapter with a discussion on future improvements that can be made to PyGRB. 
 
 \section{PyCBC overview}
 \begin{itemize}
@@ -721,24 +715,40 @@ We quantify the sensitivity of the search using the $50\%$ and $90\%$  exclusion
 
 
 \section{O2 PyGRB Search} 
+From November 2016 to August 2017, the Advanced LIGO detectors were in their second observing run, O2, with the Advanced Virgo joining on August 1st 2017. During this time, PyGRB was used to search for GW signals associated with short and ambiguous GRBs. These results were reported in [\textbf{cite O2 GRB paper}], and we summarise the findings here. We begin by discussing the sample of GRBs chosen to analyse. Then we summarise the findings of the search. 
+
+\subsection{GRB sample}
+The GRBs analysed were those detected Swift BAT, Fermi GBM, and the IPN (see section \ref{sec:grb detectors} for more details on these). There were in total 242 bursts detected by Swift and Fermi, and 52 detected by the IPN, with many GRBs appearing in both catalogues. Only short GRBs ($T_{90}<2s$) and ambiguous GRBs ($2s<T_{90}<4s$) were analysed using PyGRB, as long GRBs are not expected to have a CBC progenitor. At least 1664s of data is required in at least one detector for PyGRB to correctly estimate the background. Any GRB occurring at a time when this requirement could not be met was not analysed. This left 42 short/ambiguous GRBs that could be analysed by PyGRB.
 
 
+\subsection{Results}
+The analysis found one GW signal, GW170817. It was associated with GRB 170817A and had been previously reported [\textbf{cite BNS paper}]. The p-value for this event is $9.38 \times 10^{-6}$ and the coherent SNR is 31.26 \textbf{do we want to explain data cleaning and gating?} [\textbf{cite O2 GRB}]. No other GWs were detected in conjunction with any other GRBs. Apart from GW170817, there were six GRBs with a p-value of less than 0.1. These candidate events had further data quality checks and were analysed using lalInference [\textbf{cite Veitch like in GRB paper}], a coherent Bayesian parameter estimation pipeline, to determine if the signal could be a subthreshold signal or if it was more likely to be background noise. No evidence was found to of a subthreshold signal. 
 
-\begin{itemize}
-\item GRB sample
-\begin{itemize}
-\item Fermi, swift, IPN, others?
-\item Need enough science quality data for off source
-\item Can analyse single detector data
-\end{itemize}
-\item Template bank used
-\item No new detections (just BNS) - state BNS p-value
-\item median exclusion distances
-\end{itemize}
+In figure \ref{fig:pvalue} we have plotted the p-value for the remaining 41 GRBs analysed after the removal GW170817 from the sample. For GRBs with no trigger in the onsource window, we provide upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of offsource trials that also had no trigger. The distribution lays within the $2\sigma$ range for a beta distribution, shown by the upper and lower dotted lines. The population consistency with a no-signal hypothesis was calculated using the weighted binomial test outlined in [\textbf{cite abadie et al}]. This test considers the lowest $5\%$ of p-values in the population, weighted by their prior probability of detection based on the time and sky position of the GRB. This analysis did not include GW170817 as it is a confirmed detection. The combined p-value for the search is 0.3. Thus we find no significant evidence for a population of subthreshold signals.  
 
-\section{Improvements to PyGRB}
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{pygrb_pvalue.png}
+\end{center}
+\caption{\textbf{P-value for each GRB.} This is the p-value distribution for the 41 GRBs other than GRB170817A. The GRBs with no trigger in the onsource window have upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of offsource trials that also had no trigger. The distribution lays within the $2\sigma$ range for a beta distribution, shown by the upper and lower dotted lines.  }
+\label{fig:pvalue}
+\end{figure}
+
+As GRB170817A is known to have originated in NGC 4993 [\textbf{cite paper}], the distance to this GRB is approximately 43Mpc. For the other GRBs in our sample we calculated the $90\%$ exclusion distance. This is the distance at which $90\%$ of injected simulated signals are recovered with a greater coherent SNR than the loudest trigger in the onsource. The $90\%$ exclusion distances are plotted in figure \ref{fig:ex dist}. The median $90\%$ exclusion distance for the BNS waveform is 80Mpc, for an NS-BH waveform with generic spin is 105Mpc, and for NS-BH with aligned spin is 144Mpc. These values are slightly lower than in O1, which were 90Mpc, 139Mpc, and 150Mpc respectively, though this seems to just be due to chance as we analyse a relatively small number of GRBs. 
+
+\begin{figure}
+\begin{center}
+\includegraphics[width=0.8\linewidth]{pygrb_exclusion_distance.png}
+\end{center}
+\caption{\textbf{Cumulative exclusion distance.} This is the cumulative $90\%$ exclusion distance for every GRB analysed by PyGRB except GRB170817A.  The $90\%$ exclusion distance is the distance at which $90\%$ of injected simulated signals are recovered with a greater coherent SNR than the loudest trigger in the onsource. }
+\label{fig:ex dist}
+\end{figure}
+
+\FloatBarrier
+\section{Improvements to PyGRB} \label{sec:pygrb improvements}
 \begin{itemize}
 \item Made faster -- matched filter engine and post processing
+\item allows new PyCBC stuff to be used
 \item Re-optimised the cuts and reweighted snr
 \item Ran on GRB with bigger sky grid than was previously possible or ran 170817 to be 5 sigma
 \end{itemize}

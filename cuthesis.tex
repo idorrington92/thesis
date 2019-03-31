@@ -24,6 +24,7 @@
 \usepackage{amssymb}
 \usepackage{placeins}
 
+
 \newcommand{\mn}{_{\mu\nu}}
 \newcommand{\fs}{\text{ .}}
 \newtheorem{theorem}{Theorem}[section]
@@ -42,6 +43,8 @@
          Waves}
 \author{Iain Dorrington}
 \date{16th May 2019}
+
+\usepackage{hyperref}
 
 \begin{document}
 
@@ -99,7 +102,7 @@
 \end{itemize}
 
 
-\chapter{Gravitational Wave Astronomy in a Nutshell} 
+\chapter{Gravitational Wave Astronomy in a Nutshell} \label{chap: gw bg}
 \section{General Relativity}
 
 Christoffel Symbol
@@ -295,22 +298,161 @@ Can cite soaulson and the noises paper
 \item History of GRB search
 \item What GRBs are, short, long, and ambiguous. with population plot
 \item Summary of physics that can be done with GW+GRB astronomy, as motivation
-\item Chapter summary
 \end{itemize}
-\section{GRB Sources}
-\subsection{Compact Binary Coalescence}
+
+\section{The History of Gamma-ray Burst Astronomy} \label{sec:GRB history}
+The history of Gamma-ray Burst astronomy, from the first unexpected detection to the coincident detection of GRB170817A and GW170817, is a fascinating one. In this section we will discuss the key discoveries of GRB astronomy in their historical context. These discoveries are the motivation of GW searches associated with GRBs, and were used to develop the GW searches discuss in chapters \ref{chap: CBC} and \ref{chap: mva}.  
+
+\subsection{Cold War Tension and an Unexpected Discovery} \label{sec:cold war}
+The partial nuclear test ban treaty, agreed between the USA and the Soviet Union in 1963, banned atmospheric, underwater, and outer space nuclear weapon tests. This created a technical challenge: How to enforce the ban? Seismic sensors could be used for on-Earth tests, but would not work for outer space tests. The solution was to look for the flash of gamma-rays produced in the first milliseconds of a nuclear explosion. Thus Vela and Kosmos gamma-ray detecting satellites were produced by the USA and Soviet Union respectively. These satellites contained only rudimentary gamma ray detectors, and each individual satellite was not capable of localisation. Using time delay and Earth blocking information, some localisation was possible. 
+
+These satellites started to detect brief bursts of gamma-rays, which were first reported in 1973. These events did not look like those expected from a nuclear test, and did not seem to be coming from the Earth or any nearby astronomical bodies such as the moon. It appeared a new, high-energy astronomical phenomenon had been discovered. 
+
+This phenomena, called \textit{Gamma-ray Bursts} (GRBs), could appear and fade away in as little as a milliseconds, and could be as brighter than the rest of the gamma-ray sky combined. The brevity of these events placed constraints on the size of the source, because the crossing time for a region cannot be less than the light travel time, and if the GRB lasts 1ms then the light travel time is just 300km. This limits the potential candidates down to compact objects such as neutron stars and black holes, or to small regions of larger objects, such as the core of a massive star. Another important feature of GRBs is that they only occur once. This suggests a source that is destroyed when the GRB is produced. To narrow down the number of possible sources for GRBs, more measurements were needed. 
+
+\subsection{BATSE and the Galactic/Extra-galactic Controversy}
+Most early GRB detectors could not localise particularly well. It could be shown that GRBs were not coming from any of the planets in the solar system, or from the galactic center, but otherwise the location of GRB sources was completely unknown. In particular, it was not clear whether GRBs were coming from galactic or extra-galactic sources. Answering this question was an important step towards identifying the origin of GRBs, as extra-galactic sources would require much more energy than galactic sources to produce the same brightness GRB. 
+
+Better sky localisation of GRBs would help to answer this question. If GRBs mostly occur on the galactic plane, that would be strong evidence that they were of galactic origin. Alternatively, if they were clustered around nearby galaxies, then that would suggest those galaxies are their origin. If, however, they are distributed isotropically on the sky, then it would be likely that they were coming from cosmological distances. It should be noted that there are other ways that GRBs could be isotropically distributed. If they are only detectable to a few hundred parsecs, they would be entirely within the disc of the galactic plane and so would also be isotropically distributed. Alternatively, as neutron stars receive a `kick' during their formation, they could form a corona around the galaxy.
+
+Better sky localisation was soon achieved with the launch of the Burst and Transient Source Experiment (BATSE) on the Compton Gamma-ray Observatory. During it's mission, BATSE detected a large number of GRBs, and determined their sky location. For the first time their was a statistically significant number of well localised GRBs. In figure \ref{fig:batse grb fluence} we can see the sky location of every GRB detected by BATSE, together with the fluence\footnote{Fluence is the time integral of the flux. Essentially a measure of the total detected energy.} of that GRB. This plot shows that GRBs are isotropically distributed over the sky. While this didn't completely rule out a galactic origin, it did make cosmological models far more likely. 
+
+The BATSE data also provided evidence that GRBs were uniformly distributed and that we were seeing a limited horizon, beyond which GRBs became much harder to detect. This evidence came in the form of a $\log N - \log P$ distribution, where $N$ is the number of detected GRBs and $P$ is the peak flux\footnote{Some times the $\log N - \log S$ distribution is preferred, with $S$ being the given flux. The essence of the plots is the same.}. If GRBs are uniformly distributed in space then the number of GRBs out to a given distance increases as the cube of that distance. However, peak flux from the GRBs would decrease with the inverse square of the distance. Hence, plotting  $\log N$ against $\log P$, we expect to find a gradient of approximately $-3/2$. Any short fall from this expected distribution suggests that we have reached a horizon for detectable GRBs. In figure \ref{fig:logn - logp} we see the $\log N - \log P$ distribution for BATSE. The gradient for high energy GRBs is the expected $-3/2$ but there is a shortfall at low energies: There is a limited distance to which GRBs can be viewed. Unfortunately this data does not inform us of where that horizon is. It could be within our galaxy, or it could be the horizon of the universe.   
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{batse_grbs_fluence.jpg}
+\end{center}
+\caption{\textbf{BATSE GRB Fluence.} This plot shows the fluence (given by the colour of each point) and the sky position of each GRB detected by the BATSE mission. \textbf{cite \url{https://heasarc.gsfc.nasa.gov/docs/cgro/images/cgro/2704_grbs_fluence.jpg}}}
+\label{fig:batse grb fluence}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{logN-logP.png}
+\end{center}
+\caption{\textbf{LogN-logP for BATSEVPO.}  \textbf{cite \url{https://www.researchgate.net/figure/Distribution-log-N-log-P-for-a-combined-set-of-BATSEPVO-data-The-distributions-match_fig5_242389649}}}
+\label{fig:logn - logp}
+\end{figure}
+
+
+\subsection{The Long and Short of Gamma-ray Bursts}
+Another important probe into the origins of GRBs came from their duration. As every burst has different properties\footnote{For example, some bursts have multiple flares.} the duration of a GRB is not trivially defined. The measure most commonly used is the $T_{90}$, the time over which $90\%$ of the total fluence is recorded, although the $T_{50}$ is another popular choice. 
+
+In figure \ref{fig:t90 vs count}, we can see a histogram showing the number of bursts with a given $T_{90}$ for the BATSE data. This plot shows that there are two populations of GRBs, the first with a $T_{90}$ value of about 0.5s and the second with a $T_{90}$ of about 30s. It is also clear from this data that the longer population of GRBs are detected far more often. Plotting the spectral hardness of the BATSE GRBs against $T_{90}$, as has been done if figure \ref{fig:t90 vs hardness}, we see that the shorter GRBs also have a harder spectrum than the longer GRBs. This means short GRBs emit more high energy photons than long GRBs. Because of these two properties of the two populations, they are known as \textit{short-hard} and \textit{long-soft} GRBs. It is common to use the criteria that short GRBs are those that are less than 2s, and long GRBs are longer than 4s, with those inbetween being called \textit{intermediate} GRBs.
+
+It should be mentioned that while $T_{90}$ is a very useful tool, it is instrument dependent. This is because more sensitive instruments will track GRBs for longer, and bursts have different durations in different energy bands. Also, the $T_{90}$ is measured in the detector frame, and not the rest frame of the burst, which would make a GRB at a redshift of $z$ appear a factor of $(1+z)$ longer. For these reasons, using the $T_{90}$ to classify short/long GRBs should only be considered approximate.  
+
+As a final note on GRB durations, it should be mentioned that there is some evidence that there may be intermediate and ultra-long populations of GRBs. It is an open question whether these GRBs represent new populations of GRBs or are part of the long and short GRB populations. As these are still contentious, we do not consider them further. 
+
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{t90_vs_count.png}
+\end{center}
+\caption{\textbf{T90 vs count.} Here we plot the $T_{90}$ values against the the count of GRBs for the BATSE mission as of 1993. \textbf{cite identification of two classes of gamma ray bursts} \textbf{what is the difference between the dotted line and the solid line-read original paper.}}
+\label{fig:t90 vs count}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{t90_vs_hardness.png}
+\end{center}
+\caption{\textbf{T90 vs the spectral hardeness ratio.} Here we plot the $T_{90}$ values against the spectral hardness ratio for the BATSE 4B catalog. The spectral hardness ratio is the energy in the 100-300keV range divided by the energy in the 50-100keV range. \textbf{cite \url{https://warwick.ac.uk/fac/sci/physics/research/astro/people/levan/grb$_$book/draft$_$master.pdf} }}
+\label{fig:t90 vs hardness}
+\end{figure}
+
+\subsection{The Long GRB-Supernova Connection}
+Important clues had been found into the origin of GRBs, but still no one had found any trace of a GRB after the prompt emission (the initial flash of gamma-rays). The search area provided by GRB detectors at were too large for ground based telescopes have a realistic chance of finding the source of the GRB, though attempts were made. This changed with the launch of the BeppoSAX satellite in 1996. BeppoSAX was able to localise much better than BATSE, and astronomers were soon able to find GRB afterglows. This allowed accurate measures of redshift, which finally confirmed beyond all doubt that GRBs were originating at cosmological distances, as had been suspected.  
+
+As more afterglows were found, trends began to appear. Long GRBs tended to occur directly on host galaxies, not randomly in space. Spectroscopy of these galaxies often found the presence of emission lines excited by star formation. No long GRB has been found in a non-starforming galaxy. The host galaxies also tended to be relatively faint. Low luminosity (i.e. low stellar mass) suggests galaxies have a low metallicity [\textbf{cite someone}], and spectographic studies confirmed this. That long GRBs originate from star forming galaxies with low metallicity raises the possibility that long GRBs are caused by the collapse of the massive stars that tend to inhabit these kinds of galaxies. 
+
+The strongest evidence of a supernova connection came with the detection of GRB 980425. This GRB was exceptionally close; At just $z=0.0085$ it is still the closest GRB ever detected. Followup observations found a rising supernova, SN 1998bw. It was a very bright supernova, about ten times brighter than normal. It also showed no hydrogen or helium emission lines, making this a type Ic supernova. It seemed highly unlikely that the coincident GRB and supernova were unrelated. Questions remained though, because this GRB was exceptionally faint. Was it typical of other long GRBs? 
+
+After GRB 980425, searches were undertaken for other bright supernova afterglows associated with long GRBs. Not only were many found, but they were shown to have similar spectra to GRB 980425. In particular, GRB 030329 was another nearby GRB, at redshift $z=0.17$, which had very detailed followup. It was 1000 times brighter than GRB 980425, but showed the same spectral features. With this discovery, the consensus grew that long GRBs were caused by type Ic supernova.
+
 \begin{itemize}
-\item BNS and NSBH
-\item Short GRBs
-\item GW170817
-\item Inspiral, merger, ring down
-\item GRB cause (accretion powered GRB etc.)
+\item From this a consensus built that long GRBs were caused by broad lined (i.e. high velocity) type 1c SNe. \textbf{check understanding of broad lined} 
 \end{itemize}
+
+
+\subsection{The Short GRB-Compact Binary Connection}
+Much had been learned about long GRBs by studying their afterglows, but no afterglow had been found for short GRBs. The problem was that short GRBs faded rapidly, making followup far more difficult. Rapid followup was needed, and so in 2004 the Swift satellite was launched (see section \ref{sec:grb detectors}). Swift was able to autonomously followup a GRB with X-ray, UV, and optical measurements within minutes, just what was needed for short GRB followup. 
+
+The first detected short GRB afterglow was that of GRB 050509B. It was a faint X-ray afterglow that faded quickly, but it was localised well enough for ground based telescopes to determine the host galaxy at a redshift of $z=0.225$. The afterglow and host galaxy were very different to those of long GRBs: The host galaxy was a massive elliptical galaxy which showed no evidence of star forming, there was also no evidence of a supernova, and the GRB took place far away from the galactic core. With more short GRB afterglow detections it became clear that short GRBs occur much closer than long GRBs, on average at about $z=0.5$. Also they can occur anywhere in their host galaxy, and sometimes are so far from any galaxy that determining the host is not possible, these are called \textit{hostless} GRBs.
+
+All of these observations are consistent with the theory that short GRBs are caused the merger of a neutron star with either another neutron star or a black hole. The two objects would form in a binary system and slowly inspiral due to the loss of energy through gravitational wave emission, until they finally merge. According to this theory, it is at the time of merger that the GRB is emitted. For neutron star - black hole (NS-BH) mergers, the black hole must be relatively low mass (less than $\sim 10M_\odot$)[\textbf{cite paper}], otherwise the neutron star will be swallowed whole by the black hole and there will be no gamma-ray emission. These kinds of inspirals can take an incredibly long time to merge.\footnote{Some galactic binaries have merger times that exceed the age of the universe.} This explains their presence in elliptical galaxies that have long since stopped star forming. It is also expected that these binary systems would receive a \textit{kick} in their formation, due to the supernovas that formed the components of the binary. This kick explains why so many short GRBs occur far from the center of their host galaxy. 
+
+It is also predicted that neutron star mergers will produce \textit{kilonova}. A kilonova is, much like a supernova, is caused by the ejection of radioactive material. Unlike supernovas, which are powered primarily by the decay of the iron group of elements, kilonovas are powered by the decay of the heavier, r-process elements. These elements are neutron rich, which is why neutron star mergers are strong candidates for their production. These elements are also opaque to optical wavelengths, and so emit most of their light in the infrared. They also tend to be much fainter, making followup much more difficult. Despite this difficulty, a kilonova was eventually observed in conjunction with GRB 130603B, a short GRB. This was the strongest evidence yet that neutron star mergers were the progenitors of short GRBs.
+
+\subsection{Gravitational Waves}
+As discussed in chapter \ref{chap: gw bg}, compact binary coalescences (CBCs) are known to be strong emitters of GWs. This made short GRBs a promising target for GW astronomy. On the 17th of August 2017, the Fermi GRB detector (see section \ref{sec:grb detectors}) detected a short GRB just two seconds after the LIGO and Virgo observatories detected a CBC GW signal (see figure \ref{fig:grb gw 170817}). Comparing the sky localisation of the GW detector network and the Fermi GRB detector, a smaller sky patch was formed that must contain the GRB. Followup by ground based observatories quickly identified a bright object by the galaxy NGC 4993 [\textbf{cite detection papers}]. This object had not been there when the same galaxy had been previously observed (see figure \ref{fig:NGC4993}), and this galaxy was at the right distance as determined from the GW signal. Further study revealed the new object to be a rapidly evolving kilonova, confirming the theory that short GRBs are caused by neutron star mergers. 
+
+\begin{itemize}
+\item Should I go into more detail about what was learned from the BNS?
+\item Structured jet?
+\item blue to red spectrum?
+\item Heavy elements? 
+\end{itemize}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{grb-gw-170817.jpg}
+\end{center}
+\caption{\textbf{GRB170817A and GW170817.} Here we see that the strain data from GW170817 in the bottom panel with Fermi GRM curve in the 10-50keV range in the top panel, the 50-300keV range in the second panel, and the SPI-ACS data in the third plot. \textbf{cite Gravitational Waves and Gamma-Rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A} }
+\label{fig:grb gw 170817}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{NGC4993.jpg}
+\end{center}
+\caption{\textbf{NGC 4993.} Image of NGC 4993 taken in 1992 (left) and August 18th 2017 (right). \textbf{cite https://www.nature.com/articles/nature24291/figures/2} }
+\label{fig:NGC4993}
+\end{figure}
+
+
+
+\section{GRB Progenitors}
+In section \ref{sec:GRB history} we saw some of the evidence for short GRBs being produced by neutron star mergers and long GRBs being produced by core collapse supernova. In this section we will go into more detail about how these progenitors produce a GRB. We will start by discussing the \textit{Fireball model}, which only assumes the source of the GRB is high mass, low volume, and emits a large amount of energy to describe how such bright GRB are possible. The fireball model requires a central engine to power the GRB, and we discuss possible central engines for short GRBs and long GRBs respectively in the following sections.   
+
+
+\subsection{The Fireball Model}
+The \textit{fireball shock model} was developed in the 1990s. It attempted to explain some of the features of GRBs by focusing on what can be learned directly from the GRB signals, making minimal assumptions of the source of the energy, called the \textit{central engine}. At this time the evidence was building that GRBs originated at cosmological distances. At such great distances the inferred energy emitted at the source is far higher, as much as a solar mass if the energy is emitted isotropically. It was also known that GRB sources must be small, at most hundreds of kilometers across (see section \ref{sec:cold war}). Assuming that all GRBs are small and highly energetic, as the evidence suggests, restricts the number of phenomena that could cause a GRB. This was the first step towards developing the fireball shock model. 
+
+The next was to notice that photons emitted by GRBs are above the pair production threshold ($E=0.551$MeV), and so should have created electron-positron pairs rather than gamma-rays. This problem is solved by assuming that the energy released drives a relativistic expansion from the source. In this case the energy of the photons in their rest frame is inversely proportional to the bulk Lorentz factor $\Gamma$ of the outflow. The energy released must be high enough, and the amount of accelerated matter low enough, for a Lorentz factor of hundreds. But we already know that GRBs emit a vast amount of energy, so this consistent with what we already know about GRBs. 
+
+The final clue needed for the fireball shock model to note that GRB light curves are highly variable, with some showing multiple peaks (see figure \ref{fig:grb lightcurves}). This suggests that the energy source itself is variable. If the energy is varying with time, then the Lorentz factor at different times is also going to vary. As faster moving matter catches up with slower moving matter, shocks will be created. It is these shocks that are thought to be the source of the GRB. 
+
+According to this theory, the relativistic ejecta interacting with the matter surrounding the system is the cause of the afterglow.
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{grb_lightcurves.png}
+\end{center}
+\caption{\textbf{BATSE gamma-ray light curves.}  \textbf{cite http://inspirehep.net/record/1358907/plots} }
+\label{fig:grb lightcurves}
+\end{figure}
+
+\begin{itemize}
+\item Amount of energy and distance implies beaming (caused by relativistic effects)
+\end{itemize}
+
+\subsection{Compact Binary Coalescence}
+As mentioned previously, short-hard GRBs are thought to be powered by the CBC involving at least one neutron star, and a neutron star or black hole as the other component of the binary. With the detection of GW170817 in conjunction with GRB170817A, we now know this is the case for at least some short-hard GRBs. As compact binary systems are known to be good emitters of GWs, there is a strong case for following a short GRB detection with a dedicated GW search. This search is discussed in section \ref{sec:PyGRB}. In this section we discuss the physics of the GRB. 
+
+
+\begin{itemize}
+\item GRB cause (accretion powered GRB etc.)
+\item measured opening angle is about 10 to 20 degrees
+\end{itemize}
+
 \subsection{Core Collapse}
 \begin{itemize}
 \item GRB cause
 \item long GRBs
 \item Unknown signal morphology due to lack of knowledge about cause of core collapse as well as chaotic nature of the phenomenon
+\item measured opening angle is less than 5 degrees
 \end{itemize}
 \subsection{Other Sources}
 \begin{itemize}
@@ -319,48 +461,87 @@ Can cite soaulson and the noises paper
 \item Others
 \end{itemize}
 
-\section{GRB Detectors} \label{sec:grb detectors}
+\section{Gravitational Waves from GRBs}
 \begin{itemize}
-\item IPN
-\item Swift
-\item Fermi
+\item Short GRB time delay between GW and jet, [0,3]s for fireball model (2s for BNS)
+\item Time delay for long GRBs [-5,Tjet+5]s with Tjet happening [0,400]s after formation of neutron star
+\item Circular polarisaton - More detail on NSBH systems, like in Michal's thesis
 \end{itemize}
 
-\section{GRB Gravitational Wave Searches}
+\section{GRB Detectors} \label{sec:grb detectors}
+Most GRB detections have been come from three different sources: The Swift and Fermi space telescopes, and a network of satellites called the Interplanetary Network. In this chapter we discuss the characteristics of these three missions, focusing on the aspects that affect a followup search for gravitational waves: Sky coverage, source localisation, and sensitive energy range. 
+
+\subsection{Swift}
+The Swift satellite is named for its ability to autonomously repoint itself towards a GRB within 90 seconds. It has three instruments: The first is the \textit{Burst Alert Telescope} (BAT), the primary tool for GRB detection. It has a large field of view, approximately 2 steradians, and is highly sensitive in the 15-150keV energy range. The BAT can localise GRBs to within 1-4 arcminutes. The other two instruments are the \textit{X-ray Telescope} (XRT) and the \textit{UV/Optical telescope} (UVOT). These are used for followup observations of the GRB afterglow. They can also reduce the sky-error, XRT can localise to 3-5 arcseconds, and UVOT to 0.5 arcseconds \textbf{cite \url{https://swift.gsfc.nasa.gov/about_swift/}}. The UVOT is also used to determine the redshift of the GRB. To date, Swift has detected over 1000 GRBs, with approximately $10\%$ of these having $T_{90}<2s$ \textbf{cite \url{https://swift.gsfc.nasa.gov/archive/grb_table/stats/}}
+
+\subsection{Fermi}
+The Fermi Satellite [\textbf{cite \url{https://www.nasa.gov/content/fermi/overview}}] has two instruments: The first is the \textit{Large Area Telescope} (LAT), and the second is the \textit{Gamma-ray Burst Monitor} (GBM). The LAT is sensitive to higher energy photons (in the range 30MeV-300GeV), has sky coverage of  2 steradians, and can localise to within 1 arcminute of accuracy. The GBM is sensitive to lower energy photons (in the range 8keV-30MeV), is sensitive to a greater sky area that LAT (9.5 steradians), but cannot localise as well LAT (typically 10s or 100s of square degrees). The worse localisation makes EM followup difficult. 
+
+\subsection{The InterPlanetary Network}
+The interplanetary network (IPN) is a network of GRB detectors on spacecraft that are in low Earth orbit, eccentric Earth orbit, traveling to other planets, or orbiting other planets already. None of the spacecraft in the IPN are dedicated GRB detectors; They are individually unable to determine the sky position of a GRB and is not as sensitive as other GRB detectors. But the network as a whole acts as an all-time all-sky GRB monitor. And as the spacecraft are great distances apart, the network can triangulate sky position to within several arcminutes. The accuracy is greatly dependent on the number and position of the satellites that detect the GRB, with satellites at greater distances significantly improving the sky location error.
+
+
+
+\section{GRB Gravitational Wave Search Strategies}
+In chapters \ref{chap: CBC} and \ref{chap: mva}, we discuss in detail two search pipelines for the CBC and burst search respectively. It is useful before discussing these searches to give an overview of the general strategy when searching for GWs associated with GRBs. This will give context to later discussions on the details of the searches, and also to the following section on the astrophysics that can be learned from detections of GWs from GRBs. 
+
+\subsection{Triggered and Untriggered Searches}
+We can classify GW searches as being either \textit{triggered} or \textit{untriggered}. Untriggered searches will search all of the sky for all of the time when there is detector data, so they are also called all sky, all time searches. These can be further divided into groups depending on the amount of time they take to run. Some searches, for example PyCBC live [\textbf{cite paper}], are untriggered and low latency. They aim to find GW triggers and their sky position within minutes, allowing astronomers to followup the trigger. This is what happened for GW170817, which was detected in low latency, in coincidence with a Fermi GRB, and followed up by ground and space based observatories. High latency untriggered  searches, such as PyCBC [\textbf{cite pycbc paper}], work on much longer timescales, as long as months, but aim to achieve very high sensitivity with very low false alarm rates. These pipelines found most of binary black hole systems so far detected. 
+
+Triggered searches use sky location and time information from other messengers, such as a GRBs. These searches have the advantage of only needing to analyse a limited amount of data (as the trigger time is known) and being able to use information gleaned from the other messengers to restrict the search. For example, both long and short GRBs are suspected to emit their jets perpendicular to the orbital plane, which can be used to infer than the GRB is circularly polarised (see section \ref{sec:circ pol}). 
+
+Results from both triggered and untriggered searches can be used in \textit{Multimessenger} searches. These searches attempt to combine subthreshold triggers from multiple different messengers to make a confident detection. For example, a core collapse supernova could produce a long GRB, a GWs, and neutrinos, but be too distant for any search using just one of these messengers to make a confident detection. 
+
+\subsection{Modeled and Burst Searches}
+Searches for GWs can also be classified as either \textit{modeled} or \textit{burst}. Modeled searches have theoretical models of the waveforms they are searching for. For example, CBC signals can be modeled by numerical relativity and analytic methods [\textbf{cite something}]. These waveforms can then be used to build a more sensitive search, such as a matched filter search (see sections \textbf{list matched filter sections}). In chapter \ref{chap: CBC} we will look at PyGRB, a targeted, modeled search for GWs associated with GRBs. 
+
+Burst searches use minimal assumptions about waveform morphology, instead relying on measures of coherence between detector data streams. This is in general less sensitive than if a waveform was known and a matched filter search could be carried out, but there are no such waveform models for supernovas/long GRBs. In chapter \ref{chap: mva} we will discuss a burst search called Xpipeline. 
+
+
+\subsection{Expected Rates}
 \begin{itemize}
-\item Triggered vs un-triggered
-\item Quick description of EM followup for un-triggered search, like BNS (not the focus of this thesis)
-\item Focus on Targeted search - Modelled and un-modelled
-\item Known direction
-\item EM + GW allows for greater sensitivity
-\end{itemize}
-\subsection{Modelled search for CBCs}
-\begin{itemize}
-\item GW Waveform models (less accurate at merger)
-\item Matched filter search. PyGRB later
-\end{itemize}
-\subsection{Unmodelled Search}
-\begin{itemize}
-\item Coherent measurements. Discussed in chapter on X and MVA
+\item Summarise the section from Michal's thesis
+\item Observed rate, observable rate, true rate
+\item Equation for coincident GRB/GW detection
+\item long and short GRB detection rate estimates
 \end{itemize}
 
 \section{GRB Astrophysics with Gravitational Waves}
+We have discussed what GRBs are, what causes GRBs, and seen that they are good emitters of GWs. We end this chapter with a discussion of how GW astronomy will add to our understanding of GRBs. 
+
+\paragraph{Short GRB Progenitors}
+With the coincident detection of GRB170817A and GW170817, it is now known that at least some short GRBs are produced by the CBC of a binary neutron star system. As more detections are made it will become easier to determine whether this is the only source of short GRBs or if other mechanisms exist. Also, by comparing the electromagnetic counterpart to the knowledge gleaned from the GW signal about the binary, we can learn more about the central engine of the GRB. For example, a GRB detection in conjunction with a GW detection of a binary where we expect an accretion disk to form would indicate that some GRBs are accretion powered. 
+
+\paragraph{Long GRB Progenitors}
+There is a lot of evidence that at least some long GRBs are powered by core collapse supernova. If this is the case, then it should be possible to detect GWs in coincidence with a nearby long GRB. The GW signal would provide clues as to the evolution of the core collapse and the it's progenitor. If there is no GW detection, then it is possible to constrain the dynamics of the core collapse. 
+
+\paragraph{Populations}
+There are many unknowns about the populations of short GRBs and compact binary systems. As a network of GW detectors is essentially sensitive to the whole sky, it will be possible to better understand the population of compact binary systems within the well defined horizon of the detectors network. As GW signals also allow the direct inference of distance, it will even be possible to understand how the population of binary systems changes with distance (up to the horizon distance of the detector network). 
+
 \begin{itemize}
-\item Progenitors
-\item populations
-\item jet structure 
-\item Opening angle
+\item Should I cite any population results LIGO already has?
+\end{itemize}
+
+\paragraph{GRB Distance and Luminosity}
+For CBC GW signals where the inclination is approximately known, such as those associated with short GRBs, the distance to the source can be determined directly from the GW signal and without using a cosmological distance ladder. This allows independent verification of distances. Once the distance is known, the luminosity of the GRB can reconstructed. This can also be used to as an alternative measure of Hubble's constant [\textbf{cite paper}]. 
+
+\paragraph{Jet Structure}
+By comparing the rate of BNS and NSBH mergers detected through GWs that have a GRB counterpart to those that do not, it will be possible to determine the opening angle of short GRBs. Also, for strong GW signals, it should be possible to measure the polarisation of the GW. If the GW is face on, then it will be circularly polarised, but if it is edge on then it will be elliptically polarised. By measuring the polarisation of a large number of short GRBs and studying their prompt emission, it will be possible to fully describe the angular structure of short GRB jets. 
 \begin{itemize}
-\item Degenerate with distance
-\item Probably need a whole population of BNS/NSBH events to determine by comparing EM short GRBs with  
-\end{itemize}
-\item NS EoS
-\item Multi-messenger astronomy, Neurtinos, EM followup, BNS
+\item Learn and write about what we learned about the jet structure of GRB 170718B
 \end{itemize}
 
+\paragraph{Neutron Star Equation of State}
+The equation of state (EoS) of matter at neutron star densities is poorly constrained. There are many ways that studying the GW signal of neutron star binaries can be used to determine the EoS. For example, a GW signal is for a system with a neutron star of mass $\sim 2M_\odot$ suggests a stiff EoS as a soft EoS could not support such a massive star. 
+
+Another way of constraining the EoS of neutron stars is to look at the orbital frequency of a neutron star binary when tidal disruption occurs, as this depends on the radius of the neutron star. Using this radius with the mass of the neutron star (as determined by the inspiral waveform), we can determine the density of the neutron star. 
+
+Tidal deformation can also effect the inspiral part of the waveform [\textbf{cite same paper as bartos paper}]. It has been shown [\textbf{cite Read et al}] that the advanced LIGO detectors can determine the radius of a neutron star to within $\sim 1$km for a source at 100Mpc. 
+
+It has also been theorised that the core of neutron stars may be made of strange quark matter. If this is true, then it will have a significantly different GW signal for both CBC systems [\textbf{cite same paper as bartos paper}] and neutron star instabilities after a core collapse supernova. Thus, GW astronomy can determine if neutron stars contain quark matter cores. 
 
 
-\chapter{The Compact Binary Coalescence Search} \label{CBC search}
+\chapter{The Compact Binary Coalescence Search} \label{chap: CBC}
 \section{Introduction}\label{CBCintro}
 In this chapter we describe PyGRB [\textbf{cite all the papers}], a matched filter search for compact binary coalescence (CBC) signals associated with gamma ray bursts (GRBs). Only short GRBs (those with $T_{90}<2s$) are expected to have a CBC progenitor, as discussed in chapter \ref{chap:GRBs}, so PyGRB is used to search for GWs associated with any short or ambiguous (those with $T_{90}<2s$) length GRB. 
 
@@ -722,7 +903,7 @@ The GRBs analysed were those detected Swift BAT, Fermi GBM, and the IPN (see sec
 
 
 \subsection{Results}
-The analysis found one GW signal, GW170817. It was associated with GRB 170817A and had been previously reported [\textbf{cite BNS paper}]. The p-value for this event is $9.38 \times 10^{-6}$ and the coherent SNR is 31.26 \textbf{do we want to explain data cleaning and gating?} [\textbf{cite O2 GRB}]. No other GWs were detected in conjunction with any other GRBs. Apart from GW170817, there were six GRBs with a p-value of less than 0.1. These candidate events had further data quality checks and were analysed using lalInference [\textbf{cite Veitch like in GRB paper}], a coherent Bayesian parameter estimation pipeline, to determine if the signal could be a subthreshold signal or if it was more likely to be background noise. No evidence was found to of a subthreshold signal. 
+The analysis found one GW signal, GW170817. It was associated with GRB 170817A and had been previously reported [\textbf{cite BNS paper}]. The p-value for this event is $\leq 9.38 \times 10^{-6}$ and the coherent SNR is 31.26 \textbf{do we want to explain data cleaning and gating?} [\textbf{cite O2 GRB}]. No other GWs were detected in conjunction with any other GRBs. Apart from GW170817, there were six GRBs with a p-value of less than 0.1. These candidate events had further data quality checks and were analysed using lalInference [\textbf{cite Veitch like in GRB paper}], a coherent Bayesian parameter estimation pipeline, to determine if the signal could be a subthreshold signal or if it was more likely to be background noise. No evidence was found to of a subthreshold signal. 
 
 In figure \ref{fig:pvalue} we have plotted the p-value for the remaining 41 GRBs analysed after the removal GW170817 from the sample. For GRBs with no trigger in the onsource window, we provide upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of offsource trials that also had no trigger. The distribution lays within the $2\sigma$ range for a beta distribution, shown by the upper and lower dotted lines. The population consistency with a no-signal hypothesis was calculated using the weighted binomial test outlined in [\textbf{cite abadie et al}]. This test considers the lowest $5\%$ of p-values in the population, weighted by their prior probability of detection based on the time and sky position of the GRB. This analysis did not include GW170817 as it is a confirmed detection. The combined p-value for the search is 0.3. Thus we find no significant evidence for a population of subthreshold signals.  
 
@@ -762,7 +943,7 @@ As GRB170817A is known to have originated in NGC 4993 [\textbf{cite paper}], the
 \end{itemize}
 
 
-\chapter{Machine Learning for GW Astronomy}
+\chapter{Machine Learning for GW Astronomy} \label{chap: mva}
 \section{\label{MLintro}Introduction}
 % LIGO and virgo operate a network of ifos, looking for GWs. Detected BBH and BNS. Other sources have unknown WF morphology due to poorly understood physics of the sources. Hence, we need unmodelled searches. 
 The Laser Interferometer Gravitational Wave Observatory (LIGO) and Virgo collaborations operate ground-based Gravitational Wave (GW) detectors. They have detected signals of astrophysical origin, including the merger of a Binary Neutron Star (BNS) system and multiple Binary Black Hole (BBH) merger signals. As these sources have a known signal morphology, they can be found using a highly sensitive matched-filter search, as discussed in chapter \ref{CBC search}. But some of the most interesting possible sources, such as core collapse supernova, do not have a known waveform morphology. For this reason, it is important to develop unmodelled searches as well. 

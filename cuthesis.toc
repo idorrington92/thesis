@@ -12,66 +12,67 @@
 \contentsline {section}{\numberline {3.1}The History of Gamma-ray Burst Astronomy}{8}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Cold War Tension and an Unexpected Discovery}{8}{subsection.3.1.1}
 \contentsline {subsection}{\numberline {3.1.2}BATSE and the Galactic/Extra-galactic Controversy}{9}{subsection.3.1.2}
-\contentsline {subsection}{\numberline {3.1.3}The Long and Short of Gamma-ray Bursts}{10}{subsection.3.1.3}
+\contentsline {subsection}{\numberline {3.1.3}The Long and Short of Gamma-ray Bursts}{11}{subsection.3.1.3}
 \contentsline {subsection}{\numberline {3.1.4}The Long GRB-Supernova Connection}{12}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}The Short GRB-Compact Binary Connection}{14}{subsection.3.1.5}
 \contentsline {subsection}{\numberline {3.1.6}Gravitational Waves}{15}{subsection.3.1.6}
 \contentsline {section}{\numberline {3.2}GRB Progenitors}{15}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}The Fireball Model}{15}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Compact Binary Coalescence}{19}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Core Collapse}{19}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Other Sources}{19}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Gravitational Waves from GRBs}{19}{section.3.3}
-\contentsline {section}{\numberline {3.4}GRB Detectors}{20}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}Swift}{20}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Fermi}{20}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}The InterPlanetary Network}{20}{subsection.3.4.3}
-\contentsline {section}{\numberline {3.5}GRB Gravitational Wave Search Strategies}{21}{section.3.5}
-\contentsline {subsection}{\numberline {3.5.1}Triggered and Untriggered Searches}{21}{subsection.3.5.1}
-\contentsline {subsection}{\numberline {3.5.2}Modeled and Burst Searches}{22}{subsection.3.5.2}
-\contentsline {subsection}{\numberline {3.5.3}Expected Rates}{22}{subsection.3.5.3}
-\contentsline {section}{\numberline {3.6}GRB Astrophysics with Gravitational Waves}{22}{section.3.6}
-\contentsline {paragraph}{Short GRB Progenitors}{22}{section*.6}
-\contentsline {paragraph}{Long GRB Progenitors}{22}{section*.7}
-\contentsline {paragraph}{Populations}{23}{section*.8}
-\contentsline {paragraph}{GRB Distance and Luminosity}{23}{section*.9}
-\contentsline {paragraph}{Jet Structure}{23}{section*.10}
-\contentsline {paragraph}{Neutron Star Equation of State}{23}{section*.11}
-\contentsline {chapter}{\numberline {4}The Compact Binary Coalescence Search}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Introduction}{25}{section.4.1}
-\contentsline {section}{\numberline {4.2}PyCBC overview}{25}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Matched Filter Search}{26}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Consistency Checks}{26}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}PyCBC Results}{26}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}PyGRB}{26}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}A Coherent Search for Coalescing Binary Systems}{27}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Binary Coalescence Waveform}{27}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Coherent SNR}{28}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Comparison to Coincident Search}{29}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Null SNR}{31}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}The PyGRB Workflow}{32}{subsection.4.3.6}
-\contentsline {subsection}{\numberline {4.3.7}Reweighted SNR}{33}{subsection.4.3.7}
-\contentsline {subsection}{\numberline {4.3.8}Searching for Face on Signals}{34}{subsection.4.3.8}
-\contentsline {subsection}{\numberline {4.3.9}Searching over a Sky Patch}{35}{subsection.4.3.9}
-\contentsline {subsection}{\numberline {4.3.10}Event Significance}{36}{subsection.4.3.10}
-\contentsline {subsection}{\numberline {4.3.11}Calculating Search Sensitivity}{37}{subsection.4.3.11}
-\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{38}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}GRB sample}{38}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Results}{38}{subsection.4.4.2}
-\contentsline {section}{\numberline {4.5}Improvements to PyGRB}{40}{section.4.5}
-\contentsline {section}{\numberline {4.6}Future Plans}{41}{section.4.6}
-\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{42}{chapter.5}
-\contentsline {section}{\numberline {5.1}Introduction}{42}{section.5.1}
-\contentsline {section}{\numberline {5.2}Xpipeline}{42}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{43}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{46}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Null Energy}{47}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{47}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Machine Learning}{48}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{48}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{51}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{52}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{55}{subsection.5.3.4}
-\contentsline {subsubsection}{Training Set}{55}{section*.12}
-\contentsline {subsubsection}{BDT Parameters}{56}{section*.13}
-\contentsline {subsubsection}{Result of Optimisation}{57}{section*.14}
+\contentsline {subsection}{\numberline {3.2.1}The Fireball Model}{17}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Compact Binary Coalescence}{18}{subsection.3.2.2}
+\contentsline {paragraph}{NSBH Mergers}{20}{section*.6}
+\contentsline {paragraph}{BNS Mergers}{20}{section*.7}
+\contentsline {subsection}{\numberline {3.2.3}Core Collapse}{21}{subsection.3.2.3}
+\contentsline {paragraph}{Rotational Instabilities of Proto-Neutron Stars}{21}{section*.8}
+\contentsline {paragraph}{Non-axisymmetric Instabilities of Accretion Disks}{21}{section*.9}
+\contentsline {section}{\numberline {3.3}GRB Detectors}{21}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Swift}{21}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Fermi}{22}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}The InterPlanetary Network}{22}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}GRB Gravitational Wave Search Strategies}{22}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Triggered and Untriggered Searches}{23}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Modeled and Burst Searches}{23}{subsection.3.4.2}
+\contentsline {section}{\numberline {3.5}GRB Astrophysics with Gravitational Waves}{24}{section.3.5}
+\contentsline {paragraph}{Short GRB Progenitors}{24}{section*.10}
+\contentsline {paragraph}{Long GRB Progenitors}{24}{section*.11}
+\contentsline {paragraph}{Populations}{24}{section*.12}
+\contentsline {paragraph}{GRB Distance and Luminosity}{24}{section*.13}
+\contentsline {paragraph}{Jet Structure}{24}{section*.14}
+\contentsline {paragraph}{Neutron Star Equation of State}{25}{section*.15}
+\contentsline {chapter}{\numberline {4}The Compact Binary Coalescence Search}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Introduction}{26}{section.4.1}
+\contentsline {section}{\numberline {4.2}PyCBC overview}{26}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Matched Filter Search}{27}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Consistency Checks}{27}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}PyCBC Results}{27}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}PyGRB}{27}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}A Coherent Search for Coalescing Binary Systems}{28}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Binary Coalescence Waveform}{28}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Coherent SNR}{29}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Comparison to Coincident Search}{30}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Null SNR}{32}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}The PyGRB Workflow}{33}{subsection.4.3.6}
+\contentsline {subsection}{\numberline {4.3.7}Reweighted SNR}{34}{subsection.4.3.7}
+\contentsline {subsection}{\numberline {4.3.8}Searching for Face on Signals}{35}{subsection.4.3.8}
+\contentsline {subsection}{\numberline {4.3.9}Searching over a Sky Patch}{36}{subsection.4.3.9}
+\contentsline {subsection}{\numberline {4.3.10}Event Significance}{37}{subsection.4.3.10}
+\contentsline {subsection}{\numberline {4.3.11}Calculating Search Sensitivity}{38}{subsection.4.3.11}
+\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{39}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}GRB sample}{39}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Results}{39}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Improvements to PyGRB}{41}{section.4.5}
+\contentsline {section}{\numberline {4.6}Future Plans}{42}{section.4.6}
+\contentsline {chapter}{\numberline {5}Machine Learning for GW Astronomy}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduction}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}Xpipeline}{43}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Burst Search Background}{44}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Standard Likelihood}{47}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Null Energy}{48}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Incoherent Energy and Background Rejection}{48}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Machine Learning}{49}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Supervised Machine Learning}{49}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Boosted Decision Trees}{52}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Data Preprocessing}{53}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Optimisation and Validation}{56}{subsection.5.3.4}
+\contentsline {subsubsection}{Training Set}{56}{section*.16}
+\contentsline {subsubsection}{BDT Parameters}{57}{section*.17}
+\contentsline {subsubsection}{Result of Optimisation}{58}{section*.18}

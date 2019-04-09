@@ -294,11 +294,9 @@ Can cite soaulson and the noises paper
 \end{itemize}
 
 \chapter{Gamma-Ray Bursts} \label{chap:GRBs}
-\begin{itemize}
-\item History of GRB search
-\item What GRBs are, short, long, and ambiguous. with population plot
-\item Summary of physics that can be done with GW+GRB astronomy, as motivation
-\end{itemize}
+\textit{Gamma-ray Bursts} (GRBs) are exceptionally energetic flashes of Gamma-rays. They can last for just a few milliseconds or up to several hours. They occur approximately once per day, are uniformly distributed over the sky, and are the most electromagnetically energetic objects in the universe. The short duration and huge energy emitted by GRBs suggests a violent origin, making them good candidates for GW emission.
+
+In this chapter we discuss GRB astrophysics. We will take the historical perspective, starting with the accidental first detection of a GRB in 1963 and continuing to the first GW detection associated with a GRB in 2017. We then discuss possible progenitors to GRBs and what GW astronomy can contribute to our understanding of GRBs. This discussion will inform the provide context to later chapters on searches for GWs associated with GRBs. 
 
 \section{The History of Gamma-ray Burst Astronomy} \label{sec:GRB history}
 The history of Gamma-ray Burst astronomy, from the first unexpected detection to the coincident detection of GRB170817A and GW170817, is a fascinating one. In this section we will discuss the key discoveries of GRB astronomy in their historical context. These discoveries are the motivation of GW searches associated with GRBs, and were used to develop the GW searches discuss in chapters \ref{chap: CBC} and \ref{chap: mva}.  
@@ -418,13 +416,15 @@ In section \ref{sec:GRB history} we saw some of the evidence for short GRBs bein
 
 
 \subsection{The Fireball Model}
-The \textit{fireball shock model} was developed in the 1990s. It attempted to explain some of the features of GRBs by focusing on what can be learned directly from the GRB signals, making minimal assumptions of the source of the energy, called the \textit{central engine}. At this time the evidence was building that GRBs originated at cosmological distances. At such great distances the inferred energy emitted at the source is far higher, as much as a solar mass if the energy is emitted isotropically. It was also known that GRB sources must be small, at most hundreds of kilometers across (see section \ref{sec:cold war}). Assuming that all GRBs are small and highly energetic, as the evidence suggests, restricts the number of phenomena that could cause a GRB. This was the first step towards developing the fireball shock model. 
+The \textit{fireball shock model} was developed in the 1990s. It attempted to explain some of the features of GRBs by making minimal assumptions about the \textit{central engine}, the source of the energy. At this time the evidence was building that GRBs originated at cosmological distances. At such great distances the inferred energy emitted at the source is far higher, as much as a solar mass if the energy is emitted isotropically. It was also known that GRB sources must be small, at most hundreds of kilometers across (see section \ref{sec:cold war}). Realising that all GRBs are small and highly energetic was the starting point of the fireball shock model.
 
-The next was to notice that photons emitted by GRBs are above the pair production threshold ($E=0.551$MeV), and so should have created electron-positron pairs rather than gamma-rays. This problem is solved by assuming that the energy released drives a relativistic expansion from the source. In this case the energy of the photons in their rest frame is inversely proportional to the bulk Lorentz factor $\Gamma$ of the outflow. The energy released must be high enough, and the amount of accelerated matter low enough, for a Lorentz factor of hundreds. But we already know that GRBs emit a vast amount of energy, so this consistent with what we already know about GRBs. 
+The next step was to notice that photons emitted by GRBs are above the pair production threshold ($2\times m_e c^2\approx 1$MeV), and so should have created electron-positron pairs rather than gamma-rays. This problem is solved by assuming that the energy released drives a relativistic expansion from the source. In this case the energy of the photons in their rest frame is inversely proportional to the bulk Lorentz factor $\Gamma$ of the outflow, i.e. the energy in the rest frame of the photons is much lower. It also causes photons to bunch up just ahead of the relativistic matter that is emitting the photons, causing it to seem more energetic to an observer. Accounting for these factors, it can be shown that the Lorentz factor must be in the hundreds for a typical GRB. This is as compared to a Lorentz factor of approximately 1.001 for a fast supernovae, and corresponds to GRB velocities of at least 99.9\% of the speed of light. 
 
-The final clue needed for the fireball shock model to note that GRB light curves are highly variable, with some showing multiple peaks (see figure \ref{fig:grb lightcurves}). This suggests that the energy source itself is variable. If the energy is varying with time, then the Lorentz factor at different times is also going to vary. As faster moving matter catches up with slower moving matter, shocks will be created. It is these shocks that are thought to be the source of the GRB. 
+This means that a large amount of energy must be rapidly dumped into a small volume before the GRB is emitted. The energy density is so high that gamma-rays form electron-positron pairs which then annihilate to again form high energy gamma-rays. Most of the energy is in the form of photons, so this is called the \textit{radiation dominated} phase. This mess of photons and some matter is the \textit{fireball}.The fireball expands and the Lorentz factor grows with it. As it expands, the energy is absorbed by the matter (protons and electrons) in the form of kinetic energy. This is the \textit{matter dominated} phase. Most of the particles are moving in the same direction now, with little random motion: The fireball has become cold. 
 
-According to this theory, the relativistic ejecta interacting with the matter surrounding the system is the cause of the afterglow.
+A mechanism is needed to turn this kinetic energy into a GRB. The simplest way to do this is to have the matter collide with slower moving matter surrounding the system. The matter is too sparse for direct collisions to happen enough to form a GRB. Instead, it is thought that magnetic fields near the edge of the fireball can cause the matter to slow down and radiate it's energy. When the fireball interacts with the surrounding matter, the rapid change in temperature, pressure, and density travel through the medium faster than the medium can react. Like the sonicboom of a supersonic jet, this causes \textit{shocks} in the surrounding medium. It is these shocks that are thought to be the source of the GRB. Precisely how these shocks power a GRB is not known. \textit{Fermi acceleration} possibly plays a role. This is where charged electrons enter the shock and are reflected back by magnetic fields, increasing their kinetic energy. After several iterations of this, the electron can travel even faster than the shock. The magnetic fields could then cause the electrons path to curve, causing them to emit energy as synchotron radiation. Alternatively they might interact with photons, imparting their considerable energy onto the photon to create a high energy gamma-ray. This process is called \textit{inverse Compton scattering}. There is still a lot to learn about the processes that power the GRB.
+
+There are also two hypotheses as to what the slower moving matter could be. The first is simply material around the star, the \textit{circumburst medium} (CBM). This is called an \textit{external shock scenario}. The other theory is that multiple shells of material are emitted, and the shocks are created when faster moving shells catch up with slower moving shells. This is called the \textit{internal shock scenario}. The internal shock method is generally favoured for the prompt emission. This is because GRB light curves are highly variable, with some showing multiple peaks (see figure \ref{fig:grb lightcurves}). This is easily explained by the multiple shocks of the internal shock scenario, but more difficult to explain for external shocks. External shocks are thought to be the cause of the GRB afterglow.
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -435,38 +435,36 @@ According to this theory, the relativistic ejecta interacting with the matter su
 \end{figure}
 
 \begin{itemize}
+\item Derive equation for 'bunching' of photons in front of relativistic matter
 \item Amount of energy and distance implies beaming (caused by relativistic effects)
+\item Inverse Compton scattering and other things to get energy
 \end{itemize}
 
 \subsection{Compact Binary Coalescence}
-As mentioned previously, short-hard GRBs are thought to be powered by the CBC involving at least one neutron star, and a neutron star or black hole as the other component of the binary. With the detection of GW170817 in conjunction with GRB170817A, we now know this is the case for at least some short-hard GRBs. As compact binary systems are known to be good emitters of GWs, there is a strong case for following a short GRB detection with a dedicated GW search. This search is discussed in section \ref{sec:PyGRB}. In this section we discuss the physics of the GRB. 
+As mentioned previously, short-hard GRBs are thought to be powered by the CBC involving at least one neutron star, and a neutron star or black hole as the other component of the binary. With the detection of GW170817 in conjunction with GRB170817A, we now know this is the case for at least some short-hard GRBs. In this section we will discuss the immediate aftermath of a NS merger and the different GRB and GW signals that each could be produced.
 
+\paragraph{NSBH Mergers} The simplest case is that of an NSBH merger where the BH mass is significantly greater than the NS. If the BH to NS mass ratio is greater than 5:1 then the innermost stable circular orbit (ISCO)\footnote{The ISCO is the smallest stable circular orbit for a test particle around a BH.} is greater than the tidal disruption radius\footnote{The radius around a BH where the BH's tidal forces pull apart an in-falling star.}. This results the NS being swallowed whole by the BH and leaving no accretion disk. The accretion disk is believed to be essential in powering a GRB after a NS merger, and so this case is not expected to produce a GRB. If the NSBH has a relatively low mass ratio, then the neutron star will be tidally disrupted before merging with the black hole. This will create a massive accretion disk and is expected to produce a GRB. 
 
-\begin{itemize}
-\item GRB cause (accretion powered GRB etc.)
-\item measured opening angle is about 10 to 20 degrees
-\end{itemize}
+\paragraph{BNS Mergers} For BNS mergers we must consider both the mass ratio and the total mass of the system. This is because it is possible for the merging neutron stars to either form a black hole or a \textit{hypermassive neutron star} depending on the total mass of the binary system. The simplest of these is for a system with approximately equal mass ratio and a high total mass, such that a black hole can be produced immediately after merger. This requires the total mass to be above about 2.9$M_\odot$ [\textbf{cite}], but the exact value depends on the EOS of neutron stars. In this case, no accretion disk will be produced and so no GRB is expected. 
+
+For an unequal mass ratio, the lighter neutron star is tidally disrupted by the larger neutron star. Matter from the lighter neutron star then accretes onto the more massive star, causing the more massive star to collapse into a black hole. This can potentially leave a massive accretion disk which could power a GRB.  
+
+If the total mass is less than about 3$M_\odot$ [\textbf{cite}] then the merger is not expected to immediately form a black hole but to instead form a hypermassive neutron star. This is a neutron star that is supported by differential rotation and thermal pressure. The merger will produce an accretion disk which could power a GRB. It is also possible that the rapidly rotating hypermassive neutron star will be ellipsoidal in shape, making a powerful emitter of GWs. These GWs would be detectable with aLIGO up to about 20Mpc [\textbf{cite}]. Over time, the hypermassive neutron star will lose angular momentum due to GW emission and magnetic force, it's rotation will become more uniform due to magnetic forces and viscosity, and it will radiate away it's heat. These factors cause the hypermassive neutron star to eventually collapse to a black hole. 
 
 \subsection{Core Collapse}
-\begin{itemize}
-\item GRB cause
-\item long GRBs
-\item Unknown signal morphology due to lack of knowledge about cause of core collapse as well as chaotic nature of the phenomenon
-\item measured opening angle is less than 5 degrees
-\end{itemize}
-\subsection{Other Sources}
-\begin{itemize}
-\item Magnetars
-\item Millisecond Proto-magnetars
-\item Others
-\end{itemize}
+Long GRBs are known to be caused by core collapse supernova. In this section we will discuss some of the possible central engines for long GRBs, focusing on those that could produce a GW signal strong enough to be detected with aLIGO. 
 
-\section{Gravitational Waves from GRBs}
+\paragraph{Rotational Instabilities of Proto-Neutron Stars} 
+Stars with initial masses in the range $10M_\odot \lesssim M \lesssim 25M_\odot$ are expected to collapse to rapidly rotating \textit{protoneutron stars}, stars which are cooling and contracting to form a neutron star. If these protoneutron stars exhibit non-axisymmetric deformations, then rapid rotation of the star could drive significant GW emission, potentially detectable to 10Mpc with current detectors and even further if the protoneutron star accretes supernova material. There are several mechanisms that could cause non-axisymmetric deformations of the protoneutron star:
 \begin{itemize}
-\item Short GRB time delay between GW and jet, [0,3]s for fireball model (2s for BNS)
-\item Time delay for long GRBs [-5,Tjet+5]s with Tjet happening [0,400]s after formation of neutron star
-\item Circular polarisaton - More detail on NSBH systems, like in Michal's thesis
-\end{itemize}
+\item Dynamical instabilities caused by rapid rotation and/or differential rotation.
+\item Secular (dissipation driven) instabilities caused by viscosity or GW emission.
+\item Magnetic distortion.
+\end{itemize} 
+
+\paragraph{Non-axisymmetric Instabilities of Accretion Disks}
+For stars with initial mass greater than $\sim 30M_\odot$, the core collapse of the star will form a central black hole surrounded by an accretion disk. If the accretion disk has sufficiently high angular momentum and non-axisymmetric instabilities, then it can produce detectable GWs with a waveform similar to that of a low mass binary merger. For a stellar mass black hole with a clump of matter in it's accretion disk of approximately $0.1M_\odot$, an accretion disk instability can potentially be detected out to 100Mpc with aLIGO. An accretion disk instability can be caused by, for example, a high angular momentum such that the accretion disk is not gravitationally stable. 
+
 
 \section{GRB Detectors} \label{sec:grb detectors}
 Most GRB detections have been come from three different sources: The Swift and Fermi space telescopes, and a network of satellites called the Interplanetary Network. In this chapter we discuss the characteristics of these three missions, focusing on the aspects that affect a followup search for gravitational waves: Sky coverage, source localisation, and sensitive energy range. 
@@ -496,15 +494,6 @@ Results from both triggered and untriggered searches can be used in \textit{Mult
 Searches for GWs can also be classified as either \textit{modeled} or \textit{burst}. Modeled searches have theoretical models of the waveforms they are searching for. For example, CBC signals can be modeled by numerical relativity and analytic methods [\textbf{cite something}]. These waveforms can then be used to build a more sensitive search, such as a matched filter search (see sections \textbf{list matched filter sections}). In chapter \ref{chap: CBC} we will look at PyGRB, a targeted, modeled search for GWs associated with GRBs. 
 
 Burst searches use minimal assumptions about waveform morphology, instead relying on measures of coherence between detector data streams. This is in general less sensitive than if a waveform was known and a matched filter search could be carried out, but there are no such waveform models for supernovas/long GRBs. In chapter \ref{chap: mva} we will discuss a burst search called Xpipeline. 
-
-
-\subsection{Expected Rates}
-\begin{itemize}
-\item Summarise the section from Michal's thesis
-\item Observed rate, observable rate, true rate
-\item Equation for coincident GRB/GW detection
-\item long and short GRB detection rate estimates
-\end{itemize}
 
 \section{GRB Astrophysics with Gravitational Waves}
 We have discussed what GRBs are, what causes GRBs, and seen that they are good emitters of GWs. We end this chapter with a discussion of how GW astronomy will add to our understanding of GRBs. 

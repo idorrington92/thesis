@@ -13,53 +13,54 @@
 \BOOKMARK [2][-]{subsection.3.1.1}{Cold War Tension and an Unexpected Discovery}{section.3.1}% 13
 \BOOKMARK [2][-]{subsection.3.1.2}{BATSE and the Galactic/Extra-galactic Controversy}{section.3.1}% 14
 \BOOKMARK [2][-]{subsection.3.1.3}{The Long and Short of Gamma-ray Bursts}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.4}{The Long GRB-Supernova Connection}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.5}{The Short GRB-Compact Binary Connection}{section.3.1}% 17
-\BOOKMARK [2][-]{subsection.3.1.6}{Gravitational Waves}{section.3.1}% 18
-\BOOKMARK [1][-]{section.3.2}{GRB Progenitors}{chapter.3}% 19
-\BOOKMARK [2][-]{subsection.3.2.1}{The Fireball Model}{section.3.2}% 20
-\BOOKMARK [2][-]{subsection.3.2.2}{Compact Binary Coalescence}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.3}{Core Collapse}{section.3.2}% 22
-\BOOKMARK [1][-]{section.3.3}{GRB Detectors}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.3.1}{Swift}{section.3.3}% 24
-\BOOKMARK [2][-]{subsection.3.3.2}{Fermi}{section.3.3}% 25
-\BOOKMARK [2][-]{subsection.3.3.3}{The InterPlanetary Network}{section.3.3}% 26
-\BOOKMARK [1][-]{section.3.4}{GRB Gravitational Wave Search Strategies}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.4.1}{Triggered and Untriggered Searches}{section.3.4}% 28
-\BOOKMARK [2][-]{subsection.3.4.2}{Modeled and Burst Searches}{section.3.4}% 29
-\BOOKMARK [1][-]{section.3.5}{GRB Astrophysics with Gravitational Waves}{chapter.3}% 30
-\BOOKMARK [0][-]{chapter.4}{The Compact Binary Coalescence Search}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.2}{PyCBC overview}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.2.1}{Matched Filter Search}{section.4.2}% 34
-\BOOKMARK [2][-]{subsection.4.2.2}{Consistency Checks}{section.4.2}% 35
-\BOOKMARK [2][-]{subsection.4.2.3}{PyCBC Results}{section.4.2}% 36
-\BOOKMARK [1][-]{section.4.3}{PyGRB}{chapter.4}% 37
-\BOOKMARK [2][-]{subsection.4.3.1}{A Coherent Search for Coalescing Binary Systems}{section.4.3}% 38
-\BOOKMARK [2][-]{subsection.4.3.2}{Binary Coalescence Waveform}{section.4.3}% 39
-\BOOKMARK [2][-]{subsection.4.3.3}{Coherent SNR}{section.4.3}% 40
-\BOOKMARK [2][-]{subsection.4.3.4}{Comparison to Coincident Search}{section.4.3}% 41
-\BOOKMARK [2][-]{subsection.4.3.5}{Null SNR}{section.4.3}% 42
-\BOOKMARK [2][-]{subsection.4.3.6}{The PyGRB Workflow}{section.4.3}% 43
-\BOOKMARK [2][-]{subsection.4.3.7}{Reweighted SNR}{section.4.3}% 44
-\BOOKMARK [2][-]{subsection.4.3.8}{Searching for Face on Signals}{section.4.3}% 45
-\BOOKMARK [2][-]{subsection.4.3.9}{Searching over a Sky Patch}{section.4.3}% 46
-\BOOKMARK [2][-]{subsection.4.3.10}{Event Significance}{section.4.3}% 47
-\BOOKMARK [2][-]{subsection.4.3.11}{Calculating Search Sensitivity}{section.4.3}% 48
-\BOOKMARK [1][-]{section.4.4}{O2 PyGRB Search}{chapter.4}% 49
-\BOOKMARK [2][-]{subsection.4.4.1}{GRB sample}{section.4.4}% 50
-\BOOKMARK [2][-]{subsection.4.4.2}{Results}{section.4.4}% 51
-\BOOKMARK [1][-]{section.4.5}{Improvements to PyGRB}{chapter.4}% 52
-\BOOKMARK [1][-]{section.4.6}{Future Plans}{chapter.4}% 53
-\BOOKMARK [0][-]{chapter.5}{Machine Learning for GW Astronomy}{}% 54
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 55
-\BOOKMARK [1][-]{section.5.2}{Xpipeline}{chapter.5}% 56
-\BOOKMARK [2][-]{subsection.5.2.1}{Burst Search Background}{section.5.2}% 57
-\BOOKMARK [2][-]{subsection.5.2.2}{Standard Likelihood}{section.5.2}% 58
-\BOOKMARK [2][-]{subsection.5.2.3}{Null Energy}{section.5.2}% 59
-\BOOKMARK [2][-]{subsection.5.2.4}{Incoherent Energy and Background Rejection}{section.5.2}% 60
-\BOOKMARK [1][-]{section.5.3}{Machine Learning}{chapter.5}% 61
-\BOOKMARK [2][-]{subsection.5.3.1}{Supervised Machine Learning}{section.5.3}% 62
-\BOOKMARK [2][-]{subsection.5.3.2}{Boosted Decision Trees}{section.5.3}% 63
-\BOOKMARK [2][-]{subsection.5.3.3}{Data Preprocessing}{section.5.3}% 64
-\BOOKMARK [2][-]{subsection.5.3.4}{Optimisation and Validation}{section.5.3}% 65
+\BOOKMARK [2][-]{subsection.3.1.4}{BeppoSAX and the First Afterglows}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.5}{The Fireball Model}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.6}{The Long GRB-Supernova Connection}{section.3.1}% 18
+\BOOKMARK [2][-]{subsection.3.1.7}{The Short GRB-Compact Binary Connection}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.8}{Gravitational Waves}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{GRB Progenitors}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{Compact Binary Coalescence}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Core Collapse}{section.3.2}% 23
+\BOOKMARK [1][-]{section.3.3}{GRB Detectors}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.3.1}{Swift}{section.3.3}% 25
+\BOOKMARK [2][-]{subsection.3.3.2}{Fermi}{section.3.3}% 26
+\BOOKMARK [2][-]{subsection.3.3.3}{The InterPlanetary Network}{section.3.3}% 27
+\BOOKMARK [1][-]{section.3.4}{GRB Gravitational Wave Search Strategies}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.4.1}{Triggered and Untriggered Searches}{section.3.4}% 29
+\BOOKMARK [2][-]{subsection.3.4.2}{Modeled and Burst Searches}{section.3.4}% 30
+\BOOKMARK [1][-]{section.3.5}{GRB Astrophysics with Gravitational Waves}{chapter.3}% 31
+\BOOKMARK [0][-]{chapter.4}{A Targeted Search for Gravitational Waves associated with Short GRBs}{}% 32
+\BOOKMARK [1][-]{section.4.1}{Introduction}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.2}{PyCBC overview}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.2.1}{Matched Filter Search}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.2}{Consistency Checks}{section.4.2}% 36
+\BOOKMARK [2][-]{subsection.4.2.3}{PyCBC Results}{section.4.2}% 37
+\BOOKMARK [1][-]{section.4.3}{PyGRB}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.3.1}{A Coherent Search for Coalescing Binary Systems}{section.4.3}% 39
+\BOOKMARK [2][-]{subsection.4.3.2}{Binary Coalescence Waveform}{section.4.3}% 40
+\BOOKMARK [2][-]{subsection.4.3.3}{Coherent SNR}{section.4.3}% 41
+\BOOKMARK [2][-]{subsection.4.3.4}{Comparison to Coincident Search}{section.4.3}% 42
+\BOOKMARK [2][-]{subsection.4.3.5}{Null SNR}{section.4.3}% 43
+\BOOKMARK [2][-]{subsection.4.3.6}{The PyGRB Workflow}{section.4.3}% 44
+\BOOKMARK [2][-]{subsection.4.3.7}{Reweighted SNR}{section.4.3}% 45
+\BOOKMARK [2][-]{subsection.4.3.8}{Searching for Face on Signals}{section.4.3}% 46
+\BOOKMARK [2][-]{subsection.4.3.9}{Searching over a Sky Patch}{section.4.3}% 47
+\BOOKMARK [2][-]{subsection.4.3.10}{Event Significance}{section.4.3}% 48
+\BOOKMARK [2][-]{subsection.4.3.11}{Calculating Search Sensitivity}{section.4.3}% 49
+\BOOKMARK [1][-]{section.4.4}{O2 PyGRB Search}{chapter.4}% 50
+\BOOKMARK [2][-]{subsection.4.4.1}{GRB sample}{section.4.4}% 51
+\BOOKMARK [2][-]{subsection.4.4.2}{Results}{section.4.4}% 52
+\BOOKMARK [1][-]{section.4.5}{Improvements to PyGRB}{chapter.4}% 53
+\BOOKMARK [1][-]{section.4.6}{Future Plans}{chapter.4}% 54
+\BOOKMARK [0][-]{chapter.5}{Machine Learning for GW Astronomy}{}% 55
+\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.2}{Xpipeline}{chapter.5}% 57
+\BOOKMARK [2][-]{subsection.5.2.1}{Burst Search Background}{section.5.2}% 58
+\BOOKMARK [2][-]{subsection.5.2.2}{Standard Likelihood}{section.5.2}% 59
+\BOOKMARK [2][-]{subsection.5.2.3}{Null Energy}{section.5.2}% 60
+\BOOKMARK [2][-]{subsection.5.2.4}{Incoherent Energy and Background Rejection}{section.5.2}% 61
+\BOOKMARK [1][-]{section.5.3}{Machine Learning}{chapter.5}% 62
+\BOOKMARK [2][-]{subsection.5.3.1}{Supervised Machine Learning}{section.5.3}% 63
+\BOOKMARK [2][-]{subsection.5.3.2}{Boosted Decision Trees}{section.5.3}% 64
+\BOOKMARK [2][-]{subsection.5.3.3}{Data Preprocessing}{section.5.3}% 65
+\BOOKMARK [2][-]{subsection.5.3.4}{Optimisation and Validation}{section.5.3}% 66

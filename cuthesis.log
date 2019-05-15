@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  9 APR 2019 20:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  15 MAY 2019 16:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -391,7 +391,7 @@ LaTeX Info: Redefining \nameref on input line 49.
 \openout3 = `cuthesis.out'.
 
 
-<culogo.pdf, id=265, 129.48375pt x 124.465pt>
+<culogo.pdf, id=269, 129.48375pt x 124.465pt>
 File: culogo.pdf Graphic file (type pdf)
  <use culogo.pdf>
 Package pdftex.def Info: culogo.pdf used on input line 56.
@@ -474,27 +474,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--66
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10.95> not available
 (Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 4.
 
-Overfull \hbox (230.06815pt too wide) in paragraph at lines 5--5
- \OT1/cmtt/m/n/10.95 net / figure / Distribution-[]log-[]N-[]log-[]P-[]for-[]a-
-[]combined-[]set-[]of-[]BATSEPVO-[]data-[]The-[]distributions-[]match _ 
+Overfull \hbox (166.83258pt too wide) in paragraph at lines 5--5
+ \OT1/cmtt/m/n/10.95 Distribution-[]log-[]N-[]log-[]P-[]for-[]a-[]combined-[]se
+t-[]of-[]BATSEPVO-[]data-[]The-[]distributions-[]match _ 
  []
 
 
-Overfull \hbox (4.61801pt too wide) in paragraph at lines 7--7
- \OT1/cmtt/m/n/10.95 uk / fac / sci / physics / research / astro / people / lev
-an / grb$ _ $book / 
+Overfull \hbox (12.3667pt too wide) in paragraph at lines 5--5
+ \OT1/cmtt/m/n/10.95 fig5 _ 242389649$[] \OT1/cmr/bx/n/10.95 cite []$\OT1/cmtt/
+m/n/10.95 https : / / www . nature . com / articles / 366040a0 . 
  []
 
 
-Overfull \hbox (68.75508pt too wide) in paragraph at lines 9--9
- \OT1/cmr/m/n/10.95 2017 (right). \OT1/cmr/bx/n/10.95 cite https://www.nature.c
-om/articles/nature24291/figures/2 
- []
-
-
-Overfull \hbox (114.55276pt too wide) in paragraph at lines 10--10
+Overfull \hbox (114.55276pt too wide) in paragraph at lines 8--8
  [][] [][]\OT1/cmr/bx/n/10.95 BATSE gamma-ray light curves. cite http://inspire
 hep.net/record/1358907/plots 
+ []
+
+
+Overfull \hbox (3.48148pt too wide) in paragraph at lines 9--9
+ \OT1/cmr/m/n/10.95 con-bi-na-tion of the Han-ford and Liv-ingston strain data 
+from GW170817 
  []
 
 
@@ -503,13 +503,19 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [5
 
 ]
-Overfull \hbox (3.35742pt too wide) in paragraph at lines 14--14
+Overfull \hbox (68.75508pt too wide) in paragraph at lines 11--11
+ \OT1/cmr/m/n/10.95 2017 (right). \OT1/cmr/bx/n/10.95 cite https://www.nature.c
+om/articles/nature24291/figures/2 
+ []
+
+
+Overfull \hbox (3.35742pt too wide) in paragraph at lines 15--15
  \OT1/cmr/m/n/10.95 sion dis-tance for ev-ery GRB anal-ysed by Py-GRB ex-cept G
 RB170817A. 
  []
 
 
-Overfull \hbox (8.45317pt too wide) in paragraph at lines 16--16
+Overfull \hbox (8.45317pt too wide) in paragraph at lines 17--17
  [][] [][]\OT1/cmr/bx/n/10.95 Xpipeline Time-Frequency Map \OT1/cmr/m/n/10.95 T
 his fig-ure shows a time-frequency 
  []
@@ -518,13 +524,15 @@ his fig-ure shows a time-frequency
 \tf@lof=\write5
 \openout5 = `cuthesis.lof'.
 
- [6] (./cuthesis.lot)
+ [6] [7] (./cuthesis.lot)
 \tf@lot=\write6
 \openout6 = `cuthesis.lot'.
 
- [7
+ [8
 
-] [8
+] [9
+
+] [10
 
 ]
 Chapter 1.
@@ -535,7 +543,6 @@ been already used, duplicate ignored
 l.105 \chapter
               {Gravitational Wave Astronomy in a Nutshell} \label{chap: gw bg}
 [1
-
 
 
 ]
@@ -557,215 +564,232 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Chapter 3.
 [8
 
-] [9] <batse_grbs_fluence.jpg, id=585, 693.59125pt x 508.90125pt>
+] [9] <batse_grbs_fluence.jpg, id=626, 693.59125pt x 508.90125pt>
 File: batse_grbs_fluence.jpg Graphic file (type jpg)
 
 <use batse_grbs_fluence.jpg>
-Package pdftex.def Info: batse_grbs_fluence.jpg used on input line 322.
+Package pdftex.def Info: batse_grbs_fluence.jpg used on input line 321.
 (pdftex.def)             Requested size: 318.67209pt x 233.81787pt.
- <logN-logP.png, id=588, 795.97375pt x 668.4975pt>
+ [10 <./batse_grbs_fluence.jpg>]
+<logN-logP.png, id=642, 795.97375pt x 668.4975pt>
 File: logN-logP.png Graphic file (type png)
-
-<use logN-logP.png>
-Package pdftex.def Info: logN-logP.png used on input line 330.
+ <use logN-logP.png>
+Package pdftex.def Info: logN-logP.png used on input line 332.
 (pdftex.def)             Requested size: 318.67209pt x 267.62888pt.
 
-Overfull \hbox (160.53543pt too wide) in paragraph at lines 332--332
-\OT1/cmtt/m/n/10.95 net / figure / Distribution-[]log-[]N-[]log-[]P-[]for-[]a-[
-]combined-[]set-[]of-[]BATSEPVO-[]data-[]The-[]distributions-[]match _
+Overfull \hbox (97.29987pt too wide) in paragraph at lines 337--337
+\OT1/cmtt/m/n/10.95 Distribution-[]log-[]N-[]log-[]P-[]for-[]a-[]combined-[]set
+-[]of-[]BATSEPVO-[]data-[]The-[]distributions-[]match _
  []
 
-[10 <./batse_grbs_fluence.jpg>] [11 <./logN-logP.png (PNG copy)>]
-<t90_vs_count.png, id=613, 702.625pt x 501.875pt>
+[11 <./logN-logP.png (PNG copy)>]
+<t90_vs_count.png, id=659, 702.625pt x 501.875pt>
 File: t90_vs_count.png Graphic file (type png)
  <use t90_vs_count.png>
-Package pdftex.def Info: t90_vs_count.png used on input line 349.
+Package pdftex.def Info: t90_vs_count.png used on input line 348.
 (pdftex.def)             Requested size: 318.67209pt x 227.62596pt.
 
-<t90_vs_hardness.png, id=615, 616.3025pt x 460.72125pt>
-File: t90_vs_hardness.png Graphic file (type png)
+<t90_vs_hardness_new.jpg, id=661, 168.63pt x 181.1568pt>
+File: t90_vs_hardness_new.jpg Graphic file (type jpg)
 
-<use t90_vs_hardness.png>
-Package pdftex.def Info: t90_vs_hardness.png used on input line 357.
-(pdftex.def)             Requested size: 318.67209pt x 238.22665pt.
- [12 <./t90_vs_count.png>]
-Underfull \vbox (badness 6063) has occurred while \output is active []
+<use t90_vs_hardness_new.jpg>
+Package pdftex.def Info: t90_vs_hardness_new.jpg used on input line 363.
+(pdftex.def)             Requested size: 318.67209pt x 342.3522pt.
 
- [13 <./t90_vs_hardness.png>] [14] <grb-gw-170817.jpg, id=640, 481.8pt x 582.73
-71pt>
-File: grb-gw-170817.jpg Graphic file (type jpg)
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use grb-gw-170817.jpg>
-Package pdftex.def Info: grb-gw-170817.jpg used on input line 398.
-(pdftex.def)             Requested size: 318.67209pt x 385.44351pt.
- <NGC4993.jpg, id=641, 929.4725pt x 462.72874pt>
-File: NGC4993.jpg Graphic file (type jpg)
-
-<use NGC4993.jpg>
-Package pdftex.def Info: NGC4993.jpg used on input line 406.
-(pdftex.def)             Requested size: 318.67209pt x 158.64603pt.
- [15] [16 <./grb-gw-170817.jpg>]
-Underfull \vbox (badness 1107) has occurred while \output is active []
-
- [17 <./NGC4993.jpg>] <grb_lightcurves.png, id=658, 923.45pt x 911.405pt>
+ [12 <./t90_vs_count.png>] [13 <./t90_vs_hardness_new.jpg>] [14] [15]
+<grb_lightcurves.png, id=685, 923.45pt x 911.405pt>
 File: grb_lightcurves.png Graphic file (type png)
-
-<use grb_lightcurves.png>
-Package pdftex.def Info: grb_lightcurves.png used on input line 431.
+ <use grb_lightcurves.png>
+Package pdftex.def Info: grb_lightcurves.png used on input line 387.
 (pdftex.def)             Requested size: 398.3386pt x 393.13422pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 433--433
-[]\OT1/cmr/m/n/10.95 Figure 3.7: []\OT1/cmr/bx/n/10.95 BATSE gamma-ray light cu
+Underfull \hbox (badness 10000) in paragraph at lines 389--389
+[]\OT1/cmr/m/n/10.95 Figure 3.5: []\OT1/cmr/bx/n/10.95 BATSE gamma-ray light cu
 rves. cite
  []
 
-[18] [19 <./grb_lightcurves.png>]
-Underfull \vbox (badness 1509) has occurred while \output is active []
 
- [20]
-[21] [22] [23]
-Overfull \hbox (0.893pt too wide) in paragraph at lines 518--519
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16 <./grb_lightcurves.png>]
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <9> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 416.
+ [17] [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+<grb-gw-170817.jpg, id=724, 481.8pt x 582.7371pt>
+File: grb-gw-170817.jpg Graphic file (type jpg)
+ <use grb-gw-170817.jpg>
+Package pdftex.def Info: grb-gw-170817.jpg used on input line 444.
+(pdftex.def)             Requested size: 318.67209pt x 385.44351pt.
+
+<gw-grb-170817-sky-map.jpg, id=725, 526.96875pt x 261.97874pt>
+File: gw-grb-170817-sky-map.jpg Graphic file (type jpg)
+
+<use gw-grb-170817-sky-map.jpg>
+Package pdftex.def Info: gw-grb-170817-sky-map.jpg used on input line 452.
+(pdftex.def)             Requested size: 318.67209pt x 158.43167pt.
+
+<NGC4993.jpg, id=726, 929.4725pt x 462.72874pt>
+File: NGC4993.jpg Graphic file (type jpg)
+ <use NGC4993.jpg>
+Package pdftex.def Info: NGC4993.jpg used on input line 460.
+(pdftex.def)             Requested size: 318.67209pt x 158.64603pt.
+ [20] [21 <./grb-gw-170817.jpg>] [22 <./gw-grb-170817-sky-map.jpg> <./NGC4993.j
+pg>] [23]
+[24] [25] [26] [27]
+Overfull \hbox (0.893pt too wide) in paragraph at lines 563--564
  []\OT1/cmr/bx/n/10.95 Jet Struc-ture[] \OT1/cmr/m/n/10.95 By com-par-ing the r
 ate of BNS and NSBH merg-ers de-tected through
  []
 
-[24] [25]
+[28]
 Chapter 4.
-[26
+[29
 
-] [27] [28]
-Underfull \vbox (badness 6428) has occurred while \output is active []
-
- [29]
+] [30] [31] [32]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [30]
-[31] [32] [33]
-<GRB170817A_null_stat2_vs_snr_zoom.png, id=815, 424.2249pt x 325.215pt>
+ [33]
+[34]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [35]
+[36] [37]
+<GRB170817A_null_stat2_vs_snr_zoom.png, id=901, 424.2249pt x 325.215pt>
 File: GRB170817A_null_stat2_vs_snr_zoom.png Graphic file (type png)
 
 <use GRB170817A_null_stat2_vs_snr_zoom.png>
 Package pdftex.def Info: GRB170817A_null_stat2_vs_snr_zoom.png used on input li
-ne 775.
+ne 835.
 (pdftex.def)             Requested size: 318.67209pt x 244.29771pt.
- [34 <./GRB170817A_null_stat2_vs_snr_zoom.png>] [35]
+ [38 <./GRB170817A_null_stat2_vs_snr_zoom.png>]
+Underfull \vbox (badness 6978) has occurred while \output is active []
 
-LaTeX Warning: Reference `GRB detectors' on page 36 undefined on input line 844
+ [39]
+
+LaTeX Warning: Reference `GRB detectors' on page 40 undefined on input line 904
 .
 
-[36] [37] [38] [39] <pygrb_pvalue.png, id=870, 722.7pt x 722.7pt>
-File: pygrb_pvalue.png Graphic file (type png)
+[40] [41]
+Underfull \vbox (badness 1478) has occurred while \output is active []
 
-<use pygrb_pvalue.png>
-Package pdftex.def Info: pygrb_pvalue.png used on input line 901.
+ [42]
+[43] <pygrb_pvalue.png, id=959, 722.7pt x 722.7pt>
+File: pygrb_pvalue.png Graphic file (type png)
+ <use pygrb_pvalue.png>
+Package pdftex.def Info: pygrb_pvalue.png used on input line 961.
 (pdftex.def)             Requested size: 318.67209pt x 318.67268pt.
 
-Underfull \vbox (badness 1062) has occurred while \output is active []
-
- [40 <./pygrb_pvalue.png>] <pygrb_exclusion_distance.png, id=878, 722.7pt x 722
-.7pt>
+<pygrb_exclusion_distance.png, id=961, 722.7pt x 722.7pt>
 File: pygrb_exclusion_distance.png Graphic file (type png)
 
 <use pygrb_exclusion_distance.png>
-Package pdftex.def Info: pygrb_exclusion_distance.png used on input line 911.
+Package pdftex.def Info: pygrb_exclusion_distance.png used on input line 971.
 (pdftex.def)             Requested size: 318.67209pt x 318.67268pt.
- [41 <./pygrb_exclusion_distance.png>]
-[42]
+ [44] [45 <./pygrb_pvalue.png>] [46 <./pygrb_exclusion_distance.png>] [47]
 Chapter 5.
 
-LaTeX Warning: Reference `CBC search' on page 43 undefined on input line 938.
+LaTeX Warning: Reference `CBC search' on page 48 undefined on input line 998.
 
-[43
+[48
 
-] <xpipelineTFmap.png, id=895, 325.215pt x 337.26pt>
+] <xpipelineTFmap.png, id=988, 325.215pt x 337.26pt>
 File: xpipelineTFmap.png Graphic file (type png)
 
 <use xpipelineTFmap.png>
-Package pdftex.def Info: xpipelineTFmap.png used on input line 955.
+Package pdftex.def Info: xpipelineTFmap.png used on input line 1015.
 (pdftex.def)             Requested size: 318.67209pt x 330.4971pt.
- <xpipeline_cut.png, id=896, 899.36pt x 737.75626pt>
+ <xpipeline_cut.png, id=989, 899.36pt x 737.75626pt>
 File: xpipeline_cut.png Graphic file (type png)
 
 <use xpipeline_cut.png>
-Package pdftex.def Info: xpipeline_cut.png used on input line 963.
+Package pdftex.def Info: xpipeline_cut.png used on input line 1023.
 (pdftex.def)             Requested size: 318.67209pt x 261.40436pt.
- [44 <./xpipelineTFmap.png>] [45 <./xpipeline_cut.png>]
+ [49 <./xpipelineTFmap.png>] [50 <./xpipeline_cut.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [46]
+ [51]
 Underfull \vbox (badness 1845) has occurred while \output is active []
 
- [47]
-[48] [49]
-Overfull \hbox (13.23029pt too wide) in paragraph at lines 1134--1197
+ [52]
+[53] [54]
+Overfull \hbox (13.23029pt too wide) in paragraph at lines 1194--1257
 [][] 
  []
 
-[50] [51] <Decision_tree.png, id=978, 722.7pt x 542.025pt>
+[55] [56] <Decision_tree.png, id=1072, 722.7pt x 542.025pt>
 File: Decision_tree.png Graphic file (type png)
 
 <use Decision_tree.png>
-Package pdftex.def Info: Decision_tree.png used on input line 1207.
+Package pdftex.def Info: Decision_tree.png used on input line 1267.
 (pdftex.def)             Requested size: 318.67209pt x 239.0045pt.
 
-<mva_trigger_and_score.png, id=980, 644.4075pt x 781.92125pt>
+<mva_trigger_and_score.png, id=1074, 644.4075pt x 781.92125pt>
 File: mva_trigger_and_score.png Graphic file (type png)
 
 <use mva_trigger_and_score.png>
-Package pdftex.def Info: mva_trigger_and_score.png used on input line 1217.
+Package pdftex.def Info: mva_trigger_and_score.png used on input line 1277.
 (pdftex.def)             Requested size: 318.67209pt x 386.68831pt.
- [52] [53 <./Decision_tree.png>] [54 <./mva_trigger_and_score.png>] [55] [56] [
-57] [58]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1306.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1306.
+ [57] [58 <./Decision_tree.png>] [59 <./mva_trigger_and_score.png>] [60] [61] [
+62] [63] [64
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1366.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1366.
  (./cuthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1306.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1306.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1366.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1366.
 
 Package rerunfilecheck Info: File `cuthesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3B1E75DA39A0C05CC08CCE4CC0DB5501;4805.
+(rerunfilecheck)             Checksum: E5786D3C16BFE8808832FAD55E849478;4923.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1306.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1366.
  ) 
 Here is how much of TeX's memory you used:
- 7196 strings out of 493089
- 103420 string characters out of 6134842
- 211739 words of memory out of 5000000
- 10273 multiletter control sequences out of 15000+600000
- 15288 words of font info for 57 fonts, out of 8000000 for 9000
+ 7235 strings out of 493089
+ 103980 string characters out of 6134842
+ 215546 words of memory out of 5000000
+ 10287 multiletter control sequences out of 15000+600000
+ 15763 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,13n,51p,1445b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 30i,13n,51p,1492b,391s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx6.pfb></
 usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></us
-r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/
-local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/lo
-cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/loca
-l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/
-texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/te
-xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texl
-ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texliv
-e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2
-015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on cuthesis.pdf (67 pages, 3668295 bytes).
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/l
+ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/te
+xlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texl
+ive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texliv
+e/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/
+2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/201
+5/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2015/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam10.pfb>
+Output written on cuthesis.pdf (75 pages, 3843005 bytes).
 PDF statistics:
- 1170 PDF objects out of 1200 (max. 8388607)
- 1036 compressed objects within 11 object streams
- 291 named destinations out of 1000 (max. 500000)
- 596 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1278 PDF objects out of 1440 (max. 8388607)
+ 1133 compressed objects within 12 object streams
+ 313 named destinations out of 1000 (max. 500000)
+ 609 words of extra memory for PDF output out of 10000 (max. 10000000)
 

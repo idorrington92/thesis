@@ -427,7 +427,7 @@ The s-process occurs only if the unstable atom decays before it captures another
 
 It is difficult to detect IR using ground based telescopes, due to atmospheric distortion and a bright sky. Despite this difficulty, a kilonova was eventually observed in conjunction with GRB 130603B, a short GRB. The Hubble space telescope observed the event fade over 10 days until it was undetectable in optical light, but still clearly visible in IR. The IR light was brighter than would be expected by simply extrapolating from the afterglow. This additional IR component to the light was the kilonova. This was the strongest evidence yet that neutron star mergers were the progenitors of short GRBs.
 
-\subsection{Gravitational Waves}
+\subsection{Gravitational Waves and GRB 170817A} \label{sec:gw170817} 
 As discussed in chapter \ref{chap: gw bg}, compact binary coalescences (CBCs) are known to be strong emitters of GWs. This made short GRBs a promising target for GW astronomy, as a GW signal of a neutron star binary inspiral detected in coincidence with a short GRB would be the smoking-gun that neutron star mergers can produce short GRBs. 
 
 On the 17th of August 2017, the Fermi GRB detector (see section \ref{sec:grb detectors}) observed a short GRB just two seconds after the LIGO and Virgo observatories detected a CBC GW signal (see figure \ref{fig:grb gw 170817}). Comparing the sky localisation of the GW detector network and the Fermi GRB detector, a smaller sky patch was formed that must contain the GRB. Followup by ground based observatories quickly identified a bright object near the galaxy NGC 4993 [\textbf{cite detection papers}]. This object had not been there when the same galaxy had been previously observed (see figure \ref{fig:NGC4993}), and this galaxy was at the right distance as determined from the GW signal. Further study revealed the new object to be a rapidly evolving kilonova, confirming the theory that short GRBs are caused by neutron star mergers. 
@@ -463,7 +463,21 @@ On the 17th of August 2017, the Fermi GRB detector (see section \ref{sec:grb det
 \label{fig:NGC4993}
 \end{figure}
 
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{grb_z_brightness.jpg}
+\end{center}
+\caption{\textbf{Brightness/Luminonsity against redshift}  \textbf{cite GRB BNS paper} }
+\label{fig:brightness_z}
+\end{figure}
 
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{jet_structure.jpg}
+\end{center}
+\caption{\textbf{Jet Structure Scenarios.} \textbf{cite GRB BNS paper} }
+\label{fig:jet}
+\end{figure}
 
 \section{GRB Progenitors} \label{sec: grb prog}
 In section \ref{sec:GRB history} we discussed the evidence for short GRBs being produced by neutron star mergers and long GRBs being produced by core collapse supernova. In both of these cases, a large amount of energy is displaced rapidly from a small region. In section \ref{sec: fireball} we discussed  the fireball model, which shows that these circumstances cause shocks and relativistic beaming which explain the high energy and variability of GRBs. But the fireball model only assumes that the \textit{central engine}, the source of energy for the GRB, is small and highly energetic. There are many phenomena that satisfy this criteria. In this section we discuss some of these possibilities. We will see under which circumstances neutron star mergers and core collapse supernovae can power short and long GRBs respectively.
@@ -644,7 +658,7 @@ where $h_0(t)$ and $h_{\pi/2}(t)$ describe the two phases of the waveform, are u
 \begin{equation} \label{A4}
 \mathcal{A}^4 = \frac{D_0}{D} \left( -\frac{(1+\cos^2 \iota)}{2} \sin 2\phi_0 \sin 2\psi +  \cos \iota \cos 2 \phi_0 \cos 2\psi \right)
 \end{equation}
-where $D_0$ is used to scale the amplitude of the waveforms. For any $\mathcal{A}^\mu$ we can invert equations \ref{A1}-\ref{A4} to obtain the physical parameters up to a reflection symmetry of the system. 
+where $D_0$ is used to scale the amplitude of the waveforms. For any $\mathcal{A}^\mu$ we can invert equations \ref{A1}-\ref{A4} to obtain the physical parameters up to a reflection symmetry of the system. [\textbf{cite someone, Ian's  paper?} 
 
 The response of GW detector $X$ to a GW $h_{+,\times}$ is given by
 \begin{equation} \label{hdet}
@@ -857,50 +871,51 @@ The $\chi^2$ tests (described in \ref{sec:coh chisq}) are computationally expens
 \end{itemize}
 
 \subsection{Reweighted SNR} \label{sec:reweighted snr}
-After all the cuts have been made, the remaining triggers are then reweighted twice. First they are reweighted according to their $\chi^2$ values, according to (\ref{chi2 reweigth}), then they are reweighted again according to their null SNR, according to (\ref{null reweight}).
+After all the cuts have been made, the remaining triggers are then reweighted twice. First they are reweighted according to their coherent $\chi^2$ values, according to (\ref{chi2 reweigth}), then they are reweighted again according to their null SNR, according to (\ref{null reweight}).
 \begin{equation}  \label{chi2 reweigth}
 \rho_{\chi^2} = \begin{cases} \rho_\text{coh} & \mbox{if } \chi^2 \leq n_\text{dof} \\ \frac{\rho_\text{coh}}{\left( \frac{1}{2} \left[ 1 + \left( \frac{\chi^2}{n_\text{dof}} \right)^3 \right] \right)^{1/6} } & \mbox{if } \chi^2 > n_\text{dof}\end{cases}
 \end{equation}  
 \begin{equation} \label{null reweight}
 \rho_\text{rw} = \begin{cases} \rho_{\chi^2} & \mbox{if } \rho_\text{null} \leq 4.25 \\ \frac{\rho_{\chi^2}}{ \rho_\text{null} -3.25} & \mbox{if } \rho_\text{null} > 4.25\end{cases}
 \end{equation}
-Note that this reweighting only down-weights triggers with a high $\chi^2$ or a high null SNR. The reweighting should not significantly alter the network SNR of a GW signal, but will reduce the SNR of noise. The reweighted SNR is detection statistic used by PyGRB. 
+Note that this reweighting only down-weights triggers with a high $\chi^2$ or a high null SNR. The reweighting should not significantly alter the network SNR of a GW signal, but will reduce the SNR of noise. The reweighted SNR is the detection statistic used by PyGRB. 
 
 \subsection{Searching for Face on Signals} \label{sec:circ pol}
-The opening angle of the jet from a short GRB is expected to be $<30^\circ$, emitted perpendicular to the orbital plane. In a similar way to how the coherent SNR accounts for sky position and PSD of each detector to better reject noise, we can build a new detection statistic that takes into account that we expect a true GW signal to have an orbital inclination of $\iota ~ 0$ or $\iota ~ \pi$ with respect to the observer.
+Short GRB jets are emitted perpendicular to the orbital plane and with an opening angle $<30^\circ$, as discussed in section \ref{sec:gw170817}. In a similar way to how the coherent SNR defined in section \ref{sec:coh snr} accounts for the sky position of the GRB and the PSD of each detector, we can construct a new coherent SNR that takes into account that GWs associated with GRBs have an orbital inclination of $\iota \sim 0$ or $\iota \sim \pi$ with respect to the observer.
 
-We can see from equations (\ref{A1}) to (\ref{A4}) that the GW amplitude terms depend linearly on $\cos\iota$ and $(1+\cos^2\iota)/2$. For $0^\circ\leq\iota<30^\circ$, these are equal to within $1\%$. Thus, for $\iota~0$, we can use the approximation $\cos\iota \approx (1+\cos^2\iota)/2$. For $\iota~\pi$, the two terms are approximately equal in magnitude, but with opposite signs. 
+We can see from equations (\ref{A1}) to (\ref{A4}) that the GW amplitude terms depend linearly on $\cos\iota$ and $(1+\cos^2\iota)/2$. These two terms are equal to within $1\%$ for $0^\circ\leq\iota<30^\circ$. Thus, for $\iota \sim 0$, we can use the approximation $\cos\iota \approx (1+\cos^2\iota)/2$. For $\iota \sim \pi$ the two terms are approximately equal in magnitude, but with opposite signs. 
 
-By defining 
+Using the above approximation and defining 
 \begin{equation}
-\tilde{D} = \frac{D}{\cos\iota} \text{   and   } \chi_{l,r} = \phi_0 \pm \psi 
+\tilde{D} = \frac{D}{\cos\iota} \text{   and   } \chi_{l,r} = \phi_0 \pm \psi \text{,} 
 \end{equation}
-we can rewrite the GW amplitudes  (\ref{A1}) to (\ref{A4}) for $\iota\approx 0$ as
+the GW amplitudes  (\ref{A1}) to (\ref{A4}) with $\iota\sim 0$ become
 \begin{equation}
 \mathcal{A}^1 \approx \mathcal{A}^4 \approx -\frac{D_0}{\tilde{D}} \cos 2\chi_l \equiv \mathcal{B}_1
 \end{equation}
 \begin{equation}
 \mathcal{A}^2 \approx -\mathcal{A}^3 \approx \frac{D_0}{\tilde{D}} \sin 2\chi_l \equiv \mathcal{B}_2 \fs
 \end{equation}
-We see that now there are only two amplitude factors, $\mathcal{B}_1$ and $\mathcal{B}_2$. Therefore, the GW is circularly polarised. Similar results can be derived for the $\iota=\pi$ case. 
+We see that now there are only two amplitude factors, $\mathcal{B}_1$ and $\mathcal{B}_2$, and that the GW is circularly polarised. Similar results can be derived for the $\iota \sim \pi$ case. 
 
-Substituting these into (\ref{loglike}) and working in the dominant polarisation frame\footnote{And recalling that $(h_{\pi/2}^X|h_{\pi/2}^X)\approx (h_0^X|h_0^X)$ for CBC signals.}, we find
+Substituting these into the equation for the log-likelihood (\ref{loglike}) and working in the dominant polarisation frame\footnote{Recall that $(h_{\pi/2}^X|h_{\pi/2}^X)\approx (h_0^X|h_0^X)$ for CBC signals, see section \ref{sec:coh snr}.}, we find
 \begin{align} 
 \ln \Lambda = & \mathcal{B}_1 (\textbf{s}|\textbf{F}_+\textbf{h}_0 + \textbf{F}_\times \textbf{h}_{\pi /2} ) + \mathcal{B}_2  (\textbf{s}|\textbf{F}_\times\textbf{h}_0 - \textbf{F}_+ \textbf{h}_{\pi /2} ) \\ & - \frac{1}{2} [\mathcal{B}_1^2 + \mathcal{B}_2^2 ] [ (\textbf{F}_+\textbf{h}_0|\textbf{F}_+\textbf{h}_0) + (\textbf{F}_\times \textbf{h}_0|\textbf{F}_\times \textbf{h}_0) ] \fs
 \end{align}
-Maximising the log likelihood with respect to $\mathcal{B}_1$ and $\mathcal{B}_2$, we find 
-\begin{equation}
-\rho_\text{coh}^2 = 2\ln \lambda_\text{max} = \frac{\alpha^2 + \beta^2}{ (\textbf{F}_+\textbf{h}_0|\textbf{F}_+\textbf{h}_0) + (\textbf{F}_\times \textbf{h}_0|\textbf{F}_\times \textbf{h}_0)}
-\end{equation}
-where
+We now want to maximise the log-likelihood, just as we did when deriving the coherent SNR in section \ref{sec:coh snr}.  Defining 
 \begin{equation}
 \alpha = (\textbf{s}|\textbf{F}_+\textbf{h}_0 + \textbf{F}_\times \textbf{h}_{\pi /2} )
 \end{equation}
 \begin{equation}
-\beta =  (\textbf{s}|\textbf{F}_\times\textbf{h}_0 - \textbf{F}_+ \textbf{h}_{\pi /2} ) \fs
+\beta =  (\textbf{s}|\textbf{F}_\times\textbf{h}_0 - \textbf{F}_+ \textbf{h}_{\pi /2} ) 
+\end{equation}
+and maximising the log-likelihood with respect to $\mathcal{B}_1$ and $\mathcal{B}_2$, we find 
+\begin{equation}
+\rho_\text{coh}^2 = 2\ln \lambda_\text{max} = \frac{\alpha^2 + \beta^2}{ (\textbf{F}_+\textbf{h}_0|\textbf{F}_+\textbf{h}_0) + (\textbf{F}_\times \textbf{h}_0|\textbf{F}_\times \textbf{h}_0)} \fs
 \end{equation}
 
-In the $\iota~180^\circ$ case, the SNR takes the same form, but with
+
+In the $\iota \sim \pi$ case, the coherent SNR takes the same form, but with
 \begin{equation}
 \alpha = (\textbf{s}|\textbf{F}_+\textbf{h}_0 - \textbf{F}_\times \textbf{h}_{\pi /2} )
 \end{equation}
@@ -908,19 +923,20 @@ In the $\iota~180^\circ$ case, the SNR takes the same form, but with
 \beta =  (\textbf{s}|\textbf{F}_\times\textbf{h}_0 + \textbf{F}_+ \textbf{h}_{\pi /2} ) \fs
 \end{equation}
 
-We now have a detection statistic with only two degrees of freedom, as opposed to the four for the coherent SNR and 2N for the coincident SNR in the case of an N detector network. This gives us an additional null stream, and allows us to have a null stream even when analysing data from just two detectors. The circularly polarised coherent SNR allows for a $3\%$ increase in range for a given FAP when compared to the generic coherent SNR. This corresponds to a $10\%$ increase in the rate of GW signals detected.
+We now have a detection statistic with only two degrees of freedom, as opposed to four for the coherent SNR and 2N for the coincident SNR of an N detector network. This gives us an additional null statistic, and allows us to calculate a null SNR even when analysing data from just two detectors. The circularly polarised coherent SNR allows for a $3\%$ increase in range for a given FAP when compared to the generic coherent SNR. This corresponds to a $10\%$ increase in the rate of GW signals detected. [\textbf{cite Andrew's paper}]
 
 
 \subsection{Searching over a Sky Patch}
-The sky position of GRBs cannot be determined exactly. The uncertainty in sky position depends on which satellite detected the GRB. The BAT instrument on Swift (see section \ref{GRB detectors}) can localise to within 1-4 arcminutes [\textbf{citation in Andrew's paper}]. This is a small enough uncertainty that the GW search can use a single sky point [\textbf{cite Andrew's paper?}]. Other GRB detectors cannot provide as precise localisation. The GBM on the Fermi satellite often provides a location with a roughly circular uncertainty with a radius of several degrees. The IPN uses triangluation to determine sky position, so depending on the number of satellites in the IPN that make the detection, sky localisation and vary from under a square degree to thousands of square degrees. 
+The sky position of GRBs cannot be determined exactly. The uncertainty in sky position depends on which satellites detected the GRB\footnote{See section \ref{sec:grb detectors} for details on the GRB detectors mentioned in this section.}. The BAT instrument on Swift can localise to within 1-4 arcminutes. This is a small enough uncertainty that the GW search can use a single sky point [\textbf{cite Andrew's paper?}]. Other GRB detectors cannot provide as precise localisation. The GBM on the Fermi satellite often provides a 3$\sigma$ confidence region with a roughly circular uncertainty with a radius of several degrees [\textbf{citation in Andrew's paper- maybe include this in grb det section}]. The IPN uses triangluation to determine sky position, so depending on the number of satellites in the IPN that make the detection, sky localisation can vary from under a square degree to thousands of square degrees. 
 
-It is important to have approximately the correct sky position for a coherent search. If the sky position is incorrect, then the detector antenna patterns will be incorrect for the GRB, hurting the search sensitivity. More crucially, with the wrong sky position we will calculate the wrong time delay between detectors in the network and make it impossible to correctly find coincident triggers between detectors. 
+It is important to have approximately the correct sky position for a coherent search. If the sky position is incorrect, then the detector antenna patterns will be incorrect for the GRB, reducing the search sensitivity. More crucially, an incorrect sky position will cause the calculated time delays between detectors in the network to be wrong, making it impossible to correctly find coincident triggers between detectors. To overcome these issues, PyGRB searches over a grid of points that cover the uncertainty region provided by GRB detectors. 
 
-To search over a sky patch we fill the patch with concentric circles of points separated by $\delta a$, such that each ring has $2\pi n / \delta a$ points with $n=0$ being the central point of the patch. These concentric circles extend to cover $3\sigma$ confidence region. The value of $\delta a$ depends on the depends on the timing uncertainty we are willing to accept. In practice, we use a timing uncertainty of $\delta t = 0.5$ms, which will limit the lost SNR to $<5\%$ [\textbf{cite andrew's paper}]. Searching over the sky grid is done after the computationally dominant step of matched filtering, so that searching over the sky grid does not significantly hurt analysis speed [\textbf{Need some analyses to back this up}].
+The grid of points is constructed by filling the patch with concentric circles of points separated by $\delta a$, such that each ring has $2\pi n / \delta a$ points with $n=0$ being the central point of the patch. These concentric circles extend to cover the $3\sigma$ confidence region. The value of $\delta a$ depends on the depends on the timing uncertainty we are willing to accept. In practice, we use a timing uncertainty of $\delta t = 0.5$ms, which will limit the lost SNR to $<5\%$ [\textbf{cite andrew's paper}]. Searching over the sky grid is done after the computationally dominant step of matched filtering, so that searching over the sky grid does not significantly hurt analysis speed [\textbf{cite Andrew}].
 
-It is interesting to note that in a two detector network, there is a ring of sky points that give the same time delay between the detectors. In this case, only the antenna response of the detectors change with sky position, but the antenna response functions drop out of the coherent SNR in the two detector case\footnote{This is because in the two detector case, both the coherent and coincident SNR have four degrees of freedom. Thus, any observed amplitude and phase is consistent with an astrophysical signal.}. This would allow for us to analyse a greatly reduced set of sky points. Unfortunately, when we limit our search to looking for circularly polarised GWs, as discussed in section \ref{sec:circ pol}, then the antenna patterns again affect the detection statistic, and we must search over the sky grid.
+In the two detector case, it is possible to search a reduced number of sky points without losing sensitivity. This is because there is a ring of sky points that give the same time delay between the two detectors. Searching different points on this ring would not change the time of arrival of a GW to the detectors, though it would change the antenna response factors. But the antenna response functions drop out of the formula for the coherent SNR (\ref{rhocoh}) in the two detector case\footnote{This is because in the two detector case, both the coherent and coincident SNR have four degrees of freedom. Thus, any observed amplitude and phase is consistent with an astrophysical signal.}. This means searching over different points on those sky rings would give exactly the same results. Thus, in the two detector case, we can analyse a greatly reduced set of sky points. Unfortunately, when we limit our search to looking for circularly polarised GWs, as discussed in section \ref{sec:circ pol}, then the antenna patterns again affect the detection statistic, and we must search over the sky grid.
 
 \begin{itemize}
+\item Is there a trials factor when searching over a sky grid? I assume there must be. Mention it. 
 \item Include image of sky grid
 \end{itemize}
 

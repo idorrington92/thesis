@@ -650,7 +650,7 @@ The response of GW detector $X$ to a GW $h_{+,\times}$ is given by
 \begin{equation} \label{hdet}
 h^X(t) = F_+(\theta^X,\phi^X,\chi^X) h_+(t^X) + F_\times(\theta^X,\phi^X,\chi^X) h_\times (t^X)
 \end{equation}
-where $F_{+,\times}^X$ is the antenna response of detector $X$ to the plus and cross polarisation of the GW, the angles $(\theta^X,\phi^X,\chi^X)$ map the detector frame to the radiation frame, and the time of arrival $t^X$ at detector $X$ depends on the sky location of the source and the time of arrival at the fiducial location, e.g. the Earth's center. Combining \ref{hdet} with \ref{hp} and \ref{hx} we find
+where $F_{+,\times}^X$ is the antenna response of detector $X$ to the plus and cross polarisation of the GW, the angles $\theta^X$ and $\phi^X$ give the sky position of the source relative to the detector, the polarisation angle between the detector frame to the radiation frame is given by $\chi^X$, and the time of arrival $t^X$ at detector $X$ depends on the sky location of the source and the time of arrival at the fiducial location, e.g. the Earth's center. Combining \ref{hdet} with \ref{hp} and \ref{hx} we can write the detector response in terms of $A^\mu$
 \begin{equation} \label{h in A}
 h^X(t) = \mathcal{A}^\mu h_\mu^X(t) 
 \end{equation}
@@ -671,30 +671,34 @@ h_4^X = F_\times^X h_{\pi/2}(t^X) \textbf{ .}
 \subsection{Coherent SNR} \label{sec:coh snr}
 We are about to derive the \textit{coherent SNR}, a detection statistic for a multidetector matched filter search.\footnote{Note that this is not the final detection statistic for PyGRB, which is a modified version of the coherent SNR. See sections \ref{sec:reweighted snr} and \ref{sec:circ pol}} The idea is to find the likelihood that a trigger is a real GW in terms of $\mathcal{A}^\mu$ (assuming the detector noise is Gaussian). We then maximise the likelihood with respect to $\mathcal{A}^\mu$, reducing the parameter space from nine dimensions to five, eliminating the noise associated with these extra dimensions and so improving the detection statistic. In section \ref{sec: coinc compare}, we will compare the coherent SNR to the \textit{coincident SNR}, the detection statistic currently used by the all sky search. 
 
-We begin by defining the data $s^X(t)$ from detector $X$ to be the sum of the noise $n^X(t)$ and signal $h^X(t,\xi)$ components
+We begin by describing the data $s^X(t)$ from detector $X$. We have already seen the detector response $h^X(t)$  to a GW, given by \ref{hdet}. The detector data is the sum of this with the noise in the detector $n^X(t)$
 \begin{equation}
-s^X = n^X(t) + h^X(t,\xi) \fs
+s^X(t) = n^X(t) + h^X(t) \fs
 \end{equation}
 The noise power spectral density (PSD) $S^X_h$ for detector $X$ is defined by
 \begin{equation}
 \langle \tilde{n}^X(f) [\tilde{n}^X(f')]^* \rangle = \delta (f-f') S^X_h(f)
 \end{equation} 
-where the angle brackets denote the time average of the noise and tildes indicate that the function has be Fourier transformed. The matched filter between the GW waveform and detector data is given by the inner product 
+where the angle brackets denote the time average of the noise and tildes indicate that the function has be Fourier transformed. The matched filter between the GW waveform\footnote{Careful with notation here. The GW waveform is denoted $h$, and the detector response to the GW is denoted by $h^X$.} $h$ and detector data is given by the inner product 
 \begin{equation}
-(s^X|h^X) = 4 \text{Re} \int^\infty_0 \frac{\tilde{s}^X(f) \cdot [\tilde{h}^X(f)]^*}{S^X_h (f)} e^{2\pi i ft}df \fs
+(s^X|h) = 4 \text{Re} \int^\infty_0 \frac{\tilde{s}^X(f) \cdot [\tilde{h}(f)]^*}{S^X_h (f)} e^{2\pi i ft}df \fs
 \end{equation}
 
-The probability of obtaining detector data $s$ given the presence of GW $h$ is denoted $P(s|h)$. If the detector noise is Gaussian, then
+The probability of obtaining detector data $s^X$ given the presence of GW $h$ is denoted $P(s^X|h)$. This is equivalent to the probability that the detector data minus the detector response to a GW, given by \ref{hdet}, is just noise. If the detector noise is Gaussian, then this gives us
 \begin{equation}
-P(s|h) = \frac{1}{2\pi}  e^{-(s-h|s-h)/2} \fs
+P(s^X|h) = \frac{1}{2\pi}  e^{-(s^X-h^X|s^X-h^X)/2} \fs
 \end{equation}
-The likelihood ratio is the probability of obtaining detector data $s$ when the GW signal $h$ is present, divided by the probability of obtaining the data $s$ in the absence of a GW, which we denote $P(s|0)$. This gives us
+The likelihood ratio is the probability of obtaining detector data $s^X$ when the GW signal $h$ is present, divided by the probability of obtaining the data $s$ in the absence of a GW, which we denote $P(s|0)$. This gives us
 \begin{equation}
-\Lambda (h) = \frac{P(s|h)}{P(s|0)} = \frac{e^{-(s-h|s-h)/2}}{e^{-(s|s)/2}} \fs
+\Lambda (h) = \frac{P(s^X|h)}{P(s^X|0)} = \frac{e^{-(s^X-h^X|s^X-h^X)/2}}{e^{-(s^X|s^X)/2}} \fs
 \end{equation}
 For convenience, we will use the log-likelihood 
 \begin{equation}
-\log \Lambda = (s|h) - \frac{1}{2}(h|h) \fs
+\log \Lambda = (s^X|h^X) - \frac{1}{2}(h^X|h^X) \fs
+\end{equation}
+Using \ref{h in A}, we can rewrite the log-likelihood in terms of $\mathcal{A}^\mu$
+\begin{equation}
+\log \Lambda = \mathcal{A}^\mu(s^X|h^X_\mu) + \frac{1}{2} \mathcal{A}^\mu (h^X_\mu | h^X_\nu) \mathcal{A}^\nu \fs
 \end{equation}
 
 The log-likelihood defined above a measure of the probability a trigger that has been found in a single detector is real. For a coherent search we need a likelihood measure that takes into consideration every detector in the network. First we must define the multidetector inner product, which we take to be the sum of individual detector inner products for the $d$ detectors in the network
@@ -704,7 +708,7 @@ The log-likelihood defined above a measure of the probability a trigger that has
 The multidetector log-likelihood then becomes
 \begin{equation}
 \log \Lambda = (\textbf{s}|\textbf{h}) - \frac{1}{2}(\textbf{h}|\textbf{h}) \end{equation}
-where $\textbf{h} = (\textbf{F}_+ \textbf{h}_0,\textbf{F}_\times \textbf{h}_0,\textbf{F}_+ \textbf{h}_{\pi/2},\textbf{F}_\times \textbf{h}_{\pi/2})$. Using \ref{h in A}, we can rewrite the log-likelihood in terms of $\mathcal{A}^\mu$
+where $\textbf{h} = (\textbf{F}_+ \textbf{h}_0,\textbf{F}_\times \textbf{h}_0,\textbf{F}_+ \textbf{h}_{\pi/2},\textbf{F}_\times \textbf{h}_{\pi/2})$. In terms of $\mathcal{A}^\mu$, the multidetector log-likelihood function is
 \begin{equation} \label{loglike}
 \ln \Lambda = \left[ \mathcal{A}^\mu(\textbf{s}|\textbf{h}_\mu) - \frac{1}{2}\mathcal{A}^\mu \mathcal{M}_{\mu\nu}\mathcal{A}^\nu \right]
 \end{equation}
@@ -720,22 +724,8 @@ where $\mathcal{M}^{\mu\nu}$ is the inverse of $\mathcal{M}_{\mu\nu}$. The \text
 \begin{equation} \label{rhocoh1}
 \rho^2_\text{coh} = 2\ln \Lambda |_\text{max} = (\textbf{s}|\textbf{h}_\mu)\mathcal{M}^{\mu\nu}(\textbf{s}|\textbf{h}_\nu) \fs
 \end{equation}
-The  $\mathcal{A}^\mu$ terms have been maximised over, leaving only five of our original nine waveform parameters to search over. 
 
-\begin{itemize}
-\item Does the all sky search use all those parameters in its template bank?
-\item Quick discussion on template banks, EM bright etc.
-\end{itemize}
-
-
-\subsection{Comparison to Coincident Search} \label{sec: coinc compare}
-In this section we will put the coherent SNR into a form such that it is easy to compare to the \textit{coincident SNR}, which is the detection statistic currently used by all sky matched filter searches. The coincident SNR is defined to be the quadrature sum of the matched filter of the individual detectors
-\begin{equation} \label{rhocoinc}
-\rho^2_\text{coinc} = \sum_\text{X,Y} \sum_{i=0,\pi/2} \left( s^X \bigg| \frac{h_i}{\sigma^X} \right)[\delta^{XY}]\left( s^Y \bigg| \frac{h_i}{\sigma^Y} \right) 
-\end{equation}
-where $\sigma^X = (h^X_i | h^X_i)$.
-
-We can make \ref{rhocoh1} more easily comparable to \ref{rhocoinc} by making $\mathcal{M}$ diagonal. To do this, first note that CBC signals spend a large number of cycles in the sensitive frequency range of the detectors. This causes the $0$ and $\frac{\pi}{2}$ phases of the waveform to be approximately orthogonal. The slow frequency evolution means that the two phases have roughly equal amplitude. Hence we find 
+We can simplify the matrix $\mathcal{M}$ by noting that as CBC signals spend a large number of cycles in the sensitive frequency range of the detector, the $0$ and $\frac{\pi}{2}$ phases of the waveform are approximately orthogonal. The slow frequency evolution means that the two phases have roughly equal amplitude. Hence we find 
 \begin{equation}
 (h_0^X|h_{\pi/2}^X)\approx 0 ,
 \end{equation}
@@ -764,7 +754,21 @@ B = \sum_X (\sigma^X F_\times^X)^2
 C = \sum_X (\sigma^X F_+^X)(\sigma^X F_\times^X) \fs
 \end{equation}
 
-We can simplify further by rotating the detector frame to the \textit{Dominant Polarization Frame}. In this frame, the antenna response functions to the plus and cross polarisation are orthogonal, and hence $C=0$, making $\mathcal{M}$ diagonal. As we included a polarisation angle between the equatorial and radiation frame ($\chi$) and the radiation and source frame ($\psi$), we can rotate our network frame without placing further constraints on the system. In particular, we can rotate through an angle $\chi^\text{DP}$ such that $C=0$. This gives us the following antenna response functions 
+With the  $\mathcal{A}^\mu$ terms maximised over, there are only five of our original nine waveform parameters left to search over. 
+
+\begin{itemize}
+\item Does the all sky search use all those parameters in its template bank?
+\item Quick discussion on template banks, search over the 4 parameters plus time, maybe EM bright too
+\end{itemize}
+
+
+\subsection{Comparison to Coincident Search} \label{sec: coinc compare}
+In this section we will put the coherent SNR into a form such that it is more easily compared to the \textit{coincident SNR}, the detection statistic currently used by all sky matched filter searches. The coincident SNR is defined to be the quadrature sum of the matched filter of the individual detectors
+\begin{equation} \label{rhocoinc}
+\rho^2_\text{coinc} = \sum_\text{X,Y} \sum_{i=0,\pi/2} \left( s^X \bigg| \frac{h_i}{\sigma^X} \right)[\delta^{XY}]\left( s^Y \bigg| \frac{h_i}{\sigma^Y} \right) \fs
+\end{equation}
+
+We can make \ref{rhocoh1} more easily comparable to \ref{rhocoinc} by making $\mathcal{M}$ diagonal. We do this by rotating the detector frame to the \textit{Dominant Polarization Frame}. In this frame, the antenna response functions to the plus and cross polarisation are orthogonal, making $C=0$ and $\mathcal{M}$ diagonal. As we included polarisation angles between the equatorial and radiation frames $\chi$ in \ref{hdet} and the radiation and source frames $\psi$ in $\mathcal{A}^\mu$, we can rotate our network frame without placing further constraints on the system. In particular, we can rotate through an angle $\chi^\text{DP}$ such that $C=0$. This gives us the following antenna response functions 
 \begin{equation}
 F_+^{\text{DP},X} = F_+^\text{X} \cos 2\chi^\text{DP} + F^\text{X}_\times \sin 2\chi^\text{DP}
 \end{equation}
@@ -775,7 +779,7 @@ Using these antenna response functions in (\ref{C eqn}) and solving for $\chi^\t
 \begin{equation}
 \chi^\text{DP} = \frac{1}{4} \arctan \left( \frac{2\sum_X (\sigma^X F^X_+)(\sigma^X F^X_\times)}{\sum_X \left[ (\sigma^X F^X_+)^2 - (\sigma^X F^X_\times)^2 \right] }  \right) \fs
 \end{equation}
-This does not uniquely define the dominant polarisation frame, so we also require the network to be more sensitive to the plus polarisation
+This does not uniquely define the dominant polarisation frame, so we also require the network to be more sensitive to the plus polarisation than the cross polarisation
 \begin{equation}
 |F^\text{DP,X}_+ | \geq | F^\text{DP,X}_\times | \fs
 \end{equation}
@@ -791,15 +795,18 @@ where we define the orthonormal vectors
 \begin{equation}
 f^X_{+,\times} = \frac{\sigma^X F^X_{+,\times}}{\sqrt{\sum_Y( \sigma^Y F^Y_{+,\times})^2}} \textbf{ .}
 \end{equation}
+
 We can now compare the coherent SNR as given in (\ref{rhocoh}) to the coincident SNR given by (\ref{rhocoinc}). The coincident SNR is the quadrature sum of all the energy in each detector. In the space spanned by individual detector SNRs, where each trigger is represented by a point in this space, it is the distance from the origin to the trigger. It is the total energy of that trigger. 
 
-The coherent SNR is a projection of the total energy of a trigger onto the subspace spanned by $f_+$ and $f_\times$. This subspace is the space consistent with a gravitational wave signal from the given sky location and with the PSD of the detectors at the given time. Orthogonal to this space is the space inconsistent with a signal. Noise contributes energy to all components of the coincident SNR, and so projecting it onto the signal space will reduce its amplitude. The energy due to a GW signal lays entirely in the signal plane, so the projection does not change the distance to the point representing the trigger. In the case of a real GW detection, the coherent and coincident SNR are approximately the same as most of the energy of the trigger is due to the GW, though the coherent SNR will be slightly lower as some energy will be due to noise, and so is removed. 
+The coherent SNR is a projection of the total energy of a trigger onto the subspace spanned by $f_+$ and $f_\times$. This subspace is the space consistent with a gravitational wave signal from the given sky location and with the PSD of the detectors at the given time, so we call it the \textit{signal space}. Orthogonal to this space is the space inconsistent with a signal. Noise contributes energy to all components of the coincident SNR, and so projecting it onto the signal space will reduce its amplitude. The energy due to a GW signal lays entirely in the signal plane, so the projection does not change the distance to the point representing the trigger. In the case of a real GW detection, the coherent and coincident SNR are approximately the same as most of the energy of the trigger is due to the GW, though the coherent SNR will be slightly lower as some energy will be due to noise, and so is removed. 
 
-Another way to think of the difference between coherent and coincident SNR is in terms of the number of degrees of freedom. The coincident SNR has noise contributions from the phase and amplitude measurements in each detector, resulting in $2N$ degrees of freedom, where $N$ is the number of detectors. From (\ref{rhocoh dof}) we can see that the coherent SNR has four degrees of freedom: the $0$ and $\pi/2$ phases of the plus and cross polarisation amplitudes of the gravitational wave. In the case where we have a non-degenerate\footnote{i.e. sensitive to both plus and cross polarisations.} two detector network, then both the coincident and coherent SNR have four degrees of freedom. In this case, we can show that the coherent and coincident SNRs are identical by calculating $f^X_{+}f^Y_{+}+f^X_{\times}f^Y_{\times}=\delta^{XY}$.
-
+Another way to think of the difference between coherent and coincident SNR is in terms of the number of degrees of freedom. The coincident SNR has noise contributions from the phase and amplitude measurements in each detector, resulting in $2N$ degrees of freedom, where $N$ is the number of detectors. From (\ref{rhocoh dof}) we can see that the coherent SNR has four degrees of freedom: the $0$ and $\pi/2$ phases of the plus and cross polarisation amplitudes of the gravitational wave. In the case where we have a non-degenerate\footnote{i.e. sensitive to both plus and cross polarisations.} two detector network, both the coincident and coherent SNR have four degrees of freedom. In this case, the coherent and coincident SNRs are identical as
+\begin{equation}
+f^X_{+}f^Y_{+}+f^X_{\times}f^Y_{\times}=\delta^{XY} \fs
+\end{equation}
 
 \subsection{Null SNR} \label{sec:null snr}
-Gravitational waves have two polarisations. Therefore we can fully describe the signal with two non-aligned detectors. Adding additional detectors to our network allows us to construct additional data streams that have the GW signal removed. We can easily construct a such a data stream by subtracting the coherent SNR (the energy consistent with a GW signal) from the coincident SNR (the total energy measured by the detectors). Any energy left from this is associated with noise, and we call this the \textit{null SNR}
+Gravitational waves have two polarisations. Therefore we can fully describe the signal with two non-aligned detectors. Adding additional detectors to our network allows us to construct additional data streams that have the GW signal removed. We can easily construct such a data stream by subtracting the coherent SNR (the energy consistent with a GW signal) from the coincident SNR (the total energy measured by the detectors). Any energy left from this is associated with noise, and we call this the \textit{null SNR}\footnote{The null SNR is similar to \textit{null streams}, which are used by burst searches (see section \ref{xtriggers}). The null stream in a burst search is made to remove a GW signal of any morphology, unlike the null SNR which is template specific.}
 \begin{equation} \label{null snr}
 \rho_N^2 = \rho_\text{coinc}^2 - \rho_\text{coh}^2 = \sum_{X,Y} \sum_{i=0,\pi/2} \left( s^X \bigg| \frac{h_i}{\sigma^X} \right) [N^{XY}]  \left( s^Y \bigg| \frac{h_i}{\sigma^Y} \right)
 \end{equation} 
@@ -807,28 +814,32 @@ where
 \begin{equation}
 N^{XY} = \delta^{XY} - f^X_{+}f^Y_{+} - f^X_{\times}f^Y_{\times} \fs
 \end{equation}
-Noise triggers are incoherent, and so for noise we expect $\rho_\text{coinc}^2\gg\rho_\text{coh}^2$. Thus the null SNR is high in this case. For a true GW signal, most of the energy will be coherent, and so we expect $\rho_\text{coinc}^2 \simeq \rho_\text{coh}^2$.  Thus, the null SNR is expected to be close to zero for a true GW signal. 
+Glitches are incoherent, meaning that in general they do not exist in the signal space. For this reason, we expect $\rho_\text{coinc}^2 \gg \rho_\text{coh}^2$ for loud glitches. Equivalently, we could say the null SNR is high in this case. For a sufficiently loud GW signal, most of the energy will be coherent, and so $\rho_\text{coinc}^2 \simeq \rho_\text{coh}^2$. Hence the null SNR is will be close to zero.
 
-The null SNR is similar to \textit{null streams}, which are used by burst searches (see section \ref{xtriggers}). The null stream in a burst search is made to remove a GW signal of any morphology. 
-
+\subsection{Coherent $\chi^2$ Tests} \label{sec:coh chisq}
+\begin{itemize}
+\item Quick description of coherent chi2 tests
+\item Explain that they were used in O2 but will not be used in future
+\item Explain why they were taken out and that we now use single detector chi2 tests
+\item This section should be brief
+\end{itemize}
 
 \subsection{The PyGRB Workflow} \label{sec:thresholds}
-We have seen several statistics that can indicate whether a trigger is a GW signal or noise. We apply cuts on these statistics, discarding any triggers that fail the cuts. This is especially important for the coherent search as the coherent statistics are slow to calculate and additional to all the statistics used in the coincident search. To speed up the coherent search, we discard as many triggers as possible at the earliest possible time in the workflow. In this section we will discuss the order of the workflow and the cuts made on each statistic. 
+We have seen several statistics that can indicate whether a trigger is a GW signal or noise. We apply cuts on these statistics, discarding any triggers that fail the cuts. This is especially important for the coherent search as the coherent statistics are slow to calculate and additional to all the statistics used in the coincident search. To speed up the coherent search, we discard as many triggers as possible at the earliest possible time in the workflow. In this section we will discuss the PyGRB workflow as it was in the most recent LIGO observing run, focusing on how triggers are discarded in order to speed up the analysis.
 
-The analysis begins with matched filtering the individual detector data. Using the known sky location of the GRB and the fact that gravitational waves travel at the speed of light, we timeshift the data from each detector so that a GW will be coincident in each detector. A list of triggers is formed for each detector by keeping only times when the individual detector SNR is greater than four, the rest of the data is discarded. We then discard any trigger that is not coincident in at least two detectors in the network. 
+The analysis begins with matched filtering the individual detector data. Using the known sky location of the GRB and the fact that gravitational waves travel at the speed of light, we timeshift the data from each detector so that a GW associated with the GRB will be coincident in each detector. A list of triggers is formed for each detector by keeping only times when the individual detector SNR is greater than four, the rest of the data is discarded. We then discard any trigger that is not coincident in at least two detectors in the network. 
 
-The coincident SNR is then easy to calculate, and any trigger with a coincident SNR below six is discarded. The coherent SNR is then calculated for the remaining triggers. This reduces the SNR of noise, but not signals, and so we apply the same threshold of six to the coherent SNR. 
+The coincident SNR is then easy to calculate, and any trigger with a coincident SNR below six is discarded. We then calculate the coherent SNR for the remaining triggers. We apply the same threshold of six to the coherent SNR as it is strictly lower than the coincident SNR. 
 
-Once we have the coincident and coherent SNR, the null SNR is easy to calculate. The null SNR of a trigger increases with the energy of the trigger for both noise and GW signals, so a very loud GW signal can still have a high null SNR. For this reason, we increase the null SNR threshold with the coherent SNR for loud triggers but keep the null SNR threshold is fixed for quiet triggers, as can be seen in fig.\ref{fig:nullcut}. To be precise, we keep triggers meeting either of the following criteria: 
+Once we have the coincident and coherent SNR, the null SNR is easy to calculate. We want to cut triggers with a high null SNR, as it is in general higher for glitches that for GWs. However, differences between the actual GW waveform and the template used for the matched filter, as well as inaccuracies in timing and sky position, can all lead to some fraction of the energy of a GW contributing to the null SNR. In practice, this could mean a loud GW has a high coherent SNR \textit{and} a high null SNR. For this reason, we increase the null SNR threshold with the coherent SNR for loud triggers but keep the null SNR threshold fixed for quiet triggers, as can be seen in fig.\ref{fig:nullcut}. To be precise, we keep triggers meeting either of the following criteria: 
 \begin{equation}
 \rho_N\leq5.25 \text{  and   } \rho_\text{coh}\leq 20
 \end{equation} 
-or
 \begin{equation}
 \rho_N \leq \frac{\rho_\text{coh}}{5}+5.25  \text{  and   } \rho_\text{coh}> 20 \fs
 \end{equation}
 
-The $\chi^2$ tests (described in \ref{sec:chi2}) are computationally expensive to calculate, so we calculate these only on those triggers that survive all the other tests. These tests are the same as used in the coincident search. In particular, they are not coherent but applied to the individual detector triggers. 
+The $\chi^2$ tests (described in \ref{sec:coh chisq}) are computationally expensive to calculate, so we calculate these only on those triggers that survive all the other tests. These tests are the same as used in the coincident search. In particular, they are not coherent but applied to the individual detector triggers. 
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -846,12 +857,12 @@ The $\chi^2$ tests (described in \ref{sec:chi2}) are computationally expensive t
 \end{itemize}
 
 \subsection{Reweighted SNR} \label{sec:reweighted snr}
-After all the cuts have been made, the remaining triggers are then reweighted twice. First they are reweighted according to their $\chi^2$ values, according to (\ref{chi2 reweigth}), then they are reweighted again according to their null SNR, according to (\ref{null reweight}).  
-\begin{equation} \label{chi2 reweigth}
-\textbf{Chi2 reweighting goes here}
-\end{equation}
+After all the cuts have been made, the remaining triggers are then reweighted twice. First they are reweighted according to their $\chi^2$ values, according to (\ref{chi2 reweigth}), then they are reweighted again according to their null SNR, according to (\ref{null reweight}).
+\begin{equation}  \label{chi2 reweigth}
+\rho_{\chi^2} = \begin{cases} \rho_\text{coh} & \mbox{if } \chi^2 \leq n_\text{dof} \\ \frac{\rho_\text{coh}}{\left( \frac{1}{2} \left[ 1 + \left( \frac{\chi^2}{n_\text{dof}} \right)^3 \right] \right)^{1/6} } & \mbox{if } \chi^2 > n_\text{dof}\end{cases}
+\end{equation}  
 \begin{equation} \label{null reweight}
-\textbf{null reweighting goes here}
+\rho_\text{rw} = \begin{cases} \rho_{\chi^2} & \mbox{if } \rho_\text{null} \leq 4.25 \\ \frac{\rho_{\chi^2}}{ \rho_\text{null} -3.25} & \mbox{if } \rho_\text{null} > 4.25\end{cases}
 \end{equation}
 Note that this reweighting only down-weights triggers with a high $\chi^2$ or a high null SNR. The reweighting should not significantly alter the network SNR of a GW signal, but will reduce the SNR of noise. The reweighted SNR is detection statistic used by PyGRB. 
 

@@ -935,9 +935,16 @@ The grid of points is constructed by filling the patch with concentric circles o
 
 In the two detector case, it is possible to search a reduced number of sky points without losing sensitivity. This is because there is a ring of sky points that give the same time delay between the two detectors. Searching different points on this ring would not change the time of arrival of a GW to the detectors, though it would change the antenna response factors. But the antenna response functions drop out of the formula for the coherent SNR (\ref{rhocoh}) in the two detector case\footnote{This is because in the two detector case, both the coherent and coincident SNR have four degrees of freedom. Thus, any observed amplitude and phase is consistent with an astrophysical signal.}. This means searching over different points on those sky rings would give exactly the same results. Thus, in the two detector case, we can analyse a greatly reduced set of sky points. Unfortunately, when we limit our search to looking for circularly polarised GWs, as discussed in section \ref{sec:circ pol}, then the antenna patterns again affect the detection statistic, and we must search over the sky grid.
 
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.6\linewidth]{skypatch.png}
+\end{center}
+\caption{\textbf{PyGRB Sky Grid.} Here we see an example of a full search grid used by PyGRB, indicated by the blue dots, and a reduced sky grid parsed by PyGRB in the case of a two detector search using the Hanford and Livingston detectors, the empty circles labeled 'parsed'. The parsed circles do not form a line due to the parsing routine, but this has no effect on analysis. \textbf{cite Andrew's paper}}
+\label{fig:skypatch}
+\end{figure}
+
 \begin{itemize}
 \item Is there a trials factor when searching over a sky grid? I assume there must be. Mention it. 
-\item Include image of sky grid
 \end{itemize}
 
 

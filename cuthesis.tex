@@ -72,10 +72,9 @@
 
 % dedication
 \begin{dedication}
-    \ldots as observations have accumulated, the subject has become,
-    to my mind at least, more mysterious and more inapproachable.\\
+    ``[T]he Listeners are trying to work out precisely what it was that the Creator said when He made the universe...  There were certain problems caused by the fact that they didn't hear only the subtle echoes of the first words, but every other sound made on the Disc. In order to recognise the sound of the Words, they had to learn to recognise all the other noises. This called for a certain talent, and a novice was only accepted for training if he could distinguish by sound alone, at a distance of a thousand yards, which side a dropped coin landed. He wasn't actually accepted into the order until he could tell what colour it was."\\
     \vspace{1cm}
-    \hfill \textit{William Parsons, Third Earl of Rosse}
+    \hfill \textit{Terry Pratchett}
 \end{dedication}
 
 % ----------------------------
@@ -271,7 +270,7 @@ e^{(i\omega (z-t))} \fs
 \item Unknown
 \end{itemize}
 \end{itemize}
-\section{Gravitational Wave Detectors} 
+\section{Gravitational Wave Detectors} \label{sec:gw detectors}
 Can cite soaulson and the noises paper
 \begin{itemize}
 \item Michelson Interferometer (cite R.Weiss 1972 paper to look smart)
@@ -283,7 +282,18 @@ Can cite soaulson and the noises paper
 \item Instrumental noise
 \item Noise budget
 \end{itemize}
+\item Detector nulls
 \end{itemize}
+
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{antenna_pattern.png}
+\end{center}
+\caption{\textbf{Antenna Pattern.} \textbf{cite Sathya and Schutz living review} }
+\label{fig:antenna pattern}
+\end{figure}
+
 \subsection{How to find something interesting in all that noise}
 \begin{itemize}
 \item Autocorrelation function
@@ -425,19 +435,14 @@ The observation of supernova remnants coincident with long GRBs demonstrated the
 
 The s-process occurs only if the unstable atom decays before it captures another neutron. This is unlikely in neutron rich, high temperature environments, such as a neutron star merger. Instead the atoms will capture multiple neutrons before they $\beta$-decay. This is called the \textit{r-process} and it creates elements with a high atomic number, such as gold and iodine. The light emitted by the decay of the r-process elements after a neutron star merger is called a \textit{kilonova}. The r-process elements are optically opaque, making kilonovas peak in the infrared (IR) and be about 10-100 times fainter than supernova. 
 
-It is difficult to detect IR using ground based telescopes, due to atmospheric distortion and a bright sky. Despite this difficulty, a kilonova was eventually observed in conjunction with GRB 130603B, a short GRB. The Hubble space telescope observed the event fade over 10 days until it was undetectable in optical light, but still clearly visible in IR. The IR light was brighter than would be expected by simply extrapolating from the afterglow. This additional IR component to the light was the kilonova. This was the strongest evidence yet that neutron star mergers were the progenitors of short GRBs.
+It is difficult to detect IR using ground based telescopes, due to atmospheric distortion and a bright sky. Despite this difficulty, a kilonova was eventually observed in conjunction with GRB 130603B, a short GRB. The Hubble space telescope observed the event fade over 10 days until it was undetectable in optical light, but still clearly visible in IR. The IR light was brighter than would be expected by simply extrapolating from the afterglow. This additional IR component to the light was the kilonova. This was the strongest evidence yet that neutron star mergers were the progenitors of short GRBs. 
 
-\subsection{Gravitational Waves and GRB 170817A} \label{sec:gw170817} 
 As discussed in chapter \ref{chap: gw bg}, compact binary coalescences (CBCs) are known to be strong emitters of GWs. This made short GRBs a promising target for GW astronomy, as a GW signal of a neutron star binary inspiral detected in coincidence with a short GRB would be the smoking-gun that neutron star mergers can produce short GRBs. 
 
-On the 17th of August 2017, the Fermi GRB detector (see section \ref{sec:grb detectors}) observed a short GRB just two seconds after the LIGO and Virgo observatories detected a CBC GW signal (see figure \ref{fig:grb gw 170817}). Comparing the sky localisation of the GW detector network and the Fermi GRB detector, a smaller sky patch was formed that must contain the GRB. Followup by ground based observatories quickly identified a bright object near the galaxy NGC 4993 [\textbf{cite detection papers}]. This object had not been there when the same galaxy had been previously observed (see figure \ref{fig:NGC4993}), and this galaxy was at the right distance as determined from the GW signal. Further study revealed the new object to be a rapidly evolving kilonova, confirming the theory that short GRBs are caused by neutron star mergers. 
+\section{Gravitational Waves and GRB 170817A} \label{sec:gw170817} 
+On the 17th of August 2017, the Fermi Gamma-ray Burst Monitor (see section \ref{sec:grb detectors}) observed a faint short GRB just two seconds after the LIGO and Virgo observatories detected a GW signal from a binary neutron star merger with a network SNR of 32.4 (see figure \ref{fig:grb gw 170817}) [\textbf{cite BNS detection paper}]. Comparing the sky localisation of the GW detector network and the Fermi GRB detector, the source of the GRB was localised to a small sky patch. Ground based observatories scanned the sky patch for a remnant, and quickly identified a bright object near the galaxy NGC 4993 [\textbf{cite detection papers}]. This object had not been there when the same galaxy had been previously observed (see figure \ref{fig:NGC4993}), and this galaxy was at the right distance as determined from the GW signal. Further study revealed the new object to be a rapidly evolving kilonova, confirming the theory that short GRBs are caused by neutron star mergers. 
 
-\begin{itemize}
-\item Should I go into more detail about what was learned from the BNS?
-\item Structured jet?
-\item blue to red spectrum?
-\item Heavy elements? 
-\end{itemize}
+In this section we will discuss in detail the coincident detection of GW 170817 with GRB 170817A. We will start by discussing the initial GW detection, focusing on the data analysis used to determine the sky location and properties of the source. We will then discuss the results of the EM followup that found the afterglow of the GRB and showed that it was a kilonova. We will then end with a discussion of late time EM observations, which showed that GRB 170817A had a structured jet which was seen off-axis, explaining the relatively faint prompt emission.
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -446,6 +451,30 @@ On the 17th of August 2017, the Fermi GRB detector (see section \ref{sec:grb det
 \caption{\textbf{GRB170817A and GW170817.} Here we see that the a coherent conbination of the Hanford and Livingston strain data from GW170817 in the bottom panel. The top two panels shows the Fermi GRM curve in the 10-50keV and the 50-300keV range respectively. The INTEGRAL/SPI-ACS data is shown in the third plot. The background estimate for each detector is indicated by the red line. Note that the GRB was detected 1.7 seconds after the GW signal was detected. We can also see that Fermi detected a longer, softer signal in the 10-50 keV range, that lasted for a few seconds after the triggering pulse. \textbf{cite Gravitational Waves and Gamma-Rays from a Binary Neutron Star Merger: GW170817 and GRB 170817A} }
 \label{fig:grb gw 170817}
 \end{figure}
+
+\subsection{Initial Observation and Followup}
+The initial detection of GW 170817 was made only by the LIGO Hanford observatory, despite the fact that both LIGO detectors and the Virgo detector were in observing mode. A quick investigation found that the Livingston detector data had not been included by the low-latency search due to a glitch approximately 1.5 seconds before the coalescence phase of the signal. Glitches such as this happen at a rate of once every few hours in the LIGO detectors. These glitches are not temporally correlated between the two LIGO detectors and their source is unknown. Despite the glitch, the GW signal is clearly visible in the data (see the top panel of figure \ref{fig:l1 gltich}). 
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{l1_glitch.png}
+\end{center}
+\caption{\textbf{Glitch in the LIGO Livingston Observatory.} The top panel shows a time frequency map for the Livingston observatory data at the detection time of GW 170817. A glitch is clearly visible approximately 1.5 seconds before the end of the signal. Despite this the signal is still clearly visible. The bottom plot shows the raw strain data from the Livingston observatory. This data is bandpassed between 30 Hz and 2 kHz to emphasise the sensitive range of the detector. The grey curve (and right axis) shows the inverse Tukey window used to smoothly zero out the data around the glitch before the rapid reanalysis of the data. The blue curve shows the waveform model used to subtract the glitch from the data before measurements of the source's properties were made. \textbf{cite GW170817 observation from BNS} }
+\label{fig:l1 gltich}
+\end{figure}
+
+Due to the coincidence with GRB 170817A, a rapid reanalysis of the data was performed, with the glitch removed from the data using an inverse Tukey window (see the bottom panel of figure \ref{fig:l1 gltich}). Removing a glitch like this lowers the reported SNR of a matched filter search compared to if there was no glitch, but allows the trigger to pass signal consistency tests\footnote{In fact, some offline analyses automatically gate out glitches, see section \ref{sec:pygrb improvements} and [\textbf{cite someone}]}. The data from the LIGO and Virgo detectors, with the Livingston glitch and some other noise removed, is shown in figure \ref{fig:170817 ifo strain}. The GW signal, clearly visible in the LIGO detectors, had an SNR of 18.8 in Hanford and 26.4 in Livingston, but an SNR of just 2.0 in Virgo.
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{gw170817_ifo_strain.png}
+\end{center}
+\caption{\textbf{GW 170817 Detection.} Here we see time frequency maps of the LIGO Hanford and Livingston observatories, and the Virgo observatory at the detection time of GW 170817. This data has been whitened and independently observable noise sources have been subtracted, including a glitch in the Livingston data. The non-detection by Virgo significantly reduced the amount of the sky that the signal could have originated from. \textbf{cite GW170817 observation from BNS} }
+\label{fig:170817 ifo strain}
+\end{figure}
+
+The high SNR in the LIGO detectors compared to Virgo suggested that the GW originated from a part of the sky that Virgo was not sensitive to at the time of the trigger (see section \ref{sec:gw detectors}). The source of the GW was localised to within 31 deg$^2$ using the time delay between the LIGO detectors and the fact that the source originated from a null of the Virgo detector\footnote{For parameter estimation analysis of the signal, the glitch was modelled and subtracted from the data (see the bottom panel of figure \ref{fig:l1 gltich}), which reduced the sky patch to an area of 28 deg$^2$.} [\textbf{cite BNS detection paper}] and the sky localisation determined using GW data was consistent with the data determined by GRB detectors (see figure \ref{fig:170817 skymap}). GW data also determined the distance to the source was approximately 40 Mpc, close enough that relatively complete galaxy catalogues exist. Using this information, ground based observatories began scanning the sky patch for an afterglow. Less than 11 hours after the initial trigger, the Swope telescope in Chile, followed by five other observatories  [\textbf{cite kilonova paper?}], found a new object on the edge of galaxy NGC 4993 (see figure \ref{fig:NGC4993}). 
+
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -459,25 +488,73 @@ On the 17th of August 2017, the Fermi GRB detector (see section \ref{sec:grb det
 \begin{center}
 \includegraphics[width=0.8\linewidth]{NGC4993.jpg}
 \end{center}
-\caption{\textbf{NGC 4993.} Image of NGC 4993 taken in 1992 (left) and August 18th 2017 (right). \textbf{cite https://www.nature.com/articles/nature24291/figures/2} }
+\caption{\textbf{NGC 4993.} Image of NGC 4993 taken in 1992 by the Anglo-Australian Observatory (left) and August 18th 2017 by the Las Cumbres Observatory (right). \textbf{cite https://www.nature.com/articles/nature24291/figures/2} }
 \label{fig:NGC4993}
 \end{figure}
+
+\subsection{Kilonova}
+\begin{itemize}
+\item blue to red spectrum
+\item Heavy elements
+\end{itemize}
+
+
+
+\subsection{Late Time Afterglow Observations}
+
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=1.0\linewidth]{grb_z_brightness.jpg}
 \end{center}
-\caption{\textbf{Brightness/Luminonsity against redshift}  \textbf{cite GRB BNS paper} }
+\caption{\textbf{Brightness/Luminosity against redshift.} Here we see the distribution of $E_\text{iso}$ and $L_\text{iso}$ against redshift for every GBM-detected GRB with a measured refshift. For GRBs with power law spectra, marked with a downward pointing arrow, this is taken to be an upper limit. This is because the spectra must have curvature, and so extrapolating a power law leads to an overestimation. The green dashed line shows the approximate detection threshold for the GBM. These plots show that GRB 170817A was much dimmer than any other detected GRB. [\textbf{cite GRB BNS paper}] }
 \label{fig:brightness_z}
 \end{figure}
+
+\begin{itemize}
+\item GRB was very faint - requires explanation
+\item Structured jet/top hat
+\item For a structured jet it is expected that the afterglow will slowly get brighter as more light from the jet reaches us, a viewer at a large angle from the axis
+\item MCMC analysis with different models strongly favours structured jet with or without cocoon
+\end{itemize}
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=1.0\linewidth]{jet_structure.jpg}
 \end{center}
-\caption{\textbf{Jet Structure Scenarios.} \textbf{cite GRB BNS paper} }
+\caption{\textbf{Jet Structure Scenarios.} Three different scenarios that could explain the low luminosity of GRB 170817A. The first scenario is that a Top-hat jet was viewed off-axis. The second is that the jet is structured, with photons emitted further from the axis being lower energy and fewer in number, and viewed relatively far from the axis. The third scenario is that a uniform jet has a surrounding cocoon that emits lower energy photons, and it was these lower energy photons that were detected. \textbf{cite GRB BNS paper} }
 \label{fig:jet}
 \end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{grb_model_comparison.png}
+\end{center}
+\caption{\textbf{Jet Model Comparison.} Here we see a comparison of the best fit for the structured jet, Top-hat jet seen off-axis, and isotropic models. The afterglow's measured flux density at 3 GHz is shown by the blue symbols (though the fits were performed with multiwavelength data). The inset shows the best fit isotropic energy and Lorentz factor for each model as a function of viewing angle. The arrows show the position of the observer for the structured and Top-hat jet models. \textbf{cite GRB afterglow paper paper} }
+\label{fig:model comparison}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{structured_jet.png}
+\end{center}
+\caption{\textbf{Structured Jet.}  \textbf{cite GRB afterglow paper paper} }
+\label{fig:structured jet}
+\end{figure}
+
+
+\subsection{Other Scientific Results}
+\begin{itemize}
+\item Measure speed of gravity
+\item Hubble constant
+\item Rates
+\item EoS constrained
+\end{itemize}
+
+
+
+
+
 
 \section{GRB Progenitors} \label{sec: grb prog}
 In section \ref{sec:GRB history} we discussed the evidence for short GRBs being produced by neutron star mergers and long GRBs being produced by core collapse supernova. In both of these cases, a large amount of energy is displaced rapidly from a small region. In section \ref{sec: fireball} we discussed  the fireball model, which shows that these circumstances cause shocks and relativistic beaming which explain the high energy and variability of GRBs. But the fireball model only assumes that the \textit{central engine}, the source of energy for the GRB, is small and highly energetic. There are many phenomena that satisfy this criteria. In this section we discuss some of these possibilities. We will see under which circumstances neutron star mergers and core collapse supernovae can power short and long GRBs respectively.
@@ -949,56 +1026,61 @@ In the two detector case, it is possible to search a reduced number of sky point
 
 
 \subsection{Event Significance}
-Knowing the reweighted SNR of a trigger does not help us know if that trigger is a GW signal or not unless we know the false alarm probability (FAP) of that trigger. The FAP depends on many factors. For example, poor data quality at the time being analysed can lead to more high SNR triggers due to noise. Or the detectors may not be sensitive to the sky position of the GRB, which makes it less likely that a high SNR trigger is a GW signal. In this section we outline the process used to calculate the significance of an event. 
+We use signal consistency checks to remove glitches from the trigger list, and we use the reweighted SNR to rank the surviving triggers in order of likelihood of being a real GW signal. The final step is to determine the significance of the surviving triggers, i.e. how often will we find glitches with a given reweighted SNR that have survived the signal consistency checks. We do this by calculating the false alarm probability (FAP) for each trigger. The FAP depends on the data quality at the time being analysed, as poor data quality leads to more high SNR glitches which makes finding a high SNR trigger less significant. For this reason, we must estimate the rate of high SNR glitches at the time of the GRB in order to determine the significance of a trigger. In this section we outline the process used to calculate event significance. 
 
-As detector noise is not stationary, we calculate the FAP by using the data near the time of the GRB. A GW, if it is there, is assumed to be in the window starting five seconds before the GRB time and ending one second after the GRB time. This window would allow the detection of GWs from most GW models associated with short GRBs. We call this 6s window the \textit{on-source} window. The loudest event, with the loudest template, in the on-source is taken as our trigger. 
+As detector noise is not stationary, we calculate the FAP by using the data around the time of the GRB. If a GW is there, then it is assumed to be in the window starting five seconds before and ending one second after the GRB trigger time. This window would allow the detection of GWs from most GW models associated with short GRBs. We call this 6s window the \textit{on-source} window. The loudest\footnote{Here \textit{loudest} means highest reweighted SNR.} event, with the loudest template, in the on-source is taken as our trigger. 
 
-To evaluate the p-value of this trigger, we analyse approximately\footnote{The amount of data used before and after the on-source varies depending on the data available. For example, sometimes a GRB will happen less than an hour before (after) an interferometer loses (acquires) lock.} one hour of data around the on-source, called the \textit{off-source} data. This data is assumed to not contain a GW signal. This data is divided up into as many 6s segments as possible, so that if we have $T_\text{off}$ seconds of data then we have $N=T_\text{off} / T_\text{on}$ segments, where $T_\text{on}$ is the length of the on-source. These segments are called the \textit{off-trials}. Using the same criteria as the for the on-source, we find the loudest trigger in each off-trial. As each off-trial is assumed to only contain noise, the FAP of the on-source trigger is the fraction of off-trials that have a louder trigger than the on-source, i.e. the probability that noise would produce a trigger with a reweighted SNR louder than the on-source. 
+To evaluate the p-value of this trigger, we analyse approximately one hour of data around the on-source\footnote{The amount of data used before and after the on-source varies depending on the data available. For example, sometimes a GRB will happen less than an hour before (after) an interferometer loses (acquires) lock.}, called the \textit{off-source} data. This data is assumed to not contain a GW signal. The off-source is divided up into as many 6s segments as possible, so that if we have $T_\text{off}$ seconds of data then we have $N=T_\text{off} / T_\text{on}$ segments, where $T_\text{on}$ is the length of the on-source. These segments are called the \textit{off-source-trials}. Using the same criteria as the for the on-source, we find the loudest trigger in each off-source-trial. As the off-source is assumed to only contain noise, the FAP of the on-source trigger is the fraction of off-trials that have a louder trigger than the on-source, i.e. the probability that noise would produce a trigger with a reweighted SNR louder than the on-source. 
 
-This process alone is only capable of achieving a FAP of $10^{-3}$ [\textbf{Cite Andrew's paper}] as there is not enough off-trials to claim a lower FAP. This is low enough to reject a signal hypothesis, but not low enough to claim a detection, which requires a FAP of less than $10^{-5}$ [\textbf{Cite Andrew again}]. One way to get around this would be to use a longer off-source, but as detector noise is not stationary, it is possible that this extra off-source data would have different properties to the time of the GRB. It would also significantly increase the computational time required to complete the analysis. 
+This process alone is only capable of achieving a FAP of $10^{-3}$ [\textbf{Cite Andrew's paper}] as there is not enough off-trials to claim a lower FAP. This is low enough to reject a signal hypothesis, but not low enough to claim a detection, for which we require a FAP of less than $10^{-5}$ [\textbf{Cite Andrew again}]. One way to get around this would be to use a longer off-source, but as detector noise is not stationary, it is possible that this extra off-source data would have different properties to the time of the GRB. It would also significantly increase the computational time required to complete the analysis, as well as the amount of detector data required to analyse a GRB, meaning fewer GRBs are analysed.
 
-To find a lower FAP, the off-source data from each detector is time-shifted relative to the other detectors in the network and the data is then reanalysed. The time-shifts are longer than the light travel time between the detectors in the network and also longer than the duration of a typical glitch (less than one second), so that triggers in the time shifted data are unlikely to appear coherently.  
+To find a lower FAP, the off-source data from each detector is time-shifted relative to the other detectors in the network and the data is then reanalysed. The time-shifts are longer than the light travel time between the detectors in the network and also longer than the duration of a typical glitch (i.e. less than one second), so that triggers in the time shifted data are unlikely to appear coherently.  
 
-There are two types of time shifting. The first is call \textit{short slides} and the other \textit{long slides}. The difference between them stems from the fact that PyGRB analyses data in segments of 128s [\textbf{Is this still true after the rewrite}]. Short slides refers to when only the data within a segment is time shifted. To be precise, in a HLV analysis, the Hanford data is not shifted, the Livingston data is shifted in increments of 6s, and the Virgo data is shifted in increments of 12 seconds. Short slides do not require the data to be matched filtered again, as the time shift happens after the filtering step, so only the network statistics must be recalculated. This means short slides are computationally cheap and can allow for a FAP as low as $10^{-4}$. Long slides refers to when the segments themselves are shifted relative to one another. This requires the matched filtering to be redone, as the matched filter time series is not saved when moving to the next segment for analysis. This makes long slides much more computationally expensive than short slides. However, short slides can be done on top of the long slides, so that just 10 long slides are needed to show that a trigger has a FAP$<10^{-5}$.
+There are two types of time shifting, called \textit{short slides} and \textit{long slides}. The two types of time slide is arise naturally from the fact that PyGRB analyses data in segments, typically of 128s. Time shifting the data within a segment is called \textit{short slides}. For example, in an HLV analysis the Hanford data is not shifted, the Livingston data is shifted in increments of 6s, and the Virgo data is shifted in increments of 12 seconds. This does not require the data to be matched filtered again, as the time shift happens after filtering. This means only the network statistics must be recomputed, making short slides computationally cheap but able to demonstrate a FAP as low as $10^{-4}$. \textit{Long slides} refers to when the segments themselves are shifted relative to one another. This requires the matched filtering to be redone, as the matched filter time series is not saved when moving to the next segment for analysis. This makes long slides much more computationally expensive than short slides. However, short slides can be done on top of the long slides, so that just 10 long slides are needed to show that a trigger has a FAP$<10^{-5}$.
 
-It should be noted that our treatment of time slides assumes that each combination of time shifted data is statistically independent of the others. This is not true, as each combination of time shifted data is still the same data being analysed. 
-
-\begin{itemize}
-\item check segment length
-\item Are we still doing time slides the same way?
-\end{itemize}
-
+It should be noted that our treatment of time slides assumes that each combination of time shifted data is statistically independent of the others. This is not true, as each combination of time shifted data is still the same data being analysed. For this reason, the FAP calculated from time slides is a lower limit on the true FAP. 
 
 \subsection{Calculating Search Sensitivity}
-It is useful to estimate the sensitivity of our search to GWs around the time of an analysed GRB. This allows us to know the range to which we are sensitive to GWs in the direction of the GRB, and so rule out the possibility that the GRB was within that distance and producing GWs. 
+It is useful to estimate the search sensitivity to GWs around the time of the analysed GRB. In the case that no GW is detected, this can be used to provide a lower limit on the distance of the source.  
 
-To do this, we inject simulated signals into the off-source data and see if PyGRB can find them. The injected signals are CBC waveforms drawn from three populations: BNS mergers, NS-BH systems with spins aligned with the angular momentum, and NS-BH systems with spins generically aligned. The injections are drawn from an astrophysically motivated distribution of distances, component masses and spins, and binary inclination. The NS mass distribution is a normal distribution with mean $1.4\textup{M}_\odot$ and standard deviation of $0.2\textup{M}_\odot$ [\textbf{refs in O2 GRB paper}] restricted to the $1\textup{M}_\odot-3\textup{M}_\odot$ range [\textbf{refs in O2 GRB paper}]. The NS spins magnitude is restricted to be less than the fastest observed pulsar spin, i.e. $\leq 0.4$ [\textbf{refs in O2 GRB paper}]. The BH masses are drawn from a normal distribution of mean $10\textup{M}_\odot$ with standard deviation of 6$\textup{M}_\odot$, restricted to the range $3\textup{M}_\odot-15\textup{M}_\odot$. The BH spin magnitudes are $\leq 0.98$, motivated by X-ray observations [\textbf{refs in O2 GRB paper}]. The injections are limited to have binary inclinations or $0^\circ-30^\circ$ or $150^\circ-180^\circ$, as the opening angle for a CBC powered GRB is expected to be less than $30^\circ$. 
+To do this, we inject simulated signals into the off-source data and see if PyGRB can find them. The injected signals are CBC waveforms drawn from three populations: BNS mergers, NS-BH systems that have spins aligned with the angular momentum, and NS-BH systems with spins generically aligned. The injections are drawn from an astrophysically motivated distribution of distances, component masses and spins, and binary inclination. The NS mass distribution is a normal distribution with mean $1.4 \textup{M}_\odot$ and standard deviation of $0.2 \textup {M}_\odot$ [\textbf{refs in O2 GRB paper}] restricted to the $1 \textup{M}_\odot-3\textup {M}_\odot$ range [\textbf{refs in O2 GRB paper}]. The NS spins magnitude is restricted to be $\leq 0.4$, the fastest observed pulsar spin [\textbf{refs in O2 GRB paper}]. The BH masses are drawn from a normal distribution of mean $10 \textup{M}_\odot$ with standard deviation of 6$ \textup{M}_\odot$, restricted to the range $3 \textup{M}_\odot-15 \textup{M}_\odot$. The BH spin magnitudes are $\leq 0.98$, motivated by X-ray observations [\textbf{refs in O2 GRB paper}]. The injections are limited to have binary inclinations of $0^\circ-30^\circ$ or $150^\circ-180^\circ$, as the opening angle for a CBC powered GRB is expected to be less than $30^\circ$ [\textbf{cite BNS late time observations paper}]. 
 
-We quantify the sensitivity of the search using the $50\%$ and $90\%$  exclusion distance. This is the distance at which $50\%$ and $90\%$ of the injected signals are recovered with a greater reweighted SNR than the most significant trigger in the on-source. 
+We quantify the sensitivity of the search using the $50\%$ and $90\%$  exclusion distance. This is the distance at which $50\%$ and $90\%$ of the injected signals are recovered with a greater reweighted SNR than the most significant on-source trigger. 
 
 
 
 \section{O2 PyGRB Search} 
-From November 2016 to August 2017, the Advanced LIGO detectors were in their second observing run, O2, with the Advanced Virgo joining on August 1st 2017. During this time, PyGRB was used to search for GW signals associated with short and ambiguous GRBs. These results were reported in [\textbf{cite O2 GRB paper}], and we summarise the findings here. We begin by discussing the sample of GRBs chosen to analyse. Then we summarise the findings of the search. 
+From November 2016 to August 2017, the Advanced LIGO detectors undertook their second observing run, O2, with the Advanced Virgo detector joining on August 1st 2017. PyGRB was used to search for GW signals associated with short and ambiguous duration GRBs detected during O2. The results of the search were reported in [\textbf{cite O2 GRB paper}], but we will outline the key findings here. We begin with a brief discussion of the GRB sample that was analysed before moving on to the results of the search.
 
 \subsection{GRB sample}
-The GRBs analysed were those detected Swift BAT, Fermi GBM, and the IPN (see section \ref{sec:grb detectors} for more details on these). There were in total 242 bursts detected by Swift and Fermi, and 52 detected by the IPN, with many GRBs appearing in both catalogues. Only short GRBs ($T_{90}<2s$) and ambiguous GRBs ($2s<T_{90}<4s$) were analysed using PyGRB, as long GRBs are not expected to have a CBC progenitor. At least 1664s of data is required in at least one detector for PyGRB to correctly estimate the background. Any GRB occurring at a time when this requirement could not be met was not analysed. This left 42 short/ambiguous GRBs that could be analysed by PyGRB.
+The GRBs analysed were those detected by Swift BAT, Fermi GBM, or the IPN (see section \ref{sec:grb detectors} for more details on these). There were in total 242 bursts detected by Swift and Fermi, and 52 detected by the IPN, with many GRBs appearing in both catalogues. Only short GRBs ($T_{90}<2s$) and ambiguous GRBs ($2s<T_{90}<4s$) were analysed using PyGRB, as long GRBs are not expected to have a CBC progenitor (as discussed in chapter \ref{chap:GRBs}). At least 1664s of data is required for PyGRB to correctly estimate the background. Any detector that does not have this much data available around the time of a GRB is not used for the analysis, and if no detectors have sufficient data available then PyGRB will not analyse that GRB. Removing the GRBs for which there was insufficient data left 42 short/ambiguous GRBs that could be analysed by PyGRB.
 
 
 \subsection{Results}
-The analysis found one GW signal, GW170817. It was associated with GRB 170817A and had been previously reported [\textbf{cite BNS paper}]. The p-value for this event is $\leq 9.38 \times 10^{-6}$ and the coherent SNR is 31.26 \textbf{do we want to explain data cleaning and gating?} [\textbf{cite O2 GRB}]. No other GWs were detected in conjunction with any other GRBs. Apart from GW170817, there were six GRBs with a p-value of less than 0.1. These candidate events had further data quality checks and were analysed using lalInference [\textbf{cite Veitch like in GRB paper}], a coherent Bayesian parameter estimation pipeline, to determine if the signal could be a subthreshold signal or if it was more likely to be background noise. No evidence was found to of a subthreshold signal. 
+The analysis found one GW signal, GW 170817. It was associated with GRB 170817A and had been previously reported [\textbf{cite BNS paper}]. The p-value for this event is $\leq 9.38 \times 10^{-6}$ and the coherent SNR is 31.26 \textbf{do we want to explain data cleaning and gating?} [\textbf{cite O2 GRB}]. 
+\begin{itemize}
+\item Mention the gated glitch for the BNS (include t-f map)
+\end{itemize}
 
-In figure \ref{fig:pvalue} we have plotted the p-value for the remaining 41 GRBs analysed after the removal GW170817 from the sample. For GRBs with no trigger in the onsource window, we provide upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of offsource trials that also had no trigger. The distribution lays within the $2\sigma$ range for a beta distribution, shown by the upper and lower dotted lines. The population consistency with a no-signal hypothesis was calculated using the weighted binomial test outlined in [\textbf{cite abadie et al}]. This test considers the lowest $5\%$ of p-values in the population, weighted by their prior probability of detection based on the time and sky position of the GRB. This analysis did not include GW170817 as it is a confirmed detection. The combined p-value for the search is 0.3. Thus we find no significant evidence for a population of subthreshold signals.  
+No other GWs were detected in conjunction with any other GRBs. Apart from GW 170817, there were six GRBs with a p-value of less than 0.1. These candidate events had further data quality checks and were analysed using lalInference [\textbf{cite Veitch like in GRB paper}], a coherent Bayesian parameter estimation pipeline, to determine if the signal could be a subthreshold signal or if it was more likely to be background noise. No evidence was found of a subthreshold signal. 
+\begin{itemize}
+\item More details on PE follow up. Look at O2 GRB paper.
+\end{itemize}
+
+In figure \ref{fig:pvalue} we have plotted the p-value for the remaining 41 GRBs analysed after the removal GW 170817 from the sample. For GRBs with no trigger in the on-source window, we provide upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of off-source trials that also had no trigger. The distribution lays within the $2\sigma$ range for a beta distribution, shown by the upper and lower dotted lines. The population consistency with a no-signal hypothesis was calculated using the weighted binomial test outlined in [\textbf{cite abadie et al}]. This test considers the lowest $5\%$ of p-values in the population, weighted by their prior probability of detection based on the time and sky position of the GRB. This analysis did not include GW 170817 as it is a confirmed detection. The combined p-value for the search is 0.3. Thus we find no significant evidence for a population of subthreshold signals.  
+\begin{itemize}
+\item Why beta distribution?
+\end{itemize}
 
 \begin{figure}
 \begin{center}
 \includegraphics[width=0.8\linewidth]{pygrb_pvalue.png}
 \end{center}
-\caption{\textbf{P-value for each GRB.} This is the p-value distribution for the 41 GRBs other than GRB170817A. The GRBs with no trigger in the onsource window have upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of offsource trials that also had no trigger. The distribution lays within the $2\sigma$ range for a beta distribution, shown by the upper and lower dotted lines.  }
+\caption{\textbf{P-value for each GRB.} This is the p-value distribution for the 41 GRBs other than GRB 170817A. The GRBs with no trigger in the onsource window have upper and lower limits on the p-value. The upper limit is a p-value of 1. The lower limit is the fraction of offsource trials that also had no trigger. The distribution lays within the $2\sigma$ range for a beta distribution, shown by the upper and lower dotted lines.  }
 \label{fig:pvalue}
 \end{figure}
 
-As GRB170817A is known to have originated in NGC 4993 [\textbf{cite paper}], the distance to this GRB is approximately 43Mpc. For the other GRBs in our sample we calculated the $90\%$ exclusion distance. This is the distance at which $90\%$ of injected simulated signals are recovered with a greater coherent SNR than the loudest trigger in the onsource. The $90\%$ exclusion distances are plotted in figure \ref{fig:ex dist}. The median $90\%$ exclusion distance for the BNS waveform is 80Mpc, for an NS-BH waveform with generic spin is 105Mpc, and for NS-BH with aligned spin is 144Mpc. These values are slightly lower than in O1, which were 90Mpc, 139Mpc, and 150Mpc respectively, though this seems to just be due to chance as we analyse a relatively small number of GRBs. 
+As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite paper}], the distance to this GRB is approximately 43Mpc. For the other GRBs in our sample we calculated the $90\%$ exclusion distance. This is the distance at which $90\%$ of the signal injections are recovered with a greater coherent SNR than the loudest trigger in the on-source. The $90\%$ exclusion distances are plotted in figure \ref{fig:ex dist}. The median $90\%$ exclusion distance for the BNS waveform is 80 Mpc, for an NS-BH waveform with generic spin is 105 Mpc, and for NS-BH with aligned spin is 144 Mpc. These values are slightly lower than in O1, which were 90 Mpc, 139 Mpc, and 150 Mpc respectively, though this seems to just be due to a statistical fluctuation as we analysed a relatively small number of GRBs. 
 
 \begin{figure}
 \begin{center}
@@ -1013,8 +1095,13 @@ As GRB170817A is known to have originated in NGC 4993 [\textbf{cite paper}], the
 \begin{itemize}
 \item Made faster -- matched filter engine and post processing
 \item allows new PyCBC stuff to be used
+\begin{itemize}
+\item Denty bins
+\item Autogating
+\end{itemize}
 \item Re-optimised the cuts and reweighted snr
-\item Ran on GRB with bigger sky grid than was previously possible or ran 170817 to be 5 sigma
+\item Ran on a single sky point in 2 hours 
+\item No coherent chi2 any more- why?
 \end{itemize}
 
 
@@ -1023,6 +1110,7 @@ As GRB170817A is known to have originated in NGC 4993 [\textbf{cite paper}], the
 \item More detectors strengthens the case for coherent search
 \item Hierarchical search, using coincident search to find location 
 \item Include astrophysical priors in the detection statistic
+\item Expected rates (from structured jet paper, one in 20 BNS mergers detected with GWs will have a GRB counterpart)
 \end{itemize}
 
 

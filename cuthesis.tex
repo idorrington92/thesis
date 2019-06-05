@@ -500,8 +500,8 @@ The high SNR in the LIGO detectors compared to Virgo suggested that the GW origi
 
 
 
-\subsection{Late Time Afterglow Observations}
-
+\subsection{Structured Jets}
+GRB 170817A was significantly fainter than any other detected GRB (see figure \ref{fig:brightness_z}). In fact, the GRB showed no evidence for photons with energy $>511$ keV, i.e. above the pair production threshold, meaning that the matter ejected from this GRB need not have been traveling at relativistic velocities\footnote{Recall from section \ref{sec: fireball} that GRBs were assumed to accelerate matter to relativistic velocities as this would explain how GRBs could emit photons above the pair production threshold. The fact these high energy photons were not detected means that material ejected from this GRB need not travel at relativistic velocity}. There are several factors that affect GRB brightness, such as the angle the GRB is observed at and the intrinsic properties of the jet. The simplest model of the jet is the \textit{top-hat jet}, which has a uniform core that terminates sharply at some angle from the GRB axis. It is possible that GRB 170817A was a top-hat jet viewed off-axis, making it appear dimmer. Another possibility is that the GRB had a \textit{structured jet}, meaning that it gradually becomes less energetic as the angle from the axis increases. It is also possible that the GRB jet had a \textit{cocoon} created by the relativistic jet shocking the non-relativistic matter surrounding the jet. These three possibilities are shown in figure \ref{fig:jet}. It could also be that GRB 170817A was produced by a new mechanism that is not observable at greater distances as it is intrinsically dim. It could also be that GRB 170817A is part of a population of subluminous GRBs that can only be detected if they occur unusually close or that the GRB was not jetted at all, and is a mildly relativistic, isotropic fireball. In this section we will consider each of these possibilities and compare each model to the observed spectral evolution of GRB 170817A, from the prompt emission to the late afterglow observations. We will see that the best explanation for the faint prompt emission of GRB 170817A is that it had a structured jet seen at a relatively large viewing angle. 
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -511,19 +511,26 @@ The high SNR in the LIGO detectors compared to Virgo suggested that the GW origi
 \label{fig:brightness_z}
 \end{figure}
 
-\begin{itemize}
-\item GRB was very faint - requires explanation
-\item Structured jet/top hat
-\item For a structured jet it is expected that the afterglow will slowly get brighter as more light from the jet reaches us, a viewer at a large angle from the axis
-\item MCMC analysis with different models strongly favours structured jet with or without cocoon
-\end{itemize}
-
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=1.0\linewidth]{jet_structure.jpg}
 \end{center}
 \caption{\textbf{Jet Structure Scenarios.} Three different scenarios that could explain the low luminosity of GRB 170817A. The first scenario is that a Top-hat jet was viewed off-axis. The second is that the jet is structured, with photons emitted further from the axis being lower energy and fewer in number, and viewed relatively far from the axis. The third scenario is that a uniform jet has a surrounding cocoon that emits lower energy photons, and it was these lower energy photons that were detected. \textbf{cite GRB BNS paper} }
 \label{fig:jet}
+\end{figure}
+
+We begin by using some simple arguments to show some of these models are unlikely. The observed gamma-ray properties of GRB 170817A are similar to other short GRBs, making it unlikely that the prompt emission was caused by a different mechanism to other short GRBs. It is also unlikely that GRB 170817A represents the first detected member of a subluminous population as this would mean short GRB luminosities covers six orders of magnitude, which is difficult to conceive given the small range of physically possible neutron star masses. Though it should be noted that a wider range of intrinsic luminosities is possible if we assume that some short GRBs are produced by NS-BH mergers, or that the magnetic field strength of GRB progenitors is highly variable and significantly affects the intrinsic luminosity [\textbf{cite BNS GRB paper}].
+
+This leaves only those models that focus on the jet structure and viewing angle of the prompt emission. In [\textbf{cite afterglow paper}] they compare the late time afterglow observations of GRB 170817A to the predictions made assuming three different jet models: A top-hat jet seen off-axis, a structured jet with a cocoon, and a mildly relativistic, isotropic fireball. The expected afterglow for a structured jet GRB is very different to the off-axis top-hat and the isotropic fireball. For a structured jet, the initial afterglow emission will be due material traveling down the line of sight. After a few days, this material will interact with the interstellar medium, causing it to decelerate and emit light. Over the next months, material ejected at an increasing large angle from the line of sight will become observable due to interactions with the interstellar medium, causing the afterglow to appear brighter. Eventually, on a timescale of months or years, the jet will become observable. At this point the afterglow will have reached peak luminosity and will start to fade. This is qualitatively different to the top-hat and isotropic fireball case, in which all ejected material has approximately the same energy and so the afterglow rises more rapidly and fades more slowly, unlike the afterglow of a structured jet GRB which will rise slowly (see top right panel of figure \ref{fig:structured jet}). Note that if the jet is observed on axis, then the afterglow of a structured jet would be indistinguishable from a top-hat jet as the afterglow would peak quickly and then fade in both cases. In [\textbf{cite afterglow paper}] the authors use Markov Chain Monte Carlo to fit the structured jet, top-hat, and isotropic fireball model to the spectra of GRB 170817A. The 3 GHz light curve for the best fit of each model is plotted in figure \ref{fig:model comparison}. We can see that the structured jet model fits the data much better than either the top-hat or isotropic fireball model. The best fit model viewing angle was $\theta = 33^{+4}_{-2.5}$, which is comparable to the LIGO measurement of $\leq 28^\circ$. If this model of the structured jet is correct, then approximately one in every 20 BNS systems detected with GWs should have a GRB counterpart [\textbf{cite afterglow paper}]. 
+
+The structured jet model also has the advantage of being a natural consequence of binary neutron star mergers. As the jet shocks the slow moving material in the surrounding area, a cocoon of high pressure, subrelativistic matter will form. This cocoon creates a sheering force on the jet which creates a jet with a highly relativistic core, surrounded by lighter and slower moving material, with mildly relativistic wings at larger angles (see left panel of figure \ref{fig:structured jet}). 
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{structured_jet.png}
+\end{center}
+\caption{\textbf{Structured Jet.} Left panel: A pseudocolour density image of the simulation used to compute the afterglow curves [\textbf{citation in afterglow paper}]. The low density core of the jet is the blue region near the middle. The orange and green region around the core is the slow moving wings.  Top right panel: Here we see the 3 GHz flux detected from different parts of the structured jet as time progresses. The angle is relative jet axis, so the blue curve is the core of the jet, the orange curve is the fast wings of the jet, the orange curve is the material moving along the line of sight (an angle of about $33^\circ$ in this case), and the pink and brown curves correspond to large angles, that do not contribute much to eh observed flux. Bottom right panel: The distribution of energy as a function of angular separation from the jet. \textbf{cite GRB afterglow paper paper} }
+\label{fig:structured jet}
 \end{figure}
 
 \begin{figure} % Example of including images
@@ -534,19 +541,25 @@ The high SNR in the LIGO detectors compared to Virgo suggested that the GW origi
 \label{fig:model comparison}
 \end{figure}
 
-\begin{figure} % Example of including images
-\begin{center}
-\includegraphics[width=1.0\linewidth]{structured_jet.png}
-\end{center}
-\caption{\textbf{Structured Jet.}  \textbf{cite GRB afterglow paper paper} }
-\label{fig:structured jet}
-\end{figure}
+\begin{itemize}
+\item Best fit for structured jet has chi2 of 69 for 56 degrees of freedom and a probability of p=$11\%$. Should I include this? Make sure I understand what this means.
+\end{itemize}
+
+
+
+
+
+
 
 
 \subsection{Other Scientific Results}
 \begin{itemize}
 \item Measure speed of gravity
 \item Hubble constant
+\begin{itemize}
+\item Compare to first long GRB
+\item Are faint GRBs associated with GWs to be expected?
+\end{itemize}
 \item Rates
 \item EoS constrained
 \end{itemize}

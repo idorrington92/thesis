@@ -20,6 +20,7 @@
 \usepackage{setspace}
 \setcounter{section}{-1}
 
+\usepackage{rotating}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{placeins}
@@ -39,8 +40,7 @@
 
 
 % setup metadata
-\title{Searching for Gravitational \\
-         Waves}
+\title{Improved Methods for the Detection of Gravitational Waves Associated with Gamma-Ray Bursts}
 \author{Iain Dorrington}
 \date{16th May 2019}
 
@@ -131,7 +131,7 @@ R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right)
 
 
 \section{Gravitational waves}
-General Relativity shows that spacetime can curve and move. From this, it may seem obvious that waves can travel though spacetime. But this is not a trivial fact; Einstein himself, having introduced the concept of gravitational waves in 1916, later claimed they could not exist. In this section, we will show that gravitational waves do exist. We will do this by considering a perturbation of the flat Minkowski metric. We will then calculate the Ricci Tensor and Ricci Scalar for the perturbed metric and, with a clever choice of Gauge transformation, see that these yield a wave solution to Einstein's Equations. 
+General Relativity shows that spacetime can curve and move. From this, it may seem obvious that waves can travel though spacetime. But this is not a trivial fact; Einstein himself, having introduced the concept of gravitational waves in 1916, later claimed they could not exist. In this section, we will show that gravitational waves do exist. We will do this by considering a perturbation of the flat Minkowski metric. We will then calculate the Ricci tensor and Ricci scalar for the perturbed metric and, with a clever choice of gauge transformation, see that these yield a wave solution to Einstein's equations. 
 
 \subsection{Linearised Gravity}
 Let $g\mn$ be the metric given by adding a small perturbation $h_{\mu\nu}$ to the Minkowski metric $\eta\mn=\text{diag}(-1,1,1,1)$. We write this metric as 
@@ -149,15 +149,18 @@ R=\eta^{\mu \nu}R\mn=\pd _\mu \pd_ \alpha h^{\mu \alpha} - \Box h \textbf{,}
 \end{equation}
 where $\Box=\pd_\mu \pd^\mu $ is the d'Alembertian operator and $h=h^\mu_\mu$ is the trace of $h$. From these, we find the resulting Einstein tensor is also linear in $h$ 
 \begin{equation} \label{lin Einstein}
-G\mn =R\mn -\frac{1}{2} R g\mn \textbf{.}
+\begin{split}
+G\mn & =R\mn -\frac{1}{2} R \eta\mn \\
+ & = \frac{1}{2} ( \partial_\sigma \partial_\nu h^\sigma_\mu + \partial_\sigma \partial_\mu h^\sigma_\nu - \partial_\mu \partial_\nu h - \square h\mu -\eta\mn \partial_\rho \partial_\lambda h^{\rho \lambda} + \eta\mn \square h ) /fs
+\end{split}
 \end{equation}
 
 \subsection{Gauge Transformation}
-With the following Gauge transformation, we can simplify the expression for the linear Einstein tensor
+The metric given in \ref{pert metric} does not uniquely define a coordinate system, as there may be other coordinates where the metric is given by the Minkowski metric plus some other perturbation. This gives us the freedom to choose some coordinates that make the linear Einstein tensor simpler. To find these coordinates, we start with the following gauge transformation
 \begin{equation}
-x^{\mu'}=x^\mu +\chi ^\mu (x)\text{,} \hspace{20pt}\chi \ll x\fs
+x^{\mu'}=x^\mu +\chi ^\mu (x)\text{,} \hspace{20pt}\partial_\mu \chi^\nu \ll 1\fs
 \end{equation} 
-As $\chi$ is small, we have $\partial_\mu \chi^\nu \ll 1$. This gives us
+This gives us
 \begin{equation}
 \frac{\pd x^\mu}{\pd x^{\alpha'}}=\delta^\mu_\alpha-\pd_\alpha\chi^\mu +\mathcal{O}(|\pd \chi|^2) \fs
 \end{equation}  
@@ -176,11 +179,11 @@ We have some freedom in choosing our $\chi$, so we impose the \textit{harmonic g
 \end{equation}
 where $h=h^\lambda_\lambda$. We can always choose a $\chi$ such that this is true. To see this, first note that $\partial'_\mu = \partial_\mu - (\partial_\mu \chi^\lambda) \partial_\lambda$. From this we find
 \begin{equation}
-(\partial_\mu' h_\nu^\mu - \frac{1}{2}\partial_\nu' h') \approx (\partial_\mu h^\mu_\nu - \frac{1}{2} \partial_\nu h ) -\partial^2 \chi_\nu \fs
+(\partial_\mu' {h'}_\nu^\mu - \frac{1}{2}\partial_\nu' h') \approx (\partial_\mu h^\mu_\nu - \frac{1}{2} \partial_\nu h ) -\square \chi_\nu \fs
 \end{equation}
 Thus, if we are given an $h$ such that \ref{harmonic gauge} is not true, we can choose a $\chi$ such that 
 \begin{equation} \label{harmonic chi}
-\partial^2 \chi_\nu = (\partial_\mu h^\mu_\nu - \frac{1}{2}\partial_\nu h) \fs
+\square \chi_\nu = (\partial_\mu h^\mu_\nu - \frac{1}{2}\partial_\nu h) \fs
 \end{equation}
 
 Using \ref{harmonic gauge}, we can simplify the Ricci tensor and scalar
@@ -198,7 +201,10 @@ Alternatively, we can use \ref{alt einstein} to write this as
 \begin{equation}
 \Box h\mn = -16\pi G \left( T\mn -\frac{1}{2} \eta\mn T \right). 
 \end{equation}
-In a vacuum, the right hand side of this equation becomes zero, and we can recognise as the relativistic wave equation. 
+In a vacuum, the right hand side of this equation becomes zero, and we can recognise as the relativistic wave equation
+ \begin{equation}
+\Box h\mn = 0 \fs
+\end{equation}
 
 \subsection{Physical Effects of Gravitational Waves}
 The plane wave solution for the vacuum wave equation is
@@ -421,11 +427,18 @@ After GRB 980425, searches were undertaken for other bright supernova afterglows
 
 
 \subsection{The Short GRB-Compact Binary Connection} \label{sec: short grbs}
-Much had been learned about long GRBs by studying their afterglows, but no afterglow had been found for short GRBs. The problem was that short GRBs faded rapidly, reducing the amount of time for astronomers to find the afterglow. For this reason, the Swift satellite (see section \ref{sec:grb detectors}) was launched in 2004. Swift was able to autonomously followup a GRB with X-ray, UV, and optical measurements within minutes, just what was needed for short GRBs. 
+Much had been learned about long GRBs by studying their afterglows, but no afterglow had been found for short GRBs. This was because short GRBs fade rapidly, reducing the amount of time for follow up observations. Rapid follow up was needed, and so the \textit{Swift} satellite (see section \ref{sec:grb detectors}) was launched in 2004. Swift was able to autonomously followup a GRB with X-ray, UV, and optical measurements within minutes, just what was needed for short GRBs. 
 
-The first detected short GRB afterglow was that of GRB 050509B. It was a faint X-ray afterglow that faded quickly, but it was localised well enough for ground based telescopes to determine the host galaxy, which had a redshift of $z=0.225$. The afterglow and host galaxy were very different to those of long GRBs: the host galaxy was a massive elliptical galaxy which showed no evidence of star forming, there was also no evidence of a supernova, and the GRB took place far away from the galactic core. With more short GRB afterglow detections it became clear that, on average, the detected short GRBs occur much closer than long GRBs \footnote{The average redshift of a short GRB is about $z=0.5$, while less than 10\% of long GRBs have a redshift less than one. [\textbf{cite \url{https://arxiv.org/abs/1702.03338}}}, though this could partly be due to selection effects.  \footnote{Short GRBs tend to be dimmer and so not observable at greater distances. Also, GRBs at  high redshifts will appear longer in the detector frame.}  Also short GRBs occur further from the center of their host galaxy than long GRBs, with an average offset of 4.5kpc and 1.5kpc respectively. Sometimes they are so far from any galaxy that determining the host is impossible; these are called \textit{hostless} GRBs.
+The first detected short GRB afterglow was that of GRB 050509B. It was a faint X-ray afterglow that faded quickly, but it was localised well enough for ground based telescopes to determine the host galaxy, which had a redshift of $z=0.225$. The afterglow and host galaxy were very different to those of long GRBs:
+\begin{itemize}
+\item The host galaxy was a massive elliptical galaxy which showed no evidence of star forming.
+\item The host galaxy was relatively nearby.
+\item The GRB took place far away from the galactic core.
+\item There was also no evidence of a supernova.
+\end{itemize} 
+With more short GRB afterglow detections it became clear that these are all typical properties of short GRBs. Short GRBs can occur in any type of galaxy, unlike long GRBs. They show no evidence of being caused by a supernova. On average, short GRBs occur much closer than long GRBs \footnote{The average redshift of a short GRB is about $z=0.5$, while less than 10\% of long GRBs have a redshift less than one. [\textbf{cite \url{https://arxiv.org/abs/1702.03338}}}, though this could be partly due to selection effects.\footnote{Short GRBs tend to be dimmer and so not observable at greater distances. Also, GRBs at  high redshifts will appear longer in the detector frame.}  Also short GRBs occur further from the center of their host galaxy than long GRBs, with an average offset of 4.5kpc and 1.5kpc respectively. Sometimes they are so far from any galaxy that determining the host is impossible; these are called \textit{hostless} GRBs.
 
-All of these observations are consistent with the theory that short GRBs are caused by the merger of a neutron star with either another neutron star or a black hole. The two objects would form in a binary system and slowly inspiral due to the loss of energy through gravitational wave emission, until they finally merge and emit the GRB. For neutron star - black hole (NS-BH) mergers, the black hole must be relatively low mass (less than $\sim 10M_\odot$)[\textbf{cite paper}]. This is because if the black hole has a high mass then the neutron star will be swallowed whole by the black hole, and there will be no material to produce a GRB. For a low mass black hole the neutron star will be tidally disrupted before merger, i.e. the black hole will pull apart the neutron star, providing matter that can then power a GRB. The merger time for a binary scales with $a^4$, where $a$ is the initial separation. This means a small change in the initial separation can lead to a very different merger time.\footnote{In fact, some galactic binaries have merger times that exceed the age of the universe.} This explains their presence in elliptical galaxies that have long since stopped star forming. 
+The observed properties of short GRBs can be explained naturally if short GRBs are caused by the merger of a neutron star with either another neutron star or a black hole. In this case the two objects would form in a binary system and slowly inspiral due to the loss of energy through gravitational wave emission, until they finally merge and emit the GRB. For neutron star - black hole (NS-BH) mergers, the black hole must be relatively low mass (less than $\sim 10M_\odot$)[\textbf{cite paper}]. This is because if the black hole has a high mass then the neutron star will be swallowed whole by the black hole, and there will be no material to produce a GRB. For a low mass black hole the neutron star will be tidally disrupted before merger, i.e. the black hole will pull apart the neutron star, providing matter that can then power a GRB. The merger time for a binary scales with $a^4$, where $a$ is the initial separation. This means a small change in the initial separation can lead to a very different merger time.\footnote{In fact, some galactic binaries have merger times that exceed the age of the universe.} This explains their presence in elliptical galaxies that have long since stopped star forming, as well as in younger, star-forming galaxies. 
 
 It is also expected that these binary systems would receive a \textit{kick} in their formation, which explains why so many short GRBs occur far from the center of their host galaxy. There appear to be two mechanisms through which the binary could receive a kick. The first is due to the supernovas that formed each component of the binary. As the supernova will cause a large amount of matter to become unbounded from the system at a particular point in the orbit, conservation of momentum forces the binary system to recoil. This cannot be the only mechanism that causes a kick to neutron stars though, as pulsar observations show that even lone neutron stars receive kicks from the supernova that forms them, though the mechanism that causes this kick is not known. 
 
@@ -492,13 +505,8 @@ The high SNR in the LIGO detectors compared to Virgo suggested that the GW origi
 \label{fig:NGC4993}
 \end{figure}
 
-\subsection{Kilonova}
-\begin{itemize}
-\item blue to red spectrum
-\item Heavy elements
-\end{itemize}
-
-
+\subsection{Kilonova Observation}
+This new object was studied intensely over the following days. The transient was initially observed to be a rapidly fading blue transient, which had faded completely within 48 hours. The spectrum showed no supernova-like absorption lines, ruling out the possibility that this transient was caused by a supernova. Over the next $\sim$10 days the spectrum grew redder, and observations by ESO-VLT/X-shooter showed evidence of the decay of r-process elements. This all strongly indicates that the transient was a kilonova. X-ray emission was detected 9 days after the merger, and radio emission after 16 days. This delayed radio emission was predicted from neutron star merger models as the ejecta interacts with the interstellar medium.
 
 \subsection{Structured Jets}
 GRB 170817A was significantly fainter than any other detected GRB (see figure \ref{fig:brightness_z}). In fact, the GRB showed no evidence for photons with energy $>511$ keV, i.e. above the pair production threshold, meaning that the matter ejected from this GRB need not have been traveling at relativistic velocities\footnote{Recall from section \ref{sec: fireball} that GRBs were assumed to accelerate matter to relativistic velocities as this would explain how GRBs could emit photons above the pair production threshold. The fact these high energy photons were not detected means that material ejected from this GRB need not travel at relativistic velocity}. There are several factors that affect GRB brightness, such as the angle the GRB is observed at and the intrinsic properties of the jet. The simplest model of the jet is the \textit{top-hat jet}, which has a uniform core that terminates sharply at some angle from the GRB axis. It is possible that GRB 170817A was a top-hat jet viewed off-axis, making it appear dimmer. Another possibility is that the GRB had a \textit{structured jet}, meaning that it gradually becomes less energetic as the angle from the axis increases. It is also possible that the GRB jet had a \textit{cocoon} created by the relativistic jet shocking the non-relativistic matter surrounding the jet. These three possibilities are shown in figure \ref{fig:jet}. It could also be that GRB 170817A was produced by a new mechanism that is not observable at greater distances as it is intrinsically dim. It could also be that GRB 170817A is part of a population of subluminous GRBs that can only be detected if they occur unusually close or that the GRB was not jetted at all, and is a mildly relativistic, isotropic fireball. In this section we will consider each of these possibilities and compare each model to the observed spectral evolution of GRB 170817A, from the prompt emission to the late afterglow observations. We will see that the best explanation for the faint prompt emission of GRB 170817A is that it had a structured jet seen at a relatively large viewing angle. 
@@ -556,11 +564,11 @@ The structured jet model also has the advantage of being a natural consequence o
 \begin{itemize}
 \item Measure speed of gravity
 \item Hubble constant
+\item Rates
 \begin{itemize}
 \item Compare to first long GRB
 \item Are faint GRBs associated with GWs to be expected?
-\end{itemize}
-\item Rates
+\end{itemize}%
 \item EoS constrained
 \end{itemize}
 
@@ -928,7 +936,7 @@ Glitches are incoherent, meaning that in general they do not exist in the signal
 \item This section should be brief
 \end{itemize}
 
-\subsection{The PyGRB Workflow} \label{sec:thresholds}
+\subsection{Removing Noise} \label{sec:thresholds}
 We have seen several statistics that can indicate whether a trigger is a GW signal or noise. We apply cuts on these statistics, discarding any triggers that fail the cuts. This is especially important for the coherent search as the coherent statistics are slow to calculate and additional to all the statistics used in the coincident search. To speed up the coherent search, we discard as many triggers as possible at the earliest possible time in the workflow. In this section we will discuss the PyGRB workflow as it was in the most recent LIGO observing run, focusing on how triggers are discarded in order to speed up the analysis.
 
 The analysis begins with matched filtering the individual detector data. Using the known sky location of the GRB and the fact that gravitational waves travel at the speed of light, we timeshift the data from each detector so that a GW associated with the GRB will be coincident in each detector. A list of triggers is formed for each detector by keeping only times when the individual detector SNR is greater than four, the rest of the data is discarded. We then discard any trigger that is not coincident in at least two detectors in the network. 
@@ -1061,6 +1069,18 @@ To do this, we inject simulated signals into the off-source data and see if PyGR
 We quantify the sensitivity of the search using the $50\%$ and $90\%$  exclusion distance. This is the distance at which $50\%$ and $90\%$ of the injected signals are recovered with a greater reweighted SNR than the most significant on-source trigger. 
 
 
+\subsection{The PyGRB Workflow}
+In figure \ref{fig:pygrb flowchart} you can see the PyGRB workflow. The workflow starts with two parallel branches: one for the injections runs (right branch) and the other for the background and on-source analysis (left branch). The non-injection branch is simpler. The template bank is split into many smaller template banks (typically $\sim 1500$). These are used by the inspiral jobs, which matched-filter the data, perform the consistency checks, and calculate the network SNR statistics. The results of each inspiral job are then compiled into by trig combiner and binned into off-source, on-source, or off-trial triggers. The off-trials are six six-second chunks of data which are each treated as a dummy on-source to assess whether the pipeline is behaving nominally before looking at the on-source results. Another file is produced which contains all triggers found in both the on-source and the off-source. Each of these is then \textit{clustered}, meaning only the loudest trigger with the loudest template in any 0.1 second window is kept. The clustered output is then used to calculate detection efficiencies and make plots before going into the results webpage. 
+
+The injection jobs are similar but have a few extra steps. First the injections must be generated. At the moment this uses the same code (called \textit{inspinj}) as the all-sky search for black hole binaries. As we are only looking for binaries that could theoretically produce a GRB, we remove any injections that have the wrong masses or orientations.\footnote{The scripts that remove unsuitable injections are not included in the flowchart as they do not add much to the understanding of the workflow. In future, a script that produces just EM bright injections will be written to replace the ad hoc system we currently use.} The injections are then split into multiple jobs and combined with different parts of the split bank to be analysed by the inspiral code. These jobs can be run quickly by only searching the data with those templates that are expected to find the injections, rather than using the full template bank. The \textit{injfinder} code analyses the output of the injection inspiral jobs to determine which injections were found and which were not. The \textit{injcombiner} job then bins the injections into the appropriate off-trial or the on-source. The injcombiner output is used to calculate injection detection efficiencies and make plots, which are then used in the results webpage. 
+
+\begin{sidewaysfigure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{pygrb_flowchart.png}
+\end{center}
+\caption{\textbf{PyGRB Workflow.} The workflow starts in two parallel branches, one that runs the injections jobs, and one that analyses the background and onsource. }
+\label{fig:pygrb flowchart}
+\end{sidewaysfigure}
 
 \section{O2 PyGRB Search} 
 From November 2016 to August 2017, the Advanced LIGO detectors undertook their second observing run, O2, with the Advanced Virgo detector joining on August 1st 2017. PyGRB was used to search for GW signals associated with short and ambiguous duration GRBs detected during O2. The results of the search were reported in [\textbf{cite O2 GRB paper}], but we will outline the key findings here. We begin with a brief discussion of the GRB sample that was analysed before moving on to the results of the search.
@@ -1103,27 +1123,66 @@ As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite 
 \label{fig:ex dist}
 \end{figure}
 
-\FloatBarrier
-\section{Improvements to PyGRB} \label{sec:pygrb improvements}
+
+\chapter{Improvements to PyGRB} \label{sec:pygrb improvements}
+In the previous chapter we discussed the PyGRB pipeline as it was used in the second LIGO observing run. The code is now about 10 years old, and in that time new software tools have become available that could speed up the and improve the analysis. In particular, there is the PyCBC software package [\textbf{cite pycbc paper}], which has highly optimised tools for performing a matched filter search. For this reason, PyGRB is being rewritten to be fully implemented into PyCBC. In this chapter we will begin by discussing the reasons why this change was necessary before seeing what changes have already been made and the improvements they provide. We will then end this chapter by looking forward at the changes that need to happen for the PyGRB rewrite to be used in a GW search.
+
+
+\section{Reasons to Rewrite the Pipeline}
+The primary reason for rewriting the pipeline is to make use of the faster and more efficient matched filtering software that PyCBC can provide. Developments in the all-sky search have drastically sped up matched filtering in recent years, to the point where PyGRB was becoming noticeably slow by comparison. Apart from being a waste of computer time, this also limits the science that can be done with PyGRB. The medium latency PyGRB search aims to provide a preliminary analysis of a GRB within a day. As kilonovas following short GRBs fade on a timescale of hours, this delay can mean missing vital data from the time immediately after merger. With the new code, we expect to be able to perform a preliminary analysis (with minimal injections and no timeslides) within a couple of hours. It also limits the size of the sky patch that can be searched over in a reasonable amount of time. There were four short GRBs in O2 that were not well localised enough for PyGRB to analyse,\footnote{These were all IPN detections, which can have poor localisation depending on which detectors in the network see the GRB (see section \ref{sec:grb detectors}).} which could have been with faster, more efficient code. And finally, it limits the number of timeslides that can be performed, and consequently the false alarm probability that can be achieved. 
+
+There are two bottlenecks in the PyGRB workflow. The first is the matched filtering, where using the PyCBC matched filtering engine can lead to significant speed up. The other is in post-processing, which can be sped up significantly by using a modern file format.\footnote{The old code used xml files, which are significantly slower than the hdf5 files used by the new code.} The post-processing also frequently exceeds the memory allowance on computing clusters, which requires the job to be manually halted and rerun with the post-processing split into smaller jobs. As PyGRB deals with far fewer triggers (and so should use less memory) than the all-sky search, this should not be a problem. Using tools developed for the all-sky search can fix this. 
+
+Faster code is not the only reason for integrating PyGRB into PyCBC. New tools have been made for the all-sky search will become available to the targeted search\footnote{These will be discussed in more detail in section \ref{sec:pygrb changes}} as well as any future improvements. It will also allow for techniques developed for the targeted search to be adopted by the all-sky search. For example, the all-sky search could adopt a hierarchical approach where coherent follow-up is performed on the sky patch around sub-threshold triggers, improving the false alarm rate.  
+
 \begin{itemize}
-\item Made faster -- matched filter engine and post processing
-\item allows new PyCBC stuff to be used
+\item Speed and memory usage comparisons between all sky and targeted search
+\end{itemize}
+
+\section{New Code Changes} \label{sec:pygrb changes}
+In the previous section we discussed the reasons why rewriting PyGRB was necessary. In this section we will see how the code has changed. The rewrite was not simply a case of carrying out the same analysis with a faster matched filtering engine. The new analysis is qualitatively different from the old code. We will look at is the new consistency checks, we will see some of the tools used in the all-sky search that are now available to the targeted search, we will discuss the new detection statistic used, and finally we will see how much faster the new analysis is than the old. 
+
+\subsection{Consistency Checks}
+\begin{itemize}
+\item Quick summary of old chisq and point to section in previous chapter
+\item No coherent chi2 any more
+\item Coherent chisq just washes out the chisq
+\item Use single ifo chisq in combination 
+\end{itemize}
+
+
+\subsection{New Data Analysis Tools}
 \begin{itemize}
 \item Denty bins
 \item Autogating
-\end{itemize}
-\item Re-optimised the cuts and reweighted snr
-\item Ran on a single sky point in 2 hours 
-\item No coherent chi2 any more- why?
+\item And any future developments
 \end{itemize}
 
+
+
+\subsection{Detection Statistic}
+\begin{itemize}
+\item Re-optimised the cuts and reweighted snr
+\end{itemize}
+
+\subsection{Speed Gains}
+\begin{itemize}
+\item Single sky point analysis with no face on/off analysis
+\item Speed gains from optimised ffts
+\item Compare analysis speed for 170817 and a swift GRB
+\item Show results are comparable 
+\item Ran on a single sky point in 2 hours 
+\end{itemize}
 
 \section{Future Plans}
 \begin{itemize}
+\item Sky grid
+\item Time slides
 \item More detectors strengthens the case for coherent search
 \item Hierarchical search, using coincident search to find location 
 \item Include astrophysical priors in the detection statistic
 \item Expected rates (from structured jet paper, one in 20 BNS mergers detected with GWs will have a GRB counterpart)
+\item use p astro
 \end{itemize}
 
 
@@ -1466,6 +1525,7 @@ We also optimised the waveforms that are included in the training set, whether t
 \item Training waveforms
 \item cleaning or not
 \item Gen clustering or not
+\item off source injections
 \end{itemize}
 
 \subsubsection{BDT Parameters}
@@ -1486,10 +1546,31 @@ The final hyperparameter we set is the number of cuts that the training algorith
 \end{itemize}
 
 \subsubsection{Result of Optimisation}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{opt_comparison.png}
+\end{center}
+\caption{\textbf{Effect of Optimisation.} Used GRB E264930  }
+\label{fig:opt compare}
+\end{figure}
+
+\subsection{Comparison to Xpipeline}
 \begin{itemize}
-\item Show nice plots of improved sensitivity due to optimisation
-\item Show improvement when compared to Xpipeline
+\item Change in sensitivity
+\item Table of results
+\item Speed improvement (real time and cpu time)
 \end{itemize}
+
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{x_compare.png}
+\end{center}
+\caption{\textbf{MVA Improvement.} Used GRB E264930  }
+\label{fig:x compare}
+\end{figure}
+
 
 
 % ----------------------------

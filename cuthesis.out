@@ -19,7 +19,7 @@
 \BOOKMARK [2][-]{subsection.3.1.7}{The Short GRB-Compact Binary Connection}{section.3.1}% 19
 \BOOKMARK [1][-]{section.3.2}{Gravitational Waves and GRB 170817A}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.2.1}{Initial Observation and Followup}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.2}{Kilonova}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{Kilonova Observation}{section.3.2}% 22
 \BOOKMARK [2][-]{subsection.3.2.3}{Structured Jets}{section.3.2}% 23
 \BOOKMARK [2][-]{subsection.3.2.4}{Other Scientific Results}{section.3.2}% 24
 \BOOKMARK [1][-]{section.3.3}{GRB Progenitors}{chapter.3}% 25
@@ -46,26 +46,34 @@
 \BOOKMARK [2][-]{subsection.4.3.4}{Comparison to Coincident Search}{section.4.3}% 46
 \BOOKMARK [2][-]{subsection.4.3.5}{Null SNR}{section.4.3}% 47
 \BOOKMARK [2][-]{subsection.4.3.6}{Coherent 2 Tests}{section.4.3}% 48
-\BOOKMARK [2][-]{subsection.4.3.7}{The PyGRB Workflow}{section.4.3}% 49
+\BOOKMARK [2][-]{subsection.4.3.7}{Removing Noise}{section.4.3}% 49
 \BOOKMARK [2][-]{subsection.4.3.8}{Reweighted SNR}{section.4.3}% 50
 \BOOKMARK [2][-]{subsection.4.3.9}{Searching for Face on Signals}{section.4.3}% 51
 \BOOKMARK [2][-]{subsection.4.3.10}{Searching over a Sky Patch}{section.4.3}% 52
 \BOOKMARK [2][-]{subsection.4.3.11}{Event Significance}{section.4.3}% 53
 \BOOKMARK [2][-]{subsection.4.3.12}{Calculating Search Sensitivity}{section.4.3}% 54
-\BOOKMARK [1][-]{section.4.4}{O2 PyGRB Search}{chapter.4}% 55
-\BOOKMARK [2][-]{subsection.4.4.1}{GRB sample}{section.4.4}% 56
-\BOOKMARK [2][-]{subsection.4.4.2}{Results}{section.4.4}% 57
-\BOOKMARK [1][-]{section.4.5}{Improvements to PyGRB}{chapter.4}% 58
-\BOOKMARK [1][-]{section.4.6}{Future Plans}{chapter.4}% 59
-\BOOKMARK [0][-]{chapter.5}{Machine Learning for GW Astronomy}{}% 60
-\BOOKMARK [1][-]{section.5.1}{Introduction}{chapter.5}% 61
-\BOOKMARK [1][-]{section.5.2}{Xpipeline}{chapter.5}% 62
-\BOOKMARK [2][-]{subsection.5.2.1}{Burst Search Background}{section.5.2}% 63
-\BOOKMARK [2][-]{subsection.5.2.2}{Standard Likelihood}{section.5.2}% 64
-\BOOKMARK [2][-]{subsection.5.2.3}{Null Energy}{section.5.2}% 65
-\BOOKMARK [2][-]{subsection.5.2.4}{Incoherent Energy and Background Rejection}{section.5.2}% 66
-\BOOKMARK [1][-]{section.5.3}{Machine Learning}{chapter.5}% 67
-\BOOKMARK [2][-]{subsection.5.3.1}{Supervised Machine Learning}{section.5.3}% 68
-\BOOKMARK [2][-]{subsection.5.3.2}{Boosted Decision Trees}{section.5.3}% 69
-\BOOKMARK [2][-]{subsection.5.3.3}{Data Preprocessing}{section.5.3}% 70
-\BOOKMARK [2][-]{subsection.5.3.4}{Optimisation and Validation}{section.5.3}% 71
+\BOOKMARK [2][-]{subsection.4.3.13}{The PyGRB Workflow}{section.4.3}% 55
+\BOOKMARK [1][-]{section.4.4}{O2 PyGRB Search}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.4.1}{GRB sample}{section.4.4}% 57
+\BOOKMARK [2][-]{subsection.4.4.2}{Results}{section.4.4}% 58
+\BOOKMARK [0][-]{chapter.5}{Improvements to PyGRB}{}% 59
+\BOOKMARK [1][-]{section.5.1}{Reasons to Rewrite the Pipeline}{chapter.5}% 60
+\BOOKMARK [1][-]{section.5.2}{New Code Changes}{chapter.5}% 61
+\BOOKMARK [2][-]{subsection.5.2.1}{Consistency Checks}{section.5.2}% 62
+\BOOKMARK [2][-]{subsection.5.2.2}{New Data Analysis Tools}{section.5.2}% 63
+\BOOKMARK [2][-]{subsection.5.2.3}{Detection Statistic}{section.5.2}% 64
+\BOOKMARK [2][-]{subsection.5.2.4}{Speed Gains}{section.5.2}% 65
+\BOOKMARK [1][-]{section.5.3}{Future Plans}{chapter.5}% 66
+\BOOKMARK [0][-]{chapter.6}{Machine Learning for GW Astronomy}{}% 67
+\BOOKMARK [1][-]{section.6.1}{Introduction}{chapter.6}% 68
+\BOOKMARK [1][-]{section.6.2}{Xpipeline}{chapter.6}% 69
+\BOOKMARK [2][-]{subsection.6.2.1}{Burst Search Background}{section.6.2}% 70
+\BOOKMARK [2][-]{subsection.6.2.2}{Standard Likelihood}{section.6.2}% 71
+\BOOKMARK [2][-]{subsection.6.2.3}{Null Energy}{section.6.2}% 72
+\BOOKMARK [2][-]{subsection.6.2.4}{Incoherent Energy and Background Rejection}{section.6.2}% 73
+\BOOKMARK [1][-]{section.6.3}{Machine Learning}{chapter.6}% 74
+\BOOKMARK [2][-]{subsection.6.3.1}{Supervised Machine Learning}{section.6.3}% 75
+\BOOKMARK [2][-]{subsection.6.3.2}{Boosted Decision Trees}{section.6.3}% 76
+\BOOKMARK [2][-]{subsection.6.3.3}{Data Preprocessing}{section.6.3}% 77
+\BOOKMARK [2][-]{subsection.6.3.4}{Optimisation and Validation}{section.6.3}% 78
+\BOOKMARK [2][-]{subsection.6.3.5}{Comparison to Xpipeline}{section.6.3}% 79

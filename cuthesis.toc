@@ -38,7 +38,7 @@
 \contentsline {subsection}{\numberline {3.5.1}Triggered and Untriggered Searches}{36}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Modeled and Burst Searches}{37}{subsection.3.5.2}
 \contentsline {section}{\numberline {3.6}GRB Astrophysics with Gravitational Waves}{37}{section.3.6}
-\contentsline {paragraph}{Short GRB Progenitors}{38}{section*.10}
+\contentsline {paragraph}{Short GRB Progenitors}{37}{section*.10}
 \contentsline {paragraph}{Long GRB Progenitors}{38}{section*.11}
 \contentsline {paragraph}{Populations}{38}{section*.12}
 \contentsline {paragraph}{GRB Distance and Luminosity}{38}{section*.13}

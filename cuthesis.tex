@@ -883,6 +883,9 @@ In the $\iota \sim \pi$ case, the coherent SNR takes the same form, but with
 We now have a detection statistic with only two degrees of freedom, as opposed to four for the coherent SNR and 2N for the coincident SNR of an N detector network. This gives us an additional null statistic, and allows us to calculate a null SNR even when analysing data from just two detectors. The circularly polarised coherent SNR allows for a $3\%$ increase in range for a given FAP when compared to the generic coherent SNR. This corresponds to a $10\%$ increase in the rate of GW signals detected. [\textbf{cite Andrew's paper}]
 
 \subsection{Coherent $\chi^2$ Tests} \label{sec:coh chisq}
+There are many instrumental and environmental sources of non-stationary, non-Gaussian noise in GW detectors. These frequently take the form of a large SNR spike in the data, which we call a \textit{glitch}. It is important to be able to distinguish between a high SNR glitch and a true GW signal.  The coherent statistics discussed in the preceding sections will down-weight these glitches, but loud glitches will still have a high coherent SNR and so can appear to be a GW. We need a way to distinguish between glitches and true GW signals. We do this using \textit{signal consistency tests}, which checks that high SNR triggers behave as we expect GW signals to. In this section we introduce three signal consistency tests used by PyGRB.
+
+\subsubsection{ Signal Consistency Tests }
 We define a glitch $g(t)$ to be the power orthogonal to a GW template $h(t)$
 \begin{equation}
 (g|h)=0 \fs
@@ -896,7 +899,7 @@ where $A$ and $B$ are amplitude factors and we have normalised the template and 
 (g|g)=1, \hspace{15pt} (h|h)=1 \fs
 \end{equation}
 
-Matched filtering this data will return a high SNR if $B$ is large, regardless of whether there is a GW signal in the data or not. The coherent statistics discussed in the preceding sections will down-weight these glitches, but loud glitches will still have a high coherent SNR. We need a way to distinguish between glitches and true GW signals. To do this we note that the large SNR due to a glitch is \textit{not} because it matches the template well, but because it has an intrinsically larger amplitude. This means that loud glitches should ring off against a wide variety of different templates in the template bank, unlike a true GW signal where we would expect the SNR to be high only for those templates that have similar morphology to the GW signal. 
+Matched filtering this data will return a high SNR if $B$ is large, regardless of whether there is a GW signal in the data or not.  To distinguish between a glitch and a signal, note that the large SNR due to a glitch is \textit{not} because it matches the template well, but because it has an intrinsically larger amplitude. This means that loud glitches should ring off against a wide variety of different templates in the template bank, unlike a true GW signal where we would expect the SNR to be high only for those templates that have similar morphology to the GW signal. 
 
 Motivated by this, we introduce a set of $N$ templates $T^i$ that are orthonormal to the template
 \begin{equation}
@@ -926,16 +929,73 @@ and variance
 \begin{equation}
 \text{Var}(\chi^2) = 2N + 4B^2 \sum_{i=1}^N (T^i|g)^2\fs
 \end{equation}
-Now we can see how to use $\chi^2$ to distinguish GW signals from glitches. Calculate $\chi^2$ and divide by the number of degrees of freedom. For a GW signal this should be close to one, but for a glitch it will be greater than one and proportional to the square of the amplitude of the glitch. Similarly, the variance of $\chi^2$ per degree of freedom for a GW signal will be approximately two, whereas for a glitch it will scale with the square of the glitch amplitude.  
+Now we can see how to use $\chi^2$ to distinguish GW signals from glitches. Calculate $\chi^2$ and divide by the number of degrees of freedom. For a GW signal this should be close to one, but for a glitch it will be greater than one and proportional to the square of the amplitude of the glitch. Similarly, the variance of $\chi^2$ per degree of freedom for a GW signal will be approximately two, whereas for a glitch it will scale with the square of the glitch amplitude. Thus we can apply a threshold on the value of $\chi^2$ per degree of freedom, with triggers exceeding this value being considered glitches. 
 
+It is not trivial to find a set of orthonormal waveforms such as the $T^i$ above. A set of waveforms $t^i$ can be made into a set of waveforms orthogonal to $h$ using the formula
+\begin{equation}
+T^i = \frac{t^i - (t^i|h)h}{\sqrt{1-(t^i|h)^2}}
+\end{equation}
+but in general these $T^i$ will not be orthonormal to each other. Using these waveforms, the formula for $\chi^2$ is no longer a sum of independent Gaussian variables but a sum of correlated Gaussian variables. For this distribution the mean is unchanged, but the variance becomes\footnote{The general formula for the variance of the sum of correlated Gaussian variables $X_i$ is $\text{Var}(\sum_i X_i) = \sum_i \text{Var}(X_i) + \sum_{i \neq j} \text{Cov}(X_i,X_j) $ where $\text{Cov}(X_i,X_j)$ is the covariance matrix of $X_i$ and $X_j$.}
+\begin{equation}
+\text{Var}(\chi^2) = 2N + 2\sum_{i \neq j} (T^i|T^j)^2 \fs
+\end{equation}
+This does not cause significant problems though as $\chi^2$ thresholds are set empirically. 
+
+We can extend the idea of the $\chi^2$ test to a multidetector search. We start with the four waveform components of $\textbf{h}_\mu$, as described in section \ref{sec:coh snr}. We saw in section \ref{sec: coinc compare} that in the dominant polarisation frame, these components satisfy the equation
+\begin{equation}
+( \textbf{h}_\mu | \textbf{h}_\nu ) = \mathcal{M}\mn = \text{diag}(A,B,A,B)
+\end{equation}
+and as such are orthogonal, but not normalised. We can normalise them to obtain 
+\begin{equation}
+(\hat{\textbf{h}}_\mu |\hat{\textbf{h}}_\nu ) = \delta\mn \fs
+\end{equation}
+We then take a set of normalised test waveforms $\hat{t}^i_\mu$ and construct waveforms that are orthogonal to $\hat{\textbf{h}}_\mu$ using
+\begin{equation}
+T^i_\mu = \frac{t^i_\mu - \sum_\nu(\hat{\textbf{t}}^i_\mu | \hat{\textbf{h}}_\nu)\hat{h}_\nu}{\sqrt{1-\sum_\sigma(\hat{\textbf{t}}^i_\sigma|\hat{\textbf{h}}_\sigma)^2}} \fs
+\end{equation}
+The multidetector $\chi^2$ is then defined as
+\begin{equation}
+\chi^2 = \sum_{\mu=1}^4 \sum_{i=1}^N (\textbf{T}^i_\mu | s)^2 
+\end{equation}
+if we assume the templates used are orthonormal
+\begin{equation}
+( \textbf{T}^i_\mu | \textbf{T}^j_\nu ) = \delta^{ij}\delta\mu \fs
+\end{equation}
+This has a mean of $4N$ and a variance of $8N$. The orthonormality condition is not in general true. Accounting for this, the mean is still $4N$ but the variance becomes
+\begin{equation}
+\text{Var}(\chi^2) = 8N + 2\sum_{i,j=1}^N \sum_{\mu,\nu=1}^4 [(\textbf{T}^i_\mu | \textbf{T}^j_\nu)^2 - \delta^{ij}\delta\mn ] \fs
+\end{equation}
+We have seen how $\chi^2$ tests are expected to work, but there are several different methods for obtaining the waveforms $\hat{\textbf{t}}^i_\mu$. In the rest of this section we will see the three different kinds of $\chi^2$ test that PyGRB uses.
 
 \begin{itemize}
-\item Only quick description, chi2 tests will be different in future (see section \ref{sec:new chisq})
-\item Extend to multidetector case
-\item Waveforms can be taken from a sample over the bank (Bank chi2)
-\item Or they could be from time shifting the same waveform (auto chi2)
-\item Power chi2
+\item \textbf{why is this the variance? Shouldn't it be }
+\begin{equation}
+\text{Var}(\chi^2) = 8N + 2\sum_{i \neq j} \sum_{\mu\neq\nu} [(\textbf{T}^i_\mu | \textbf{T}^j_\nu)^2 ] 
+\end{equation}
+?
 \end{itemize}
+
+\subsubsection{The Coherent Bank $\chi^2$ Test}
+A glitch will cause a high SNR across many templates in a template bank. This is different to a signal, which will in general only have a high SNR for templates with similar parameters. By selecting a set of templates from across the template bank to be our test waveforms $t^i$, we can use the $\chi^2$ test described above. The set of waveforms remains the same for every template $h$ in the template bank. This test is most effective when $\textbf{T}^i_\mu$ are close to orthogonal, so templates are selected from across the mass space. This is sufficient to make the deviation from a true $\chi^2$ test negligible. 
+
+\subsubsection{The Coherent Autocorrelation $\chi^2$ Test}
+Alternatively the $t^i$ can be selected by applying timeshifts to the original template $h$. The problem with this test is that the $t^i$ are in general far from orthonormal, leading to a distribution that does not closely resemble a $\chi^2$ distribution. As thresholds are set empirically, this can still be used as a consistency check, but it has a large variance.
+
+
+\subsubsection{The Coherent Power $\chi^2$ Test}
+The power $\chi^2$ test divides the triggering template $h$ into $N$ non-overlapping frequency windows such that each window contains has the same SNR. This is then compared to the SNR in each window as measured from the data. For a real signal, each window would have an SNR $\rho/N$, where $\rho$ is the SNR for the whole template. The expected SNR $\rho^i$ is subtracted from the measured SNR in each window. In the presence of purely Gaussian noise this should, this would be Gaussian distributed with mean zero and unit variance. Thus, we can obtain a $\chi^2$ distributed variable with $(N-1)$ degrees of freedom as follows
+\begin{equation}
+\chi^2 = N \sum_{i=1}^N (\rho^i - \rho/N)^2 \fs
+\end{equation}
+The coherent power $\chi^2$ test is a natural extension of this. We define the SNR contribution to the $i$-th window to be
+\begin{equation}
+\rho^i_\mu = \frac{(\textbf{s}|\textbf{h}^i_\mu}{\sqrt{(\textbf{h}_\mu|\textbf{h}_\mu)}} \fs
+\end{equation}
+The $\chi^2$ test is then
+\begin{equation}
+\chi^2 = N \sum_{i=1}^N \sum_{\mu=1}^4 (\rho^i_\mu - \rho_\mu/N)^2 \fs
+\end{equation}
+In Gaussian noise this will the $\chi^2$ distributed with $4(N-1)$ degrees of freedom. 
 
 \section{The PyGRB Workflow} \label{sec:pygrb workflow}
 In the previous section we studied the theory behind a coherent matched filtering search. Now we will see how to turn this theory into a functioning search pipeline. We will see how PyGRB combines the coherent SNR, null SNR, and coherent $\chi^2$ values to make a detection statistic and how this detection statistic is used to estimate the false alarm probability of trigger. We will see how PyGRB deals with uncertainty in the sky position of a GRB. Section \ref{sec:pygrb sensitivity} shows how PyGRB estimates its sensitivity, which is important for providing lower limits on the rates of neutron star mergers. We end this section by bringing all these parts together and looking at the full workflow.

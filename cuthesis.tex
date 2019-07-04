@@ -389,7 +389,7 @@ There are also two hypotheses as to what the slower moving matter that the fireb
 
 
 
-\subsection{Jets}
+\subsection{Jets} \label{sec:jets}
 The well-founded assumptions made by the fireball model, that GRB progenitors are small and dense, naturally lead to the prime suspects for powering GRBs being compact objects, such as black holes and neutron stars. If we assume that compact objects do play a role in generating GRBs, then it is not much of a jump to think that GRBs may be jetted. Jets are ubiquitous with both black holes and neutron stars: supermassive black holes and solar mass black holes have been observed to have jets, and highly magnetised, rotating neutron stars, called \textit{pulsars}, are also known to produce jets. Assuming that GRBs are jetted substantially lowers the inferred energy emitted by the source, which has implications for the physical mechanism that causes GRBs. It is therefore important to determine whether GRBs are jetted or not. 
 
 What would be the observable effects of GRB jetting? The fireball model suggests that the ejected matter will have a very high Lorentz factor. Special relativity tells us that objects moving with high Lorentz factor $\Gamma$ emit most of their energy within an angle $\theta\approx 2/\Gamma$ radians of the direction of travel. This is called \textit{relativistic beaming}. If the matter is jetted and the beamed angle $\theta$ is less than the opening angle of the jet, then there will be no observable difference between isotropic emission and jetted emission, as the edge of the jet is not visible. However, once the matter reaches the interstellar medium it will begin to slow down, reducing the amount of beaming and increasing the angle to which the matter can be observed. Once the beaming angle has increased to a point where the edge of the jet is visible, the amount of energy being radiated towards the observer will suddenly drop, and this will happen across the electromagnetic spectrum at the same time. This \textit{break} in the spectrum is observable in the afterglow of many GRBs. For example, figure \ref{fig:jetbreak} shows the clearly visible break in the afterglow spectrum of GRB 990510 after approximately one day. It is now widely accepted that short GRBs have opening angles of $\sim 30^\circ$ and long GRBs have opening angles of $\sim 5^\circ$.
@@ -492,7 +492,7 @@ The high SNR in the LIGO detectors compared to Virgo suggested that the GW origi
 \subsection{Kilonova Observation}
 This new object was studied intensely over the following days. The transient was initially observed to be a rapidly fading blue transient, which had faded completely within 48 hours. The spectrum showed no supernova-like absorption lines, ruling out the possibility that this transient was caused by a supernova. Over the next $\sim$10 days the spectrum grew redder, and observations by ESO-VLT/X-shooter showed evidence of the decay of r-process elements. This all strongly indicates that the transient was a kilonova. X-ray emission was detected 9 days after the merger, and radio emission after 16 days. This delayed radio emission was predicted from neutron star merger models as the ejecta interacts with the interstellar medium.
 
-\subsection{Structured Jets}
+\subsection{Structured Jets} \label{sec:structured jets}
 GRB 170817A was significantly fainter than any other detected GRB (see figure \ref{fig:brightness_z}). In fact, the GRB showed no evidence for photons with energy $>511$ keV, i.e. above the pair production threshold, meaning that the matter ejected from this GRB need not have been traveling at relativistic velocities\footnote{Recall from section \ref{sec: fireball} that GRBs were assumed to accelerate matter to relativistic velocities as this would explain how GRBs could emit photons above the pair production threshold. The fact these high energy photons were not detected means that material ejected from this GRB need not travel at relativistic velocity}. There are several factors that affect GRB brightness, such as the angle the GRB is observed at and the intrinsic properties of the jet. The simplest model of the jet is the \textit{top-hat jet}, which has a uniform core that terminates sharply at some angle from the GRB axis. It is possible that GRB 170817A was a top-hat jet viewed off-axis, making it appear dimmer. Another possibility is that the GRB had a \textit{structured jet}, meaning that it gradually becomes less energetic as the angle from the axis increases. It is also possible that the GRB jet had a \textit{cocoon} created by the relativistic jet shocking the non-relativistic matter surrounding the jet. These three possibilities are shown in figure \ref{fig:jet}. It could also be that GRB 170817A was produced by a new mechanism that is not observable at greater distances as it is intrinsically dim. It could also be that GRB 170817A is part of a population of subluminous GRBs that can only be detected if they occur unusually close or that the GRB was not jetted at all, and is a mildly relativistic, isotropic fireball. In this section we will consider each of these possibilities and compare each model to the observed spectral evolution of GRB 170817A, from the prompt emission to the late afterglow observations. We will see that the best explanation for the faint prompt emission of GRB 170817A is that it had a structured jet seen at a relatively large viewing angle. 
 
 \begin{figure} % Example of including images
@@ -627,45 +627,17 @@ The equation of state (EoS) of matter at neutron star densities is poorly constr
 
 \chapter{A Targeted Search for Gravitational Waves associated with Short GRBs} \label{chap: CBC}
 \section{Introduction}\label{CBCintro}
-Compact binary systems are strong emitters of gravitational waves (GWs), and many searches exist to search for signals from these systems [\textbf{cite pycbc gstlal and any others}]. These searches take theoretical waveforms [\textbf{cite someone}] and matched filter them against the strain data from GW detectors (\textbf{ref matched filter section}). It is known that the progenitor of at least some short GRBs are compact binaries, either binary neutron star (BNS) or low mass ratio neutron star - black hole (NSBH) systems. While the search pipelines mentioned above can detect the signals associated with short GRBs, they search for binary black hole (BBH) systems as well. This means they cannot use any of the EM information that GRB detectors collect. By combining the EM information from GRB detectors with the strain data from GW detectors, we can make a more sensitive search. This is what PyGRB was developed to do.
+Compact binary coalescence (CBC) events are strong emitters of gravitational waves (GWs), and many searches exist to search for signals from these systems [\textbf{cite pycbc gstlal and any others}]. These searches take theoretical waveforms [\textbf{cite someone}] and matched filter them against the strain data from GW detectors (\textbf{ref matched filter section}). It is known that the progenitor of at least some short GRBs are compact binaries, either binary neutron star (BNS) or low mass ratio neutron star - black hole (NSBH) systems. While the search pipelines mentioned above can detect the signals associated with short GRBs, they do not use any of the EM information that GRB detectors collect as they search for binary black hole (BBH) systems as well as neutron star mergers. By combining the EM information from GRB detectors with the strain data from GW detectors, we can make a more sensitive search specifically designed to look for CBC signals associated with short GRBs. This is what PyGRB was developed to do.
 
-There are several ways EM information can improve a GW search. The first is that the time and sky position of the short GRB are known from GRB detectors (see section \ref{sec:grb detectors}). This not only means that the analysis can run on less data but this information can also be used to make a more powerful detection statistic, which we will see in section \ref{sec:coh snr}. We can also assume that the binary system that produced the GRB was face on, as GRBs are emitted perpendicular to the orbital plane. We will see in section \ref{sec:circ pol} that this can also be used to improve the detection statistic.  
+There are several ways EM information can improve a GW search. The first is that the time and sky position of the short GRB are known from GRB detectors. This not only means that the analysis can run on less data but this information can also be used to make a more powerful detection statistic, which we will see in section \ref{sec:coh snr}. We can also assume that the binary system that produced the GRB was face on, as GRBs are emitted perpendicular to the orbital plane. We will see in section \ref{sec:circ pol} that this can also be used to improve the detection statistic.  
 
-In this chapter we describe PyGRB [\textbf{cite all the papers}], a targeted matched filter search for short GRBs. PyGRB is integrated into the PyCBC data analysis software [\textbf{cite pycbc technical paper}], which is primarily an all-time, all-sky, matched filter search for compact binary coalescence (CBC) signals. We will begin with an overview of the PyCBC pipeline, as this is the foundation that PyGRB is built upon. In section \ref{sec:PyGRB} we discuss the unique features of PyGRB that make it more sensitive to GRB signals than the all-sky, all-time search. Then we discuss the findings of PyGRB in the second advanced LIGO and advanced Virgo observing run. In section \ref{sec:pygrb improvements} we will discuss some recent improvements in speed and sensitivity to the PyGRB pipeline. We then end this chapter with a discussion on future improvements that can be made to PyGRB. 
+In this chapter we describe PyGRB [\textbf{cite all the papers}], a targeted matched filter search for short GRBs. PyGRB is integrated into the PyCBC data analysis software [\textbf{cite pycbc technical paper}], which is primarily an all-time, all-sky, matched filter search for CBC signals. We will begin with an overview of the PyCBC pipeline, as this is the foundation that PyGRB is built upon. In section \ref{sec:PyGRB} we discuss the theory behind the statistics used by PyGRB and show why it is more sensitive to GRB signals than the all-sky, all-time search. In section \ref{sec:pygrb workflow} we will see how this theory is applied to make a functioning search pipeline. We end this chapter with a discussion on the findings of PyGRB in the second advanced LIGO and advanced Virgo observing run.
 
-\section{PyCBC overview}
-\begin{itemize}
-\item Just the parts of the CBC search that are relevant for PyGRB
-\item Highlight some of the differences
-\item All sky all time
-\item Searches for a bigger population - i.e. not just BNS and low mass NSBH
-\end{itemize}
-\subsection{Matched Filter Search}
-\begin{itemize}
-\item Contents of this section depends on what goes into the background chapter. I think the mathematical formalism of matched filtering should go earlier in the thesis
-\end{itemize}
 
-\subsection{Consistency Checks} \label{sec:chi2}
-\textbf{Chisq tests}
-\begin{itemize}
-\item Frequency bins
-\item Template bank
-\item Autocorrelation 
-\item Need to learn about the effective degrees of freedom stuff. 
-\end{itemize}
+\section{Coherent Matched Filtering} \label{sec:PyGRB}
+In this section we will discuss the theory behind PyGRB; a targeted, matched filter search for GWs associated with short GRBs. The detection statistic of PyGRB is the \textit{coherent SNR}, which uses the sky position and time of the GRB, as well as the antenna response function and PSD of each detector in the network. Using these, it is possible to calculate the amount of signal power expected in each detector. For example, if a GRB was localised to a point in the sky directly above the most sensitive interferometer in the network, then this detector would be expected to have the highest SNR of all detectors in the network. If one of the other detectors in the network has a higher SNR, then it is less likely that this trigger is a true GW signal. Triggers with the expected ratio of signal power in each detector will have a higher coherent SNR than those that do not. 
 
-\subsection{PyCBC Results}
-\begin{itemize}
-\item Detections made in O1 and O2 - Use catalog paper
-\item Sensitivity of search - Useful later for comparison between PyCBC and PyGRB
-\end{itemize}
-
-\section{PyGRB} \label{sec:PyGRB}
-The PyCBC pipeline discussed above is an all-time, all-sky search. Some CBC systems\footnote{BNS and low mass ratio NSBH.} are expected to produce short GRBs (see chapter \ref{chap:GRBs}). \textit{Targeted searches}, where the time and sky position of the source are known, are not only computationally cheaper, but can make use of the additional information to make a more powerful detection statistic. In the case of a GRB search, as the GRB is emitted along the axis of rotation, we can also assume the binary is face on. This can be used to further reduce the background noise for a GW search. 
-
-In this section we will describe PyGRB; a targeted, matched filter search for GWs associated with short GRBs. The detection statistic of PyGRB is the \textit{coherent SNR}, which uses the sky position and time of the GRB, as well as the antenna response function and PSD of each detector in the network. Using these, it is possible to calculate the amount of signal power expected in each detector. For example, consider the case of a GW directly over one of the detectors in a network of identical interferometers. Detectors are most sensitive to GW sources that are directly overhead, so the detector with the source directly overhead will have more power than any other detector in the network. If one of the other detectors in the network has more power, then it is less likely that this trigger is a true GW signal. Triggers with the expected ratio of signal power in each detector will have a higher coherent SNR than those that do not. 
-
-This qualitative description of coherence is made rigorous in the following sections up to \ref{sec:coh snr}. In section \ref{sec:null snr} we discuss the \textit{null SNR}, another coherent statistic that measures the energy inconsistent with a GW. The rest of this section is about the PyGRB workflow and how to use coherent statistics to confidently detect GWs associated with GRBs. 
+This qualitative description of coherence is made rigorous in the following sections up to \ref{sec:coh snr}. In section \ref{sec:null snr} we discuss the \textit{null SNR}, another coherent statistic that measures the energy inconsistent with a GW. Short GRBs are expected to be emitted perpendicular to the orbital plane of the neutron star merger and with an opening angle of $30^\circ$ (see sections \ref{sec:jets} and \ref{sec:structured jets}). In section \ref{sec:circ pol} we will see how this information can be used to build an even more sensitive detection statistic. We then end this section by discussing how to reject non-Gaussianities in the data by using signal consistency checks.
 
 \subsection{A Coherent Search for Coalescing Binary Systems}
 \begin{itemize}
@@ -865,56 +837,6 @@ N^{XY} = \delta^{XY} - f^X_{+}f^Y_{+} - f^X_{\times}f^Y_{\times} \fs
 \end{equation}
 Glitches are incoherent, meaning that in general they do not exist in the signal space. For this reason, we expect $\rho_\text{coinc}^2 \gg \rho_\text{coh}^2$ for loud glitches. Equivalently, we could say the null SNR is high in this case. For a sufficiently loud GW signal, most of the energy will be coherent, and so $\rho_\text{coinc}^2 \simeq \rho_\text{coh}^2$. Hence the null SNR is will be close to zero.
 
-\subsection{Coherent $\chi^2$ Tests} \label{sec:coh chisq}
-\begin{itemize}
-\item Quick description of coherent chi2 tests
-\item Explain that they were used in O2 but will not be used in future
-\item Explain why they were taken out and that we now use single detector chi2 tests
-\item This section should be brief
-\end{itemize}
-
-\subsection{Removing Noise} \label{sec:thresholds}
-We have seen several statistics that can indicate whether a trigger is a GW signal or noise. We apply cuts on these statistics, discarding any triggers that fail the cuts. This is especially important for the coherent search as the coherent statistics are slow to calculate and additional to all the statistics used in the coincident search. To speed up the coherent search, we discard as many triggers as possible at the earliest possible time in the workflow. In this section we will discuss the PyGRB workflow as it was in the most recent LIGO observing run, focusing on how triggers are discarded in order to speed up the analysis.
-
-The analysis begins with matched filtering the individual detector data. Using the known sky location of the GRB and the fact that gravitational waves travel at the speed of light, we timeshift the data from each detector so that a GW associated with the GRB will be coincident in each detector. A list of triggers is formed for each detector by keeping only times when the individual detector SNR is greater than four, the rest of the data is discarded. We then discard any trigger that is not coincident in at least two detectors in the network. 
-
-The coincident SNR is then easy to calculate, and any trigger with a coincident SNR below six is discarded. We then calculate the coherent SNR for the remaining triggers. We apply the same threshold of six to the coherent SNR as it is strictly lower than the coincident SNR. 
-
-Once we have the coincident and coherent SNR, the null SNR is easy to calculate. We want to cut triggers with a high null SNR, as it is in general higher for glitches that for GWs. However, differences between the actual GW waveform and the template used for the matched filter, as well as inaccuracies in timing and sky position, can all lead to some fraction of the energy of a GW contributing to the null SNR. In practice, this could mean a loud GW has a high coherent SNR \textit{and} a high null SNR. For this reason, we increase the null SNR threshold with the coherent SNR for loud triggers but keep the null SNR threshold fixed for quiet triggers, as can be seen in fig.\ref{fig:nullcut}. To be precise, we keep triggers meeting either of the following criteria: 
-\begin{equation}
-\rho_N\leq5.25 \text{  and   } \rho_\text{coh}\leq 20
-\end{equation} 
-\begin{equation}
-\rho_N \leq \frac{\rho_\text{coh}}{5}+5.25  \text{  and   } \rho_\text{coh}> 20 \fs
-\end{equation}
-
-The $\chi^2$ tests (described in \ref{sec:coh chisq}) are computationally expensive to calculate, so we calculate these only on those triggers that survive all the other tests. These tests are the same as used in the coincident search. In particular, they are not coherent but applied to the individual detector triggers. 
-
-\begin{figure} % Example of including images
-\begin{center}
-\includegraphics[width=0.8\linewidth]{GRB170817A_null_stat2_vs_snr_zoom.png}
-\end{center}
-\caption{\textbf{Null Stat Cut.} Here we plot the coherent SNR against the null SNR. The blue crosses are background triggers. The red pluses are signal injections. The black line is the veto line, with all triggers in the shaded region above the line being discarded. The green line indicates the expected SNR for optimally oriented injections. The magenta and cyan lines show 1 and 2 sigma errors on the green line. }
-\label{fig:nullcut}
-\end{figure}
-
-
-
-\begin{itemize}
-\item chi2 tests - Is this final? No coherent chi2 tests? Do we need to explain why we are no longer using coherent chi2 tests? 
-\item Go through plot caption with Steve
-\end{itemize}
-
-\subsection{Reweighted SNR} \label{sec:reweighted snr}
-After all the cuts have been made, the remaining triggers are then reweighted twice. First they are reweighted according to their coherent $\chi^2$ values, according to (\ref{chi2 reweigth}), then they are reweighted again according to their null SNR, according to (\ref{null reweight}).
-\begin{equation}  \label{chi2 reweigth}
-\rho_{\chi^2} = \begin{cases} \rho_\text{coh} & \mbox{if } \chi^2 \leq n_\text{dof} \\ \frac{\rho_\text{coh}}{\left( \frac{1}{2} \left[ 1 + \left( \frac{\chi^2}{n_\text{dof}} \right)^3 \right] \right)^{1/6} } & \mbox{if } \chi^2 > n_\text{dof}\end{cases}
-\end{equation}  
-\begin{equation} \label{null reweight}
-\rho_\text{rw} = \begin{cases} \rho_{\chi^2} & \mbox{if } \rho_\text{null} \leq 4.25 \\ \frac{\rho_{\chi^2}}{ \rho_\text{null} -3.25} & \mbox{if } \rho_\text{null} > 4.25\end{cases}
-\end{equation}
-Note that this reweighting only down-weights triggers with a high $\chi^2$ or a high null SNR. The reweighting should not significantly alter the network SNR of a GW signal, but will reduce the SNR of noise. The reweighted SNR is the detection statistic used by PyGRB. 
-
 \subsection{Searching for Face on Signals} \label{sec:circ pol}
 Short GRB jets are emitted perpendicular to the orbital plane and with an opening angle $<30^\circ$, as discussed in section \ref{sec:gw170817}. In a similar way to how the coherent SNR defined in section \ref{sec:coh snr} accounts for the sky position of the GRB and the PSD of each detector, we can construct a new coherent SNR that takes into account that GWs associated with GRBs have an orbital inclination of $\iota \sim 0$ or $\iota \sim \pi$ with respect to the observer.
 
@@ -960,6 +882,125 @@ In the $\iota \sim \pi$ case, the coherent SNR takes the same form, but with
 
 We now have a detection statistic with only two degrees of freedom, as opposed to four for the coherent SNR and 2N for the coincident SNR of an N detector network. This gives us an additional null statistic, and allows us to calculate a null SNR even when analysing data from just two detectors. The circularly polarised coherent SNR allows for a $3\%$ increase in range for a given FAP when compared to the generic coherent SNR. This corresponds to a $10\%$ increase in the rate of GW signals detected. [\textbf{cite Andrew's paper}]
 
+\subsection{Coherent $\chi^2$ Tests} \label{sec:coh chisq}
+We define a glitch $g(t)$ to be the power orthogonal to a GW template $h(t)$
+\begin{equation}
+(g|h)=0 \fs
+\end{equation}
+We can then model non-stationary data as a linear combination of Gaussian noise $n(t)$, the GW template, and the glitch
+\begin{equation}
+s(t) = n(t) + Ah(t) + Bg(t)
+\end{equation}
+where $A$ and $B$ are amplitude factors and we have normalised the template and glitch component
+\begin{equation}
+(g|g)=1, \hspace{15pt} (h|h)=1 \fs
+\end{equation}
+
+Matched filtering this data will return a high SNR if $B$ is large, regardless of whether there is a GW signal in the data or not. The coherent statistics discussed in the preceding sections will down-weight these glitches, but loud glitches will still have a high coherent SNR. We need a way to distinguish between glitches and true GW signals. To do this we note that the large SNR due to a glitch is \textit{not} because it matches the template well, but because it has an intrinsically larger amplitude. This means that loud glitches should ring off against a wide variety of different templates in the template bank, unlike a true GW signal where we would expect the SNR to be high only for those templates that have similar morphology to the GW signal. 
+
+Motivated by this, we introduce a set of $N$ templates $T^i$ that are orthonormal to the template
+\begin{equation}
+(h|T^i) = 0, \hspace{15pt} (T^i|T^j) = \delta^{ij} \fs
+\end{equation}
+We now sum the squares of the matched filter of the data $s$ with the templates $T^i$. When the noise is stationary (i.e. when $B=0$), the orthonormality condition means that 
+\begin{equation}
+\chi^2 = \sum_{i=1}^N(T^i|s)^2 = \sum_{i=1}^N(T^i|n)^2
+\end{equation} 
+whether a GW signal is present or not. Each term in the summation is the square of a Gaussian distributed with a mean of zero and variance of one, making this $\chi^2$ distributed with $N$ degrees of freedom. The mean and variance are therefore
+\begin{equation}
+\langle \chi^2 \rangle = N, \hspace{15pt} \text{Var}(\chi^2) = 2N \fs
+\end{equation}
+Now suppose that there is a glitch in the data (i.e. $B \neq 0$). In this case, we find
+\begin{equation}
+\chi^2 = \sum_{i=0}^N [ (T^i|n) + B(T^i|g)]^2 \fs
+\end{equation}
+This follows a non-central $\chi^2$ distribution with $N$ degrees of freedom and non-centrality parameter $\lambda = B^2(T^i|g)^2$.
+%\begin{equation}
+%\chi^2 = \sum_{i=0}^N [ (T^i|n)^2 + 2B(T^i|n)(T^i|g) + B^2(T^i|g)^2 ] \fs
+%\end{equation}
+This has mean
+\begin{equation}
+\langle \chi^2 \rangle = N + B^2 \sum_{i=1}^N (T^i|g)^2
+\end{equation}
+and variance
+\begin{equation}
+\text{Var}(\chi^2) = 2N + 4B^2 \sum_{i=1}^N (T^i|g)^2\fs
+\end{equation}
+Now we can see how to use $\chi^2$ to distinguish GW signals from glitches. Calculate $\chi^2$ and divide by the number of degrees of freedom. For a GW signal this should be close to one, but for a glitch it will be greater than one and proportional to the square of the amplitude of the glitch. Similarly, the variance of $\chi^2$ per degree of freedom for a GW signal will be approximately two, whereas for a glitch it will scale with the square of the glitch amplitude.  
+
+
+\begin{itemize}
+\item Only quick description, chi2 tests will be different in future (see section \ref{sec:new chisq})
+\item Extend to multidetector case
+\item Waveforms can be taken from a sample over the bank (Bank chi2)
+\item Or they could be from time shifting the same waveform (auto chi2)
+\item Power chi2
+\end{itemize}
+
+\section{The PyGRB Workflow} \label{sec:pygrb workflow}
+In the previous section we studied the theory behind a coherent matched filtering search. Now we will see how to turn this theory into a functioning search pipeline. We will see how PyGRB combines the coherent SNR, null SNR, and coherent $\chi^2$ values to make a detection statistic and how this detection statistic is used to estimate the false alarm probability of trigger. We will see how PyGRB deals with uncertainty in the sky position of a GRB. Section \ref{sec:pygrb sensitivity} shows how PyGRB estimates its sensitivity, which is important for providing lower limits on the rates of neutron star mergers. We end this section by bringing all these parts together and looking at the full workflow.
+
+\subsection{Removing Noise} \label{sec:thresholds}
+We have seen several statistics that can indicate whether a trigger is a GW signal or noise. We apply cuts on these statistics, discarding any triggers that fail the cuts. This is especially important for the coherent search as the coherent statistics are slow to calculate and additional to all the statistics used in the coincident search. To speed up the coherent search, we discard as many triggers as possible at the earliest possible time in the workflow. In this section we will discuss the PyGRB workflow as it was in the most recent LIGO observing run, focusing on how triggers are discarded in order to speed up the analysis.
+
+The analysis begins with matched filtering the individual detector data. Using the known sky location of the GRB and the fact that gravitational waves travel at the speed of light, we timeshift the data from each detector so that a GW associated with the GRB will be coincident in each detector. A list of triggers is formed for each detector by keeping only times when the individual detector SNR is greater than four, the rest of the data is discarded. We then discard any trigger that is not coincident in at least two detectors in the network. 
+
+The coincident SNR is then easy to calculate, and any trigger with a coincident SNR below six is discarded. We then calculate the coherent SNR for the remaining triggers. We apply the same threshold of six to the coherent SNR as it is strictly lower than the coincident SNR. 
+
+Once we have the coincident and coherent SNR, the null SNR is easy to calculate. We want to cut triggers with a high null SNR, as it is in general higher for glitches that for GWs. However, differences between the actual GW waveform and the template used for the matched filter, as well as inaccuracies in timing and sky position, can all lead to some fraction of the energy of a GW contributing to the null SNR. In practice, this could mean a loud GW has a high coherent SNR \textit{and} a high null SNR. For this reason, we increase the null SNR threshold with the coherent SNR for loud triggers but keep the null SNR threshold fixed for quiet triggers, as can be seen in fig.\ref{fig:nullcut}. To be precise, we keep triggers meeting either of the following criteria: 
+\begin{equation}
+\rho_N\leq5.25 \text{  and   } \rho_\text{coh}\leq 20
+\end{equation} 
+\begin{equation}
+\rho_N \leq \frac{\rho_\text{coh}}{5}+5.25  \text{  and   } \rho_\text{coh}> 20 \fs
+\end{equation}
+
+The $\chi^2$ tests (described in \ref{sec:coh chisq}) are computationally expensive to calculate, so we calculate these only on those triggers that survive all the other tests. These tests are the same as used in the coincident search. In particular, they are not coherent but applied to the individual detector triggers. 
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{GRB170817A_null_stat2_vs_snr_zoom.png}
+\end{center}
+\caption{\textbf{Null Stat Cut.} Here we plot the coherent SNR against the null SNR. The blue crosses are background triggers. The red pluses are signal injections. The black line is the veto line, with all triggers in the shaded region above the line being discarded. The green line indicates the expected SNR for optimally oriented injections. The magenta and cyan lines show 1 and 2 sigma errors on the green line. }
+\label{fig:nullcut}
+\end{figure}
+
+
+
+\begin{itemize}
+\item chi2 tests - Is this final? No coherent chi2 tests? Do we need to explain why we are no longer using coherent chi2 tests? 
+\item Go through plot caption with Steve
+\end{itemize}
+
+\subsection{Reweighted SNR} \label{sec:reweighted snr}
+After all the cuts have been made, the remaining triggers are then reweighted twice. First they are reweighted according to their coherent $\chi^2$ values, according to (\ref{chi2 reweigth}), then they are reweighted again according to their null SNR, according to (\ref{null reweight}).
+\begin{equation}  \label{chi2 reweigth}
+\rho_{\chi^2} = \begin{cases} \rho_\text{coh} & \mbox{if } \chi^2 \leq n_\text{dof} \\ \frac{\rho_\text{coh}}{\left( \frac{1}{2} \left[ 1 + \left( \frac{\chi^2}{n_\text{dof}} \right)^3 \right] \right)^{1/6} } & \mbox{if } \chi^2 > n_\text{dof}\end{cases}
+\end{equation}  
+\begin{equation} \label{null reweight}
+\rho_\text{rw} = \begin{cases} \rho_{\chi^2} & \mbox{if } \rho_\text{null} \leq 4.25 \\ \frac{\rho_{\chi^2}}{ \rho_\text{null} -3.25} & \mbox{if } \rho_\text{null} > 4.25\end{cases}
+\end{equation}
+Note that this reweighting only down-weights triggers with a high $\chi^2$ or a high null SNR. The reweighting should not significantly alter the network SNR of a GW signal, but will reduce the SNR of noise. The reweighted SNR is the detection statistic used by PyGRB. 
+
+
+
+
+
+\subsection{Event Significance} 
+We use signal consistency checks to remove glitches from the trigger list, and we use the reweighted SNR to rank the surviving triggers in order of likelihood of being a real GW signal. The final step is to determine the significance of the surviving triggers, i.e. how often will we find glitches with a given reweighted SNR that have survived the signal consistency checks. We do this by calculating the false alarm probability (FAP) for each trigger. The FAP depends on the data quality at the time being analysed, as poor data quality leads to more high SNR glitches which makes finding a high SNR trigger less significant. For this reason, we must estimate the rate of high SNR glitches at the time of the GRB in order to determine the significance of a trigger. In this section we outline the process used to calculate event significance. 
+
+As detector noise is not stationary, we calculate the FAP by using the data around the time of the GRB. If a GW is there, then it is assumed to be in the window starting five seconds before and ending one second after the GRB trigger time. This window would allow the detection of GWs from most GW models associated with short GRBs. We call this 6s window the \textit{on-source} window. The loudest\footnote{Here \textit{loudest} means highest reweighted SNR.} event, with the loudest template, in the on-source is taken as our trigger. 
+
+To evaluate the p-value of this trigger, we analyse approximately one hour of data around the on-source\footnote{The amount of data used before and after the on-source varies depending on the data available. For example, sometimes a GRB will happen less than an hour before (after) an interferometer loses (acquires) lock.}, called the \textit{off-source} data. This data is assumed to not contain a GW signal. The off-source is divided up into as many 6s segments as possible, so that if we have $T_\text{off}$ seconds of data then we have $N=T_\text{off} / T_\text{on}$ segments, where $T_\text{on}$ is the length of the on-source. These segments are called the \textit{off-source-trials}. Using the same criteria as the for the on-source, we find the loudest trigger in each off-source-trial. As the off-source is assumed to only contain noise, the FAP of the on-source trigger is the fraction of off-trials that have a louder trigger than the on-source, i.e. the probability that noise would produce a trigger with a reweighted SNR louder than the on-source. 
+
+This process alone is only capable of achieving a FAP of $10^{-3}$ [\textbf{Cite Andrew's paper}] as there is not enough off-trials to claim a lower FAP. This is low enough to reject a signal hypothesis, but not low enough to claim a detection, for which we require a FAP of less than $10^{-5}$ [\textbf{Cite Andrew again}]. One way to get around this would be to use a longer off-source, but as detector noise is not stationary, it is possible that this extra off-source data would have different properties to the time of the GRB. It would also significantly increase the computational time required to complete the analysis, as well as the amount of detector data required to analyse a GRB, meaning fewer GRBs are analysed.
+
+To find a lower FAP, the off-source data from each detector is time-shifted relative to the other detectors in the network and the data is then reanalysed. The time-shifts are longer than the light travel time between the detectors in the network and also longer than the duration of a typical glitch (i.e. less than one second), so that triggers in the time shifted data are unlikely to appear coherently.  
+
+There are two types of time shifting, called \textit{short slides} and \textit{long slides}. The two types of time slide is arise naturally from the fact that PyGRB analyses data in segments, typically of 128s. Time shifting the data within a segment is called \textit{short slides}. For example, in an HLV analysis the Hanford data is not shifted, the Livingston data is shifted in increments of 6s, and the Virgo data is shifted in increments of 12 seconds. This does not require the data to be matched filtered again, as the time shift happens after filtering. This means only the network statistics must be recomputed, making short slides computationally cheap but able to demonstrate a FAP as low as $10^{-4}$. \textit{Long slides} refers to when the segments themselves are shifted relative to one another. This requires the matched filtering to be redone, as the matched filter time series is not saved when moving to the next segment for analysis. This makes long slides much more computationally expensive than short slides. However, short slides can be done on top of the long slides, so that just 10 long slides are needed to show that a trigger has a FAP$<10^{-5}$.
+
+It should be noted that our treatment of time slides assumes that each combination of time shifted data is statistically independent of the others. This is not true, as each combination of time shifted data is still the same data being analysed. For this reason, the FAP calculated from time slides is a lower limit on the true FAP. 
+
 
 \subsection{Searching over a Sky Patch}
 The sky position of GRBs cannot be determined exactly. The uncertainty in sky position depends on which satellites detected the GRB\footnote{See section \ref{sec:grb detectors} for details on the GRB detectors mentioned in this section.}. The BAT instrument on Swift can localise to within 1-4 arcminutes. This is a small enough uncertainty that the GW search can use a single sky point [\textbf{cite Andrew's paper?}]. Other GRB detectors cannot provide as precise localisation. The GBM on the Fermi satellite often provides a 3$\sigma$ confidence region with a roughly circular uncertainty with a radius of several degrees [\textbf{citation in Andrew's paper- maybe include this in grb det section}]. The IPN uses triangluation to determine sky position, so depending on the number of satellites in the IPN that make the detection, sky localisation can vary from under a square degree to thousands of square degrees. 
@@ -983,22 +1024,7 @@ In the two detector case, it is possible to search a reduced number of sky point
 \end{itemize}
 
 
-\subsection{Event Significance}
-We use signal consistency checks to remove glitches from the trigger list, and we use the reweighted SNR to rank the surviving triggers in order of likelihood of being a real GW signal. The final step is to determine the significance of the surviving triggers, i.e. how often will we find glitches with a given reweighted SNR that have survived the signal consistency checks. We do this by calculating the false alarm probability (FAP) for each trigger. The FAP depends on the data quality at the time being analysed, as poor data quality leads to more high SNR glitches which makes finding a high SNR trigger less significant. For this reason, we must estimate the rate of high SNR glitches at the time of the GRB in order to determine the significance of a trigger. In this section we outline the process used to calculate event significance. 
-
-As detector noise is not stationary, we calculate the FAP by using the data around the time of the GRB. If a GW is there, then it is assumed to be in the window starting five seconds before and ending one second after the GRB trigger time. This window would allow the detection of GWs from most GW models associated with short GRBs. We call this 6s window the \textit{on-source} window. The loudest\footnote{Here \textit{loudest} means highest reweighted SNR.} event, with the loudest template, in the on-source is taken as our trigger. 
-
-To evaluate the p-value of this trigger, we analyse approximately one hour of data around the on-source\footnote{The amount of data used before and after the on-source varies depending on the data available. For example, sometimes a GRB will happen less than an hour before (after) an interferometer loses (acquires) lock.}, called the \textit{off-source} data. This data is assumed to not contain a GW signal. The off-source is divided up into as many 6s segments as possible, so that if we have $T_\text{off}$ seconds of data then we have $N=T_\text{off} / T_\text{on}$ segments, where $T_\text{on}$ is the length of the on-source. These segments are called the \textit{off-source-trials}. Using the same criteria as the for the on-source, we find the loudest trigger in each off-source-trial. As the off-source is assumed to only contain noise, the FAP of the on-source trigger is the fraction of off-trials that have a louder trigger than the on-source, i.e. the probability that noise would produce a trigger with a reweighted SNR louder than the on-source. 
-
-This process alone is only capable of achieving a FAP of $10^{-3}$ [\textbf{Cite Andrew's paper}] as there is not enough off-trials to claim a lower FAP. This is low enough to reject a signal hypothesis, but not low enough to claim a detection, for which we require a FAP of less than $10^{-5}$ [\textbf{Cite Andrew again}]. One way to get around this would be to use a longer off-source, but as detector noise is not stationary, it is possible that this extra off-source data would have different properties to the time of the GRB. It would also significantly increase the computational time required to complete the analysis, as well as the amount of detector data required to analyse a GRB, meaning fewer GRBs are analysed.
-
-To find a lower FAP, the off-source data from each detector is time-shifted relative to the other detectors in the network and the data is then reanalysed. The time-shifts are longer than the light travel time between the detectors in the network and also longer than the duration of a typical glitch (i.e. less than one second), so that triggers in the time shifted data are unlikely to appear coherently.  
-
-There are two types of time shifting, called \textit{short slides} and \textit{long slides}. The two types of time slide is arise naturally from the fact that PyGRB analyses data in segments, typically of 128s. Time shifting the data within a segment is called \textit{short slides}. For example, in an HLV analysis the Hanford data is not shifted, the Livingston data is shifted in increments of 6s, and the Virgo data is shifted in increments of 12 seconds. This does not require the data to be matched filtered again, as the time shift happens after filtering. This means only the network statistics must be recomputed, making short slides computationally cheap but able to demonstrate a FAP as low as $10^{-4}$. \textit{Long slides} refers to when the segments themselves are shifted relative to one another. This requires the matched filtering to be redone, as the matched filter time series is not saved when moving to the next segment for analysis. This makes long slides much more computationally expensive than short slides. However, short slides can be done on top of the long slides, so that just 10 long slides are needed to show that a trigger has a FAP$<10^{-5}$.
-
-It should be noted that our treatment of time slides assumes that each combination of time shifted data is statistically independent of the others. This is not true, as each combination of time shifted data is still the same data being analysed. For this reason, the FAP calculated from time slides is a lower limit on the true FAP. 
-
-\subsection{Calculating Search Sensitivity}
+\subsection{Calculating Search Sensitivity} \label{sec:pygrb sensitivity}
 It is useful to estimate the search sensitivity to GWs around the time of the analysed GRB. In the case that no GW is detected, this can be used to provide a lower limit on the distance of the source.  
 
 To do this, we inject simulated signals into the off-source data and see if PyGRB can find them. The injected signals are CBC waveforms drawn from three populations: BNS mergers, NS-BH systems that have spins aligned with the angular momentum, and NS-BH systems with spins generically aligned. The injections are drawn from an astrophysically motivated distribution of distances, component masses and spins, and binary inclination. The NS mass distribution is a normal distribution with mean $1.4 \textup{M}_\odot$ and standard deviation of $0.2 \textup {M}_\odot$ [\textbf{refs in O2 GRB paper}] restricted to the $1 \textup{M}_\odot-3\textup {M}_\odot$ range [\textbf{refs in O2 GRB paper}]. The NS spins magnitude is restricted to be $\leq 0.4$, the fastest observed pulsar spin [\textbf{refs in O2 GRB paper}]. The BH masses are drawn from a normal distribution of mean $10 \textup{M}_\odot$ with standard deviation of 6$ \textup{M}_\odot$, restricted to the range $3 \textup{M}_\odot-15 \textup{M}_\odot$. The BH spin magnitudes are $\leq 0.98$, motivated by X-ray observations [\textbf{refs in O2 GRB paper}]. The injections are limited to have binary inclinations of $0^\circ-30^\circ$ or $150^\circ-180^\circ$, as the opening angle for a CBC powered GRB is expected to be less than $30^\circ$ [\textbf{cite BNS late time observations paper}]. 
@@ -1039,7 +1065,7 @@ In figure \ref{fig:pvalue} we have plotted the p-value for the remaining 41 GRBs
 \label{fig:pvalue}
 \end{figure}
 
-As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite paper}], the distance to this GRB is approximately 43Mpc. For the other GRBs in our sample we calculated the $90\%$ exclusion distance. This is the distance at which $90\%$ of the signal injections are recovered with a greater coherent SNR than the loudest trigger in the on-source. The $90\%$ exclusion distances are plotted in figure \ref{fig:ex dist}. The median $90\%$ exclusion distance for the BNS waveform is 80 Mpc, for an NS-BH waveform with generic spin is 105 Mpc, and for NS-BH with aligned spin is 144 Mpc. These values are slightly lower than in O1, which were 90 Mpc, 139 Mpc, and 150 Mpc respectively, though this seems to just be due to a statistical fluctuation as we analysed a relatively small number of GRBs. 
+As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite paper}], the distance to this GRB is approximately 43Mpc. For the other GRBs in our sample we calculated the $90\%$ exclusion distance. This is the distance at which $90\%$ of the signal injections are recovered with a greater coherent SNR than the loudest trigger in the on-source. The $90\%$ exclusion distances are plotted in figure \ref{fig:ex dist}. The median $90\%$ exclusion distance for the BNS waveform is 80 Mpc, for an NS-BH waveform with generic spin is 105 Mpc, and for NS-BH with aligned spin is 144 Mpc. These values are slightly lower than in O1, which were 90 Mpc, 139 Mpc, and 150 Mpc respectively, though this seems to just be due to a statistical fluctuation as we analysed a relatively small number of GRBs. There is a summary of the information about each GRB analysed by PyGRB in table \ref{tab:grbs}. This table includes teh $90\%$ exclusion distance for each waveform type for each GRB.
 
 \begin{figure}
 \begin{center}
@@ -1106,7 +1132,10 @@ As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite 
 170818137 & 03:17:20  & $19^{\mathrm{h}}48^{\mathrm{m}}53^{\mathrm{s}}$ & $06^{\circ}21'$ &  Fermi   & H1L1   & 103 & 146 & 169 \\
 170816599 & 14:23:04  & $23^{\mathrm{h}}25^{\mathrm{m}}36^{\mathrm{s}}$ & $19^{\circ}06'$ &  Fermi   & H1V1   & 46  & 56  & 73 \\ 
 \end{tabular}
+\label{tab:grbs}
 \end{landscape}
+
+\subsection{Rates}
 
 \chapter{Improvements to PyGRB} \label{sec:pygrb improvements}
 In the previous chapter we discussed the PyGRB pipeline as it was used in the second LIGO observing run. The code is now about 10 years old, and in that time new software tools have become available that could speed up the and improve the analysis. In particular, there is the PyCBC software package [\textbf{cite pycbc paper}], which has highly optimised tools for performing a matched filter search. For this reason, PyGRB is being rewritten to be fully implemented into PyCBC. In this chapter we will begin by discussing the reasons why this change was necessary before seeing what changes have already been made and the improvements they provide. We will then end this chapter by looking forward at the changes that need to happen for the PyGRB rewrite to be used in a GW search.
@@ -1126,7 +1155,7 @@ Faster code is not the only reason for integrating PyGRB into PyCBC. New tools h
 \section{New Code Changes} \label{sec:pygrb changes}
 In the previous section we discussed the reasons why rewriting PyGRB was necessary. In this section we will see how the code has changed. The rewrite was not simply a case of carrying out the same analysis with a faster matched filtering engine. The new analysis is qualitatively different from the old code. We will look at is the new consistency checks, we will see some of the tools used in the all-sky search that are now available to the targeted search, we will discuss the new detection statistic used, and finally we will see how much faster the new analysis is than the old. 
 
-\subsection{Consistency Checks}
+\subsection{Consistency Checks} \label{sec:new chisq}
 \begin{itemize}
 \item Quick summary of old chisq and point to section in previous chapter
 \item No coherent chi2 any more

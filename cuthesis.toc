@@ -47,52 +47,50 @@
 \contentsline {paragraph}{Neutron Star Equation of State}{38}{section*.18}
 \contentsline {chapter}{\numberline {4}A Targeted Search for Gravitational Waves associated with Short GRBs}{39}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{39}{section.4.1}
-\contentsline {section}{\numberline {4.2}PyCBC overview}{40}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Matched Filter Search}{40}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Consistency Checks}{40}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}PyCBC Results}{40}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}PyGRB}{40}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}A Coherent Search for Coalescing Binary Systems}{41}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}Binary Coalescence Waveform}{41}{subsection.4.3.2}
-\contentsline {subsection}{\numberline {4.3.3}Coherent SNR}{42}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Comparison to Coincident Search}{45}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Null SNR}{47}{subsection.4.3.5}
-\contentsline {subsection}{\numberline {4.3.6}Coherent $\chi ^2$ Tests}{47}{subsection.4.3.6}
-\contentsline {subsection}{\numberline {4.3.7}Removing Noise}{48}{subsection.4.3.7}
-\contentsline {subsection}{\numberline {4.3.8}Reweighted SNR}{49}{subsection.4.3.8}
-\contentsline {subsection}{\numberline {4.3.9}Searching for Face on Signals}{50}{subsection.4.3.9}
-\contentsline {subsection}{\numberline {4.3.10}Searching over a Sky Patch}{51}{subsection.4.3.10}
-\contentsline {subsection}{\numberline {4.3.11}Event Significance}{53}{subsection.4.3.11}
-\contentsline {subsection}{\numberline {4.3.12}Calculating Search Sensitivity}{54}{subsection.4.3.12}
-\contentsline {subsection}{\numberline {4.3.13}The PyGRB Workflow}{55}{subsection.4.3.13}
-\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{57}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}GRB sample}{57}{subsection.4.4.1}
-\contentsline {subsection}{\numberline {4.4.2}Results}{57}{subsection.4.4.2}
-\contentsline {chapter}{\numberline {5}Improvements to PyGRB}{62}{chapter.5}
-\contentsline {section}{\numberline {5.1}Reasons to Rewrite the Pipeline}{62}{section.5.1}
-\contentsline {section}{\numberline {5.2}New Code Changes}{63}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Consistency Checks}{63}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}New Data Analysis Tools}{63}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Detection Statistic}{64}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Speed Gains}{64}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Future Plans}{64}{section.5.3}
-\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitaional Wave Signals using Machine Learning}{65}{chapter.6}
-\contentsline {section}{\numberline {6.1}X-pipeline}{65}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{67}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{69}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Null Energy}{70}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{71}{subsection.6.1.4}
-\contentsline {section}{\numberline {6.2}Machine Learning}{71}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{72}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{74}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Data Preprocessing}{75}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{78}{subsection.6.2.4}
-\contentsline {subsubsection}{Training Set}{78}{section*.19}
-\contentsline {subsubsection}{BDT Parameters}{79}{section*.20}
-\contentsline {subsubsection}{Result of Optimisation}{80}{section*.21}
-\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{80}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Comparison to Xpipeline}{80}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Unsolved Problems}{82}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Future Work}{82}{subsection.6.3.3}
-\contentsline {chapter}{Appendices}{85}{section*.22}
-\contentsline {section}{\numberline {.1}General Relativity}{85}{section.Alph0.1}
+\contentsline {section}{\numberline {4.2}Coherent Matched Filtering}{40}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}A Coherent Search for Coalescing Binary Systems}{40}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Binary Coalescence Waveform}{40}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Coherent SNR}{42}{subsection.4.2.3}
+\contentsline {subsection}{\numberline {4.2.4}Comparison to Coincident Search}{44}{subsection.4.2.4}
+\contentsline {subsection}{\numberline {4.2.5}Null SNR}{46}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.6}Searching for Face on Signals}{46}{subsection.4.2.6}
+\contentsline {subsection}{\numberline {4.2.7}Coherent $\chi ^2$ Tests}{48}{subsection.4.2.7}
+\contentsline {section}{\numberline {4.3}The PyGRB Workflow}{49}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Removing Noise}{50}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Reweighted SNR}{51}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.3}Event Significance}{52}{subsection.4.3.3}
+\contentsline {subsection}{\numberline {4.3.4}Searching over a Sky Patch}{53}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Calculating Search Sensitivity}{54}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.6}The PyGRB Workflow}{55}{subsection.4.3.6}
+\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{56}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}GRB sample}{56}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Results}{58}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.3}Rates}{63}{subsection.4.4.3}
+\contentsline {chapter}{\numberline {5}Improvements to PyGRB}{64}{chapter.5}
+\contentsline {section}{\numberline {5.1}Reasons to Rewrite the Pipeline}{64}{section.5.1}
+\contentsline {section}{\numberline {5.2}New Code Changes}{65}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Consistency Checks}{65}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}New Data Analysis Tools}{65}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Detection Statistic}{66}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Speed Gains}{66}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Future Plans}{66}{section.5.3}
+\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitaional Wave Signals using Machine Learning}{67}{chapter.6}
+\contentsline {section}{\numberline {6.1}X-pipeline}{67}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{69}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{71}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Null Energy}{72}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{73}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Machine Learning}{73}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{74}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{76}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Data Preprocessing}{77}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{80}{subsection.6.2.4}
+\contentsline {subsubsection}{Training Set}{80}{section*.19}
+\contentsline {subsubsection}{BDT Parameters}{81}{section*.20}
+\contentsline {subsubsection}{Result of Optimisation}{82}{section*.21}
+\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{82}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Comparison to Xpipeline}{82}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Unsolved Problems}{84}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Future Work}{84}{subsection.6.3.3}
+\contentsline {chapter}{Appendices}{87}{section*.22}
+\contentsline {section}{\numberline {.1}General Relativity}{87}{section.Alph0.1}

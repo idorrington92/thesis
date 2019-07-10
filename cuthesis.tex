@@ -93,12 +93,12 @@
 \item LIGO interferometer stuff. Virgo too. Soon Kagra and LIGO India
 \item GRBs are good candidate sources for GWs, especially after 170817A
 \item Triggered vs untriggered search
-\item There are several different search strategies for GRB GWs. They vary in the number of assumptions that they make about the source. This thesis covers two of these searches: The modelled CBC search, which assumes an inspiral, and the unmodelled Xpipeline search, which only a maximum duration and bandwidth of the GW.
+\item There are several different search strategies for GRB GWs. They vary in the number of assumptions that they make about the source. This thesis covers two of these searches: The modelled CBC search, which assumes an inspiral, and the unmodelled \xp search, which only a maximum duration and bandwidth of the GW.
 \item PyGRB and X are both triggered searches
 \item PyGRB assumptions are restrictive enough to allow a matched-filter search 
 \item PyGRB can be made more sensitive by assuming circularly polarised GW emission, as the beam is perpendiular to the plane of the system
 \item Indicate the median exlcusion distance for BNS systems or something like that to show how sensitive PyGRB is
-\item Xpipeline is a GWB search that makes minimal assumptions
+\item \xp is a GWB search that makes minimal assumptions
 \item It only uses measures of coherence based on sky location
 \item O2 median distances
 \item Improved this search using machine learning
@@ -602,7 +602,7 @@ Results from both triggered and untriggered searches can be used in \textit{Mult
 \subsection{Modeled and Burst Searches}
 Searches for GWs can also be classified as either \textit{modeled} or \textit{burst}. Modeled searches have theoretical models of the waveforms they are searching for. For example, CBC signals can be modeled by numerical relativity and analytic methods [\textbf{cite something}]. These waveforms can then be used to build a more sensitive search, such as a matched filter search (see sections \textbf{list matched filter sections}). In chapter \ref{chap: CBC} we will look at PyGRB, a targeted, modeled search for GWs associated with GRBs. 
 
-Burst searches use minimal assumptions about waveform morphology, instead relying on measures of coherence between detector data streams. This is in general less sensitive than if a waveform was known and a matched filter search could be carried out, but there are no such waveform models for supernovas/long GRBs. In chapter \ref{chap: mva} we will discuss a burst search called Xpipeline. 
+Burst searches use minimal assumptions about waveform morphology, instead relying on measures of coherence between detector data streams. This is in general less sensitive than if a waveform was known and a matched filter search could be carried out, but there are no such waveform models for supernovas/long GRBs. In chapter \ref{chap: mva} we will discuss a burst search called \xp. 
 
 \section{GRB Astrophysics with Gravitational Waves}
 We have discussed what GRBs are, what causes GRBs, and seen that they are good emitters of GWs. We end this chapter with a discussion of how GW astronomy will add to our understanding of GRBs. 
@@ -1260,23 +1260,26 @@ In the previous section we discussed the reasons why rewriting PyGRB was necessa
 
 \chapter{A Search for Unmodelled Gravitaional Wave Signals using Machine Learning} \label{chap: mva}
 
-The Laser Interferometer Gravitational Wave Observatory (LIGO) and Virgo collaborations operate ground-based gravitational wave (GW) detectors. They have detected signals of astrophysical origin, including the merger of a binary neutron star (BNS) system and multiple binary black hole (BBH) merger signals. As these sources have a known signal morphology, they can be found using a highly sensitive matched-filter search, as discussed in chapter \ref{CBC search}. Some of the most interesting potential sources of GWs, such as core collapse supernova, do not have a known waveform morphology and so a matched filter search is not possible. For this reason, it is important to develop unmodelled searches as well. Unmodelled searches look for coherence between the data streams of multiple interferometers. We will consider the case of a burst search where the sky position of the candidate source is known. This allows us to calculate the relative time of arrival and the relative signal power in each detector.
+%The Laser Interferometer Gravitational Wave Observatory (LIGO) and Virgo collaborations operate ground-based gravitational wave (GW) detectors. They have detected signals of astrophysical origin, including the merger of a binary neutron star (BNS) system and multiple binary black hole (BBH) merger signals.
+In previous chapters we focused on searching for gravitational wave (GW) signals from binary mergers using a matched-filter search. Matched filter searches are very sensitive, but they require theoretical waveforms to have been produced in advance. For this reason, matched filtering is not appropriate for some of the most interesting potential sources of GWs, e.g. core collapse supernova, as the GW morphology is not known. For this reason, it is important to develop unmodelled searches as well. Unmodelled searches, otherwise known as \textit{burst} searches, look for coherence between the data streams of multiple interferometers. We will consider the case of a burst search where the sky position of the candidate source is known. This allows us to calculate the relative time of arrival and the relative signal power in each detector.
 
 In this chapter, we will first discuss how an existing targeted burst search, called \textit{X-pipeline}, searches for gravitational wave bursts (GWBs). We will then see how we can improve this pipeline by using \textit{multivariate analysis} (MVA) to apply rank candidate GW events.  
 
 \section{X-pipeline} \label{xtriggers}
-\xp is a targeted search for GWBs. It uses the sky location of an astrophysical event, such as a GRB, as reported by EM astronomers. The sky location is used to time-shift the data from each GW detector so that the signal arrives simultaneously in each data stream. \xp then coherently combines the data streams of the individual detectors to make:
+In this section we will discuss \xp, a targeted search for GWBs. It uses the sky location of an astrophysical event, such as a GRB, to coherently combine the data streams of each detector in the network. There are two types of coherent data stream made by \xp:
 \begin{itemize}
 \item \textit{Signal streams}, which increase the power of a GW signals relative to noise.
 \item \textit{Null streams}, which reduce the power of true GW signals but not noise.
 \end{itemize}
-\textit{Triggers} are groups of neighbouring pixels that are above threshold in a time-frequency map of a signal stream (see fig.\ref{fig:tfmap}). \xp  then cuts triggers based on correlations of the various signal and null data streams (see figure \ref{fig:xcuts}). The position of these cuts is set to give the best detection efficiency at a fixed false alarm rate, determined using a subset of the triggers that are used for tuning. For the MVA pipeline, the position of these cuts is instead set by a machine learning algorithm (as we will see in \ref{ML}).
+\xp makes time-frequency maps from these coherent data streams. A group of neighbouring high energy pixels in a time-frequency map of a signal stream is called a  \textit{trigger} (see fig.\ref{fig:tfmap}). \xp cuts triggers based on correlations of the various signal and null data streams (see figure \ref{fig:xcuts}). The position of these cuts is set to give the best detection efficiency at a fixed false alarm rate, determined using a subset of the triggers that are used for tuning.\footnote{For the MVA pipeline, the position of these cuts is instead set by a machine learning algorithm, as we will see in \ref{sec:ML}.}
+
+We will begin by deriving the \textit{standard likelihood}, a signal stream used by \xp, and a corresponding null stream. Then we will see how \xp uses these with incoherent data streams to reject background triggers. The following section will show how machine learning can be used to make more intelligent cuts than \xp is currently capable of making.
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{xpipelineTFmap.png}
 \end{center}
-\caption{\textbf{Xpipeline Time-Frequency Map} This figure shows a time-frequency map from Xpipeline for a $1.4-10 M_\odot$ NSBH merger. The top figure shows the $E_+$ energy and the bottom figure shows the top 1\% of pixels. [\textbf{cite xp paper}] } 
+\caption{\textbf{\xp Time-Frequency Map} This figure shows a time-frequency map from \xp for a $1.4-10 M_\odot$ NSBH merger. The top figure shows the $E_+$ energy and the bottom figure shows the top 1\% of pixels. [\textbf{cite xp paper}] } 
 \label{fig:tfmap}
 \end{figure}
 
@@ -1284,14 +1287,12 @@ In this chapter, we will first discuss how an existing targeted burst search, ca
 \begin{center}
 \includegraphics[width=0.8\linewidth]{xpipeline_cut.png}
 \end{center}
-\caption{\textbf{Xpipeline Cut} This figure shows Xpipeline making a cut to eliminate many spurious signals. } %\cite{xpipeline_paper}
+\caption{ \textbf{\xp Cut} This figure shows an example of an \xp cut. The axes show two of the statistics that \xp calculates. Specifically, the x-axis shows the coherent null energy and the y-axis shows the incoherent null energy (see section \ref{sec:xcuts} for more details on these statistics). The red squares show simulated GW signals, and the crosses show background triggers. The colour bar shows the base 10 logarithm of the significance of each trigger. We can see that in this case, the cut eliminates more of the noise and only a few signals. [\textbf{ cite \xp paper }]  }
 \label{fig:xcuts}
 \end{figure}
 
-In this section, we will derive two of the coherent data-streams generated by \xp, as illustrative examples. The first is a signal-stream, called the \textit{standard likelihood}. We will then use the standard likelihood to create a null-stream. 
-
 \subsection{Burst Search Background}
-Suppose we have a network of $D$ detectors. A gravitational wave, described by $h_+(t)$ and $h_\times (t)$, passes through the Earth from direction $\hat{\Omega}$. We describe the sensitivity of detector $\alpha \in \{1,...,D \}$ to the plus and cross polarizations using the \emph{Antenna Response Functions}, denoted $\Fp (\hat{\Omega})$ and $\Fx(\hat{\Omega})$. The position of detector $\alpha$ is denoted by $\textbf{r}_\alpha$ and the noise in this detector is given by $n_\alpha (t)$. The detector output $d_\alpha (t)$ is then given by
+Suppose we have a network of $D$ detectors. A GW, described by $h_+(t)$ and $h_\times (t)$, passes through the Earth from direction $\hat{\Omega}$. We describe the sensitivity of detector $\alpha \in \{1,...,D \}$ to the plus and cross polarisations using the \emph{antenna response functions}, denoted $\Fp (\hat{\Omega})$ and $\Fx(\hat{\Omega})$. The position of detector $\alpha$ is denoted by $\textbf{r}_\alpha$ and $n_\alpha (t)$ is the noise in this detector. The detector output $d_\alpha (t)$ is then given by
 \begin{equation} \label{det_output}
 d_\alpha (t + \Delta t_\alpha (\hat{\Omega})) = \Fp (\hat{\Omega}) h_+ (t) + \Fx (\hat{\Omega}) h_\times (t) + n_\alpha (t + \Delta t_\alpha (\hat{\Omega})) \fs
 \end{equation}   
@@ -1307,7 +1308,7 @@ In reality, detector outputs are not continuous but sampled discretely. The disc
 \begin{equation}
 \tilde{x}[k]=\sum^{N-1}_{j=0} x[j] e^{-i 2\pi jk/N}, \hspace{20pt}x[i]=\frac{1}{N}\sum^{N-1}_{j=0} \tilde{x}[k] e^{i2 \pi jk/N} \fs
 \end{equation}
-For sampling rate is $f_s$ and $N$ data points in the time domain, we convert continuous to discrete notation by using
+For sampling rate $f_s$ and $N$ data points in the time domain, we convert continuous to discrete notation by using
 \begin{equation}
 x(t)\rightarrow x[j]
 \end{equation} 
@@ -1328,7 +1329,7 @@ x(t)\rightarrow x[j]
 \end{equation}  
 For example, the one-sided noise spectral density for a detector with noise $n(t)$ can be written in continuous form as
 \begin{equation}
-\langle  \tilde{n}^* (f) \tilde{n} (f') \rangle = \delta (f-f') \frac{1}{2} S_n (f)
+\langle  \tilde{n}^*_\alpha (f) \tilde{n}_\beta (f') \rangle = \delta_{\alpha \beta} \delta (f-f') \frac{1}{2} S_n (f)
 \end{equation}
 where the angle brackets indicate an average over the noise. In the discrete notation listed above, this becomes
 \begin{equation}
@@ -1346,16 +1347,16 @@ F^{+,\times}_{w\alpha}(\hat{\Omega},k)=\frac{F^{+,\times}_\alpha (\hat{\Omega})}
 \end{equation}
 The normalisation of the whitened data is 
 \begin{equation}
-\langle  \tilde{n}^*_\alpha [k] \tilde{n}_\beta [k']  \rangle = \delta _{\alpha \beta} \delta _{k k'}  \fs
+\langle  \tilde{n}^*_{w\alpha} [k] \tilde{n}_{w\beta [k']}  \rangle = \delta _{\alpha \beta} \delta _{k k'}  \fs
 \end{equation}
-In vector notation, we can write \ref{det_output} as
+In what follows we will only use the whitened detector data, noise, and antenna patterns, and drop the subscript $w$ for clarity. In vector notation, we can write \ref{det_output} as
 \begin{equation}
 \tilde{\textbf{d}}=\textbf{F}\tilde{\textbf{h}}+\tilde{\textbf{n}} 
 \end{equation}
 where $\textbf{F}=[\textbf{F}^+ \:\:\:\textbf{F}^\times]$ and $\tilde{\textbf{h}}=[\tilde{h}_+ \:\:\: \tilde{h}_\times]^T$.
 
 \subsection{Standard Likelihood}
-Assume that the noise in our detectors is Gaussian. As a gravitational wave $\tilde{\textbf{h}}$ passes through the detector from a known direction, the probability of attaining whitened detector output $\tilde{\textbf{d}}$ in one time-frequency pixel is given by
+Assume that the noise in our detectors is Gaussian. As a GW $\tilde{\textbf{h}}$ passes through the detector from a given direction, the probability of attaining whitened detector output $\tilde{\textbf{d}}$ in one time-frequency pixel is given by
 \begin{equation}
 P(\tilde{\textbf{d}}|\tilde{\textbf{h}})=\frac{1}{(2\pi )^{D/2}}\exp \left[ -\frac{1}{2} \left| \tbd - \textbf{F} \tbh  \right|^2 \right] \fs
 \end{equation}  
@@ -1388,22 +1389,22 @@ where
 \begin{equation} \label{projOp1}
 \textbf{P}^\text{GW} \equiv \textbf{F} (\textbf{F}^\dagger \textbf{F})^{-1} \textbf{F}^\dagger \fs
 \end{equation}
-We can see from equation \ref{det_output} that the contribution made to the data output by a passing GW from fixed sky location is restricted to the subspace spanned by $\textbf{F}_+$ and $\textbf{F}_\times$. Therefore the energy in this subspace is the energy that is consistent with a GW from a given sky location. We can show that $\textbf{P}^\text{GW} $ is a projection operator, projecting the data into this same subspace. The standard likelihood maximises the energy in this subspace, and so is the maximum energy contained in the whitened data that is consistent with a GW from the given sky location.\footnote{In practice, some of this energy will be due to noise. We say that the energy due to noise is \emph{inconsistent} with a GW signal. The rest of the energy must be due to the GW, so we say it is \emph{consistent} with the GW.} This is an example of the coherent signal-streams that Xpipeline uses.
+We can see from equation \ref{det_output} that the contribution made to the data output by a passing GW from fixed sky location is restricted to the subspace spanned by $\textbf{F}_+$ and $\textbf{F}_\times$. Therefore the energy in this subspace is the energy that is consistent with a GW from a given sky location. We can show that $\textbf{P}^\text{GW} $ is a projection operator, projecting the data into this same subspace. The standard likelihood maximises the energy in this subspace, and so is the maximum energy contained in the whitened data that is consistent with a GW from the given sky location.\footnote{In practice, some of this energy will be due to noise. We say that the energy due to noise is \emph{inconsistent} with a GW signal. The rest of the energy must be due to the GW, so we say it is \emph{consistent} with the GW.} This is an example of the coherent signal streams that \xp uses.
 \subsection{Null Energy}
-We can use the standard likelihood to find a null-stream. First consider the \emph{total energy}, given by
+We can use the standard likelihood to construct a null stream. We start with the total energy in the data, given by
 \begin{equation}
 E_\text{tot}=\sum_k | \tbd |^2 \fs
 \end{equation}
-This is an incoherent statistic as it contains only auto-correlation terms, and no cross-correlation terms. If we subtract the standard likelihood from the total energy, we obtain the \emph{null energy}
+This is an incoherent statistic as it contains auto-correlation terms but no cross-correlation terms, i.e. each detector is treated individually. If we subtract the standard likelihood from the total energy, we obtain the \emph{null energy}
 \begin{equation} \label{Enull}
 E_\text{null} \equiv E_\text{tot}-E_\text{SL}=\sum_k \tbd ^\dagger \textbf{P}^\text{null} \tbd \fs
 \end{equation}
-This is the energy that is inconsistent with a GW from given sky location, and must therefore be associated with noise. This is the minimum amount of energy in our whitened data that is inconsistent with our GW. It is an example null-stream used by Xpipeline.
+This is the energy that is inconsistent with a GW from given sky location, and must therefore be associated with noise. This is the minimum amount of energy in the whitened data that is inconsistent with the GW. It is an example the null streams used by \xp.
 
-This shows one of the key advantages of coherent analysis. If we analysed our data incoherently, we would be working with just the total energy. But using coherent methods, we can project the whitened data into the subspace spanned by $\textbf{F}^+$ and $\textbf{F}^\times$, thus removing some fraction of the noise without removing any of the signal. The drawback is that if the sky position is not known in advance, then the analysis needs to be repeated for a set of directions that span the entire sky ($\gtrsim 10^3$ directions), each with different antenna response functions $\textbf{F}^+$ and $\textbf{F}^\times$. This will slow down analysis and increase the false alarm probability.
+This shows one of the key advantages of coherent analysis. If we analysed our data incoherently, we would be working with just the total energy. By using coherent methods, we can project the whitened data into the subspace spanned by $\textbf{F}^+$ and $\textbf{F}^\times$, thus removing some fraction of the noise without removing any of the signal. The drawback is that if the sky position is not known in advance, then the analysis needs to be repeated for a set of directions that span the entire sky ($\gtrsim 10^3$ directions), each with different antenna response functions $\textbf{F}^+$ and $\textbf{F}^\times$. This will slow down analysis and increase the false alarm probability.
 
-\subsection{Incoherent Energy and Background Rejection}
-The diagonal elements of \ref{Enull} are auto-correlation terms, and the other elements are cross-correlation terms. The auto-correlation part of the null energy are called the \textit{incoherent energy}, and denoted by
+\subsection{Incoherent Energy and Background Rejection} \label{sec:xcuts}
+The diagonal elements of (\ref{Enull}) are auto-correlation terms, and the other elements are cross-correlation terms. The auto-correlation part of the null energy is called the \textit{incoherent null energy}, and denoted by
 \begin{equation}
 I_\text{null} = \sum_k \sum_\alpha P^\text{null}_{\alpha \alpha} | \tilde{d}_\alpha |^2 \fs
 \end{equation}
@@ -1411,25 +1412,40 @@ Background triggers are typically not correlated between the different detectors
 \begin{equation} \label{glitch energy}
 E_\text{null} \approx I_\text{null} \fs
 \end{equation} 
-Compare this to the case of a GW signal. This will be correlated between the detectors. By construction, the energy of the correlated energy does not appear in the null-stream. Therefore, in the presence of a strong GW, the incoherent energy is much larger than the null energy 
+Compare this to the case of a GW signal. This will be correlated between the detectors. By construction, the energy due to the GW does not appear in the null stream. Therefore, in the presence of a strong GW, the incoherent energy is much larger than the null energy 
 \begin{equation} \label{GW energy}
 E_\text{null} \ll I_\text{null} \fs
 \end{equation}
-Using \ref{glitch energy} and \ref{GW energy}, we see that the ratio of $E_\text{null}$ and $I_\text{null}$ is very different in the case of a glitch as opposed to a GW signal. We can use this to make the following cut to remove noise triggers from our sample
+Using (\ref{glitch energy}) and (\ref{GW energy}), we see that the ratio of $E_\text{null}$ and $I_\text{null}$ is very different in the case of a glitch as opposed to a GW signal. We can use this to make the following cut to remove noise triggers from our sample
 \begin{equation} \label{cut}
 I_\text{null} / E_\text{null} > C
 \end{equation}
-for some constant $C>1$. This test does not work as well for small amplitude glitches, where the statistical fluctuations can lead to $E_\text{null}$ being smaller than $I_\text{null}$. For this reason, Xpipeline varies $C$ with the size of the trigger. The precise position of the cut is set to maximise performance on a set of injections.  
+for some constant $C>1$. This test does not work as well for small amplitude glitches, where the statistical fluctuations can lead to $E_\text{null}$ being smaller than $I_\text{null}$. For this reason, \xp varies $C$ with the size of the trigger. The precise position of the cut is set to maximise performance on a set of injections.
 
-\section{\label{ML}Machine Learning}
-We have seen how Xpipeline makes cuts on coherent statistics to distinguish between noise and GW signals. You can see from \ref{cut} that the cut only uses two statistics, the null energy and the incoherent energy. Xpipeline generates many coherent statistics that could used in conjunction to make a more powerful cut. In this section we discuss how to use Machine Learning to make achieve this. The software we use is the Toolkit for Multivariate Analysis package in the ROOT data analysis framework. 
+We have seen how \xp uses the coherent and incoherent null stream for background rejection. \xp uses this same process for other measures of coherent energy, i.e. it uses the coherent energy to define an incoherent energy and then make a cut. In section \ref{sec:ML} we will see how these statistics can instead be used by a machine learning algorithm to make more intelligent cuts, using arbitrary combinations of coherent and incoherent statistics, as well as other statistics. 
+
+\subsection{The \xp Workflow}
+\begin{itemize}
+\item timeshift data
+\item calculate coherent and incoherent stats
+\item On source ([-600,+60] or scale with T90 value) and off source with timeslides to find event significance
+\item injections to measure performance (note that this is done in onsource for X)
+\item long injections 
+\end{itemize}
+
+\section{O2 \xp Search}
+\subsection{GRB Sample}
+\subsection{Results}
+
+\section{Machine Learning} \label{sec:ML}
+We have seen how \xp makes cuts on coherent statistics to distinguish between noise and GW signals. \xp uses pairs of coherent and incoherent energy for background rejection, as in (\ref{cut}). These cuts are effective and well motivated\footnote{As we saw in section \ref{sec:xcuts}} but they cannot explore the full parameter space, looking for patterns using all of the statistics out our disposal. In this section we discuss how to use machine learning to make achieve this. The software we use is the Toolkit for Multivariate Analysis (TMVA) package in the ROOT data analysis framework. 
 
 \subsection{Supervised Machine Learning}
-The type of Machine learning we use is called \textit{supervised machine learning}. Supervised machine learning algorithms are trained on data which has already been classified. They can then be shown a new, not-classified data point and determine the appropriate classification. Supervised machine learning requires data to be in a particular format (see table \ref{table:1}). It is a list of \emph{events}, each with a \emph{label} and corresponding \emph{attributes}. The machine learning algorithm builds a \textit{classifier} that can determine the label of an event when given the event's attributes. In the case of our GW search, the events are the triggers returned by Xpipeline (see section \ref{xtriggers}). The labels are \textit{signal} or \textit{background}, and the attributes are the values of the signal and null data streams for those triggers as well as some statistics describing the trigger, e.g. peak frequency, trigger duration. A full list of the attributes used, together with a short description of the attribute can be seen in table \ref{coherent energy table}. The signal triggers are generated by injecting signal waveforms into the data. Background triggers are triggers that do not coincide with an injected signal.
+The type of Machine learning we use is called \textit{supervised machine learning}. Supervised machine learning algorithms are trained on data which has already been classified. They can then be shown a new, not-classified data point and determine the appropriate classification. Supervised machine learning requires data to be in a particular format (see table \ref{table:1}). It is a list of \emph{events}, each with a \emph{label} and corresponding \emph{attributes}. The machine learning algorithm builds a \textit{classifier} that can determine the label of an event when given the event's attributes. In the case of our GW search, the events are the triggers returned by \xp (see section \ref{xtriggers}). The labels are \textit{signal} or \textit{background}, and the attributes are the values of the signal and null data streams for those triggers and some statistics describing the time-frequency properties of the trigger. A full list of the attributes used, together with a short description of each attribute can be seen in table \ref{coherent energy table}. The signal triggers are generated by injecting signal waveforms into the data. Background triggers are triggers that do not coincide with an injected signal and are typically formed from timeslides and using data outside the on-source window.
 
 %As explained in the introduction, in this paper we look at two machine learning classifiers. The details of these classifiers are described in sections \ref{bdt} and \ref{mlp}. In this section we give some background on machine learning. 
 
-The signal and background trigger sets are each divided into two subsets: The \emph{training set} and the \emph{testing set}. The training set is used to build the classifier, while the testing set is used to measure the accuracy of the trained classifier. If the classifier performs much better on the training set than on the testing set, then the classifier is \emph{overtrained}. This means that the classifier has learned exactly the properties of signals and noise in the training set, rather than learning the general properties of signals and noise. When an overtrained classifier is used on a different data set with different noise properties (such as the testing set), it will perform poorly. 
+The signal and background trigger sets are each divided into two subsets: The \emph{training set} and the \emph{testing set}. The training set is used to build the classifier, while the testing set is used to measure the accuracy of the trained classifier. If the classifier performs much better on the training set than on the testing set, then the classifier is \emph{overtrained}. This means that the classifier has learned the properties of precisely the signals and noise in the training set, rather than learning the general properties of signals and noise. When an overtrained classifier is used on a different data set with different noise properties (such as the testing set), it will perform poorly. 
 
 \begin{table}
 \begin{tabular}{| c | c | c | c | c |} 
@@ -1448,7 +1464,7 @@ Signal & 6422.1467 & 14426.9124 & 14167.2933 & 4991.7876 \\ [1ex]
  \hline
  
 \end{tabular}
-\caption{An example of MVA training data. Each event has a label and several attributes.}
+\caption{An example of MVA training data. Each event has a label and several attributes. The training sets we actually use have up to 15 attributes and thousands of events.}
 \label{table:1}
 \end{table}
 
@@ -1523,7 +1539,7 @@ Power law & \\
 \FloatBarrier
 
 \subsection{Boosted Decision Trees} \label{bdt}
-A \textit{Decision Tree} is a simple type of classifier. It is a flowchart of true/false statements about a trigger's attributes to determine the correct label. For example, consider the decision tree shown in fig.\ref{fig:tree}. Here the attributes are labeled as the components of a vector $x$. We start at the top node and work downwards. If the node is true then we follow the branch to the left and if not then we follow the branch to the right. We then consider the statement at the end of whichever branch we follow. We continue this process until we reach a \textit{leaf node}, which has no branches and contains a final classification for the trigger.  
+A \textit{Decision Tree} is a simple type of classifier. It is a flowchart of true/false statements about a trigger's attributes to determine the correct label. For example, consider the decision tree shown in fig.\ref{fig:tree}. Here the attributes are labeled as the components of a vector $x$. We start at the top node and work downwards. If the statement in the node is true then we follow the branch to the left and if not then we follow the branch to the right. We then consider the statement at the end of whichever branch we follow. We continue this process until we reach a \textit{leaf node}, which has no branches and contains a final classification for the trigger.  
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{Decision_tree.png}
@@ -1532,32 +1548,29 @@ A \textit{Decision Tree} is a simple type of classifier. It is a flowchart of tr
 \label{fig:tree}
 \end{figure}
 
-We can improve the performance of the classifier by using an \textit{ensemble} (or \textit{forest}) of trees. This means training multiple distinct trees, and each tree independently classifies the trigger. The final classification of each trigger is a normalised sum of the outputs of each tree, with +1 corresponding to signal, and -1 corresponding to background. This leads to different regions of the parameter space having different MVA scores, as can be seen in fig.\ref{fig:mvacuts}. The higher the score, the more likely an event is to be a signal. 
+We can improve the performance of the classifier by using an \textit{ensemble} (or \textit{forest}) of trees. This means training multiple distinct trees, with each tree independently classifying the trigger. The final classification of each trigger is a normalised sum of the outputs of each tree, with +1 corresponding to signal, and -1 corresponding to background. This leads to different regions of the parameter space having different MVA scores, as can be seen in fig.\ref{fig:mvacuts}. The higher the score, the more likely an event is to be a signal. 
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{mva_trigger_and_score.png}
 \end{center}
-\caption{\textbf{Visualising the Classifier} In the bottom plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the top plot. As you can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the xpipeline cut shown in fig.\ref{fig:xcuts}. }
+\caption{\textbf{Visualising the Classifier} In the bottom plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the top plot. As you can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the \xp cut shown in fig.\ref{fig:xcuts}. }
 \label{fig:mvacuts}
 \end{figure}
 
+To train a decision tree we must determine the best variable and cut for each decision node, as well as the correct label for each leaf node. Each of these values is set by brute force: trying every possible cut in some discrete range to get the best performance on the training events. Ensemble methods work best when each classifier in the ensemble is independent of the others, so training every tree on the same events is not going to give optimal results. For this reason each tree is trained on some subset of the training set. We could pick events at random to form these subsets, but a more powerful method is to use \textit{Adaptive Boosting}. 
 
-To train a decision tree, we need methods to find the variable to cut on and the position of the cut for each decision node, and the label in each leaf node that best discerns between signal and background. Each of these values is set by brute force: Trying each possible combination of cuts and labels to get the best performance on the training events. Ensemble methods work best when each classifier in the ensemble is independent of the others, so training every tree on the same events is not going to give optimal results. For this reason each tree is trained on some subset of the training set.  We could pick events at random to form these subsets, but a more powerful method is to use \textit{Adaptive Boosting}. 
-
-When using adaptive boosting, each event in the training set is given a probability that it will be selected to train the next tree. Initially each event in the training set has the same probability of being selected. Then after each tree is trained the probability of each event being selected to train the next tree is updated such that misclassified events are more likely to be included in the training set for the next tree. The misclassifed events have their probability of being selected for training the next tree updated by the \textit{boost weight}, given by
+When using adaptive boosting, each event in the training set is given a probability that it will be selected to train the next tree. Initially each event in the training set has the same probability of being selected. Then after each tree is trained the probability of each event being selected to train the next tree is updated such that misclassified events are more likely to be included in the training set for the next tree. In this way, the ensemble become gradually more effective at classifying those events that are most difficult to classify. The misclassifed events have their probability of being selected for training the next tree updated by the \textit{boost weight}, given by
 \begin{equation}
 \alpha = \frac{1 - \text{err}}{\text{err}} 
 \end{equation}
-where err is the misclassification rate. The weights are then renormalised. 
-
-Note that the boost weight is greater than one for\footnote{The misclassification rate is always less than half when the labels only take two possible values as the algorithms we use are always better than chance alone.} err$< 1/2$, and that as the error gets smaller, the boost weight increases. The effect of this is that each new tree is more likely to be trained on the events that are most difficult to classify. 
+where err is the misclassification rate. The weights are then renormalised. Note that the boost weight is greater than one for err$<1/2$, and that as the error gets smaller, the boost weight increases\footnote{The misclassification rate is always less than half when there are only two labels as otherwise the algorithms would simply swap the labels around.}. The effect of this is that each new tree is more likely to be trained on the events that are most difficult to classify. 
 
 The ensemble output is also changed, so that it is weighted rather than being a simple sum. If the output of the $i$th tree is given by $h_i(\textbf{x})$, with $\textbf{x}$ being the event attributes, then the ensemble output is given by
 \begin{equation}
 H(\textbf{x}) = \frac{1}{N}\sum_{i=0}^N \ln(\alpha_i)h_i(\textbf{x)}
 \end{equation}  
-where $N$ is the number of tree in the ensemble. Small values indicate background events, while large values indicate a signal. 
+where $N$ is the number of trees in the ensemble. In this way, greater significance is given to trees with lower misclassification rates. It is common practice when using a forest of decision trees such as this to use the criteria that values of $H$ below 0.5 are background and those above 0.5 are signal. We determine classification in a slightly different way. The trained classifier is used on the off-source trials and it returns a value of $H$ for each trial. We then calculate a false alarm probability by determining the fraction of off-source trials that had a larger value of $H$ than the on-source trial. In this way, the value of $H$ should be interpreted as small values are more likely to be background events while large values are more likely to be a signal, but a value of $H$ on its own is not enough to determine if a trigger is a GW signal. 
 
 \subsection{Data Preprocessing}\label{data-preprocessing}
 Extra data preprocessing is required for the training set. Suppose a small amplitude signal injection is added close to a large amplitude glitch in the data. This trigger will be labeled as a signal, due to the injection, but the properties of the trigger will resemble a glitch, as the glitch has a much larger amplitude than the signal injection. It is essentially a background trigger labeled as a signal. This has two affects: It reduces our ability to detect real signals by making the properties of signals harder for the algorithm to learn, and it can lead to background triggers being misclassified as a Gravitational Wave signal.  
@@ -1566,7 +1579,7 @@ For these reasons, it is important to make sure that signal injections do not ov
 
 We must also not include injections in our signal set that are too small to be detected. If we do then we would again be including triggers labeled as signal that have the properties of a noise trigger, even if there is no glitch present. For this reason we apply a threshold on the amplitude of the signal set, so any injection below that amplitude is removed. The level of the threshold is set experimentally; If it is too low then we will increase the chance of a false positive and hurt our sensitivity to real signals, but if it is too high then we will limit the classifiers ability to detect low amplitude signals. 
 
-We also use \textit{Generalised Clustering}. This is a change in the way Xpipeline defines a trigger. Without using generalised clustering, triggers are groups of neighbouring pixels in the time-frequency maps such as in fig.\ref{fig:tfmap}. Generalised clustering allows these pixels to be separated by a user-specified number of pixels. This can boost the signal power of long triggers, as long triggers tend to contain breaks in their time-frequency maps that causes Xpipeline to list a single long trigger as multiple short triggers. The downside to using generalised clustering is that it can cause noise triggers to be grouped together as well, boosting the power of noise. This then causes our sensitivity to short triggers to be reduced slightly. Experimenting with generalised clustering in both the standard Xpipeline analysis and the MVA analysis suggests that the benefits outweigh the costs, with an improvement of between 7\% and 50\% for long inspiral and adi waveforms at the cost of a decrease of 3\% to 9\% for short sine-gaussian waveforms.  
+We also use \textit{Generalised Clustering}. This is a change in the way \xp defines a trigger. Without using generalised clustering, triggers are groups of neighbouring pixels in the time-frequency maps such as in fig.\ref{fig:tfmap}. Generalised clustering allows these pixels to be separated by a user-specified number of pixels. This can boost the signal power of long triggers, as long triggers tend to contain breaks in their time-frequency maps that causes \xp to list a single long trigger as multiple short triggers. The downside to using generalised clustering is that it can cause noise triggers to be grouped together as well, boosting the power of noise. This then causes our sensitivity to short triggers to be reduced slightly. Experimenting with generalised clustering in both the standard \xp analysis and the MVA analysis suggests that the benefits outweigh the costs, with an improvement of between 7\% and 50\% for long inspiral and adi waveforms at the cost of a decrease of 3\% to 9\% for short sine-gaussian waveforms.  
 
 As XTMVA is to be used for the unmodelled search, it is also important to ensure that the search can find waveforms that are not in the training set. There are several tools that we use to achieve this. The first is to limit the amount of information the classifier is given about the waveform morphology. The classifier cannot know the precise morphology of any waveform because the only attributes that the classifier trains on is the time, peak-frequency, and various measurements of the coherent and null energy between the detectors in the network. This forces the classifier to use the coherence of the triggers to make a classification, rather than the waveform morphology. 
 
@@ -1577,7 +1590,7 @@ The final tool we use to ensure the classifier is sensitive to generic waveforms
 \subsection{Optimisation and Validation} \label{opt}
 With any machine learning algorithm, there are \textit{hyperparameters} that must be tuned. The number of trees in the ensemble, the maximum depth of the trees, and many more hyperparameters must be chosen. We optimise the hyperparamters by repeatedly running an example analysis with different hyperparameters, trying to increase the number of injected signals we could recover from the testing set. 
 
-Setting our hyperparameters using the testing set can cause \textit{data leakage}. Data leakage is when data from outside the training set is used to build a classifier. As we tune our classifier on the testing set, it is possible that we will implicitly tune our classifier to only work well on this training and testing set. This is very similar to overtraining discussed in section \ref{ML}. To avoid this, once we have tuned the hyperparameters on a single GRB, we test the classifier on several other GRBs. If the performance drops significantly on these other GRB analyses, then we have had data leakage and we need to retune our classifier. This process of testing on previously unused data is called \textit{validation}. If there is evidence of data leakage, then we must retune our classifier and validate it again, this time using a different (previously unused) GRB so as to avoid data leakage from the validation GRB. 
+Setting our hyperparameters using the testing set can cause \textit{data leakage}. Data leakage is when data from outside the training set is used to build a classifier. As we tune our classifier on the testing set, it is possible that we will implicitly tune our classifier to only work well on this training and testing set. This is very similar to overtraining discussed in section \ref{sec:ML}. To avoid this, once we have tuned the hyperparameters on a single GRB, we test the classifier on several other GRBs. If the performance drops significantly on these other GRB analyses, then we have had data leakage and we need to retune our classifier. This process of testing on previously unused data is called \textit{validation}. If there is evidence of data leakage, then we must retune our classifier and validate it again, this time using a different (previously unused) GRB so as to avoid data leakage from the validation GRB. 
 
 Optimisation is a somewhat cyclical process, as once we have changed one hyperparameter, we must then go back and test that other parameters do not now need changing. But optimisation is not pure guess work, and in the rest of this section we will see the strategy we used to optimise our classifier. We first discuss optimising the training data to use. As mentioned in section \ref{data-preprocessing}, there are several choices to make regarding what data is used for training, such as setting the amplitude threshold. We then discuss optimising the BDT classifier itself. 
 
@@ -1624,7 +1637,7 @@ The final hyperparameter we set is the number of cuts that the training algorith
 \end{figure}
 
 \section{Effectiveness of XTMVA}
-\subsection{Comparison to Xpipeline}
+\subsection{Comparison to \xp}
 \begin{itemize}
 \item Change in sensitivity
 \item Table of results

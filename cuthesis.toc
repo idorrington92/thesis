@@ -83,21 +83,19 @@
 \contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{74}{subsection.6.1.2}
 \contentsline {subsection}{\numberline {6.1.3}Null Energy}{75}{subsection.6.1.3}
 \contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{76}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}The X-pipeline Workflow}{77}{subsection.6.1.5}
-\contentsline {section}{\numberline {6.2}O2 X-pipeline Search}{77}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}GRB Sample}{77}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Results}{77}{subsection.6.2.2}
-\contentsline {section}{\numberline {6.3}Machine Learning}{77}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Supervised Machine Learning}{78}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Boosted Decision Trees}{80}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Data Preprocessing}{81}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Optimisation and Validation}{84}{subsection.6.3.4}
-\contentsline {subsubsection}{Training Set}{85}{section*.23}
-\contentsline {subsubsection}{BDT Parameters}{85}{section*.24}
-\contentsline {subsubsection}{Result of Optimisation}{87}{section*.25}
-\contentsline {section}{\numberline {6.4}Effectiveness of XTMVA}{87}{section.6.4}
-\contentsline {subsection}{\numberline {6.4.1}Comparison to X-pipeline }{87}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Unsolved Problems}{87}{subsection.6.4.2}
-\contentsline {subsection}{\numberline {6.4.3}Future Work}{87}{subsection.6.4.3}
-\contentsline {chapter}{Appendices}{91}{section*.26}
-\contentsline {section}{\numberline {.1}General Relativity}{91}{section.Alph0.1}
+\contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{77}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{77}{subsection.6.1.6}
+\contentsline {section}{\numberline {6.2}Machine Learning}{78}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{78}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{83}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{84}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{87}{subsection.6.2.4}
+\contentsline {subsubsection}{Training Set}{88}{section*.23}
+\contentsline {subsubsection}{BDT Parameters}{88}{section*.24}
+\contentsline {subsubsection}{Result of Optimisation}{91}{section*.25}
+\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{91}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Comparison to X-pipeline }{91}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Unsolved Problems}{97}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}Future Work}{97}{subsection.6.3.3}
+\contentsline {chapter}{Appendices}{99}{section*.26}
+\contentsline {section}{\numberline {.1}General Relativity}{99}{section.Alph0.1}

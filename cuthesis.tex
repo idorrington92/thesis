@@ -1424,18 +1424,33 @@ for some constant $C>1$. This test does not work as well for small amplitude gli
 
 We have seen how \xp uses the coherent and incoherent null stream for background rejection. \xp uses this same process for other measures of coherent energy, i.e. it uses the coherent energy to define an incoherent energy and then make a cut. In section \ref{sec:ML} we will see how these statistics can instead be used by a machine learning algorithm to make more intelligent cuts, using arbitrary combinations of coherent and incoherent statistics, as well as other statistics. 
 
-\subsection{The \xp Workflow}
-\begin{itemize}
-\item timeshift data
-\item calculate coherent and incoherent stats
-\item On source ([-600,+60] or scale with T90 value) and off source with timeslides to find event significance
-\item injections to measure performance (note that this is done in onsource for X)
-\item long injections 
-\end{itemize}
+\subsection{Tuning and Trigger Significance}
+In this section we will describe how the coherent statistics are tuned and how \xp calculates the significance of a trigger. \xp searches for GWs in a window  [-600, +60] seconds around the trigger time of a typical GRB, which we call the \textit{on-source} data. For GRBs with a $T_{90}$ value greater than 60 seconds, the on-source is extended to [-600, +$T_{90}$] seconds around the trigger time. To tune the cuts, GW signal injections are placed into the on-source data and the cuts are made so as to maximise the number of GW injections detected at a given false alarm rate. 
 
-\section{O2 \xp Search}
-\subsection{GRB Sample}
-\subsection{Results}
+In order to measure the significance of a trigger, approximately one hour of data either side of the on-source window is also analysed, called the \textit{off-source} data. The off-source data is split into trials of equal length to the on-source window. The false alarm probability is calculated as the fraction of off-source trials that have a higher energy than the highest energy on-source trigger. To create more trials and hence achieve a lower false alarm probability, timeslides are applied to the off-source to simulate more data. 
+
+\subsection{O2 \xp Search}
+The Advanced LIGO second observing run started in November 2016 and ended in August 2017, with Advanced Virgo joining for the last month. During this time there were 242 GRBs reported by the Swift and Fermi GRB observatories, and 52 reported by the InterPlanetary Network (IPN), with many GRBs appearing in both lists. \xp requires at least 660 seconds of coincident data between any two detectors in the network. This resulted in 98 GRBs being analysed by \xp during O2. Data from Virgo was only used if it improved the sensitivity of the closed box analysis. 
+
+The injections used for this analysis were circular sine-gaussian (CSG) and accretion disk instabilities (ADI) [\textbf{citations in O2 GRB paper}] waveforms. The CSG injections had a total radiated energy of $E_\text{GW} = 10^{-2}M_\odot c^2$ and a Q-factor of nine. \textbf{ASK PATRICK - is q factor just number of cycles?} The ADI waveforms are model the GW signal from instabilities in a magnetically suspended torus around a rapidly spinning black hole. These two waveforms are chosen as they have very different morphology and duration, with CSG waveforms lasting $\sim1$ second and ADI waveforms lasting for $\sim100$ seconds.
+
+Of the 98 GRBs analysed, the only statistically significant signal was that of GRB 170817A, which was recovered with a false alarm probability of $3.1\times 10^{-4}$. The false alarm probability the 97 other GRBs analysed is plotted in figure \ref{fig:xpvalue}. A weighted binomial test of the 5\% most significant GRBs analysed by \xp in O2 gave a combined p-value of 0.75, indicating that there is no evidence for a sub-threshold population of weak GRB triggers. Plotted in \ref{fig:x ex dist} is the 90\% confidence exclusion distance for each analysed GRB apart from GRB 170817A. This is the distance at which 90\% of injected signals are more significant than the most significant on-source event. This can be used to rule out a burst event occurring within this exclusion distance for each GRB, which also limits the amount of energy that GRBs and be emitting as GWs. This can also be used as a measure of search sensitivity to burst signals, and comparison with the \xp results from O1 shows that the sensitivity is largely unchanged.
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{xpvalue.png}
+\end{center}
+\caption{\textbf{Cumulative Distribution of p-values.} Here we plotted the p-values for every GRB analysed by \xp in O2 apart from GRB 170817A. Also plotted is the expected distribution and the $2\sigma$ deviation. The results are consistent with the no-signal hypothesis. [\textbf{cite O2 GRB paper}]} 
+\label{fig:xpvalue}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{burst_exclusion_distance.png}
+\end{center}
+\caption{\textbf{Cumulative Distribution of Exclusion Distance.} Here we plotted the 90\% exclusion distance for every GRB analysed by \xp in O2 apart from GRB 170817A. This is the distance to which 90\% of injections can be recovered with a significance greater than the loudest event in the on-source. [\textbf{cite O2 GRB paper}] } 
+\label{fig:x ex dist}
+\end{figure}
 
 \section{Machine Learning} \label{sec:ML}
 We have seen how \xp makes cuts on coherent statistics to distinguish between noise and GW signals. \xp uses pairs of coherent and incoherent energy for background rejection, as in (\ref{cut}). These cuts are effective and well motivated\footnote{As we saw in section \ref{sec:xcuts}} but they cannot explore the full parameter space, looking for patterns using all of the statistics out our disposal. In this section we discuss how to use machine learning to make achieve this. The software we use is the Toolkit for Multivariate Analysis (TMVA) package in the ROOT data analysis framework. 
@@ -1474,7 +1489,7 @@ Signal & 6422.1467 & 14426.9124 & 14167.2933 & 4991.7876 \\ [1ex]
 \textbf{Coherent Energy }& \textbf{Description}  \\ [0.5ex] 
  \hline\hline
 & \\ 
-loghbayesiancirc & A likelihood ratio based on Bayesian methods, for the \\ & hypothesis of a circularly polarised GW vs Gaussian noise  \\
+loghbayesiancirc & A likelihood ratio based on Bayesian methods, for the \\ & hypothesis of a circularly polarised GW vs Gaussian noise [\textbf{cite someone}]  \\
 
 \hline
 & \\
@@ -1496,7 +1511,7 @@ $I_\text{circ}$ & The sum of the autocorrelation terms of the $E_\text{circ}$. \
 
 \hline
 & \\
-$E_\text{circnull}$ & The energy in the whitened data that is inconsistent \\ & with a circularly polarised GW from a given sky location. \\ & Given by $E_\text{tot}-E_\text{circ}$. \\
+$E_\text{circnull}$ & The energy in the whitened data that is consistent with a GW but \\ & inconsistent with a circularly polarised GW from a given sky location. \\ & Given by $E_\text{tot}-E_\text{circ}$. \\
 
 \hline
 & \\
@@ -1519,15 +1534,15 @@ number of pixels & The number of pixels in the cluster. \\
 
 \hline
 & \\
-Duration & Time duration of the trigger. \\
+Duration & Time duration of the trigger in seconds. \\
 
 \hline
 & \\
-Bandwidth & The frequency range spanned by the trigger. \\
+Bandwidth & The frequency range spanned by the trigger in Hertz. \\
 
 \hline
 & \\ 
-Power law & \\
+Power law & \textbf{READ MICHAL's THESIS} \\
 
 \hline
 \hline
@@ -1542,9 +1557,9 @@ Power law & \\
 A \textit{Decision Tree} is a simple type of classifier. It is a flowchart of true/false statements about a trigger's attributes to determine the correct label. For example, consider the decision tree shown in fig.\ref{fig:tree}. Here the attributes are labeled as the components of a vector $x$. We start at the top node and work downwards. If the statement in the node is true then we follow the branch to the left and if not then we follow the branch to the right. We then consider the statement at the end of whichever branch we follow. We continue this process until we reach a \textit{leaf node}, which has no branches and contains a final classification for the trigger.  
 \begin{figure} % Example of including images
 \begin{center}
-\includegraphics[width=0.8\linewidth]{Decision_tree.png}
+\includegraphics[width=0.8\linewidth]{decision_tree.png}
 \end{center}
-\caption{\textbf{A decision tree example} To determine if a trigger is a signal or noise event the tree makes a series of cuts on the attributes x[N]. If the inequality in a node is true, then the next node is the branch to the left. Otherwise the next node is the one to the right. }
+\caption{\textbf{Schematic Decision Tree.} To determine if a trigger is a signal or noise event the tree makes a series of cuts on the attributes x[N]. If the inequality in a node is true, then the next node is the branch to the left. Otherwise the next node is the one to the right. The properties of the tree, such as the number of layers it has, are set by the user (see section \ref{sec:opt}). }
 \label{fig:tree}
 \end{figure}
 
@@ -1552,9 +1567,9 @@ We can improve the performance of the classifier by using an \textit{ensemble} (
 
 \begin{figure} % Example of including images
 \begin{center}
-\includegraphics[width=0.8\linewidth]{mva_trigger_and_score.png}
+\includegraphics[width=0.8\linewidth]{mva_trigger_and_score2.png}
 \end{center}
-\caption{\textbf{Visualising the Classifier} In the bottom plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the top plot. As you can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the \xp cut shown in fig.\ref{fig:xcuts}. }
+\caption{\textbf{Visualising the Classifier.} In the top plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the bottom plot. As we can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the \xp cut shown in fig.\ref{fig:xcuts}. }
 \label{fig:mvacuts}
 \end{figure}
 
@@ -1572,72 +1587,104 @@ H(\textbf{x}) = \frac{1}{N}\sum_{i=0}^N \ln(\alpha_i)h_i(\textbf{x)}
 \end{equation}  
 where $N$ is the number of trees in the ensemble. In this way, greater significance is given to trees with lower misclassification rates. It is common practice when using a forest of decision trees such as this to use the criteria that values of $H$ below 0.5 are background and those above 0.5 are signal. We determine classification in a slightly different way. The trained classifier is used on the off-source trials and it returns a value of $H$ for each trial. We then calculate a false alarm probability by determining the fraction of off-source trials that had a larger value of $H$ than the on-source trial. In this way, the value of $H$ should be interpreted as small values are more likely to be background events while large values are more likely to be a signal, but a value of $H$ on its own is not enough to determine if a trigger is a GW signal. 
 
-\subsection{Data Preprocessing}\label{data-preprocessing}
-Extra data preprocessing is required for the training set. Suppose a small amplitude signal injection is added close to a large amplitude glitch in the data. This trigger will be labeled as a signal, due to the injection, but the properties of the trigger will resemble a glitch, as the glitch has a much larger amplitude than the signal injection. It is essentially a background trigger labeled as a signal. This has two affects: It reduces our ability to detect real signals by making the properties of signals harder for the algorithm to learn, and it can lead to background triggers being misclassified as a Gravitational Wave signal.  
+\subsection{Training Data Preprocessing}\label{sec:data-preprocessing}
+Extra data preprocessing is required when training the classifier. This is because the MVA will learn what a signal looks like based on the training data, and so a small contamination can cause the classifier to fail completely. For example, suppose a small amplitude signal injection is added close to a large amplitude glitch in the data. This trigger will be labeled as a signal, due to the injection, but the properties of the trigger will resemble a glitch, as the glitch has a much larger amplitude than the signal injection. In this case, the injection is essentially a background trigger that has been mislabeled as a signal. This reduces the ability of the classifier to detect real signals by making the properties of signals harder for the algorithm to learn. Even worse, it can lead to background triggers being misclassified as a GW signal.  
 
-For these reasons, it is important to make sure that signal injections do not overlap in time or frequency with background triggers. To prevent this from happening we \textit{clean} the data. This means finding all of the triggers in the data for the smallest signal injection scale. The injected waveforms are too small to be detected so all of these triggers must be background. We then increase the injection amplitude and look for triggers again. Any triggers that overlap in time or frequency with the noise triggers are then identified and removed from the from the signal set. \textbf{This description of cleaning may need to change if we change the cleaning codes.}
+For these reasons it is important to make sure that signal injections do not overlap in time or frequency with background triggers. To prevent this from happening we remove any injected signals that coincide with noise, a process we call \textit{cleaning} the data. This process starts with finding all of the triggers in the data for the smallest signal injection scale. The injected waveforms are too small to be detected so all of these triggers must be background. We then increase the injection amplitude and look for triggers again. Any triggers that overlap in time or frequency with the noise triggers are then identified and removed from the from the signal set. 
 
-We must also not include injections in our signal set that are too small to be detected. If we do then we would again be including triggers labeled as signal that have the properties of a noise trigger, even if there is no glitch present. For this reason we apply a threshold on the amplitude of the signal set, so any injection below that amplitude is removed. The level of the threshold is set experimentally; If it is too low then we will increase the chance of a false positive and hurt our sensitivity to real signals, but if it is too high then we will limit the classifiers ability to detect low amplitude signals. 
-
-We also use \textit{Generalised Clustering}. This is a change in the way \xp defines a trigger. Without using generalised clustering, triggers are groups of neighbouring pixels in the time-frequency maps such as in fig.\ref{fig:tfmap}. Generalised clustering allows these pixels to be separated by a user-specified number of pixels. This can boost the signal power of long triggers, as long triggers tend to contain breaks in their time-frequency maps that causes \xp to list a single long trigger as multiple short triggers. The downside to using generalised clustering is that it can cause noise triggers to be grouped together as well, boosting the power of noise. This then causes our sensitivity to short triggers to be reduced slightly. Experimenting with generalised clustering in both the standard \xp analysis and the MVA analysis suggests that the benefits outweigh the costs, with an improvement of between 7\% and 50\% for long inspiral and adi waveforms at the cost of a decrease of 3\% to 9\% for short sine-gaussian waveforms.  
+We must also not include injections in our signal training set that are too small to be detected, as this would again be including triggers labeled as signals but with the properties of a noise trigger. For this reason we apply a threshold on the amplitude of the signal set, so any injection below that amplitude is removed. The level of the threshold has to be set experimentally. If the threshold is set too low then we will increase the chance of a false positive and hurt our sensitivity to real signals, but if it is too high then we will limit the classifiers ability to detect low amplitude signals. 
 
 As XTMVA is to be used for the unmodelled search, it is also important to ensure that the search can find waveforms that are not in the training set. There are several tools that we use to achieve this. The first is to limit the amount of information the classifier is given about the waveform morphology. The classifier cannot know the precise morphology of any waveform because the only attributes that the classifier trains on is the time, peak-frequency, and various measurements of the coherent and null energy between the detectors in the network. This forces the classifier to use the coherence of the triggers to make a classification, rather than the waveform morphology. 
 
-There is still a possibility that the classifier will become too specialised to the waveforms in the training set, as the classifier is given peak frequency data and certain waveform morphologies may have particular characteristics than become apparent from the coherent and null streams. For this reason we also trained the classifier on a variety of different waveforms. The training set included long and short waveforms, and a variety of different morphologies. Some of the signals are astrophysically motivated, such as compact binary coalescence signals, while some are artificial, such as the white noise burst.
+There is still a possibility that the classifier will become too specialised to the waveforms in the training set, as certain waveform morphologies may have particular characteristics than become apparent in the parameters that the MVA is given. For this reason we also trained the classifier on a variety of different waveforms. The training set includes long and short waveforms, and a variety of different morphologies. Some of the signals are astrophysically motivated, such as compact binary coalescence signals, while some are artificial, such as the white noise burst. 
 
-The final tool we use to ensure the classifier is sensitive to generic waveforms is to test the classifier on waveforms that are not included in the training set. If the classifier can find waveforms not in the training set, then we can be reasonably confident that it is sensitive to generic waveforms. We also try removing certain waveforms from the training set to test the robustness of the classifier. This will lead to a drop in sensitivity for that waveform, but if the drop in sensitivity is small, then we can be confident that the classifier is robust. 
+The final tool we use to ensure the classifier is sensitive to generic waveforms is to test the classifier on waveforms that are not included in the training set. If the classifier can find waveforms not in the training set, then we can be reasonably confident that it is sensitive to generic waveforms. We also try removing certain waveforms from the training set to test the robustness of the classifier. This will lead to a drop in sensitivity for that waveform, but if the drop in sensitivity is small, then we can be confident that the classifier is robust. Experiments with removing certain waveforms from the training set showed that the sensitivity did not change by more than a few percent.
 
-\subsection{Optimisation and Validation} \label{opt}
-With any machine learning algorithm, there are \textit{hyperparameters} that must be tuned. The number of trees in the ensemble, the maximum depth of the trees, and many more hyperparameters must be chosen. We optimise the hyperparamters by repeatedly running an example analysis with different hyperparameters, trying to increase the number of injected signals we could recover from the testing set. 
+It was also found to be important that the injection runs for the MVA were performed on the off-source data. This is different to how \xp is typically tuned, where the injections are performed in the on-source data. It was found that using injections in the on-source data can lead to false positive results. This is probably because some of the injections will be masked by noise in the detector data, when the MVA classifier analyses the on-source, it will then see this noise and mistakenly identify it as a GW. 
 
-Setting our hyperparameters using the testing set can cause \textit{data leakage}. Data leakage is when data from outside the training set is used to build a classifier. As we tune our classifier on the testing set, it is possible that we will implicitly tune our classifier to only work well on this training and testing set. This is very similar to overtraining discussed in section \ref{sec:ML}. To avoid this, once we have tuned the hyperparameters on a single GRB, we test the classifier on several other GRBs. If the performance drops significantly on these other GRB analyses, then we have had data leakage and we need to retune our classifier. This process of testing on previously unused data is called \textit{validation}. If there is evidence of data leakage, then we must retune our classifier and validate it again, this time using a different (previously unused) GRB so as to avoid data leakage from the validation GRB. 
+\subsection{Optimisation and Validation} \label{sec:opt}
+With any machine learning algorithm there are \textit{hyperparameters} that must be tuned. These are the parameters of the classifier itself, such as the number of trees in the ensemble, or the maximum depth of the trees. We optimise the hyperparamters by repeatedly running an example analysis with different hyperparameters, trying to increase the number of injected signals we could recover from the testing set. 
 
-Optimisation is a somewhat cyclical process, as once we have changed one hyperparameter, we must then go back and test that other parameters do not now need changing. But optimisation is not pure guess work, and in the rest of this section we will see the strategy we used to optimise our classifier. We first discuss optimising the training data to use. As mentioned in section \ref{data-preprocessing}, there are several choices to make regarding what data is used for training, such as setting the amplitude threshold. We then discuss optimising the BDT classifier itself. 
+Setting our hyperparameters using the testing set can cause \textit{data leakage}. Data leakage is when data from outside the training set is used to build a classifier. As we tune our classifier on the testing set, it is possible that we will implicitly tune our classifier to work well \textit{only} on this training and testing set.\footnote{This is very similar to overtraining discussed in section \ref{sec:ML}.} To avoid this, once we have tuned the hyperparameters on a single GRB, we test the classifier on several other GRBs. If the performance drops significantly on these other GRB analyses, then we have had data leakage and we need to retune our classifier. This process of testing on previously unused data is called \textit{validation}. If there is evidence of data leakage, then we must retune our classifier and validate it again, this time using a different (previously unused) GRB so as to avoid data leakage from the validation GRB. 
+
+Optimisation is a somewhat cyclical process, as once we have changed one hyperparameter, we must then go back and test that other parameters do not now need changing. But optimisation is not pure guess work, and in the rest of this section we will see the strategy we used to optimise our classifier. We first discuss optimising the training data, as the other hyperparameters will not have much of an effect if the training data is of poor quality. As mentioned in section \ref{data-preprocessing}, there are several choices to make regarding what data is used for training, such as setting the amplitude threshold. We then discuss optimising the BDT classifier itself. 
 
 \subsubsection{Training Set}
-Many of the hyperparameters mentioned in section \ref{data-preprocessing} had to be optimised. Consider the amplitude threshold applied to triggers before they are included in the training set. If this is too low then noise triggers contaminate the signal training set, but if it is too high then we limit the sensitivity of our classifier to only higher amplitude waveforms. 
+Many of the hyperparameters mentioned in section \ref{data-preprocessing} had to be optimised. Consider the amplitude threshold applied to triggers before they are included in the training set. We applied the threshold to the loghbayesian statistic (see table \ref{table:1}). Experimentation showed that allowing triggers with a loghbayesian value below 20 led to the misclassification of background triggers as signal. Setting a value higher than this slowly reduced the sensitivity of the search.   
 
-We also optimised the waveforms that are included in the training set, whether to use cleaning or not, and whether to use generalised clustering. \textbf{Write more on this once we've done it.}
+We also optimised the waveforms that are included in the training set. In particular we were interested in how sensitive the MVA is to waveforms not in the training set. What we found was that the MVA was fairly robust to having waveform types removed from the training set. For example, the final classifier we used was trained on a set of waveforms that included white noise burst (WNB) signals of about 0.1 seconds and about 10 seconds as well as cusp waveforms. Removing these from the training set surprisingly had almost no effect on the ability of the MVA to detect WNB signals, cusp signals, or any other waveform, as can be seen in figure \ref{fig:no wnb or cusp}. Similar results were found when removing other waveforms. This suggests that by only giving the MVA the coherent statistics calculated by \xp, we have managed to build a classifier that is agnostic to waveform morphology, as required for a burst search.
 
-
-
-\begin{itemize}
-\item Had to optimise the threshold as well
-\item Training waveforms
-\item cleaning or not
-\item Gen clustering or not
-\item off source injections
-\end{itemize}
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{pc_change_removing_wnb_cusp.png}
+\end{center}
+\caption{\textbf{Removing WNB and Cusp Waveforms from Training Set.} Here we plot the percentage change in 50\% upper limit injection scale per waveform after removing WNB and Cusp waveforms from the training set. The sensitivity to most waveforms drops, but by less than 1\%. This shows that the MVA is able to detect GW morphologies that it has not been trained on. }
+\label{fig:no wnb or cusp}
+\end{figure}
 
 \subsubsection{BDT Parameters}
 There are many hyperparameters that need to be set for a BDT analysis. In this section we discuss some of these hyparameters and the method we used to optimise them for our analysis. 
 
-We began by setting values for \textit{NTrees}, the number of trees in the ensemble, and the learning rate, discussed in section \ref{bdt}. These two parameters are set first to ensure the machine learning algorithm will converge in a reasonable amount of time. Setting the learning rate  too low causes the classifier to take longer to converge. Setting the learning rate too high can cause the classifier to never converge. Similarly, using too many trees takes too long for the classifier to finish training, but too few and the training will terminate before the algorithm has converged. Setting these first ensures that we have a classifier that gives sensible results in a reasonable amount of time. While optimising, we set these values slightly high, to ensure that our classifier converges and does so quickly while we optimise our other parameters. Once the other parameters are set, we again optimise NTrees and the learning rate, increasing the number of trees and decreasing the learning rate to ensure the algorithm reaches its optimum performance, even if it increases the time taken for training.
+We began by setting values for \textit{NTrees}, the number of trees in the ensemble, and the learning rate, discussed in section \ref{bdt}. These two parameters are set first to ensure the machine learning algorithm will converge in a reasonable amount of time, even if the results are not very sensitive. Setting the learning rate too low causes the classifier to take longer to converge. Setting the learning rate too high can cause the classifier to never converge. Similarly, using too many trees takes too long for the classifier to finish training, but too few and the training will terminate before the algorithm has converged. Setting these first ensures that we have a classifier that gives sensible results in a reasonable amount of time. While optimising, we set the learning rate slightly high and the number of trees slightly low, allow the analysis to complete quickly while we optimise our other parameters. Once the other parameters are set, we again optimise NTrees and the learning rate, increasing the number of trees and decreasing the learning rate to ensure the algorithm reaches its optimum performance, even if it increases the time taken for training.
 
-We now tune the tree-specific parameters. Unlike the number of trees and the learning rate which are primarily tuned to ensure the classifier will converge in a reasonable time, these parameters are set to ensure that the classifier is accurate but does not overtrain. Overtraining can happen when the trees are allowed to make cuts that are too fine, carving out regions of parameter-space around anomalous events in the training set rather than finding cuts that generalise beyond the training data. The way to prevent this is to limit how fine the cuts made by the decision trees are allowed to be, while allowing cuts that are fine enough to pick out the general features of signal and background events in our data. There are several hyperparameters we can set to do this, which must all be tuned. 
+We now tune the tree-specific parameters. Unlike the number of trees and the learning rate, which are primarily tuned to ensure the classifier will converge in a reasonable time, these parameters are set to ensure that the classifier is accurate but does not overtrain. Overtraining can happen when the trees are allowed to make cuts that are too fine, carving out regions of parameter space around anomalous events in the training set rather than finding cuts that generalise beyond the training data. The way to prevent this is to limit how fine the cuts made by the decision trees are allowed to be, while allowing cuts that are fine enough to pick out the general features of signal and background events in our data. There are several hyperparameters we can set to do this, which must all be tuned. 
 
-The first of these is the maximum depth of the trees, which is the maximum number of cuts a tree can make before it reaches a leaf node. Each cut divides the parameter-space into ever smaller regions which it labels as background or signal. Setting the maximum number of cuts too low will therefore cause the classifier to be too coarse in dividing up the parameter-space, resulting in poor accuracy. Increasing the maximum depth allows the classifier to pick out smaller features in the parameter-space. If the maximum depth is too high then the classifier will overtrain; dividing the parameter-space into precisely the regions that work for the training set and losing generality. As we are using adaptive boosting, it is recommended \textbf{cite TMVA userguide} to use trees with fewer cuts. For this reason we tried values from 2-16, finding that for our problem a maximum depth of 8 was optimal. 
+The first of these is the maximum depth of the trees, which is the maximum number of cuts a tree can make before it reaches a leaf node. Each cut divides the parameter space into ever smaller regions which it labels as background or signal. Setting the maximum number of cuts too low will therefore cause the classifier to be too coarse in dividing up the parameter-space, resulting in poor accuracy. Increasing the maximum depth allows the classifier to pick out smaller features in the parameter-space. If the maximum depth is too high then the classifier will overtrain; dividing the parameter-space into precisely the regions that work for the training set and losing generality. As we are using adaptive boosting, it is recommended \textbf{cite TMVA userguide} to use trees with fewer cuts. For this reason we tried values from 2-16 and recorded the effect this had on the 50\% and 90\% injection scale upper limit, a measure of injection amplitude at which 50\% or 90\% of the injections can be recovered. We found that for our problem a maximum depth of 8 was optimal. 
 
-A related hyperparameter is the minimum number of events that we allow in a leaf node. If we allow the training algorithm to have any number of events in a leaf node, then it will occasionally find cuts that results in a small number of events in one or more of the leaf nodes. The again allows for the carving out of anomalous events in the training set rather than finding cuts that can generalise beyond the training set. Conversely, setting the minimum number of events allowed in the leaf nodes to be too high does not allow the classifier to pick out the key features in the data. We used a grid search over the values 100-1600 for the minimum number of events per leaf node and found the optimal value to be 400. 
+A related hyperparameter is the minimum number of events that we allow in a leaf node. If we allow the training algorithm to have any number of events in a leaf node, then it will occasionally find cuts that results in a small number of events in one or more of the leaf nodes. Just as with the trees that were too deep, this can cause the classifier to carve out regions of parameter space around anomalous events in the training set rather than finding cuts that can generalise beyond the training set. Conversely, setting the minimum number of events allowed in the leaf nodes to be too high does not allow the classifier to pick out the key features in the data. We used a grid search over the values 100-1600 for the minimum number of events per leaf node and found the optimal value to be 400.\footnote{It should be noted that this value should scale with the size of the training data. So if we increase the number of events in the training data by a factor of 10 then we need to increase the minimum number of events allowed in each leaf node by a factor of 10 as well.} 
 
-The final hyperparameter we set is the number of cuts that the training algorithm scans over to find the best cut. When the classifier is training it searches for the best way to cut the parameter-space into a signal subspace and a background subspace. To do this we can try every possible cut on every parameter. This can be very slow and lead to overtraining. To speed up our analysis and reduce the chance of overtraining, we can choose the number of cuts to try on each parameter. For example, we may decide to use 10 cuts for each parameter. In this case the algorithm will tune the cut on a parameter which ranges from 0-100 by trying cuts at 0,10,20,... and selecting the best of these cuts. To tune the number of cuts we wanted to use, we tried values from 10-160 as well as allowing the classifier to try every possible cut. We found that 80 cuts was optimal for our purposes. 
-
-\begin{itemize}
-\item This can definitely be phrased better
-\end{itemize}
+The final hyperparameter we set was the number of cuts that the training algorithm scans over to find the best cut. When the classifier is training it searches for the best way to cut the parameter space into a signal subspace and a background subspace. To do this we can try every possible cut on every parameter. This can be very slow and lead to overtraining. To speed up our analysis and reduce the chance of overtraining, we can choose the number of cuts to try on each parameter. For example, we may decide to use 10 cuts for each parameter. In this case the algorithm will tune the cut on a parameter which ranges from 0-100 by trying cuts at 0,10,20,... and selecting the best of these cuts. To tune the number of cuts we wanted to use, we tested values in the range 10-160 as well as allowing the classifier to try every possible cut. We found that 80 cuts was optimal for our purposes. 
 
 \subsubsection{Result of Optimisation}
+Optimising the hyperparameters had relatively little effect on the overall sensitivity of the classifier. The results of the optimisation are shown in figure \ref{fig:opt compare}. There you can see that most of the optimisation made the classifier $\sim 3\%$  more sensitive to certain waveforms than the TMVA boosted decision tree default settings, though at the expense of about a 1\% drop in some others. With more time it might be possible to see greater improvements, but our findings are that as long as the hyperparameters are within some sensible range\footnote{For example, using only trees of depth two hurts sensitivity, but depth 3 and above leads to only modest improvements.}, the performace of the MVA is fairly constant. The same cannot be said for work done on optimising the training set. Without appropriately set thresholds, the MVA will regularly make false detections, making the pipeline unusable for a GW search. In figure \ref{fig:x compare} we plot a comparison of the MVA against a standard \xp analysis of the same GRB. You can see that the MVA is outperforming \xp on every waveform. As this was the GRB used for optimisation, this results probably overestimate the improvement that the MVA will bring. In the next section we will analyse a selection of other GRBs from O2 to make a fairer comparison of the MVA and \xp.
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{opt_comparison.png}
 \end{center}
-\caption{\textbf{Effect of Optimisation.} Used GRB E264930  }
+\caption{\textbf{Effect of Hyperparameter Optimisation.} Here we see the effects of optimisation on the 50\% upper limit injection scale. The top panel showing the absolute values and the bottom panel showing the percentage change. The benefits of optimising the hyperparameters is no more than a $\sim3\%$ improvement in sensitivity when compared to the default settings of the TMVA boosted decision tree classifier. }
 \label{fig:opt compare}
 \end{figure}
 
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{x_compare.png}
+\end{center}
+\caption{\textbf{MVA Improvement.} Here we see the effects of using the MVA on the 50\% upper limit injection scale for the same GRB that was used for optimisation. The top panel showing the absolute values and the bottom panel showing the percentage change. We can see that the MVA outperforms \xp on every waveform. As this was the GRB used to optimise the hyperparamters, it cannot be guaranteed that these results will hold for other GRB analyses. }
+\label{fig:x compare}
+\end{figure}
+
 \section{Effectiveness of XTMVA}
+
 \subsection{Comparison to \xp}
+In this section we will compare the speed and sensitivity of XTMVA to \xp by on a subset of GRBs analysed in O2. When performing the GRB analyses with XTMVA, we tried as much as possible to keep the parameters of the analysis the same to make comparison easier. However, this was not always possible and it is important to clarify some of the differences between the \xp and XTMVA analyses that could bias the results. 
+
+The first is that XTMVA used off-source injections, unlike \xp which uses on-source injections. As mentioned in section \ref{sec:data-preprocessing}, this is required for the MVA or it will make false detections. Using off-source injections forced another change upon the analysis. The O2 \xp analysis used code that made the recovery of long injections easier. \xp analyses data in chunks of 256 seconds. For long injections, especially those over $\sim100$ seconds long, this can lead to injections being spread over multiple segments. For this reason, \xp will analyse two neighbouring segments of 256 seconds if a long injection is near the boundary between these chunks. This can increase the signal power of long injections and prevent them being broken up into multiple smaller signals. For purely technical reasons, the code that allows multiple chunks of data to be analysed is not compatible with off-source injections. Hence, the MVA is at a disadvantage when trying to find long injections. For short waveforms, it is very unlikely they would be injected near the boundary between two chunks of data and so the effect described above is negligible. 
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{mva_pvalue.png}
+\end{center}
+\caption{\textbf{MVA p-values.} Here we have plotted the p-values for 13 of the GRBs analysed with the MVA. The blue triangles indicate the p-value reported by the MVA, the black dotted lines show the expected distribution and a $2\sigma$ deviation. Two GRBs that were analysed were left out from this plot: GRB 170817A as it had a known GW counterpart and E264930 as it was used to tune the hyperparameters. The analysis shows some bias towards low p-values. }
+\label{fig:mva pvalues}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{adi_injscale_comparison.png}
+\end{center}
+\caption{\textbf{.}  }
+\label{fig:adi comparison}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{csg_injscale_comparison.png}
+\end{center}
+\caption{\textbf{.}  }
+\label{fig:csg comparison}
+\end{figure}
+
 \begin{itemize}
 \item Change in sensitivity
 \item Table of results
@@ -1645,20 +1692,12 @@ The final hyperparameter we set is the number of cuts that the training algorith
 \end{itemize}
 
 
-\begin{figure} % Example of including images
-\begin{center}
-\includegraphics[width=0.8\linewidth]{x_compare.png}
-\end{center}
-\caption{\textbf{MVA Improvement.} Used GRB E264930  }
-\label{fig:x compare}
-\end{figure}
+
 
 \subsection{Unsolved Problems}
 \begin{itemize}
 \item Unstable
-\item Issue of data leakage
-\item Ineffectiveness of optimisation
-\item Still having issues with long waveforms
+\item Issue of data leakage - threshold needs to be tuned in advance
 \end{itemize}
 
 \subsection{Future Work}
@@ -1669,7 +1708,7 @@ The final hyperparameter we set is the number of cuts that the training algorith
 \item New machine learning software available now that is more transparent
 \item Get working with generalised clustering and long inj but still with off source injections
 \end{itemize}
-
+We also use \textit{Generalised Clustering}. This is a change in the way \xp defines a trigger. Without using generalised clustering, triggers are groups of neighbouring pixels in the time-frequency maps such as in fig.\ref{fig:tfmap}. Generalised clustering allows these pixels to be separated by a user-specified number of pixels. This can boost the signal power of long triggers, as long triggers tend to contain breaks in their time-frequency maps that causes \xp to list a single long trigger as multiple short triggers. The downside to using generalised clustering is that it can cause noise triggers to be grouped together as well, boosting the power of noise. This then causes our sensitivity to short triggers to be reduced slightly. Experimenting with generalised clustering in both the standard \xp analysis and the MVA analysis suggests that the benefits outweigh the costs, with an improvement of between 7\% and 50\% for long inspiral and adi waveforms at the cost of a decrease of 3\% to 9\% for short sine-gaussian waveforms.  
 
 \appendix
 \appendixpage

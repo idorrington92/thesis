@@ -1102,7 +1102,7 @@ In figure \ref{fig:pvalue} we have plotted the p-value for the remaining 41 GRBs
 \label{fig:pvalue}
 \end{figure}
 
-As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite paper}], the distance to this GRB is approximately 43Mpc. For the other GRBs in our sample we calculated the $90\%$ exclusion distance. This is the distance at which $90\%$ of the signal injections are recovered with a greater coherent SNR than the loudest trigger in the on-source. The $90\%$ exclusion distances are plotted in figure \ref{fig:ex dist}. The median $90\%$ exclusion distance for the BNS waveform is 80 Mpc, for an NS-BH waveform with generic spin is 105 Mpc, and for NS-BH with aligned spin is 144 Mpc. These values are slightly lower than in O1, which were 90 Mpc, 139 Mpc, and 150 Mpc respectively, though this seems to just be due to a statistical fluctuation as we analysed a relatively small number of GRBs. There is a summary of the information about each GRB analysed by PyGRB in table \ref{tab:grbs}. This table includes teh $90\%$ exclusion distance for each waveform type for each GRB.
+As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite paper}], the distance to this GRB is approximately 43Mpc. For the other GRBs in our sample we calculated the $90\%$ exclusion distance. This is the distance at which $90\%$ of the signal injections are recovered with a greater coherent SNR than the loudest trigger in the on-source. The $90\%$ exclusion distances are plotted in figure \ref{fig:ex dist}. The median $90\%$ exclusion distance for the BNS waveform is 80 Mpc, for an NS-BH waveform with generic spin is 105 Mpc, and for NS-BH with aligned spin is 144 Mpc. These values are slightly lower than in O1, which were 90 Mpc, 139 Mpc, and 150 Mpc respectively, though this seems to just be due to a statistical fluctuation as we analysed a relatively small number of GRBs. There is a summary table of the information about each GRB analysed by PyGRB in appendix \ref{tab:grbs}. This table includes the $90\%$ exclusion distance for each waveform type for each GRB.
 
 \begin{figure}
 \begin{center}
@@ -1112,65 +1112,6 @@ As GRB 170817A is known to have originated in the galaxy NGC 4993 [\textbf{cite 
 \label{fig:ex dist}
 \end{figure}
 
-
-\begin{landscape}
-\begin{tabular}{l c  c  c  c  c  c  c  c c |}
-\hline
- GRB & UTC time & ra & dec & satellite & network & BNS & NSBH generic spin & NSBH aligned spin \\
-\hline
-161217128 & 03:03:46  & $14^{\mathrm{h}}26^{\mathrm{m}}31^{\mathrm{s}}$ & $51^{\circ}58'$ &  Fermi   & H1L1   & 65  & 85  & 122 \\
-170112A   & 02:01:59  & $01^{\mathrm{h}}00^{\mathrm{m}}55^{\mathrm{s}}$ & $-17^{\circ}13'$ & Swift   & H1L1   & 83  & 106 & 144 \\
-170121133 & 03:10:52  & $16^{\mathrm{h}}07^{\mathrm{m}}58^{\mathrm{s}}$ & $13^{\circ}48'$ &  Fermi   & H1L1   & 96  & 142 & 172 \\
-170125022 & 00:31:14  & $17^{\mathrm{h}}36^{\mathrm{m}}34^{\mathrm{s}}$ & $28^{\circ}34'$ &  Fermi   & H1     & 46  & 52  & 57 \\
-170127067 & 01:35:48  & $22^{\mathrm{h}}37^{\mathrm{m}}19^{\mathrm{s}}$ & $-63^{\circ}56'$ & Fermi   & H1L1   & 76  & 129 & 141 \\
-170203486 & 11:40:26  & $16^{\mathrm{h}}20^{\mathrm{m}}22^{\mathrm{s}}$ & $-00^{\circ}30'$ & Fermi   & H1L1   & 66  & 99  & 119 \\
-170219002 & 00:03:07  & $03^{\mathrm{h}}39^{\mathrm{m}}22^{\mathrm{s}}$ & $50^{\circ}04'$ &  Fermi   & H1L1   & 171 & 251 & 304 \\
-170302166 & 03:58:24  & $10^{\mathrm{h}}17^{\mathrm{m}}00^{\mathrm{s}}$ & $29^{\circ}23'$ &  Fermi   & H1L1   & 107 & 175 & 206 \\
-170305256 & 06:09:07  & $02^{\mathrm{h}}34^{\mathrm{m}}38^{\mathrm{s}}$ & $12^{\circ}05'$ &  Fermi   & L1     & 48  & 73  & 82 \\
-170325331 & 07:56:58  & $08^{\mathrm{h}}29^{\mathrm{m}}55^{\mathrm{s}}$ & $20^{\circ}31'$ &  Fermi   & H1L1   & 73  & 88  & 125 \\
-170428A   & 09:13:42  & $22^{\mathrm{h}}00^{\mathrm{m}}12^{\mathrm{s}}$ & $26^{\circ}54'$ &  Swift   & H1L1   & 105 & 167 & 178 \\
-170506169 & 04:02:48  & $07^{\mathrm{h}}29^{\mathrm{m}}02^{\mathrm{s}}$ & $51^{\circ}52'$ &  Fermi   & H1L1   & 103 & 174 & 149 \\
-170614505 & 12:06:39  & $20^{\mathrm{h}}43^{\mathrm{m}}58^{\mathrm{s}}$ & $-37^{\circ}54'$ & Fermi   & H1     & 9   & 22  & 0 \\
-170709334 & 08:00:24  & $20^{\mathrm{h}}40^{\mathrm{m}}10^{\mathrm{s}}$ & $02^{\circ}12'$ &  Fermi   & L1     & 139 & 228 & 255 \\
-170726249 & 05:58:15  & $11^{\mathrm{h}}05^{\mathrm{m}}41^{\mathrm{s}}$ & $-34^{\circ}00'$ & Fermi   & H1L1   & 124 & 152 & 207 \\
-170802638 & 15:18:25  & $03^{\mathrm{h}}29^{\mathrm{m}}12^{\mathrm{s}}$ & $-39^{\circ}12'$ & Fermi   & H1L1V1 & 45  & 62  & 72 \\
-170805B   & 14:18:49  & $09^{\mathrm{h}}42^{\mathrm{m}}31^{\mathrm{s}}$ & $69^{\circ}54'$ &  IPN     & H1L1V1 & 132 & 163 & 218 \\
-170808065 & 01:34:09  & $00^{\mathrm{h}}13^{\mathrm{m}}12^{\mathrm{s}}$ & $62^{\circ}18'$ &  Fermi   & L1V1   & 58  & 83  & 87 \\
-170817908 & 21:47:34  & $05^{\mathrm{h}}32^{\mathrm{m}}07^{\mathrm{s}}$ & $50^{\circ}04'$ &  Fermi   & H1V1   & 35  & 51  & 63 \\
-161210524 & 12:33:54  & $18^{\mathrm{h}}52^{\mathrm{m}}29^{\mathrm{s}}$ & $63^{\circ}03'$ &  Fermi   & H1L1   & 61  & 72  & 112 \\
-161212652 & 15:38:59  & $01^{\mathrm{h}}39^{\mathrm{m}}36^{\mathrm{s}}$ & $68^{\circ}12'$ &  Fermi   & H1     & 49  & 59  & 60 \\
-\end{tabular}
-\end{landscape}
-
-\begin{landscape}
-\begin{tabular}{ccccccccc}
-\hline
- GRB & UTC time & ra & dec & satellite & network & BNS & NSBH generic spin & NSBH aligned spin \\
-\hline
-170111815 & 19:34:01  & $18^{\mathrm{h}}03^{\mathrm{m}}31^{\mathrm{s}}$ & $63^{\circ}42'$ &  Fermi   & H1     & 95  & 160 & 198 \\
-170121067 & 01:36:54  & $00^{\mathrm{h}}12^{\mathrm{m}}07^{\mathrm{s}}$ & $-75^{\circ}37'$ & Fermi   & H1L1   & 79  & 105 & 144 \\
-170124528 & 12:40:29  & $00^{\mathrm{h}}43^{\mathrm{m}}24^{\mathrm{s}}$ & $11^{\circ}01'$ &  Fermi  & H1      & 65  & 101 & 116 \\
-170125102 & 02:27:10  & $23^{\mathrm{h}}57^{\mathrm{m}}38^{\mathrm{s}}$ & $-38^{\circ}13'$ & Fermi   & H1     & 30  & 39  & 63 \\
-170127B   & 15:13:29  & $01^{\mathrm{h}}19^{\mathrm{m}}58^{\mathrm{s}}$ & $-30^{\circ}20'$ & Swift   & H1     & 113 & 169 & 197 \\
-170206A   & 10:51:58  & $14^{\mathrm{h}}12^{\mathrm{m}}43^{\mathrm{s}}$ & $12^{\circ}34'$ &  IPN   & H1L1     & 151 & 254 & 264 \\
-170222A   & 05:00:59  & $19^{\mathrm{h}}31^{\mathrm{m}}53^{\mathrm{s}}$ & $28^{\circ}04'$ &  IPN   & H1L1     & 80  & 86  & 112 \\
-170304003 & 00:04:26  & $22^{\mathrm{h}}02^{\mathrm{m}}00^{\mathrm{s}}$ & $-73^{\circ}45'$ & Fermi   & H1L1   & 105 & 143 & 178 \\
-170318B   & 15:27:53  & $18^{\mathrm{h}}57^{\mathrm{m}}10^{\mathrm{s}}$ & $06^{\circ}19'$ &  Swift   & H1L1   & 152 & 254 & 281 \\
-170403583 & 13:59:18  & $17^{\mathrm{h}}48^{\mathrm{m}}19^{\mathrm{s}}$ & $14^{\circ}31'$ &  Fermi   & H1L1   & 166 & 240 & 261 \\
-170430204 & 04:54:20  & $01^{\mathrm{h}}35^{\mathrm{m}}26^{\mathrm{s}}$ & $30^{\circ}07'$ &  Fermi   & H1     & 32  & 54  & 81 \\
-170604603 & 14:28:05  & $22^{\mathrm{h}}41^{\mathrm{m}}36^{\mathrm{s}}$ & $40^{\circ}42'$ &  Fermi   & L1     & 131 & 204 & 237 \\
-170708046 & 01:06:11  & $22^{\mathrm{h}}13^{\mathrm{m}}00^{\mathrm{s}}$ & $25^{\circ}37'$ &  Fermi   & L1     & 57  & 105 & 103 \\
-170723882 & 21:10:18  & $14^{\mathrm{h}}10^{\mathrm{m}}19^{\mathrm{s}}$ & $39^{\circ}49'$ &  Fermi   & H1L1   & 95  & 83  & 179 \\
-170728A   & 06:53:29  & $03^{\mathrm{h}}55^{\mathrm{m}}36^{\mathrm{s}}$ & $12^{\circ}09'$ &  Swift   & H1L1   & 89  & 129 & 163 \\
-170803172 & 04:07:16  & $05^{\mathrm{h}}06^{\mathrm{m}}00^{\mathrm{s}}$ & $24^{\circ}00'$ &  Fermi   & H1L1V1 & 56  & 83  & 105 \\
-170803B   & 22:00:32  & $00^{\mathrm{h}}56^{\mathrm{m}}53^{\mathrm{s}}$ & $06^{\circ}34'$ &  IPN   & L1       & 140 & 215 & 234 \\
-170805A   & 14:38:11  & $17^{\mathrm{h}}55^{\mathrm{m}}12^{\mathrm{s}}$ & $-23^{\circ}30'$ & IPN   & H1L1V1   & 69  & 100 & 114 \\
-170817A   & 12:41:06  & $13^{\mathrm{h}}09^{\mathrm{m}}36^{\mathrm{s}}$ & $-23^{\circ}24'$ & Fermi   & H1L1V1 & 0   & 0   & 41 \\
-170818137 & 03:17:20  & $19^{\mathrm{h}}48^{\mathrm{m}}53^{\mathrm{s}}$ & $06^{\circ}21'$ &  Fermi   & H1L1   & 103 & 146 & 169 \\
-170816599 & 14:23:04  & $23^{\mathrm{h}}25^{\mathrm{m}}36^{\mathrm{s}}$ & $19^{\circ}06'$ &  Fermi   & H1V1   & 46  & 56  & 73 \\ 
-\end{tabular}
-\label{tab:grbs}
-\end{landscape}
 
 \subsection{Rates}
 During O2 we detected jsut one GW signal from a sample of 42 short GRBs. For the non-detections we placed lower limits on the distance to the source. Using this information it is possible to estimate the rate at which BNS mergers produce GRBs luminous enough to be observed. This depends on the intrinsic luminousity of the GRB, as well as the jet structure and opening angle. While there is strong evidence that GRB jets are structured, we will treat all differences in measured luminousity as though they resulted from an intrinsically lower luminousity. This is acceptable for the purposes of modeling the potential for joint GW-GRB detections as we only need to know the number of faint GRB detections, not the reason why they are faint. As such, we use the luminousity function from [\textbf{cite GRB BNS paper}], which extends the model in [\textbf{cite wanderman and piran}] to have a second break at low luminousity. This function is given by
@@ -1486,10 +1427,10 @@ Signal & 6422.1467 & 14426.9124 & 14167.2933 & 4991.7876 \\ [1ex]
  \begin{table}
 \begin{tabular}{| c | c | c | c | c |} 
  \hline
-\textbf{Coherent Energy }& \textbf{Description}  \\ [0.5ex] 
+\textbf{Statistic }& \textbf{Description}  \\ [0.5ex] 
  \hline\hline
 & \\ 
-loghbayesiancirc & A likelihood ratio based on Bayesian methods, for the \\ & hypothesis of a circularly polarised GW vs Gaussian noise [\textbf{cite someone}]  \\
+loghbayesiancirc & A likelihood ratio based on Bayesian methods, for the \\ & hypothesis of a circularly polarised GW vs Gaussian noise\\ & [\textbf{cite someone}]  \\
 
 \hline
 & \\
@@ -1511,7 +1452,7 @@ $I_\text{circ}$ & The sum of the autocorrelation terms of the $E_\text{circ}$. \
 
 \hline
 & \\
-$E_\text{circnull}$ & The energy in the whitened data that is consistent with a GW but \\ & inconsistent with a circularly polarised GW from a given sky location. \\ & Given by $E_\text{tot}-E_\text{circ}$. \\
+$E_\text{circnull}$ & The energy in the whitened data that is consistent \\ & with a GW but inconsistent with a circularly \\ & polarised GW from a given sky location. Given by $E_\text{tot}-E_\text{circ}$. \\
 
 \hline
 & \\
@@ -1603,11 +1544,11 @@ The final tool we use to ensure the classifier is sensitive to generic waveforms
 It was also found to be important that the injection runs for the MVA were performed on the off-source data. This is different to how \xp is typically tuned, where the injections are performed in the on-source data. It was found that using injections in the on-source data can lead to false positive results. This is probably because some of the injections will be masked by noise in the detector data, when the MVA classifier analyses the on-source, it will then see this noise and mistakenly identify it as a GW. 
 
 \subsection{Optimisation and Validation} \label{sec:opt}
-With any machine learning algorithm there are \textit{hyperparameters} that must be tuned. These are the parameters of the classifier itself, such as the number of trees in the ensemble, or the maximum depth of the trees. We optimise the hyperparamters by repeatedly running an example analysis with different hyperparameters, trying to increase the number of injected signals we could recover from the testing set. 
+With any machine learning algorithm there are \textit{hyperparameters} that must be tuned. These are the parameters of the classifier itself, such as the number of trees in the ensemble, or the maximum depth of the trees. We optimise the hyperparamters by repeatedly running an example analysis with different hyperparameters, trying to improve the sensitivity of the search. We measured the sensitivity of the search by looking at a \textit{dummy on-source}, the off-source trial that had the 90th percentile loudest trigger. We then calculate the 50\% and 90\% injection scale upper limit, a measure of injection amplitude at which 50\% or 90\% of the injections can be recovered with a detection statistic higher than in the dummy on-source. The smaller the 50\% injection scale upper limit is, the more sensitive the search is to GW signals.
 
 Setting our hyperparameters using the testing set can cause \textit{data leakage}. Data leakage is when data from outside the training set is used to build a classifier. As we tune our classifier on the testing set, it is possible that we will implicitly tune our classifier to work well \textit{only} on this training and testing set.\footnote{This is very similar to overtraining discussed in section \ref{sec:ML}.} To avoid this, once we have tuned the hyperparameters on a single GRB, we test the classifier on several other GRBs. If the performance drops significantly on these other GRB analyses, then we have had data leakage and we need to retune our classifier. This process of testing on previously unused data is called \textit{validation}. If there is evidence of data leakage, then we must retune our classifier and validate it again, this time using a different (previously unused) GRB so as to avoid data leakage from the validation GRB. 
 
-Optimisation is a somewhat cyclical process, as once we have changed one hyperparameter, we must then go back and test that other parameters do not now need changing. But optimisation is not pure guess work, and in the rest of this section we will see the strategy we used to optimise our classifier. We first discuss optimising the training data, as the other hyperparameters will not have much of an effect if the training data is of poor quality. As mentioned in section \ref{data-preprocessing}, there are several choices to make regarding what data is used for training, such as setting the amplitude threshold. We then discuss optimising the BDT classifier itself. 
+Optimisation is a somewhat cyclical process, as once we have changed one hyperparameter, we must then go back and test that other parameters do not now need changing. But optimisation is not pure guess work, and in the rest of this section we will see the strategy we used to optimise our classifier. We first discuss optimising the training data, as the other hyperparameters will not have much of an effect if the training data is of poor quality. As mentioned in section \ref{sec:data-preprocessing}, there are several choices to make regarding what data is used for training, such as setting the amplitude threshold. We then discuss optimising the BDT classifier itself. 
 
 \subsubsection{Training Set}
 Many of the hyperparameters mentioned in section \ref{data-preprocessing} had to be optimised. Consider the amplitude threshold applied to triggers before they are included in the training set. We applied the threshold to the loghbayesian statistic (see table \ref{table:1}). Experimentation showed that allowing triggers with a loghbayesian value below 20 led to the misclassification of background triggers as signal. Setting a value higher than this slowly reduced the sensitivity of the search.   
@@ -1629,7 +1570,7 @@ We began by setting values for \textit{NTrees}, the number of trees in the ensem
 
 We now tune the tree-specific parameters. Unlike the number of trees and the learning rate, which are primarily tuned to ensure the classifier will converge in a reasonable time, these parameters are set to ensure that the classifier is accurate but does not overtrain. Overtraining can happen when the trees are allowed to make cuts that are too fine, carving out regions of parameter space around anomalous events in the training set rather than finding cuts that generalise beyond the training data. The way to prevent this is to limit how fine the cuts made by the decision trees are allowed to be, while allowing cuts that are fine enough to pick out the general features of signal and background events in our data. There are several hyperparameters we can set to do this, which must all be tuned. 
 
-The first of these is the maximum depth of the trees, which is the maximum number of cuts a tree can make before it reaches a leaf node. Each cut divides the parameter space into ever smaller regions which it labels as background or signal. Setting the maximum number of cuts too low will therefore cause the classifier to be too coarse in dividing up the parameter-space, resulting in poor accuracy. Increasing the maximum depth allows the classifier to pick out smaller features in the parameter-space. If the maximum depth is too high then the classifier will overtrain; dividing the parameter-space into precisely the regions that work for the training set and losing generality. As we are using adaptive boosting, it is recommended \textbf{cite TMVA userguide} to use trees with fewer cuts. For this reason we tried values from 2-16 and recorded the effect this had on the 50\% and 90\% injection scale upper limit, a measure of injection amplitude at which 50\% or 90\% of the injections can be recovered. We found that for our problem a maximum depth of 8 was optimal. 
+The first of these is the maximum depth of the trees, which is the maximum number of cuts a tree can make before it reaches a leaf node. Each cut divides the parameter space into ever smaller regions which it labels as background or signal. Setting the maximum number of cuts too low will therefore cause the classifier to be too coarse in dividing up the parameter-space, resulting in poor accuracy. Increasing the maximum depth allows the classifier to pick out smaller features in the parameter-space. If the maximum depth is too high then the classifier will overtrain; dividing the parameter-space into precisely the regions that work for the training set and losing generality. As we are using adaptive boosting, it is recommended \textbf{cite TMVA userguide} to use trees with fewer cuts. For this reason we tried values from 2-16 and recorded the effect this had on the sensitivity of the search. We found that for our problem a maximum depth of 8 was optimal. 
 
 A related hyperparameter is the minimum number of events that we allow in a leaf node. If we allow the training algorithm to have any number of events in a leaf node, then it will occasionally find cuts that results in a small number of events in one or more of the leaf nodes. Just as with the trees that were too deep, this can cause the classifier to carve out regions of parameter space around anomalous events in the training set rather than finding cuts that can generalise beyond the training set. Conversely, setting the minimum number of events allowed in the leaf nodes to be too high does not allow the classifier to pick out the key features in the data. We used a grid search over the values 100-1600 for the minimum number of events per leaf node and found the optimal value to be 400.\footnote{It should be noted that this value should scale with the size of the training data. So if we increase the number of events in the training data by a factor of 10 then we need to increase the minimum number of events allowed in each leaf node by a factor of 10 as well.} 
 
@@ -1655,25 +1596,21 @@ Optimising the hyperparameters had relatively little effect on the overall sensi
 \end{figure}
 
 \section{Effectiveness of XTMVA}
+In this section we will compare XTMVA to \xp. To do this, we ran XTMVA on a selection of 15 GRBs from O2. Of these GRBs, one was use to optimise the hyperparameters of the classifier, and so should not be used for comparison to \xp. The other was GW 170817, which is treated differently to the other GRBs analysed as it is a confirmed detection. The remaining 13 GRBs make up the results set. We will see that XTMVA has better sensitivity than \xp, but also has some pathologies that make \xp a more robust search at the current time. We end this section by discussing the implications of this research, and how we should proceed. 
 
-\subsection{Comparison to \xp}
-In this section we will compare the speed and sensitivity of XTMVA to \xp by on a subset of GRBs analysed in O2. When performing the GRB analyses with XTMVA, we tried as much as possible to keep the parameters of the analysis the same to make comparison easier. However, this was not always possible and it is important to clarify some of the differences between the \xp and XTMVA analyses that could bias the results. 
+\subsection{Analysis Setup}
+We compared the speed and sensitivity of XTMVA to \xp by on a subset of GRBs analysed in O2. When performing the GRB analyses with XTMVA, we tried as much as possible to keep the parameters of the analysis the same to make comparison easier. However, this was not always possible and it is important to clarify some of the differences between the \xp and XTMVA analyses that could bias the results. 
 
-The first is that XTMVA used off-source injections, unlike \xp which uses on-source injections. As mentioned in section \ref{sec:data-preprocessing}, this is required for the MVA or it will make false detections. Using off-source injections forced another change upon the analysis. The O2 \xp analysis used code that made the recovery of long injections easier. \xp analyses data in chunks of 256 seconds. For long injections, especially those over $\sim100$ seconds long, this can lead to injections being spread over multiple segments. For this reason, \xp will analyse two neighbouring segments of 256 seconds if a long injection is near the boundary between these chunks. This can increase the signal power of long injections and prevent them being broken up into multiple smaller signals. For purely technical reasons, the code that allows multiple chunks of data to be analysed is not compatible with off-source injections. Hence, the MVA is at a disadvantage when trying to find long injections. For short waveforms, it is very unlikely they would be injected near the boundary between two chunks of data and so the effect described above is negligible. 
+The first is that XTMVA used off-source injections, unlike \xp which uses on-source injections. As mentioned in section \ref{sec:data-preprocessing}, this is required for the MVA or it will make false detections. Using off-source injections forced another change upon the analysis. The O2 \xp analysis used code that made the recovery of long injections easier. \xp analyses data in chunks of 256 seconds. For long injections, especially those over $\sim100$ seconds long, this can lead to injections being spread over multiple segments. For this reason, \xp will analyse two neighbouring segments of 256 seconds if a long injection is near the boundary between these chunks. This can increase the signal power of long injections and prevent them being broken up into multiple smaller signals. For purely technical reasons, the code that allows multiple chunks of data to be analysed is not compatible with off-source injections. Hence, the MVA is at a disadvantage when trying to find long injections. For short waveforms, it is very unlikely they would be injected near the boundary between two chunks of data and so the effect described above is negligible. Apart from these two changes (i.e. using off-source injections and not using the long-injection code) the MVA analysis was identical the \xp analysis used in O2. 
 
-\begin{figure} % Example of including images
-\begin{center}
-\includegraphics[width=0.8\linewidth]{mva_pvalue.png}
-\end{center}
-\caption{\textbf{MVA p-values.} Here we have plotted the p-values for 13 of the GRBs analysed with the MVA. The blue triangles indicate the p-value reported by the MVA, the black dotted lines show the expected distribution and a $2\sigma$ deviation. Two GRBs that were analysed were left out from this plot: GRB 170817A as it had a known GW counterpart and E264930 as it was used to tune the hyperparameters. The analysis shows some bias towards low p-values. }
-\label{fig:mva pvalues}
-\end{figure}
+\subsection{Sensitivity and Speed Comparison}
+To measure the sensitivity of XTMVA we used the same measure as in section \ref{sec:opt}, the 50\% injection scale upper limit. In figures \ref{fig:adi comparison} and \ref{fig:csg comparison}, we compare the sensitivity of XTMVA and \xp on one of the accretion disk instability waveforms (ADI-a) and the 150 Hz circular sine Gaussian (CSG) waveform for the 13 GRBs in the resutls set. These plots show several interesting features. The MVA analysis is usually more sensitive to ADI-a waveforms than \xp despite not benefiting from the long injection code. The MVA also consistently outperforms \xp for the CSG waveform. These plots also show that the MVA is more stable than \xp, which has outliers for both waveforms unlike the MVA.
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=1.0\linewidth]{adi_injscale_comparison.png}
 \end{center}
-\caption{\textbf{.}  }
+\caption{\textbf{\xp and XTMVA  ADI-a 50\% Injection Scale Upper Limit by GRB.} Here we plot the sensitivity to the ADI-a waveform of both \xp and XTMVA. This plot shows that XTMVA is more stable and in general more sensitive than \xp to this waveform. }
 \label{fig:adi comparison}
 \end{figure}
 
@@ -1681,34 +1618,82 @@ The first is that XTMVA used off-source injections, unlike \xp which uses on-sou
 \begin{center}
 \includegraphics[width=1.0\linewidth]{csg_injscale_comparison.png}
 \end{center}
-\caption{\textbf{.}  }
+\caption{\textbf{\xp and XTMVA  CSG 50\% Injection Scale Upper Limit by GRB.} Here we plot the sensitivity to the 150 Hz circular sine gaussian waveform of both \xp and XTMVA. This plot shows that XTMVA is more stable and in more sensitive than \xp to this waveform.  }
 \label{fig:csg comparison}
 \end{figure}
 
+In figure \ref{fig:median injscale}, we plot the median 50\% injection scale upper limit for each waveform across the GRBs analysed. We can see that there is a small improvement when using the MVA. For most long waveforms, in particular the ADIs and the BNS waveforms, the difference is small (except for ADI-a). For most of the short waveforms, in particular the sine gaussian waveforms, the MVA displays a noticeable improvement (with the exception of the 100 Hz circular sine gaussian waveform). See appendix \ref{appendix:mva tables} for the full breakdown of sensitivity by waveform and GRB analysed.
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=1.0\linewidth]{median_50pc_injscale.png}
+\end{center}
+\caption{\textbf{Median 50\% Injection Scale Upper Limit by Waveform.} Here we plot the median sensitivity to each waveform of both \xp and XTMVA. Overall, XTMVA is more sensitive, especially to shorter waveforms such as sine gaussians. Apart from ADI-a, the MVA is worse than \xp for long waveforms, though the difference is small. If the MVA could use the long injection code that \xp uses, it is reasonable to expect that the MVA would also outperform \xp for long waveforms as well. }
+\label{fig:median injscale}
+\end{figure}
+
 \begin{itemize}
-\item Change in sensitivity
-\item Table of results
 \item Speed improvement (real time and cpu time)
 \end{itemize}
 
+\subsection{XTMVA Search Results} \label{sec:mva results}
+We analysed the 13 GRBs of our results set in the same manner as was done for the \xp results in O2. In figure \ref{fig:mva pvalues} we plot the p-values for each GRB, which can be compared to \ref{fig:xpvalue}. We see that the MVA has a bias towards low p-values. In particular, there are two p-values of about $\sim1\%$. Further investigation shows that these two low p-value events were ranked by \xp to be the most significant triggers in the on-source before vetoes were applied, but were then vetoed by the coherent cuts. One of the benefits of using MVA is that noise transients such as these should be down-weighted rather than simply cut, rather than the binary cut used by \xp. In these cases, it seems the MVA did not down-weight these events by enough. 
 
 
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{mva_pvalue.png}
+\end{center}
+\caption{\textbf{XTMVA p-values.} Here we have plotted the p-values for 13 of the GRBs analysed with the MVA. The blue triangles indicate the p-value reported by the MVA, the black dotted lines show the expected distribution and a $2\sigma$ deviation. Two GRBs that were analysed were left out from this plot: GRB 170817A as it had a known GW counterpart and E264930 as it was used to tune the hyperparameters. The analysis shows some bias towards low p-values. In particular, two out of the 13 analysed GRBs have a p-value of $\sim1\%$. This can be compared to figure \ref{fig:xpvalue} which shows the \xp p-values for O2. In particular, \xp did not have the same bias towards low p-values that \xp does.}
+\label{fig:mva pvalues}
+\end{figure}
 
-\subsection{Unsolved Problems}
+While these two triggers have suspiciously low p-values, it is worth comparing to the XTMVA analysis of GRB 170817A, as this was a real GW signal. In this analysis, the p-value of the most significant trigger was 0.0004095, a factor of twenty lower than the most significant other trigger in the 13 other analysed GRBs. This p-value corresponds to just one off-source trial having a more significant event, and is therefore at the limit of how low a p-value we can achieve with the number of timeslides we were using. The on-source for this event also had two other low p-value events, which time-frequency data show are different parts of the inspiral. Had the energy from these different sections been considered one trigger, then the significance would have been even greater. We will discuss how this might be achieved in section \ref{sec:mva future}. 
+
 \begin{itemize}
-\item Unstable
-\item Issue of data leakage - threshold needs to be tuned in advance
+\item Distance plot
 \end{itemize}
 
-\subsection{Future Work}
+\subsection{Discussion and Future Work} \label{sec:mva future}
 \begin{itemize}
 \item Machine learning such as this shows promise
 \item Compare to other GW machine learning searches
 \item Limited scope of the pipeline is probably beneficial
 \item New machine learning software available now that is more transparent
-\item Get working with generalised clustering and long inj but still with off source injections
 \end{itemize}
-We also use \textit{Generalised Clustering}. This is a change in the way \xp defines a trigger. Without using generalised clustering, triggers are groups of neighbouring pixels in the time-frequency maps such as in fig.\ref{fig:tfmap}. Generalised clustering allows these pixels to be separated by a user-specified number of pixels. This can boost the signal power of long triggers, as long triggers tend to contain breaks in their time-frequency maps that causes \xp to list a single long trigger as multiple short triggers. The downside to using generalised clustering is that it can cause noise triggers to be grouped together as well, boosting the power of noise. This then causes our sensitivity to short triggers to be reduced slightly. Experimenting with generalised clustering in both the standard \xp analysis and the MVA analysis suggests that the benefits outweigh the costs, with an improvement of between 7\% and 50\% for long inspiral and adi waveforms at the cost of a decrease of 3\% to 9\% for short sine-gaussian waveforms.  
+
+\subsubsection{Generalised Clustering}
+Another tool that \xp has available that cannot be used in XTMVA at the moment is \textit{Generalised Clustering}. This is a change in the way \xp defines a trigger. Without using generalised clustering, triggers are groups of neighbouring pixels in the time-frequency maps such as in fig.\ref{fig:tfmap}. Generalised clustering allows these pixels to be separated by a user-specified number of pixels. This can boost the signal power of long triggers, as they tend to contain breaks in their time-frequency maps that causes \xp to report multiple short triggers for what is in fact one astrophysical event. This is what happened with the analysis of GW 170817 mentioned in section \ref{sec:mva results}, where the MVA reported three high significance triggers in a small time-frequency window. The downside to using generalised clustering is that it can cause noise triggers to be grouped together as well, boosting the power of noise. This then causes our sensitivity to short triggers to be reduced slightly. Experimenting with generalised clustering in \xp analysis analysis suggests that the benefits outweigh the costs, with an improvement of between 7\% and 50\% for long inspiral and adi waveforms at the cost of a decrease of 3\% to 9\% for short sine-gaussian waveforms. Experiments were done to see if generalised clustering would improve the sensitivity of XTMVA. We found that the 50\% injection scale upper limit improved for different waveforms saw roughly the same changes as \xp. However, for very large injections, the detection efficiency began to fall again. As well as this, very low amplitude injections, that should have not been detectable, were now being detected. To see the problem, we have plotted a detection efficiency curves for the NSBH injection set of an XTMVA analysis without generalised clustering in figure \ref{fig:no gc eff} and with generalised clustering in figure \ref{fig:gc eff}. It is clearly visible from the plots that using generalised clustering causes high energy injections to be missed while causing the false-detection of very low amplitude injections.
+
+The problem at low amplitude effects every waveform set, while the problem at high amplitude seems to only effect longer waveforms, such as ADIs and inspirals, while the shorter waveforms, such as sine-gaussians, do not see a fall in their detection efficiency. This led us to believe that while both problems were related to generalised clustering, they were in fact two separate problems. We are confident that the reason the detection efficiency is dropping for many long waveforms is because the generalised clustering is making both signal and background triggers louder and longer, which increases the chance that the injection will be coincident in time or frequency with a background trigger. This will the cause the injection to be removed by the cleaning code mentioned in section \ref{sec:data-preprocessing}. To test this we looked at the distribution of triggers in the training set as a function of the number of pixels in the trigger. The results are shown in a box plot in figure \ref{fig:npixel box}. The plot shows that the training set with generalised clustering has a much higher ratio of small triggers, consistent with the cleaning explanation. 
+
+This also helps explain the low amplitude detection efficiency problem, which we believe is caused by generalised clustering making background triggers louder and longer. This means that when a low amplitude injection is placed in the data, it is more likely to be clustered with noise. As there is a trigger coincident with the injection, the pipeline claims a detection. However, many of these low amplitude injections will have the same properties as noise. This is a very similar argument to the one that led us to introduce a threshold on the amplitude of signal injection in section \ref{sec:data-preprocessing}. We experimented with increasing the significance threshold required to be included in the training set, which improved the detection efficiency curve, but only at the expense of much worse sensitivity to short waveform and only marginal improvements in sensitivity to long waveforms than without using generalised clustering.
+
+For these reasons, generalised clustering does not seem to be compatible with the MVA, despite the significant improvements it brings to \xp. To make generalised clustering work for XTMVA in future we could rearrange the pipeline so that cleaning happens before generalised clustering. This would prevent many long injections being removed from the training set. 
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{no_gc_eff_nsbh.png}
+\end{center}
+\caption{\textbf{Detection Efficiency Curve without Generalised Clustering.} This is the detection efficiency curve for an XTMVA analysis without generalised clustering. The x-axis shows the energy in the injected waveform and the y-axis shows the fraction of injections detected. This plot shows that at low amplitude no injections are found, while for very loud injections there is almost a 100\% detection efficiency. }
+\label{fig:no gc eff}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{gc_eff_nsbh.png}
+\end{center}
+\caption{\textbf{Detection Efficiency Curve with Generalised Clustering.} This is the detection efficiency curve for an XTMVA analysis using generalised clustering. The x-axis shows the energy in the injected waveform and the y-axis shows the fraction of injections detected. We can see that at low amplitude some injections are being found, even to very low amplitude. We can also see that some very loud injections are being missed, despite the fact that close to 100\% of some lower energy injection sets are being found. }
+\label{fig:gc eff}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{npixels_box.png}
+\end{center}
+\caption{\textbf{Number of Pixels per trigger, with and without Generalised Clustering.} Here we have a box plot of the number of pixels per trigger in the training set for XTMVA in a default (no generalised clustering) analysis and another analysis with generalised clustering. The plot has been truncated as both sets have a large tail of triggers with $\sim1000$ pixels. The plot shows that the generalised clustering training set has a much narrower distribution of trigger sizes. This is likely because generalised clustering increases the duration of background and signal triggers, making it more likely that an injection will be removed from the training set by cleaning. }
+\label{fig:npixel box}
+\end{figure}
 
 \appendix
 \appendixpage
@@ -1742,6 +1727,138 @@ R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right)
 % ----------------------------
 % postamble 
 
+\section{PyGRB O2 Result Tables} \label{tab:grbs}
+\begin{landscape}
+\begin{tabular}{l c  c  c  c  c  c  c  c c |}
+\hline
+ GRB & UTC time & ra & dec & satellite & network & BNS & NSBH generic spin & NSBH aligned spin \\
+\hline
+161217128 & 03:03:46  & $14^{\mathrm{h}}26^{\mathrm{m}}31^{\mathrm{s}}$ & $51^{\circ}58'$ &  Fermi   & H1L1   & 65  & 85  & 122 \\
+170112A   & 02:01:59  & $01^{\mathrm{h}}00^{\mathrm{m}}55^{\mathrm{s}}$ & $-17^{\circ}13'$ & Swift   & H1L1   & 83  & 106 & 144 \\
+170121133 & 03:10:52  & $16^{\mathrm{h}}07^{\mathrm{m}}58^{\mathrm{s}}$ & $13^{\circ}48'$ &  Fermi   & H1L1   & 96  & 142 & 172 \\
+170125022 & 00:31:14  & $17^{\mathrm{h}}36^{\mathrm{m}}34^{\mathrm{s}}$ & $28^{\circ}34'$ &  Fermi   & H1     & 46  & 52  & 57 \\
+170127067 & 01:35:48  & $22^{\mathrm{h}}37^{\mathrm{m}}19^{\mathrm{s}}$ & $-63^{\circ}56'$ & Fermi   & H1L1   & 76  & 129 & 141 \\
+170203486 & 11:40:26  & $16^{\mathrm{h}}20^{\mathrm{m}}22^{\mathrm{s}}$ & $-00^{\circ}30'$ & Fermi   & H1L1   & 66  & 99  & 119 \\
+170219002 & 00:03:07  & $03^{\mathrm{h}}39^{\mathrm{m}}22^{\mathrm{s}}$ & $50^{\circ}04'$ &  Fermi   & H1L1   & 171 & 251 & 304 \\
+170302166 & 03:58:24  & $10^{\mathrm{h}}17^{\mathrm{m}}00^{\mathrm{s}}$ & $29^{\circ}23'$ &  Fermi   & H1L1   & 107 & 175 & 206 \\
+170305256 & 06:09:07  & $02^{\mathrm{h}}34^{\mathrm{m}}38^{\mathrm{s}}$ & $12^{\circ}05'$ &  Fermi   & L1     & 48  & 73  & 82 \\
+170325331 & 07:56:58  & $08^{\mathrm{h}}29^{\mathrm{m}}55^{\mathrm{s}}$ & $20^{\circ}31'$ &  Fermi   & H1L1   & 73  & 88  & 125 \\
+170428A   & 09:13:42  & $22^{\mathrm{h}}00^{\mathrm{m}}12^{\mathrm{s}}$ & $26^{\circ}54'$ &  Swift   & H1L1   & 105 & 167 & 178 \\
+170506169 & 04:02:48  & $07^{\mathrm{h}}29^{\mathrm{m}}02^{\mathrm{s}}$ & $51^{\circ}52'$ &  Fermi   & H1L1   & 103 & 174 & 149 \\
+170614505 & 12:06:39  & $20^{\mathrm{h}}43^{\mathrm{m}}58^{\mathrm{s}}$ & $-37^{\circ}54'$ & Fermi   & H1     & 9   & 22  & 0 \\
+170709334 & 08:00:24  & $20^{\mathrm{h}}40^{\mathrm{m}}10^{\mathrm{s}}$ & $02^{\circ}12'$ &  Fermi   & L1     & 139 & 228 & 255 \\
+170726249 & 05:58:15  & $11^{\mathrm{h}}05^{\mathrm{m}}41^{\mathrm{s}}$ & $-34^{\circ}00'$ & Fermi   & H1L1   & 124 & 152 & 207 \\
+170802638 & 15:18:25  & $03^{\mathrm{h}}29^{\mathrm{m}}12^{\mathrm{s}}$ & $-39^{\circ}12'$ & Fermi   & H1L1V1 & 45  & 62  & 72 \\
+170805B   & 14:18:49  & $09^{\mathrm{h}}42^{\mathrm{m}}31^{\mathrm{s}}$ & $69^{\circ}54'$ &  IPN     & H1L1V1 & 132 & 163 & 218 \\
+170808065 & 01:34:09  & $00^{\mathrm{h}}13^{\mathrm{m}}12^{\mathrm{s}}$ & $62^{\circ}18'$ &  Fermi   & L1V1   & 58  & 83  & 87 \\
+170817908 & 21:47:34  & $05^{\mathrm{h}}32^{\mathrm{m}}07^{\mathrm{s}}$ & $50^{\circ}04'$ &  Fermi   & H1V1   & 35  & 51  & 63 \\
+161210524 & 12:33:54  & $18^{\mathrm{h}}52^{\mathrm{m}}29^{\mathrm{s}}$ & $63^{\circ}03'$ &  Fermi   & H1L1   & 61  & 72  & 112 \\
+161212652 & 15:38:59  & $01^{\mathrm{h}}39^{\mathrm{m}}36^{\mathrm{s}}$ & $68^{\circ}12'$ &  Fermi   & H1     & 49  & 59  & 60 \\
+\end{tabular}
+\end{landscape}
+
+\begin{landscape}
+\begin{tabular}{ccccccccc}
+\hline
+ GRB & UTC time & ra & dec & satellite & network & BNS & NSBH generic spin & NSBH aligned spin \\
+\hline
+170111815 & 19:34:01  & $18^{\mathrm{h}}03^{\mathrm{m}}31^{\mathrm{s}}$ & $63^{\circ}42'$ &  Fermi   & H1     & 95  & 160 & 198 \\
+170121067 & 01:36:54  & $00^{\mathrm{h}}12^{\mathrm{m}}07^{\mathrm{s}}$ & $-75^{\circ}37'$ & Fermi   & H1L1   & 79  & 105 & 144 \\
+170124528 & 12:40:29  & $00^{\mathrm{h}}43^{\mathrm{m}}24^{\mathrm{s}}$ & $11^{\circ}01'$ &  Fermi  & H1      & 65  & 101 & 116 \\
+170125102 & 02:27:10  & $23^{\mathrm{h}}57^{\mathrm{m}}38^{\mathrm{s}}$ & $-38^{\circ}13'$ & Fermi   & H1     & 30  & 39  & 63 \\
+170127B   & 15:13:29  & $01^{\mathrm{h}}19^{\mathrm{m}}58^{\mathrm{s}}$ & $-30^{\circ}20'$ & Swift   & H1     & 113 & 169 & 197 \\
+170206A   & 10:51:58  & $14^{\mathrm{h}}12^{\mathrm{m}}43^{\mathrm{s}}$ & $12^{\circ}34'$ &  IPN   & H1L1     & 151 & 254 & 264 \\
+170222A   & 05:00:59  & $19^{\mathrm{h}}31^{\mathrm{m}}53^{\mathrm{s}}$ & $28^{\circ}04'$ &  IPN   & H1L1     & 80  & 86  & 112 \\
+170304003 & 00:04:26  & $22^{\mathrm{h}}02^{\mathrm{m}}00^{\mathrm{s}}$ & $-73^{\circ}45'$ & Fermi   & H1L1   & 105 & 143 & 178 \\
+170318B   & 15:27:53  & $18^{\mathrm{h}}57^{\mathrm{m}}10^{\mathrm{s}}$ & $06^{\circ}19'$ &  Swift   & H1L1   & 152 & 254 & 281 \\
+170403583 & 13:59:18  & $17^{\mathrm{h}}48^{\mathrm{m}}19^{\mathrm{s}}$ & $14^{\circ}31'$ &  Fermi   & H1L1   & 166 & 240 & 261 \\
+170430204 & 04:54:20  & $01^{\mathrm{h}}35^{\mathrm{m}}26^{\mathrm{s}}$ & $30^{\circ}07'$ &  Fermi   & H1     & 32  & 54  & 81 \\
+170604603 & 14:28:05  & $22^{\mathrm{h}}41^{\mathrm{m}}36^{\mathrm{s}}$ & $40^{\circ}42'$ &  Fermi   & L1     & 131 & 204 & 237 \\
+170708046 & 01:06:11  & $22^{\mathrm{h}}13^{\mathrm{m}}00^{\mathrm{s}}$ & $25^{\circ}37'$ &  Fermi   & L1     & 57  & 105 & 103 \\
+170723882 & 21:10:18  & $14^{\mathrm{h}}10^{\mathrm{m}}19^{\mathrm{s}}$ & $39^{\circ}49'$ &  Fermi   & H1L1   & 95  & 83  & 179 \\
+170728A   & 06:53:29  & $03^{\mathrm{h}}55^{\mathrm{m}}36^{\mathrm{s}}$ & $12^{\circ}09'$ &  Swift   & H1L1   & 89  & 129 & 163 \\
+170803172 & 04:07:16  & $05^{\mathrm{h}}06^{\mathrm{m}}00^{\mathrm{s}}$ & $24^{\circ}00'$ &  Fermi   & H1L1V1 & 56  & 83  & 105 \\
+170803B   & 22:00:32  & $00^{\mathrm{h}}56^{\mathrm{m}}53^{\mathrm{s}}$ & $06^{\circ}34'$ &  IPN   & L1       & 140 & 215 & 234 \\
+170805A   & 14:38:11  & $17^{\mathrm{h}}55^{\mathrm{m}}12^{\mathrm{s}}$ & $-23^{\circ}30'$ & IPN   & H1L1V1   & 69  & 100 & 114 \\
+170817A   & 12:41:06  & $13^{\mathrm{h}}09^{\mathrm{m}}36^{\mathrm{s}}$ & $-23^{\circ}24'$ & Fermi   & H1L1V1 & 0   & 0   & 41 \\
+170818137 & 03:17:20  & $19^{\mathrm{h}}48^{\mathrm{m}}53^{\mathrm{s}}$ & $06^{\circ}21'$ &  Fermi   & H1L1   & 103 & 146 & 169 \\
+170816599 & 14:23:04  & $23^{\mathrm{h}}25^{\mathrm{m}}36^{\mathrm{s}}$ & $19^{\circ}06'$ &  Fermi   & H1V1   & 46  & 56  & 73 \\ 
+\end{tabular}
+\end{landscape}
+
+
+\newpage
+\FloatBarrier
+\section{MVA Results Tables} \label{appendix:mva tables}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{  c | c | c }
+Waveform   & X-pipeline & MVA \\ \hline                                                       
+sgc70   & 1.18 & 1.13 \\
+sgc100 & 0.81 & 0.81 \\
+sgc150 & 0.95 & 0.72 \\
+sgc300 & 0.81 & 0.79 \\
+adi-a     & 0.31 & 0.24 \\
+adi-b     & 0.14 & 0.13 \\
+adi-c     & 0.18 & 0.17 \\
+adi-d     & 0.51 & 0.52 \\
+adi-e     & 0.17 & 0.18 \\
+BNS     & 0.25 & 0.24 \\
+NSBH   & 0.18 & 0.18 
+\end{tabular}
+\caption{\textbf{Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for \xp and the MVA. }
+\end{table}
+
+\begin{landscape}
+\begin{table}
+\centering
+\begin{tabular}{l c  c  c  c  c  c  c  c c c c c |}
+\hline
+GRB & sgc70 &	sgc100 &	sgc150 &	sgc300 &	adi-a &	adi-b &	adi-c &	adi-d &	adi-e &	BNS &	NSBH \\
+\hline		
+E264842 & 1.14 & 0.88 & 0.78 & 0.87 & 0.26 & 0.16 & 0.18 & 0.52 & 0.18 & 0.26 & 0.18 \\                                                                         
+E265282 & 1.36 & 1.04 & 0.95 & 1.06 & 0.32 & 0.18 & 0.23 & 0.64 & 0.24 & 0.32 & 0.23 \\									
+E266096 & 1.40 & 1.08 & 0.92 & 1.06 & 0.31 & 0.18 & 0.24 & 0.63 & 0.23 & 0.32 & 0.24 \\
+E269364 & 1.17 & 0.88 & 0.82 & 0.85 & 0.27 & 0.17 & 0.19 & 0.56 & 0.19 & 0.27 & 0.20 \\
+E269496 & 1.28 & 0.87 & 0.80 & 0.84 & 0.26 & 0.16 & 0.19 & 0.56 & 0.19 & 0.27 & 0.19 \\
+E269667 & 1.10 & 0.76 & 0.61 & 0.67 & 0.21 & 0.13 & 0.16 & 0.43 & 0.15 & 0.22 & 0.16 \\
+E272290 & 0.83 & 0.59 & 0.55 & 0.58 & 0.18 & 0.11 & 0.13 & 0.37 & 0.13 & 0.18 & 0.13 \\
+E272325 & 0.84 & 0.63 & 0.55 & 0.59 & 0.18 & 0.11 & 0.13 & 0.38 & 0.13 & 0.18 & 0.14 \\
+E273104 & 0.65 & 0.51 & 0.42 & 0.51 & 0.15 & 0.08 & 0.11 & 0.30 & 0.11 & 0.15 & 0.11 \\
+E273131 & 1.12 & 0.81 & 0.72 & 0.79 & 0.23 & 0.13 & 0.17 & 0.48 & 0.18 & 0.24 & 0.17 \\
+E277236 & 1.33 & 1.09 & 0.87 & 0.98 & 0.28 & 0.18 & 0.22 & 0.63 & 0.23 & 0.29 & 0.22 \\
+E278027 & 1.13 & 0.81 & 0.71 & 0.79 & 0.24 & 0.13 & 0.17 & 0.52 & 0.18 & 0.24 & 0.18 \\
+E278188 & 0.72 & 0.54 & 0.49 & 0.54 & 0.17 & 0.09 & 0.12 & 0.33 & 0.12 & 0.17 & 0.12 \\
+\end{tabular}
+\caption{\textbf{MVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}
+\end{table}
+\end{landscape}
+
+\begin{landscape}
+\begin{table}[p]
+\centering
+\begin{tabular}{l c  c  c  c  c  c  c  c c c c c |}
+\hline
+GRB & sgc70 & sgc100 & sgc150 & sgc300 & adi-a & adi-b & adi-c & adi-d & adi-e & BNS & NSBH \\     
+\hline                                                             
+E264842 & 1.36 & 0.97 & 0.86 & 0.94 & 0.28 & 0.17 & 0.21 & 0.64 & 0.20 & 0.28 & 0.20 \\
+E265282 & 1.42 & 1.11 & 0.97 & 1.07 & 0.31 & 0.19 & 0.23 & 0.64 & 0.23 & 0.33 & 0.24 \\
+E266096 & 1.61 & 1.11 & 0.95 & 1.06 & 0.33 & 0.19 & 0.25 & 0.66 & 0.24 & 0.32 & 0.25 \\
+E269364 & 1.21 & 0.93 & 0.99 & 0.84 & 0.80 & 0.17 & 0.20 & 0.57 & 0.19 & 0.27 & 0.19 \\
+E269496 & 1.37 & 0.89 & 0.96 & 0.83 & 0.31 & 0.16 & 0.19 & 0.56 & 0.20 & 0.26 & 0.19 \\
+E269667 & 1.11 & 0.73 & 0.85 & 0.65 & 0.31 & 0.12 & 0.16 & 0.45 & 0.15 & 0.20 & 0.15 \\
+E272290 & 0.86 & 0.58 & 0.66 & 0.58 & 0.22 & 0.11 & 0.13 & 0.38 & 0.13 & 0.18 & 0.13 \\
+E272325 & 0.85 & 0.64 & 0.70 & 0.61 & 0.28 & 0.11 & 0.13 & 0.39 & 0.13 & 0.18 & 0.14 \\
+E273104 & 0.67 & 0.49 & 0.60 & 0.48 & 0.20 & 0.08 & 0.11 & 0.30 & 0.11 & 0.15 & 0.10 \\
+E273131 & 1.09 & 0.81 & 0.95 & 0.81 & 0.31 & 0.13 & 0.17 & 0.49 & 0.17 & 0.25 & 0.18 \\
+E277236 & 1.81 & 1.41 & 1.82 & 1.34 & 0.45 & 0.21 & 0.26 & 0.80 & 0.26 & 0.38 & 0.29 \\
+E278027 & 1.18 & 0.80 & 0.95 & 0.79 & 0.30 & 0.14 & 0.18 & 0.51 & 0.17 & 0.24 & 0.18 \\
+E278188 & 0.73 & 0.55 & 0.64 & 0.54 & 0.21 & 0.09 & 0.12 & 0.33 & 0.12 & 0.17 & 0.12 \\
+\end{tabular}
+\caption{\textbf{X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}
+\end{table}
+\end{landscape}
 \backmatter
 % add bibligography
 

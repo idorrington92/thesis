@@ -74,8 +74,11 @@
 \BOOKMARK [2][-]{subsection.6.2.3}{Training Data Preprocessing}{section.6.2}% 74
 \BOOKMARK [2][-]{subsection.6.2.4}{Optimisation and Validation}{section.6.2}% 75
 \BOOKMARK [1][-]{section.6.3}{Effectiveness of XTMVA}{chapter.6}% 76
-\BOOKMARK [2][-]{subsection.6.3.1}{Comparison to X-pipeline }{section.6.3}% 77
-\BOOKMARK [2][-]{subsection.6.3.2}{Unsolved Problems}{section.6.3}% 78
-\BOOKMARK [2][-]{subsection.6.3.3}{Future Work}{section.6.3}% 79
-\BOOKMARK [0][-]{section*.26}{Appendices}{}% 80
-\BOOKMARK [1][-]{section.Alph0.1}{General Relativity}{section*.26}% 81
+\BOOKMARK [2][-]{subsection.6.3.1}{Analysis Setup}{section.6.3}% 77
+\BOOKMARK [2][-]{subsection.6.3.2}{Sensitivity and Speed Comparison}{section.6.3}% 78
+\BOOKMARK [2][-]{subsection.6.3.3}{XTMVA Search Results}{section.6.3}% 79
+\BOOKMARK [2][-]{subsection.6.3.4}{Discussion and Future Work}{section.6.3}% 80
+\BOOKMARK [0][-]{section*.27}{Appendices}{}% 81
+\BOOKMARK [1][-]{section.Alph0.1}{General Relativity}{section*.27}% 82
+\BOOKMARK [1][-]{section.Alph0.2}{PyGRB O2 Result Tables}{section*.27}% 83
+\BOOKMARK [1][-]{section.Alph0.3}{MVA Results Tables}{section*.27}% 84

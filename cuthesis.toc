@@ -68,34 +68,38 @@
 \contentsline {section}{\numberline {4.4}O2 PyGRB Search}{60}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}GRB sample}{60}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Results}{60}{subsection.4.4.2}
-\contentsline {subsection}{\numberline {4.4.3}Rates}{65}{subsection.4.4.3}
-\contentsline {chapter}{\numberline {5}Improvements to PyGRB}{67}{chapter.5}
-\contentsline {section}{\numberline {5.1}Reasons to Rewrite the Pipeline}{67}{section.5.1}
-\contentsline {section}{\numberline {5.2}New Code Changes}{68}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Consistency Checks}{68}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}New Data Analysis Tools}{68}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Detection Statistic}{69}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Speed Gains}{69}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Future Plans}{69}{section.5.3}
-\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitaional Wave Signals using Machine Learning}{70}{chapter.6}
-\contentsline {section}{\numberline {6.1}X-pipeline}{70}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{73}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{74}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Null Energy}{75}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{76}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{77}{subsection.6.1.5}
-\contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{77}{subsection.6.1.6}
-\contentsline {section}{\numberline {6.2}Machine Learning}{78}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{78}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{83}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{84}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{87}{subsection.6.2.4}
-\contentsline {subsubsection}{Training Set}{88}{section*.23}
-\contentsline {subsubsection}{BDT Parameters}{88}{section*.24}
-\contentsline {subsubsection}{Result of Optimisation}{91}{section*.25}
-\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{91}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Comparison to X-pipeline }{91}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Unsolved Problems}{97}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}Future Work}{97}{subsection.6.3.3}
-\contentsline {chapter}{Appendices}{99}{section*.26}
-\contentsline {section}{\numberline {.1}General Relativity}{99}{section.Alph0.1}
+\contentsline {subsection}{\numberline {4.4.3}Rates}{62}{subsection.4.4.3}
+\contentsline {chapter}{\numberline {5}Improvements to PyGRB}{65}{chapter.5}
+\contentsline {section}{\numberline {5.1}Reasons to Rewrite the Pipeline}{65}{section.5.1}
+\contentsline {section}{\numberline {5.2}New Code Changes}{66}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Consistency Checks}{66}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}New Data Analysis Tools}{66}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Detection Statistic}{67}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Speed Gains}{67}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Future Plans}{67}{section.5.3}
+\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitaional Wave Signals using Machine Learning}{68}{chapter.6}
+\contentsline {section}{\numberline {6.1}X-pipeline}{68}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{71}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{72}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Null Energy}{73}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{74}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{75}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{75}{subsection.6.1.6}
+\contentsline {section}{\numberline {6.2}Machine Learning}{76}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{76}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{81}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{82}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{85}{subsection.6.2.4}
+\contentsline {subsubsection}{Training Set}{86}{section*.23}
+\contentsline {subsubsection}{BDT Parameters}{86}{section*.24}
+\contentsline {subsubsection}{Result of Optimisation}{89}{section*.25}
+\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{89}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Analysis Setup}{92}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{92}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{95}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Discussion and Future Work}{97}{subsection.6.3.4}
+\contentsline {subsubsection}{Generalised Clustering}{97}{section*.26}
+\contentsline {chapter}{Appendices}{103}{section*.27}
+\contentsline {section}{\numberline {.1}General Relativity}{103}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{103}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}MVA Results Tables}{106}{section.Alph0.3}

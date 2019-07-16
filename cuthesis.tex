@@ -64,7 +64,17 @@
 
 % summary
 \begin{abstract}
-    I love hitting my head against a wall, so I did that for a bit.
+In this thesis we will see two targeted searches for gravitational wave (GW) signals associated with gamma-ray bursts (GRBs) and the work that is ongoing to make these two search pipelines faster and more sensitive. The first of these is PyGRB, a matched filter search that follows up short GRB detections. The second is X-pipeline, a burst search for both long and short GRBs. 
+
+We begin with a chapter on GW background, where we will show that GWs are a consequence of General Relativity, we will look at some known and potential sources of GWs, and look into the basics of how GWs are detected. 
+
+We then study GRBs. We will look at the history of GRB astronomy, starting with their accidental discovery and ending with the a summary the key scientific findings that came from this first joint detection of a GW signal associated with a GRB. The second half of this chapter focuses on how multi-messenger searches are performed and what they can teach us about the universe.
+
+The following chapter is on PyGRB. This chapter begins with a look at the theory behind how the pipeline works, and then goes into the detail of how the pipeline works in practice. This chapter ends with a summary of the results from the PyGRB search of the latest observing run, including the detection of GW 170817 and the implications of this on the astrophysical rates of neutron star mergers. 
+
+We then look at the PyGRB redevelopment work that is currently ongoing. The code used in O2 is now dated and slow by comparison to work that is going on with other matched filter searches. We will look at the work that has already been done to rewrite the PyGRB pipeline to used the optimised code of the PyCBC software package. We will look at the speed improvements this brings, learn why it is scientifically important that the code runs quickly, and also see some of the new tools that integrating into PyCBC has made available for the GRB search. 
+
+We end by looking at X-pipeline. We will start by understanding the theory behind how \xp works and looking at the results from the \xp analysis of the most recent observing run. The second half of this chapter looks at how machine learning can be used to improve the sensitivity and speed of X-pipeline. We end this chapter with a discussion of future work that can be done on this pipeline, and some of the issues that arise from using machine learning. 
 \end{abstract}
 
 % declaration - REQUIRED

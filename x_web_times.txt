@@ -1,80 +1,81 @@
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:05.985856386 -0700 xmakegrbwebpage-123323173-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 979472 2018-07-29 07:07:08.906033000 -0700 xmakegrbwebpage-123323173-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.097989735 -0700 xmakegrbwebpage-123323174-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 979516 2018-07-29 05:50:30.221023000 -0700 xmakegrbwebpage-123323174-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.166656235 -0700 xmakegrbwebpage-123323175-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 979516 2018-07-29 06:00:49.393184000 -0700 xmakegrbwebpage-123323175-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.243442047 -0700 xmakegrbwebpage-123323176-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 979472 2018-07-29 06:04:20.407750000 -0700 xmakegrbwebpage-123323176-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.327186771 -0700 xmakegrbwebpage-123323177-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 979516 2018-07-29 05:32:19.615302000 -0700 xmakegrbwebpage-123323177-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.394626992 -0700 xmakegrbwebpage-123323178-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 979516 2018-07-29 06:33:06.106510000 -0700 xmakegrbwebpage-123323178-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.454482233 -0700 xmakegrbwebpage-123323179-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 979516 2018-07-29 06:09:05.567334000 -0700 xmakegrbwebpage-123323179-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.523317774 -0700 xmakegrbwebpage-123323180-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 925270 2018-07-29 05:45:33.700263000 -0700 xmakegrbwebpage-123323180-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.592623913 -0700 xmakegrbwebpage-123323181-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 866187 2018-07-29 06:13:46.086634000 -0700 xmakegrbwebpage-123323181-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.652129244 -0700 xmakegrbwebpage-123323182-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 832877 2018-07-29 05:57:05.877734000 -0700 xmakegrbwebpage-123323182-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.719187795 -0700 xmakegrbwebpage-123323183-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 811928 2018-07-29 06:21:54.120390000 -0700 xmakegrbwebpage-123323183-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.791982313 -0700 xmakegrbwebpage-123323184-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 809450 2018-07-29 05:57:54.881174000 -0700 xmakegrbwebpage-123323184-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.858698076 -0700 xmakegrbwebpage-123323185-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 809783 2018-07-29 05:46:28.203853000 -0700 xmakegrbwebpage-123323185-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.919958077 -0700 xmakegrbwebpage-123323186-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 810954 2018-07-29 05:47:25.707819000 -0700 xmakegrbwebpage-123323186-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:06.990322496 -0700 xmakegrbwebpage-123323187-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 811842 2018-07-29 06:18:50.696705000 -0700 xmakegrbwebpage-123323187-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:07.187588174 -0700 xmakegrbwebpage-123323188-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 814010 2018-07-29 05:37:46.037082000 -0700 xmakegrbwebpage-123323188-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:07.252733701 -0700 xmakegrbwebpage-123323189-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 814585 2018-07-29 06:01:20.919855000 -0700 xmakegrbwebpage-123323189-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:07.314735643 -0700 xmakegrbwebpage-123323190-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 816120 2018-07-29 06:35:11.265157000 -0700 xmakegrbwebpage-123323190-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:07.377576833 -0700 xmakegrbwebpage-123323191-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 820413 2018-07-29 06:13:33.085790000 -0700 xmakegrbwebpage-123323191-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:07.451060357 -0700 xmakegrbwebpage-123323192-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 820347 2018-07-29 06:27:32.903775000 -0700 xmakegrbwebpage-123323192-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 04:27:07.514592045 -0700 xmakegrbwebpage-123323193-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 820325 2018-07-29 05:36:15.131514000 -0700 xmakegrbwebpage-123323193-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:20.612942815 -0700 xmakegrbwebpage-123324823-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 642754 2018-07-29 08:27:23.667635000 -0700 xmakegrbwebpage-123324823-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:20.885703799 -0700 xmakegrbwebpage-123324824-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 639516 2018-07-29 07:53:56.510788000 -0700 xmakegrbwebpage-123324824-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:20.947792738 -0700 xmakegrbwebpage-123324825-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 636244 2018-07-29 08:40:01.784902000 -0700 xmakegrbwebpage-123324825-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.016467785 -0700 xmakegrbwebpage-123324826-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 634656 2018-07-29 08:50:49.913499000 -0700 xmakegrbwebpage-123324826-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.072474726 -0700 xmakegrbwebpage-123324827-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 629674 2018-07-29 09:29:16.745632000 -0700 xmakegrbwebpage-123324827-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.138946299 -0700 xmakegrbwebpage-123324828-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 619835 2018-07-29 08:48:57.257869000 -0700 xmakegrbwebpage-123324828-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.205185661 -0700 xmakegrbwebpage-123324829-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 611553 2018-07-29 08:27:32.540058000 -0700 xmakegrbwebpage-123324829-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.277059559 -0700 xmakegrbwebpage-123324830-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 608285 2018-07-29 08:37:26.581479000 -0700 xmakegrbwebpage-123324830-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.352022737 -0700 xmakegrbwebpage-123324831-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 601825 2018-07-29 08:20:36.001414000 -0700 xmakegrbwebpage-123324831-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.417100039 -0700 xmakegrbwebpage-123324832-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 594244 2018-07-29 09:05:25.026813000 -0700 xmakegrbwebpage-123324832-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.494806594 -0700 xmakegrbwebpage-123324833-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 592011 2018-07-29 08:09:14.814205000 -0700 xmakegrbwebpage-123324833-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.568597371 -0700 xmakegrbwebpage-123324834-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 592813 2018-07-29 08:30:12.051217000 -0700 xmakegrbwebpage-123324834-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.651819940 -0700 xmakegrbwebpage-123324835-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 592781 2018-07-29 08:27:17.539477000 -0700 xmakegrbwebpage-123324835-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.717070636 -0700 xmakegrbwebpage-123324836-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 592813 2018-07-29 08:56:24.659605000 -0700 xmakegrbwebpage-123324836-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:11:21.796639897 -0700 xmakegrbwebpage-123324837-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 592765 2018-07-29 08:02:21.165635000 -0700 xmakegrbwebpage-123324837-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 09:34:10.468634810 -0700 xmakegrbwebpage-123326910-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington  57484 2018-07-29 10:36:53.760506000 -0700 xmakegrbwebpage-123326910-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 11:03:36.121287100 -0700 xmakegrbwebpage-123329650-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington 127352 2018-07-31 05:39:05.183574000 -0700 xmakegrbwebpage-123329650-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 07:07:15.241839151 -0700 xtunegrbwebpage-123324822-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington   5783 2018-07-29 07:11:26.926048000 -0700 xtunegrbwebpage-123324822-0.out
--rw-r--r-- 1 iain.dorrington iain.dorrington      0 2018-07-29 09:28:55.015385199 -0700 xtunegrbwebpage-123326732-0.err
--rw-r--r-- 1 iain.dorrington iain.dorrington   5018 2018-07-29 09:34:32.767563000 -0700 xtunegrbwebpage-123326732-0.out
+Time                       File
+18-07-29,04:27:05.985856 xmakegrbwebpage-123323173-0.err
+18-07-29,07:07:08.906033 xmakegrbwebpage-123323173-0.out
+18-07-29,04:27:06.097989 xmakegrbwebpage-123323174-0.err
+18-07-29,05:50:30.221023 xmakegrbwebpage-123323174-0.out
+18-07-29,04:27:06.166656 xmakegrbwebpage-123323175-0.err
+18-07-29,06:00:49.393184 xmakegrbwebpage-123323175-0.out
+18-07-29,04:27:06.243442 xmakegrbwebpage-123323176-0.err
+18-07-29,06:04:20.407750 xmakegrbwebpage-123323176-0.out
+18-07-29,04:27:06.327186 xmakegrbwebpage-123323177-0.err
+18-07-29,05:32:19.615302 xmakegrbwebpage-123323177-0.out
+18-07-29,04:27:06.394626 xmakegrbwebpage-123323178-0.err
+18-07-29,06:33:06.106510 xmakegrbwebpage-123323178-0.out
+18-07-29,04:27:06.454482 xmakegrbwebpage-123323179-0.err
+18-07-29,06:09:05.567334 xmakegrbwebpage-123323179-0.out
+18-07-29,04:27:06.523317 xmakegrbwebpage-123323180-0.err
+18-07-29,05:45:33.700263 xmakegrbwebpage-123323180-0.out
+18-07-29,04:27:06.592623 xmakegrbwebpage-123323181-0.err
+18-07-29,06:13:46.086634 xmakegrbwebpage-123323181-0.out
+18-07-29,04:27:06.652129 xmakegrbwebpage-123323182-0.err
+18-07-29,05:57:05.877734 xmakegrbwebpage-123323182-0.out
+18-07-29,04:27:06.719187 xmakegrbwebpage-123323183-0.err
+18-07-29,06:21:54.120390 xmakegrbwebpage-123323183-0.out
+18-07-29,04:27:06.791982 xmakegrbwebpage-123323184-0.err
+18-07-29,05:57:54.881174 xmakegrbwebpage-123323184-0.out
+18-07-29,04:27:06.858698 xmakegrbwebpage-123323185-0.err
+18-07-29,05:46:28.203853 xmakegrbwebpage-123323185-0.out
+18-07-29,04:27:06.919958 xmakegrbwebpage-123323186-0.err
+18-07-29,05:47:25.707819 xmakegrbwebpage-123323186-0.out
+18-07-29,04:27:06.990322 xmakegrbwebpage-123323187-0.err
+18-07-29,06:18:50.696705 xmakegrbwebpage-123323187-0.out
+18-07-29,04:27:07.187588 xmakegrbwebpage-123323188-0.err
+18-07-29,05:37:46.037082 xmakegrbwebpage-123323188-0.out
+18-07-29,04:27:07.252733 xmakegrbwebpage-123323189-0.err
+18-07-29,06:01:20.919855 xmakegrbwebpage-123323189-0.out
+18-07-29,04:27:07.314735 xmakegrbwebpage-123323190-0.err
+18-07-29,06:35:11.265157 xmakegrbwebpage-123323190-0.out
+18-07-29,04:27:07.377576 xmakegrbwebpage-123323191-0.err
+18-07-29,06:13:33.085790 xmakegrbwebpage-123323191-0.out
+18-07-29,04:27:07.451060 xmakegrbwebpage-123323192-0.err
+18-07-29,06:27:32.903775 xmakegrbwebpage-123323192-0.out
+18-07-29,04:27:07.514592 xmakegrbwebpage-123323193-0.err
+18-07-29,05:36:15.131514 xmakegrbwebpage-123323193-0.out
+18-07-29,07:11:20.612942 xmakegrbwebpage-123324823-0.err
+18-07-29,08:27:23.667635 xmakegrbwebpage-123324823-0.out
+18-07-29,07:11:20.885703 xmakegrbwebpage-123324824-0.err
+18-07-29,07:53:56.510788 xmakegrbwebpage-123324824-0.out
+18-07-29,07:11:20.947792 xmakegrbwebpage-123324825-0.err
+18-07-29,08:40:01.784902 xmakegrbwebpage-123324825-0.out
+18-07-29,07:11:21.016467 xmakegrbwebpage-123324826-0.err
+18-07-29,08:50:49.913499 xmakegrbwebpage-123324826-0.out
+18-07-29,07:11:21.072474 xmakegrbwebpage-123324827-0.err
+18-07-29,09:29:16.745632 xmakegrbwebpage-123324827-0.out
+18-07-29,07:11:21.138946 xmakegrbwebpage-123324828-0.err
+18-07-29,08:48:57.257869 xmakegrbwebpage-123324828-0.out
+18-07-29,07:11:21.205185 xmakegrbwebpage-123324829-0.err
+18-07-29,08:27:32.540058 xmakegrbwebpage-123324829-0.out
+18-07-29,07:11:21.277059 xmakegrbwebpage-123324830-0.err
+18-07-29,08:37:26.581479 xmakegrbwebpage-123324830-0.out
+18-07-29,07:11:21.352022 xmakegrbwebpage-123324831-0.err
+18-07-29,08:20:36.001414 xmakegrbwebpage-123324831-0.out
+18-07-29,07:11:21.417100 xmakegrbwebpage-123324832-0.err
+18-07-29,09:05:25.026813 xmakegrbwebpage-123324832-0.out
+18-07-29,07:11:21.494806 xmakegrbwebpage-123324833-0.err
+18-07-29,08:09:14.814205 xmakegrbwebpage-123324833-0.out
+18-07-29,07:11:21.568597 xmakegrbwebpage-123324834-0.err
+18-07-29,08:30:12.051217 xmakegrbwebpage-123324834-0.out
+18-07-29,07:11:21.651819 xmakegrbwebpage-123324835-0.err
+18-07-29,08:27:17.539477 xmakegrbwebpage-123324835-0.out
+18-07-29,07:11:21.717070 xmakegrbwebpage-123324836-0.err
+18-07-29,08:56:24.659605 xmakegrbwebpage-123324836-0.out
+18-07-29,07:11:21.796639 xmakegrbwebpage-123324837-0.err
+18-07-29,08:02:21.165635 xmakegrbwebpage-123324837-0.out
+18-07-29,09:34:10.468634 xmakegrbwebpage-123326910-0.err
+18-07-29,10:36:53.760506 xmakegrbwebpage-123326910-0.out
+18-07-29,11:03:36.121287 xmakegrbwebpage-123329650-0.err
+18-07-31,05:39:05.183574 xmakegrbwebpage-123329650-0.out
+18-07-29,07:07:15.241839 xtunegrbwebpage-123324822-0.err
+18-07-29,07:11:26.926048 xtunegrbwebpage-123324822-0.out
+18-07-29,09:28:55.015385 xtunegrbwebpage-123326732-0.err
+18-07-29,09:34:32.767563 xtunegrbwebpage-123326732-0.out

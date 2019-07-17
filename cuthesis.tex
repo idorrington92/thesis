@@ -68,11 +68,11 @@ In this thesis we will see two targeted searches for gravitational wave (GW) sig
 
 We begin with a chapter on GW background, where we will show that GWs are a consequence of General Relativity, we will look at some known and potential sources of GWs, and look into the basics of how GWs are detected. 
 
-We then study GRBs. We will look at the history of GRB astronomy, starting with their accidental discovery and ending with the a summary the key scientific findings that came from this first joint detection of a GW signal associated with a GRB. The second half of this chapter focuses on how multi-messenger searches are performed and what they can teach us about the universe.
+We then summarise the current state of GRB science. We will look at the history of GRB astronomy, starting with their accidental discovery and ending with the a summary the key scientific findings that came from this first joint detection of a GW signal associated with a GRB. The second half of this chapter focuses on multi-messenger astronomy, how it is done and what it can teach us about the universe.
 
-The following chapter is on PyGRB. This chapter begins with a look at the theory behind how the pipeline works, and then goes into the detail of how the pipeline works in practice. This chapter ends with a summary of the results from the PyGRB search of the latest observing run, including the detection of GW 170817 and the implications of this on the astrophysical rates of neutron star mergers. 
+Chapter \ref{chap: CBC} is on PyGRB. This chapter begins with a look at the theory behind how the pipeline works, and then goes into the detail of how the pipeline works in practice. This chapter ends with a summary of the results from the PyGRB search of the latest observing run, including the detection of GW 170817 and the implications of this on the astrophysical rates of neutron star mergers. 
 
-We then look at the PyGRB redevelopment work that is currently ongoing. The code used in O2 is now dated and slow by comparison to work that is going on with other matched filter searches. We will look at the work that has already been done to rewrite the PyGRB pipeline to used the optimised code of the PyCBC software package. We will look at the speed improvements this brings, learn why it is scientifically important that the code runs quickly, and also see some of the new tools that integrating into PyCBC has made available for the GRB search. 
+We then look at the PyGRB redevelopment work that is currently ongoing. The code used in O2 is now dated and slow by comparison to work that is going on with other matched filter searches. We will look at the work that has already been done to rewrite the PyGRB pipeline to use the optimised code of the PyCBC software package. We will look at the speed improvements this brings, learn why it is scientifically important that the code runs quickly, and also see some of the new tools that integrating into PyCBC has made available for the GRB search. 
 
 We end by looking at X-pipeline. We will start by understanding the theory behind how \xp works and looking at the results from the \xp analysis of the most recent observing run. The second half of this chapter looks at how machine learning can be used to improve the sensitivity and speed of X-pipeline. We end this chapter with a discussion of future work that can be done on this pipeline, and some of the issues that arise from using machine learning. 
 \end{abstract}
@@ -196,7 +196,7 @@ In a vacuum, the right hand side of this equation becomes zero, and we can recog
 \Box h\mn = 0 \fs
 \end{equation}
 
-\subsection{Physical Effects of Gravitational Waves}
+\subsection{Physical Effects of Gravitational Waves} \label{sec:GW effects}
 The plane wave solution for the vacuum wave equation is
 \begin{equation} \label{plane wave}
 h\mn (x) = \epsilon\mn e^{ik_\alpha x^\alpha} 
@@ -274,20 +274,161 @@ We can see that the polarisation matrix is fully described by two real numbers $
 \item Unknown
 \end{itemize}
 \end{itemize}
+
+
+
 \section{Gravitational Wave Detectors} \label{sec:gw detectors}
-Can cite soaulson and the noises paper
+As shown in section \ref{sec:GW effects}, GWs can be detected by measuring changes in length between two points, and this change in length is proportional to the distance between the two points and the amplitude of the GW. As astrophysical sources are expected to produce GWs with amplitudes of $\sim 10^{-21}$, we must choose two points that are as far apart as practical, at least on the order of kilometers, if the effect is to be measurable. Even then, the change in distance between the two points will still be only a fraction of the wavelength of light. To measure this change, we use a \textit{Michelson interferometer} [\textbf{cite R.Weiss 1972}]. In this section, we will begin with a basic mathematical description of how a Michelson interferometer works. We will then move on to discuss the aspects of the GW detectors that are important for data analysis, namely the detector noise and directional sensitivity.
+
+\subsection{The Michelson Interferometer}
+We will start with an overview of how the interferometers work before going into the mathematical details. Figure \ref{fig:ifo} is a schematic of a Michelson interferometer\footnote{The left and right schematics are the same but each use a different naming convention. Both conventions are useful.}. There is a laser in the West port which is aimed at at the beam splitter in the middle. The beam splitter is a partially reflective mirror which reflects half the photons into the North port and transmits half into the East port. Both interferometer arms are the same length\footnote{Actually the important thing is that the two light rays have opposite phase in each arm when they return to the beam splitter.}. The light that is reflected into the North arm picks up a phase shift such that it is completely out of phase with the light transmitted into the East port. At the end of the North and East ports are mirrors that reflect the light back to the beam splitter. The light is then transmitted/reflected by the beam splitter into either the South or West arms. If the North and East arms have the same length, then the light that from each arm will be in phase in the West port \footnote{Also known as the \emph{Symmetric port}} but out of phase in the South port \footnote{Also known as the \emph{anti-symmetric port} or the \emph{dark port}.}. This means that if the arms are the same length then all the light goes into the West port. However, if the arm lengths differ by some small fraction of the wavelength of the laser light (possibly because of a gravitational wave), then some of the light will travel down the South port and be detected. This is the basic idea behind an interferometer.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=12cm]{michelson.jpg} 
+\caption{Two identical schematics of a Michelson interferometer, each with a different naming convention. \cite{ifo_tech} }
+\label{fig:ifo}
+\end{figure} 
+
+The key feature of an interferometer is that the laser light is out of phase at the dark port. How does this happen? Suppose that the laser light is initially described by the electric field $E_0$. Each time the light encounters the beam splitter or a mirror, it will pick up a change in phase. In figure \ref{fig:ef} we show the naming convention we will use for the different electric fields in the interferometer. The \emph{magnitude of reflection} $r$ and the \emph{magnitude of transmission} $t$ describe the reflectivity of a mirror. We will assume the beam splitter and mirrors are lossless, so $t^2=1-r^2$. Once the light reaches the beam splitter it will either be reflected into the North arm and pick up a phase shift $\varphi_r$, or it will be transmitted into the East arm, in which case it is phase shifted by $\varphi_t$. These electric fields are respectively denoted by
+\begin{equation} \label{E1}
+E_1=r E_0  \exp(i \varphi_r)
+\end{equation}
+\begin{equation} \label{E2}
+E_2=t E_0  \exp(i \varphi_t) \fs
+\end{equation}
+We denote the phase accumulated in the vertical and horizontal arms as $\Phi_1$ and $\Phi_2$ respectively. Thus the electric fields $E_3$ and $E_4$ are given by
+\begin{equation}
+E_3=r E_0  \exp(i( \varphi_r+\Phi_1))
+\end{equation}
+\begin{equation}
+E_4=t E_0  \exp (i( \varphi_t+\Phi_2)) \fs
+\end{equation}
+After going through the bean splitter one more time the light rays pick up another phase shift. We will not assume that the phase shift is the same on the front and back of the mirror, so this time the light shifts by $\varphi_{r'}$. Hence the two light rays $E_5$ and $E_6$ are given by
+\begin{equation}
+E_5= E_0 \bigg(r^2 \exp \big( i ( 2\varphi_r+\Phi_1) \big)+t^2 \exp \big( i(2 \varphi_t+\Phi_2) \big) \bigg)
+\end{equation}
+\begin{equation} \label{E_6}
+E_6=r t E_0 \bigg( \exp \big( i (\varphi_r+\varphi_t+\Phi_1) \big)+ \exp \big( i( \varphi_{r'}+\varphi_t+\Phi_2) \big) \bigg) \fs
+\end{equation}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=12cm]{electric_fields} 
+\caption{This schematic Michelson Interferometer shows our labelling convention for the different Electric fields. \cite{ifo_tech} }
+\label{fig:ef}
+\end{figure} 
+
+These equations give us the phase at every step of the lights path back out of the detector, but we can simplify things. First we define 
+\begin{equation}
+\alpha_+ = \varphi_r + \varphi_t + \frac{1}{2}(\Phi_1+\Phi_2)
+\end{equation}
+\begin{equation}
+\alpha_- = \varphi_r - \varphi_t + \frac{1}{2}(\Phi_1- \Phi_2)
+\end{equation}
+which gives us 
+\begin{equation}
+E_5=E_0 e^{i \alpha_+}(r^2 e^{i \alpha_-}+t^2 e^{-i \alpha_-}) \fs
+\end{equation}
+Similarly, if we define
+\begin{equation}
+\beta_+ = \varphi_t +\frac{1}{2}(\varphi_r+\varphi_{r'}+\Phi_1+\Phi_2)	
+\end{equation}
+\begin{equation}
+\beta_-=\frac{1}{2}(\varphi_r-\varphi_{r'}+\Phi_1-\Phi_2) 
+\end{equation}
+which gives us 
+\begin{equation}
+E_6=r t E_0 e^{i beta_+}( e^{i \beta_-}+ e^{-i \beta_-}) \fs
+\end{equation}
+For the case of a 50:50 beam splitter, we have $r=t=1/\sqrt{2}$. Thus we can write
+\begin{equation}
+E_5=E_0 e^{i\alpha_+} \cos(\alpha_-)
+\end{equation}
+\begin{equation}
+E_6=E_0 e^{i\beta_+} \cos(\beta_-) \fs
+\end{equation}
+Conservation of energy means we must have $|E_0|^2=|E_5|^2+|E_6|^2$, hence
+\begin{equation}
+\cos^2(\alpha_-)+\cos^2(\beta_-)=1 \fs
+\end{equation}
+Using the identity $\cos^2(x)=\cos(2x)+1$ we can write this condition as
+\begin{equation}
+\cos(2\alpha_-)=\cos(2\beta_-) \fs
+\end{equation}
+Hence we have $2\alpha_-=2\beta_- +\pi(2N+1)$, where $B\in \mathbb{Z}$, which we can rearrange to obtain
+\begin{equation} \label{phase_cond}
+\frac{1}{2}(\varphi_r+\varphi_{r'})-\varphi_t=(2N+1)\frac{\pi}{2} \fs
+\end{equation}
+In most cases we do not know or need to know what the exact phase factors are and can choose any such that \ref{phase_cond} is satisfied. We will use $\varphi_r=\varphi_{r'}=0$ and $\varphi_t=\pi/2$, %Using these values in \ref{E1} and \ref{E2} with an initial electric field $E_i$, we see that the reflected $E_r$ and transmitted $E_t$ beams out of the beam splitter are described by
+%\begin{equation}
+%E_r=r E_i \text{,} \hspace{20pt} E_t=i t E_i \fs 
+%\end{equation} 
+so that the electric field in the south port, given by \ref{E_6}, becomes
+\begin{equation}
+E_6=E_0 \frac{i}{2} \left( e^{i\Phi_1} + e^{i\Phi_2}  \right)=E_0 \frac{i}{2} \left( e^{2 i k L_N} + e^{2 i k L_E}  \right)
+\end{equation}
+where $L_N$ and$ L_E$ are the lengths of the North and East interferometer arms, $k$ is the wavenumber of the laser light, and we have used the fact that the phase shift obtained by the light traveling down the interferometer arms and back again is $\Phi_1=2 k L_N$ and $\Phi_2=2 k L_E$. We can simplify these expressions by writing them in terms of the average and differential arm lengths 
+\begin{equation}
+\bar{L}=\frac{L_N+L_E}{2}, \hspace{20pt} \Delta L =L_N-L_E \fs
+\end{equation}
+From this we obtain
+\begin{equation}
+2L_N=2\bar{L}+\Delta L, \hspace{20pt} 2L_E=2\bar{L}-\Delta L \fs 
+\end{equation}
+Thus, the electric field in the South port is given by
+\begin{equation}
+E_6=E_0\frac{i}{2}e^{2ik\bar{L}}\left( e^{ik\Delta L} + e^{-ik\Delta L} \right)=iE_0e^{2ik\bar{L}}\cos(ik\Delta L) \fs
+\end{equation}
+The photodetector in the South port produces a signal proportional to $E_6 E_6^*$, which gives 
+\begin{equation}
+S=E_6 E_6^*=P_0 \cos^2(k \Delta L)=P_0 \cos^2(2\pi \Delta L / \lambda) 
+\end{equation}
+where $P_0=E_0 E_0^*$. In figure \ref{fig:power_output} we see how the output power varies with a change in the differential arm length. We can see that the output signal varies from zero up to the input power with a period of $\Delta L/\lambda=0.5$. At the point $\Delta L/\lambda=0.25$, there is no light entering the south port. We call this point the \emph{Dark Fringe}. As long as $\Delta L/\lambda<0.25$, i.e. the displacement caused by a GW is sufficiently small, then the amount of power at the dark port is proportional to the differential arm length, giving us a way to detect a passing GW.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=12cm]{detector_output} 
+\caption{This plot shows how the detector output varies with the change in length of the interferoemeter arms. \cite{ifo_tech} }
+\label{fig:power_output}
+\end{figure}
+
+\subsection{The Global Network of Interferometers}
 \begin{itemize}
-\item Michelson Interferometer (cite R.Weiss 1972 paper to look smart)
-\item Measure change in output power due to interference in the arms
-\item Noise sources and how they are mitigated
-\begin{itemize}
-\item Autocorrelation function
-\item PSD and ASD (tie back to the noise budget) 
-\item Fundamental noise
-\item Environmental noise
-\item Instrumental noise
-\item Noise budget
+\item LIGO
+\item LIGO India
+\item Virgo
+\item Kagra
+\item GEO
 \end{itemize}
+
+\subsection{Interferometer Noise}
+The stationary noise in the detector is measured using the \emph{power spectral density} (PSD). Let $s=s(\tau)$ be the detector output, the PSD is defined as the Fourier transform of the autocorrelation function of $s$
+\begin{equation} \label{eqn:PSD}
+\frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
+\end{equation}
+The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment sensing and control system (ASC), and thermal noise from Michelson interferometer (MICH), the mirror suspension (thermal Susp) and signal recycling cavity length (SRCL). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see [\textbf{cite LIGO noise paper}].
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=16cm]{L1-ASD-20170820.png} 
+\caption{\textbf{ASD for LIGO Livingston Observatory.} Here we see the ASD for the LIGO Livingston Observatory as it was on the 20th August 2017.  }
+\label{fig:asd}
+\end{figure}
+
+\begin{landscape}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=22cm]{L1-NOISE_BUDGET-20170820.png} 
+\caption{\textbf{Noise Budget for LIGO Livingston Observatory.} Here we have the noise budget for the LIGO Livingston Observatory on 20th August 2017. The noise sources in LIGO detectors are descirbed in detail in [\textbf{cite noise budget paper}].}
+\label{fig:noise budget}
+\end{figure}
+\end{landscape}
+
+
+\subsection{Interferometer Antenna Pattern} 
+
+\begin{itemize}
 \item Detector nulls
 \end{itemize}
 

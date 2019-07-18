@@ -250,7 +250,7 @@ To make things even simpler, assume the wave is traveling in the z-direction, th
 \[
 h\mn (x)
 =
-\begin{pmatrix}
+\begin{pmatrix} \label{gw solution}
 0 & 0 & 0 & 0 \\
 0 & \epsilon_+ & \epsilon_\times & 0 \\
 0 & \epsilon_\times & -\epsilon_+ & 0 \\
@@ -260,12 +260,26 @@ e^{(i\omega (z-t))} \fs
 \] 
 We can see that the polarisation matrix is fully described by two real numbers $\epsilon_+$ and $\epsilon_\times$. We call these the plus and cross polarisation of the gravitational wave.
 
-\begin{itemize}
-\item delta l formula. With $\varphi^\mu = x_1^\mu - x_2^\mu = (0,\vec{\varphi})$ we have
-\begin{equation} \label{deltaL}
-\Delta L = \sqrt{\vec{\varphi}^2 + h_{ij}\varphi^i \varphi^j} = | \vec{\varphi} | (1 + \frac{1}{2}h_{ij}\varphi^i \varphi^j / \vec{\varphi}^2  )
+To understand what these two polarisations mean physically, consider two particles separated by $\varphi^\mu = x_1^\mu - x_2^\mu = (0,\vec{\varphi})$. The proper distance between these two points is given by
+\begin{equation}
+\Delta L = \sqrt{g\mn dx^\mu dx^\nu} = \sqrt{\vec{\varphi}^2 + h_{ij}\varphi^i \varphi^j} = | \vec{\varphi} | (1 + \frac{1}{2}h_{ij}\varphi^i \varphi^j / \vec{\varphi}^2 + \mathcal{O}(h^2) ) \fs
+\end{equation} 
+From this we see that the fractional change in distance between the two particles is
+\begin{equation}
+\frac{1}{2}h_{ij}\hat{\varphi}^i \hat{\varphi}^j = \frac{1}{2}\left( \epsilon_+ \left[ (\hat{\varphi}^1)^2 + (\hat{\varphi}^2)^2 \right] +2\epsilon_\times \hat{\varphi}^1\hat{\varphi}^2 \right) e^{(i\omega (z-t))}
 \end{equation}
-\item polarisation plots
+where $\hat{\varphi}^i = \varphi^i/|\varphi|$. From this formula, it becomes clear (with some thought) that the plus polarisation causes the x-axis and y-axis seperation of particles to increase and then decrease $180^circ$ out of phase with each other. The cross polarisation has the same effect, but offset by $45^\circ$. This is shown more clearly in figure \ref{fig:polarisations}. 
+
+\begin{figure}[ht]
+\centering 
+\includegraphics[width=12cm]{polarisations.png} 
+\caption{ The plus and cross polarisation effects on a ring of test particles. \cite{mckechan-thesis} }
+\label{fig:polarisations}
+\end{figure} 
+
+
+\begin{itemize}
+\item refer to polarisation plots
 \end{itemize}
 
 \section{Gravitational Waves Sources} 
@@ -1445,9 +1459,7 @@ These changes will make the rewrite as sensitive as the old code, but we also ne
 
 The three things mentioned above will give the new PyGRB pipeline all the same functionality as the old code, but it will be faster and have the new features mentioned in section \ref{sec:new pygrb tools}. We can then turn our attention to new methods to improve the pipeline, and new science that can be done. The first thing is that at this point it should then be possible to analyse a GRB on a timescale of hours, significantly increasing the amount of science that can be done with a positive detection. We could also use PyGRB to followup well localised triggers from the all-sky search, as with a network of three or more detectors, the localisation can be better than the localisation of some GRBs. This could be built into the all-sky pipeline, as a hierarchical search, where the coincident detection statistic is used to determine candidates and localisation for the coherent followup. With more detectors, such as KAGRA and LIGO India, the case for a hierarchical search strengthens as localisation improves significantly with the number of detectors and so does the coherent SNR.
 
-\begin{itemize} 
-\item use p astro
-\end{itemize}
+There are also plans to make an astrophysically motivated detection statistic. This means that templates of sources that astrophysical models predict are less common will be downweighted, while sources that are expected to be common will not be. This is a natural next step for a coherent search, as the coherent SNR determines whether a trigger is consistent with the state of the detector network at the time of the trigger, but does not determine if the trigger is consistent with the current best models of the GW source populations.
 
 
 \chapter{A Search for Unmodelled Gravitaional Wave Signals using Machine Learning} \label{chap: mva}

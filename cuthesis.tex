@@ -116,8 +116,8 @@ We end by looking at X-pipeline. We will start by understanding the theory behin
 \end{itemize}
 
 
-\chapter{Gravitational Wave Astronomy in a Nutshell} \label{chap: gw bg}
-
+\chapter{Introduction to Gravitational Wave Astronomy} \label{chap: gw bg}
+In this chapter we will run through the basics of gravitational wave (GW) astronomy. We will start by showing that GWs are a natural consequence of general relativity. We will then look at sources of GWs, including those that have already been detected and those that have not been detected yet. We will then look at GW detectors, focusing on those aspects that are important for data analysis, which will be discussed in later chapters. 
 
 
 \section{Gravitational waves}
@@ -400,42 +400,8 @@ where $P_0=E_0 E_0^*$. In figure \ref{fig:power_output} we see how the output po
 \label{fig:power_output}
 \end{figure}
 
-\subsection{The Global Network of Interferometers}
-\begin{itemize}
-\item LIGO
-\item LIGO India
-\item Virgo
-\item Kagra
-\item GEO
-\end{itemize}
-
-\subsection{Interferometer Noise}
-The stationary noise in the detector is measured using the \emph{power spectral density} (PSD). Let $s=s(\tau)$ be the detector output, the PSD is defined as the Fourier transform of the autocorrelation function of $s$
-\begin{equation} \label{eqn:PSD}
-\frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
-\end{equation}
-The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the angular control systems (ASC), Michelson (MICH) and signal recycling cavity length (SRCL) controls, and the mirror suspension thermal noise (thermal Susp). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see [\textbf{cite LIGO noise paper}].
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=16cm]{L1-ASD-20170820.png} 
-\caption{\textbf{ASD for LIGO Livingston Observatory.} Plotted in blue is the ASD for the LIGO Livingston Observatory as it was on the 20th August 2017. In grey we see the Gravitational Wave Interferometer Noise Curve (GWINC), a theoretical model of all the noise in the detector, as well as the O2 projected noise curve in orange. }
-\label{fig:asd}
-\end{figure}
-
-\begin{landscape}
-\begin{figure}[ht]
-\centering
-\includegraphics[width=22cm]{L1-NOISE_BUDGET-20170820.png} 
-\caption{\textbf{Noise Budget for LIGO Livingston Observatory.} Here we have the noise budget for the LIGO Livingston Observatory on 20th August 2017. The noise sources in LIGO detectors are descirbed in detail in [\textbf{cite noise budget paper}].}
-\label{fig:noise budget}
-\end{figure}
-\end{landscape}
-
-Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal, as we will see it later chapters.
-
 \subsection{Interferometer Antenna Pattern} 
-We saw in section \ref{sec:mich} that interferometer output depends on the phase shift induced by a change in the differential arm length, and we saw in equation \ref{deltaL} a formula for the change in distance between two point particles. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
+The response of an interferometer to a passing GW depends on the direction that the GW is approaching from. In this section we will see how interferometer sensitivity varies over the sky. The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
 \begin{equation}
 \Delta L_x = L (1 + \frac{1}{2}h_{xx})) + \mathcal{O}(h^2)
 \end{equation} 
@@ -500,7 +466,10 @@ F_+(\theta,\phi) = \frac{1}{2} (1+\cos^2\theta)\cos 2\phi
 \begin{equation}
 F_\times(\theta,\phi) = \cos \theta \sin 2\phi \fs
 \end{equation}
-From these we see that the sensitivity of an interferometer varies depending on the sky position of the source of the GW. In particular, we can see that interferometers have blind spots, known as the \textit{null} of the detector. For example, the plus polarisation of a GW coming from an angle $\phi=\frac{\pi}{4}$ will not be detected. In figure \ref{fig:antenna pattern}, we can see how the sensitivity of an interferometer with arms aligned with the x and y axes varies over the sky. 
+From these we see that the sensitivity of an interferometer varies depending on the sky position of the source of the GW. In particular, we can see that interferometers have blind spots, known as the \textit{null} of the detector. For example, the plus polarisation of a GW coming from an angle $\phi=\frac{\pi}{4}$ will not be detected. In figure \ref{fig:antenna pattern}, we can see how the sensitivity of an interferometer with arms aligned with the x and y axes varies over the sky. In later chapters, we will see how the variation in sensitivity of each detector to different parts of the sky can be used to our advantage, and make a more sensitive GW search.
+
+
+
 %From equation \ref{deltaL}, we can see that the equation of motion for a point particle at $\varphi$
 %\begin{equation}
 %\ddot{\varphi}^i = \frac{1}{2} \ddot{h}_{ij} \varphi^j \fs
@@ -522,6 +491,49 @@ From these we see that the sensitivity of an interferometer varies depending on 
 \caption{\textbf{Interferometer Antenna Pattern.} Here we see the antenna response on an interferometer with arms aligned with the x and y axes. The detector is most sensitive to GWs coming from perpendicular to the detector plane, while GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector. \textbf{cite Sathya and Schutz living review} }
 \label{fig:antenna pattern}
 \end{figure}
+
+\subsection{Interferometer Noise}
+The stationary noise in the detector is measured using the \emph{power spectral density} (PSD). Let $s=s(\tau)$ be the detector output, the PSD is defined as the Fourier transform of the autocorrelation function of $s$
+\begin{equation} \label{eqn:PSD}
+\frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
+\end{equation}
+The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw detectors} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the angular control systems (ASC), Michelson (MICH) and signal recycling cavity length (SRCL) controls, and the mirror suspension thermal noise (thermal Susp). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see [\textbf{cite LIGO noise paper}].
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=16cm]{L1-ASD-20170820.png} 
+\caption{\textbf{ASD for LIGO Livingston Observatory.} Plotted in blue is the ASD for the LIGO Livingston Observatory as it was on the 20th August 2017. In grey we see the Gravitational Wave Interferometer Noise Curve (GWINC), a theoretical model of all the noise in the detector, as well as the O2 projected noise curve in orange. }
+\label{fig:asd}
+\end{figure}
+
+\begin{landscape}
+\begin{figure}[ht]
+\centering
+\includegraphics[width=22cm]{L1-NOISE_BUDGET-20170820.png} 
+\caption{\textbf{Noise Budget for LIGO Livingston Observatory.} Here we have the noise budget for the LIGO Livingston Observatory on 20th August 2017. The noise sources in LIGO detectors are descirbed in detail in [\textbf{cite noise budget paper}].}
+\label{fig:noise budget}
+\end{figure}
+\end{landscape}
+
+Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal, as we will see it later chapters.
+
+
+\subsection{The Global Network of Interferometers} \label{sec:gw detectors}
+In this section we will quickly summarise the current generation of detectors, including those that should be part of the global network in the near future.
+\paragraph{LIGO}
+The Laser Interferometer Gravitational-Wave Observatory (LIGO), currently has two detectors, one at Hanford, Washington, and the other at Livingston, Louisiana. The light travel time between the detectors is about 10 ms, reducing the chance of correlated noise and allowing for some triangulation to determine the sky position of a source. The LIGO detectors have 4 km long arms. The arms contain Fabry-Perot cavities, mirrors at each end of the arms that reflect the light back and forth many times. This effectively increases the length of the arms to $L_\text{eff}\sim1120$ km. Another LIGO detector is being constructed in India, which should be operational by 2024. This detector will be identical to the other two detectors, but by being built far from the other detectors in the network, will significantly increase the ability of the network to localise GW sources using triangulation.
+
+\paragraph{Virgo}
+Virgo is a 3 km interferomter, similar but not identical to the LIGO detectors. It is based in Cascina, Italy. Most of the results mentioned in this thesis used the LIGO-Virgo network. 
+
+\paragraph{GEO600}
+A 600 m interferometer near Starstedt in Germany. Due to the short detector arms compared to the LIGO and Virgo interferometers, GEO600 is typically not used when analysing GW network data, but has been vital for the development of new technology for the LIGO and Virgo detectors. 
+
+\paragraph{Kagra}
+The Kamioka Gravitational Wave Detector (KAGRA) is a Japanese interferometer being built entirely underground, with 3 km long arms, and will have cryogenic mirrors. It is hoped that KAGRA will be operational by the end of 2019.
+
+
+
 
 
 \chapter{Gamma-Ray Bursts} \label{chap:GRBs}
@@ -1261,7 +1273,7 @@ Note that this reweighting only down-weights triggers with a high $\chi^2$ or a 
 
 
 
-\subsection{Event Significance} 
+\subsection{Event Significance} \label{sec:event sig}
 We use signal consistency checks to remove glitches from the trigger list, and we use the reweighted SNR to rank the surviving triggers in order of likelihood of being a real GW signal. The final step is to determine the significance of the surviving triggers, i.e. how often will we find glitches with a given reweighted SNR that have survived the signal consistency checks. We do this by calculating the false alarm probability (FAP) for each trigger. The FAP depends on the data quality at the time being analysed, as poor data quality can lead to more high SNR glitches which makes finding a high SNR trigger less significant. For this reason, we must estimate the rate of high SNR glitches at the time of the GRB in order to determine the significance of a trigger. In this section we outline the process used to calculate event significance. 
 
 As detector noise is not stationary, we calculate the FAP by using the data around the time of the GRB. If a GW is there, then it is assumed to be in the window starting five seconds before and ending one second after the GRB trigger time. This window would allow the detection of GWs from most GW models associated with short GRBs. We call this 6s window the \textit{on-source} window. The loudest\footnote{Here \textit{loudest} means highest reweighted SNR.} event, with the loudest template, in the on-source is taken as our trigger. 
@@ -1397,7 +1409,9 @@ In the previous section we discussed the reasons why rewriting PyGRB was necessa
 \end{itemize}
 
 
-\subsection{New Data Analysis Tools}
+\subsection{New Data Analysis Tools} \label{sec:new pygrb tools}
+Integrating PyGRB into PyCBC makes many tools that are standard for the all-sky search available for the GRB search. In this section we describe two of these new tools, auto-gating and 
+
 \begin{itemize}
 \item Denty bins
 \item Autogating
@@ -1421,13 +1435,17 @@ In the previous section we discussed the reasons why rewriting PyGRB was necessa
 \end{itemize}
 
 \section{Future Plans}
-\begin{itemize}
-\item Sky grid
-\item Time slides
-\item More detectors strengthens the case for coherent search
-\item Hierarchical search, using coincident search to find location 
-\item Include astrophysical priors in the detection statistic
-\item Expected rates (from structured jet paper, one in 20 BNS mergers detected with GWs will have a GRB counterpart)
+We have shown that the work to integrate PyGRB into PyCBC has reached a significant milestone in being able to analyse a GRB and achieve reasonable results. We have also shown that it is significantly faster than the old code and described the new tools that are available for the PyGRB search. We end this chapter by looking at what there is left to be done to make the new pipeline as sensitive as the old one, and what can be done after this to make PyGRB even more sensitive. 
+
+In order for the new code to achieve the same confidence in a GRB trigger as the old code does, we must implement timeslides. Without timeslides, we can only achieve a FAP of about 1/1000, assuming a 6 second on-source and approximately 1 hour of off-source data. With timeslides implemented, a FAP comparable to the old code will be achievable. It should be noted that the relative speed increase seen with the new code is likely to be lower when using timeslides. This is because short timeslides to not require the matched-filtering step to be repeated, as mentioned in section \ref{sec:event sig}, and this is the step where most of the speed increase was achieved. Long time slides are only performed for triggers that have a very low FAP with short slides, and these do require the data to be matched filtered again, so some speed increase will be seen there.
+
+The final thing required to make the rewrite as sensitive as the old code is to incorporate the fact that GRB GW signals are expected to be face on, as described in section \ref{sec:circ pol}. This led to a 3\% increase in the sensitivity of the old code, and we expect the same improvement with the rewrite. 
+
+These changes will make the rewrite as sensitive as the old code, but we also need to be able to search over a sky patch. On Swift GRBs are localised well enough that PyGRB can search a single sky point, meaning that the new code cannot analyse the majority of reported GRBs which are not so well localised. Work is currently ongoing to add this functionality, and we expect it to be incorporated into the new code immanently. 
+
+The three things mentioned above will give the new PyGRB pipeline all the same functionality as the old code, but it will be faster and have the new features mentioned in section \ref{sec:new pygrb tools}. We can then turn our attention to new methods to improve the pipeline, and new science that can be done. The first thing is that at this point it should then be possible to analyse a GRB on a timescale of hours, significantly increasing the amount of science that can be done with a positive detection. We could also use PyGRB to followup well localised triggers from the all-sky search, as with a network of three or more detectors, the localisation can be better than the localisation of some GRBs. This could be built into the all-sky pipeline, as a hierarchical search, where the coincident detection statistic is used to determine candidates and localisation for the coherent followup. With more detectors, such as KAGRA and LIGO India, the case for a hierarchical search strengthens as localisation improves significantly with the number of detectors and so does the coherent SNR.
+
+\begin{itemize} 
 \item use p astro
 \end{itemize}
 

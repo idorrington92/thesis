@@ -1,5 +1,5 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}Gravitational Wave Astronomy in a Nutshell}{2}{chapter.2}
+\contentsline {chapter}{\numberline {2}Introduction to Gravitational Wave Astronomy}{2}{chapter.2}
 \contentsline {section}{\numberline {2.1}Gravitational waves}{2}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Linearised Gravity}{2}{subsection.2.1.1}
 \contentsline {subsection}{\numberline {2.1.2}Gauge Transformation}{3}{subsection.2.1.2}
@@ -7,9 +7,13 @@
 \contentsline {section}{\numberline {2.2}Gravitational Waves Sources}{5}{section.2.2}
 \contentsline {section}{\numberline {2.3}Gravitational Wave Detectors}{6}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}The Michelson Interferometer}{6}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}The Global Network of Interferometers}{10}{subsection.2.3.2}
-\contentsline {subsection}{\numberline {2.3.3}Interferometer Noise}{10}{subsection.2.3.3}
-\contentsline {subsection}{\numberline {2.3.4}Interferometer Antenna Pattern}{13}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.2}Interferometer Antenna Pattern}{10}{subsection.2.3.2}
+\contentsline {subsection}{\numberline {2.3.3}Interferometer Noise}{12}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}The Global Network of Interferometers}{15}{subsection.2.3.4}
+\contentsline {paragraph}{LIGO}{15}{section*.6}
+\contentsline {paragraph}{Virgo}{15}{section*.7}
+\contentsline {paragraph}{GEO600}{15}{section*.8}
+\contentsline {paragraph}{Kagra}{15}{section*.9}
 \contentsline {chapter}{\numberline {3}Gamma-Ray Bursts}{16}{chapter.3}
 \contentsline {section}{\numberline {3.1}The History of Gamma-ray Burst Astronomy}{16}{section.3.1}
 \contentsline {subsection}{\numberline {3.1.1}Cold War Tension and an Unexpected Discovery}{16}{subsection.3.1.1}
@@ -25,16 +29,16 @@
 \contentsline {subsection}{\numberline {3.2.2}Kilonova Observation}{35}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}Structured Jets}{35}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Other Scientific Results}{38}{subsection.3.2.4}
-\contentsline {subsubsection}{Speed of Gravity}{38}{section*.6}
-\contentsline {subsubsection}{Hubble Constant}{41}{section*.7}
-\contentsline {subsubsection}{Rates}{41}{section*.8}
+\contentsline {subsubsection}{Speed of Gravity}{38}{section*.10}
+\contentsline {subsubsection}{Hubble Constant}{41}{section*.11}
+\contentsline {subsubsection}{Rates}{41}{section*.12}
 \contentsline {section}{\numberline {3.3}GRB Progenitors}{41}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Compact Binary Coalescence}{41}{subsection.3.3.1}
-\contentsline {paragraph}{NSBH Mergers}{42}{section*.9}
-\contentsline {paragraph}{BNS Mergers}{42}{section*.10}
+\contentsline {paragraph}{NSBH Mergers}{42}{section*.13}
+\contentsline {paragraph}{BNS Mergers}{42}{section*.14}
 \contentsline {subsection}{\numberline {3.3.2}Core Collapse}{42}{subsection.3.3.2}
-\contentsline {paragraph}{Rotational Instabilities of Proto-Neutron Stars}{43}{section*.11}
-\contentsline {paragraph}{Non-axisymmetric Instabilities of Accretion Disks}{43}{section*.12}
+\contentsline {paragraph}{Rotational Instabilities of Proto-Neutron Stars}{43}{section*.15}
+\contentsline {paragraph}{Non-axisymmetric Instabilities of Accretion Disks}{43}{section*.16}
 \contentsline {section}{\numberline {3.4}GRB Detectors}{43}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Swift}{43}{subsection.3.4.1}
 \contentsline {subsection}{\numberline {3.4.2}Fermi}{44}{subsection.3.4.2}
@@ -43,12 +47,12 @@
 \contentsline {subsection}{\numberline {3.5.1}Triggered and Untriggered Searches}{44}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Modeled and Burst Searches}{45}{subsection.3.5.2}
 \contentsline {section}{\numberline {3.6}GRB Astrophysics with Gravitational Waves}{45}{section.3.6}
-\contentsline {paragraph}{Short GRB Progenitors}{45}{section*.13}
-\contentsline {paragraph}{Long GRB Progenitors}{46}{section*.14}
-\contentsline {paragraph}{Populations}{46}{section*.15}
-\contentsline {paragraph}{GRB Distance and Luminosity}{46}{section*.16}
-\contentsline {paragraph}{Jet Structure}{46}{section*.17}
-\contentsline {paragraph}{Neutron Star Equation of State}{47}{section*.18}
+\contentsline {paragraph}{Short GRB Progenitors}{45}{section*.17}
+\contentsline {paragraph}{Long GRB Progenitors}{46}{section*.18}
+\contentsline {paragraph}{Populations}{46}{section*.19}
+\contentsline {paragraph}{GRB Distance and Luminosity}{46}{section*.20}
+\contentsline {paragraph}{Jet Structure}{46}{section*.21}
+\contentsline {paragraph}{Neutron Star Equation of State}{47}{section*.22}
 \contentsline {chapter}{\numberline {4}A Targeted Search for Gravitational Waves associated with Short GRBs}{48}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{48}{section.4.1}
 \contentsline {section}{\numberline {4.2}Coherent Matched Filtering}{49}{section.4.2}
@@ -58,10 +62,10 @@
 \contentsline {subsection}{\numberline {4.2.4}Null SNR}{55}{subsection.4.2.4}
 \contentsline {subsection}{\numberline {4.2.5}Searching for Face on Signals}{55}{subsection.4.2.5}
 \contentsline {subsection}{\numberline {4.2.6}Coherent $\chi ^2$ Tests}{57}{subsection.4.2.6}
-\contentsline {subsubsection}{Signal Consistency Tests }{57}{section*.19}
-\contentsline {subsubsection}{The Coherent Bank $\chi ^2$ Test}{60}{section*.20}
-\contentsline {subsubsection}{The Coherent Autocorrelation $\chi ^2$ Test}{60}{section*.21}
-\contentsline {subsubsection}{The Coherent Power $\chi ^2$ Test}{60}{section*.22}
+\contentsline {subsubsection}{Signal Consistency Tests }{57}{section*.23}
+\contentsline {subsubsection}{The Coherent Bank $\chi ^2$ Test}{60}{section*.24}
+\contentsline {subsubsection}{The Coherent Autocorrelation $\chi ^2$ Test}{60}{section*.25}
+\contentsline {subsubsection}{The Coherent Power $\chi ^2$ Test}{60}{section*.26}
 \contentsline {section}{\numberline {4.3}The PyGRB Workflow}{61}{section.4.3}
 \contentsline {subsection}{\numberline {4.3.1}Removing Noise}{61}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Reweighted SNR}{62}{subsection.4.3.2}
@@ -81,31 +85,31 @@
 \contentsline {subsection}{\numberline {5.2.3}Detection Statistic}{76}{subsection.5.2.3}
 \contentsline {subsection}{\numberline {5.2.4}Speed Gains}{76}{subsection.5.2.4}
 \contentsline {section}{\numberline {5.3}Future Plans}{76}{section.5.3}
-\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitaional Wave Signals using Machine Learning}{77}{chapter.6}
-\contentsline {section}{\numberline {6.1}X-pipeline}{77}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{80}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{81}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Null Energy}{82}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{83}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{84}{subsection.6.1.5}
-\contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{84}{subsection.6.1.6}
-\contentsline {section}{\numberline {6.2}Machine Learning}{85}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{87}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{90}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{91}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{94}{subsection.6.2.4}
-\contentsline {subsubsection}{Training Set}{95}{section*.23}
-\contentsline {subsubsection}{BDT Parameters}{95}{section*.24}
-\contentsline {subsubsection}{Result of Optimisation}{98}{section*.25}
-\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{98}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Analysis Setup}{101}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{101}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{105}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Discussion and Future Work}{107}{subsection.6.3.4}
-\contentsline {subsubsection}{Low p-value Triggers}{107}{section*.26}
-\contentsline {subsubsection}{Long Injections}{107}{section*.27}
-\contentsline {subsubsection}{Machine Learning Developments}{111}{section*.28}
-\contentsline {chapter}{Appendices}{113}{section*.29}
-\contentsline {section}{\numberline {.1}General Relativity}{113}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{113}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}MVA Results Tables}{116}{section.Alph0.3}
+\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitaional Wave Signals using Machine Learning}{78}{chapter.6}
+\contentsline {section}{\numberline {6.1}X-pipeline}{78}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{81}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{82}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Null Energy}{83}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{84}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{85}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{85}{subsection.6.1.6}
+\contentsline {section}{\numberline {6.2}Machine Learning}{86}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{88}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{91}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{92}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{95}{subsection.6.2.4}
+\contentsline {subsubsection}{Training Set}{96}{section*.27}
+\contentsline {subsubsection}{BDT Parameters}{96}{section*.28}
+\contentsline {subsubsection}{Result of Optimisation}{99}{section*.29}
+\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{99}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Analysis Setup}{102}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{102}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{106}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Discussion and Future Work}{108}{subsection.6.3.4}
+\contentsline {subsubsection}{Low p-value Triggers}{108}{section*.30}
+\contentsline {subsubsection}{Long Injections}{108}{section*.31}
+\contentsline {subsubsection}{Machine Learning Developments}{112}{section*.32}
+\contentsline {chapter}{Appendices}{114}{section*.33}
+\contentsline {section}{\numberline {.1}General Relativity}{114}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{114}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}MVA Results Tables}{117}{section.Alph0.3}

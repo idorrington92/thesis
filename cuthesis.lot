@@ -4,8 +4,8 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces An example of MVA training data. Each event has a label and several attributes. The training sets we actually use have up to 15 attributes and thousands of events.}}{88}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces The attributes used by the machine learning classifier.}}{89}{table.6.2}
-\contentsline {table}{\numberline {3}{\ignorespaces \textbf {Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for X-pipeline and the MVA. }}{116}{table.Alph0.3}
-\contentsline {table}{\numberline {4}{\ignorespaces \textbf {MVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{117}{table.Alph0.4}
-\contentsline {table}{\numberline {5}{\ignorespaces \textbf {X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{118}{table.Alph0.5}
+\contentsline {table}{\numberline {6.1}{\ignorespaces An example of MVA training data. Each event has a label and several attributes. The training sets we actually use have up to 15 attributes and thousands of events.}}{89}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces The attributes used by the machine learning classifier.}}{90}{table.6.2}
+\contentsline {table}{\numberline {3}{\ignorespaces \textbf {Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for X-pipeline and the MVA. }}{117}{table.Alph0.3}
+\contentsline {table}{\numberline {4}{\ignorespaces \textbf {MVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{118}{table.Alph0.4}
+\contentsline {table}{\numberline {5}{\ignorespaces \textbf {X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{119}{table.Alph0.5}

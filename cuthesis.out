@@ -1,5 +1,5 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Gravitational Wave Astronomy in a Nutshell}{}% 2
+\BOOKMARK [0][-]{chapter.2}{Introduction to Gravitational Wave Astronomy}{}% 2
 \BOOKMARK [1][-]{section.2.1}{Gravitational waves}{chapter.2}% 3
 \BOOKMARK [2][-]{subsection.2.1.1}{Linearised Gravity}{section.2.1}% 4
 \BOOKMARK [2][-]{subsection.2.1.2}{Gauge Transformation}{section.2.1}% 5
@@ -7,9 +7,9 @@
 \BOOKMARK [1][-]{section.2.2}{Gravitational Waves Sources}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.3}{Gravitational Wave Detectors}{chapter.2}% 8
 \BOOKMARK [2][-]{subsection.2.3.1}{The Michelson Interferometer}{section.2.3}% 9
-\BOOKMARK [2][-]{subsection.2.3.2}{The Global Network of Interferometers}{section.2.3}% 10
+\BOOKMARK [2][-]{subsection.2.3.2}{Interferometer Antenna Pattern}{section.2.3}% 10
 \BOOKMARK [2][-]{subsection.2.3.3}{Interferometer Noise}{section.2.3}% 11
-\BOOKMARK [2][-]{subsection.2.3.4}{Interferometer Antenna Pattern}{section.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.3.4}{The Global Network of Interferometers}{section.2.3}% 12
 \BOOKMARK [0][-]{chapter.3}{Gamma-Ray Bursts}{}% 13
 \BOOKMARK [1][-]{section.3.1}{The History of Gamma-ray Burst Astronomy}{chapter.3}% 14
 \BOOKMARK [2][-]{subsection.3.1.1}{Cold War Tension and an Unexpected Discovery}{section.3.1}% 15
@@ -82,7 +82,7 @@
 \BOOKMARK [2][-]{subsection.6.3.2}{Sensitivity and Speed Comparison}{section.6.3}% 82
 \BOOKMARK [2][-]{subsection.6.3.3}{XTMVA Search Results}{section.6.3}% 83
 \BOOKMARK [2][-]{subsection.6.3.4}{Discussion and Future Work}{section.6.3}% 84
-\BOOKMARK [0][-]{section*.29}{Appendices}{}% 85
-\BOOKMARK [1][-]{section.Alph0.1}{General Relativity}{section*.29}% 86
-\BOOKMARK [1][-]{section.Alph0.2}{PyGRB O2 Result Tables}{section*.29}% 87
-\BOOKMARK [1][-]{section.Alph0.3}{MVA Results Tables}{section*.29}% 88
+\BOOKMARK [0][-]{section*.33}{Appendices}{}% 85
+\BOOKMARK [1][-]{section.Alph0.1}{General Relativity}{section*.33}% 86
+\BOOKMARK [1][-]{section.Alph0.2}{PyGRB O2 Result Tables}{section*.33}% 87
+\BOOKMARK [1][-]{section.Alph0.3}{MVA Results Tables}{section*.33}% 88

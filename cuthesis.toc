@@ -22,37 +22,37 @@
 \contentsline {subsection}{\numberline {3.1.4}BeppoSAX and the First Afterglows}{21}{subsection.3.1.4}
 \contentsline {subsection}{\numberline {3.1.5}The Fireball Model}{23}{subsection.3.1.5}
 \contentsline {subsection}{\numberline {3.1.6}Jets}{24}{subsection.3.1.6}
-\contentsline {subsection}{\numberline {3.1.7}The Long GRB-Supernova Connection}{25}{subsection.3.1.7}
-\contentsline {subsection}{\numberline {3.1.8}The Short GRB-Compact Binary Connection}{27}{subsection.3.1.8}
+\contentsline {subsection}{\numberline {3.1.7}The Long GRB-Supernova Connection}{26}{subsection.3.1.7}
+\contentsline {subsection}{\numberline {3.1.8}The Short GRB-Compact Binary Connection}{26}{subsection.3.1.8}
 \contentsline {section}{\numberline {3.2}Gravitational Waves and GRB 170817A}{29}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Initial Observation and Followup}{30}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Kilonova Observation}{35}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Structured Jets}{35}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Other Scientific Results}{38}{subsection.3.2.4}
-\contentsline {subsubsection}{Speed of Gravity}{38}{section*.10}
-\contentsline {subsubsection}{Hubble Constant}{41}{section*.11}
-\contentsline {subsubsection}{Rates}{41}{section*.12}
+\contentsline {subsection}{\numberline {3.2.1}Initial Observation and Followup}{29}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Kilonova Observation}{31}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Structured Jets}{31}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Other Scientific Results}{37}{subsection.3.2.4}
+\contentsline {subsubsection}{Speed of Gravity}{37}{section*.10}
+\contentsline {subsubsection}{Hubble Constant}{40}{section*.11}
+\contentsline {subsubsection}{Rates}{40}{section*.12}
 \contentsline {section}{\numberline {3.3}GRB Progenitors}{41}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Compact Binary Coalescence}{41}{subsection.3.3.1}
-\contentsline {paragraph}{NSBH Mergers}{42}{section*.13}
-\contentsline {paragraph}{BNS Mergers}{42}{section*.14}
+\contentsline {paragraph}{NSBH Mergers}{41}{section*.13}
+\contentsline {paragraph}{BNS Mergers}{41}{section*.14}
 \contentsline {subsection}{\numberline {3.3.2}Core Collapse}{42}{subsection.3.3.2}
-\contentsline {paragraph}{Rotational Instabilities of Proto-Neutron Stars}{43}{section*.15}
-\contentsline {paragraph}{Non-axisymmetric Instabilities of Accretion Disks}{43}{section*.16}
+\contentsline {paragraph}{Rotational Instabilities of Proto-Neutron Stars}{42}{section*.15}
+\contentsline {paragraph}{Non-axisymmetric Instabilities of Accretion Disks}{42}{section*.16}
 \contentsline {section}{\numberline {3.4}GRB Detectors}{43}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Swift}{43}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Fermi}{44}{subsection.3.4.2}
-\contentsline {subsection}{\numberline {3.4.3}The InterPlanetary Network}{44}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.2}Fermi}{43}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}The InterPlanetary Network}{43}{subsection.3.4.3}
 \contentsline {section}{\numberline {3.5}GRB Gravitational Wave Search Strategies}{44}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Triggered and Untriggered Searches}{44}{subsection.3.5.1}
 \contentsline {subsection}{\numberline {3.5.2}Modeled and Burst Searches}{45}{subsection.3.5.2}
 \contentsline {section}{\numberline {3.6}GRB Astrophysics with Gravitational Waves}{45}{section.3.6}
 \contentsline {paragraph}{Short GRB Progenitors}{45}{section*.17}
-\contentsline {paragraph}{Long GRB Progenitors}{46}{section*.18}
-\contentsline {paragraph}{Populations}{46}{section*.19}
+\contentsline {paragraph}{Long GRB Progenitors}{45}{section*.18}
+\contentsline {paragraph}{Populations}{45}{section*.19}
 \contentsline {paragraph}{GRB Distance and Luminosity}{46}{section*.20}
 \contentsline {paragraph}{Jet Structure}{46}{section*.21}
-\contentsline {paragraph}{Neutron Star Equation of State}{47}{section*.22}
+\contentsline {paragraph}{Neutron Star Equation of State}{46}{section*.22}
 \contentsline {chapter}{\numberline {4}A Targeted Search for Gravitational Waves associated with Short GRBs}{48}{chapter.4}
 \contentsline {section}{\numberline {4.1}Introduction}{48}{section.4.1}
 \contentsline {section}{\numberline {4.2}Coherent Matched Filtering}{49}{section.4.2}

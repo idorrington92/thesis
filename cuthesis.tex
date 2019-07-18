@@ -400,7 +400,7 @@ where $P_0=E_0 E_0^*$. In figure \ref{fig:power_output} we see how the output po
 \label{fig:power_output}
 \end{figure}
 
-\subsection{Interferometer Antenna Pattern} 
+\subsection{Interferometer Antenna Pattern} \label{sec:antenna pattern}
 The response of an interferometer to a passing GW depends on the direction that the GW is approaching from. In this section we will see how interferometer sensitivity varies over the sky. The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
 \begin{equation}
 \Delta L_x = L (1 + \frac{1}{2}h_{xx})) + \mathcal{O}(h^2)
@@ -488,7 +488,7 @@ From these we see that the sensitivity of an interferometer varies depending on 
 \begin{center}
 \includegraphics[width=0.8\linewidth]{antenna_pattern.png}
 \end{center}
-\caption{\textbf{Interferometer Antenna Pattern.} Here we see the antenna response on an interferometer with arms aligned with the x and y axes. The detector is most sensitive to GWs coming from perpendicular to the detector plane, while GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector. \textbf{cite Sathya and Schutz living review} }
+\caption{\textbf{Interferometer Antenna Pattern.} Here we see the antenna response on an interferometer with arms aligned with the x and y axes. The detector is most sensitive to GWs coming from perpendicular to the detector plane, while GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector. \cite{lrr-2009-2} }
 \label{fig:antenna pattern}
 \end{figure}
 
@@ -497,7 +497,7 @@ The stationary noise in the detector is measured using the \emph{power spectral 
 \begin{equation} \label{eqn:PSD}
 \frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
 \end{equation}
-The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw detectors} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the angular control systems (ASC), Michelson (MICH) and signal recycling cavity length (SRCL) controls, and the mirror suspension thermal noise (thermal Susp). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see [\textbf{cite LIGO noise paper}].
+The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the angular control systems (ASC), Michelson (MICH) and signal recycling cavity length (SRCL) controls, and the mirror suspension thermal noise (thermal Susp). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{noise_budget_martynov} \cite{GW150914-detector} .
 
 \begin{figure}[ht]
 \centering
@@ -510,7 +510,7 @@ The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD g
 \begin{figure}[ht]
 \centering
 \includegraphics[width=22cm]{L1-NOISE_BUDGET-20170820.png} 
-\caption{\textbf{Noise Budget for LIGO Livingston Observatory.} Here we have the noise budget for the LIGO Livingston Observatory on 20th August 2017. The noise sources in LIGO detectors are descirbed in detail in [\textbf{cite noise budget paper}].}
+\caption{\textbf{Noise Budget for LIGO Livingston Observatory.} Here we have the noise budget for the LIGO Livingston Observatory on 20th August 2017. The noise sources in LIGO detectors are descirbed in detail in \cite{noise_budget_martynov} and \cite{GW150914-detector}.}
 \label{fig:noise budget}
 \end{figure}
 \end{landscape}
@@ -518,7 +518,7 @@ The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD g
 Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal, as we will see it later chapters.
 
 
-\subsection{The Global Network of Interferometers} \label{sec:gw detectors}
+\subsection{The Global Network of Interferometers} \label{sec:gw network}
 In this section we will quickly summarise the current generation of detectors, including those that should be part of the global network in the near future.
 \paragraph{LIGO}
 The Laser Interferometer Gravitational-Wave Observatory (LIGO), currently has two detectors, one at Hanford, Washington, and the other at Livingston, Louisiana. The light travel time between the detectors is about 10 ms, reducing the chance of correlated noise and allowing for some triangulation to determine the sky position of a source. The LIGO detectors have 4 km long arms. The arms contain Fabry-Perot cavities, mirrors at each end of the arms that reflect the light back and forth many times. This effectively increases the length of the arms to $L_\text{eff}\sim1120$ km. Another LIGO detector is being constructed in India, which should be operational by 2024. This detector will be identical to the other two detectors, but by being built far from the other detectors in the network, will significantly increase the ability of the network to localise GW sources using triangulation.
@@ -545,7 +545,7 @@ In this chapter we discuss GRB astrophysics. We will begin with some historical 
 \begin{center}
 \includegraphics[width=1.0\linewidth]{grb_lightcurves.png}
 \end{center}
-\caption{\textbf{BATSE gamma-ray light curves.}  \textbf{cite http://inspirehep.net/record/1358907/plots} }
+\caption{\textbf{BATSE gamma-ray light curves.} \cite{GRBprompt} } 
 \label{fig:grb lightcurves}
 \end{figure}
 
@@ -571,7 +571,7 @@ Improved sky localisation was achieved in 1991, with the launch of the Burst and
 \begin{center}
 \includegraphics[width=0.8\linewidth]{batse_grbs_fluence.jpg}
 \end{center}
-\caption{\textbf{BATSE GRB Fluence.} This plot shows the fluence (given by the colour of each point) and the sky position of each GRB detected by the BATSE mission. \textbf{cite \url{https://heasarc.gsfc.nasa.gov/docs/cgro/images/cgro/2704_grbs_fluence.jpg}}}
+\caption{\textbf{BATSE GRB Fluence.} This plot shows the fluence (given by the colour of each point) and the sky position of each GRB detected by the BATSE mission. \cite{BATSE_dist} }
 \label{fig:batse grb fluence}
 \end{figure}
 
@@ -716,7 +716,7 @@ Due to the coincidence with GRB 170817A, a rapid reanalysis of the data was perf
 \label{fig:170817 ifo strain}
 \end{figure}
 
-The high SNR in the LIGO detectors compared to Virgo suggested that the GW originated from a part of the sky that Virgo was not sensitive to at the time of the trigger (see section \ref{sec:gw detectors}). The source of the GW was localised to within 31 deg$^2$ using the time delay between the LIGO detectors and the fact that the source originated from a null of the Virgo detector\footnote{For parameter estimation analysis of the signal, the glitch was modelled and subtracted from the data (see the bottom panel of figure \ref{fig:l1 gltich}), which reduced the sky patch to an area of 28 deg$^2$.} [\textbf{cite BNS detection paper}] and the sky localisation determined using GW data was consistent with the data determined by GRB detectors (see figure \ref{fig:170817 skymap}). GW data also determined the distance to the source was approximately 40 Mpc, close enough that relatively complete galaxy catalogues exist. Using this information, ground based observatories began scanning the sky patch for an afterglow. Less than 11 hours after the initial trigger, the Swope telescope in Chile, followed by five other observatories  [\textbf{cite kilonova paper?}], found a new object on the edge of galaxy NGC 4993 (see figure \ref{fig:NGC4993}). 
+The high SNR in the LIGO detectors compared to Virgo suggested that the GW originated from a part of the sky that Virgo was not sensitive to at the time of the trigger (see section \ref{sec:antenna pattern}). The source of the GW was localised to within 31 deg$^2$ using the time delay between the LIGO detectors and the fact that the source originated from a null of the Virgo detector\footnote{For parameter estimation analysis of the signal, the glitch was modelled and subtracted from the data (see the bottom panel of figure \ref{fig:l1 gltich}), which reduced the sky patch to an area of 28 deg$^2$.} [\textbf{cite BNS detection paper}] and the sky localisation determined using GW data was consistent with the data determined by GRB detectors (see figure \ref{fig:170817 skymap}). GW data also determined the distance to the source was approximately 40 Mpc, close enough that relatively complete galaxy catalogues exist. Using this information, ground based observatories began scanning the sky patch for an afterglow. Less than 11 hours after the initial trigger, the Swope telescope in Chile, followed by five other observatories  [\textbf{cite kilonova paper?}], found a new object on the edge of galaxy NGC 4993 (see figure \ref{fig:NGC4993}). 
 
 
 \begin{figure} % Example of including images
@@ -2134,5 +2134,8 @@ E278188 & 0.73 & 0.55 & 0.64 & 0.54 & 0.21 & 0.09 & 0.12 & 0.33 & 0.12 & 0.17 & 
 \end{landscape}
 \backmatter
 % add bibligography
+
+\bibliographystyle{plain}
+\bibliography{refs}
 
 \end{document}

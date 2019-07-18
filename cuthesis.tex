@@ -250,16 +250,23 @@ To make things even simpler, assume the wave is traveling in the z-direction, th
 \[
 h\mn (x)
 =
-\begin{bmatrix}
+\begin{pmatrix}
 0 & 0 & 0 & 0 \\
 0 & \epsilon_+ & \epsilon_\times & 0 \\
 0 & \epsilon_\times & -\epsilon_+ & 0 \\
 0 & 0 & 0 & 0 
-\end{bmatrix}
+\end{pmatrix}
 e^{(i\omega (z-t))} \fs
 \] 
 We can see that the polarisation matrix is fully described by two real numbers $\epsilon_+$ and $\epsilon_\times$. We call these the plus and cross polarisation of the gravitational wave.
 
+\begin{itemize}
+\item delta l formula. With $\varphi^\mu = x_1^\mu - x_2^\mu = (0,\vec{\varphi})$ we have
+\begin{equation} \label{deltaL}
+\Delta L = \sqrt{\vec{\varphi}^2 + h_{ij}\varphi^i \varphi^j} = | \vec{\varphi} | (1 + \frac{1}{2}h_{ij}\varphi^i \varphi^j / \vec{\varphi}^2  )
+\end{equation}
+\item polarisation plots
+\end{itemize}
 
 \section{Gravitational Waves Sources} 
 \begin{itemize}
@@ -280,7 +287,7 @@ We can see that the polarisation matrix is fully described by two real numbers $
 \section{Gravitational Wave Detectors} \label{sec:gw detectors}
 As shown in section \ref{sec:GW effects}, GWs can be detected by measuring changes in length between two points, and this change in length is proportional to the distance between the two points and the amplitude of the GW. As astrophysical sources are expected to produce GWs with amplitudes of $\sim 10^{-21}$, we must choose two points that are as far apart as practical, at least on the order of kilometers, if the effect is to be measurable. Even then, the change in distance between the two points will still be only a fraction of the wavelength of light. To measure this change, we use a \textit{Michelson interferometer} [\textbf{cite R.Weiss 1972}]. In this section, we will begin with a basic mathematical description of how a Michelson interferometer works. We will then move on to discuss the aspects of the GW detectors that are important for data analysis, namely the detector noise and directional sensitivity.
 
-\subsection{The Michelson Interferometer}
+\subsection{The Michelson Interferometer} \label{sec:mich}
 We will start with an overview of how the interferometers work before going into the mathematical details. Figure \ref{fig:ifo} is a schematic of a Michelson interferometer\footnote{The left and right schematics are the same but each use a different naming convention. Both conventions are useful.}. There is a laser in the West port which is aimed at at the beam splitter in the middle. The beam splitter is a partially reflective mirror which reflects half the photons into the North port and transmits half into the East port. Both interferometer arms are the same length\footnote{Actually the important thing is that the two light rays have opposite phase in each arm when they return to the beam splitter.}. The light that is reflected into the North arm picks up a phase shift such that it is completely out of phase with the light transmitted into the East port. At the end of the North and East ports are mirrors that reflect the light back to the beam splitter. The light is then transmitted/reflected by the beam splitter into either the South or West arms. If the North and East arms have the same length, then the light that from each arm will be in phase in the West port \footnote{Also known as the \emph{Symmetric port}} but out of phase in the South port \footnote{Also known as the \emph{anti-symmetric port} or the \emph{dark port}.}. This means that if the arms are the same length then all the light goes into the West port. However, if the arm lengths differ by some small fraction of the wavelength of the laser light (possibly because of a gravitational wave), then some of the light will travel down the South port and be detected. This is the basic idea behind an interferometer.
 
 \begin{figure}[ht]
@@ -407,12 +414,12 @@ The stationary noise in the detector is measured using the \emph{power spectral 
 \begin{equation} \label{eqn:PSD}
 \frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
 \end{equation}
-The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment sensing and control system (ASC), and thermal noise from Michelson interferometer (MICH), the mirror suspension (thermal Susp) and signal recycling cavity length (SRCL). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see [\textbf{cite LIGO noise paper}].
+The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the angular control systems (ASC), Michelson (MICH) and signal recycling cavity length (SRCL) controls, and the mirror suspension thermal noise (thermal Susp). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see [\textbf{cite LIGO noise paper}].
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=16cm]{L1-ASD-20170820.png} 
-\caption{\textbf{ASD for LIGO Livingston Observatory.} Here we see the ASD for the LIGO Livingston Observatory as it was on the 20th August 2017.  }
+\caption{\textbf{ASD for LIGO Livingston Observatory.} Plotted in blue is the ASD for the LIGO Livingston Observatory as it was on the 20th August 2017. In grey we see the Gravitational Wave Interferometer Noise Curve (GWINC), a theoretical model of all the noise in the detector, as well as the O2 projected noise curve in orange. }
 \label{fig:asd}
 \end{figure}
 
@@ -425,19 +432,94 @@ The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD g
 \end{figure}
 \end{landscape}
 
+Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal, as we will see it later chapters.
 
 \subsection{Interferometer Antenna Pattern} 
+We saw in section \ref{sec:mich} that interferometer output depends on the phase shift induced by a change in the differential arm length, and we saw in equation \ref{deltaL} a formula for the change in distance between two point particles. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
+\begin{equation}
+\Delta L_x = L (1 + \frac{1}{2}h_{xx})) + \mathcal{O}(h^2)
+\end{equation} 
+to be the change in length of thex arm of interferometer arm induced by a passing GW. Similarly, the change in length of the y-arm is given by
+\begin{equation}
+\Delta L_y = L (1 + \frac{1}{2}h_{yy}))  + \mathcal{O}(h^2) \fs
+\end{equation} 
+Dropping the higher order terms, the differential arm length is then given by
+\begin{equation} \label{darm eqn}
+\Delta L_x - \Delta L_y = \frac{1}{2} L(h_{xx} - h_{yy}) \fs
+\end{equation}
 
-\begin{itemize}
-\item Detector nulls
-\end{itemize}
+So far we have been working in the detector frame. To understand how the interferometer responds to GWs coming from different positions in the sky, we need to understand how $h_{xx}$ and $h_{yy}$ change for GWs coming from different sky positions. To do this, we consider a GW approaching the detector from an arbitrary direction and introduce a new frame of reference $(x',y',z')$ such that the incoming GW is traveling along the $z'$ axis. We relate the detector frame $(x,y,z)$ to the GW frame using the polar angles $\theta$ and $\phi$. The GW polarisation matrix is defined in the GW frame to be
+
+\[
+h_{ij}'
+=
+\begin{pmatrix}
+h_+ & h_\times & 0 \\
+h_\times & -h_+ & 0 \\
+0 & 0 & 0
+\end{pmatrix} \fs
+\]
+The rotation that brings the GW frame into the detector frame is rotation through $\theta$ around the y-axis and a rotation through $\phi$ around the z-axis. This gives us
+\[
+\mathcal{R}
+=
+\begin{pmatrix}
+\cos \phi & \sin \phi & 0 \\
+-\sin \phi & \cos \phi & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\begin{pmatrix}
+\cos \theta & 0 & \sin \theta \\
+0 & 1 & 0 \\
+-\sin \theta & 0 & \cos \theta
+\end{pmatrix} \fs
+\]
+We can then calculate $h_{xx}$ and $h_{yy}$ using the formula
+\begin{equation}
+h_{ij} = \mathcal{R}_{ik} \mathcal{R}_{jl} h_{kl}'
+\end{equation}
+to find
+\begin{equation}
+h_{xx} = h_+(\cos^2 \theta \cos^2 \phi - \sin^2 \phi) + 2h_\times \cos \theta \sin\phi \cos\phi
+\end{equation}
+\begin{equation}
+h_{yy} = h_+(\cos^2 \theta \sin^2 \phi - \cos^2 \phi) - 2h_\times \cos \theta \sin\phi \cos\phi \fs
+\end{equation}
+Plugging these values into \ref{darm eqn}, and setting $L=1$ for convenience, gives us
+\begin{equation}
+\frac{1}{2} (h_{xx} - h_{yy}) = \frac{1}{2} h_+ (1+\cos^2\theta)\cos 2\phi + h_\times \cos \theta \sin 2\phi \fs
+\end{equation}
+Thus, the detector response to a GW $s$ can be written as
+\begin{equation}
+s = F_+(\theta,\phi)h_+ + F_\times(\theta,\phi) h_\times
+\end{equation}
+where $F_{+,\times}$ are the antenna response to the plus and cross polarisations of the GW, given by
+\begin{equation}
+F_+(\theta,\phi) = \frac{1}{2} (1+\cos^2\theta)\cos 2\phi
+\end{equation}
+\begin{equation}
+F_\times(\theta,\phi) = \cos \theta \sin 2\phi \fs
+\end{equation}
+From these we see that the sensitivity of an interferometer varies depending on the sky position of the source of the GW. In particular, we can see that interferometers have blind spots, known as the \textit{null} of the detector. For example, the plus polarisation of a GW coming from an angle $\phi=\frac{\pi}{4}$ will not be detected. In figure \ref{fig:antenna pattern}, we can see how the sensitivity of an interferometer with arms aligned with the x and y axes varies over the sky. 
+%From equation \ref{deltaL}, we can see that the equation of motion for a point particle at $\varphi$
+%\begin{equation}
+%\ddot{\varphi}^i = \frac{1}{2} \ddot{h}_{ij} \varphi^j \fs
+%\end{equation}
+%Let $\varphi_x = (L,0,0)$ be the position of the mirror at the end of an interferometer arm of length $L$ and aligned with the x-axis. The motion of the mirror along the x-axis is then given by
+%\begin{equation}
+%\ddot{\varphi}_x = \frac{1}{2} \ddot{h}_{xx} L \fs
+%\end{equation}
+%Similarly, let $\varphi_y = (L,0,0)$ be the position of the mirror at the end of the y-arm of the interferometer. The motion of the mirror along the y-axis is then given by
+%\begin{equation}
+%\ddot{\varphi}_y = \frac{1}{2} \ddot{h}_{yy} L \fs
+%\end{equation}
 
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{antenna_pattern.png}
 \end{center}
-\caption{\textbf{Antenna Pattern.} \textbf{cite Sathya and Schutz living review} }
+\caption{\textbf{Interferometer Antenna Pattern.} Here we see the antenna response on an interferometer with arms aligned with the x and y axes. The detector is most sensitive to GWs coming from perpendicular to the detector plane, while GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector. \textbf{cite Sathya and Schutz living review} }
 \label{fig:antenna pattern}
 \end{figure}
 

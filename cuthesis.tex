@@ -92,36 +92,37 @@ We end by looking at X-pipeline. We will start by understanding the theory behin
     \hfill \textit{Terry Pratchett}
 \end{dedication}
 
+\begin{dedication}
+For my parents, not that you'll understand any of it.
+\end{dedication}
+
 % ----------------------------
 % main work
 
 \mainmatter
 
 \chapter{Introduction}
-\begin{itemize}
-\item Usual 'start of GW astronomy' stuff
-\item LIGO interferometer stuff. Virgo too. Soon Kagra and LIGO India
-\item GRBs are good candidate sources for GWs, especially after 170817A
-\item Triggered vs untriggered search
-\item There are several different search strategies for GRB GWs. They vary in the number of assumptions that they make about the source. This thesis covers two of these searches: The modelled CBC search, which assumes an inspiral, and the unmodelled \xp search, which only a maximum duration and bandwidth of the GW.
-\item PyGRB and X are both triggered searches
-\item PyGRB assumptions are restrictive enough to allow a matched-filter search 
-\item PyGRB can be made more sensitive by assuming circularly polarised GW emission, as the beam is perpendiular to the plane of the system
-\item Indicate the median exlcusion distance for BNS systems or something like that to show how sensitive PyGRB is
-\item \xp is a GWB search that makes minimal assumptions
-\item It only uses measures of coherence based on sky location
-\item O2 median distances
-\item Improved this search using machine learning
-\item Describe format of thesis
-\end{itemize}
+In 1915, Albert Einstein published a new theory of gravity: the general theory of relativity \textbf{cite gr paper}. This new theory was indistinguishable from Newtonian gravity in most situations, but in the presence of strong gravitational fields the two theories made different predictions. For example, Einstein predicted that the sun would gravitationally lens light by twice the amount predicted using Newtonian arguments. An experiment was soon performed by Arthur Eddington and collaborators to measure the amount of gravitational lensing by the sun. This experiment looked for stars that should have been behind the sun during the 1919 solar eclipse \textbf{cite eddington}. Some of these stars were made visible, and from these the amount of lensing was measured and confirmed the prediction of general relativity. The results of this experiment and others meant general relativity was quickly accepted by the scientific community. However, there was one prediction of general relativity would remain elusive for decades to come: \textit{gravitational waves} (GWs). 
+
+General relativity was a field theory of gravity, and bared a strong resemblance to Maxwell's theory of electromagnetism \textbf{cite maxwell paper}. It was reasoned by some that this meant their must be GWs produced by accelerating mass just as there are electromagnetic waves produced by accelerating charge. Others thought this was stretching the analogy to electromagnetism too far, and pointed to key differences between gravitation and electromagnetism \textbf{cite kannefeck}. For example, there is no negative mass to act as an analog to the negative charge of electromagnetism.\footnote{It can be shown that this is one of the reasons why GWs are much more difficult to detect than electromagnetic waves.} After much controversy, the consensus built that GWs do exist and experiments were conceived that had the potential to detect GWs. After yet more controversy, with the false claim of a detection by Joseph Weber \textbf{cite weber paper}, the first experimental evidence for the existence of GWs came in 1975 from observations of a binary star system. According to general relativity, a binary star system should slowly inspiral due to energy lost through GW emission. Hulse and Taylor observed a neutron star binary with precisely the orbital decay predicted by general relativity \textbf{cite hulse taylor}. 
+
+A few years prior to this, Rainer Weiss set out a new vision for GW astronomy. Weiss proposed building a Michelson interferometer to detect GWs directly \textbf{cite weiss paper}. This led to founding of the Laser Interferometer Gravitational-wave Observatory (LIGO) in the early 1980s, which set out to build a pair of 4 km laser interferometers. The new detector network would be able to detect GWs emitted by compact binary systems, such as black hole and neutron star inspirals, and potentially also from nearby supernovas. 
+
+Around the same time that GW astronomy was just starting to get off the ground, another kind of transient astronomy was hitting its stride. Gamma-ray Bursts (GRBs) are bright short flashes of gamma rays that originate at extra-galactic distances. First detected in the 1960s, the cause of GRBs remained a mystery for decades. With the 1991 launch of the Burst and Transient Source Experiment (BATSE), a space based GRB detector, there was finally a large sample of GRB light curves. This confirmed that there were two populations of GRBs depending on the duration of the burst, called long and short GRBs. Theoretical work done in the early 1990s predicted that GRBs could be produced by compact objects such as neutron stars and black holes, possibly via supernova that creates the compact object. By the end of the decade, astronomical observations confirmed that long GRBs were linked to supernova explosions. Then, in the early 2000s, observations strongly suggested that short GRBs were produced by binary neutron star mergers. 
+
+The fact that GRB and GW astronomy were both now targeting the same extreme events made collaboration natural. There are several strategies used to search for coincident GRB/GW detections. The first approach is to look for coincident detections between GW and GRB triggers. The second approach uses the fact that GW detectors are sensitive to most of the sky by making followup observations of GW triggers with electromagnetic (EM) telescopes. The final method is to use advanced data analysis techniques to followup GRB detections with a GW search, which is the focus of this thesis. 
+
+The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, too large to be neutron stars, and so not a candidate for EM followup observations. Then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal \textbf{cite gw170817 paper}. This was the first joint GW/GRB detection, and confirmed that at least some binary neutron star mergers produced short GRBs. This detection led to discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.}
+
+It is in this context that this thesis looks at improved methods for following up GRB observations. We will see two search pipelines. The first is looks for a binary inspiral signal associated with short GRBs, while the second is an unmodelled search, meaning it is sensitive to any waveform morphology, and looks for GWs associated with both long and short GRBs. We will also look at the results of the most recent searches for GWs associated with GRBs. We begin with an introduction to GW astronomy, followed by a more detailed overview of GRB astronomy than was given above. 
 
 
 \chapter{Introduction to Gravitational Wave Astronomy} \label{chap: gw bg}
-In this chapter we will run through the basics of gravitational wave (GW) astronomy. We will start by showing that GWs are a natural consequence of general relativity. We will then look at sources of GWs, including those that have already been detected and those that have not been detected yet. We will then look at GW detectors, focusing on those aspects that are important for data analysis, which will be discussed in later chapters. 
+In this chapter we will run through the basics of gravitational wave (GW) astronomy. We will start by showing that GWs are a natural consequence of general relativity and show that binary star systems emit GWs. We will then look at GW detectors, focusing on the noise in the detector and how the sensitivity changes over the sky, as these factors are important for data analysis.
 
 
-\section{Gravitational waves}
-General Relativity shows that spacetime can curve and move. From this, it may seem obvious that waves can travel though spacetime. But this is not a trivial fact; Einstein himself, having introduced the concept of gravitational waves in 1916, later claimed they could not exist. In this section, we will show that gravitational waves do exist. We will do this by considering a perturbation of the flat Minkowski metric. We will then calculate the Ricci tensor and Ricci scalar for the perturbed metric and, with a clever choice of gauge transformation, see that these yield a wave solution to Einstein's equations. 
+\section{Gravitational Waves}
+General Relativity shows that spacetime can curve and move. From this, it may seem obvious that waves can travel though spacetime, but this is not a trivial fact. In this section, we will show that gravitational waves do exist. We will do this by considering a perturbation of the flat Minkowski metric. We will then calculate the Ricci tensor and Ricci scalar for the perturbed metric and, with a clever choice of gauge transformation, see that these yield a wave solution to Einstein's equations. This section is based mostly on the derivations in \cite{zee-einstein} and \cite{carroll-spacetime}. 
 
 \subsection{Linearised Gravity}
 Let $g\mn$ be the metric given by adding a small perturbation $h_{\mu\nu}$ to the Minkowski metric $\eta\mn=\text{diag}(-1,1,1,1)$. We write this metric as 
@@ -184,7 +185,7 @@ R\mn = -\frac{1}{2}\Box h\mn
 R=-\frac{1}{2}\Box h \fs
 \end{equation}
 Using these in the linearised Einstein equations (\ref{lin Einstein}) gives us
-\begin{equation}
+\begin{equation} \label{lin einstein eqn}
 \Box h\mn - \frac{1}{2}\eta\mn\partial^2 h =-\frac{16\pi G}{c^4}T\mn \fs
 \end{equation}
 Alternatively, we can use \ref{alt einstein} to write this as
@@ -261,7 +262,7 @@ e^{(i\omega (z-t))} \fs
 We can see that the polarisation matrix is fully described by two real numbers $\epsilon_+$ and $\epsilon_\times$. We call these the plus and cross polarisation of the gravitational wave.
 
 To understand what these two polarisations mean physically, consider two particles separated by $\varphi^\mu = x_1^\mu - x_2^\mu = (0,\vec{\varphi})$. The proper distance between these two points is given by
-\begin{equation}
+\begin{equation} \label{deltaL}
 \Delta L = \sqrt{g\mn dx^\mu dx^\nu} = \sqrt{\vec{\varphi}^2 + h_{ij}\varphi^i \varphi^j} = | \vec{\varphi} | (1 + \frac{1}{2}h_{ij}\varphi^i \varphi^j / \vec{\varphi}^2 + \mathcal{O}(h^2) ) \fs
 \end{equation} 
 From this we see that the fractional change in distance between the two particles is
@@ -273,30 +274,147 @@ where $\hat{\varphi}^i = \varphi^i/|\varphi|$. From this formula, it becomes cle
 \begin{figure}[ht]
 \centering 
 \includegraphics[width=12cm]{polarisations.png} 
-\caption{ The plus and cross polarisation effects on a ring of test particles. \cite{mckechan-thesis} }
+\caption{ \textbf{Plus and Cross Polarisation.} The effect of the plus and cross polarisation of a GW on a ring of test particles. \cite{mckechan-thesis} }
 \label{fig:polarisations}
 \end{figure} 
 
+\section{Gravitational Wave Generation} 
+We will now show how GWs are emitted by a source. We start by defining the trace reversed perturbation
+\begin{equation}
+\bar{h}\mn = h\mn - \frac{1}{2} \eta\mn h
+\end{equation}
+we can simplify the linearised Einstein equation \ref{lin einstein eqn} to 
+\begin{equation}
+\square \bar{h}\mn = -16\pi G T\mn
+\end{equation}
+where we have now set $c=1$. We can solve this equation by defining a Green's function such that
+\begin{equation}
+\square \mathcal{G}(x)=\delta^{(4)}(x) \fs
+\end{equation}
+The physical interpretation of this solution is that $ \mathcal{G}(x)$ is a wave originating from a point source at the origin. The solution to the linearised Einstein equations can then be written as
+\begin{equation} \label{hsolution}
+\bar{h}\mn (x) = -16\pi G \int d^y y \mathcal{G}(x-y)T\mn (y) \fs
+\end{equation}
+This Green's function is the same as used to model electromagnetic waves, which means we can get the form of $\mathcal{G}$ for free
+\begin{equation} \label{greens}
+\mathcal{G}(t,\vec{x}) = -\frac{\theta(t) \delta(t-r)}{4\pi r}
+\end{equation}
+where $r=|\vec{x}|$ is the distance from the source, and $\theta(t)=1$ for $t>0$ and is zero otherwise. The interpretation of this solution is fairly simple, $\theta$ ensures that the wave travels forwards in time, $\delta(t-r)$ ensures the wave travels at the speed of light, and the final factor $\frac{-1}{4\pi r}$ ensures that the second derivative of the Green's function is a delta function at the origin as $\nabla^2\left(\frac{-1}{4\pi r}\right) = \delta^{(3)}(\vec{x})$. Plugging \ref{greens} into \ref{hsolution}, we obtain
+\begin{equation}
+\bar{h}\mn (t,\vec{x}) = 4G \int d^4 y \frac{\theta(t-y^0) \delta(t-y^0 - |\vec{x} - \vec{y}| ) T\mn (y) }{|\vec{x} - \vec{y}|} \fs
+\end{equation}
+Using the delta function to integrate over $y^0$ we obtain
+\begin{equation}
+\bar{h}\mn (t,\vec{x}) = 4G \int d^3 y \frac{T\mn (t-|\vec{x} - \vec{y}|,\vec{y})}{|\vec{x} - \vec{y}|} \fs
+\end{equation} 
 
-\begin{itemize}
-\item refer to polarisation plots
-\end{itemize}
+Let us consider the case of an isolated source of GWs that is far away, so we can approximate $|\vec{x} - \vec{y}| = r$ with $r$ the distance to the source. Then we have
+\begin{equation} \label{hbarmn}
+\bar{h}\mn (t,\vec{x}) = \frac{4G}{r} \int d^3 y  T\mn (t-r,\vec{y}) \fs
+\end{equation}
+This formula is not very helpful for determining what a GW signal will look like, as it is difficult to interpret a stress-energy tensor. To make thinks simpler, we will now show how to write this solution in terms of just the energy density term of the stress energy tensor $T_{00}$, which is easy to understand. To do this, first note that the harmonic gauge condition gives us $\partial^\mu \bar{h}\mn = 0$, form which we get
+\begin{equation}
+ \partial_0 \bar{h}^{0\nu} = -\partial_i \bar{h}^{0i}
+\end{equation}
+which can be used to determine the timelike components of $\bar{h}$ from the spacelike components. We therefore restrict our attention to finding $\bar{h}_{ij}$. Next, we insert a term $\partial_k y^i = \delta_k^l$ into the above integrand, and then use integration by parts to obtain
+\begin{equation} \label{Tintbyparts}
+\int d^3 y  T\mn = \int  \partial_k(y^i T^{kj}) d^3 y - \int   y^i (\partial_k T^{kj}) d^3 y \fs
+\end{equation}
+The first term vanishes as it is a surface term and we have an isolated source. For the second term, we start by using the conservation law $\partial_\mu T^{\mu \nu}$ to obtain
+\begin{equation}
+\partial_0 T^{0\nu} = -\partial_k T^{k\nu} 
+\end{equation} 
+with $\nu = j$ to obtain
+\begin{equation} \label{Tmn}
+\int d^3 y  T\mn = \int y^i \partial_0 T^{0j} d^3 y \fs
+\end{equation}
+The next step\footnote{This step seems arbitrary now but is necessary.} is to use the symmetry of the stress-energy tensor to write
+\begin{equation}
+\int d^3 y  T\mn = \frac{1}{2}\int y^i \partial_0 T^{0j} + y^j \partial_0 T^{0i}d^3 y \fs
+\end{equation}
+We can then repeat the trick used to obtain \ref{Tintbyparts}, i.e. multiply both terms in the integrand by $\partial_k y^i = \delta_k^l$ and use integration by parts. After some algebra, everything should cancel nicely to leave us with 
+\begin{equation}
+\int d^3 y  T\mn = \frac{1}{2}\int \partial_k (y^i y^j \partial_0 T^{0k}) - y^i y^j \partial_0 \partial_k T^{0k}d^3 y \fs
+\end{equation}
+The first term vanishes as it is a surface term. The second term can again be simplified using \ref{Tmn} to give
+\begin{equation}
+\int d^3 y  T\mn = \frac{1}{2}\int y^i y^j (\partial_0)^2 T^{00}d^3 y
+\end{equation}
+which is purely in terms of the energy-density term of the stress-energy tensor, as we set out to show. Using this result in equation \ref{hbarmn} gives us the formula for a GW signal
+\begin{equation}
+\bar{h} = \frac{2G}{r} \int y^i y^j  (\partial_0)^2 T^{00}d^3 y \fs
+\end{equation}
+We then define the \textit{quadrupole moment tensor} as 
+\begin{equation} \label{quad tensor}
+I^{ij}(t) = \int y^i y^j  (\partial_0)^2 T^{00}d^3 y
+\end{equation}
+to obtain
+\begin{equation} \label{quad formula}
+\bar{h}(t,\vec{x}) = \frac{2G}{r}\frac{d^2I^{ij}}{dt^2}(t_r)
+\end{equation}
+where $t_r=t-r$ is the retarded time. 
 
-\section{Gravitational Waves Sources} 
-\begin{itemize}
-\item GW generation 
-\item Sources
-\begin{itemize}
-\item BBH - Multiple found already
-\item BNS - One found and Hulse-Taylor
-\item NSBH
-\item GRB 
-\item SN
-\item Unknown
-\end{itemize}
-\end{itemize}
+\section{Gravitational Wave Sources}
+We will now see how to use the quadrupole formula to calculate the morphology of a GW produced by a binary star system. We will assume the stars are orbiting in the $x^1-x^2$ plane at a distance $R$ from the center of mass of the system, and that both stars are of mass $M$. To simplify our calculations, we will use the Newtonian approximation of the orbits. In this case we have 
+\begin{equation}
+\frac{GM}{(2R^2)} = \frac{Mv^2}{R}
+\end{equation}
+from which we find
+\begin{equation}
+v=\left( \frac{GM}{4R} \right)^\frac{1}{2} \fs
+\end{equation}
+The orbital period of this system is
+\begin{equation}
+T=\frac{2\pi R}{v}
+\end{equation}
+which gives us the angular frequency
+\begin{equation}
+\Omega = \frac{2\pi}{T} = \left(\frac{GM}{4R^3}\right)^\frac{1}{2} \fs
+\end{equation}
+The path of the stars, which we label $a$ and $b$, can then be written 
+\begin{equation}
+x_a^1 = -x_b^1 = -R\cos \Omega t \text{  ,  } \hspace{20pt} x_a^2 = -x_b^2 = -R\sin \Omega t \fs 
+\end{equation}
+The energy density of the system is then given by
+\begin{equation}
+T^{00}(t,\vec{x}) = M \delta(x^3) [ \delta(x^1 - R\cos\Omega t ) \delta( x^2 - R\sin \Omega t ) +  \delta(x^1 + R\cos\Omega t ) \delta( x^2 + R\sin \Omega t ) ] \fs
+\end{equation}
+Using this in the quadrupole moment tensor formula \ref{quad tensor}, we find
+\begin{equation}
+I_{11} = 2MR^2 \cos^2 \Omega t = MR^2 (1+\cos 2\Omega t)
+\end{equation}
+\begin{equation}
+I_{22} = 2MR^2 \sin^2 \Omega t = MR^2 (1-\cos 2\Omega t)
+\end{equation}
+\begin{equation}
+I_{12} = I_{21} = 2MR^2 (\cos \Omega t)(\sin \Omega t) = MR^2 (\sin 2\Omega t)
+\end{equation}
+\begin{equation}
+T_{i3} = 0 \fs
+\end{equation}
+From these, the metric perturbation is easily constructed from \ref{quad formula}
+\[
+\bar{h}_{ij} (x)
+=
+\frac{8GM}{r}\Omega^2 R^2\begin{pmatrix} 
+ -\cos 2 \Omega t_r & -\sin 2 \Omega t_r & 0 \\
+-\sin 2 \Omega t_r & \cos 2 \Omega t_r & 0 \\
+0 & 0 & 0
+\end{pmatrix}
+\fs
+\]
+From this we can see that GWs from a binary star system would produce a GW with an oscillating plus and cross polarisation. We should note that this derivation assumes no energy loss from the GWs. In fact, GWs do radiate energy and this causes the stars to inspiral, a feature not captured by our Newtonian approximation. As the stars inspiral, the angular frequency of the system increases. This causes the frequency of the GW to increase as well as the amplitude\footnote{Though the inspiral also causes the seperation between the black holes to shrink, which acts to lower the amplitude. In reality, the increase in orbital frequency wins out and the amplitude increases near the end of the inspiral.}. This is what creates the characteristic \textit{chirp} of the GW from a binary inspiral and merger. Even without taking into account the inspiral, this simple model illustrates many properties that are useful for GW astronomy. First is the $1/r$ dependence on the size of the metric perturbation, which can be used to estimate the distance to the source. Another is the fact that the GW frequency is twice the orbital frequency of the system, so the measured GW frequency gives us the orbital frequency of the system. Also, the metric perturbation is larger for systems with high mass and high orbital frequency. High mass stars are therefore good candidates, but they also have a large radius, meaning that the stars in the binary will begin to merge while the binary still has a low angular frequency. Thus the best GW emitters  are compact object binaries, such as neutron stars and black holes, as they are high mass but also have a small radius. We call these systems \textit{compact binary coalescence} (CBC) systems. 
 
+On the 14th of September 2015, the first direct detection of a GW came from a CBC system \cite{150914-det-paper}. In figure \ref{fig:150914 signal}] we see the waveform that was detected, with a cartoon of the evolution of the inspiral. The bottom panel also shows how the velocity and separation of the black holes evoloves. The signal is just as described above, an sine wave with increasing frequency and amplitude as the black holes radiate energy through GW emission and inspiral.  Since this initial detection, many CBC signals have already been detected [\textbf{cite catalog paper}], mostly from binary black hole systems, but also one binary neutron star system, which will be discussed in detail in the next chapter. In chapter \ref{chap: CBC} we will see a search pipeline designed specifically to detect GWs from these CBC systems. 
 
+\begin{figure}[ht]
+\centering
+\includegraphics[width=12cm]{150914signal.png} 
+\caption{\textbf{The First Direct Detection of a Gravitational Wave.} The top panel shows the GW waveform with an inset cartoon of the state of the binary at four different phases of the binary inspiral. The bottom panel shows the Keplerian seperation distance in units of Schwarzschild radii ($R_s=\frac{2GM}{c^2}$ where $M$ is the total mass of the system). Also shown is the relative velocity of the black holes.  \cite{150914-det-paper} }
+\label{fig:150914 signal}
+\end{figure}
+
+We end this section by noting that any system with a large amount of asymmetric rapidly accelerating mass could potentially be detected using GWs. There are searches ongoing for GWs from supernovas, gamma-ray bursts, non-axisymmetric pulsars, and black hole accretion disk instabilities. At the time of writing, the only GWs that have been detected are from CBC systems.  
 
 \section{Gravitational Wave Detectors} \label{sec:gw detectors}
 As shown in section \ref{sec:GW effects}, GWs can be detected by measuring changes in length between two points, and this change in length is proportional to the distance between the two points and the amplitude of the GW. As astrophysical sources are expected to produce GWs with amplitudes of $\sim 10^{-21}$, we must choose two points that are as far apart as practical, at least on the order of kilometers, if the effect is to be measurable. Even then, the change in distance between the two points will still be only a fraction of the wavelength of light. To measure this change, we use a \textit{Michelson interferometer} [\textbf{cite R.Weiss 1972}]. In this section, we will begin with a basic mathematical description of how a Michelson interferometer works. We will then move on to discuss the aspects of the GW detectors that are important for data analysis, namely the detector noise and directional sensitivity.
@@ -578,7 +696,7 @@ Most early GRB detectors could not localise well. It was known that GRBs were no
 
 Better sky localisation would help to answer this question. If GRBs mostly occur on the galactic plane, then they are probably of galactic origin. If they were clustered around nearby galaxies, then GRBs probably come from those galaxies. If, however, they are distributed isotropically on the sky, then it would be likely that GRBs form at cosmological distances.\footnote{It should be noted that there are other ways that GRBs could be isotropically distributed. If they are only detectable to a few hundred parsecs, they would be entirely within the disc of the galactic plane and so would also be isotropically distributed. Alternatively, as neutron stars receive a `kick' during their formation, they could form a corona around the galaxy.}
 
-Improved sky localisation was achieved in 1991, with the launch of the Burst and Transient Source Experiment (BATSE) on the Compton Gamma-ray Observatory. With BASTSE, it became possible to determine the sky position of a GRB to within half a degree. During its mission, BATSE detected approximately 2700 GRBs and determined the sky position of a large number of these. For the first time their was a statistically significant sample of well localised GRBs. In figure \ref{fig:batse grb fluence} we can see the sky location of every GRB detected by BATSE, together with the fluence\footnote{Fluence is the time integral of the flux. Essentially a measure of the total detected energy.} of that GRB. This plot shows that GRBs are isotropically distributed over the sky. This evidence strongly suggests GRBs are of cosmological origin. 
+Improved sky localisation was achieved in 1991, with the launch of the Burst and Transient Source Experiment (BATSE) on the Compton Gamma-ray Observatory. With BATSE, it became possible to determine the sky position of a GRB to within half a degree. During its mission, BATSE detected approximately 2700 GRBs and determined the sky position of a large number of these. For the first time their was a statistically significant sample of well localised GRBs. In figure \ref{fig:batse grb fluence} we can see the sky location of every GRB detected by BATSE, together with the fluence\footnote{Fluence is the time integral of the flux. Essentially a measure of the total detected energy.} of that GRB. This plot shows that GRBs are isotropically distributed over the sky. This evidence strongly suggests GRBs are of cosmological origin. 
 
 
 \begin{figure} % Example of including images
@@ -652,7 +770,7 @@ There are also two hypotheses as to what the slower moving matter that the fireb
 \subsection{Jets} \label{sec:jets}
 The well-founded assumptions made by the fireball model, that GRB progenitors are small and dense, naturally lead to the prime suspects for powering GRBs being compact objects, such as black holes and neutron stars. If we assume that compact objects do play a role in generating GRBs, then it is not much of a jump to think that GRBs may be jetted. Jets are ubiquitous with both black holes and neutron stars: supermassive black holes and solar mass black holes have been observed to have jets, and highly magnetised, rotating neutron stars, called \textit{pulsars}, are also known to produce jets. Assuming that GRBs are jetted substantially lowers the inferred energy emitted by the source, which has implications for the physical mechanism that causes GRBs. It is therefore important to determine whether GRBs are jetted or not. 
 
-What would be the observable effects of GRB jetting? The fireball model suggests that the ejected matter will have a very high Lorentz factor. Special relativity tells us that objects moving with high Lorentz factor $\Gamma$ emit most of their energy within an angle $\theta\approx 2/\Gamma$ radians of the direction of travel. This is called \textit{relativistic beaming}. If the matter is jetted and the beamed angle $\theta$ is less than the opening angle of the jet, then there will be no observable difference between isotropic emission and jetted emission, as the edge of the jet is not visible. However, once the matter reaches the interstellar medium it will begin to slow down, reducing the amount of beaming and increasing the angle to which the matter can be observed. Once the beaming angle has increased to a point where the edge of the jet is visible, the amount of energy being radiated towards the observer will suddenly drop, and this will happen across the electromagnetic spectrum at the same time. This \textit{break} in the spectrum is observable in the afterglow of many GRBs. For example, figure \ref{fig:jetbreak} shows the clearly visible break in the afterglow spectrum of GRB 990510 after approximately one day. It is now widely accepted that short GRBs have opening angles of $\sim 30^\circ$ and long GRBs have opening angles of $\sim 5^\circ$.
+What would be the observable effects of GRB jetting? The fireball model suggests that the ejected matter will have a very high Lorentz factor. Special relativity tells us that objects moving with high Lorentz factor $\Gamma$ emit most of their energy within an angle $\theta\approx 2/\Gamma$ radians of the direction of travel. This is called \textit{relativistic beaming}. If the matter is jetted and the beamed angle $\theta$ is less than the opening angle of the jet, then there will be no observable difference between isotropic emission and jetted emission, as the edge of the jet will not be visible. However, once the matter reaches the interstellar medium it will begin to slow down, reducing the amount of beaming and increasing the angle to which the matter can be observed. Once the beaming angle has increased to a point where the edge of the jet is visible, the amount of energy being radiated towards the observer will suddenly drop, and this will happen across the whole electromagnetic spectrum at the same time. This \textit{break} in the spectrum is observable in the afterglow of many GRBs. For example, figure \ref{fig:jetbreak} shows the clearly visible break in the afterglow spectrum of GRB 990510 after approximately one day. It is now widely accepted that short GRBs have opening angles of $\sim 30^\circ$ and long GRBs have opening angles of $\sim 5^\circ$.
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -1819,7 +1937,7 @@ Setting our hyperparameters using the testing set can cause \textit{data leakage
 Optimisation is a somewhat cyclical process, as once we have changed one hyperparameter, we must then go back and test that other parameters do not now need changing. But optimisation is not pure guess work, and in the rest of this section we will see the strategy we used to optimise our classifier. We first discuss optimising the training data, as the other hyperparameters will not have much of an effect if the training data is of poor quality. As mentioned in section \ref{sec:data-preprocessing}, there are several choices to make regarding what data is used for training, such as setting the amplitude threshold. We then discuss optimising the BDT classifier itself. 
 
 \subsubsection{Training Set}
-Many of the hyperparameters mentioned in section \ref{data-preprocessing} had to be optimised. Consider the amplitude threshold applied to triggers before they are included in the training set. We applied the threshold to the loghbayesian statistic (see table \ref{table:1}). Experimentation showed that allowing triggers with a loghbayesian value below 20 led to the misclassification of background triggers as signal. Setting a value higher than this slowly reduced the sensitivity of the search.   
+Many of the hyperparameters mentioned in section \ref{sec:data-preprocessing} had to be optimised. Consider the amplitude threshold applied to triggers before they are included in the training set. We applied the threshold to the loghbayesian statistic (see table \ref{table:1}). Experimentation showed that allowing triggers with a loghbayesian value below 20 led to the misclassification of background triggers as signal. Setting a value higher than this slowly reduced the sensitivity of the search.   
 
 We also optimised the waveforms that are included in the training set. In particular we were interested in how sensitive the MVA is to waveforms not in the training set. What we found was that the MVA was fairly robust to having waveform types removed from the training set. For example, the final classifier we used was trained on a set of waveforms that included white noise burst (WNB) signals of about 0.1 seconds and about 10 seconds as well as cusp waveforms. Removing these from the training set surprisingly had almost no effect on the ability of the MVA to detect WNB signals, cusp signals, or any other waveform, as can be seen in figure \ref{fig:no wnb or cusp}. Similar results were found when removing other waveforms. This suggests that by only giving the MVA the coherent statistics calculated by \xp, we have managed to build a classifier that is agnostic to waveform morphology, as required for a burst search.
 

@@ -109,8 +109,9 @@
 \contentsline {subsection}{\numberline {6.3.4}Discussion and Future Work}{115}{subsection.6.3.4}
 \contentsline {subsubsection}{Low p-value Triggers}{115}{section*.30}
 \contentsline {subsubsection}{Long Injections}{115}{section*.31}
-\contentsline {subsubsection}{Machine Learning Developments}{119}{section*.32}
-\contentsline {chapter}{Appendices}{121}{section*.33}
-\contentsline {section}{\numberline {.1}General Relativity}{121}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{121}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}MVA Results Tables}{124}{section.Alph0.3}
+\contentsline {subsubsection}{Machine Learning Developments}{120}{section*.32}
+\contentsline {chapter}{\numberline {7}Conclusions}{121}{chapter.7}
+\contentsline {chapter}{Appendices}{124}{section*.33}
+\contentsline {section}{\numberline {.1}General Relativity}{124}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{124}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}MVA Results Tables}{127}{section.Alph0.3}

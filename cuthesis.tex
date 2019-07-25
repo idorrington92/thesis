@@ -917,12 +917,9 @@ We have so far focused on the physics of the jet and the progenitor of the GRB a
 \subsubsection{Speed of Gravity}
 One result that can be derived immediately from the coincident detection is the speed of gravity $\nu_\text{GW}$. General relativity predicts that GWs will travel at the speed of light $\nu_\text{EM}$. We can now test this prediction by using the measured time delay between GW and GRB detection and different assumptions of time delay between the merger and GRB emission. The greater the distance to the GRB, the less the uncertainty in time delay. For this reason we will assume the GRB happened at a distance $D = 26$ Mpc, the lower bound of the $90\%$ credible distance determined from the GW signal.  The delay between the peak of the GW signal and the start of the start of the GRB signal is $1.74 \pm 0.05$ seconds. We can find an upper limit on the speed of gravity by assuming that the first photons were emitted at merger time. This means the entire time delay is due to GWs traveling faster than light. Using the upper limit for the time delay, this gives us $\delta t = 1.74 + 0.05$. For a lower limit we can assume a significant delay between the merger and the first photons being emitted. It can be shown that the duration of a GRB is approximately the time delay between the merger and the GRB emission [\textbf{cite GRB BNS paper}]. It is therefore expected that the time delay between merger and emission is also $\sim2$ seconds. For a lower bound, we conservatively assume a time delay of $\Delta t = 10 - 1.74 + 0.05= 8.31$ seconds. As $\Delta \nu /\nu_\text{GW} = -\nu_\text{EM}\Delta t/D$, where $\Delta \nu = \nu_\text{GW} - \nu_\text{EM}$, we find
 \begin{equation}
--3 \times 10^{-15} \leq \frac{\Delta \nu}{\nu_\text{GW}} \leq +7\times 10^{-16} \fs
+-3 \times 10^{-15} \leq \frac{\Delta \nu}{\nu_\text{EM}} \leq +7\times 10^{-16} \fs
 \end{equation}
 As this range includes zero, it is in agreement with general relativity. The largest source of uncertainty in this calculation is the time delay between GW and EM emission. As this does not depend on the distance to the source, more joint detections will allow this value to be constrained. This will allow for more accurate measurements of the speed of gravity and rule out more exotic EM emissions mechanisms, some of which predict time delays much greater than the 10 second bound we used in the above calculation.
-\begin{itemize}
-\item Speed of GW inequality is different to the GRB paper, but I don't really understand the approximation used there \textbf{ASK PATRICK}
-\end{itemize}
 
 \subsubsection{Hubble Constant}
 Another scientific result to come from GW 170817 is a new measurement of the Hubble constant. Using the distance inferred from GW data, and the redshift measurement of the associated galaxy NGC 4993, it is possible to calculate the Hubble constant directly, instead of using a cosmic distance ladder.\footnote{The cosmic distance ladder describes the fact that various different techniques are used to measure distances depending on the distance scale being measured. Each technique is useful for a certain range of distances, and the different techniques overlap in some distance range, allowing them to be calibrated to one another.} Using this method, the Hubble constant was measured to be $H_0 = 70^{+12}_{-8} \text{ km s}^{-1} \text{Mpc}^{-1}$. This is consistent with measurements made using both Planck data and standard candles. 
@@ -1303,7 +1300,7 @@ It is not trivial to find a set of orthonormal waveforms such as the $T^i$ above
 T^i = \frac{t^i - (t^i|h)h}{\sqrt{1-(t^i|h)^2}}
 \end{equation}
 but in general these $T^i$ will not be orthonormal to each other. Using these waveforms, the formula for $\chi^2$ is no longer a sum of independent Gaussian variables but a sum of correlated Gaussian variables. For this distribution the mean is unchanged, but the variance becomes\footnote{The general formula for the variance of the sum of correlated Gaussian variables $X_i$ is $\text{Var}(\sum_i X_i) = \sum_i \text{Var}(X_i) + \sum_{i \neq j} \text{Cov}(X_i,X_j) $ where $\text{Cov}(X_i,X_j)$ is the covariance matrix of $X_i$ and $X_j$.}
-\begin{equation}
+\begin{equation} \label{single det chisq var}
 \text{Var}(\chi^2) = 2N + 2\sum_{i \neq j} (T^i|T^j)^2 \fs
 \end{equation}
 This does not cause significant problems though as $\chi^2$ thresholds are set empirically. 
@@ -1321,26 +1318,19 @@ We then take a set of normalised test waveforms $\hat{t}^i_\mu$ and construct wa
 T^i_\mu = \frac{t^i_\mu - \sum_\nu(\hat{\textbf{t}}^i_\mu | \hat{\textbf{h}}_\nu)\hat{h}_\nu}{\sqrt{1-\sum_\sigma(\hat{\textbf{t}}^i_\sigma|\hat{\textbf{h}}_\sigma)^2}} \fs
 \end{equation}
 The multidetector $\chi^2$ is then defined as
-\begin{equation}
-\chi^2 = \sum_{\mu=1}^4 \sum_{i=1}^N (\textbf{T}^i_\mu | s)^2 
+\begin{equation} \label{coh chisq}
+\chi^2 = \sum_{\mu=1}^4 \sum_{i=1}^N (\textbf{T}^i_\mu | \textbf{s})^2 
 \end{equation}
 if we assume the templates used are orthonormal
 \begin{equation}
 ( \textbf{T}^i_\mu | \textbf{T}^j_\nu ) = \delta^{ij}\delta\mu \fs
 \end{equation}
 This has a mean of $4N$ and a variance of $8N$. The orthonormality condition is not in general true. Accounting for this, the mean is still $4N$ but the variance becomes
-\begin{equation}
-\text{Var}(\chi^2) = 8N + 2\sum_{i,j=1}^N \sum_{\mu,\nu=1}^4 [(\textbf{T}^i_\mu | \textbf{T}^j_\nu)^2 - \delta^{ij}\delta\mn ] \fs
+\begin{equation} \label{coh chisq var}
+\text{Var}(\chi^2) = 8N + 2\sum_{i \neq j} \sum_{\mu\neq\nu} [(\textbf{T}^i_\mu | \textbf{T}^j_\nu)^2 ] 
 \end{equation}
 We have seen how $\chi^2$ tests are expected to work, but there are several different methods for obtaining the waveforms $\hat{\textbf{t}}^i_\mu$. In the rest of this section we will see the three different kinds of $\chi^2$ test that PyGRB uses.
 
-\begin{itemize}
-\item \textbf{why is this the variance? Shouldn't it be }
-\begin{equation}
-\text{Var}(\chi^2) = 8N + 2\sum_{i \neq j} \sum_{\mu\neq\nu} [(\textbf{T}^i_\mu | \textbf{T}^j_\nu)^2 ] 
-\end{equation}
-?
-\end{itemize}
 
 \subsubsection{The Coherent Bank $\chi^2$ Test}
 A glitch will cause a high SNR across many templates in a template bank. This is different to a signal, which will in general only have a high SNR for templates with similar parameters. By selecting a set of templates from across the template bank to be our test waveforms $t^i$, we can use the $\chi^2$ test described above. The set of waveforms remains the same for every template $h$ in the template bank. This test is most effective when $\textbf{T}^i_\mu$ are close to orthogonal, so templates are selected from across the mass space. This is sufficient to make the deviation from a true $\chi^2$ test negligible. 
@@ -1514,57 +1504,187 @@ As can be seen, the rates calculated using the PyGRB results are consistent with
 
 
 
-\chapter{Improvements to PyGRB} \label{sec:pygrb improvements}
-In the previous chapter we discussed the PyGRB pipeline as it was used in the second LIGO observing run. The code is now about 10 years old, and in that time new software tools have become available that could speed up the and improve the analysis. In particular, there is the PyCBC software package [\textbf{cite pycbc paper}], which has highly optimised tools for performing a matched filter search. For this reason, PyGRB is being rewritten to be fully implemented into PyCBC. In this chapter we will begin by discussing the reasons why this change was necessary before seeing what changes have already been made and the improvements they provide. We will then end this chapter by looking forward at the changes that need to happen for the PyGRB rewrite to be used in a GW search.
+\chapter{The Future of PyGRB} \label{sec:pygrb improvements}
+In the previous chapter we discussed the PyGRB pipeline as it was used in the second LIGO observing run O2. The code is now about 10 years old, and in that time new software tools have become available that could speed up the and improve the analysis. In particular, there is the PyCBC software package [\textbf{cite pycbc paper}], which has highly optimised tools for performing a matched filter search. For this reason, PyGRB is being rewritten to be fully implemented into PyCBC. In this chapter we will begin by discussing the reasons why this change was necessary before seeing what changes have already been made and the improvements they provide. We will then end this chapter by looking forward at the changes that need to happen for the PyGRB rewrite to be used in a GW search.
 
 
 \section{Reasons to Rewrite the Pipeline}
-The primary reason for rewriting the pipeline is to make use of the faster and more efficient matched filtering software that PyCBC can provide. Developments in the all-sky search have drastically sped up matched filtering in recent years, to the point where PyGRB was becoming noticeably slow by comparison. Apart from being a waste of computer time, this also limits the science that can be done with PyGRB. The medium latency PyGRB search aims to provide a preliminary analysis of a GRB within a day. As kilonovas following short GRBs fade on a timescale of hours, this delay can mean missing vital data from the time immediately after merger. With the new code, we expect to be able to perform a preliminary analysis (with minimal injections and no timeslides) within a couple of hours. It also limits the size of the sky patch that can be searched over in a reasonable amount of time. There were four short GRBs in O2 that were not well localised enough for PyGRB to analyse,\footnote{These were all IPN detections, which can have poor localisation depending on which detectors in the network see the GRB (see section \ref{sec:grb detectors}).} which could have been with faster, more efficient code. And finally, it limits the number of timeslides that can be performed, and consequently the false alarm probability (FAP) that can be achieved. 
+The primary reason for rewriting the pipeline is to make use of the faster and more efficient matched filtering software that PyCBC can provide. Developments in the all-sky search have drastically sped up matched filtering in recent years, but these developments are unavailable to PyGRB at the moment. This not only uses up computer time unnecessarily, but also limits the science that can be done with PyGRB. The medium latency PyGRB search aims to provide a preliminary analysis of a GRB within a day. As kilonovas following short GRBs fade on a timescale of hours, this delay can mean missing vital data from the time immediately after merger.\footnote{For example, the top right panel of figure \ref{fig:structured jet} shows that observations in the first day after the GRB can be vital for determining the jet structure.} With the new code, we expect to be able to perform a preliminary analysis (with minimal injections and no timeslides) within a couple of hours. 
 
-There are two bottlenecks in the PyGRB workflow. The first is the matched filtering, where using the PyCBC matched filtering engine can lead to significant speed up. The other is in post-processing, which can be sped up significantly by using a modern file format.\footnote{The old code used xml files, which are significantly slower than the hdf5 files used by the new code.} The post-processing also frequently exceeds the memory allowance on computing clusters, which requires the job to be manually halted and rerun with the post-processing split into smaller jobs. As PyGRB deals with far fewer triggers (and so should use less memory) than the all-sky search, this should not be a problem. Using tools developed for the all-sky search can fix this. 
+Slow matched filtering also limits the size of the sky patch that can be searched over in a reasonable amount of time. There were four short/ambiguous GRBs in O2 that were not well localised enough for PyGRB to analyse in a reasonable amount of time,\footnote{These were all IPN detections, which can have poor localisation depending on which detectors in the network see the GRB (see section \ref{sec:grb detectors}).} which could have been with faster, more efficient code. Similarly, slow matched filtering limits the number of timeslides that can be performed in a reasonable amount of time. This limits how accurately the FAP of a trigger can be measured.
 
-Faster code is not the only reason for integrating PyGRB into PyCBC. New tools have been made for the all-sky search will become available to the targeted search\footnote{These will be discussed in more detail in section \ref{sec:pygrb changes}} as well as any future improvements. It will also allow for techniques developed for the targeted search to be adopted by the all-sky search. For example, the all-sky search could adopt a hierarchical approach where coherent follow-up is performed on the sky patch around sub-threshold triggers, improving the false alarm rate.  
+There are two bottlenecks in the PyGRB workflow. The first is the matched filtering, where using the PyCBC matched filtering engine can lead to significant speed up. The other is in post-processing, which can be sped up significantly by using a modern file format.\footnote{The old code used xml files, which are significantly slower for our purposes than the hdf5 files used by PyCBC.} The post-processing also frequently exceeds the memory allowance on computing clusters, which requires the job to be manually halted and rerun with the post-processing split into smaller jobs. As PyGRB deals with far fewer triggers (and so should use less memory) than the all-sky search, this should not be a problem. Using tools in PyCBC will fix this. 
 
-\begin{itemize}
-\item Speed and memory usage comparisons between all sky and targeted search
-\end{itemize}
+Faster code is not the only reason for integrating PyGRB into PyCBC. New tools have been made for the all-sky search will become available to the targeted search. We will discuss this in section \ref{sec:pygrb changes}.  Integrating into PyCBC will also mean that any new tools developed in PyCBC will become immediately available to PyGRB. Similarly, any techniques developed for the targeted search can easily be adopted by the all-sky search. For example, the all-sky search could perform coherent follow-up on the sky patch around triggers, using the infrastructure already developed for PyGRB.
 
-\section{New Code Changes} \label{sec:pygrb changes}
-In the previous section we discussed the reasons why rewriting PyGRB was necessary. In this section we will see how the code has changed. The rewrite was not simply a case of carrying out the same analysis with a faster matched filtering engine. The new analysis is qualitatively different from the old code. We will look at is the new consistency checks, we will see some of the tools used in the all-sky search that are now available to the targeted search, we will discuss the new detection statistic used, and finally we will see how much faster the new analysis is than the old. 
+The final reason to integrate PyGRB into PyCBC is to make code more user friendly and less cumbersome. This will make it easier for new users to become proficient in using PyGRB and will speed up development. One way we will do this is by using the tools developed by PyCBC for making the results webpages. The PyGRB results webpages are static and contain little information about how to reproduce the results they show. By comparison, the PyCBC webpages contain interactive tables and the command line arguments required to replicate a the plots. These tools will speed up diagnosing, for example, missed injections. 
+
+Another example of how integrating into PyCBC will make PyGRB simpler the PyGRB implementation of autogating. Autogating is a method to prevent very loud glitches contaminating the matched filter timeseries. PyCBC does this by using a time-frequency excess power burst search \textbf{cite https://arxiv.org/pdf/1602.03839.pdf and refs there in } to find times of excess strain in the data.\footnote{To be precise, the threshold for gating was set at a burst SNR of 100 during O2, higher than any expected GW signal. For example, GW 150914 had a burst SNR of 10.} These times are then zeroed out using an inverse Tukey window, as seen in figure \ref{fig:l1 gltich}.  While autogating was used by PyGRB during O2, its implementation was ad hoc. A script was made that used PyCBC tools to autogate the data and write out the gated frames, which are then used by the rest of the PyGRB workflow. In future, the autogating will be handled automatically by the matched filtering executable, just as it is with PyCBC. This will not have a significant effect on analysis time, but is an example of how integrating into PyCBC will simplify the workflow.
+
+\section{Workflow Modifications} \label{sec:pygrb changes}
+We have discussed the reasons why rewriting PyGRB was necessary. But the rewrite was not simply a case of carrying out the same analysis with a faster matched filtering engine. The new analysis is qualitatively different from the one described in chapter \ref{chap: CBC}. The most significant change is to the signal consistency tests. Not only can we use new tools developed in PyCBC to make these tests more powerful, but we have chosen to move away from using coherent $\chi^2$ tests in favour of the single detector tests. We will discuss these changes in \ref{sec:new chisq}. The change in $\chi^2$ tests then necessitates the development of a new detection statistic, as the old one used the coherent $\chi^2$ tests. This is discussed in \ref{sec:new det stat}. 
+
+
 
 \subsection{Consistency Checks} \label{sec:new chisq}
+Most of the changes made to the PyGRB pipeline were motivated by either speeding up the analysis or using new data analysis tools that were not previously available. One of the changes we made that does not fall into either of these categories is abandoning the coherent $\chi^2$ tests described in section \ref{sec:coh chisq}. Apart from being computationally expensive, it was also clear that these tests were performing no better than the single detector $\chi^2$ tests (also described in section \ref{sec:coh chisq}). 
+
+The reason why coherent $\chi^2$ tests are not appropriate stems from the fact that glitches are a single detector phenomenon. Coherent matched filtering works well because we have a network of detectors that should all detect the same signal if there is a GW passing through. In this case, the coherent matched filter provides a natural way to downweight coincident signals that are not consistent phase or amplitude with the sky location and time of the GRB. Contrast this with a glitch, which a burst of energy in one detector. In this case, combining the data streams from multiple detectors washes out the effect of the glitch, making it harder to detect downweight, as the signal consistency tests are supposed to do. This is clear from equation \ref{coh chisq}, the formula for the coherent $\chi^2$ tests.\footnote{ For convenience we repeat it here
+\begin{equation}
+\chi^2 = \sum_{\mu=1}^4 \sum_{i=1}^N (\textbf{T}^i_\mu | \textbf{s})^2 
+\end{equation}
+where the $\textbf{T}^i_\mu$ are the $N$ multidetector waveforms orthogonal to \textbf{h} and $\textbf{s}$ is the vector of detector data streams.}
+The sum implicit in the multidetector inner product makes the contribution of any one detector more difficult to detect, making a test for a single detector glitch less effective. Ultimately, this manifests itself in a higher variance for the $\chi^2$, given by equation \ref{coh chisq var}.\footnote{Repeated here for convenience 
+\begin{equation}
+\text{Var}(\chi^2) = 8N + 2\sum_{i \neq j} \sum_{\mu\neq\nu} [(\textbf{T}^i_\mu | \textbf{T}^j_\nu)^2 ] 
+\end{equation}}
+Compared to the single detector $\chi^2$ test, given by \ref{single det chisq var}. The variance of the multidetector $\chi^2$ test is $6N$ larger from the first term, as well as the sum over $\mu$ and the implicit sum over detectors in the inner product. As the variance is much higher in the coherent $\chi^2$, it is inherently more difficult to place an appropriate threshold to remove glitches. For these reasons, we have decided to drop the use of the coherent $\chi^2$ tests from the PyGRB analysis, in favour of the single detector $\chi^2$ tests used by the PyCBC all-sky search.
+
+Not only have we moved to single detector $\chi^2$ tests, but PyCBC has made improvements to the $\chi^2$ test that can now be incorporated into the GRB search. The power $\chi^2$ test described in \ref{sec:coh chisq} divided the template into a fixed number of bins, which should each contain an equal amount of signal power for a real GW. This test can be improved by using the parameters of the template to determine the bins. In particular, templates with a higher peak frequency have more cycles in the sensitive band of the detectors and so using more $\chi^2$ bins can make the test more powerful. Conversely, a template with a low peak frequency will have fewer cycles in the sensitive band and so needs to use fewer bins, otherwise some of the bins will have an SNR comparable to the background noise. 
+
+PyGRB currently uses 16 $\chi^2$ bins, regardless of template parameters. The new code uses a variable number of bins $p$ according to the formula
+\begin{equation}
+p = \lfloor 0.72 f_\text{peak}^\frac{2}{3} \rfloor
+\end{equation}
+where $f_\text{peak}$ is the peak frequency of the waveform measured in Hertz. This formula is the same as the current PyCBC analysis, and was determined empiracally. \textbf{cite GW150914 paper, though this has a different formula, look for more up-to-date citation}
+
+\subsection{Detection Statistic} \label{sec:new det stat}
+As we no longer use the coherent $\chi^2$ statistic, we also cannot use the reweighted SNR, described in section \ref{sec:reweighted snr}, as the detection statistic. Instead we define a new network $\chi^2$ statistic, which weights the $\chi^2$ contribution from each detector by the SNR from that detector. We then use this network $\chi^2$ to reweight the coherent SNR in a similar way as the PyCBC all-sky search reweights the single detector SNRs with the single detector $\chi^2$. 
+
+To be precise, the new network $\chi^2$ statistic for an $N$ detector network, where the SNR and $\chi^2$ per degree of freedom values for each individual detector are given by $\rho_i$ and $\chi^2_i$ respectively, is given by
+\begin{equation}
+\chi^2_N = \frac{ 1 }{\rho_\text{coinc}^2} \sum_{i=0}^N \chi^2_i \rho^2_i \fs
+\end{equation}
+From this, we calculate the new reweighted SNR to be
+\begin{equation}
+\rho_\text{rw} = \frac{\rho_\text{network}}{(1+(\chi^2_N)^a)^b}
+\end{equation}
+with $a=3$ and $b=1/6$ by default. Here $\rho_\text{network}$ denotes a network SNR statistic, which for the a network of three or more detectors will be the null reweighted coherent SNR (discussed in \ref{sec:reweighted snr}) and in the one or two detector case will be the coincident SNR (as there is no null stream). 
+
+
+It should be noted that this detection statistic is a first attempt, made to be as similar as possible to both the previous PyGRB detection statistic and the PyCBC all-sky search detection statistic. Work should be done in future to see if a different statistic can be invented that is more effective. If we do decide to continue with this form for the detection statistic, then the values of the exponents $a$ and $b$ will need to be optimised.
+
+
+
+
+
+\FloatBarrier
+\section{Search Performance}
+In this section we see how the new code performs. We will start by looking at the results of some example analyses in order to convince ourselves that the code is behaving sensibly. Then we will look at how much faster the new code is than the old. 
+
+As the new code cannot yet search over a sky patch, we chose two well localised GRBs for the test. The first was GRB 170817A, this has an associated GW, and as an afterglow was located which provides very accurate sky localisation. This was also a three detector analysis, allowing us to check the coherent and null SNR are behaving correctly. The second GRB was GRB 170112A, which was a well localised swift GRB with Livingston and Virgo detector data available at the trigger time.\footnote{GRB 170112A was not a single sky point analysis when analysed by PyGRB in O2, but did have a small sky error. The O2 PyGRB analysis searched over three sky points.}
+
+
+\subsection{Analysis Results}
+We will start by looking at the results of the GRB 170817A search. As can be see from figure \ref{fig:coherent snr 170817}, the coherent SNR timeseries looks clean, and GW 170817 is clearly visible at the correct time with a coherent SNR of 29.22, which is comparable to the coherent SNR of 31.26 PyGRB obtained in O2.\footnote{Some differences in SNR are to be expected as the search is using different PSD options to the O2 PyGRB search.} In figure \ref{fig:null snr 170817} we have plotted the null SNR timeseries. The null SNR shows no significant deviations from the background level, with a peak of just 5.22. Only a few points are above the 4.25 threshold required to reweight a trigger by the null SNR, see equation \ref{null reweight}. In figure \ref{fig:reweighted snr 170817} we can see that the null and $\chi^2$ reweighting reduce the few peaks that could be seen in the coherent SNR without substantially reducing the SNR of the GW, as we would expect.
+
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{coherent_snr_vs_time_170817.png}
+\end{center}
+\caption{\textbf{Coherent SNR vs Time.} 170817 run. } 
+\label{fig:coherent snr 170817}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{null_snr_vs_time_170817.png}
+\end{center}
+\caption{\textbf{Null SNR vs Time.} 170817 run. } 
+\label{fig:null snr 170817}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{reweighted_snr_vs_time_170817.png}
+\end{center}
+\caption{\textbf{Reweighted SNR vs Time.} 170817 run. Black line is cut.} 
+\label{fig:reweighted snr 170817}
+\end{figure}
+
+We also plotted the peak coherent and reweighted SNR in each off-source trial, as well as the on-source, in figures \ref{fig:coh off trials 170817} and \ref{fig:re off trials 170817} respectively. As we do not have timeslides, there are not many off-source trials (892 in total), but we can clearly see that the on-source trial, marked by the star, is substantially louder than the background. More importantly for development, we can see that the coherent SNR has a small tail of events at around a coherent SNR of 7-9, while the reweighted SNR has a much smaller tail. 
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{coh_snr_fap_with_signal_170817.png}
+\end{center}
+\caption{\textbf{Highest Coherent SNR Event in Off-source Trials.} 170817 run. Star is BNS.} 
+\label{fig:coh off trials 170817}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{snr_fap_with_signal_170817.png}
+\end{center}
+\caption{\textbf{Loudest Event in Off-source Trials.} 170817 run. Star is BNS.} 
+\label{fig:re off trials 170817}
+\end{figure}
+
+We also injected BNS waveforms with an opening angle of up to $30^\circ$ into the off-source data to see how well they were recovered. In figure \ref{fig:inj dist time} we have plotted the distance to the injection against time, and can see that we can detect BNS waveforms up to about 200 Mpc. In figure \ref{fig:old inj dist time}, we see that the O2 PyGRB code obtained similar results, though the new code cannot yet provide a FAP for an injection. In figure \ref{fig:inj dist mchirp} we plot the chirp mass of the injection against the distance. Comparing to figure \ref{fig:old inj dist mchirp}, we see that the results are comparable.
+
+
+
+
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{injections_dist_time.png}
+\end{center}
+\caption{\textbf{Injection Distance against Time.} 170817 run} 
+\label{fig:inj dist time}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{found_missed_injections_dist_time.png}
+\end{center}
+\caption{\textbf{Injection Distance against Time.} PyGRB O2 run of 170817.} 
+\label{fig:old inj dist time}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{mchirp_distance_inj.png}
+\end{center}
+\caption{\textbf{Injection Distance against Chirp Mass.} 170817 run} 
+\label{fig:inj dist mchirp}
+\end{figure}
+
+\begin{figure} % Example of including images
+\begin{center}
+\includegraphics[width=0.8\linewidth]{found_missed_injections_dist_mchirp.png}
+\end{center}
+\caption{\textbf{Injection Distance against Chirp Mass.} O2 PyGRB 170817 run} 
+\label{fig:old inj dist mchirp}
+\end{figure}
+
 \begin{itemize}
-\item Quick summary of old chisq and point to section in previous chapter
-\item No coherent chi2 any more
-\item Coherent chisq just washes out the chisq
-\item Use single ifo chisq in combination 
+\item \textbf{MUST REGENRATE ALL PLOTS IN THIS SECTION}
+\item An analysis with more injections is running now
+\item What is the limiting factor of the injection finding range.
 \end{itemize}
 
+\subsection{Analysis Time} \label{sec:speed gains}
+As mentioned previously, one of the primary motivations for integrating PyGRB into PyCBC was to speed up the analysis. To see the effect of the changes described above, we analysed two GRBs and compared the analysis to the old code. The new matched filtering executable does not have all the functionality the old code has, and so any comparison of analysis time should be considered preliminary and will not reflect the analysis speed improvement of a full GRB analysis. That said, the new code can perform a minimal analysis that can indicate how much faster it is than the old code and if it is producing sensible results. 
 
-\subsection{New Data Analysis Tools} \label{sec:new pygrb tools}
-Integrating PyGRB into PyCBC makes many tools that are standard for the all-sky search available for the GRB search. In this section we describe two of these new tools, auto-gating and 
+For testing, we ran as close as possible to an identical analysis with the old and new code. This meant disabling the features of the old analysis that the new code does not have. Features that were disabled include the face-on coherent analysis described in section \ref{sec:circ pol}, the bank and auto $\chi^2$ tests, and timeslides. As the power $\chi^2$ test is different in the old and new codes, we ran analyses three tests: One with no $\chi^2 tests$, one with only the power $\chi^2$ tests, and one with all the $\chi^2$ tests. The analysis with no $\chi^2$ tests will reflect purely the speed up in matched filtering. The test with just the power $\chi^2$ test is a comparison between the current best analysis the new code can perform, and the old code equivalent. This test is not a fair comparison for the old code, however, as it performs the bank and auto $\chi^2$ tests before the power $\chi^2$ test as the coherent power $\chi^2$ test is the most computationally expensive. We therefore also compare an analysis where the old code uses all the $\chi^2$ tests it has available, even though the new code only uses the power $\chi^2$ test. 
 
-\begin{itemize}
-\item Denty bins
-\item Autogating
-\item And any future developments
-\end{itemize}
+We will compare the CPU runtime for several of the executables that have been rewritten. The most significant of these is the matched filtering job. This is by a large margin the most computationally expensive part of the analysis. In a standard analysis in O2 there are approximately 9000 individual jobs run, of which 8780 matched filtering jobs launched per GRB. Of these matched filtering jobs, 7280 are injection jobs and 1500 are non-injection jobs. In either case, these matched filtering jobs can take hours. With the set up described above, the jobs do not take as long as in a production run, but they take long enough to test performance. In table \ref{tab:inspiral speed}, we see the CPU time to complete a single matched filter job with no injections for the old code and the new code, with the left-most column indicating which $\chi^2$ tests were used. As we can see, the new code is significantly faster than the old. Also, the use of $\chi^2$ tests has almost no impact on the analysis time of the new code, in fact it improved the analysis time slightly. From these results, we can conclude that the matched filtering alone is now more than twice as fast as the old code. When $\chi^2$ tests are included in the analysis, the new code is almost five times faster than the old code. For a comparison of the matched filter job speed with injections, we only compared the analysis time with all $\chi^2$ tests. In this case old code took 7781 seconds and the new code took 2132, more than three times faster.  
 
+\begin{table}[h] \label{tab:inspiral speed}
+\centering
+\begin{tabular}{  c | c | c }
+ $\chi^2$ tests used  & Old code & New Code \\ \hline                                                       
+None  & 24m 20s & 12m 7s \\
+Power & 77m 18s & 11m 28s \\
+Power, auto, and bank & 58m 37s & n/a  \\
+\end{tabular}
+\caption{\textbf{Time to Complete Single Matched Filter job.} Here we see how long a single matched filter job in the GRB 170817A analysis took to complete with different $\chi^2$ tests being used. The new code does not use the bank or auto $\chi^2$ tests. We can see that there is a substantial speed up of the analysis. }
+\end{table}
 
+While the limiting factor on the analysis time is the matched filter, jobs\footnote{Both with the old and new code.} rewriting the post-processing jobs has also led to a useful speed up. In particular, the trigger combiner job, which combines the results from all the different split bank matched filter jobs, is now much faster. It previously had to be split into many smaller jobs to prevent it from exceeding the memory allowance of the computer cluster. In total, the trigger combining stage required 20 jobs of about 200 seconds and one job of about 80 seconds. With the new code, this can be done with one job in about 70 seconds. A similar story applies to the trigger clustering stage, which used to be 20 jobs of about 60 seconds each followed by one job of about 30 seconds. This is now a single 4 second long job. 
 
-\subsection{Detection Statistic}
-\begin{itemize}
-\item Re-optimised the cuts and reweighted snr
-\end{itemize}
-
-\subsection{Speed Gains}
-\begin{itemize}
-\item Single sky point analysis with no face on/off analysis
-\item Speed gains from optimised ffts
-\item Compare analysis speed for 170817 and a swift GRB
-\item Show results are comparable 
-\item Ran on a single sky point in 2 hours 
-\end{itemize}
 
 \section{Future Plans}
 We have shown that the work to integrate PyGRB into PyCBC has reached a significant milestone in being able to analyse a GRB and achieve reasonable results. We have also shown that it is significantly faster than the old code and described the new tools that are available for the PyGRB search. We end this chapter by looking at what there is left to be done to make the new pipeline as sensitive as the old one, and what can be done after this to make PyGRB even more sensitive. 
@@ -1579,6 +1699,9 @@ The three things mentioned above will give the new PyGRB pipeline all the same f
 
 There are also plans to make an astrophysically motivated detection statistic. This means that templates of sources that astrophysical models predict are less common will be downweighted, while sources that are expected to be common will not be. This is a natural next step for a coherent search, as the coherent SNR determines whether a trigger is consistent with the state of the detector network at the time of the trigger, but does not determine if the trigger is consistent with the current best models of the GW source populations.
 
+\begin{itemize}
+\item Different background stuff if you can understand it
+\end{itemize}
 
 \chapter{A Search for Unmodelled Gravitaional Wave Signals using Machine Learning} \label{chap: mva}
 

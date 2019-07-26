@@ -99,6 +99,18 @@ For my parents, not that you'll understand any of it.
 % ----------------------------
 % main work
 
+
+\chapter*{Collaborative Work}
+The following sections of this thesis contain work that has been co-authored with others, or that builds upon software developed by others and previously published:
+\begin{itemize}
+\item Chapter \ref{chap: CBC} discusses the PyGRB search pipeline. Previous publications describing developments to this pipeline and search results can be found in \textbf{cite harry macleod williamson and O1 GRB paper}. 
+\item Chapter \ref{chap: CBC} ends with a discussion of the PyGRB search results from the most recent observing run. These results can be found in \textbf{cite O2 GRB paper}. I contributed to this paper compiling the required information on the Gamma-ray bursts (GRBs), analysing eight of the 42 GRBs in the PyGRB analysis sample, and co-authoring the paper.
+\item Chapter \ref{chap:pygrb future} discusses development work on PyGRB. I led this work, but with the input of many collaborators, especially from members of the Cardiff University Gravitational Wave group and the GRB working group of the LIGO-Virgo collaboration.
+\item Chapter \ref{chap: mva} discusses development work on {\xp}. \xp has been previously written about in \textbf{cite sutton and was}. 
+\item The \xp search results from the most recent observing run, used in chapter \ref{chap: mva}, were previously published in \textbf{cite O2 GRB paper}, which I co-authored. 
+\item The MVA search for GWs described in chapter \ref{chap: mva} has been previously described in \textbf{cite Adams paper} and the software used is described in \textbf{cite TMVA user guide}.  
+\end{itemize}
+
 \mainmatter
 
 \chapter{Introduction}
@@ -629,7 +641,7 @@ The stationary noise in the detector is measured using the \emph{power spectral 
 \begin{equation} \label{eqn:PSD}
 \frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
 \end{equation}
-The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the angular control systems (ASC), Michelson (MICH) and signal recycling cavity length (SRCL) controls, and the mirror suspension thermal noise (thermal Susp). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{noise_budget_martynov} \cite{GW150914-detector} .
+The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment and angular sensing and control systems (ASC), and the thermal noise of the mirror suspensions (thermal Susp) and coating (thermal coating). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. You can also see that at around 20-50 Hz, the sum of noises is much lower than the measured differential arm length (DARM). This indicated that the limiting factor of the detector sensitivity in this frequency range is unknown. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{noise_budget_martynov} \cite{GW150914-detector} .
 
 \begin{figure}[ht]
 \centering
@@ -1504,7 +1516,7 @@ As can be seen, the rates calculated using the PyGRB results are consistent with
 
 
 
-\chapter{The Future of PyGRB} \label{sec:pygrb improvements}
+\chapter{The Future of PyGRB} \label{chap:pygrb future}
 In the previous chapter we discussed the PyGRB pipeline as it was used in the second LIGO observing run O2. The code is now about 10 years old, and in that time new software tools have become available that could speed up the and improve the analysis. In particular, there is the PyCBC software package [\textbf{cite pycbc paper}], which has highly optimised tools for performing a matched filter search. For this reason, PyGRB is being rewritten to be fully implemented into PyCBC. In this chapter we will begin by discussing the reasons why this change was necessary before seeing what changes have already been made and the improvements they provide. We will then end this chapter by looking forward at the changes that need to happen for the PyGRB rewrite to be used in a GW search.
 
 
@@ -1583,7 +1595,7 @@ We will start by looking at the results of the GRB 170817A search. As can be see
 \begin{center}
 \includegraphics[width=0.8\linewidth]{coherent_snr_vs_time_170817.png}
 \end{center}
-\caption{\textbf{Coherent SNR vs Time.} 170817 run. } 
+\caption{\textbf{Coherent SNR vs Time.} This is the coherent SNR time series for the analysis of GRB 170817A. The GW is clearly visible at the trigger time. } 
 \label{fig:coherent snr 170817}
 \end{figure}
 
@@ -1591,7 +1603,7 @@ We will start by looking at the results of the GRB 170817A search. As can be see
 \begin{center}
 \includegraphics[width=0.8\linewidth]{null_snr_vs_time_170817.png}
 \end{center}
-\caption{\textbf{Null SNR vs Time.} 170817 run. } 
+\caption{\textbf{Null SNR vs Time.} This is the null SNR time series for the GRB 170817A analysis. There are no significant peaks in the time series, indicating that the data is relatively clean. In particular, the null SNR is low at the trigger time, suggesting that the peak in coherent SNR is a GW. } 
 \label{fig:null snr 170817}
 \end{figure}
 
@@ -1599,7 +1611,7 @@ We will start by looking at the results of the GRB 170817A search. As can be see
 \begin{center}
 \includegraphics[width=0.8\linewidth]{reweighted_snr_vs_time_170817.png}
 \end{center}
-\caption{\textbf{Reweighted SNR vs Time.} 170817 run. Black line is cut.} 
+\caption{\textbf{Reweighted SNR vs Time.} This is the null and $\chi^2$ reweighted SNR for the GRB 170817A analysis. We can see that some of the in the coherent SNR (figure \ref{fig:coherent snr 170817})have been downweighted, as we would expect from noise triggers. The GW signal at the trigger time has also been downweighted slightly, but is still well above the background. } 
 \label{fig:reweighted snr 170817}
 \end{figure}
 
@@ -1609,7 +1621,7 @@ We also plotted the peak coherent and reweighted SNR in each off-source trial, a
 \begin{center}
 \includegraphics[width=0.8\linewidth]{coh_snr_fap_with_signal_170817.png}
 \end{center}
-\caption{\textbf{Highest Coherent SNR Event in Off-source Trials.} 170817 run. Star is BNS.} 
+\caption{\textbf{Highest Coherent SNR Event in Off-source Trials.} In this figure, the line indicates the coherent SNR peak in each 6 second off-source bin for the GRB 170817A analysis, and the star indicates the on-source. We can see that the on-source has a much higher coherent SNR than any of the off-source trials. Also note that there is a tail of events with a coherent SNR of about 7-9.} 
 \label{fig:coh off trials 170817}
 \end{figure}
 
@@ -1617,7 +1629,7 @@ We also plotted the peak coherent and reweighted SNR in each off-source trial, a
 \begin{center}
 \includegraphics[width=0.8\linewidth]{snr_fap_with_signal_170817.png}
 \end{center}
-\caption{\textbf{Loudest Event in Off-source Trials.} 170817 run. Star is BNS.} 
+\caption{\textbf{Loudest Event in Off-source Trials.} In this figure, the line indicates the reweighted SNR peak in each 6 second off-source bin for the GRB 170817A analysis, and the star indicates the on-source. Again, we can see that the on-source has a much higher reweighted SNR than any of the off-source trials. Also note that the tail of events with a high coherent SNR of about 7-9, seen in figure \ref{fig:coh off trials 170817}, does not appear in this plot. This shows that the reweighting is lowering the significance of glitches, as it is supposed to do.} 
 \label{fig:re off trials 170817}
 \end{figure}
 
@@ -1639,7 +1651,7 @@ We also injected BNS waveforms with an opening angle of up to $30^\circ$ into th
 \begin{center}
 \includegraphics[width=0.8\linewidth]{found_missed_injections_dist_time.png}
 \end{center}
-\caption{\textbf{Injection Distance against Time.} PyGRB O2 run of 170817.} 
+\caption{\textbf{Injection Distance against Time.} This is the distance (MPc) vs time plot for the BNS injection run in the PyGRB O2 analysis of GRB 170817A. Blue crosses indicate that the injection was found and was more significant than event in the background data. Red crosses indicate that a trigger was found that was coincident with the injection, but it was vetoed. Black crosses indicate that no trigger was found that was coincident with the trigger. Coloured circles indicate that the injection was found but was not louder than all of the background, and in this case the circle colour indicates the FAP of the trigger. We can see that nearby injections are almost always found, and typically with a low FAP. More distant injections tend to be vetoed, missed completely, or have a relatively high FAP. It is at a distance of about 200 Mpc that injections start to be missed.} 
 \label{fig:old inj dist time}
 \end{figure}
 
@@ -1655,13 +1667,12 @@ We also injected BNS waveforms with an opening angle of up to $30^\circ$ into th
 \begin{center}
 \includegraphics[width=0.8\linewidth]{found_missed_injections_dist_mchirp.png}
 \end{center}
-\caption{\textbf{Injection Distance against Chirp Mass.} O2 PyGRB 170817 run} 
+\caption{\textbf{Injection Distance against Chirp Mass.} This plot uses the same conventions and injection set as figure \ref{fig:old inj dist time}, but shows the distance (Mpc) against the chirp mass of the signal injections. We can see that, in general, the higher the chirp mass, the lower FAP of the injection, as we would expect.}  
 \label{fig:old inj dist mchirp}
 \end{figure}
 
 \begin{itemize}
-\item \textbf{MUST REGENRATE ALL PLOTS IN THIS SECTION}
-\item An analysis with more injections is running now
+\item \textbf{MUST REGENRATE INJECTION PLOTS}
 \item What is the limiting factor of the injection finding range.
 \end{itemize}
 

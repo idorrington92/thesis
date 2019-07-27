@@ -81,38 +81,39 @@
 \contentsline {chapter}{\numberline {5}The Future of PyGRB}{81}{chapter.5}
 \contentsline {section}{\numberline {5.1}Reasons to Rewrite the Pipeline}{81}{section.5.1}
 \contentsline {section}{\numberline {5.2}Workflow Modifications}{83}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Consistency Checks}{83}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Detection Statistic}{84}{subsection.5.2.2}
-\contentsline {section}{\numberline {5.3}Search Performance}{85}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Analysis Results}{85}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.2.1}The new Coherent Matched Filtering Executable}{83}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Consistency Checks}{84}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Detection Statistic}{85}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Search Performance}{86}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Analysis Results}{86}{subsection.5.3.1}
 \contentsline {subsection}{\numberline {5.3.2}Analysis Time}{88}{subsection.5.3.2}
-\contentsline {section}{\numberline {5.4}Future Plans}{93}{section.5.4}
-\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitaional Wave Signals using Machine Learning}{95}{chapter.6}
-\contentsline {section}{\numberline {6.1}X-pipeline}{95}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{98}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{99}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Null Energy}{100}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{101}{subsection.6.1.4}
-\contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{102}{subsection.6.1.5}
-\contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{102}{subsection.6.1.6}
-\contentsline {section}{\numberline {6.2}Machine Learning}{103}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{105}{subsection.6.2.1}
-\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{108}{subsection.6.2.2}
-\contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{109}{subsection.6.2.3}
-\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{112}{subsection.6.2.4}
-\contentsline {subsubsection}{Training Set}{113}{section*.28}
-\contentsline {subsubsection}{BDT Parameters}{113}{section*.29}
-\contentsline {subsubsection}{Result of Optimisation}{116}{section*.30}
-\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{116}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Analysis Setup}{119}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{119}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{123}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Discussion and Future Work}{125}{subsection.6.3.4}
-\contentsline {subsubsection}{Low p-value Triggers}{125}{section*.31}
-\contentsline {subsubsection}{Long Injections}{125}{section*.32}
-\contentsline {subsubsection}{Machine Learning Developments}{130}{section*.33}
-\contentsline {chapter}{\numberline {7}Conclusions}{131}{chapter.7}
-\contentsline {chapter}{Appendices}{134}{section*.34}
-\contentsline {section}{\numberline {.1}General Relativity}{134}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{134}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}MVA Results Tables}{137}{section.Alph0.3}
+\contentsline {section}{\numberline {5.4}Future Plans}{96}{section.5.4}
+\contentsline {chapter}{\numberline {6}A Search for Unmodelled Gravitational Wave Signals using Machine Learning}{98}{chapter.6}
+\contentsline {section}{\numberline {6.1}X-pipeline}{98}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{101}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{102}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Null Energy}{103}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{104}{subsection.6.1.4}
+\contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{105}{subsection.6.1.5}
+\contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{105}{subsection.6.1.6}
+\contentsline {section}{\numberline {6.2}Machine Learning}{106}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{108}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{111}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{112}{subsection.6.2.3}
+\contentsline {subsection}{\numberline {6.2.4}Optimisation and Validation}{115}{subsection.6.2.4}
+\contentsline {subsubsection}{Training Set}{116}{section*.28}
+\contentsline {subsubsection}{BDT Parameters}{116}{section*.29}
+\contentsline {subsubsection}{Result of Optimisation}{119}{section*.30}
+\contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{119}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Analysis Setup}{122}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{122}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{126}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.4}Discussion and Future Work}{128}{subsection.6.3.4}
+\contentsline {subsubsection}{Low p-value Triggers}{128}{section*.31}
+\contentsline {subsubsection}{Long Injections}{128}{section*.32}
+\contentsline {subsubsection}{Machine Learning Developments}{133}{section*.33}
+\contentsline {chapter}{\numberline {7}Conclusions}{134}{chapter.7}
+\contentsline {chapter}{Appendices}{137}{section*.34}
+\contentsline {section}{\numberline {.1}General Relativity}{137}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{137}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}MVA Results Tables}{140}{section.Alph0.3}

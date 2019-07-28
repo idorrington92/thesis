@@ -40,6 +40,8 @@
 \newcommand{\tbd}{\tilde{\textbf{d}}}
 \newcommand{\tbh}{\tilde{\textbf{h}}}
 \newcommand{\xp}{X-pipeline }
+\newcommand{\xpc}{X-pipeline, }
+\newcommand{\xpfs}{X-pipeline. }
 
 
 \usepackage{epigraph}
@@ -988,7 +990,7 @@ Results from both triggered and untriggered searches can be used in \textit{Mult
 \subsection{Modeled and Burst Searches}
 Searches for GWs can also be classified as either \textit{modeled} or \textit{burst}. Modeled searches have theoretical models of the waveforms they are searching for. For example, CBC signals can be modeled by numerical relativity and analytic methods [\textbf{cite something}]. These waveforms can then be used to build a more sensitive search, such as a matched filter search (see sections \textbf{list matched filter sections}). In chapter \ref{chap: CBC} we will look at PyGRB, a targeted, modeled search for GWs associated with GRBs. 
 
-Burst searches use minimal assumptions about waveform morphology, instead relying on measures of coherence between detector data streams. This is in general less sensitive than if a waveform was known and a matched filter search could be carried out, but there are no such waveform models for supernovas/long GRBs. In chapter \ref{chap: mva} we will discuss a burst search called \xp. 
+Burst searches use minimal assumptions about waveform morphology, instead relying on measures of coherence between detector data streams. This is in general less sensitive than if a waveform was known and a matched filter search could be carried out, but there are no such waveform models for supernovas/long GRBs. In chapter \ref{chap: mva} we will discuss a burst search called \xpfs 
 
 \section{GRB Astrophysics with Gravitational Waves}
 We have discussed what GRBs are, what causes GRBs, and seen that they are good emitters of GWs. We end this chapter with a discussion of how GW astronomy will add to our understanding of GRBs. 
@@ -1079,7 +1081,7 @@ We begin by describing the output $s^X(t)$ of detector $X$. The detector data is
 s^X(t) = n^X(t) + h^X(t) \fs
 \end{equation}
 The noise power spectral density (PSD) $S^X_h$ for detector $X$ is defined by
-\begin{equation}
+\begin{equation} \label{pygrb psd}
 \langle \tilde{n}^X(f) [\tilde{n}^X(f')]^* \rangle = \delta (f-f') S^X_h(f)
 \end{equation} 
 where the angle brackets denote the time average of the noise and tildes indicate that the function has been Fourier transformed. The matched filter between the GW waveform\footnote{Careful with notation here. The GW waveform is denoted $h$, and the detector response to the GW is denoted by $h^X$.} $h$ and detector data is given by the inner product 
@@ -1139,7 +1141,7 @@ Using these, we see that $\mathcal{M}$  simplifies to
 \[
 \mathcal{M}
 =
-\begin{bmatrix}
+\begin{bmatrix} \label{projection matrix}
 A & C & 0 & 0 \\
 C & B & 0 & 0 \\
 0 & 0 & A & C \\
@@ -1536,29 +1538,6 @@ Another example of how integrating into PyCBC will make PyGRB simpler is the PyG
 \section{Workflow Modifications} \label{sec:pygrb changes}
 We have discussed the reasons why rewriting PyGRB was necessary. But the rewrite was not simply a case of carrying out the same analysis with a faster matched filtering engine. The new analysis is qualitatively different from the one described in chapter \ref{chap: CBC}. The most significant change is to the signal consistency tests. Not only can we use new tools developed in PyCBC to make these tests more powerful, but we have chosen to move away from using coherent $\chi^2$ tests in favour of the single detector tests. We will discuss these changes in \ref{sec:new chisq}. The change in $\chi^2$ tests then necessitates the development of a new detection statistic, as the old one uses the coherent $\chi^2$ tests. This is discussed in \ref{sec:new det stat}. We will begin with the most significant change to the PyGRB pipeline, the new coherent matched filtering executable.
 
-\subsection{The new Coherent Matched Filtering Executable}
-\begin{itemize}
-\item read data
-\item autogate?
-\item single ifo matched filter
-\item threshold
-\item Find coinc triggers in at least two detectors using trigger position, cut the rest
-\item coinc SNR
-\item threshold
-\item If there is more than three detectors:
-\begin{itemize}
-\item Calculate projection matrix for coherent SNR
-\item Coherent SNR
-\item threshold (same as coinc threshold)
-\item null SNR
-\item null threshold is same as old code
-\end{itemize}
-\item Calculate chisq
-\item Reweight by null (if 3 ifos or more)
-\item reweight by chisq
-\item Write output file
-\end{itemize}
-
 \subsection{Consistency Checks} \label{sec:new chisq}
 Most of the changes made to the PyGRB pipeline were motivated by either speeding up the analysis or using new data analysis tools that were not previously available. One of the changes we made that does not fall into either of these two categories is abandoning the coherent $\chi^2$ tests.\footnote{Described in section \ref{sec:coh chisq}.} Apart from being computationally expensive, it was also clear that these tests were performing no better than the single detector $\chi^2$ tests.\footnote{Also described in section \ref{sec:coh chisq}.} 
 
@@ -1592,8 +1571,16 @@ From this, we calculate the new reweighted SNR to be
 \begin{equation}
 \rho_\text{rw} = \frac{\rho_\text{network}}{(1+(\chi^2_N)^a)^b}
 \end{equation}
-with $a=3$ and $b=1/6$ by default. Here $\rho_\text{network}$ denotes a network SNR statistic, which for a network of three or more detectors will be the null reweighted coherent SNR (discussed in \ref{sec:reweighted snr}) and in the one or two detector case will be the coincident SNR (as there is no null stream). 
+with $a=3$ and $b=1/6$ by default. Here $\rho_\text{network}$ denotes a network SNR statistic, which for a network of three or more detectors will be the null reweighted coherent SNR (discussed in \ref{sec:reweighted snr}) and in the one or two detector case will be the coincident SNR (as there is no null stream). In the next section, we will see how well the network $\chi^2$ and the new detection statistic perform in a search.
 
+\subsection{The new Coherent Matched Filtering Executable}
+The most significant change to the PyGRB workflow is the new matched filtering executable. This has been written entirely within the PyCBC framework. In this section we outline the algorithm the new matched filtering executable goes through. As coherent statistics and signal consistency tests are computationally expensive, the philosophy behind writing the coherent matched filter code has been to apply the computationally cheapest tests first, and only perform the more expensive tests on those triggers that survive all the previous tests.
+
+With this in mind, let us start at the beginning. Using the time and sky location of the GRB being analysed, the antenna pattern for each interferometer is calculated. The coherent matched filtering code then reads in data from every detector in the network. The first template from the bank is then matched filtered against each the data from each detector. A threshold, usually an SNR of 4, is applied to the SNR time series from each detector. Any sample in the SNR time series that passes this threshold in any detector is called a \textit{trigger}. The SNR time series from each detector is then time shifted, using the GRB sky position, so that a GW would be coincident in all of them. At this stage, any trigger that is not coincident in at least two of the detectors is cut.\footnote{This is a very powerful cut. For almost every template, this will leave no triggers remaining and we can move on to the next template.} For each remaining trigger, the SNR from each detector is added in quadrature\footnote{Note that this includes the SNR contribution from any detector that was below the single detector SNR threshold.} to produce a the \textit{coincident SNR}. A threshold is then applied, such that any trigger with a coincident SNR below 6 is cut. 
+
+All of the cuts made so far were computationally cheap, because now the algorithm gets more expensive. If this analysis uses three or more detectors, then we now calculate the coherent SNR. We first use the antenna pattern and the template to calculate the inverse of the matrix \ref{projection matrix}. We then use this to calculate the coherent SNR, following equation \ref{rhocoh1}. We then apply another threshold such that any trigger with a coherent SNR below 6 is cut. It is then easy to calculate the null SNR by finding the quadrature difference between the coincident SNR and coherent SNR for the remaining triggers. We apply a threshold on the null SNR that increases with the coherent SNR of the trigger, as described in section \ref{sec:thresholds}.
+
+By this point, it is very rare to have more than perhaps $\sim 10$ triggers left. For these remaining triggers we calculate the $\chi^2$ tests, and then use these to calculate the network $\chi^2$, as described in section \ref{sec:new chisq}. The $\chi^2$ values are computationally very expensive to calculate, but few triggers survive the previous cuts so it is not too much of a burden. The network $\chi^2$ is then used reweight the coherent SNR, as descirbed in \ref{sec:new det stat}. The triggers are then reweighted again by the null SNR, as in section \ref{sec:reweighted snr}. No cut is applied to the reweighted SNR in the executable, as there are no more statistics left to calculate and so no improvement in analysis time to be gained by further cuts at this point.\footnote{Although more cuts are made on the triggers in post-processing.} The remaining triggers are then \textit{clustered}, meaning that only the most significant trigger in any 0.1 second window is kept, and then stored in memory. The code then moves onto the next template in the template bank. Once all templates have been analysed, an output file containing all the information about each trigger is written.
 
 \FloatBarrier
 \section{Search Performance}
@@ -1602,12 +1589,8 @@ In this section we see how the new code performs. We will start by looking at th
 As the new code cannot yet search over a sky patch, we chose two well localised GRBs for the test. The first was GRB 170817A, this has an associated GW, and as an afterglow was located which provides very accurate sky localisation. This was also a three detector analysis, allowing us to check the coherent and null SNR are behaving correctly. The second GRB was GRB 170112A, which was a well localised swift GRB with Livingston and Hanford detector data available at the trigger time.\footnote{GRB 170112A was not a single sky point analysis when analysed by PyGRB in O2, but did have a small sky error. The O2 PyGRB analysis searched over three sky points.} The data around the trigger time of this GRB had some noise transients, that can be used to test the effectiveness of the network $\chi^2$ test and the new detection statistic.
 
 
-\subsection{Analysis Results}
-We will start by looking at the SNR time series for the two GRBs analysed. Figure \ref{fig:snr vs time 170817} shows the coherent SNR (top panel) and the reweighted SNR (bottom panel) timeseries for GRB 170817A. The plots show the triggers for every template in the template bank,\footnote{There are about 190000 templates in the template bank.} clustered such that only the most significant trigger in each 0.1 second window is kept. In the top panel we can see the coherent SNR time series looks clean, and GW 170817 is clearly visible at the correct time with a coherent SNR of 29.22, which is comparable to the coherent SNR of 31.26 PyGRB obtained in O2.\footnote{Some differences in SNR are to be expected as the search is using different PSD options to the O2 PyGRB search.} The bottom panel shows the reweighted SNR time series. We can see that some of the noise transients that peak the coherent SNR have been downweighted to have a comparable significance to background noise, but the GW is still clearly visible. In figure \ref{fig:snr vs time GRB170112A} we plot the coherent (top panel) and reweighted (bottom panel) SNR time series for GRB 170112A. From the coherent SNR time series we can see that there are several significant glitches. The reweighted SNR time series shows that these glitches were downweighted to be no more significant than background noise. 
-
-
-In figure \ref{fig:null snr 170817} we have plotted the null SNR timeseries. The null SNR shows no significant deviations from the background level, with a peak of just 5.22. Only a few points are above the 4.25 threshold required to reweight a trigger by the null SNR, see equation \ref{null reweight}. In figure \ref{fig:reweighted snr 170817} we can see that the null and $\chi^2$ reweighting reduce the few peaks that could be seen in the coherent SNR without substantially reducing the SNR of the GW, as we would expect.
-
+\subsection{Testing the Detection Statistic}
+In this section we will look at the new detection statistic, to see how well it performs in a GRB analysis. We will start by looking at the SNR time series for the two GRBs analysed. Figure \ref{fig:snr vs time 170817} shows the coherent SNR (top panel) and the reweighted SNR (bottom panel) timeseries for GRB 170817A. The plots show the triggers for every template in the template bank,\footnote{There are about 190000 templates in the template bank.} clustered such that only the most significant trigger in each 0.1 second window is kept. In the top panel we can see the coherent SNR time series looks clean, and GW 170817 is clearly visible at the correct time with a coherent SNR of 29.22, which is comparable to the coherent SNR of 31.26 PyGRB obtained in O2.\footnote{Some differences in SNR are to be expected as the search is using different PSD options to the O2 PyGRB search.} The bottom panel shows the reweighted SNR time series. We can see that some of the noise transients that peak the coherent SNR have been downweighted to have a comparable significance to background noise, but the GW is still clearly visible. In figure \ref{fig:snr vs time GRB170112A} we plot the coherent (top panel) and reweighted (bottom panel) SNR time series for GRB 170112A. From the coherent SNR time series we can see that there are several significant glitches. The reweighted SNR time series shows that these glitches were downweighted to be no more significant than background noise. 
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -1625,6 +1608,7 @@ In figure \ref{fig:null snr 170817} we have plotted the null SNR timeseries. The
 \label{fig:snr vs time GRB170112A}
 \end{figure}
 
+From the time series plots, it seem that the reweighted SNR is behaving as expected. In figure \ref{fig:null vs snrs 170817} we have plotted the null SNR against the coherent SNR (left) and reweighted SNR (right) for GRB 170817A\footnote{As GRB 170112A was a two detector analysis, there was no null SNR. Hence this plot is only made for GRB 170817A.}, in order ensure that triggers are being correctly reweighted by the null SNR. The null SNR shows no significant deviations from the background level, with a peak of just 5.22. Only a few points are above the 4.25 threshold required to reweight a trigger by the null SNR, see equation \ref{null reweight} but the triggers that exceed this threshold are being appropriately downweighted. 
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -1634,6 +1618,7 @@ In figure \ref{fig:null snr 170817} we have plotted the null SNR timeseries. The
 \label{fig:null vs snrs 170817}
 \end{figure}
 
+Similarly, in figures \ref{fig:snrs vs chisq 170817} and \ref{fig:snrs vs chisq GRB170112A}, we plot the coherent SNR (left) and reweighted SNR (right) against the network $\chi^2$ for GRB 170817A and GRB 170112A respectively. Figure \ref{fig:snrs vs chisq 170817} shows that the GW triggers with higher network $\chi^2$ are downweighted more. The GW, visible as the rightmost point in each plot, is downweighted but still far more significant than any background event. In figure \ref{fig:snrs vs chisq GRB170112A}, we see that the glitches in the data around GRB 170112A have a high coherent SNR and a high network $\chi^2$, but are appropriately downweighted so that these loud glitches are no more significant than background events. 
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -1648,12 +1633,10 @@ In figure \ref{fig:null snr 170817} we have plotted the null SNR timeseries. The
 \includegraphics[width=0.8\linewidth]{network_snrs_vs_chisqN_GRB170112A.png}
 \end{center}
 \caption{\textbf{Coherent SNR vs Network $\chi^2$ for GRB 170112A.} Here we plot the network $\chi^2$ against the coherent SNR (left) and reweighted SNR (right) for GRB 1710112A. The data around this GRB contained several glitches, which are apparent from the triggers with a high network $\chi^2$ and coherent SNR. As we can see, these triggers are downweighted appropriately, such that the reweighted SNR contains no peaks.  } 
-\label{fig:coh vs chisq GRB170112A}
+\label{fig:snrs vs chisq GRB170112A}
 \end{figure}
 
-
-
-We also plotted the peak coherent and reweighted SNR in each off-source trial, as well as the on-source, in figures \ref{fig:coh off trials 170817} and \ref{fig:re off trials 170817} respectively. As we do not have timeslides, there are not many off-source trials (892 in total), but we can clearly see that the on-source trial, marked by the star, is substantially louder than the background. More importantly for development, we can see that the coherent SNR has a small tail of events at around a coherent SNR of 7-9, while the reweighted SNR has a much smaller tail. 
+We also plotted the peak coherent and reweighted SNR in each 6-second off-source trial, as well as the on-source. The results for GRB 170817A can be seen in figure \ref{fig:snrs trials 170817}. As we do not have timeslides, there are not many off-source trials (892 in total), but we can clearly see that the on-source trial, marked by the blue and red stars, are substantially louder than the background for both the coherent and reweighted SNR. Note that the coherent SNR has a small tail of higher significance events at around a coherent SNR of 7-9, which does not appear in the reweighted SNR. In figure \ref{fig:snrs trials 170112A} we make the analogous plot for GRB 170112A. As the data contained several glitches, this plot shows a long tail of events with a very high coherent SNR, which the reweighted SNR does not have. We can also see that the coherent SNR and reweighted SNR in the on-source window, indicated by the red and blue stars respectively, are consistent with background. This plot shows the importance of the reweighting. Suppose there had been a GW in the on-source of GRB 170112A that had a coherent SNR of $\sim 30$ and a reweighted SNR of $\sim 23$, as GW 170817 did. In this case, the GW would \textit{not} have had a higher coherent SNR than all of the off-source trials, making a detection claim based on the coherent SNR impossible. But using the reweighted SNR it would have been far more significant than anything in the background, which, with more off-source trials, could allow us to claim a detection. 
 
 
 \begin{figure} % Example of including images
@@ -1661,18 +1644,20 @@ We also plotted the peak coherent and reweighted SNR in each off-source trial, a
 \includegraphics[width=0.8\linewidth]{binned_fap_with_signal_170817.png}
 \end{center}
 \caption{\textbf{Loudest Event per 6-second Trial for GRB 170817A.}  Here we see the peak coherent SNR (blue line) and reweighted SNR (orange line) in each 6-second trial for the GRB 170817A analysis, with the stars indicating the GW. Again, we can see that the on-source has a much higher reweighted SNR than any of the off-source trials. Also note that the tail of events with a high coherent SNR of about 7-9, seen in figure \ref{fig:coh off trials 170817}, does not appear in this plot. This shows that the reweighting is lowering the significance of glitches, as it is supposed to do. \textbf{fix caption}} 
-\label{fig:re off trials 170817}
+\label{fig:snrs trials 170817}
 \end{figure}
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{binned_fap_with_signal_GRB170112A.png}
 \end{center}
-\caption{\textbf{Loudest Event per 6-second Trial for GRB 170112A.} Here we see the peak coherent SNR (blue line) and reweighted SNR (orange line) in each 6-second trial for the GRB 170112A analysis. We can see that reweighting the SNR removed the long tail of high SNR glitches for this analysis. } 
-\label{fig:coh off trials 170817}
+\caption{\textbf{Loudest Event per 6-second Trial for GRB 170112A.} Here we see the peak coherent SNR (blue line) and reweighted SNR (orange line) in each 6-second trial for the GRB 170112A analysis. The peak coherent and reweighted SNR in the on-source trial are indicated by the red and blue stars respectively. We see that the on-source results are consistent with background. We can also see that reweighting the SNR removed the long tail of high SNR glitches for this analysis. } 
+\label{fig:snrs trials 170112A}
 \end{figure}
 
-We also injected BNS waveforms with an opening angle of up to $30^\circ$ into the off-source data to see how well they were recovered. In figure \ref{fig:inj dist time} we have plotted the distance to the injection against time, and can see that we can detect BNS waveforms up to about 200 Mpc. In figure \ref{fig:old inj dist time}, we see that the O2 PyGRB code obtained similar results, though the new code cannot yet provide a FAP for an injection. In figure \ref{fig:inj dist mchirp} we plot the chirp mass of the injection against the distance. Comparing to figure \ref{fig:old inj dist mchirp}, we see that the results are comparable.
+We also injected BNS waveforms with an opening angle of up to $30^\circ$ into the off-source data of GRB 170817A to see how well they were recovered. In figure \ref{fig:inj dist time} we have plotted the distance to the injection against time. From this we can see that the BNS waveforms are detectable up to about 200 Mpc. In figure \ref{fig:old inj dist time}, we show an analogous plot from the O2 PyGRB analysis of GRB 170817A. We can see that the old code could also detect these waveforms up to a distance of about 200 Mpc.\footnote{The new code cannot yet provide a FAP for an injection as the old code can.}
+
+In figure \ref{fig:inj dist mchirp} we plot the chirp mass of the injection against the distance. Comparing to the analogous plot from O2 PyGRB search, shown in figure \ref{fig:old inj dist mchirp}, we see that the results are comparable, with an average range of about 200 Mpc, increasing slightly for higher chirp mass systems.
 
 
 
@@ -1710,48 +1695,46 @@ We also injected BNS waveforms with an opening angle of up to $30^\circ$ into th
 \label{fig:old inj dist mchirp}
 \end{figure}
 
-\begin{itemize}
-\item \textbf{MUST REGENRATE INJECTION PLOTS}
-\item What is the limiting factor of the injection finding range.
-\end{itemize}
+\subsection{Computational Cost} \label{sec:speed gains}
+As mentioned previously, one of the primary motivations for integrating PyGRB into PyCBC was to speed up the analysis. To see the effect of the changes described above, we compare the analysis time of the new executables with the corresponding executable from the old code. The new matched filtering executable does not yet have all the functionality the old code has, and so any comparison of analysis time should be considered preliminary. 
 
-\subsection{Analysis Time} \label{sec:speed gains}
-As mentioned previously, one of the primary motivations for integrating PyGRB into PyCBC was to speed up the analysis. To see the effect of the changes described above, we analysed two GRBs and compared the analysis to the old code. The new matched filtering executable does not have all the functionality the old code has, and so any comparison of analysis time should be considered preliminary and will not reflect the analysis speed improvement of a full GRB analysis. That said, the new code can perform a minimal analysis that can indicate how much faster it is than the old code and if it is producing sensible results. 
+For testing, we ran as close as possible to an identical analysis with the old and new code. This meant disabling the features of the old analysis that the new code does not have. Features that were disabled include the face-on coherent analysis described in section \ref{sec:circ pol}, the bank and auto $\chi^2$ tests, and timeslides. As the power $\chi^2$ test is different in the old and new codes, we ran three tests: One with no $\chi^2$ tests, one with only the power $\chi^2$ test, and one with all the $\chi^2$ tests. The analysis with no $\chi^2$ tests will indicate the speed up in matched filtering. The test with just the power $\chi^2$ test is a comparison between the current best analysis the new code can perform, and the old code equivalent. This test is not a fair comparison for the old code, however, as it performs the bank and auto $\chi^2$ tests before the power $\chi^2$ test as the coherent power $\chi^2$ test is the most computationally expensive. We therefore also compare an analysis where the old code uses all the $\chi^2$ tests it has available, even though the new code only uses the power $\chi^2$ test. 
 
-For testing, we ran as close as possible to an identical analysis with the old and new code. This meant disabling the features of the old analysis that the new code does not have. Features that were disabled include the face-on coherent analysis described in section \ref{sec:circ pol}, the bank and auto $\chi^2$ tests, and timeslides. As the power $\chi^2$ test is different in the old and new codes, we ran analyses three tests: One with no $\chi^2 tests$, one with only the power $\chi^2$ tests, and one with all the $\chi^2$ tests. The analysis with no $\chi^2$ tests will reflect purely the speed up in matched filtering. The test with just the power $\chi^2$ test is a comparison between the current best analysis the new code can perform, and the old code equivalent. This test is not a fair comparison for the old code, however, as it performs the bank and auto $\chi^2$ tests before the power $\chi^2$ test as the coherent power $\chi^2$ test is the most computationally expensive. We therefore also compare an analysis where the old code uses all the $\chi^2$ tests it has available, even though the new code only uses the power $\chi^2$ test. 
+We will compare the CPU runtime for several of the executables that have been rewritten. The most significant of these is the matched filtering job. This is by a large margin the most computationally expensive part of the analysis. Analysing a single GRB involves matched filtering over 1 hour of data with approximately 192000 templates. To speed this analysis up, the template bank is split into 1500 \textit{split banks}, which are then analysed individually. There are then also the \textit{injection jobs}, where GW signals are added to the data in order to measure the sensitivity of the analysis and ensure the pipeline is behaving correctly. In O2 there were seven different sets of injection waveforms used.\footnote{These include one BNS set, and NSBH sets with and without precession, with and without aligned spin, and two different NSBH models \textbf{cite SEOB and STT2 paper}.} Each of these seven injection sets is split into 520 smaller injection sets, in order to speed up analysis and because a because the injections need to be spread throughout the data so that they do not skew the PSD. Just as with the non-injection runs, the injection jobs are sped up by splitting the template bank. However, for the injection jobs, the template bank is only split into two. The reason this is possible without being prohibitively slow is that PyGRB (both the old and new version) will only filter the data with templates that match the injections. This drastically speeds up analysis. Bringing all these factors together, we see that for a standard GRB analysis in O2, of the approximately 9000 individual jobs run, 8780 are matched filtering jobs. Of these matched filtering jobs, 7280 are injection jobs and 1500 are non-injection jobs. 
 
-We will compare the CPU runtime for several of the executables that have been rewritten. The most significant of these is the matched filtering job. This is by a large margin the most computationally expensive part of the analysis. In a standard analysis in O2 there are approximately 9000 individual jobs run, of which 8780 matched filtering jobs launched per GRB. Of these matched filtering jobs, 7280 are injection jobs and 1500 are non-injection jobs. In either case, these matched filtering jobs can take hours. With the set up described above, the jobs do not take as long as in a production run, but they take long enough to test performance. In table \ref{tab:inspiral speed}, we see the CPU time to complete a single matched filter job with no injections for the old code and the new code, with the left-most column indicating which $\chi^2$ tests were used. As we can see, the new code is significantly faster than the old. Also, the use of $\chi^2$ tests has almost no impact on the analysis time of the new code, in fact it improved the analysis time slightly. From these results, we can conclude that the matched filtering alone is now more than twice as fast as the old code. When $\chi^2$ tests are included in the analysis, the new code is almost five times faster than the old code. For a comparison of the matched filter job speed with injections, we only compared the analysis time with all $\chi^2$ tests. In this case old code took 7781 seconds and the new code took 2132, more than three times faster.  
+In either case, these matched filtering jobs can take hours. With the set up described above the jobs do not take as long as in a production run, as timeslides etc. are turned off, but they take long enough to test performance. In table \ref{tab:inspiral speed} we see the CPU time for the old code and the new code to complete a single matched filter job, with a three detector network, with no injections, and filtering 128 templates. The left-most column indicates which $\chi^2$ tests were used. As we can see, the new code is significantly faster than the old. Also, the use of $\chi^2$ tests has almost no impact on the analysis time of the new code, in fact it improved the analysis time slightly. That the $\chi^2$ tests have little impact on analysis time is not very surprising as the PyCBC $\chi^2$ tests are highly optimised as it is a computational bottleneck for the all-sky search. It is not such a problem for PyGRB as the $\chi^2$ tests are only calculated on triggers that have survived single detector SNR cuts, coincidence checks, and network SNR cuts. This leaves relatively few triggers for which the $\chi^2$ test is calculated. From these results, we can conclude that the matched filtering alone is now more than twice as fast as the old code. When $\chi^2$ tests are included in the analysis, the new code is almost five times faster than the old code. For a comparison of the matched filter job speed with injections, we only compared the analysis time with all $\chi^2$ tests. In this case old code took 7781 seconds and the new code took 2132, more than three times faster. 
+
+It is also instructive to compare the computation time to the PyCBC all-sky matched filter job. These jobs matched filter data from just a single detector, as opposed to the three detector analysis described above. Hence, we should expect the matched filtering to take a third of the time of the new PyGRB code. The rest of the time difference between the two matched filter jobs can be accounted for by the coherent calculations performed by PyGRB. Analysing data from a single detector with 129 templates and no signal consistency tests takes the PyCBC all-sky code 2m 47s. This suggests that the coherent calculations take about a quarter of the total run time of the new PyGRB matched filtering executable.
 
 \begin{table}[h] \label{tab:inspiral speed}
 \centering
 \begin{tabular}{  c | c | c }
  $\chi^2$ tests used  & Old code & New Code \\ \hline                                                       
-None  & 24m 20s & 12m 7s \\
-Power & 77m 18s & 11m 28s \\
+None  & 24m 20s & 12m 7s  \\
+Power & 77m 18s & 11m 28s  \\
 Power, auto, and bank & 58m 37s & n/a  \\
 \end{tabular}
 \caption{\textbf{Time to Complete Single Matched Filter job.} Here we see how long a single matched filter job in the GRB 170817A analysis took to complete with different $\chi^2$ tests being used. The new code does not use the bank or auto $\chi^2$ tests. We can see that there is a substantial speed up of the analysis. }
 \end{table}
 
-While the limiting factor on the analysis time is the matched filter, jobs\footnote{Both with the old and new code.} rewriting the post-processing jobs has also led to a useful speed up. In particular, the trigger combiner job, which combines the results from all the different split bank matched filter jobs, is now much faster. It previously had to be split into many smaller jobs to prevent it from exceeding the memory allowance of the computer cluster. In total, the trigger combining stage required 20 jobs of about 200 seconds and one job of about 80 seconds. With the new code, this can be done with one job in about 70 seconds. A similar story applies to the trigger clustering stage, which used to be 20 jobs of about 60 seconds each followed by one job of about 30 seconds. This is now a single 4 second long job. 
+While the limiting factor on the analysis time is the matched filter jobs,\footnote{Both with the old and new code.} rewriting the post-processing jobs has also led to a useful speed up. In particular, the trigger combining job, which combines the results from all the different split bank matched filter jobs into one large results file, is now much faster. It previously had to be split into many smaller jobs to prevent it from exceeding the memory allowance of the computer cluster. In total, the trigger combining stage required 20 jobs of about 200 seconds each and one job of about 80 seconds. With the new code, this can be done with one job in about 70 seconds. A similar story applies to the trigger clustering stage, which used to be 20 jobs of about 60 seconds each followed by one job of about 30 seconds. This is now a single 4 second long job. It is expected that once the PyGRB rewrite is complete, the post-processing will be a negligible amount of the total run time. 
 
 
 \section{Future Plans}
-We have shown that the work to integrate PyGRB into PyCBC has reached a significant milestone in being able to analyse a GRB and achieve reasonable results. We have also shown that it is significantly faster than the old code and described the new tools that are available for the PyGRB search. We end this chapter by looking at what there is left to be done to make the new pipeline as sensitive as the old one, and what can be done after this to make PyGRB even more sensitive. 
+We have shown that the work to integrate PyGRB into PyCBC has reached a significant milestone in being able to analyse a GRB and achieve a reasonable FAP of $\approx 1/1000$. We have also shown that it is significantly faster than the old code and described the new tools that are available for the PyGRB search. We end this chapter by looking at what there is left to be done to make the new pipeline as sensitive as the old one, and what can be done after this to make PyGRB even more sensitive. 
 
-In order for the new code to achieve the same confidence in a GRB trigger as the old code does, we must implement timeslides. Without timeslides, we can only achieve a FAP of about 1/1000, assuming a 6 second on-source and approximately 1 hour of off-source data. With timeslides implemented, a FAP comparable to the old code will be achievable. It should be noted that the relative speed increase seen with the new code is likely to be lower when using timeslides. This is because short timeslides to not require the matched-filtering step to be repeated, as mentioned in section \ref{sec:event sig}, and this is the step where most of the speed increase was achieved. Long time slides are only performed for triggers that have a very low FAP with short slides, and these do require the data to be matched filtered again, so some speed increase will be seen there.
+In order for the new code to achieve the same confidence in a GRB trigger as the old code does, we must implement timeslides. Without timeslides, we can only achieve a FAP of about 1/1000. With timeslides implemented, a FAP of $10^{-5}$ will be achievable. It should be noted that the relative speed increase seen with the new code is likely to be lower when using timeslides. This is because short timeslides do not require the matched-filtering step to be repeated, as mentioned in section \ref{sec:event sig}, and this is the step where most of the speed increase was achieved. Long time slides do require the data to be matched filtered again, so some speed increase will be seen there.
 
-The final thing required to make the rewrite as sensitive as the old code is to incorporate the fact that GRB GW signals are expected to be face on, as described in section \ref{sec:circ pol}. This led to a 3\% increase in the sensitivity of the old code, and we expect the same improvement with the rewrite. 
+The final thing required to make the rewrite as sensitive as the old code is to incorporate the fact that GRB GW signals are expected to be face on, as described in section \ref{sec:circ pol}. This led to a 3\% increase in the sensitivity of the old code, and we expect the same improvement with the new code. 
 
-These changes will make the rewrite as sensitive as the old code, but we also need to be able to search over a sky patch. On Swift GRBs are localised well enough that PyGRB can search a single sky point, meaning that the new code cannot analyse the majority of reported GRBs which are not so well localised. Work is currently ongoing to add this functionality, and we expect it to be incorporated into the new code immanently. 
+These changes will make the rewrite as sensitive as the old code, but we also need to be able to search over a sky patch. Some Swift GRBs are localised well enough that PyGRB can search a single sky point, but the majority require multiple sky points to be analysed. This means that the new code currently cannot analyse the majority of short GRBs. Work is currently ongoing to add this functionality, and we expect it to be incorporated into the new code in the near future. 
 
-The three things mentioned above will give the new PyGRB pipeline all the same functionality as the old code, but it will be faster and have the new features mentioned in section \ref{sec:new pygrb tools}. We can then turn our attention to new methods to improve the pipeline, and new science that can be done. The first thing is that at this point it should then be possible to analyse a GRB on a timescale of hours, significantly increasing the amount of science that can be done with a positive detection. We could also use PyGRB to followup well localised triggers from the all-sky search, as with a network of three or more detectors, the localisation can be better than the localisation of some GRBs. This could be built into the all-sky pipeline, as a hierarchical search, where the coincident detection statistic is used to determine candidates and localisation for the coherent followup. With more detectors, such as KAGRA and LIGO India, the case for a hierarchical search strengthens as localisation improves significantly with the number of detectors and so does the coherent SNR.
+Once the above functionality has been added to the new PyGRB pipeline, it will be faster and more sensitive than the old code. We can then turn our attention to new methods to improve the pipeline, and the new science that can be done. At this point, it will be possible to analyse a GRB on a timescale of hours, significantly increasing the amount of science that can be done with a positive detection. We could also use PyGRB to followup well localised triggers from the all-sky search.\footnote{As with a network of three or more detectors, the localisation can be better than the localisation of some GRBs.} This could be built into the all-sky pipeline, as a hierarchical search, where the all-sky is used to determine candidates and their sky location for coherent followup. With more detectors, such as KAGRA and LIGO India, the case for a hierarchical search strengthens as localisation improves with the number of detectors and so does the power of coherent analysis.
 
-There are also plans to make an astrophysically motivated detection statistic. This means that templates of sources that astrophysical models predict are less common will be downweighted, while sources that are expected to be common will not be. This is a natural next step for a coherent search, as the coherent SNR determines whether a trigger is consistent with the state of the detector network at the time of the trigger, but does not determine if the trigger is consistent with the current best models of the GW source populations.
+We can also start to use some more of the PyCBC tools that have so far been unavailable to PyGRB. For example, PyCBC can downweight triggers based on properties of the template that found the trigger \textbf{cite}. This works because certain templates have been found to be more likely to produce a high SNR trigger when filtered on detector noise than other templates. There are also new $\chi^2$ tests that use sine-Gaussian waveforms in order to better reject certain kinds of short duration glitches that are particularly common in the LIGO detectors. \textbf{cite}
 
-\begin{itemize}
-\item Different background stuff if you can understand it
-\end{itemize}
+There are also plans to make an astrophysically motivated detection statistic. This means that triggers that astrophysical models predict are less common will be downweighted, while sources that are expected to be common will not be. This is a natural next step for a coherent search, as the coherent SNR determines whether a trigger is consistent with the state of the detector network at the time of the trigger, but does not determine if the trigger is consistent with the current best models of the GW source populations.
+
 
 \chapter{A Search for Unmodelled Gravitational Wave Signals using Machine Learning} \label{chap: mva}
 
@@ -1764,17 +1747,18 @@ In this chapter, we will first discuss how an existing targeted burst search, ca
 In this section we provide a brief summary of {\xp}, a targeted search for GWBs. For full details, see \textbf{cite sutton was}. It uses the sky location of an astrophysical event, such as a GRB, to coherently combine the data streams of each detector in the network. There are two types of coherent data stream made by \xp:
 \begin{itemize}
 \item \textit{Signal streams}, which increase the power of a GW signals relative to noise.
-\item \textit{Null streams}, which reduce the power of true GW signals relative tot noise.
+\item \textit{Null streams}, which reduce the power of true GW signals relative to noise.
 \end{itemize}
-\xp makes time-frequency maps from these coherent data streams. A group of neighbouring high energy pixels in a time-frequency map of a signal stream is called a  \textit{trigger} (see fig.\ref{fig:tfmap}). \xp cuts triggers based on correlations of the various signal and null data streams (see figure \ref{fig:xcuts}). The position of these cuts is set to give the best detection efficiency at a fixed false alarm rate, determined using a subset of the triggers that are used for tuning.\footnote{For the MVA pipeline, the position of these cuts is instead set by a machine learning algorithm, as we will see in \ref{sec:ML}.}
+\xp makes time-frequency maps from these coherent data streams. A group of neighbouring high energy pixels in a time-frequency map of a signal stream is called a  \textit{trigger} (see figure \ref{fig:tfmap}). \xp cuts triggers based on correlations of the various signal and null data streams (see figure \ref{fig:xcuts}). The position of these cuts is set to give the best detection efficiency at a fixed false alarm rate, determined using a subset of the triggers that are used for tuning.\footnote{For the MVA pipeline, there are no cuts. Instead the machine learning algorithm ranks triggers just that background triggers have a low score and GWs have a high score, as we will see in \ref{sec:ML}.}
 
-We will begin by deriving the \textit{standard likelihood}, a signal stream used by \xp, and a corresponding null stream. Then we will see how \xp uses these with incoherent data streams to reject background triggers. The following section will show how machine learning can be used to make more intelligent cuts than \xp is currently capable of making.
+We will begin by deriving the \textit{standard likelihood}, a signal stream used by X-pipeline, and a corresponding null stream. Then we will see how \xp uses these with incoherent data streams to reject background triggers and measure the significance of the surviving triggers. We will end this section by looking at the \xp search results from the most recent observing run.  
+
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{xpipelineTFmap.jpg}
 \end{center}
-\caption{\textbf{\xp Time-Frequency Map} This figure shows a time-frequency map from \xp for a $1.4-10 M_\odot$ NSBH merger. The top figure shows the $E_+$ energy and the bottom figure shows the top 1\% of pixels. [\textbf{cite xp paper}] } 
+\caption{\textbf{\xp Time-Frequency Map} This figure shows a time-frequency map from \xp for a $1.4-10 M_\odot$ NSBH merger using simulated background from the two Hanford detectors. The top figure shows a coherent signal stream called the \textit{standard likelihood} $E_\text{SL}$ and the bottom figure shows the top 1\% of pixels. [\textbf{cite xp paper}] } 
 \label{fig:tfmap}
 \end{figure}
 
@@ -1782,7 +1766,7 @@ We will begin by deriving the \textit{standard likelihood}, a signal stream used
 \begin{center}
 \includegraphics[width=0.8\linewidth]{xpipeline_cut.png}
 \end{center}
-\caption{ \textbf{\xp Cut} This figure shows an example of an \xp cut. The axes show two of the statistics that \xp calculates. Specifically, the x-axis shows the coherent null energy and the y-axis shows the incoherent null energy (see section \ref{sec:xcuts} for more details on these statistics). The red squares show simulated GW signals, and the crosses show background triggers. The colour bar shows the base 10 logarithm of the significance of each trigger. We can see that in this case, the cut eliminates more of the noise and only a few signals. [\textbf{ cite \xp paper }]  }
+\caption{ \textbf{\xp Background Rejection Test.} This figure shows an example of \xp background rejection. The axes show two of the statistics that \xp calculates. Specifically, the x-axis shows the coherent null energy and the y-axis shows the incoherent null energy (see section \ref{sec:xcuts} for more details on these statistics). The red squares show simulated GW signals, and the crosses show background triggers. The colour bar shows the base 10 logarithm of the significance of each trigger. The injection amplitude plotted is chosen such that approximately 90\% of injections will survive the cut. Hence, the cut eliminates most of the noise but only a few signals. [\textbf{ cite \xp paper }]  }
 \label{fig:xcuts}
 \end{figure}
 
@@ -1791,7 +1775,7 @@ Suppose we have a network of $D$ detectors. A GW, described by $h_+(t)$ and $h_\
 \begin{equation} \label{det_output}
 d_\alpha (t + \Delta t_\alpha (\hat{\Omega})) = \Fp (\hat{\Omega}) h_+ (t) + \Fx (\hat{\Omega}) h_\times (t) + n_\alpha (t + \Delta t_\alpha (\hat{\Omega})) \fs
 \end{equation}   
-Here $\Delta t_\alpha$ is the time taken for the GW to reach the detector from some arbitrary reference point\footnote{The center of the Earth is a fairly intuitive choice for a worldwide detector network.} $\textbf{r}_0$
+Here $\Delta t_\alpha$ is the time taken for the GW to reach the detector from some arbitrary reference point\footnote{The center of the Earth is a fairly intuitive choice for a worldwide detector network, but in practice it is more computationally efficient to use one of the detectors as the reference point.} $\textbf{r}_0$
 
 \begin{equation}
 \Delta t_\alpha (\hat{\Omega})=\frac{1}{c}(\textbf{r}_0-\textbf{r}_\alpha)\cdot\hat{\Omega} \fs
@@ -1801,14 +1785,14 @@ From now on we will suppress explicit mention of the reference point $\textbf{r}
 
 In reality, detector outputs are not continuous but sampled discretely. The discrete Fourier transform $\tilde{x}[k]$ of the time series $x[j]$, and its inverse, are given by
 \begin{equation}
-\tilde{x}[k]=\sum^{N-1}_{j=0} x[j] e^{-i 2\pi jk/N}, \hspace{20pt}x[i]=\frac{1}{N}\sum^{N-1}_{j=0} \tilde{x}[k] e^{i2 \pi jk/N} \fs
+\tilde{x}[k]=\sum^{N-1}_{j=0} x[j] e^{-i 2\pi jk/N}, \hspace{20pt}x[j]=\frac{1}{N}\sum^{N-1}_{k=0} \tilde{x}[k] e^{i2 \pi jk/N} \fs
 \end{equation}
 For sampling rate $f_s$ and $N$ data points in the time domain, we convert continuous to discrete notation by using
 \begin{equation}
 x(t)\rightarrow x[j]
 \end{equation} 
 \begin{equation}
-\tilde{x}(f)\rightarrow f^{-1} \tilde{x}[k]
+\tilde{x}(f)\rightarrow f_s^{-1} \tilde{x}[k]
 \end{equation} 
 \begin{equation}
 \int dt \rightarrow f_s^{-1}\sum_j
@@ -1822,7 +1806,7 @@ x(t)\rightarrow x[j]
 \begin{equation}
 \delta(f-f')\rightarrow N f_s^{-1}\delta_{kk'} \fs
 \end{equation}  
-For example, the one-sided noise spectral density for a detector with noise $n(t)$ can be written in continuous form as
+For example, the one-sided noise spectral density for a detector with noise $n(t)$ can be written in continuous form as\footnote{Note that this is the same as \ref{pygrb psd} up to a factor of 1/2.}
 \begin{equation}
 \langle  \tilde{n}^*_\alpha (f) \tilde{n}_\beta (f') \rangle = \delta_{\alpha \beta} \delta (f-f') \frac{1}{2} S_n (f)
 \end{equation}
@@ -1851,11 +1835,11 @@ In what follows we will only use the whitened detector data, noise, and antenna 
 where $\textbf{F}=[\textbf{F}^+ \:\:\:\textbf{F}^\times]$ and $\tilde{\textbf{h}}=[\tilde{h}_+ \:\:\: \tilde{h}_\times]^T$.
 
 \subsection{Standard Likelihood}
-Assume that the noise in our detectors is Gaussian. As a GW $\tilde{\textbf{h}}$ passes through the detector from a given direction, the probability of attaining whitened detector output $\tilde{\textbf{d}}$ in one time-frequency pixel is given by
+With the notation and conventions laid out in the previous section, we now derive the \textit{standard likelihood},\footnote{This derivation has a lot in common with the derivation of the coherent SNR in section \ref{sec:coh snr}. The primary difference being that here we consider the likelihood of obtaining a certain collection of time-frequency pixels, whereas before we considered the likelihood of measuring a certain SNR for a template.} a coherent signal stream. We start by supposing a GW $\tilde{\textbf{h}}$ passes through a detector from a given direction. Assuming the detector noise is Gaussian, the probability of attaining whitened detector output $\tilde{\textbf{d}}$ in one time-frequency pixel is given by
 \begin{equation}
 P(\tilde{\textbf{d}}|\tilde{\textbf{h}})=\frac{1}{(2\pi )^{D/2}}\exp \left[ -\frac{1}{2} \left| \tbd - \textbf{F} \tbh  \right|^2 \right] \fs
 \end{equation}  
-For a set $\{ \tbd \}$ of $N_p$ time-frequency pixels, we have
+For a set $\{ \tbd \}$ of $N_p$ time-frequency pixels, labeled by $k$, we have
 \begin{equation}
 P(\{ \tilde{\textbf{d}} \}|\{ \tilde{\textbf{h}} \})=\frac{1}{(2\pi )^{N_p D/2}}\exp \left[- \frac{1}{2} \sum_k \left| \tbd [k] - \textbf{F}[k] \tbh [k]  \right|^2 \right] \fs
 \end{equation}  
@@ -1876,7 +1860,7 @@ Solving this, we find
 \end{equation}
 where the superscript dagger $^\dagger$ denotes the conjugate transpose. 
 
-Calculating the likelihood ratio for $\tbh_\textbf{max}$ gives us the \emph{Standard Likelihood} $E_\text{SL}$
+Calculating the likelihood ratio for $\tbh_\textbf{max}$ gives us the \emph{Standard Likelihood}\footnote{Also known as the \textit{maximum likelihood}.} $E_\text{SL}$
 \begin{equation} \label{Esl}
 E_\text{SL}=2L(\tbh_\textbf{max} )=\sum_k \tbd^\dagger \textbf{P}^\text{GW} \tbd
 \end{equation}
@@ -1890,13 +1874,13 @@ We can use the standard likelihood to construct a null stream. We start with the
 \begin{equation}
 E_\text{tot}=\sum_k | \tbd |^2 \fs
 \end{equation}
-This is an incoherent statistic as it contains auto-correlation terms but no cross-correlation terms, i.e. each detector is treated individually. If we subtract the standard likelihood from the total energy, we obtain the \emph{null energy}
+This is an incoherent statistic as it contains auto-correlation terms but no cross-correlation terms, i.e.~each detector is treated individually. If we subtract the standard likelihood from the total energy, we obtain the \emph{null energy}\footnote{This is analogous to the null SNR described in section \ref{sec:null snr}.}
 \begin{equation} \label{Enull}
 E_\text{null} \equiv E_\text{tot}-E_\text{SL}=\sum_k \tbd ^\dagger \textbf{P}^\text{null} \tbd \fs
 \end{equation}
-This is the energy that is inconsistent with a GW from given sky location, and must therefore be associated with noise. This is the minimum amount of energy in the whitened data that is inconsistent with the GW. It is an example the null streams used by \xp.
+This is the energy that is inconsistent with a GW from given sky location, and must therefore be associated with noise. This is the minimum amount of energy in the whitened data that is inconsistent with the GW. It is an example of the null streams used by X-pipeline.
 
-This shows one of the key advantages of coherent analysis. If we analysed our data incoherently, we would be working with just the total energy. By using coherent methods, we can project the whitened data into the subspace spanned by $\textbf{F}^+$ and $\textbf{F}^\times$, thus removing some fraction of the noise without removing any of the signal. The drawback is that if the sky position is not known in advance, then the analysis needs to be repeated for a set of directions that span the entire sky ($\gtrsim 10^3$ directions), each with different antenna response functions $\textbf{F}^+$ and $\textbf{F}^\times$. This will slow down analysis and increase the false alarm probability (FAP).
+This shows one of the key advantages of coherent analysis. If we analysed our data incoherently, we would be working with just the total energy. By using coherent methods, we can project the whitened data into the subspace spanned by $\textbf{F}^+$ and $\textbf{F}^\times$, removing some fraction of the noise without removing much of the signal energy.\footnote{Again, this is analogous to the coherent SNR and the discussion in section \ref{sec: coinc compare}.} The drawback is that if the sky position is not known in advance, then the analysis needs to be repeated for a set of directions that span the entire sky ($\gtrsim 10^3$ directions), each with different antenna response functions $\textbf{F}^+$ and $\textbf{F}^\times$. This will slow down analysis and increase the false alarm probability (FAP).
 
 \subsection{Incoherent Energy and Background Rejection} \label{sec:xcuts}
 The diagonal elements of (\ref{Enull}) are auto-correlation terms, and the other elements are cross-correlation terms. The auto-correlation part of the null energy is called the \textit{incoherent null energy}, and denoted by
@@ -1915,27 +1899,33 @@ Using (\ref{glitch energy}) and (\ref{GW energy}), we see that the ratio of $E_\
 \begin{equation} \label{cut}
 I_\text{null} / E_\text{null} > C
 \end{equation}
-for some constant $C>1$. This test does not work as well for small amplitude glitches, where the statistical fluctuations can lead to $E_\text{null}$ being smaller than $I_\text{null}$. For this reason, \xp varies $C$ with the size of the trigger. The precise position of the cut is set to maximise performance on a set of injections.
+for some constant $C>1$. This test does not work as well for small amplitude glitches, where the statistical fluctuations can lead to $E_\text{null}$ being smaller than $I_\text{null}$. For this reason \xp varies $C$ with $I_\text{null}$. as can be see in figure \ref{fig:xcuts}. The precise position of the cut is set to maximise performance on a set of injections and background noise triggers.
 
-We have seen how \xp uses the coherent and incoherent null stream for background rejection. \xp uses this same process for other measures of coherent energy, i.e. it uses the coherent energy to define an incoherent energy and then make a cut. In section \ref{sec:ML} we will see how these statistics can instead be used by a machine learning algorithm to make more intelligent cuts, using arbitrary combinations of coherent and incoherent statistics, as well as other statistics. 
+We have seen how \xp uses the coherent and incoherent null stream for background rejection. \xp uses this same process for other measures of coherent energy, i.e.~it uses the coherent energy to define an incoherent energy and then make a cut. Specifically, it uses the coherent energy for that assumes either a plus, cross, or circularly polarised GW, which are desribed in detail in \textbf{cite chateraaji was and sutton}. In section \ref{sec:ML} we will see how these statistics can instead be used by a machine learning algorithm to make more intelligent cuts, using arbitrary combinations of coherent and incoherent statistics, as well as other statistics. 
 
 \subsection{Tuning and Trigger Significance}
-In this section we will describe how the coherent statistics are tuned and how \xp calculates the significance of a trigger. \xp searches for GWs in a window  [-600, +60] seconds around the trigger time of a typical GRB, which we call the \textit{on-source} data. For GRBs with a $T_{90}$ value greater than 60 seconds, the on-source is extended to [-600, +$T_{90}$] seconds around the trigger time. To tune the cuts, GW signal injections are placed into the on-source data and the cuts are made so as to maximise the number of GW injections detected at a given false alarm rate. 
+In this section we will describe how the coherent statistics are tuned and how \xp calculates the significance of a trigger. \xp searches for GWs in a window  [-600, +60] seconds around the trigger time of a typical GRB, which we call the \textit{on-source} data. For GRBs with a $T_{90}$ value greater than 60 seconds, the on-source is extended to [-600, +$T_{90}$] seconds around the trigger time. To tune the cuts, GW signal injections are placed into the on-source data. The cuts that are chosen are the ones that minimise the amplitude of the GW injections for a fixed detection percentage and at a given false alarm rate. For example, the user could decide that a FAP of 1\% is acceptable, and that the cuts should be chosen to minimise the injection scale at which 90\% of the injections are detected.   
 
-In order to measure the significance of a trigger, approximately one hour of data either side of the on-source window is also analysed, called the \textit{off-source} data. The off-source data is split into trials of equal length to the on-source window. The FAP is calculated as the fraction of off-source trials that have a higher energy than the highest energy on-source trigger. To create more trials and hence achieve a lower FAP, timeslides are applied to the off-source to simulate more data. 
+In order to measure the significance of a trigger, approximately 1.5 hours of data either side of the on-source window is also analysed, called the \textit{off-source} data. The off-source data is split into trials of equal length to the on-source window. The FAP is calculated as the fraction of off-source trials that have a higher value for the detection statistic than the loudest trigger in the on-source. \xp creates several ranking statistics, such as a Bayesian-inspired modification to the standard likelihood \textbf{cite was} and a statistic based on power law distributed noise \textbf{cite S6 GRB paper}. The ranking statistic used as the detection statistic is the one that gives the best sensitivity at the user specified FAP. To create more trials and hence better measure the FAP, timeslides are applied to the off-source to simulate more data.\footnote{This is the same approach taken by PyGRB, as discussed in section \ref{sec:event sig}. \xp also uses long and short timeslides as well.} 
 
 \subsection{O2 \xp Search} \label{sec:xp o2 results}
 The Advanced LIGO second observing run started in November 2016 and ended in August 2017, with Advanced Virgo joining for the last month. During this time there were 242 GRBs reported by the Swift and Fermi GRB observatories, and 52 reported by the InterPlanetary Network (IPN), with many GRBs appearing in both lists. \xp requires at least 660 seconds of coincident data between any two detectors in the network. This resulted in 98 GRBs being analysed by \xp during O2. Data from Virgo was only used if it improved the sensitivity of the closed box analysis. 
 
-The injections used for this analysis were circular sine-gaussian (CSG) and accretion disk instabilities (ADI) [\textbf{citations in O2 GRB paper}] waveforms. The CSG injections had a total radiated energy of $E_\text{GW} = 10^{-2}M_\odot c^2$ and a Q-factor of nine.\footnote{The Q-factor corresponds to the number of cycles contained within some finite region of the sine-gaussian.} The ADI waveforms are model the GW signal from instabilities in a magnetically suspended torus around a rapidly spinning black hole. These two waveforms are chosen as they have very different morphology and duration, with CSG waveforms lasting $\sim1$ second and ADI waveforms lasting for $\sim100$ seconds.
+The injections used for this analysis were circular sine-gaussian (CSG) and accretion disk instability (ADI) [\textbf{citations in O2 GRB paper}] waveforms. The CSG injections are ad hoc waveforms, not based on any astrophysical model, chosen to have a total radiated energy of $E_\text{GW} = 10^{-2}M_\odot c^2$ and a Q-factor of nine.\footnote{The Q-factor corresponds to the number of cycles contained within some finite region of the sine-gaussian envelope.} The ADI waveforms model the GW signal from instabilities in a magnetically suspended torus around a rapidly spinning black hole. These two waveforms are chosen as they have very different morphology and duration, with CSG waveforms lasting $0.01 - 1$ second and ADI waveforms lasting for $10 - 250$ seconds.
 
-Of the 98 GRBs analysed, the only statistically significant signal was that of GRB 170817A, which was recovered with a FAP of $3.1\times 10^{-4}$. The FAP the 97 other GRBs analysed is plotted in figure \ref{fig:xpvalue}. A weighted binomial test of the 5\% most significant GRBs analysed by \xp in O2 gave a combined p-value of 0.75, indicating that there is no evidence for a sub-threshold population of weak GRB triggers. 
+Of the 98 GRBs analysed, the only statistically significant signal was that of GRB 170817A, which was recovered with a FAP of $3.1\times 10^{-4}$. The FAP of the 97 other GRBs analysed is plotted in figure \ref{fig:xpvalue}. A weighted binomial test of the 5\% most significant GRBs analysed by \xp in O2 gave a combined p-value of 0.75, indicating that there is no evidence for a sub-threshold population of weak GRB triggers. 
 
-Plotted in \ref{fig:x ex dist} is the 90\% confidence exclusion distance for each analysed GRB apart from GRB 170817A. This is the distance at which 90\% of injected signals are more significant than the most significant event in the dummy on-source. This can be used to rule out a burst event occurring within this exclusion distance for each GRB, which also limits the amount of energy that GRBs and be emitting as GWs. This can also be used as a measure of search sensitivity to burst signals, and comparison with the \xp results from O1 [\textbf{cite O1 paper}] shows that the sensitivity is largely unchanged. To estimate the distance to a detected ADI injection, we use the injection scale 90\% upper limit and the distance the ADI injection was placed at. This cannot be done for CSG waveforms, as they are not an astrophysical waveform and so have no well defined distance. Instead, the energy $E_\text{GW}$ emitted as GWs is specified, as well as the central frequency $f_0$. The distance to the source $d$ is then calculated using the formula [\textbf{cite \url{https://arxiv.org/pdf/1304.0210.pdf}}]
+Plotted in \ref{fig:x ex dist} is the 90\% confidence exclusion distance for each analysed GRB apart from GRB 170817A. This is the distance at which 90\% of injected signals have a higher ranking statistic than the most significant event in the on-source. This can be used to rule out a burst event occurring within the exclusion distance for each GRB, and also places upper-limits on the amount of energy that GRBs emit as GWs. The CSG waveforms are not astrophysical and so have no well defined distance. The reported distance to the source of a CSG GW with energy $E_\text{GW}$ and central frequency $f_0$ is given by the formula \textbf{cite \url{https://arxiv.org/pdf/1304.0210.pdf}}]
 \begin{equation}
-d^2 = \frac{5}{2}\frac{G}{\pi^2 c^3}\frac{E_\text{GW}}{f_0^2 h_\text{hrss}^2 }  
+d^2 = \frac{5}{2}\frac{G}{\pi^2 c^3}\frac{E_\text{GW}}{f_0^2 h_\text{90}^2 }  
 \end{equation}
-where $h_\text{hrss}$ is the root-sum-square amplitude of the trigger.
+where $h_\text{90}$ is the root-sum-square amplitude $h_\text{rss}$ of the trigger at which 90\% of injections are detected. The $h_{rss}$ is a standard measure of amplitude used in burst searches and is given by
+\begin{equation}
+h_\text{rss} = \sqrt{\int dt (h_+^2(t) + h_\times^2(t))} \fs
+\end{equation}
+The exclusion distance can also be used as a measure of search sensitivity to burst signals. Comparison with the \xp results from O1 [\textbf{cite O1 paper}] shows that the sensitivity is largely unchanged. 
+
+
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{xpvalue.png}
@@ -1953,7 +1943,7 @@ where $h_\text{hrss}$ is the root-sum-square amplitude of the trigger.
 \end{figure}
 
 \section{Machine Learning} \label{sec:ML}
-We have seen how \xp makes cuts on coherent statistics to distinguish between noise and GW signals. \xp uses pairs of coherent and incoherent energy for background rejection, as in (\ref{cut}). These cuts are effective and well motivated\footnote{As we saw in section \ref{sec:xcuts}} but they cannot explore the full parameter space, looking for patterns using all of the statistics out our disposal. In this section we discuss how to use machine learning to make achieve this. The software we use is the Toolkit for Multivariate Analysis (TMVA) package in the ROOT data analysis framework. 
+We have seen how \xp makes cuts on coherent statistics to distinguish between noise and GW signals. \xp uses pairs of coherent and incoherent energy for background rejection, as in (\ref{cut}). These cuts are effective and well motivated\footnote{As we saw in section \ref{sec:xcuts}} but they cannot explore the full parameter space, looking for patterns using all of the statistics out our disposal. In this section we discuss how to use machine learning to achieve this. The software we use is the Toolkit for Multivariate Analysis (TMVA) package in the ROOT data analysis framework. We call the pipeline that uses machine learning on \xp triggers \textit{XTMVA}. For details on the TMVA software package, see \textbf{cite TMVA user guide}. 
 
 \subsection{Supervised Machine Learning}
 The type of Machine learning we use is called \textit{supervised machine learning}. Supervised machine learning algorithms are trained on data which has already been classified. They can then be shown a new, not-classified data point and determine the appropriate classification. Supervised machine learning requires data to be in a particular format (see table \ref{table:1}). It is a list of \emph{events}, each with a \emph{label} and corresponding \emph{attributes}. The machine learning algorithm builds a \textit{classifier} that can determine the label of an event when given the event's attributes. In the case of our GW search, the events are the triggers returned by \xp (see section \ref{xtriggers}). The labels are \textit{signal} or \textit{background}, and the attributes are the values of the signal and null data streams for those triggers and some statistics describing the time-frequency properties of the trigger. A full list of the attributes used, together with a short description of each attribute can be seen in table \ref{coherent energy table}. The signal triggers are generated by injecting signal waveforms into the data. Background triggers are triggers that do not coincide with an injected signal and are typically formed from timeslides and using data outside the on-source window.
@@ -1979,25 +1969,25 @@ Signal & 6422.1467 & 14426.9124 & 14167.2933 & 4991.7876 \\ [1ex]
  \hline
  
 \end{tabular}
-\caption{An example of MVA training data. Each event has a label and several attributes. The training sets we actually use have up to 15 attributes and thousands of events.}
+\caption{\textbf{Example MVA training data.} Each event has a label and several attributes. The training sets we actually use have up to 15 attributes and thousands of events. The labels are various coherent and incoherent measures of energy, as well as trigger properties such as the bandwidth and duration. A full list is given in table \ref{tab:labels}.}
 \label{table:1}
 \end{table}
 
- \begin{table}
+ \begin{table} \label{tab:labels}
 \begin{tabular}{| c | c | c | c | c |} 
  \hline
 \textbf{Statistic }& \textbf{Description}  \\ [0.5ex] 
  \hline\hline
 & \\ 
-loghbayesiancirc & A likelihood ratio based on Bayesian methods, for the \\ & hypothesis of a circularly polarised GW vs Gaussian noise\\ & [\textbf{cite someone}]  \\
+loghbayesiancirc & A likelihood ratio based on Bayesian methods, for the \\ & hypothesis of a circularly polarised GW vs Gaussian noise\\ & [\textbf{cite was}]  \\
 
 \hline
 & \\
-$E_\text{max}$ & The maximum energy in the whitened data that is \\ & consistent with a GW from a given sky location. \\
+$E_\text{SL}$ & The maximum energy in the whitened data that is \\ & consistent with a GW from a given sky location. \\
 
 \hline
 & \\
-$E_\text{null}$& The minimum amount of energy in the whitened data that is\\ & inconsistent with a GW from a given sky location. \\ & Given by $E_\text{tot}-E_\text{max}$. \\
+$E_\text{null}$& The minimum amount of energy in the whitened data that is\\ & inconsistent with a GW from a given sky location. \\ & Given by $E_\text{SL}-E_\text{max}$. \\
 \hline
 & \\
 $I_\text{null}$& The sum of the autocorrelation terms of $E_\text{null}$. \\
@@ -2030,7 +2020,11 @@ $E_\text{V1}$& The energy in the V1 interferometer. \\
 
 \hline
 & \\
-number of pixels & The number of pixels in the cluster. \\
+Number of Pixels & The number of pixels in the cluster. \\
+
+\hline
+& \\ 
+Power law & The standard likelihood defined for \\ &the case where the noise is power law distributed\\ &instead of Gaussian distributed. \\
 
 \hline
 & \\
@@ -2040,21 +2034,24 @@ Duration & Time duration of the trigger in seconds. \\
 & \\
 Bandwidth & The frequency range spanned by the trigger in Hertz. \\
 
+
 \hline
-& \\ 
-Power law & \textbf{READ MICHAL's THESIS} \\
+& \\
+Sky Position & The sky position of the trigger. \\
+
+
 
 \hline
 \hline
 \end{tabular}
-\caption{The attributes used by the machine learning classifier.}
+\caption{\textbf{MVA Attributes.}The attributes used by the machine learning classifier.}
 \label{coherent energy table}
 \end{table}
 
 \FloatBarrier
 
 \subsection{Boosted Decision Trees} \label{bdt}
-A \textit{Decision Tree} is a simple type of classifier. It is a flowchart of true/false statements about a trigger's attributes to determine the correct label. For example, consider the decision tree shown in fig.\ref{fig:tree}. Here the attributes are labeled as the components of a vector $x$. We start at the top node and work downwards. If the statement in the node is true then we follow the branch to the left and if not then we follow the branch to the right. We then consider the statement at the end of whichever branch we follow. We continue this process until we reach a \textit{leaf node}, which has no branches and contains a final classification for the trigger.  
+A \textit{Decision Tree} is a simple type of classifier. It is a flowchart of true/false statements about a trigger's attributes to determine the correct label. For example, consider the decision tree shown in figure \ref{fig:tree}. Here the attributes are labeled as the components of a vector $x$. We start at the top node and work downwards. If the statement in the node is true then we follow the branch to the left and if not then we follow the branch to the right. We then consider the statement at the end of whichever branch we follow. We continue this process until we reach a \textit{leaf node}, which has no branches and contains a final classification for the trigger.  
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{decision_tree.png}
@@ -2069,23 +2066,25 @@ We can improve the performance of the classifier by using an \textit{ensemble} (
 \begin{center}
 \includegraphics[width=0.8\linewidth]{mva_trigger_and_score2.png}
 \end{center}
-\caption{\textbf{Visualising the Classifier.} In the top plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the bottom plot. As we can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the \xp cut shown in fig.\ref{fig:xcuts}. }
+\caption{\textbf{Visualising the Classifier.} In the top plot you can see the value for log(Enull) and log(Inull) for all the signal and background training data used to build the classifier. We chose one of these events at random (indicated by the star) and varied Enull and Inull to see how it changed the MVA score, indicated by the colour in the bottom plot. As we can see, increasing Inull and decreasing Enull leads to the event being more likely to be classed as a signal. This is akin to the \xp cut shown in figure \ref{fig:xcuts}. }
 \label{fig:mvacuts}
 \end{figure}
 
 To train a decision tree we must determine the best variable and cut for each decision node, as well as the correct label for each leaf node. Each of these values is set by brute force: trying every possible cut in some discrete range to get the best performance on the training events. Ensemble methods work best when each classifier in the ensemble is independent of the others, so training every tree on the same events is not going to give optimal results. For this reason each tree is trained on some subset of the training set. We could pick events at random to form these subsets, but a more powerful method is to use \textit{Adaptive Boosting}. 
 
-When using adaptive boosting, each event in the training set is given a probability that it will be selected to train the next tree. Initially each event in the training set has the same probability of being selected. Then after each tree is trained the probability of each event being selected to train the next tree is updated such that misclassified events are more likely to be included in the training set for the next tree. In this way, the ensemble become gradually more effective at classifying those events that are most difficult to classify. The misclassifed events have their probability of being selected for training the next tree updated by the \textit{boost weight}, given by
+When using adaptive boosting, each event in the training set is given a probability that it will be selected to train the next tree. Initially each event in the training set has the same probability of being selected. Then, after each tree is trained, the probabilities are updated such that misclassified events are more likely to be selected to the train the next tree. In this way, the ensemble become gradually more effective at classifying those events that are most difficult to classify. To be precise, all the \textit{misclassifed} events have their probability of being selected for training the next tree multiplied by a \textit{boost weight} before being renormalised. The boost weight is given by \textbf{cite tmva user guide}
 \begin{equation}
 \alpha = \frac{1 - \text{err}}{\text{err}} 
 \end{equation}
-where err is the misclassification rate. The weights are then renormalised. Note that the boost weight is greater than one for err$<1/2$, and that as the error gets smaller, the boost weight increases\footnote{The misclassification rate is always less than half when there are only two labels as otherwise the algorithms would simply swap the labels around.}. The effect of this is that each new tree is more likely to be trained on the events that are most difficult to classify. 
+where err is the \textit{misclassification rate}, the fraction of events misclassified by the \textit{previous} tree. Note that the boost weight is greater than one for err$<1/2$, and that as the error gets smaller, the boost weight increases\footnote{The misclassification rate is always less than half when there are only two labels as otherwise the algorithms would simply swap the labels around.}. The effect of this is that each new tree is more likely to be trained on the events that are most difficult to classify. For example, if the previous tree only misclassified one event, then the misclassification error will be very small and the boost weight will be very large. This boost weight will then only be applied to the one misclassified event, making it almost certain that this event will be selected to train the next tree. 
 
-The ensemble output is also changed, so that it is weighted rather than being a simple sum. If the output of the $i$th tree is given by $h_i(\textbf{x})$, with $\textbf{x}$ being the event attributes, then the ensemble output is given by
+It can be useful to slow down the rate at which the probabilities are updated. To understand why, suppose that a difficult-to-classify event is, by chance, correctly classified by the first few trees. It will now have a low probability of being selected to train future trees. If we could slow down the rate at which the probabilities are updated, then only those events that are consistently classified correctly should end up with a low probability of being selected for training the next tree. This is done by adding an exponent $\beta<1$ to the boost weight, so that $\alpha \rightarrow \alpha^\beta$. The smaller $\beta$ is, the slower the probabilities are updated. For this reason, we call $\beta$ the \textit{learning rate}.
+
+The ensemble output is also changed, so that it is weighted rather than being a simple sum. If the output of the $i$th tree is given by $h_i(\textbf{x})$, with $\textbf{x}$ being the event attributes, then the ensemble output is given by \textbf{cite tmva user guide}
 \begin{equation}
 H(\textbf{x}) = \frac{1}{N}\sum_{i=0}^N \ln(\alpha_i)h_i(\textbf{x)}
 \end{equation}  
-where $N$ is the number of trees in the ensemble. In this way, greater significance is given to trees with lower misclassification rates. It is common practice when using a forest of decision trees such as this to use the criteria that values of $H$ below 0.5 are background and those above 0.5 are signal. We determine classification in a slightly different way. The trained classifier is used on the off-source trials and it returns a value of $H$ for each trial. We then calculate a FAP by determining the fraction of off-source trials that had a larger value of $H$ than the on-source trial. In this way, the value of $H$ should be interpreted as small values are more likely to be background events while large values are more likely to be a signal, but a value of $H$ on its own is not enough to determine if a trigger is a GW signal. 
+where $N$ is the number of trees in the ensemble. In this way, greater significance is given to trees with lower misclassification rates. It is common practice when using a forest of decision trees such as this to say that values of $H$ below 0.5 are background and those above 0.5 are signal. We determine classification in a slightly different way. The trained classifier is used on the off-source trials and it returns a value of $H$ for each trial. We then calculate a FAP by determining the fraction of off-source trials that had a larger value of $H$ than the on-source trial. In this way, small values of $H$ are interpreted as more likely to be background events while larger values are more likely to be a signal, but a value of $H$ on its own is not enough to determine if a trigger is a GW signal. Instead it is used to calculate a FAP for the trigger.
 
 \subsection{Training Data Preprocessing}\label{sec:data-preprocessing}
 Extra data preprocessing is required when training the classifier. This is because the MVA will learn what a signal looks like based on the training data, and so a small contamination can cause the classifier to fail completely. For example, suppose a small amplitude signal injection is added close to a large amplitude glitch in the data. This trigger will be labeled as a signal, due to the injection, but the properties of the trigger will resemble a glitch, as the glitch has a much larger amplitude than the signal injection. In this case, the injection is essentially a background trigger that has been mislabeled as a signal. This reduces the ability of the classifier to detect real signals by making the properties of signals harder for the algorithm to learn. Even worse, it can lead to background triggers being misclassified as a GW signal.  
@@ -2094,9 +2093,9 @@ For these reasons it is important to make sure that signal injections do not ove
 
 We must also not include injections in our signal training set that are too small to be detected, as this would again be including triggers labeled as signals but with the properties of a noise trigger. For this reason we apply a threshold on the amplitude of the signal set, so any injection below that amplitude is removed. The level of the threshold has to be set experimentally. If the threshold is set too low then we will increase the chance of a false positive and hurt our sensitivity to real signals, but if it is too high then we will limit the classifiers ability to detect low amplitude signals. 
 
-As XTMVA is to be used for the unmodelled search, it is also important to ensure that the search can find waveforms that are not in the training set. There are several tools that we use to achieve this. The first is to limit the amount of information the classifier is given about the waveform morphology. The classifier cannot know the precise morphology of any waveform because the only attributes that the classifier trains on is the time, peak-frequency, and various measurements of the coherent and null energy between the detectors in the network. This forces the classifier to use the coherence of the triggers to make a classification, rather than the waveform morphology. 
+As XTMVA is to be used for the unmodelled search, for which the physical waveforms are uncertain, it is also important to ensure that the search can find waveforms that are not in the training set. There are several tools that we use to achieve this. The first is to limit the amount of information the classifier is given about the waveform morphology. The classifier cannot know the precise morphology of any waveform because the only attributes that the classifier trains on are the duration, band-width, and number of pixels in the trigger, as well as the various measurements of the coherent and incoherent energy between the detectors in the network. Thus the classifier has very limited information of the waveform morphology.
 
-There is still a possibility that the classifier will become too specialised to the waveforms in the training set, as certain waveform morphologies may have particular characteristics than become apparent in the parameters that the MVA is given. For this reason we also trained the classifier on a variety of different waveforms. The training set includes long and short waveforms, and a variety of different morphologies. Some of the signals are astrophysically motivated, such as compact binary coalescence signals, while some are artificial, such as the white noise burst. 
+There is still a possibility that the classifier will become too specialised to the waveforms in the training set, as certain waveform morphologies may have particular characteristics that become apparent in the parameters that the MVA is given. For this reason we also trained the classifier on a variety of different waveforms. The training set includes long and short waveforms, and a variety of different morphologies. Some of the signals are astrophysically motivated, such as compact binary coalescence signals, while some are artificial, such as the white noise burst. 
 
 The final tool we use to ensure the classifier is sensitive to generic waveforms is to test the classifier on waveforms that are not included in the training set. If the classifier can find waveforms not in the training set, then we can be reasonably confident that it is sensitive to generic waveforms. We also try removing certain waveforms from the training set to test the robustness of the classifier. This will lead to a drop in sensitivity for that waveform, but if the drop in sensitivity is small, then we can be confident that the classifier is robust. Experiments with removing certain waveforms from the training set showed that the sensitivity did not change by more than a few percent.
 
@@ -2112,13 +2111,71 @@ Optimisation is a somewhat cyclical process, as once we have changed one hyperpa
 \subsubsection{Training Set}
 Many of the hyperparameters mentioned in section \ref{sec:data-preprocessing} had to be optimised. Consider the amplitude threshold applied to triggers before they are included in the training set. We applied the threshold to the loghbayesian statistic (see table \ref{table:1}). Experimentation showed that allowing triggers with a loghbayesian value below 20 led to the misclassification of background triggers as signal. Setting a value higher than this slowly reduced the sensitivity of the search.   
 
-We also optimised the waveforms that are included in the training set. In particular we were interested in how sensitive the MVA is to waveforms not in the training set. What we found was that the MVA was fairly robust to having waveform types removed from the training set. For example, the final classifier we used was trained on a set of waveforms that included white noise burst (WNB) signals of about 0.1 seconds and about 10 seconds as well as cusp waveforms. Removing these from the training set surprisingly had almost no effect on the ability of the MVA to detect WNB signals, cusp signals, or any other waveform, as can be seen in figure \ref{fig:no wnb or cusp}. Similar results were found when removing other waveforms. This suggests that by only giving the MVA the coherent statistics calculated by \xp, we have managed to build a classifier that is agnostic to waveform morphology, as required for a burst search.
+We also optimised the waveforms that are included in the training set. In particular we were interested in how sensitive the MVA is to waveforms not in the training set. What we found was that the MVA was fairly robust to having waveform types removed from the training set. For example, the final classifier we used was trained on a set of waveforms that included white noise burst (WNB) signals of about 0.1 seconds and about 10 seconds as well as cusp waveforms. Removing these from the training set surprisingly had almost no effect on the ability of the MVA to detect WNB signals, cusp signals, or any other waveform, as can be seen in figure \ref{fig:no wnb or cusp}. Similar results were found when removing other waveforms. This suggests that by only giving the MVA the coherent statistics calculated by \xpc we have managed to build a classifier that is agnostic to waveform morphology, as required for a burst search.
+
+
+\begin{table} \label{tab:wfs}
+\centering
+\begin{tabular}{| c | c | c | c | c |} 
+ \hline
+\textbf{Waveform }& \textbf{Description}  \\ [0.5ex] 
+ \hline\hline
+& \\ 
+ADI-a & aaa  \\
+
+\hline
+& \\
+ADI-b &bbb  \\
+
+\hline
+& \\
+ADI-c & \\
+
+\hline
+& \\
+ADI-d & \\
+
+\hline
+& \\
+ADI-e & \\
+
+\hline
+& \\
+BNS & \\
+
+\hline
+& \\
+NSBH & \\
+
+\hline
+& \\
+SGC & \\
+
+\hline
+& \\
+SGE  & \\
+
+\hline
+& \\
+WNB & \\
+
+\hline
+& \\
+Cusp & \\
+
+\hline
+
+\end{tabular}
+\caption{\textbf{Training Waveforms.} Here we list the waveforms used by XTMVA for both training and testing, together with a short description.}
+\end{table}
+
+
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{pc_change_removing_wnb_cusp.png}
 \end{center}
-\caption{\textbf{Removing WNB and Cusp Waveforms from Training Set.} Here we plot the percentage change in 50\% upper limit injection scale per waveform after removing WNB and Cusp waveforms from the training set. The sensitivity to most waveforms drops, but by less than 1\%. This shows that the MVA is able to detect GW morphologies that it has not been trained on. }
+\caption{\textbf{Removing WNB and Cusp Waveforms from Training Set.} Here we plot the percentage change in 50\% upper limit injection scale per waveform after removing WNB and Cusp waveforms from the training set. Negative values indicate that the sensitivity improved after the change. We see that the sensitivity to most waveforms drops, but by less than 1\%. As we use a few hundred injections at each injection scale, this is not a statistically significant result. This shows that the MVA is able to detect GW morphologies that it has not been trained on. }
 \label{fig:no wnb or cusp}
 \end{figure}
 
@@ -2136,13 +2193,13 @@ A related hyperparameter is the minimum number of events that we allow in a leaf
 The final hyperparameter we set was the number of cuts that the training algorithm scans over to find the best cut. When the classifier is training it searches for the best way to cut the parameter space into a signal subspace and a background subspace. To do this we can try every possible cut on every parameter. This can be very slow and lead to overtraining. To speed up our analysis and reduce the chance of overtraining, we can choose the number of cuts to try on each parameter. For example, we may decide to use 10 cuts for each parameter. In this case the algorithm will tune the cut on a parameter which ranges from 0-100 by trying cuts at 0,10,20,... and selecting the best of these cuts. To tune the number of cuts we wanted to use, we tested values in the range 10-160 as well as allowing the classifier to try every possible cut. We found that 80 cuts was optimal for our purposes. 
 
 \subsubsection{Result of Optimisation}
-Optimising the hyperparameters had relatively little effect on the overall sensitivity of the classifier. The results of the optimisation are shown in figure \ref{fig:opt compare}. There you can see that most of the optimisation made the classifier $\sim 3\%$  more sensitive to certain waveforms than the TMVA boosted decision tree default settings, though at the expense of about a 1\% drop in some others. With more time it might be possible to see greater improvements, but our findings are that as long as the hyperparameters are within some sensible range\footnote{For example, using only trees of depth two hurts sensitivity, but depth 3 and above leads to only modest improvements.}, the performace of the MVA is fairly constant. The same cannot be said for work done on optimising the training set. Without appropriately set thresholds, the MVA will regularly make false detections, making the pipeline unusable for a GW search. In figure \ref{fig:x compare} we plot a comparison of the MVA against a standard \xp analysis of the same GRB. You can see that the MVA is outperforming \xp on every waveform. As this was the GRB used for optimisation, this results probably overestimate the improvement that the MVA will bring. In the next section we will analyse a selection of other GRBs from O2 to make a fairer comparison of the MVA and \xp.
+Optimising the hyperparameters had relatively little effect on the overall sensitivity of the classifier. The results of the optimisation are shown in figure \ref{fig:opt compare}. There you can see that most of the optimisation made the classifier $\sim 3\%$  more sensitive to certain waveforms than the TMVA boosted decision tree default settings, though at the expense of about a 1\% drop in some others. With more time it might be possible to see greater improvements, but our findings are that as long as the hyperparameters are within some sensible range\footnote{For example, using only trees of depth two hurts sensitivity, but depth 3 and above leads to only modest improvements.}, the performace of the MVA is fairly constant. The same cannot be said for work done on optimising the training set. Without appropriately set thresholds, the MVA will regularly make false detections, making the pipeline unusable for a GW search. In figure \ref{fig:x compare} we plot a comparison of the MVA against a standard \xp analysis of the same GRB. You can see that the MVA is outperforming \xp on every waveform. As this was the GRB used for optimisation, this results probably overestimate the improvement that the MVA will bring. In the next section we will analyse a selection of other GRBs from O2 to make a fairer comparison of the \xp and XTMVA.
 
 \begin{figure} % Example of including images
 \begin{center}
 \includegraphics[width=0.8\linewidth]{opt_comparison.png}
 \end{center}
-\caption{\textbf{Effect of Hyperparameter Optimisation.} Here we see the effects of optimisation on the 50\% upper limit injection scale. The top panel showing the absolute values and the bottom panel showing the percentage change. The benefits of optimising the hyperparameters is no more than a $\sim3\%$ improvement in sensitivity when compared to the default settings of the TMVA boosted decision tree classifier. }
+\caption{\textbf{Effect of Hyperparameter Optimisation.} Here we see the effects of optimisation on the 50\% upper limit injection scale. Lower values indicate a more sensitive search. The top panel shows the absolute values and the bottom panel shows the percentage change. The benefits of optimising the hyperparameters is no more than a $\sim3\%$ improvement in sensitivity when compared to the default settings of the TMVA boosted decision tree classifier. It is also interesting to note that the three waveforms that have their sensitivity drop after optimisation (adi-a, adi-c, and adi-d) are all long waveforms. We will discuss the problem with these waveforms in section \ref{sec:mva future}. }
 \label{fig:opt compare}
 \end{figure}
 
@@ -2155,7 +2212,7 @@ Optimising the hyperparameters had relatively little effect on the overall sensi
 \end{figure}
 
 \section{Effectiveness of XTMVA}
-In this section we will compare XTMVA to \xp. To do this, we ran XTMVA on a selection of 15 GRBs from O2. Of these GRBs, one was use to optimise the hyperparameters of the classifier, and so should not be used for comparison to \xp. The other was GW 170817, which is treated differently to the other GRBs analysed as it is a confirmed detection. The remaining 13 GRBs make up the results set. We will see that XTMVA has better sensitivity than \xp, but also has some pathologies that make \xp a more robust search at the current time. We end this section by discussing the implications of this research, and how we should proceed. 
+In this section we will compare XTMVA to \xpfs To do this, we ran XTMVA on a selection of 15 GRBs from O2. Of these GRBs, one was use to optimise the hyperparameters of the classifier, and so should not be used for comparison to \xpfs The other was GW 170817, which is treated differently to the other GRBs analysed as it is a confirmed detection. The remaining 13 GRBs make up the results set. We will see that XTMVA has better sensitivity than \xpc but also has some pathologies that make \xp a more robust search at the current time. We end this section by discussing the implications of this research, and how we should proceed. 
 
 \subsection{Analysis Setup}
 We compared the speed and sensitivity of XTMVA to \xp by on a subset of GRBs analysed in O2. When performing the GRB analyses with XTMVA, we tried as much as possible to keep the parameters of the analysis the same to make comparison easier. However, this was not always possible and it is important to clarify some of the differences between the \xp and XTMVA analyses that could bias the results. 
@@ -2163,7 +2220,7 @@ We compared the speed and sensitivity of XTMVA to \xp by on a subset of GRBs ana
 The first is that XTMVA used off-source injections, unlike \xp which uses on-source injections. As mentioned in section \ref{sec:data-preprocessing}, this is required for the MVA or it will make false detections. Using off-source injections forced another change upon the analysis. The O2 \xp analysis used code that made the recovery of long injections easier. \xp analyses data in chunks of 256 seconds. For long injections, especially those over $\sim100$ seconds long, this can lead to injections being spread over multiple segments. For this reason, \xp will analyse two neighbouring segments of 256 seconds if a long injection is near the boundary between these chunks. This can increase the signal power of long injections and prevent them being broken up into multiple smaller signals. For purely technical reasons, the code that allows multiple chunks of data to be analysed is not compatible with off-source injections. Hence, the MVA is at a disadvantage when trying to find long injections. For short waveforms, it is very unlikely they would be injected near the boundary between two chunks of data and so the effect described above is negligible. Apart from these two changes (i.e. using off-source injections and not using the long-injection code) the MVA analysis was identical the \xp analysis used in O2. 
 
 \subsection{Sensitivity and Speed Comparison}
-To measure the sensitivity of XTMVA we used the same measure as in section \ref{sec:opt}, the 50\% injection scale upper limit. In figures \ref{fig:adi comparison} and \ref{fig:csg comparison}, we compare the sensitivity of XTMVA and \xp on one of the accretion disk instability waveforms (ADI-a) and the 150 Hz circular sine Gaussian waveform (CSG) for the 13 GRBs in the results set. These plots show several interesting features. The MVA analysis is usually more sensitive to ADI-a waveforms than \xp despite not benefiting from the long injection code. The MVA also consistently outperforms \xp for the CSG waveform. These plots also show that the MVA is more stable than \xp, which has outliers for both waveforms, unlike the MVA.
+To measure the sensitivity of XTMVA we used the same measure as in section \ref{sec:opt}, the 50\% injection scale upper limit. In figures \ref{fig:adi comparison} and \ref{fig:csg comparison}, we compare the sensitivity of XTMVA and \xp on one of the accretion disk instability waveforms (ADI-a) and the 150 Hz circular sine Gaussian waveform (CSG) for the 13 GRBs in the results set. These plots show several interesting features. The MVA analysis is usually more sensitive to ADI-a waveforms than \xp despite not benefiting from the long injection code. The MVA also consistently outperforms \xp for the CSG waveform. These plots also show that the MVA is more stable than \xpc which has outliers for both waveforms, unlike the MVA.
 
 \begin{figure} % Example of including images
 \begin{center}
@@ -2191,7 +2248,7 @@ In figure \ref{fig:median injscale}, we plot the median 50\% injection scale upp
 \label{fig:median injscale}
 \end{figure}
 
-As well as the sensitivity improvement, XTMVA is also uses less CPU time than \xp. In particular, using training an MVA classifier is much faster than calculating the optimal coherent cut with \xp. The post-processing stage with \xp takes approximately 75 CPU hours, while the MVA takes about 18. Though it should be noted that the initial processing stage, where coherent statistics are calculated and triggers found, is still the most computationally intensive part of the process, taking about 650 hours. This part of the pipeline is identical between XTMVA and \xp.
+As well as the sensitivity improvement, XTMVA is also uses less CPU time than \xpfs In particular, using training an MVA classifier is much faster than calculating the optimal coherent cut with \xpfs The post-processing stage with \xp takes approximately 75 CPU hours, while the MVA takes about 18. Though it should be noted that the initial processing stage, where coherent statistics are calculated and triggers found, is still the most computationally intensive part of the process, taking about 650 hours. This part of the pipeline is identical between XTMVA and \xpfs
 
 \subsection{XTMVA Search Results} \label{sec:mva results}
 We analysed the 13 GRBs of the results set in the same manner as was done for the \xp results in O2 (see section \ref{sec:xp o2 results}). In figure \ref{fig:mva pvalues} shows the p-values for each GRB, which can be compared to \ref{fig:xpvalue}. We see that the MVA has a bias towards low p-values. In particular, there are two p-values of about $\sim1\%$. Further investigation shows that these two low p-value events were ranked by \xp to be the most significant triggers in the on-source window before vetoes were applied, but were then vetoed by the coherent cuts. 

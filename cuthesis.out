@@ -60,12 +60,12 @@
 \BOOKMARK [0][-]{chapter.5}{The Future of PyGRB}{}% 60
 \BOOKMARK [1][-]{section.5.1}{Reasons to Rewrite the Pipeline}{chapter.5}% 61
 \BOOKMARK [1][-]{section.5.2}{Workflow Modifications}{chapter.5}% 62
-\BOOKMARK [2][-]{subsection.5.2.1}{The new Coherent Matched Filtering Executable}{section.5.2}% 63
-\BOOKMARK [2][-]{subsection.5.2.2}{Consistency Checks}{section.5.2}% 64
-\BOOKMARK [2][-]{subsection.5.2.3}{Detection Statistic}{section.5.2}% 65
+\BOOKMARK [2][-]{subsection.5.2.1}{Consistency Checks}{section.5.2}% 63
+\BOOKMARK [2][-]{subsection.5.2.2}{Detection Statistic}{section.5.2}% 64
+\BOOKMARK [2][-]{subsection.5.2.3}{The new Coherent Matched Filtering Executable}{section.5.2}% 65
 \BOOKMARK [1][-]{section.5.3}{Search Performance}{chapter.5}% 66
-\BOOKMARK [2][-]{subsection.5.3.1}{Analysis Results}{section.5.3}% 67
-\BOOKMARK [2][-]{subsection.5.3.2}{Analysis Time}{section.5.3}% 68
+\BOOKMARK [2][-]{subsection.5.3.1}{Testing the Detection Statistic}{section.5.3}% 67
+\BOOKMARK [2][-]{subsection.5.3.2}{Computational Cost}{section.5.3}% 68
 \BOOKMARK [1][-]{section.5.4}{Future Plans}{chapter.5}% 69
 \BOOKMARK [0][-]{chapter.6}{A Search for Unmodelled Gravitational Wave Signals using Machine Learning}{}% 70
 \BOOKMARK [1][-]{section.6.1}{X-pipeline}{chapter.6}% 71

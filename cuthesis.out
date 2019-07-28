@@ -84,9 +84,13 @@
 \BOOKMARK [2][-]{subsection.6.3.1}{Analysis Setup}{section.6.3}% 84
 \BOOKMARK [2][-]{subsection.6.3.2}{Sensitivity and Speed Comparison}{section.6.3}% 85
 \BOOKMARK [2][-]{subsection.6.3.3}{XTMVA Search Results}{section.6.3}% 86
-\BOOKMARK [2][-]{subsection.6.3.4}{Discussion and Future Work}{section.6.3}% 87
-\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 88
-\BOOKMARK [0][-]{section*.34}{Appendices}{}% 89
-\BOOKMARK [1][-]{section.Alph0.1}{General Relativity}{section*.34}% 90
-\BOOKMARK [1][-]{section.Alph0.2}{PyGRB O2 Result Tables}{section*.34}% 91
-\BOOKMARK [1][-]{section.Alph0.3}{MVA Results Tables}{section*.34}% 92
+\BOOKMARK [1][-]{section.6.4}{Discussion and Future Work}{chapter.6}% 87
+\BOOKMARK [2][-]{subsection.6.4.1}{Low p-value Triggers}{section.6.4}% 88
+\BOOKMARK [2][-]{subsection.6.4.2}{Long Injections}{section.6.4}% 89
+\BOOKMARK [2][-]{subsection.6.4.3}{Machine Learning Developments}{section.6.4}% 90
+\BOOKMARK [2][-]{subsection.6.4.4}{Comparison to other Machine Learning Approaches}{section.6.4}% 91
+\BOOKMARK [0][-]{chapter.7}{Conclusions}{}% 92
+\BOOKMARK [0][-]{section*.31}{Appendices}{}% 93
+\BOOKMARK [1][-]{section.Alph0.1}{General Relativity}{section*.31}% 94
+\BOOKMARK [1][-]{section.Alph0.2}{PyGRB O2 Result Tables}{section*.31}% 95
+\BOOKMARK [1][-]{section.Alph0.3}{MVA Results Tables}{section*.31}% 96

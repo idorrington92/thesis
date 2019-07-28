@@ -107,13 +107,14 @@
 \contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{123}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Analysis Setup}{123}{subsection.6.3.1}
 \contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{126}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{128}{subsection.6.3.3}
-\contentsline {subsection}{\numberline {6.3.4}Discussion and Future Work}{130}{subsection.6.3.4}
-\contentsline {subsubsection}{Low p-value Triggers}{131}{section*.31}
-\contentsline {subsubsection}{Long Injections}{131}{section*.32}
-\contentsline {subsubsection}{Machine Learning Developments}{134}{section*.33}
-\contentsline {chapter}{\numberline {7}Conclusions}{137}{chapter.7}
-\contentsline {chapter}{Appendices}{140}{section*.34}
-\contentsline {section}{\numberline {.1}General Relativity}{140}{section.Alph0.1}
-\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{140}{section.Alph0.2}
-\contentsline {section}{\numberline {.3}MVA Results Tables}{143}{section.Alph0.3}
+\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{129}{subsection.6.3.3}
+\contentsline {section}{\numberline {6.4}Discussion and Future Work}{131}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Low p-value Triggers}{131}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Long Injections}{131}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.3}Machine Learning Developments}{134}{subsection.6.4.3}
+\contentsline {subsection}{\numberline {6.4.4}Comparison to other Machine Learning Approaches}{137}{subsection.6.4.4}
+\contentsline {chapter}{\numberline {7}Conclusions}{138}{chapter.7}
+\contentsline {chapter}{Appendices}{141}{section*.31}
+\contentsline {section}{\numberline {.1}General Relativity}{141}{section.Alph0.1}
+\contentsline {section}{\numberline {.2}PyGRB O2 Result Tables}{141}{section.Alph0.2}
+\contentsline {section}{\numberline {.3}MVA Results Tables}{144}{section.Alph0.3}

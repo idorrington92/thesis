@@ -9,6 +9,6 @@
 \contentsline {table}{\numberline {6.2}{\ignorespaces \textbf {MVA Attributes.}The attributes used by the machine learning classifier.}}{112}{table.6.2}
 \contentsline {table}{\numberline {6.3}{\ignorespaces \textbf {Training Waveforms.} Here we list the waveforms used by XTMVA for both training and testing, together with a short description.}}{119}{table.6.3}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1}{\ignorespaces \textbf {Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for X-pipeline and the MVA. }}{143}{table.Alph0.1}
-\contentsline {table}{\numberline {2}{\ignorespaces \textbf {MVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{144}{table.Alph0.2}
-\contentsline {table}{\numberline {3}{\ignorespaces \textbf {X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{145}{table.Alph0.3}
+\contentsline {table}{\numberline {1}{\ignorespaces \textbf {Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for X-pipeline and the MVA. }}{144}{table.Alph0.1}
+\contentsline {table}{\numberline {2}{\ignorespaces \textbf {MVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{145}{table.Alph0.2}
+\contentsline {table}{\numberline {3}{\ignorespaces \textbf {X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}}{146}{table.Alph0.3}

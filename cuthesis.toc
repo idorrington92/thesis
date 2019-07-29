@@ -61,20 +61,20 @@
 \contentsline {subsection}{\numberline {4.2.2}Coherent SNR}{58}{subsection.4.2.2}
 \contentsline {subsection}{\numberline {4.2.3}Comparison to Coincident Search}{60}{subsection.4.2.3}
 \contentsline {subsection}{\numberline {4.2.4}Null SNR}{62}{subsection.4.2.4}
-\contentsline {subsection}{\numberline {4.2.5}Searching for Face on Signals}{62}{subsection.4.2.5}
+\contentsline {subsection}{\numberline {4.2.5}Searching for Face on Signals}{63}{subsection.4.2.5}
 \contentsline {subsection}{\numberline {4.2.6}Coherent $\chi ^2$ Tests}{64}{subsection.4.2.6}
 \contentsline {subsubsection}{Signal Consistency Tests }{64}{section*.24}
 \contentsline {subsubsection}{The Coherent Bank $\chi ^2$ Test}{67}{section*.25}
 \contentsline {subsubsection}{The Coherent Autocorrelation $\chi ^2$ Test}{67}{section*.26}
 \contentsline {subsubsection}{The Coherent Power $\chi ^2$ Test}{67}{section*.27}
 \contentsline {section}{\numberline {4.3}The PyGRB Workflow}{68}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Removing Noise}{68}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.1}Background Noise Rejection}{68}{subsection.4.3.1}
 \contentsline {subsection}{\numberline {4.3.2}Reweighted SNR}{69}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Event Significance}{70}{subsection.4.3.3}
-\contentsline {subsection}{\numberline {4.3.4}Searching over a Sky Patch}{71}{subsection.4.3.4}
-\contentsline {subsection}{\numberline {4.3.5}Calculating Search Sensitivity}{72}{subsection.4.3.5}
+\contentsline {subsection}{\numberline {4.3.4}Searching over a Sky Patch}{72}{subsection.4.3.4}
+\contentsline {subsection}{\numberline {4.3.5}Calculating Search Sensitivity}{73}{subsection.4.3.5}
 \contentsline {subsection}{\numberline {4.3.6}The PyGRB Workflow}{74}{subsection.4.3.6}
-\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{74}{section.4.4}
+\contentsline {section}{\numberline {4.4}O2 PyGRB Search}{76}{section.4.4}
 \contentsline {subsection}{\numberline {4.4.1}GRB sample}{76}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Results}{76}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Rates}{78}{subsection.4.4.3}

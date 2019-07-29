@@ -1,25 +1,151 @@
 \begin{thebibliography}{10}
 
+\bibitem{abadie}
+J.~Abadie et~al.
+\newblock {Search for gravitational waves associated with gamma-ray bursts
+  during LIGO science run 6 and Virgo science runs 2 and 3}.
+\newblock {\em Astrophys. J.}, 760:12, 2012.
+
+\bibitem{gw_loc}
+B.~P. Abbott, {The LIGO Scientific Collaboration}, and {Virgo Collaboration}.
+\newblock Prospects for observing and localizing gravitational-wave transients
+  with advanced ligo and advanced virgo.
+\newblock {\em Living Reviews in Relativity}, 19(1):1, Feb 2016.
+
 \bibitem{GW150914-detector}
 B.~P. et~al Abbott.
 \newblock Gw150914: The advanced ligo detectors in the era of first
   discoveries.
 \newblock {\em Phys. Rev. Lett.}, 116:131103, Mar 2016.
 
+\bibitem{GW170817_det}
+B.~P. et~al. Abbott.
+\newblock Gw170817: Observation of gravitational waves from a binary neutron
+  star inspiral.
+\newblock {\em Phys. Rev. Lett.}, 119:161101, Oct 2017.
+
 \bibitem{150914-det-paper}
 B.~P. et~all Abbott.
 \newblock Observation of gravitational waves from a binary black hole merger.
 \newblock {\em Phys. Rev. Lett.}, 116:061102, Feb 2016.
+
+\bibitem{allen_chisq}
+Bruce Allen.
+\newblock ${\ensuremath{\chi}}^{2}$ time-frequency discriminator for
+  gravitational wave detection.
+\newblock {\em Phys. Rev. D}, 71:062001, Mar 2005.
+
+\bibitem{pycbc_Allen:2004}
+Bruce Allen.
+\newblock {${\chi}^{2}$ time-frequency discriminator for gravitational wave
+  detection}.
+\newblock {\em Phys. Rev.}, D71:062001, 2005.
+
+\bibitem{pycbc_Allen:2005}
+Bruce Allen, Warren~G. Anderson, Patrick~R. Brady, Duncan~A. Brown, and Jolien
+  D.~E. Creighton.
+\newblock {FINDCHIRP: An Algorithm for detection of gravitational waves from
+  inspiraling compact binaries}.
+\newblock {\em Phys. Rev.}, D85:122006, 2012.
+
+\bibitem{swift_loc}
+Scott D. et~al. Barthelmy.
+\newblock The burst alert telescope (bat) on the swift midex mission.
+\newblock {\em Space Science Reviews}, 120(3):143--164, Oct 2005.
 
 \bibitem{ifo_tech}
 C.~Bond, D.~Brown, A.~Freise, and K.~Strain.
 \newblock Interferometer techniques for gravitational-wave detection, 2009.
 \newblock https://arxiv.org/abs/0909.3661v3.
 
+\bibitem{o2grb}
+Francesco Carotenuto and Badri Krishnan.
+\newblock {Search for gravitational-wave signals associated with gamma-ray
+  bursts during the second observing run of Advanced LIGO and Advanced Virgo}.
+\newblock 2019.
+
 \bibitem{carroll-spacetime}
 Sean Carroll.
 \newblock {\em Spacetime and geometry : an introduction to general relativity}.
 \newblock Pearson, Harlow, Essex, 2014.
+
+\bibitem{GW170817_GRB}
+LIGO~Scientific Collaboration, Fermi Gamma-ray Burst~Monitor
+  Virgo~Collaboration, and INTEGRAL.
+\newblock Gravitational waves and gamma-rays from a binary neutron star merger:
+  {GW}170817 and {GRB} 170817a.
+\newblock {\em The Astrophysical Journal}, 848(2):L13, oct 2017.
+
+\bibitem{Cornish_2007}
+Neil~J Cornish and Edward~K Porter.
+\newblock The search for massive black hole binaries with {LISA}.
+\newblock {\em Classical and Quantum Gravity}, 24(23):5729--5755, nov 2007.
+
+\bibitem{pycbc_Canton:2014}
+Tito Dal~Canton et~al.
+\newblock {Implementing a search for aligned-spin neutron star-black hole
+  systems with advanced ground based gravitational wave detectors}.
+\newblock {\em Phys. Rev.}, D90(8):082004, 2014.
+
+\bibitem{o1grb}
+B.~P.~Abbott et~al.
+\newblock Search for gravitational waves associated with gamma-ray bursts
+  during the first advanced {LIGO} observing run and implications for the
+  origin of {GRB} 150906b.
+\newblock {\em The Astrophysical Journal}, 841(2):89, may 2017.
+
+\bibitem{fermi_loc}
+Charles~Meegan et~al.
+\newblock {The Fermi Gamma}-{Ray} {Burst} {Monitor}.
+\newblock {\em The Astrophysical Journal}, 702(1):791--804, aug 2009.
+
+\bibitem{hanna-thesis}
+Chad Hanna.
+\newblock Searching for gravitational waves from binary systems in
+  non-stationary data.
+\newblock {\em PhD thesis, Louisiana State University}, 2008.
+
+\bibitem{pygrb_harry}
+I.~W. Harry and S.~Fairhurst.
+\newblock Targeted coherent search for gravitational waves from compact binary
+  coalescences.
+\newblock {\em Phys. Rev. D}, 83:084002, Apr 2011.
+
+\bibitem{Hessels1901}
+Jason W.~T. Hessels, Scott~M. Ransom, Ingrid~H. Stairs, Paulo C.~C. Freire,
+  Victoria~M. Kaspi, and Fernando Camilo.
+\newblock A radio pulsar spinning at 716 hz.
+\newblock {\em Science}, 311(5769):1901--1904, 2006.
+
+\bibitem{Howell}
+E.~J. Howell, K.~Ackley, A.~Rowlinson, and D.~Coward.
+\newblock {Joint gravitational wave -- gamma-ray burst detection rates in the
+  aftermath of GW170817}.
+\newblock 2018.
+
+\bibitem{Kalogera_1996}
+Vassiliki Kalogera and Gordon Baym.
+\newblock The maximum mass of a neutron star.
+\newblock {\em The Astrophysical Journal}, 470(1):L61--L64, oct 1996.
+
+\bibitem{phenom_Khan:2015}
+Sebastian Khan, Sascha Husa, Mark Hannam, Frank Ohme, Michael Pürrer, Xisco
+  Jiménez~Forteza, and Alejandro Bohé.
+\newblock {Frequency-domain gravitational waves from nonprecessing black-hole
+  binaries. II. A phenomenological model for the advanced detector era}.
+\newblock {\em Phys. Rev.}, D93(4):044007, 2016.
+
+\bibitem{Kiziltan_2013}
+Bülent Kiziltan, Athanasios Kottas, Maria~De Yoreo, and Stephen~E. Thorsett.
+\newblock {THE} {NEUTRON} {STAR} {MASS} {DISTRIBUTION}.
+\newblock {\em The Astrophysical Journal}, 778(1):66, nov 2013.
+
+\bibitem{Lazzati_afterglow}
+Davide Lazzati, Rosalba Perna, Brian~J. Morsony, Diego López-Cámara, Matteo
+  Cantiello, Riccardo Ciolfi, Bruno Giacomazzo, and Jared~C. Workman.
+\newblock {Late time afterglow observations reveal a collimated relativistic
+  jet in the ejecta of the binary neutron star merger GW170817}.
+\newblock {\em Phys. Rev. Lett.}, 120(24):241103, 2018.
 
 \bibitem{noise_budget_martynov}
 D.~V. et~al Martynov.
@@ -33,25 +159,102 @@ Dave McKechan.
   waves emitted by compact binary coalescences.
 \newblock {\em PhD thesis, Cardiff University}, 2010.
 
+\bibitem{gstlal_messick}
+Cody et~al. Messick.
+\newblock Analysis framework for the prompt discovery of compact binary mergers
+  in gravitational-wave data.
+\newblock {\em Phys. Rev. D}, 95:042001, Feb 2017.
+
 \bibitem{BATSE_dist}
 NASA.
 \newblock The burst and transient source experiment.
 \newblock \url{https://heasarc.gsfc.nasa.gov/docs/cgro/batse/}.
 \newblock Accessed: 2019-07-18.
 
+\bibitem{pycbc_Nitz:2017}
+Alexander~H. Nitz, Thomas Dent, Tito Dal~Canton, Stephen Fairhurst, and
+  Duncan~A. Brown.
+\newblock {Detecting binary compact-object mergers with gravitational waves:
+  Understanding and Improving the sensitivity of the PyCBC search}.
+\newblock {\em Astrophys. J.}, 849(2):118, 2017.
+
 \bibitem{GRBprompt}
 Asaf Pe'er.
 \newblock {Physics of Gamma-Ray Bursts Prompt Emission}.
 \newblock {\em Adv. Astron.}, 2015:907321, 2015.
+
+\bibitem{gstlal_Sachdev:2019}
+Surabhi Sachdev et~al.
+\newblock {The GstLAL Search Analysis Methods for Compact Binary Mergers in
+  Advanced LIGO's Second and Advanced Virgo's First Observing Runs}.
+\newblock 2019.
 
 \bibitem{lrr-2009-2}
 B.S. Sathyaprakash and B.F. Schutz.
 \newblock Physics, astrophysics and cosmology with gravitational waves.
 \newblock {\em Living Reviews in Relativity}, 12(2), 2009.
 
+\bibitem{pycbc_Usman:2015}
+Samantha~A. Usman et~al.
+\newblock {The PyCBC search for gravitational waves from compact binary
+  coalescence}.
+\newblock {\em Class. Quant. Grav.}, 33(21):215004, 2016.
+
+\bibitem{Veitch:2008ur}
+John Veitch and Alberto Vecchio.
+\newblock {A Bayesian approach to the follow-up of candidate gravitational wave
+  signals}.
+\newblock {\em Phys. Rev.}, D78:022001, 2008.
+
+\bibitem{wanderman}
+David Wanderman and Tsvi Piran.
+\newblock {The rate, luminosity function and time delay of non-Collapsar short
+  GRBs}.
+\newblock {\em Monthly Notices of the Royal Astronomical Society},
+  448(4):3026--3037, 03 2015.
+
+\bibitem{was_sky_grid}
+M~Was, P~Sutton, Gareth Jones, and Isabel Leonor.
+\newblock Performance of an externally triggered gravitational-wave burst
+  search.
+\newblock {\em Phys. Rev. D}, 86, 01 2012.
+
+\bibitem{was_2009}
+Michal Was, Marie-Anne Bizouard, Violette Brisson, Fabien Cavalier, Michel
+  Davier, Patrice Hello, Nicolas Leroy, Florent Robinet, and Miltiadis
+  Vavoulidis.
+\newblock On the background estimation by time slides in a network of
+  gravitational wave detectors.
+\newblock {\em Classical and Quantum Gravity}, 27(1):015005, dec 2009.
+
+\bibitem{was_2010}
+Michal Was, Marie-Anne Bizouard, Violette Brisson, Fabien Cavalier, Michel
+  Davier, Patrice Hello, Nicolas Leroy, Florent Robinet, and Miltiadis
+  Vavoulidis.
+\newblock Limitations of the time slide method of background estimation.
+\newblock {\em Classical and Quantum Gravity}, 27(19):194014, sep 2010.
+
+\bibitem{pygrb_Williamson:2014}
+A.~R. Williamson, C.~Biwer, S.~Fairhurst, I.~W. Harry, E.~Macdonald,
+  D.~Macleod, and V.~Predoi.
+\newblock {Improved methods for detecting gravitational waves associated with
+  short gamma-ray bursts}.
+\newblock {\em Phys. Rev.}, D90(12):122004, 2014.
+
 \bibitem{zee-einstein}
 A~Zee.
 \newblock {\em Einstein gravity in a nutshell}.
 \newblock Princeton University Press, Princeton, 2013.
+
+\bibitem{ozel}
+Feryal Özel and Paulo Freire.
+\newblock Masses, radii, and the equation of state of neutron stars.
+\newblock {\em Annual Review of Astronomy and Astrophysics}, 54(1):401--440,
+  2016.
+
+\bibitem{ozel_2010}
+Feryal Özel, Dimitrios Psaltis, Ramesh Narayan, and Jeffrey~E. McClintock.
+\newblock {THE} {BLACK} {HOLE} {MASS} {DISTRIBUTION} {IN} {THE} {GALAXY}.
+\newblock {\em The Astrophysical Journal}, 725(2):1918--1927, dec 2010.
 
 \end{thebibliography}

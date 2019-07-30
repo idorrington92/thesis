@@ -6,6 +6,13 @@ J.~Abadie et~al.
   during LIGO science run 6 and Virgo science runs 2 and 3}.
 \newblock {\em Astrophys. J.}, 760:12, 2012.
 
+\bibitem{catalog}
+B.~P. Abbott et~al.
+\newblock {GWTC-1: A Gravitational-Wave Transient Catalog of Compact Binary
+  Mergers Observed by LIGO and Virgo during the First and Second Observing
+  Runs}.
+\newblock 2018.
+
 \bibitem{gw_loc}
 B.~P. Abbott, {The LIGO Scientific Collaboration}, and {Virgo Collaboration}.
 \newblock Prospects for observing and localizing gravitational-wave transients
@@ -48,10 +55,33 @@ Bruce Allen, Warren~G. Anderson, Patrick~R. Brady, Duncan~A. Brown, and Jolien
   inspiraling compact binaries}.
 \newblock {\em Phys. Rev.}, D85:122006, 2012.
 
+\bibitem{Arcavi:2017xiz}
+Iair Arcavi et~al.
+\newblock {Optical emission from a kilonova following a
+  gravitational-wave-detected neutron-star merger}.
+\newblock {\em Nature}, 551:64, 2017.
+
+\bibitem{Baiotti_2017}
+Luca Baiotti and Luciano Rezzolla.
+\newblock Binary neutron star mergers: a review of einstein's richest
+  laboratory.
+\newblock {\em Reports on Progress in Physics}, 80(9):096901, jul 2017.
+
 \bibitem{swift_loc}
 Scott D. et~al. Barthelmy.
 \newblock The burst alert telescope (bat) on the swift midex mission.
 \newblock {\em Space Science Reviews}, 120(3):143--164, Oct 2005.
+
+\bibitem{gw_grb_paradigm}
+Imre Bartos, Patrick Brady, and Szabolcs Marka.
+\newblock {How Gravitational-wave Observations Can Shape the Gamma-ray Burst
+  Paradigm}.
+\newblock {\em Class. Quant. Grav.}, 30:123001, 2013.
+
+\bibitem{bloom_grbs}
+Joshua Bloom.
+\newblock {\em What are gamma-ray bursts?}
+\newblock Princeton University Press, Princeton, N.J, 2011.
 
 \bibitem{ifo_tech}
 C.~Bond, D.~Brown, A.~Freise, and K.~Strain.
@@ -69,9 +99,33 @@ Sean Carroll.
 \newblock {\em Spacetime and geometry : an introduction to general relativity}.
 \newblock Pearson, Harlow, Essex, 2014.
 
+\bibitem{grb170817a_mm}
+LIGO~Scientific Collaboration, Virgo Collaboration, Fermi GBM, INTEGRAL,
+  IceCube Collaboration, AstroSat Cadmium Zinc Telluride~Imager Team, IPN
+  Collaboration, The Insight-HXMT Collaboration, ANTARES Collaboration,
+  The~Swift Collaboration, AGILE Team, The~1M2H Team, The Dark Energy Camera
+  GW-EM Collaboration, the DES~Collaboration, The~DLT40 Collaboration, GRAWITA:
+  GRAvitational Wave~Inaf TeAm, The Fermi Large Area~Telescope Collaboration,
+  ATCA: Australia Telescope~Compact Array, ASKAP: Australian~SKA Pathfinder,
+  Las Cumbres~Observatory Group, OzGrav, DWF (Deeper, Wider, Faster Program),
+  AST3, , CAASTRO Collaborations, The~VINROUGE Collaboration, MASTER
+  Collaboration, J-GEM, GROWTH, JAGWAR, CaltechNRAO, TTU-NRAO, , NuSTAR
+  Collaborations, Pan-STARRS, The~MAXI Team, TZAC Consortium, KU~Collaboration,
+  Nordic~Optical Telescope, ePESSTO, GROND, Texas~Tech University, SALT Group,
+  TOROS: Transient Robotic~Observatory of~the South~Collaboration, The~BOOTES
+  Collaboration, MWA: Murchison~Widefield Array, The~CALET Collaboration,
+  IKI-GW~Follow up~Collaboration, H.E.S.S. Collaboration, LOFAR Collaboration,
+  LWA: Long~Wavelength Array, HAWC Collaboration, The Pierre~Auger
+  Collaboration, ALMA Collaboration, Euro~VLBI Team, Pi~of~the
+  Sky~Collaboration, The Chandra~Team at~McGill~University, DFN:
+  Desert~Fireball Network, ATLAS, High Time Resolution~Universe Survey, RIMAS,
+  RATIR, and SKA~South Africa/MeerKAT.
+\newblock Multi-messenger observations of a binary neutron star merger.
+\newblock {\em The Astrophysical Journal}, 848(2):L12, oct 2017.
+
 \bibitem{GW170817_GRB}
-LIGO~Scientific Collaboration, Fermi Gamma-ray Burst~Monitor
-  Virgo~Collaboration, and INTEGRAL.
+LIGO~Scientific Collaboration, Virgo Collaboration, Fermi~Gamma ray
+  Burst~Monitor, and INTEGRAL.
 \newblock Gravitational waves and gamma-rays from a binary neutron star merger:
   {GW}170817 and {GRB} 170817a.
 \newblock {\em The Astrophysical Journal}, 848(2):L13, oct 2017.
@@ -87,6 +141,19 @@ Tito Dal~Canton et~al.
   systems with advanced ground based gravitational wave detectors}.
 \newblock {\em Phys. Rev.}, D90(8):082004, 2014.
 
+\bibitem{batse_vpo2}
+E~E.~Fenimore, Richard Epstein, Chienliang Ho, R~W.~Klebesadel, C~Lacey,
+  J~G.~Laros, M~Meier, T~Strohmayer, G~Pendleton, Gerald Fishman, Chryssa
+  Kouveliotou, and C~Meegan.
+\newblock The intrinsic luminosity of γ-ray bursts and their host galaxies.
+\newblock {\em Nature}, 366:40--42, 11 1993.
+
+\bibitem{ul_grbs}
+A.~J.~Levan et~al.
+\newblock A {New} {Population} {of} {Ulrea}-{Long} {Duration} {Gamma}-{Ray}
+  {Bursts}.
+\newblock {\em The Astrophysical Journal}, 781(1):13, dec 2013.
+
 \bibitem{o1grb}
 B.~P.~Abbott et~al.
 \newblock Search for gravitational waves associated with gamma-ray bursts
@@ -99,11 +166,31 @@ Charles~Meegan et~al.
 \newblock {The Fermi Gamma}-{Ray} {Burst} {Monitor}.
 \newblock {\em The Astrophysical Journal}, 702(1):791--804, aug 2009.
 
+\bibitem{Faber2012}
+Joshua~A. Faber and Frederic~A. Rasio.
+\newblock Binary neutron star mergers.
+\newblock {\em Living Reviews in Relativity}, 15(1):8, Jul 2012.
+
+\bibitem{long_jet_angle}
+Adam Goldstein, Valerie Connaughton, Michael~S. Briggs, and Eric Burns.
+\newblock {Estimating} {Long} {GRB} {Jet} {Opening} {Angles} {and}
+  {Rest}-{Frame} {Energetics}.
+\newblock {\em The Astrophysical Journal}, 818(1):18, feb 2016.
+
 \bibitem{hanna-thesis}
 Chad Hanna.
 \newblock Searching for gravitational waves from binary systems in
   non-stationary data.
 \newblock {\em PhD thesis, Louisiana State University}, 2008.
+
+\bibitem{Harrison_1999}
+F.~A. Harrison, J.~S. Bloom, D.~A. Frail, R.~Sari, S.~R. Kulkarni, S.~G.
+  Djorgovski, T.~Axelrod, J.~Mould, B.~P. Schmidt, M.~H. Wieringa, R.~M. Wark,
+  R.~Subrahmanyan, D.~McConnell, P.~J. McCarthy, B.~E. Schaefer, R.~G. McMahon,
+  R.~O. Markze, E.~Firth, P.~Soffitta, and L.~Amati.
+\newblock Optical and radio observations of the afterglow from {GRB} 990510:
+  Evidence for a jet.
+\newblock {\em The Astrophysical Journal}, 523(2):L121--L124, oct 1999.
 
 \bibitem{pygrb_harry}
 I.~W. Harry and S.~Fairhurst.
@@ -118,10 +205,16 @@ Jason W.~T. Hessels, Scott~M. Ransom, Ingrid~H. Stairs, Paulo C.~C. Freire,
 \newblock {\em Science}, 311(5769):1901--1904, 2006.
 
 \bibitem{Howell}
-E.~J. Howell, K.~Ackley, A.~Rowlinson, and D.~Coward.
+Howell, E.~J., Ackley, K., Rowlinson, A., and D.~Coward.
 \newblock {Joint gravitational wave -- gamma-ray burst detection rates in the
   aftermath of GW170817}.
 \newblock 2018.
+
+\bibitem{IPN}
+K.~Hurley, T.~Cline, I.~Mitrofanov, E.~Mazets, S.~Golenetskii, F.~Frontera,
+  E.~Montanari, C.~Guidorzi, and M.~Feroci.
+\newblock {The current performance of the third interplanetary network}.
+\newblock {\em AIP Conf. Proc.}, 662(1):473--476, 2003.
 
 \bibitem{Kalogera_1996}
 Vassiliki Kalogera and Gordon Baym.
@@ -140,12 +233,44 @@ Bülent Kiziltan, Athanasios Kottas, Maria~De Yoreo, and Stephen~E. Thorsett.
 \newblock {THE} {NEUTRON} {STAR} {MASS} {DISTRIBUTION}.
 \newblock {\em The Astrophysical Journal}, 778(1):66, nov 2013.
 
+\bibitem{CWB}
+S.~Klimenko, G.~Vedovato, M.~Drago, F.~Salemi, V.~Tiwari, G.~A. Prodi,
+  C.~Lazzaro, K.~Ackley, S.~Tiwari, C.~F. Da~Silva, and G.~Mitselmakher.
+\newblock Method for detection and reconstruction of gravitational wave
+  transients with networks of advanced detectors.
+\newblock {\em Phys. Rev. D}, 93:042004, Feb 2016.
+
+\bibitem{batse_vpo1}
+Gena Kogan.
+\newblock Cosmic γ-ray bursts: Observations and modeling.
+\newblock {\em Physics of Particles and Nuclei - PHYS PART NUCLEI},
+  37:647--676, 10 2006.
+
+\bibitem{Lamareille:2004ja}
+F.~Lamareille, M.~Mouhcine, T.~Contini, I.~Lewis, and S.~Maddox.
+\newblock {The luminosity-metallicity relation in the local universe from the
+  2df galaxy redshift survey}.
+\newblock {\em Mon. Not. Roy. Astron. Soc.}, 350:396, 2004.
+
 \bibitem{Lazzati_afterglow}
 Davide Lazzati, Rosalba Perna, Brian~J. Morsony, Diego López-Cámara, Matteo
   Cantiello, Riccardo Ciolfi, Bruno Giacomazzo, and Jared~C. Workman.
 \newblock {Late time afterglow observations reveal a collimated relativistic
   jet in the ejecta of the binary neutron star merger GW170817}.
 \newblock {\em Phys. Rev. Lett.}, 120(24):241103, 2018.
+
+\bibitem{Le:2017jua}
+Truong Le and Vedant Mehta.
+\newblock {Revisiting the Redshift Distribution of Gamma Ray Bursts in the
+  Swift Era}.
+\newblock {\em Astrophys. J.}, 837(1):17, 2017.
+
+\bibitem{levan_grbs}
+Andrew Levan.
+\newblock Gamma-ray bursts.
+\newblock
+  \url{https://warwick.ac.uk/fac/sci/physics/research/astro/people/levan/grb_book/}.
+\newblock Accessed: 2019-04-08.
 
 \bibitem{noise_budget_martynov}
 D.~V. et~al Martynov.
@@ -165,11 +290,41 @@ Cody et~al. Messick.
   in gravitational-wave data.
 \newblock {\em Phys. Rev. D}, 95:042001, Feb 2017.
 
+\bibitem{fermi}
+NASA.
+\newblock About the fermi gamma-ray space telescope.
+\newblock \url{https://www.nasa.gov/content/fermi/overview}.
+\newblock Accessed: 2019-07-30.
+
+\bibitem{swift}
+NASA.
+\newblock About the swift gamma-ray burst mission.
+\newblock \url{https://swift.gsfc.nasa.gov/about_swift/}.
+\newblock Accessed: 2019-07-30.
+
 \bibitem{BATSE_dist}
 NASA.
 \newblock The burst and transient source experiment.
 \newblock \url{https://heasarc.gsfc.nasa.gov/docs/cgro/batse/}.
 \newblock Accessed: 2019-07-18.
+
+\bibitem{IPN_list}
+NASA.
+\newblock Ipngrb - gamma-ray bursts from the interplanetary network.
+\newblock \url{https://heasarc.gsfc.nasa.gov/W3Browse/all/ipngrb.html}.
+\newblock Accessed: 2019-07-30.
+
+\bibitem{swift2}
+NASA.
+\newblock Swift grb stats.
+\newblock \url{https://swift.gsfc.nasa.gov/archive/grb_table/stats/}.
+\newblock Accessed: 2019-07-30.
+
+\bibitem{pycbc_live}
+Alexander~H. Nitz, Tito Dal~Canton, Derek Davis, and Steven Reyes.
+\newblock Rapid detection of gravitational waves from compact binary mergers
+  with pycbc live.
+\newblock {\em Phys. Rev. D}, 98:024050, Jul 2018.
 
 \bibitem{pycbc_Nitz:2017}
 Alexander~H. Nitz, Thomas Dent, Tito Dal~Canton, Stephen Fairhurst, and
@@ -184,7 +339,7 @@ Asaf Pe'er.
 \newblock {\em Adv. Astron.}, 2015:907321, 2015.
 
 \bibitem{gstlal_Sachdev:2019}
-Surabhi Sachdev et~al.
+Sachdev, Surabhi, et~al.
 \newblock {The GstLAL Search Analysis Methods for Compact Binary Mergers in
   Advanced LIGO's Second and Advanced Virgo's First Observing Runs}.
 \newblock 2019.
@@ -194,11 +349,36 @@ B.S. Sathyaprakash and B.F. Schutz.
 \newblock Physics, astrophysics and cosmology with gravitational waves.
 \newblock {\em Living Reviews in Relativity}, 12(2), 2009.
 
+\bibitem{sn_review}
+Stephen~J. Smartt.
+\newblock Progenitors of core-collapse supernovae.
+\newblock {\em Annual Review of Astronomy and Astrophysics}, 47(1):63--106,
+  2009.
+
+\bibitem{Stergioulas2003}
+Nikolaos Stergioulas.
+\newblock Rotating stars in relativity.
+\newblock {\em Living Reviews in Relativity}, 6(1):3, Jun 2003.
+
+\bibitem{xpipeline}
+P.~Sutton, G.~Jones, S.~Chatterji, P.~Kalmus, I.~Leonor, S.~Poprocki,
+  J.~Rollins, A.~Searle, L.~Stein, M.~Tinto, and M.~Was.
+\newblock X-pipeline: an analysis package for autonomous gravitational-wave
+  burst searches.
+\newblock {\em New Journal of Physics}, 12(5):053034, 2010.
+\newblock http://stacks.iop.org/1367-2630/12/i=5/a=053034.
+
 \bibitem{pycbc_Usman:2015}
 Samantha~A. Usman et~al.
 \newblock {The PyCBC search for gravitational waves from compact binary
   coalescence}.
 \newblock {\em Class. Quant. Grav.}, 33(21):215004, 2016.
+
+\bibitem{vedrenne_gamma-ray}
+G~Vedrenne.
+\newblock {\em Gamma-ray bursts : the brightest explosions in the universe}.
+\newblock Springer in association with Praxis, Berlin New York Chichester, UK,
+  2009.
 
 \bibitem{Veitch:2008ur}
 John Veitch and Alberto Vecchio.

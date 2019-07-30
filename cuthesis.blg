@@ -3,52 +3,49 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: cuthesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
-Name 2 in "LIGO Scientific Collaboration and Virgo Collaboration, Fermi Gamma-ray Burst Monitor, and INTEGRAL" has a comma at the end for entry GW170817_GRB
-while executing---line 1049 of file plain.bst
+Warning--empty journal in catalog
 Warning--empty journal in o2grb
-Name 2 in "LIGO Scientific Collaboration and Virgo Collaboration, Fermi Gamma-ray Burst Monitor, and INTEGRAL" has a comma at the end for entry GW170817_GRB
-while executing---line 1090 of file plain.bst
 Warning--empty journal in Howell
 Warning--empty journal in gstlal_Sachdev:2019
-You've used 43 entries,
+You've used 69 entries,
             2118 wiz_defined-function locations,
-            755 strings with 11332 characters,
-and the built_in function-call counts, 13700 in all, are:
-= -- 1287
-> -- 723
+            897 strings with 17409 characters,
+and the built_in function-call counts, 24662 in all, are:
+= -- 2222
+> -- 1640
 < -- 0
-+ -- 292
-- -- 244
-* -- 1062
-:= -- 2408
-add.period$ -- 130
-call.type$ -- 43
-change.case$ -- 245
++ -- 660
+- -- 584
+* -- 2032
+:= -- 4389
+add.period$ -- 214
+call.type$ -- 69
+change.case$ -- 489
 chr.to.int$ -- 0
-cite$ -- 46
-duplicate$ -- 460
-empty$ -- 1022
-format.name$ -- 244
-if$ -- 2737
+cite$ -- 73
+duplicate$ -- 727
+empty$ -- 1626
+format.name$ -- 584
+if$ -- 4831
 int.to.chr$ -- 0
-int.to.str$ -- 43
-missing$ -- 43
-newline$ -- 219
-num.names$ -- 86
-pop$ -- 202
+int.to.str$ -- 69
+missing$ -- 66
+newline$ -- 355
+num.names$ -- 138
+pop$ -- 449
 preamble$ -- 1
-purify$ -- 204
+purify$ -- 424
 quote$ -- 0
-skip$ -- 314
+skip$ -- 490
 stack$ -- 0
-substring$ -- 799
-swap$ -- 40
+substring$ -- 1175
+swap$ -- 65
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 168
-warning$ -- 3
-while$ -- 124
-width$ -- 45
-write$ -- 466
-(There were 2 error messages)
+type$ -- 268
+warning$ -- 4
+while$ -- 195
+width$ -- 71
+write$ -- 752
+(There were 4 warnings)

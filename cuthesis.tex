@@ -117,53 +117,62 @@ The following sections of this thesis contain work that has been co-authored wit
 \mainmatter
 
 \chapter{Introduction}
-In 1915, Albert Einstein published a new theory of gravity: the general theory of relativity \textbf{cite gr paper}. This new theory was indistinguishable from Newtonian gravity in most situations, but in the presence of strong gravitational fields the two theories made different predictions. For example, Einstein predicted that the sun would gravitationally lens light by twice the amount predicted using Newtonian arguments. An experiment was soon performed by Arthur Eddington and collaborators to measure the amount of gravitational lensing by the sun. This experiment looked for stars that should have been behind the sun during the 1919 solar eclipse \textbf{cite eddington}. Some of these stars were made visible, and from these the amount of lensing was measured and confirmed the prediction of general relativity. The results of this experiment and others meant general relativity was quickly accepted by the scientific community. However, there was one prediction of general relativity would remain elusive for decades to come: \textit{gravitational waves} (GWs). 
+In 1915, Albert Einstein published a new theory of gravity: the general theory of relativity \cite{einstein_gr}. This new theory was indistinguishable from Newtonian gravity in most situations, but in the presence of strong gravitational fields the two theories made different predictions. For example, Einstein predicted that the sun would gravitationally lens light by twice the amount predicted using Newtonian arguments. An experiment was soon performed by Arthur Eddington and collaborators to measure the amount of gravitational lensing by the sun. This experiment looked for slight changes in the positions of stars whose light passed near the sun during the 1919 solar eclipse when compared to their positions six months previously \cite{eclipse1919}. They measured the amount of lensing was found it matched the prediction of general relativity. The results of this experiment and others meant general relativity was quickly accepted by the scientific community. However, there was one prediction of general relativity would remain elusive for decades to come: \textit{gravitational waves} (GWs). 
 
-General relativity was a field theory of gravity, and bared a strong resemblance to Maxwell's theory of electromagnetism \textbf{cite maxwell paper}. It was reasoned by some that this meant their must be GWs produced by accelerating mass just as there are electromagnetic waves produced by accelerating charge. Others thought this was stretching the analogy to electromagnetism too far, and pointed to key differences between gravitation and electromagnetism \textbf{cite kannefeck}. For example, there is no negative mass to act as an analog to the negative charge of electromagnetism.\footnote{It can be shown that this is one of the reasons why GWs are much more difficult to detect than electromagnetic waves.} After much controversy, the consensus built that GWs do exist and experiments were conceived that had the potential to detect GWs. After yet more controversy, with the false claim of a detection by Joseph Weber \textbf{cite weber paper}, the first experimental evidence for the existence of GWs came in 1975 from observations of a binary star system. According to general relativity, a binary star system should slowly inspiral due to energy lost through GW emission. Hulse and Taylor observed a neutron star binary with precisely the orbital decay predicted by general relativity \textbf{cite hulse taylor}. 
+General relativity was a field theory of gravity, and bore a strong resemblance to Maxwell's theory of electromagnetism. \cite{maxwell} It was reasoned by some that this meant there must be GWs produced by accelerating mass just as there are electromagnetic waves produced by accelerating charge. Others thought this was stretching the analogy to electromagnetism too far, and pointed to key differences between gravitation and electromagnetism \cite{thoughtspeed}. For example, there is no negative mass to act as an analog to the negative charge of electromagnetism.\footnote{It can be shown that this is one of the reasons why GWs are much more difficult to detect than electromagnetic waves.} After much controversy, the consensus built that GWs do exist and experiments were conceived that had the potential to detect GWs. After yet more controversy, with the false claim of a detection by Joseph Weber \cite{weber}, the first experimental evidence for the existence of GWs came in 1975 from observations of a binary star system. According to general relativity, a binary star system should slowly inspiral due to energy lost through GW emission. Hulse and Taylor observed a neutron star binary with precisely the orbital decay predicted by general relativity. \cite{Hulse} 
 
-A few years prior to this, Rainer Weiss set out a new vision for GW astronomy. Weiss proposed building a Michelson interferometer to detect GWs directly \textbf{cite weiss paper}. This led to founding of the Laser Interferometer Gravitational-wave Observatory (LIGO) in the early 1980s, which set out to build a pair of 4 km laser interferometers. The new detector network would be able to detect GWs emitted by compact binary systems, such as black hole and neutron star inspirals, and potentially also from nearby supernovas. 
+A few years prior to this, Rainer Weiss set out a new vision for GW astronomy. Weiss proposed building a Michelson interferometer to detect GWs directly. \cite{weiss72} This led to founding of the Laser Interferometer Gravitational-wave Observatory (LIGO) in the early 1980s, which set out to build a pair of 4 km laser interferometers. The new detector network would be able to detect GWs emitted by compact binary systems, such as black hole and neutron star inspirals, and potentially also from nearby supernovas. 
 
 Around the same time that GW astronomy was just starting to get off the ground, another kind of transient astronomy was hitting its stride. Gamma-ray Bursts (GRBs) are bright short flashes of gamma rays that originate at extra-galactic distances. First detected in the 1960s, the cause of GRBs remained a mystery for decades. With the 1991 launch of the Burst and Transient Source Experiment (BATSE), a space based GRB detector, there was finally a large sample of GRB light curves. This confirmed that there were two populations of GRBs depending on the duration of the burst, called long and short GRBs. Theoretical work done in the early 1990s predicted that GRBs could be produced by compact objects such as neutron stars and black holes, possibly via supernova that creates the compact object. By the end of the decade, astronomical observations confirmed that long GRBs were linked to supernova explosions. Then, in the early 2000s, observations strongly suggested that short GRBs were produced by binary neutron star mergers. 
 
-The fact that GRB and GW astronomy were both now targeting the same extreme events made collaboration natural. There are several strategies used to search for coincident GRB/GW detections. The first approach is to look for coincident detections between GW and GRB triggers. The second approach uses the fact that GW detectors are sensitive to most of the sky by making followup observations of GW triggers with electromagnetic (EM) telescopes. The final method is to use advanced data analysis techniques to followup GRB detections with a GW search, which is the focus of this thesis. 
+The fact that GRB and GW astronomy were both now targeting the same extreme events made collaboration natural. There are several strategies used to search for coincident GRB/GW signals. The first approach is to look for coincident detections between GW and GRB triggers. The second approach uses the fact that GW detectors are sensitive to most of the sky by making followup observations of GW triggers with electromagnetic (EM) telescopes. The final method is to use advanced data analysis techniques to followup GRB detections with a GW search, which is the focus of this thesis. 
 
-The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, too large to be neutron stars, and so not a candidate for EM followup observations. Then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal \textbf{cite gw170817 paper}. This was the first joint GW/GRB detection, and confirmed that at least some binary neutron star mergers produced short GRBs. This detection led to discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.}
+The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made, the signal being a binary inspiral \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, too large to be neutron stars. Several more binary black hole detections were made over the next couple of years. \cite{catalog} And then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal. \cite{GW170817_det} This was the first joint GW/GRB detection, and confirmed that at least some binary neutron star mergers produced short GRBs. This detection led to discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.}
 
 It is in this context that this thesis looks at improved methods for following up GRB observations. We will see two search pipelines. The first is looks for a binary inspiral signal associated with short GRBs, while the second is an unmodelled search, meaning it is sensitive to any waveform morphology, and looks for GWs associated with both long and short GRBs. We will also look at the results of the most recent searches for GWs associated with GRBs. We begin with an introduction to GW astronomy, followed by a more detailed overview of GRB astronomy than was given above. 
 
 
 \chapter{Introduction to Gravitational Wave Astronomy} \label{chap: gw bg}
-In this chapter we will run through the basics of gravitational wave (GW) astronomy. We will start by showing that GWs are a natural consequence of general relativity and show that binary star systems emit GWs. We will then look at GW detectors, focusing on the noise in the detector and how the sensitivity changes over the sky, as these factors are important for data analysis.
+In this chapter we will run through the basics of gravitational wave (GW) astronomy. We will start by showing that GWs are a natural consequence of general relativity and show that binary star systems emit GWs. We will then look at GW detectors, focusing on the noise in the detector and how the sensitivity changes over the sky, as these factors are important for signal detection.
 
 
 \section{Gravitational Waves}
-General Relativity shows that spacetime can curve and move. From this, it may seem obvious that waves can travel though spacetime, but this is not a trivial fact. In this section, we will show that gravitational waves do exist. We will do this by considering a perturbation of the flat Minkowski metric. We will then calculate the Ricci tensor and Ricci scalar for the perturbed metric and, with a clever choice of gauge transformation, see that these yield a wave solution to Einstein's equations. This section is based mostly on the derivations in \cite{zee-einstein} and \cite{carroll-spacetime}. 
+General relativity shows that spacetime can curve and move. From this, it may seem obvious that waves can travel though spacetime, but this is not a trivial fact. In this section, we will show that gravitational waves do exist. We will do this by considering a perturbation of the flat Minkowski metric. We will then calculate the Ricci tensor and Ricci scalar for the perturbed metric and, with a clever choice of gauge transformation, see that these yield a wave solution to Einstein's equations. This section is based mostly on the derivations in \cite{zee-einstein} and \cite{carroll-spacetime}. In what follows, we will use standard results from general relativity, summarised in appendix \ref{appendix:gr}.
 
 \subsection{Linearised Gravity}
-Let $g\mn$ be the metric given by adding a small perturbation $h_{\mu\nu}$ to the Minkowski metric $\eta\mn=\text{diag}(-1,1,1,1)$. We write this metric as 
+The infinitesimal spacetime distance $ds$ between two points is given by
+\begin{equation}
+ds^2 = g\mn dx^\mu dx^\nu
+\end{equation}  
+where $g\mn$ is the metric tensor. Let the metric the sum of a small perturbation $h_{\mu\nu}$ to the Minkowski metric $\eta\mn=\text{diag}(-1,1,1,1)$. We write this metric as 
 \begin{equation} \label{pert metric}
 g\mn=\eta_{\mu\nu}+h_{\mu\nu} \text{, } \hspace{20pt} |h_{\mu\nu}| \ll 1 \text{ .}
 \end{equation}
 
-To first order in $h$, we calculate the Ricci tensor (\ref{rt})
+Using equation (\ref{rt}), we can show the Ricci tensor, to first order in $h$, is given by
 \begin{equation} \label{lin rt}
-R\mn =\eta^{\alpha \beta}R_{\alpha \mu \beta \nu} = \frac{1}{2}\left( \pd_\mu \pd ^\alpha h_{\alpha \nu} + \pd_\nu \pd_\alpha h^\alpha_\mu -\Box h\mn -\pd_\mu \pd_\nu h \right)
+R\mn =\eta^{\alpha \beta}R_{\alpha \mu \beta \nu} = \frac{1}{2}\left( \pd_\mu \pd ^\alpha h_{\alpha \nu} + \pd_\nu \pd_\alpha h^\alpha_\mu -\Box h\mn -\pd_\mu \pd_\nu h \right) \fs
 \end{equation}
-and the Ricci scalar (\ref{rs}) 
+From this, we can show the Ricci scalar (see equation (\ref{rs})) is given by
 \begin{equation} \label{lin rs}
 R=\eta^{\mu \nu}R\mn=\pd _\mu \pd_ \alpha h^{\mu \alpha} - \Box h \textbf{,}
 \end{equation}
-where $\Box=\pd_\mu \pd^\mu $ is the d'Alembertian operator and $h=h^\mu_\mu$ is the trace of $h$. From these, we find the resulting Einstein tensor is also linear in $h$ 
+where $\Box=\pd_\mu \pd^\mu $ is the d'Alembertian operator and $h=h^\mu_\mu$ is the trace of $h$. From these, we find the resulting Einstein tensor (equation \ref{eineq}) is also linear in $h$ 
 \begin{equation} \label{lin Einstein}
 \begin{split}
-G\mn & =R\mn -\frac{1}{2} R \eta\mn \\
- & = \frac{1}{2} ( \partial_\sigma \partial_\nu h^\sigma_\mu + \partial_\sigma \partial_\mu h^\sigma_\nu - \partial_\mu \partial_\nu h - \square h\mu -\eta\mn \partial_\rho \partial_\lambda h^{\rho \lambda} + \eta\mn \square h ) /fs
+G\mn & \equiv R\mn -\frac{1}{2} R \eta\mn \\
+ & = \frac{1}{2} ( \partial_\sigma \partial_\nu h^\sigma_\mu + \partial_\sigma \partial_\mu h^\sigma_\nu - \partial_\mu \partial_\nu h - \square h\mu -\eta\mn \partial_\rho \partial_\lambda h^{\rho \lambda} + \eta\mn \square h ) \fs
 \end{split}
 \end{equation}
+Using this Einstein tensor in the Einstein equations 
+\begin{equation}
+G\mn =R\mn -\frac{1}{2} R g\mn=\frac{8 \pi G}{c^4}T\mn
+\end{equation}
+we have the \textit{linearised Einstein equations}.
 
 \subsection{Gauge Transformation}
-The metric given in \ref{pert metric} does not uniquely define a coordinate system, as there may be other coordinates where the metric is given by the Minkowski metric plus some other perturbation. This gives us the freedom to choose some coordinates that make the linear Einstein tensor simpler. To find these coordinates, we start with the following gauge transformation
-\begin{equation}
+The metric given in \ref{pert metric} does not uniquely define a coordinate system, as there are many other coordinates where the metric is given by the Minkowski metric plus some other perturbation. This gives us the freedom to choose some coordinates that make the linear Einstein equations simpler. To find these coordinates, we start with the following gauge transformation
+\begin{equation} \label{gauge_transform1}
 x^{\mu'}=x^\mu +\chi ^\mu (x)\text{,} \hspace{20pt}\partial_\mu \chi^\nu \ll 1\fs
 \end{equation} 
 This gives us
@@ -174,7 +183,7 @@ Applying these results to our metric (\ref{pert metric}) we find
 \begin{equation} 
 g_{\alpha' \beta'}=\frac{\pd x^\mu}{\pd x^{\alpha'}}\frac{\pd x^\nu}{\pd x^{\beta'}}g\mn=g_{\alpha \beta}-\pd_\alpha \chi_\beta -\pd_\beta \chi_\alpha \fs
 \end{equation}
-Subtracting the Minkowski metric from each side, we find 
+Subtracting the Minkowski metric from each side, we find \footnote{Note that the condition in (\ref{gauge_transform1}) means that $h_{\alpha'\beta'}$ is still small.}
 \begin{equation} \label{pert transf}
 h_{\alpha' \beta'}=h_{\alpha \beta}-\pd_\alpha\chi_\beta-\pd_\beta\chi_\alpha \fs
 \end{equation}
@@ -203,11 +212,11 @@ Using these in the linearised Einstein equations (\ref{lin Einstein}) gives us
 \begin{equation} \label{lin einstein eqn}
 \Box h\mn - \frac{1}{2}\eta\mn\partial^2 h =-\frac{16\pi G}{c^4}T\mn \fs
 \end{equation}
-Alternatively, we can use \ref{alt einstein} to write this as
+Alternatively, we can use (\ref{alt einstein}) to write this as
 \begin{equation}
 \Box h\mn = -16\pi G \left( T\mn -\frac{1}{2} \eta\mn T \right). 
 \end{equation}
-In a vacuum, the right hand side of this equation becomes zero, and we can recognise as the relativistic wave equation
+In a vacuum, the right hand side of this equation becomes zero, and we can recognise it as the relativistic wave equation
  \begin{equation}
 \Box h\mn = 0 \fs
 \end{equation}
@@ -217,24 +226,24 @@ The plane wave solution for the vacuum wave equation is
 \begin{equation} \label{plane wave}
 h\mn (x) = \epsilon\mn e^{ik_\alpha x^\alpha} 
 \end{equation}
-where $\epsilon\mn$, the polarisation tensor for the gravitational wave, is symmetric and constant, and $k^\alpha$ is the 4-wave-vector given by $k^\alpha = (\omega,\vec{k})$. Subsituting this into the vacuum wave equation, we find 
+where $\epsilon\mn$, the polarisation tensor for the gravitational wave, is symmetric and constant, and $k^\alpha$ is the wave 4-vector given by $k^\alpha = (\omega,\vec{k})$. Substituting this into the vacuum wave equation, we find 
 \begin{equation}
 k_\alpha k^\alpha = -\omega^2 + |\vec{k}|^2 =0 \fs
 \end{equation}
 Hence, gravitational waves travel at the speed of light. 
 
-The polarisation tensor must satisfy the wave equation and the harmonic gauge condition. Putting the wave solution \ref{plane wave} into the harmonic gauge condition \ref{harmonic gauge}, we find that gravitational waves are transverse
+Putting the wave solution (\ref{plane wave}) into the harmonic gauge condition (\ref{harmonic gauge}), we find
 
 \begin{equation}  \label{harmonic gauge2}
 k_\mu \epsilon^\mu_\nu = \frac{1}{2}\partial_\nu \epsilon
 \end{equation}
 where $\epsilon=\epsilon^\lambda_\lambda$.
 
-We can impose further gauge conditions as long as the harmonic gauge (and hence \ref{harmonic gauge2}) is not violated. As any transformation with $\square \chi = 0$ will satisfy \ref{harmonic chi}, and hence harmonic gauge condition, we express $\chi$ as 
+We can impose further gauge conditions as long as the harmonic gauge (and hence (\ref{harmonic gauge2})) is not violated. As any transformation with $\square \chi = 0$ will satisfy (\ref{harmonic chi}), and hence harmonic gauge condition, we express $\chi$ as 
 \begin{equation} \label{chi form}
 \chi_\nu = X_\nu e^{ikx} \fs
 \end{equation}
-Using \ref{chi form} and \ref{plane wave} in the transformation equation \ref{pert transf}, we find the transformation equation for the polarisation tensor
+Using (\ref{chi form}) and (\ref{plane wave}) in the transformation equation (\ref{pert transf}), we find the transformation equation for the polarisation tensor
 \begin{equation} \label{epsilon tranform}
 \epsilon'\mn = \epsilon\mn -ik_\mu X_\nu - ik_\nu X_\mu \fs
 \end{equation}
@@ -242,11 +251,11 @@ Taking the trace of this, we find
 \begin{equation}
 \epsilon'^\mu_\mu = \epsilon^\mu_\mu - 2ik^\mu X_\mu \fs
 \end{equation}
-Thus, we can impose the further gauge condition that the polarisation matrix be traceless by choosing coordinates such that $2ik^\mu X_0 = \epsilon^\mu_\mu - 2ik^i X_i$. Using this in \ref{harmonic gauge2}, we find
+Thus, we can impose the further gauge condition that the polarisation matrix be traceless by choosing coordinates such that $2ik^0 X_0 = \epsilon^\mu_\mu - 2ik^i X_i$. Using this in (\ref{harmonic gauge2}), we find
 \begin{equation} \label{harmonic gauge 3}
 k^\mu \epsilon\mn = 0 \fs
 \end{equation}
-We can fix the other elements of $X_\mu$ by setting $\epsilon_{i 0} = 0$ for $i=1,2,3$. We do this using \ref{epsilon tranform} to find
+We can fix the other elements of $X_\mu$ by setting $\epsilon_{i 0} = 0$ for $i=1,2,3$. We do this using (\ref{epsilon tranform}) to find
 \begin{equation} \label{epsilon 0}
 \epsilon'_{i 0} = \epsilon_{i 0} -ik_i X_0 - ik_0 X_i \fs
 \end{equation}
@@ -262,47 +271,47 @@ Now we see that by choosing the $X_i$ such that $ ik_0 X_i = ik_i X_0 - \epsilon
 %\end{equation}
 %Which implies $\epsilon^0_0=0$. As the polarisaton tensor is symmetric, we have $\epsilon^3_3=0$ as well.  
 
-To make things even simpler, assume the wave is traveling in the z-direction, that is $\vec{k} = (0,0,\omega)$. The transverse condition \ref{harmonic gauge 3} gives us $\epsilon_{0\nu} = \epsilon_{3\nu}$. This gives us $\epsilon_{0 0}= 0$ and $\epsilon_{3 i} = 0$, as we already have $\epsilon_{3 0}$. The traceless condition then becomes $\epsilon_{1 1} + \epsilon_{2 2} = 0$. Using the symmetry of the polarisation matrix to fill in the rest of the matrix, we find the following solution to \ref{plane wave} 
-\[
+To make things even simpler, assume the wave is traveling in the z-direction, that is $\vec{k} = (0,0,\omega)$. The transverse condition (\ref{harmonic gauge 3}) gives us $\epsilon_{0\nu} = \epsilon_{3\nu}$. This gives us $\epsilon_{0 0}= 0$ and $\epsilon_{3 i} = 0$, as we already have $\epsilon_{3 0}$. The traceless condition then becomes $\epsilon_{1 1} + \epsilon_{2 2} = 0$. Using the symmetry of the polarisation matrix to fill in the rest of the matrix, we find the following solution to (\ref{plane wave})
+\begin{equation}\label{gw solution}
 h\mn (x)
 =
-\begin{pmatrix} \label{gw solution}
+\begin{pmatrix} 
 0 & 0 & 0 & 0 \\
 0 & \epsilon_+ & \epsilon_\times & 0 \\
 0 & \epsilon_\times & -\epsilon_+ & 0 \\
 0 & 0 & 0 & 0 
 \end{pmatrix}
 e^{(i\omega (z-t))} \fs
-\] 
+\end{equation}
 We can see that the polarisation matrix is fully described by two real numbers $\epsilon_+$ and $\epsilon_\times$. We call these the plus and cross polarisation of the gravitational wave.
 
 To understand what these two polarisations mean physically, consider two particles separated by $\varphi^\mu = x_1^\mu - x_2^\mu = (0,\vec{\varphi})$. The proper distance between these two points is given by
 \begin{equation} \label{deltaL}
-\Delta L = \sqrt{g\mn dx^\mu dx^\nu} = \sqrt{\vec{\varphi}^2 + h_{ij}\varphi^i \varphi^j} = | \vec{\varphi} | (1 + \frac{1}{2}h_{ij}\varphi^i \varphi^j / \vec{\varphi}^2 + \mathcal{O}(h^2) ) \fs
+\Delta L = \sqrt{g\mn dx^\mu dx^\nu} = \sqrt{|\vec{\varphi}|^2 + h_{ij}\varphi^i \varphi^j} = | \vec{\varphi} | (1 + \frac{1}{2}h_{ij}\varphi^i \varphi^j / |\vec{\varphi}|^2 + \mathcal{O}(h^2) ) \fs
 \end{equation} 
 From this we see that the fractional change in distance between the two particles is
 \begin{equation}
 \frac{1}{2}h_{ij}\hat{\varphi}^i \hat{\varphi}^j = \frac{1}{2}\left( \epsilon_+ \left[ (\hat{\varphi}^1)^2 + (\hat{\varphi}^2)^2 \right] +2\epsilon_\times \hat{\varphi}^1\hat{\varphi}^2 \right) e^{(i\omega (z-t))}
 \end{equation}
-where $\hat{\varphi}^i = \varphi^i/|\varphi|$. From this formula, it becomes clear (with some thought) that the plus polarisation causes the x-axis and y-axis seperation of particles to increase and then decrease $180^circ$ out of phase with each other. The cross polarisation has the same effect, but offset by $45^\circ$. This is shown more clearly in figure \ref{fig:polarisations}. 
+where $\hat{\varphi}^i = \varphi^i/|\vec{\varphi}|$. From this formula, it becomes clear (with some thought) that the plus polarisation causes the x-axis and y-axis separation of particles to increase and then decrease $180^\circ$ out of phase with each other. The cross polarisation has the same effect, but offset by $45^\circ$. This is shown more clearly in figure \ref{fig:polarisations}. 
 
 \begin{figure}[ht]
 \centering 
 \includegraphics[width=12cm]{polarisations.png} 
-\caption{ \textbf{Plus and Cross Polarisation.} The effect of the plus and cross polarisation of a GW on a ring of test particles. \cite{mckechan-thesis} }
+\caption{ \textbf{Plus and Cross Polarisation.} The effect of a GW traveling into/out of the page on an initially circular ring of test particles floating in empty space. Starting on the left, the effect of the plus polarisation is shown on top and the cross polarisation on the bottom. \cite{mckechan-thesis} }
 \label{fig:polarisations}
 \end{figure} 
 
 \section{Gravitational Wave Generation} 
 We will now show how GWs are emitted by a source. We start by defining the trace reversed perturbation
 \begin{equation}
-\bar{h}\mn = h\mn - \frac{1}{2} \eta\mn h
+\bar{h}\mn = h\mn - \frac{1}{2} \eta\mn h \fs
 \end{equation}
-we can simplify the linearised Einstein equation \ref{lin einstein eqn} to 
+Using this, we can simplify the linearised Einstein equation (\ref{lin einstein eqn}) to 
 \begin{equation}
 \square \bar{h}\mn = -16\pi G T\mn
 \end{equation}
-where we have now set $c=1$. We can solve this equation by defining a Green's function such that
+where we have now set $c=1$. We can solve this equation by defining a Green's function $\mathcal{G}$ such that
 \begin{equation}
 \square \mathcal{G}(x)=\delta^{(4)}(x) \fs
 \end{equation}
@@ -314,7 +323,7 @@ This Green's function is the same as used to model electromagnetic waves, which 
 \begin{equation} \label{greens}
 \mathcal{G}(t,\vec{x}) = -\frac{\theta(t) \delta(t-r)}{4\pi r}
 \end{equation}
-where $r=|\vec{x}|$ is the distance from the source, and $\theta(t)=1$ for $t>0$ and is zero otherwise. The interpretation of this solution is fairly simple, $\theta$ ensures that the wave travels forwards in time, $\delta(t-r)$ ensures the wave travels at the speed of light, and the final factor $\frac{-1}{4\pi r}$ ensures that the second derivative of the Green's function is a delta function at the origin as $\nabla^2\left(\frac{-1}{4\pi r}\right) = \delta^{(3)}(\vec{x})$. Plugging \ref{greens} into \ref{hsolution}, we obtain
+where $r=|\vec{x}|$ is the distance from the source, and $\theta(t)=1$ for $t>0$ and is zero otherwise. The interpretation of this solution is fairly simple, $\theta$ ensures that the wave travels forwards in time, $\delta(t-r)$ ensures the wave travels at the speed of light, and the final factor $\frac{-1}{4\pi r}$ ensures that the second derivative of the Green's function is a delta function at the origin as $\nabla^2\left(\frac{-1}{4\pi r}\right) = \delta^{(3)}(\vec{x})$. Plugging (\ref{greens}) into (\ref{hsolution}), we obtain
 \begin{equation}
 \bar{h}\mn (t,\vec{x}) = 4G \int d^4 y \frac{\theta(t-y^0) \delta(t-y^0 - |\vec{x} - \vec{y}| ) T\mn (y) }{|\vec{x} - \vec{y}|} \fs
 \end{equation}
@@ -327,41 +336,41 @@ Let us consider the case of an isolated source of GWs that is far away, so we ca
 \begin{equation} \label{hbarmn}
 \bar{h}\mn (t,\vec{x}) = \frac{4G}{r} \int d^3 y  T\mn (t-r,\vec{y}) \fs
 \end{equation}
-This formula is not very helpful for determining what a GW signal will look like, as it is difficult to interpret a stress-energy tensor. To make thinks simpler, we will now show how to write this solution in terms of just the energy density term of the stress energy tensor $T_{00}$, which is easy to understand. To do this, first note that the harmonic gauge condition gives us $\partial^\mu \bar{h}\mn = 0$, form which we get
+This formula is not very helpful for determining what a GW signal will look like, as it is difficult to determine the stress-energy tensor for a generic source. To make thinks simpler, we will now show how to write this solution in terms of just the energy density term of the stress energy tensor $T_{00}$, which is easy to determine. To do this, first note that the harmonic gauge condition gives us $\partial^\mu \bar{h}\mn = 0$, from which we get
 \begin{equation}
- \partial_0 \bar{h}^{0\nu} = -\partial_i \bar{h}^{0i}
+ \partial_0 \bar{h}^{0\nu} = -\partial_i \bar{h}^{i\nu}
 \end{equation}
-which can be used to determine the timelike components of $\bar{h}$ from the spacelike components. We therefore restrict our attention to finding $\bar{h}_{ij}$. Next, we insert a term $\partial_k y^i = \delta_k^l$ into the above integrand, and then use integration by parts to obtain
+which can be used to determine the timelike components of $\bar{h}$ from the spacelike components. We therefore restrict our attention to finding $\bar{h}^{ij}$. Next, we insert a term $\partial_k y^i = \delta_k^i$ into the above integrand, and then use integration by parts to obtain
 \begin{equation} \label{Tintbyparts}
-\int d^3 y  T\mn = \int  \partial_k(y^i T^{kj}) d^3 y - \int   y^i (\partial_k T^{kj}) d^3 y \fs
+\int d^3 y  T^{ij} = \int  \partial_k(y^i T^{kj}) d^3 y - \int   y^i (\partial_k T^{kj}) d^3 y \fs
 \end{equation}
-The first term vanishes as it is a surface term and we have an isolated source. For the second term, we start by using the conservation law $\partial_\mu T^{\mu \nu}$ to obtain
+The first term vanishes as it is a surface term and we have an isolated source. For the second term, we start by using the conservation law $\partial_\mu T^{\mu \nu}=0$ to obtain
 \begin{equation}
-\partial_0 T^{0\nu} = -\partial_k T^{k\nu} 
+\partial_0 T^{0\nu} = -\partial_k T^{k\nu} \fs
 \end{equation} 
-with $\nu = j$ to obtain
+With $\nu = j$ we find
 \begin{equation} \label{Tmn}
-\int d^3 y  T\mn = \int y^i \partial_0 T^{0j} d^3 y \fs
+\int d^3 y  T^{ij} = \int y^i \partial_0 T^{0j} d^3 y \fs
 \end{equation}
 The next step\footnote{This step seems arbitrary now but is necessary.} is to use the symmetry of the stress-energy tensor to write
 \begin{equation}
-\int d^3 y  T\mn = \frac{1}{2}\int y^i \partial_0 T^{0j} + y^j \partial_0 T^{0i}d^3 y \fs
+\int d^3 y  T^{ij} = \frac{1}{2}\int [y^i \partial_0 T^{0j} + y^j \partial_0 T^{0i}]d^3 y \fs
 \end{equation}
-We can then repeat the trick used to obtain \ref{Tintbyparts}, i.e. multiply both terms in the integrand by $\partial_k y^i = \delta_k^l$ and use integration by parts. After some algebra, everything should cancel nicely to leave us with 
+We can then repeat the trick used to obtain (\ref{Tintbyparts}), i.e. multiply both terms in the integrand by $\partial_k y^i = \delta_k^l$ and use integration by parts. After some algebra, everything should cancel nicely to leave us with 
 \begin{equation}
-\int d^3 y  T\mn = \frac{1}{2}\int \partial_k (y^i y^j \partial_0 T^{0k}) - y^i y^j \partial_0 \partial_k T^{0k}d^3 y \fs
+\int d^3 y  T\mn = \frac{1}{2}\int [ \partial_k (y^i y^j \partial_0 T^{0k}) - y^i y^j \partial_0 \partial_k T^{0k} ] d^3 y \fs
 \end{equation}
-The first term vanishes as it is a surface term. The second term can again be simplified using \ref{Tmn} to give
+The first term vanishes as it is a surface term. The second term can again be simplified using (\ref{Tmn}) to give
 \begin{equation}
 \int d^3 y  T\mn = \frac{1}{2}\int y^i y^j (\partial_0)^2 T^{00}d^3 y
 \end{equation}
-which is purely in terms of the energy-density term of the stress-energy tensor, as we set out to show. Using this result in equation \ref{hbarmn} gives us the formula for a GW signal
+which is purely in terms of the energy-density term of the stress-energy tensor, as we set out to show. Using this result in equation (\ref{hbarmn}) gives us the formula for a GW signal
 \begin{equation}
 \bar{h} = \frac{2G}{r} \int y^i y^j  (\partial_0)^2 T^{00}d^3 y \fs
 \end{equation}
 We then define the \textit{quadrupole moment tensor} as 
 \begin{equation} \label{quad tensor}
-I^{ij}(t) = \int y^i y^j  (\partial_0)^2 T^{00}d^3 y
+I^{ij}(t) = \int y^i y^j T^{00}d^3 y
 \end{equation}
 to obtain
 \begin{equation} \label{quad formula}
@@ -372,7 +381,7 @@ where $t_r=t-r$ is the retarded time.
 \section{Gravitational Wave Sources}
 We will now see how to use the quadrupole formula to calculate the morphology of a GW produced by a binary star system. We will assume the stars are orbiting in the $x^1-x^2$ plane at a distance $R$ from the center of mass of the system, and that both stars are of mass $M$. To simplify our calculations, we will use the Newtonian approximation of the orbits. In this case we have 
 \begin{equation}
-\frac{GM}{(2R^2)} = \frac{Mv^2}{R}
+\frac{GM^2}{(2R)^2} = \frac{Mv^2}{R}
 \end{equation}
 from which we find
 \begin{equation}
@@ -388,13 +397,14 @@ which gives us the angular frequency
 \end{equation}
 The path of the stars, which we label $a$ and $b$, can then be written 
 \begin{equation}
-x_a^1 = -x_b^1 = -R\cos \Omega t \text{  ,  } \hspace{20pt} x_a^2 = -x_b^2 = -R\sin \Omega t \fs 
+x_a^1 = -x_b^1 = -R\cos \Omega t \text{  ,  } \hspace{20pt} x_a^2 = -x_b^2 = -R\sin \Omega t 
 \end{equation}
+where $t=0$ is defined as the time when star $b$ crosses the positive $x^1$-axis and star $a$ crosses the negative $x^1$-axis.
 The energy density of the system is then given by
 \begin{equation}
 T^{00}(t,\vec{x}) = M \delta(x^3) [ \delta(x^1 - R\cos\Omega t ) \delta( x^2 - R\sin \Omega t ) +  \delta(x^1 + R\cos\Omega t ) \delta( x^2 + R\sin \Omega t ) ] \fs
 \end{equation}
-Using this in the quadrupole moment tensor formula \ref{quad tensor}, we find
+Using this in the quadrupole moment tensor formula (\ref{quad tensor}), we find
 \begin{equation}
 I_{11} = 2MR^2 \cos^2 \Omega t = MR^2 (1+\cos 2\Omega t)
 \end{equation}
@@ -405,10 +415,10 @@ I_{22} = 2MR^2 \sin^2 \Omega t = MR^2 (1-\cos 2\Omega t)
 I_{12} = I_{21} = 2MR^2 (\cos \Omega t)(\sin \Omega t) = MR^2 (\sin 2\Omega t)
 \end{equation}
 \begin{equation}
-T_{i3} = 0 \fs
+I_{i3} = 0 \fs
 \end{equation}
-From these, the metric perturbation is easily constructed from \ref{quad formula}
-\[
+From these, the metric perturbation for an observer on the $x^3$-axis is easily constructed from (\ref{quad formula})
+\begin{equation}
 \bar{h}_{ij} (x)
 =
 \frac{8GM}{r}\Omega^2 R^2\begin{pmatrix} 
@@ -417,48 +427,50 @@ From these, the metric perturbation is easily constructed from \ref{quad formula
 0 & 0 & 0
 \end{pmatrix}
 \fs
-\]
-From this we can see that GWs from a binary star system would produce a GW with an oscillating plus and cross polarisation. We should note that this derivation assumes no energy loss from the GWs. In fact, GWs do radiate energy and this causes the stars to inspiral, a feature not captured by our Newtonian approximation. As the stars inspiral, the angular frequency of the system increases. This causes the frequency of the GW to increase as well as the amplitude\footnote{Though the inspiral also causes the seperation between the black holes to shrink, which acts to lower the amplitude. In reality, the increase in orbital frequency wins out and the amplitude increases near the end of the inspiral.}. This is what creates the characteristic \textit{chirp} of the GW from a binary inspiral and merger. Even without taking into account the inspiral, this simple model illustrates many properties that are useful for GW astronomy. First is the $1/r$ dependence on the size of the metric perturbation, which can be used to estimate the distance to the source. Another is the fact that the GW frequency is twice the orbital frequency of the system, so the measured GW frequency gives us the orbital frequency of the system. Also, the metric perturbation is larger for systems with high mass and high orbital frequency. High mass stars are therefore good candidates, but they also have a large radius, meaning that the stars in the binary will begin to merge while the binary still has a low angular frequency. Thus the best GW emitters  are compact object binaries, such as neutron stars and black holes, as they are high mass but also have a small radius. We call these systems \textit{compact binary coalescence} (CBC) systems. 
+\end{equation}
+From this we can see that GWs from a binary star system would produce a GW with an oscillating plus and cross polarisation of equal amplitude and $90^\circ$ out of phase. Note that this derivation assumes no energy loss from the GWs. 
 
-On the 14th of September 2015, the first direct detection of a GW came from a CBC system \cite{150914-det-paper}. In figure \ref{fig:150914 signal}] we see the waveform that was detected, with a cartoon of the evolution of the inspiral. The bottom panel also shows how the velocity and separation of the black holes evoloves. The signal is just as described above, an sine wave with increasing frequency and amplitude as the black holes radiate energy through GW emission and inspiral.  Since this initial detection, many CBC signals have already been detected [\textbf{cite catalog paper}], mostly from binary black hole systems, but also one binary neutron star system, which will be discussed in detail in the next chapter. In chapter \ref{chap: CBC} we will see a search pipeline designed specifically to detect GWs from these CBC systems. 
+Accounting for the fact that GWs do radiate energy shows that the stars inspiral, a feature not captured by the Newtonian approximation above. As the stars inspiral, the angular frequency of the system increases. This causes the frequency of the GW to increase as well as the amplitude\footnote{Though the inspiral also causes the separation between the black holes to shrink, which acts to lower the amplitude. In reality, the increase in orbital frequency wins out and the amplitude increases near the end of the inspiral, as can be shown using Kepler's laws.}. This is what creates the characteristic \textit{chirp} of the GW from a binary inspiral and merger. Even without taking into account the inspiral, this simple model illustrates many properties that are useful for GW astronomy. First is the $1/r$ dependence on the size of the metric perturbation, which can be used to estimate the distance to the source. Another is the fact that the GW frequency is twice the orbital frequency of the system, so the measured GW frequency gives us the orbital frequency of the system. Also, the metric perturbation is larger for systems with high mass and high orbital frequency. High mass stars are therefore good candidates, but they also have a large radius, meaning that the stars in the binary will begin to merge while the binary still has a low angular frequency. Thus the best GW emitters  are compact object binaries, such as neutron stars and black holes, as they are high mass but also have a small radius. We call these systems \textit{compact binary coalescence} (CBC) systems. 
+
+On the 14th of September 2015, the first direct detection of a GW came from a CBC system \cite{150914-det-paper}. In figure \ref{fig:150914 signal} we see a theoretical model of the GW that was detected, with a cartoon of the evolution of the inspiral. The bottom panel also shows how the velocity and separation of the black holes evolves. The signal is just as described above, a sinusoidal wave with increasing frequency and amplitude as the black holes inspiral.  Since this initial detection, eleven more CBC GWs have been detected \cite{catalog}, ten from binary black hole systems and one binary neutron star system.\footnote{Discussed in detail in the next chapter.} In chapter \ref{chap: CBC} we will see a search pipeline designed specifically to detect GWs from these CBC systems. 
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=12cm]{150914signal.png} 
-\caption{\textbf{The First Direct Detection of a Gravitational Wave.} The top panel shows the GW waveform with an inset cartoon of the state of the binary at four different phases of the binary inspiral. The bottom panel shows the Keplerian seperation distance in units of Schwarzschild radii ($R_s=\frac{2GM}{c^2}$ where $M$ is the total mass of the system). Also shown is the relative velocity of the black holes.  \cite{150914-det-paper} }
+\caption{\textbf{The First Direct Detection of a Gravitational Wave.} The top panel shows the a theoretical model of the first detected GW with an inset cartoon of the state of the binary at four different phases of the binary inspiral. The bottom panel shows the Keplerian seperation distance in units of Schwarzschild radii ($R_s=\frac{2GM}{c^2}$ where $M$ is the total mass of the system). Also shown is the relative velocity of the black holes.  \cite{150914-det-paper} }
 \label{fig:150914 signal}
 \end{figure}
 
-We end this section by noting that any system with a large amount of asymmetric rapidly accelerating mass could potentially be detected using GWs. There are searches ongoing for GWs from supernovas, gamma-ray bursts, non-axisymmetric pulsars, and black hole accretion disk instabilities. At the time of writing, the only GWs that have been detected are from CBC systems.  
+We end this section by noting that any system with an accelerated quadrupole moment could potentially be detected using GWs. There are searches ongoing for GWs from supernovas, short and long gamma-ray bursts, non-axisymmetric pulsars, and black hole accretion disk instabilities. At the time of writing, the only GWs that have been detected are from CBC systems.  
 
 \section{Gravitational Wave Detectors} \label{sec:gw detectors}
-As shown in section \ref{sec:GW effects}, GWs can be detected by measuring changes in length between two points, and this change in length is proportional to the distance between the two points and the amplitude of the GW. As astrophysical sources are expected to produce GWs with amplitudes of $\sim 10^{-21}$, we must choose two points that are as far apart as practical, at least on the order of kilometers, if the effect is to be measurable. Even then, the change in distance between the two points will still be only a fraction of the wavelength of light. To measure this change, we use a \textit{Michelson interferometer} [\textbf{cite R.Weiss 1972}]. In this section, we will begin with a basic mathematical description of how a Michelson interferometer works. We will then move on to discuss the aspects of the GW detectors that are important for data analysis, namely the detector noise and directional sensitivity.
+As shown in section \ref{sec:GW effects}, a passing GW will change the distance between two points, and this change in length is proportional to the distance between the two points and the amplitude of the GW. As astrophysical sources are expected to produce GWs with amplitudes of $\sim 10^{-21}$ at the Earth, we must choose two points that are as far apart as practical, at least on the order of kilometers, if the effect is to be measurable. Even then, the change in distance between the two points will still be only a fraction of the wavelength of light. To measure this change, we use a \textit{Michelson interferometer} \cite{weiss72}. In this section, we will begin with a basic mathematical description of how a Michelson interferometer works. We will then move on to discuss the aspects of the GW detectors that are important for data analysis, namely the detector noise and directional sensitivity.
 
 \subsection{The Michelson Interferometer} \label{sec:mich}
-We will start with an overview of how the interferometers work before going into the mathematical details. Figure \ref{fig:ifo} is a schematic of a Michelson interferometer\footnote{The left and right schematics are the same but each use a different naming convention. Both conventions are useful.}. There is a laser in the West port which is aimed at at the beam splitter in the middle. The beam splitter is a partially reflective mirror which reflects half the photons into the North port and transmits half into the East port. Both interferometer arms are the same length\footnote{Actually the important thing is that the two light rays have opposite phase in each arm when they return to the beam splitter.}. The light that is reflected into the North arm picks up a phase shift such that it is completely out of phase with the light transmitted into the East port. At the end of the North and East ports are mirrors that reflect the light back to the beam splitter. The light is then transmitted/reflected by the beam splitter into either the South or West arms. If the North and East arms have the same length, then the light that from each arm will be in phase in the West port \footnote{Also known as the \emph{Symmetric port}} but out of phase in the South port \footnote{Also known as the \emph{anti-symmetric port} or the \emph{dark port}.}. This means that if the arms are the same length then all the light goes into the West port. However, if the arm lengths differ by some small fraction of the wavelength of the laser light (possibly because of a gravitational wave), then some of the light will travel down the South port and be detected. This is the basic idea behind an interferometer.
+We will start with an overview of how the interferometers work before going into the mathematical details. Figure \ref{fig:ifo} is a schematic of a Michelson interferometer. There is a laser on the left which is aimed at at the beam splitter in the middle. The beam splitter is a partially reflective mirror which reflects half the photons into the Y arm and transmits half into the X arm. Both interferometer arms are the same length\footnote{Actually the important thing is that the two light rays have opposite phase in each arm when they return to the beam splitter.}. The light that is reflected into the Y arm picks up a phase shift such that it is completely out of phase with the light transmitted into the X arm. At the end of the X and Y arms are mirrors that reflect the light back to the beam splitter. These mirrors are also known as the end test masses of the X and Y arms (ETMX and ETMY). The light is then transmitted/reflected by the beam splitter into either the symmetric or anti-symmetric arms. If the X and Y arms are the same length, then the light from each arm will be in phase in the symmetric port but out of phase in the anti-symmetric port, also known as the \emph{dark port}. This means that if the arms are the same length then all the light goes into the symmetric port. However, if the arm lengths differ by some small fraction of the wavelength of the laser light (possibly because of a gravitational wave), then some of the light will travel into the anti-symmetric port and be detected by the photodetector that is placed there. This is the basic idea behind an interferometer.
 
 \begin{figure}[ht]
 \centering
-\includegraphics[width=12cm]{michelson.jpg} 
-\caption{Two identical schematics of a Michelson interferometer, each with a different naming convention. \cite{ifo_tech} }
+\includegraphics[width=6cm]{michelson.png} 
+\caption{A schematic of a Michelson interferometer. The end test mass of the X and Y arms (ETMX and ETMY) are the mirrors at the end of the interferometer arms. The laser light enters the interferometer from the symmetric port on the left, and the photodetector that measures the differential arm length ($L_Y-L_X$) is in the anti-symmetric port. \cite{ifo_tech} }
 \label{fig:ifo}
 \end{figure} 
 
-The key feature of an interferometer is that the laser light is out of phase at the dark port. How does this happen? Suppose that the laser light is initially described by the electric field $E_0$. Each time the light encounters the beam splitter or a mirror, it will pick up a change in phase. In figure \ref{fig:ef} we show the naming convention we will use for the different electric fields in the interferometer. The \emph{magnitude of reflection} $r$ and the \emph{magnitude of transmission} $t$ describe the reflectivity of a mirror. We will assume the beam splitter and mirrors are lossless, so $t^2=1-r^2$. Once the light reaches the beam splitter it will either be reflected into the North arm and pick up a phase shift $\varphi_r$, or it will be transmitted into the East arm, in which case it is phase shifted by $\varphi_t$. These electric fields are respectively denoted by
+The key feature of an interferometer is that the laser light is out of phase at the dark port. How does this happen? Suppose that the laser light is initially described by the electric field $E_0$. Each time the light encounters the beam splitter or a mirror, it will pick up a change in phase. In figure \ref{fig:ef} we show the naming convention we will use for the different electric fields in the interferometer. The \emph{magnitude of reflection} $r$ and the \emph{magnitude of transmission} $t$ describe the reflectivity of a mirror. We will assume the beam splitter and mirrors are lossless, so $t^2=1-r^2$. Once the light reaches the beam splitter it will either be reflected into the Y arm and pick up a phase shift $\varphi_r$, or it will be transmitted into the X arm, in which case it is phase shifted by $\varphi_t$. These electric fields are respectively denoted by
 \begin{equation} \label{E1}
 E_1=r E_0  \exp(i \varphi_r)
 \end{equation}
 \begin{equation} \label{E2}
 E_2=t E_0  \exp(i \varphi_t) \fs
 \end{equation}
-We denote the phase accumulated in the vertical and horizontal arms as $\Phi_1$ and $\Phi_2$ respectively. Thus the electric fields $E_3$ and $E_4$ are given by
+We denote the phase accumulated in the Y and X arms as $\Phi_1$ and $\Phi_2$ respectively. Thus the electric fields $E_3$ and $E_4$ are given by
 \begin{equation}
 E_3=r E_0  \exp(i( \varphi_r+\Phi_1))
 \end{equation}
 \begin{equation}
 E_4=t E_0  \exp (i( \varphi_t+\Phi_2)) \fs
 \end{equation}
-After going through the bean splitter one more time the light rays pick up another phase shift. We will not assume that the phase shift is the same on the front and back of the mirror, so this time the light shifts by $\varphi_{r'}$. Hence the two light rays $E_5$ and $E_6$ are given by
+After going through the bean splitter one more time the light rays pick up another phase shift. We will not assume that the phase shift is the same on the front and back of the mirror, so this time the phase shifts by $\varphi_{r'}$. Hence the two light rays $E_5$ and $E_6$ are given by
 \begin{equation}
 E_5= E_0 \bigg(r^2 \exp \big( i ( 2\varphi_r+\Phi_1) \big)+t^2 \exp \big( i(2 \varphi_t+\Phi_2) \big) \bigg)
 \end{equation}
@@ -469,7 +481,7 @@ E_6=r t E_0 \bigg( \exp \big( i (\varphi_r+\varphi_t+\Phi_1) \big)+ \exp \big( i
 \begin{figure}[ht]
 \centering
 \includegraphics[width=12cm]{electric_fields} 
-\caption{This schematic Michelson Interferometer shows our labelling convention for the different Electric fields. \cite{ifo_tech} }
+\caption{\textbf{Electric Fields in a Michelson Interferometer.} This figure shows our labeling convention the electric fields in the different parts of the interferometer. The input laser light is labeled $E_0$. At the beam splitter, half of this light $E_1$ is reflected into the Y arm and the other half  $E_2$ is transmitted into the X arm. The light then travels down each arm and is reflected off of the test mass mirrors. The light accumulates a phase shift in the arms, and we call this phase shifted light $E_3$ and $E_4$ for the Y and X arms respectively. The light in both arms then reaches the beam splitter again, when it will either be reflected/transmitted into the symmetric port or the anti-symmetric port. The light in the symmetric port is labeled $E_5$ and in the anti-symmetric port is labeled $E_6$. \cite{ifo_tech} }
 \label{fig:ef}
 \end{figure} 
 
@@ -491,9 +503,9 @@ Similarly, if we define
 \begin{equation}
 \beta_-=\frac{1}{2}(\varphi_r-\varphi_{r'}+\Phi_1-\Phi_2) 
 \end{equation}
-which gives us 
+we can write 
 \begin{equation}
-E_6=r t E_0 e^{i beta_+}( e^{i \beta_-}+ e^{-i \beta_-}) \fs
+E_6=r t E_0 e^{i \beta_+}( e^{i \beta_-}+ e^{-i \beta_-}) \fs
 \end{equation}
 For the case of a 50:50 beam splitter, we have $r=t=1/\sqrt{2}$. Thus we can write
 \begin{equation}
@@ -506,11 +518,11 @@ Conservation of energy means we must have $|E_0|^2=|E_5|^2+|E_6|^2$, hence
 \begin{equation}
 \cos^2(\alpha_-)+\cos^2(\beta_-)=1 \fs
 \end{equation}
-Using the identity $\cos^2(x)=\cos(2x)+1$ we can write this condition as
+Using the identity $2\cos^2(x)=\cos(2x)+1$ we can write this condition as
 \begin{equation}
-\cos(2\alpha_-)=\cos(2\beta_-) \fs
+\cos(2\alpha_-)=-\cos(2\beta_-) \fs
 \end{equation}
-Hence we have $2\alpha_-=2\beta_- +\pi(2N+1)$, where $B\in \mathbb{Z}$, which we can rearrange to obtain
+Hence we have $2\alpha_-=2\beta_- +\pi(2N+1)$, where $N\in \mathbb{Z}$, which we can rearrange to obtain
 \begin{equation} \label{phase_cond}
 \frac{1}{2}(\varphi_r+\varphi_{r'})-\varphi_t=(2N+1)\frac{\pi}{2} \fs
 \end{equation}
@@ -518,41 +530,41 @@ In most cases we do not know or need to know what the exact phase factors are an
 %\begin{equation}
 %E_r=r E_i \text{,} \hspace{20pt} E_t=i t E_i \fs 
 %\end{equation} 
-so that the electric field in the south port, given by \ref{E_6}, becomes
+so that the electric field in the anti-symmetric port, given by (\ref{E_6}), becomes
 \begin{equation}
-E_6=E_0 \frac{i}{2} \left( e^{i\Phi_1} + e^{i\Phi_2}  \right)=E_0 \frac{i}{2} \left( e^{2 i k L_N} + e^{2 i k L_E}  \right)
+E_6=E_0 \frac{i}{2} \left( e^{i\Phi_1} + e^{i\Phi_2}  \right)=E_0 \frac{i}{2} \left( e^{2 i k L_Y} + e^{2 i k L_X}  \right)
 \end{equation}
-where $L_N$ and$ L_E$ are the lengths of the North and East interferometer arms, $k$ is the wavenumber of the laser light, and we have used the fact that the phase shift obtained by the light traveling down the interferometer arms and back again is $\Phi_1=2 k L_N$ and $\Phi_2=2 k L_E$. We can simplify these expressions by writing them in terms of the average and differential arm lengths 
+where $k$ is the wave number of the laser light and we have used the fact that the phase shift obtained by the light traveling down the interferometer arms and back again is $\Phi_1=2 k L_Y$ and $\Phi_2=2 k L_X$. We can simplify these expressions by writing them in terms of the average and differential arm lengths 
 \begin{equation}
-\bar{L}=\frac{L_N+L_E}{2}, \hspace{20pt} \Delta L =L_N-L_E \fs
+\bar{L}=\frac{L_Y+L_X}{2}, \hspace{20pt} \Delta L =L_Y-L_X \fs
 \end{equation}
 From this we obtain
 \begin{equation}
-2L_N=2\bar{L}+\Delta L, \hspace{20pt} 2L_E=2\bar{L}-\Delta L \fs 
+2L_Y=2\bar{L}+\Delta L, \hspace{20pt} 2L_X=2\bar{L}-\Delta L \fs 
 \end{equation}
-Thus, the electric field in the South port is given by
+Thus, the electric field in at the anti-symmetric port is given by
 \begin{equation}
 E_6=E_0\frac{i}{2}e^{2ik\bar{L}}\left( e^{ik\Delta L} + e^{-ik\Delta L} \right)=iE_0e^{2ik\bar{L}}\cos(ik\Delta L) \fs
 \end{equation}
-The photodetector in the South port produces a signal proportional to $E_6 E_6^*$, which gives 
+The photodetector in the anti-symmetric port produces a signal proportional to $|E_6|^2$, which gives 
 \begin{equation}
-S=E_6 E_6^*=P_0 \cos^2(k \Delta L)=P_0 \cos^2(2\pi \Delta L / \lambda) 
+S=|E_6|^2=P_0 \cos^2(k \Delta L)=P_0 \cos^2(2\pi \Delta L / \lambda) 
 \end{equation}
-where $P_0=E_0 E_0^*$. In figure \ref{fig:power_output} we see how the output power varies with a change in the differential arm length. We can see that the output signal varies from zero up to the input power with a period of $\Delta L/\lambda=0.5$. At the point $\Delta L/\lambda=0.25$, there is no light entering the south port. We call this point the \emph{Dark Fringe}. As long as $\Delta L/\lambda<0.25$, i.e. the displacement caused by a GW is sufficiently small, then the amount of power at the dark port is proportional to the differential arm length, giving us a way to detect a passing GW.
+where $P_0=|E_0|^2$. Thus we see that the output power varies with a change in the differential arm length. Specifically, the output signal varies from zero up to the input power with a period of $\Delta L/\lambda=0.5$. At the point $\Delta L/\lambda=0.25$, there is no light entering the south port. We call this point the \emph{Dark Fringe}. As long as $\Delta L/\lambda<0.25$, i.e. the displacement caused by a GW is sufficiently small, then the amount of power at the anti-symmetric port is proportional to the differential arm length, giving us a way to detect a passing GW.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=12cm]{detector_output} 
-\caption{This plot shows how the detector output varies with the change in length of the interferoemeter arms. \cite{ifo_tech} }
-\label{fig:power_output}
-\end{figure}
+%\begin{figure}[ht]
+%\centering
+%\includegraphics[width=12cm]{detector_output} 
+%\caption{This plot shows how the detector output varies with the change in the differential arm length of the interferoemeter. \cite{ifo_tech} }
+%\label{fig:power_output}
+%\end{figure}
 
 \subsection{Interferometer Antenna Pattern} \label{sec:antenna pattern}
-The response of an interferometer to a passing GW depends on the direction that the GW is approaching from. In this section we will see how interferometer sensitivity varies over the sky. The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
+The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how interferometer sensitivity varies over the sky.\cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
 \begin{equation}
 \Delta L_x = L (1 + \frac{1}{2}h_{xx})) + \mathcal{O}(h^2)
 \end{equation} 
-to be the change in length of thex arm of interferometer arm induced by a passing GW. Similarly, the change in length of the y-arm is given by
+to be the change in length of the X arm of the interferometer induced by a passing GW. Similarly, the change in length of the Y arm is given by
 \begin{equation}
 \Delta L_y = L (1 + \frac{1}{2}h_{yy}))  + \mathcal{O}(h^2) \fs
 \end{equation} 
@@ -563,7 +575,7 @@ Dropping the higher order terms, the differential arm length is then given by
 
 So far we have been working in the detector frame. To understand how the interferometer responds to GWs coming from different positions in the sky, we need to understand how $h_{xx}$ and $h_{yy}$ change for GWs coming from different sky positions. To do this, we consider a GW approaching the detector from an arbitrary direction and introduce a new frame of reference $(x',y',z')$ such that the incoming GW is traveling along the $z'$ axis. We relate the detector frame $(x,y,z)$ to the GW frame using the polar angles $\theta$ and $\phi$. The GW polarisation matrix is defined in the GW frame to be
 
-\[
+\begin{equation}
 h_{ij}'
 =
 \begin{pmatrix}
@@ -571,9 +583,9 @@ h_+ & h_\times & 0 \\
 h_\times & -h_+ & 0 \\
 0 & 0 & 0
 \end{pmatrix} \fs
-\]
+\end{equation}
 The rotation that brings the GW frame into the detector frame is rotation through $\theta$ around the y-axis and a rotation through $\phi$ around the z-axis. This gives us
-\[
+\begin{equation}
 \mathcal{R}
 =
 \begin{pmatrix}
@@ -586,7 +598,7 @@ The rotation that brings the GW frame into the detector frame is rotation throug
 0 & 1 & 0 \\
 -\sin \theta & 0 & \cos \theta
 \end{pmatrix} \fs
-\]
+\end{equation}
 We can then calculate $h_{xx}$ and $h_{yy}$ using the formula
 \begin{equation}
 h_{ij} = \mathcal{R}_{ik} \mathcal{R}_{jl} h_{kl}'
@@ -602,7 +614,7 @@ Plugging these values into \ref{darm eqn}, and setting $L=1$ for convenience, gi
 \begin{equation}
 \frac{1}{2} (h_{xx} - h_{yy}) = \frac{1}{2} h_+ (1+\cos^2\theta)\cos 2\phi + h_\times \cos \theta \sin 2\phi \fs
 \end{equation}
-Thus, the detector response to a GW $s$ can be written as
+Thus, the detector response $s$ to a GW can be written as
 \begin{equation}
 s = F_+(\theta,\phi)h_+ + F_\times(\theta,\phi) h_\times
 \end{equation}
@@ -613,7 +625,7 @@ F_+(\theta,\phi) = \frac{1}{2} (1+\cos^2\theta)\cos 2\phi
 \begin{equation}
 F_\times(\theta,\phi) = \cos \theta \sin 2\phi \fs
 \end{equation}
-From these we see that the sensitivity of an interferometer varies depending on the sky position of the source of the GW. In particular, we can see that interferometers have blind spots, known as the \textit{null} of the detector. For example, the plus polarisation of a GW coming from an angle $\phi=\frac{\pi}{4}$ will not be detected. In figure \ref{fig:antenna pattern}, we can see how the sensitivity of an interferometer with arms aligned with the x and y axes varies over the sky. In later chapters, we will see how the variation in sensitivity of each detector to different parts of the sky can be used to our advantage, and make a more sensitive GW search.
+From these we see that the sensitivity of an interferometer varies depending on the sky position of the source of the GW. In particular, we can see that interferometers have blind spots, known as the \textit{nulls} of the detector. For example, the plus polarisation of a GW coming from an angle $\phi=\frac{\pi}{4}$ will not be detected. In figure \ref{fig:antenna pattern}, we can see how the sensitivity of an interferometer with arms aligned with the x and y axes varies over the sky. In later chapters, we will see how the variation in sensitivity of each detector to different parts of the sky can be used to our advantage, and make a more sensitive GW search.
 
 
 
@@ -640,16 +652,24 @@ From these we see that the sensitivity of an interferometer varies depending on 
 \end{figure}
 
 \subsection{Interferometer Noise}
-The stationary noise in the detector is measured using the \emph{power spectral density} (PSD). Let $s=s(\tau)$ be the detector output, the PSD is defined as the Fourier transform of the autocorrelation function of $s$
+There are many sources of noise for a GW detector, from seismic vibrations to quantum shot noise, and this noise can be stationary or transient. In this section we will look at some of the noise sources that effect modern GW detectors. But first we need to understand how the noise is characterised. 
+
+Let the \textit{cross-correlation} of two functions $s_1(t)$ and $s_2(t)$ be given by
+\begin{equation}
+s_1 \ star s_2 (\tau) \equiv \infint s_1(t) s_2 (t+\tau)dt \fs
+\end{equation}
+The cross-correlation is the integral over every possible time delay $\tau$ between the two functions $s_1$ and $s_2$. It is a measure of how similar two functions are at a given time off-set $\tau$. We call the cross-correlation of a function with itself the \textit{auto-correlation} of that function.
+
+Let $s=s(t)$ be the  output of a GW detector. The \textit{power spectral density} (PSD) is defined as the Fourier transform of the auto-correlation function of $s$
 \begin{equation} \label{eqn:PSD}
 \frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
 \end{equation}
-The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{Amplitude Spectral Density} (ASD). The PSD and ASD are measures of the amount of time variation of a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment and angular sensing and control systems (ASC), and the thermal noise of the mirror suspensions (thermal Susp) and coating (thermal coating). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. You can also see that at around 20-50 Hz, the sum of noises is much lower than the measured differential arm length (DARM). This indicated that the limiting factor of the detector sensitivity in this frequency range is unknown. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{noise_budget_martynov} \cite{GW150914-detector} .
+The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{amplitude spectral density} (ASD). The PSD and ASD are measures of the amount of time variation at a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment and angular sensing and control systems (ASC), and the thermal noise of the mirror suspensions (thermal Susp) and coating (thermal coating). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. You can also see that at around 20-50 Hz, the sum of noises is much lower than the measured differential arm length (DARM). This indicated that the limiting factor of the detector sensitivity in this frequency range is unknown. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{GW150914-detector,noise_budget_martynov}.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=16cm]{L1-ASD-20170820.png} 
-\caption{\textbf{ASD for LIGO Livingston Observatory.} Plotted in blue is the ASD for the LIGO Livingston Observatory as it was on the 20th August 2017. In grey we see the Gravitational Wave Interferometer Noise Curve (GWINC), a theoretical model of all the noise in the detector, as well as the O2 projected noise curve in orange. }
+\caption{\textbf{ASD for LIGO Livingston Observatory.} Plotted in blue is the ASD of the background noise for the LIGO Livingston Observatory as it was on the 20th August 2017. In grey we see the Gravitational Wave Interferometer Noise Curve (GWINC), a theoretical model of all the noise in the detector, as well as the O2 projected noise curve in orange. }
 \label{fig:asd}
 \end{figure}
 
@@ -657,12 +677,12 @@ The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD g
 \begin{figure}[ht]
 \centering
 \includegraphics[width=22cm]{L1-NOISE_BUDGET-20170820.png} 
-\caption{\textbf{Noise Budget for LIGO Livingston Observatory.} Here we have the noise budget for the LIGO Livingston Observatory on 20th August 2017. The noise sources in LIGO detectors are descirbed in detail in \cite{noise_budget_martynov} and \cite{GW150914-detector}.}
+\caption{\textbf{Noise Budget for LIGO Livingston Observatory.} Here we have the noise budget for the LIGO Livingston Observatory on 20th August 2017. A nosie budget shows many different noise sources and how they affect the ASD for the detector. Some of these are determined theoretically, such as the quantum noise. Others are determined via sensors. The sum of all the known noise sources is shown with the dotted black line. Where the black line is close to the measure different arm length (DARM, shown in blue), the noise is well understood. This is the case at high frequency, where the detector is dominated by quantum noise, and low frequency, where it is dominated by seismic and control system noise. From about 20-80 Hz, we can see that the sum of noises is far below DARM. This indicates that there is a noise source in this frequency range that we do not know about yet. The noise sources in LIGO detectors are described in detail in \cite{noise_budget_martynov} and \cite{GW150914-detector}.}
 \label{fig:noise budget}
 \end{figure}
 \end{landscape}
 
-Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal, as we will see it later chapters.
+Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. \cite{detchar} Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal, as we will see it later chapters. 
 
 
 \subsection{The Global Network of Interferometers} \label{sec:gw network}
@@ -676,8 +696,8 @@ Virgo is a 3 km interferomter, similar but not identical to the LIGO detectors. 
 \paragraph{GEO600}
 A 600 m interferometer near Starstedt in Germany. Due to the short detector arms compared to the LIGO and Virgo interferometers, GEO600 is typically not used when analysing GW network data, but has been vital for the development of new technology for the LIGO and Virgo detectors. 
 
-\paragraph{Kagra}
-The Kamioka Gravitational Wave Detector (KAGRA) is a Japanese interferometer being built entirely underground, with 3 km long arms, and will have cryogenic mirrors. It is hoped that KAGRA will be operational by the end of 2019.
+\paragraph{KAGRA}
+The Kamioka Gravitational Wave Detector (KAGRA) is a Japanese interferometer being built entirely underground, with 3 km long arms, and will have cryogenic mirrors. It is hoped that KAGRA will be operational in early 2020.
 
 
 
@@ -2346,7 +2366,7 @@ Equipped with these three senses, we explore the universe.
 \appendix
 \appendixpage
 \addappheadtotoc
-\section{General Relativity}
+\chapter{General Relativity} \label{appendix:gr}
 
 Christoffel Symbol
 \begin{equation} \label{christ}
@@ -2375,7 +2395,7 @@ R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right)
 % ----------------------------
 % postamble 
 
-\section{PyGRB O2 Result Tables} \label{tab:grbs}
+\chapter{PyGRB O2 Result Tables} \label{tab:grbs}
 \begin{landscape}
 \begin{tabular}{l c  c  c  c  c  c  c  c c |}
 \hline
@@ -2437,7 +2457,7 @@ R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right)
 
 \newpage
 \FloatBarrier
-\section{MVA Results Tables} \label{appendix:mva tables}
+\chapter{MVA Results Tables} \label{appendix:mva tables}
 
 \begin{table}[h]
 \centering

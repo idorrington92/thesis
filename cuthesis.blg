@@ -3,49 +3,57 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: cuthesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
+I was expecting a `,' or a `}'---line 138 of file refs.bib
+ :  
+ :  title = {Characterization of transient noise in Advanced {LIGO} relevant to gravitational wave signal {GW}150914},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 Warning--empty journal in catalog
 Warning--empty journal in o2grb
+Warning--empty title in detchar
+Warning--empty journal in detchar
 Warning--empty journal in Howell
 Warning--empty journal in gstlal_Sachdev:2019
-You've used 79 entries,
+Warning--empty publisher in einstein_gr
+You've used 88 entries,
             2118 wiz_defined-function locations,
-            949 strings with 19066 characters,
-and the built_in function-call counts, 27790 in all, are:
-= -- 2519
-> -- 1803
+            995 strings with 19986 characters,
+and the built_in function-call counts, 30086 in all, are:
+= -- 2738
+> -- 1878
 < -- 0
-+ -- 726
-- -- 638
-* -- 2269
-:= -- 4941
-add.period$ -- 244
-call.type$ -- 79
-change.case$ -- 543
++ -- 758
+- -- 660
+* -- 2403
+:= -- 5335
+add.period$ -- 271
+call.type$ -- 88
+change.case$ -- 576
 chr.to.int$ -- 0
-cite$ -- 83
-duplicate$ -- 835
-empty$ -- 1859
-format.name$ -- 638
-if$ -- 5463
+cite$ -- 95
+duplicate$ -- 941
+empty$ -- 2076
+format.name$ -- 660
+if$ -- 5946
 int.to.chr$ -- 0
-int.to.str$ -- 79
-missing$ -- 76
-newline$ -- 405
-num.names$ -- 158
-pop$ -- 485
+int.to.str$ -- 88
+missing$ -- 89
+newline$ -- 449
+num.names$ -- 176
+pop$ -- 536
 preamble$ -- 1
-purify$ -- 468
+purify$ -- 497
 quote$ -- 0
-skip$ -- 570
+skip$ -- 629
 stack$ -- 0
-substring$ -- 1356
-swap$ -- 75
+substring$ -- 1478
+swap$ -- 84
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 308
-warning$ -- 4
-while$ -- 223
-width$ -- 81
-write$ -- 861
-(There were 4 warnings)
+type$ -- 336
+warning$ -- 7
+while$ -- 246
+width$ -- 90
+write$ -- 955
+(There was 1 error message)

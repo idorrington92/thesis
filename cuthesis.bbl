@@ -110,6 +110,11 @@ Sean Carroll.
 \newblock {\em Spacetime and geometry : an introduction to general relativity}.
 \newblock Pearson, Harlow, Essex, 2014.
 
+\bibitem{eclipse1919}
+Peter Coles.
+\newblock {Einstein, eddington and the 1919 eclipse}.
+\newblock {\em ASP Conf. Ser.}, 252:21, 2001.
+
 \bibitem{supernova_lvc}
 LIGO~Scientific Collaboration and Virgo Collaboration.
 \newblock An optically targeted search for gravitational waves emitted by
@@ -196,6 +201,10 @@ E.~Burns et~al (Fermi Gamma-Ray Burst~Monitor).
   observing run.
 \newblock {\em The Astrophysical Journal}, 871(1):90, jan 2019.
 
+\bibitem{detchar}
+B~P~Abbott et~al (LIGO~scienfitic collaboration).
+\newblock 33(13):134001, jun 2016.
+
 \bibitem{Faber2012}
 Joshua~A. Faber and Frederic~A. Rasio.
 \newblock Binary neutron star mergers.
@@ -240,6 +249,11 @@ Howell, E.~J., Ackley, K., Rowlinson, A., and D.~Coward.
   aftermath of GW170817}.
 \newblock 2018.
 
+\bibitem{Hulse}
+R.~A. Hulse and J.~H. Taylor.
+\newblock {Discovery of a pulsar in a binary system}.
+\newblock {\em Astrophys. J.}, 195:L51--L53, 1975.
+
 \bibitem{IPN}
 K.~Hurley, T.~Cline, I.~Mitrofanov, E.~Mazets, S.~Golenetskii, F.~Frontera,
   E.~Montanari, C.~Guidorzi, and M.~Feroci.
@@ -250,6 +264,12 @@ K.~Hurley, T.~Cline, I.~Mitrofanov, E.~Mazets, S.~Golenetskii, F.~Frontera,
 Vassiliki Kalogera and Gordon Baym.
 \newblock The maximum mass of a neutron star.
 \newblock {\em The Astrophysical Journal}, 470(1):L61--L64, oct 1996.
+
+\bibitem{thoughtspeed}
+Daniel Kennefick.
+\newblock {\em Traveling at the speed of thought : Einstein and the quest for
+  gravitational waves}.
+\newblock Princeton University Press, Princeton, N.J, 2007.
 
 \bibitem{phenom_Khan:2015}
 Sebastian Khan, Sascha Husa, Mark Hannam, Frank Ohme, Michael Pürrer, Xisco
@@ -308,11 +328,21 @@ Andrew Levan.
   \url{https://warwick.ac.uk/fac/sci/physics/research/astro/people/levan/grb_book/}.
 \newblock Accessed: 2019-04-08.
 
+\bibitem{maggiore}
+Michele Maggiore.
+\newblock {\em Gravitational waves}.
+\newblock Oxford University Press, Oxford, 2007.
+
 \bibitem{noise_budget_martynov}
 D.~V. et~al Martynov.
 \newblock Sensitivity of the advanced ligo detectors at the beginning of
   gravitational wave astronomy.
 \newblock {\em Phys. Rev. D}, 93:112004, Jun 2016.
+
+\bibitem{maxwell}
+James Maxwell.
+\newblock {\em A dynamical theory of the electromagnetic field}.
+\newblock Wipf and Stock, Eugene, OR, 1982.
 
 \bibitem{mckechan-thesis}
 Dave McKechan.
@@ -397,6 +427,11 @@ B.S. Sathyaprakash and B.F. Schutz.
 \newblock Physics, astrophysics and cosmology with gravitational waves.
 \newblock {\em Living Reviews in Relativity}, 12(2), 2009.
 
+\bibitem{einstein_gr}
+Dieter Simon and A~Einstein.
+\newblock {\em Die Feldgleichungen der Gravitation}.
+\newblock 2005.
+
 \bibitem{sn_review}
 Stephen~J. Smartt.
 \newblock Progenitors of core-collapse supernovae.
@@ -474,6 +509,17 @@ Michal Was, Marie-Anne Bizouard, Violette Brisson, Fabien Cavalier, Michel
   Vavoulidis.
 \newblock Limitations of the time slide method of background estimation.
 \newblock {\em Classical and Quantum Gravity}, 27(19):194014, sep 2010.
+
+\bibitem{weber}
+J.~Weber.
+\newblock Evidence for discovery of gravitational radiation.
+\newblock {\em Phys. Rev. Lett.}, 22:1320--1324, Jun 1969.
+
+\bibitem{weiss72}
+Rainer Weiss.
+\newblock Electromagnetically coupled broadband gravitational antenna.
+\newblock In {\em K.S. Thorne, “Gravitational radiation”, 300 Years of
+  Gravitation, S W Hawking and W Israel, pp 330–458}. University Press, 1972.
 
 \bibitem{pygrb_Williamson:2014}
 A.~R. Williamson, C.~Biwer, S.~Fairhurst, I.~W. Harry, E.~Macdonald,

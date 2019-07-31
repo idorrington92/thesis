@@ -7,45 +7,45 @@ Warning--empty journal in catalog
 Warning--empty journal in o2grb
 Warning--empty journal in Howell
 Warning--empty journal in gstlal_Sachdev:2019
-You've used 69 entries,
+You've used 79 entries,
             2118 wiz_defined-function locations,
-            897 strings with 17409 characters,
-and the built_in function-call counts, 24662 in all, are:
-= -- 2222
-> -- 1640
+            949 strings with 19066 characters,
+and the built_in function-call counts, 27790 in all, are:
+= -- 2519
+> -- 1803
 < -- 0
-+ -- 660
-- -- 584
-* -- 2032
-:= -- 4389
-add.period$ -- 214
-call.type$ -- 69
-change.case$ -- 489
++ -- 726
+- -- 638
+* -- 2269
+:= -- 4941
+add.period$ -- 244
+call.type$ -- 79
+change.case$ -- 543
 chr.to.int$ -- 0
-cite$ -- 73
-duplicate$ -- 727
-empty$ -- 1626
-format.name$ -- 584
-if$ -- 4831
+cite$ -- 83
+duplicate$ -- 835
+empty$ -- 1859
+format.name$ -- 638
+if$ -- 5463
 int.to.chr$ -- 0
-int.to.str$ -- 69
-missing$ -- 66
-newline$ -- 355
-num.names$ -- 138
-pop$ -- 449
+int.to.str$ -- 79
+missing$ -- 76
+newline$ -- 405
+num.names$ -- 158
+pop$ -- 485
 preamble$ -- 1
-purify$ -- 424
+purify$ -- 468
 quote$ -- 0
-skip$ -- 490
+skip$ -- 570
 stack$ -- 0
-substring$ -- 1175
-swap$ -- 65
+substring$ -- 1356
+swap$ -- 75
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 268
+type$ -- 308
 warning$ -- 4
-while$ -- 195
-width$ -- 71
-write$ -- 752
+while$ -- 223
+width$ -- 81
+write$ -- 861
 (There were 4 warnings)

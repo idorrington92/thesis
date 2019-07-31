@@ -6,12 +6,23 @@ J.~Abadie et~al.
   during LIGO science run 6 and Virgo science runs 2 and 3}.
 \newblock {\em Astrophys. J.}, 760:12, 2012.
 
+\bibitem{hubble_constant}
+B.~P. Abbott et~al.
+\newblock {A gravitational-wave standard siren measurement of the Hubble
+  constant}.
+\newblock {\em Nature}, 551(7678):85--88, 2017.
+
 \bibitem{catalog}
 B.~P. Abbott et~al.
 \newblock {GWTC-1: A Gravitational-Wave Transient Catalog of Compact Binary
   Mergers Observed by LIGO and Virgo during the First and Second Observing
   Runs}.
 \newblock 2018.
+
+\bibitem{170817_pe}
+B.~P. Abbott et~al.
+\newblock {Properties of the binary neutron star merger GW170817}.
+\newblock {\em Phys. Rev.}, X9(1):011001, 2019.
 
 \bibitem{gw_loc}
 B.~P. Abbott, {The LIGO Scientific Collaboration}, and {Virgo Collaboration}.
@@ -99,6 +110,13 @@ Sean Carroll.
 \newblock {\em Spacetime and geometry : an introduction to general relativity}.
 \newblock Pearson, Harlow, Essex, 2014.
 
+\bibitem{supernova_lvc}
+LIGO~Scientific Collaboration and Virgo Collaboration.
+\newblock An optically targeted search for gravitational waves emitted by
+  core-collapse supernovae during the first and second observing runs of
+  advanced ligo and advanced virgo.
+\newblock {\em In preperation}, August 2019.
+
 \bibitem{grb170817a_mm}
 LIGO~Scientific Collaboration, Virgo Collaboration, Fermi GBM, INTEGRAL,
   IceCube Collaboration, AstroSat Cadmium Zinc Telluride~Imager Team, IPN
@@ -129,6 +147,11 @@ LIGO~Scientific Collaboration, Virgo Collaboration, Fermi~Gamma ray
 \newblock Gravitational waves and gamma-rays from a binary neutron star merger:
   {GW}170817 and {GRB} 170817a.
 \newblock {\em The Astrophysical Journal}, 848(2):L13, oct 2017.
+
+\bibitem{Connaughton:2016umz}
+V.~Connaughton et~al.
+\newblock {Fermi GBM Observations of LIGO Gravitational Wave event GW150914}.
+\newblock {\em Astrophys. J.}, 826(1):L6, 2016.
 
 \bibitem{Cornish_2007}
 Neil~J Cornish and Edward~K Porter.
@@ -165,6 +188,13 @@ B.~P.~Abbott et~al.
 Charles~Meegan et~al.
 \newblock {The Fermi Gamma}-{Ray} {Burst} {Monitor}.
 \newblock {\em The Astrophysical Journal}, 702(1):791--804, aug 2009.
+
+\bibitem{Burns_2019}
+E.~Burns et~al (Fermi Gamma-Ray Burst~Monitor).
+\newblock A fermi gamma-ray burst monitor search for electromagnetic signals
+  coincident with gravitational-wave candidates in advanced ligo's first
+  observing run.
+\newblock {\em The Astrophysical Journal}, 871(1):90, jan 2019.
 
 \bibitem{Faber2012}
 Joshua~A. Faber and Frederic~A. Rasio.
@@ -252,6 +282,12 @@ F.~Lamareille, M.~Mouhcine, T.~Contini, I.~Lewis, and S.~Maddox.
   2df galaxy redshift survey}.
 \newblock {\em Mon. Not. Roy. Astron. Soc.}, 350:396, 2004.
 
+\bibitem{Lattimer:2006xb}
+James~M. Lattimer and Maddapa Prakash.
+\newblock {Neutron Star Observations: Prognosis for Equation of State
+  Constraints}.
+\newblock {\em Phys. Rept.}, 442:109--165, 2007.
+
 \bibitem{Lazzati_afterglow}
 Davide Lazzati, Rosalba Perna, Brian~J. Morsony, Diego López-Cámara, Matteo
   Cantiello, Riccardo Ciolfi, Bruno Giacomazzo, and Jared~C. Workman.
@@ -320,6 +356,12 @@ NASA.
 \newblock \url{https://swift.gsfc.nasa.gov/archive/grb_table/stats/}.
 \newblock Accessed: 2019-07-30.
 
+\bibitem{Nice:2005fi}
+David~J. Nice, Eric~M. Splaver, Ingrid~H. Stairs, Oliver Loehmer, Axel Jessner,
+  Michael Kramer, and James~M. Cordes.
+\newblock {A 2.1 solar mass pulsar measured by relativistic orbital decay}.
+\newblock {\em Astrophys. J.}, 634:1242--1249, 2005.
+
 \bibitem{pycbc_live}
 Alexander~H. Nitz, Tito Dal~Canton, Derek Davis, and Steven Reyes.
 \newblock Rapid detection of gravitational waves from compact binary mergers
@@ -337,6 +379,12 @@ Alexander~H. Nitz, Thomas Dent, Tito Dal~Canton, Stephen Fairhurst, and
 Asaf Pe'er.
 \newblock {Physics of Gamma-Ray Bursts Prompt Emission}.
 \newblock {\em Adv. Astron.}, 2015:907321, 2015.
+
+\bibitem{piro_pfahl}
+Anthony Piro and Eric Pfahl.
+\newblock Fragmentation of collapsar disks and the production of gravitational
+  waves.
+\newblock {\em The Astrophysical Journal}, 658, 10 2006.
 
 \bibitem{gstlal_Sachdev:2019}
 Sachdev, Surabhi, et~al.
@@ -373,6 +421,19 @@ Samantha~A. Usman et~al.
 \newblock {The PyCBC search for gravitational waves from compact binary
   coalescence}.
 \newblock {\em Class. Quant. Grav.}, 33(21):215004, 2016.
+
+\bibitem{vanputten2}
+Maurice H. P.~M. van Putten.
+\newblock Proposed source of gravitational radiation from a torus around a
+  black hole.
+\newblock {\em Phys. Rev. Lett.}, 87:091101, Aug 2001.
+
+\bibitem{vanputten1}
+Maurice H. P.~M. van Putten, Amir Levinson, Hyun~Kyu Lee, Tania Regimbau,
+  Michele Punturo, and Gregory~M. Harry.
+\newblock Gravitational radiation from gamma-ray burst-supernovae as
+  observational opportunities for ligo and virgo.
+\newblock {\em Phys. Rev. D}, 69:044007, Feb 2004.
 
 \bibitem{vedrenne_gamma-ray}
 G~Vedrenne.

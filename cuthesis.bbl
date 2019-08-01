@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{100}
 
 \bibitem{abadie}
 J.~Abadie et~al.
@@ -52,6 +52,12 @@ B.~P. et~al. Abbott.
 B.~P. et~all Abbott.
 \newblock Observation of gravitational waves from a binary black hole merger.
 \newblock {\em Phys. Rev. Lett.}, 116:061102, Feb 2016.
+
+\bibitem{adams_mva}
+Thomas~S. Adams, Duncan Meacher, James Clark, Patrick~J. Sutton, Gareth Jones,
+  and Ariana Minot.
+\newblock {Gravitational-Wave Detection using Multivariate Analysis}.
+\newblock {\em Phys. Rev.}, D88:062006, 2013.
 
 \bibitem{allen_chisq}
 Bruce Allen.
@@ -122,6 +128,13 @@ Francesco Carotenuto and Badri Krishnan.
 Sean Carroll.
 \newblock {\em Spacetime and geometry : an introduction to general relativity}.
 \newblock Pearson, Harlow, Essex, 2014.
+
+\bibitem{chat_xpipeline}
+Shourov Chatterji, Albert Lazzarini, Leo Stein, Patrick~J. Sutton, Antony
+  Searle, and Massimo Tinto.
+\newblock Coherent network analysis technique for discriminating
+  gravitational-wave bursts from instrumental noise.
+\newblock {\em Phys. Rev. D}, 74:082005, Oct 2006.
 
 \bibitem{eclipse1919}
 Peter Coles.
@@ -282,6 +295,11 @@ Jason W.~T. Hessels, Scott~M. Ransom, Ingrid~H. Stairs, Paulo C.~C. Freire,
   Victoria~M. Kaspi, and Fernando Camilo.
 \newblock A radio pulsar spinning at 716 hz.
 \newblock {\em Science}, 311(5769):1901--1904, 2006.
+
+\bibitem{tmva_guide}
+Andreas Hocker et~al.
+\newblock {TMVA - Toolkit for Multivariate Data Analysis}.
+\newblock 2007.
 
 \bibitem{Howell}
 Howell, E.~J., Ackley, K., Rowlinson, A., and D.~Coward.
@@ -445,6 +463,13 @@ Alexander~H. Nitz, Thomas Dent, Tito Dal~Canton, Stephen Fairhurst, and
   Understanding and Improving the sensitivity of the PyCBC search}.
 \newblock {\em Astrophys. J.}, 849(2):118, 2017.
 
+\bibitem{Nitz:2017lco}
+Alexander~Harvey Nitz.
+\newblock {Distinguishing short duration noise transients in LIGO data to
+  improve the PyCBC search for gravitational waves from high mass binary black
+  hole mergers}.
+\newblock {\em Class. Quant. Grav.}, 35(3):035016, 2018.
+
 \bibitem{GRBprompt}
 Asaf Pe'er.
 \newblock {Physics of Gamma-Ray Bursts Prompt Emission}.
@@ -513,6 +538,11 @@ P.~Sutton, G.~Jones, S.~Chatterji, P.~Kalmus, I.~Leonor, S.~Poprocki,
 \newblock {\em New Journal of Physics}, 12(5):053034, 2010.
 \newblock http://stacks.iop.org/1367-2630/12/i=5/a=053034.
 
+\bibitem{Sutton:2013ooa}
+Patrick~J. Sutton.
+\newblock {A Rule of Thumb for the Detectability of Gravitational-Wave Bursts}.
+\newblock 2013.
+
 \bibitem{pycbc_Usman:2015}
 Samantha~A. Usman et~al.
 \newblock {The PyCBC search for gravitational waves from compact binary
@@ -571,6 +601,12 @@ Michal Was, Marie-Anne Bizouard, Violette Brisson, Fabien Cavalier, Michel
   Vavoulidis.
 \newblock Limitations of the time slide method of background estimation.
 \newblock {\em Classical and Quantum Gravity}, 27(19):194014, sep 2010.
+
+\bibitem{was_xpipeline}
+Michal Was, Patrick~J. Sutton, Gareth Jones, and Isabel Leonor.
+\newblock Performance of an externally triggered gravitational-wave burst
+  search.
+\newblock {\em Phys. Rev. D}, 86:022003, Jul 2012.
 
 \bibitem{weber}
 J.~Weber.

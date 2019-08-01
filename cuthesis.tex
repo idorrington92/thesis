@@ -127,7 +127,9 @@ Around the same time that GW astronomy was just starting to get off the ground, 
 
 The fact that GRB and GW astronomy were both now targeting the same extreme events made collaboration natural. There are several strategies used to search for coincident GRB/GW signals. The first approach is to look for coincident detections between GW and GRB triggers. The second approach uses the fact that GW detectors are sensitive to most of the sky by making followup observations of GW triggers with electromagnetic (EM) telescopes. The final method is to use advanced data analysis techniques to followup GRB detections with a GW search, which is the focus of this thesis. 
 
-The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made, the signal being a binary inspiral \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, too large to be neutron stars. Several more binary black hole detections were made over the next couple of years. \cite{catalog} And then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal. \cite{GW170817_det} This was the first joint GW/GRB detection, and confirmed that at least some some short GRBs are produced by binary neutron star mergers. This detection led to discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.}
+The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made, the signal being a binary inspiral \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, making this a binary black hole merger. Several more binary black hole detections were made over the next couple of years \cite{catalog} Then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal. \cite{GW170817_det} This was the first joint GW/GRB detection, and confirmed that at least some some short GRBs are produced by binary neutron star mergers. This detection led to many discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.} 
+
+It is important to emphasise that these discoveries could not have happened without GW astronomy. The GRB detection was unremarkable, and would not have warranted followup observations had it not been coincident with a GW detection. The GW information was then used to constrain the sky position and distance of the GRB, which made it possible to find the afterglow. It is also worth noting that this GRB was unusually close, which made the GW detectable with low latency all-sky searches. In general, it is expected that GW detections associated with GRBs will be much quieter, requiring more sensitive searches that are specifically designed to find GWs associated with GRBs, in order to make a confident detection.
 
 It is in this context that this thesis looks at improved methods GW followup of GRB observations. We will see two search pipelines. The first is looks for a binary inspiral signal associated with short GRBs, while the second is an unmodelled search, meaning it is sensitive to a wide range of waveform morphologies, and looks for GWs associated with both long and short GRBs. We will also look at the results of the most recent searches for GWs associated with GRBs. We begin with an introduction to GW astronomy, followed by a more detailed overview of GRB astronomy than was given above. 
 
@@ -559,6 +561,7 @@ where $P_0=|E_0|^2$. Thus we see that the output power varies with a change in t
 %\label{fig:power_output}
 %\end{figure}
 
+
 \subsection{Interferometer Antenna Pattern} \label{sec:antenna pattern}
 The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how interferometer response changes with the sky position and polarisation of the GW.\cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
 \begin{equation}
@@ -652,7 +655,7 @@ From these we see that the sensitivity of an interferometer varies depending on 
 \begin{center}
 \includegraphics[width=0.8\linewidth]{antenna_pattern.png}
 \end{center}
-\caption{\textbf{Interferometer Antenna Pattern.} Here we see the sensitivity on an interferometer, with arms aligned with the x and y axes, to an unpolarised GW. This is calculated as the root-sum-square of the plus and cross antenna patterns. We can see that the detector is sensitive to most of the sky, and most sensitive to GWs coming from perpendicular to the detector plane. However, GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector.}
+\caption{\textbf{Interferometer Antenna Pattern.} Here we see the sensitivity, given by the distance from the origin, of an interferometer, with arms aligned with the x and y axes, to an unpolarised GW. This is calculated as the root-sum-square of the plus and cross antenna patterns. We can see that the detector is sensitive to most of the sky, and most sensitive to GWs coming from perpendicular to the detector plane. However, GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector.}
 \label{fig:antenna pattern}
 \end{figure}
 
@@ -661,7 +664,7 @@ There are many sources of noise for a GW detector, from seismic vibrations to qu
 
 Let the \textit{cross-correlation} of two functions $s_1(t)$ and $s_2(t)$ be given by
 \begin{equation}
-s_1 \ star s_2 (\tau) \equiv \infint s_1(t) s_2 (t+\tau)dt \fs
+s_1 \star s_2 (\tau) \equiv \infint s_1(t) s_2 (t+\tau)dt \fs
 \end{equation}
 The cross-correlation is the integral over every possible time delay $\tau$ between the two functions $s_1$ and $s_2$. It is a measure of how similar two functions are at a given time off-set $\tau$. We call the cross-correlation of a function with itself the \textit{auto-correlation} of that function.
 
@@ -671,12 +674,14 @@ Let $s=s(t)$ be the  output of a GW detector. The \textit{power spectral density
 \end{equation}
 The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{amplitude spectral density} (ASD). The PSD and ASD are measures of the amount of time variation at a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 20th August 2017. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment and angular sensing and control systems (ASC), and the thermal noise of the mirror suspensions (thermal Susp) and coating (thermal coating). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. You can also see that at around 20-50 Hz, the sum of noises is much lower than the measured differential arm length (DARM). This indicated that the limiting factor of the detector sensitivity in this frequency range is unknown. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{GW150914-detector,noise_budget_martynov}.
 
+\begin{landscape}
 \begin{figure}[ht]
 \centering
 \includegraphics[width=16cm]{L1-ASD-20170820.png} 
-\caption{\textbf{ASD for LIGO Livingston Observatory.} Plotted in blue is the ASD of the background noise for the LIGO Livingston Observatory as it was on the 20th August 2017. In grey we see the Gravitational Wave Interferometer Noise Curve (GWINC), a theoretical model of all the noise in the detector, as well as the O2 projected noise curve in orange. }
+\caption{\textbf{ASD for LIGO Livingston Observatory.} Plotted in blue is the ASD of the background noise for the LIGO Livingston Observatory as it was on the 1st August 2019. This plot is taken from the LIGO summary pages, which are used to monitor the detectors. In grey we see the gravitational wave interferometer noise curve (GWINC), a theoretical model of all the noise in the detector, and in orange we see the ASD from 13th May as a reference. }
 \label{fig:asd}
 \end{figure}
+\end{landscape}
 
 \begin{landscape}
 \begin{figure}[ht]
@@ -689,6 +694,16 @@ The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD g
 
 Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. \cite{detchar} Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal, as we will see it later chapters. 
 
+\subsection{Beyond the Michelson Interferometer}
+We have learned the basics of Michelson interferometers as GW detectors. We have seen how they work, how their sensitivity varies with sky position, and how to measure the detector noise. But modern GW detectors are not simple Michelson interferometers, as these would not have the sensitivity to detect GWs from any realistic astrophysical source. For example, the largest interferometers in operation today have 4 km long arms. A GW with $h\approx 10^{-21}$, approximately the amplitude of the first detected GW, would induce a differential arm length of $\frac{1}{2} h L = 2\times 10^{-18}$m. A signal this small would easily be swamped by noise in a standard Michelson interferometer. Many methods are implemented to increases the sensitivity of GW detectors, we outline some of these here.
+
+The first thing to note is that the longer light is circulating in the interferometer arms, the more time there is for the phase to shift and the more sensitive the detector. There are practical limits on how long the detector arms can be built, so to increase the sensitivity of the detector, low transmissivity mirrors are used to create optical cavities, called \textit{Fabry-Perot cavities}. If these cavities keep the light in the arm for 100 round trips, then the differential arm length is increased by a factor of 100.\cite{lrr-2009-2}
+
+This increases the sensitivity of the detector to a point where it can theoretically detect GWs. However, there are many sources of noise that stop the detectors achieving this theoretical sensitivity and these need to be mitigated. One of the limiting factors in interferometer sensitivity is seismic noise. To reduce this, the mirrors are suspended from quadruple pendulums, as pendulums are effective at filtering out frequencies above their natural frequency. This reduces the seismic noise by seven orders of magnitude. \cite{GW150914-detector}
+
+Interferometers are limited at high frequencies by \textit{quantum shot noise}, statistical fluctuations in the photon arrival time at the interferometer output. This is suppressed by increasing the number of photons in each arm. To achieve this, a power recycling cavity is used at the symmetric port which reflects laser light back into the interferometer, increasing the power circulating in the arms. This means the laser only needs to replace the power lost due to mirror losses. \cite{lrr-2009-2}
+
+These are just a couple of the methods used to reduce noise in the interferometers. For a more detailed discussion see \cite{GW150914-detector,noise_budget_martynov}. Using these methods, modern GW detectors can achieve a strain sensitivity $3\times 10^{-24}/\sqrt{\text{Hz}}$ at 100 Hz. At this sensitivity, a GW detector can detect a binary neutron star merger at an average distance of 130 Mpc. 
 
 \subsection{The Global Network of Interferometers} \label{sec:gw network}
 In this section we will quickly summarise the current generation of detectors, including those that should be part of the global network in the near future.
@@ -704,7 +719,14 @@ A 600 m interferometer near Starstedt in Germany. Due to the short detector arms
 \paragraph{KAGRA}
 The Kamioka Gravitational Wave Detector (KAGRA) is a Japanese interferometer being built entirely underground, with 3 km long arms, and will have cryogenic mirrors. It is hoped that KAGRA will be operational in early 2020.
 
+\subsection{Previous LIGO and Virgo Observing Runs}
+We end this chapter with a quick summary of previous and future observing runs of advance LIGO and Virgo.
 
+\paragraph{O1} The first LIGO observing run started on September 12 2015 and continued until January 19 2016. \cite{o1grb} This observing run used only the LIGO Livingston and LIGO Hanford observatories. This observing run included the first GW detection, GW 150914, as well as two more GW detections from binary black hole mergers. \cite{catalog}
+
+\paragraph{O2} The second observing run started on November 30th 2016 and ended on August 25th, 2017. This observing run used the LIGO Livingston and LIGO Hanford detectors, with the Virgo detector joining from August 1st 2017. \cite{o2grb}. This observing run saw the first detection of a GW associated with a gamma-ray burst, as well as the detection of seven more binary black hole mergers. \cite{catalog}
+
+\paragraph{O3} The third observing run started in April 1st 2019 and is expected to last one year. It uses the LIGO Livingston, LIGO Hanford, and Virgo observatories, with KAGRA expected to join in early 2020. 
 
 
 
@@ -2400,9 +2422,33 @@ R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right)
 % ----------------------------
 % postamble 
 
-\chapter{PyGRB O2 Result Tables} \label{tab:grbs}
+\chapter{Results Tables} 
+In this appendix we provide the tables of results for the analyses described in this thesis. Table \ref{appendix:mva tables} lists the median 50\% injection scale upper limit values for different waveform sets for \xp and XTMVA. Tables \ref{tab:grbs} and \ref{tab:grbs2} list information about each GRB analysed with PyGRB during O2. Table \ref{tab:xtmva_sensitivity} shows the 50\% injection scale upper limit for each waveform and for each GRB analysed with XTMVA, and table \ref{tab:xp_sensitivity} shows the corresponding values obtained with \xpfs
+
+ 
+\begin{table}[h] 
+\centering
+\begin{tabular}{  c | c | c } 
+Waveform   & X-pipeline & MVA \\ \hline                                                       
+sgc70   & 1.18 & 1.13 \\
+sgc100 & 0.81 & 0.81 \\
+sgc150 & 0.95 & 0.72 \\
+sgc300 & 0.81 & 0.79 \\
+adi-a     & 0.31 & 0.24 \\
+adi-b     & 0.14 & 0.13 \\
+adi-c     & 0.18 & 0.17 \\
+adi-d     & 0.51 & 0.52 \\
+adi-e     & 0.17 & 0.18 \\
+BNS     & 0.25 & 0.24 \\
+NSBH   & 0.18 & 0.18 
+\end{tabular}
+\caption{\textbf{Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for \xp and XTMVA. }
+\label{appendix:mva tables}
+\end{table}
+
 \begin{landscape}
-\begin{tabular}{l c  c  c  c  c  c  c  c c |}
+\begin{table}
+\begin{tabular}{l c  c  c  c  c  c  c  c c |} 
 \hline
  GRB & UTC time & ra & dec & satellite & network & BNS & NSBH generic spin & NSBH aligned spin \\
 \hline
@@ -2428,9 +2474,13 @@ R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right)
 161210524 & 12:33:54  & $18^{\mathrm{h}}52^{\mathrm{m}}29^{\mathrm{s}}$ & $63^{\circ}03'$ &  Fermi   & H1L1   & 61  & 72  & 112 \\
 161212652 & 15:38:59  & $01^{\mathrm{h}}39^{\mathrm{m}}36^{\mathrm{s}}$ & $68^{\circ}12'$ &  Fermi   & H1     & 49  & 59  & 60 \\
 \end{tabular}
+\caption{\textbf{PyGRB O2 Results Table.} Here we list the trigger time and sky position of each GRB analysed. We list the GRB detector that provided the sky grid searched over with PyGRB, and the GW detectors that were used for that analysis. The final three columns are the BNS, generic spin NSBH, and aligned spin NSBH 90\% exclusion distances obtained using PyGRB. }
+ \label{tab:grbs}
+\end{table}
 \end{landscape}
 
 \begin{landscape}
+\begin{table} 
 \begin{tabular}{ccccccccc}
 \hline
  GRB & UTC time & ra & dec & satellite & network & BNS & NSBH generic spin & NSBH aligned spin \\
@@ -2457,31 +2507,12 @@ R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right)
 170818137 & 03:17:20  & $19^{\mathrm{h}}48^{\mathrm{m}}53^{\mathrm{s}}$ & $06^{\circ}21'$ &  Fermi   & H1L1   & 103 & 146 & 169 \\
 170816599 & 14:23:04  & $23^{\mathrm{h}}25^{\mathrm{m}}36^{\mathrm{s}}$ & $19^{\circ}06'$ &  Fermi   & H1V1   & 46  & 56  & 73 \\ 
 \end{tabular}
+\caption{\textbf{PyGRB O2 Results Table.} Continuation from previous page.}
+ \label{tab:grbs2}
+\end{table}
 \end{landscape}
 
 
-\newpage
-\FloatBarrier
-\chapter{MVA Results Tables} \label{appendix:mva tables}
-
-\begin{table}[h]
-\centering
-\begin{tabular}{  c | c | c }
-Waveform   & X-pipeline & MVA \\ \hline                                                       
-sgc70   & 1.18 & 1.13 \\
-sgc100 & 0.81 & 0.81 \\
-sgc150 & 0.95 & 0.72 \\
-sgc300 & 0.81 & 0.79 \\
-adi-a     & 0.31 & 0.24 \\
-adi-b     & 0.14 & 0.13 \\
-adi-c     & 0.18 & 0.17 \\
-adi-d     & 0.51 & 0.52 \\
-adi-e     & 0.17 & 0.18 \\
-BNS     & 0.25 & 0.24 \\
-NSBH   & 0.18 & 0.18 
-\end{tabular}
-\caption{\textbf{Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for \xp and the MVA. }
-\end{table}
 
 \begin{landscape}
 \begin{table}
@@ -2504,7 +2535,8 @@ E277236 & 1.33 & 1.09 & 0.87 & 0.98 & 0.28 & 0.18 & 0.22 & 0.63 & 0.23 & 0.29 & 
 E278027 & 1.13 & 0.81 & 0.71 & 0.79 & 0.24 & 0.13 & 0.17 & 0.52 & 0.18 & 0.24 & 0.18 \\
 E278188 & 0.72 & 0.54 & 0.49 & 0.54 & 0.17 & 0.09 & 0.12 & 0.33 & 0.12 & 0.17 & 0.12 \\
 \end{tabular}
-\caption{\textbf{MVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}
+\caption{\textbf{XTMVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed with XTMVA.}
+ \label{tab:xtmva_sensitivity}
 \end{table}
 \end{landscape}
 
@@ -2529,7 +2561,8 @@ E277236 & 1.81 & 1.41 & 1.82 & 1.34 & 0.45 & 0.21 & 0.26 & 0.80 & 0.26 & 0.38 & 
 E278027 & 1.18 & 0.80 & 0.95 & 0.79 & 0.30 & 0.14 & 0.18 & 0.51 & 0.17 & 0.24 & 0.18 \\
 E278188 & 0.73 & 0.55 & 0.64 & 0.54 & 0.21 & 0.09 & 0.12 & 0.33 & 0.12 & 0.17 & 0.12 \\
 \end{tabular}
-\caption{\textbf{X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed.}
+\caption{\textbf{X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed with \xpfs}
+\label{tab:xp_sensitivity}
 \end{table}
 \end{landscape}
 \backmatter

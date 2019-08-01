@@ -3,57 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: cuthesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
-I was expecting a `,' or a `}'---line 138 of file refs.bib
- :  
- :  title = {Characterization of transient noise in Advanced {LIGO} relevant to gravitational wave signal {GW}150914},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--empty journal in catalog
 Warning--empty journal in o2grb
-Warning--empty title in detchar
-Warning--empty journal in detchar
+Warning--empty booktitle in Gebhard:2019ldz
 Warning--empty journal in Howell
 Warning--empty journal in gstlal_Sachdev:2019
+Warning--empty journal in Shen:2019vep
 Warning--empty publisher in einstein_gr
-You've used 88 entries,
+You've used 97 entries,
             2118 wiz_defined-function locations,
-            995 strings with 19986 characters,
-and the built_in function-call counts, 30086 in all, are:
-= -- 2738
-> -- 1878
+            1040 strings with 21830 characters,
+and the built_in function-call counts, 32775 in all, are:
+= -- 2983
+> -- 2028
 < -- 0
-+ -- 758
-- -- 660
-* -- 2403
-:= -- 5335
-add.period$ -- 271
-call.type$ -- 88
-change.case$ -- 576
++ -- 817
+- -- 710
+* -- 2567
+:= -- 5803
+add.period$ -- 302
+call.type$ -- 97
+change.case$ -- 627
 chr.to.int$ -- 0
-cite$ -- 95
-duplicate$ -- 941
-empty$ -- 2076
-format.name$ -- 660
-if$ -- 5946
+cite$ -- 104
+duplicate$ -- 1039
+empty$ -- 2296
+format.name$ -- 710
+if$ -- 6502
 int.to.chr$ -- 0
-int.to.str$ -- 88
-missing$ -- 89
-newline$ -- 449
-num.names$ -- 176
-pop$ -- 536
+int.to.str$ -- 97
+missing$ -- 96
+newline$ -- 498
+num.names$ -- 194
+pop$ -- 602
 preamble$ -- 1
-purify$ -- 497
+purify$ -- 538
 quote$ -- 0
-skip$ -- 629
+skip$ -- 694
 stack$ -- 0
-substring$ -- 1478
-swap$ -- 84
+substring$ -- 1577
+swap$ -- 95
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 336
+type$ -- 372
 warning$ -- 7
-while$ -- 246
-width$ -- 90
-write$ -- 955
-(There was 1 error message)
+while$ -- 267
+width$ -- 99
+write$ -- 1053
+(There were 7 warnings)

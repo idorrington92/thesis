@@ -6,6 +6,12 @@ J.~Abadie et~al.
   during LIGO science run 6 and Virgo science runs 2 and 3}.
 \newblock {\em Astrophys. J.}, 760:12, 2012.
 
+\bibitem{GW150914_searches}
+B.~P. Abbott et~al.
+\newblock {GW150914: First results from the search for binary black hole
+  coalescence with Advanced LIGO}.
+\newblock {\em Phys. Rev.}, D93(12):122003, 2016.
+
 \bibitem{hubble_constant}
 B.~P. Abbott et~al.
 \newblock {A gravitational-wave standard siren measurement of the Hubble
@@ -99,6 +105,13 @@ C.~Bond, D.~Brown, A.~Freise, and K.~Strain.
 \newblock Interferometer techniques for gravitational-wave detection, 2009.
 \newblock https://arxiv.org/abs/0909.3661v3.
 
+\bibitem{Buonanno:2002fy}
+Alessandra Buonanno, Yan-bei Chen, and Michele Vallisneri.
+\newblock {Detecting gravitational waves from precessing binaries of spinning
+  compact objects: Adiabatic limit}.
+\newblock {\em Phys. Rev.}, D67:104025, 2003.
+\newblock [Erratum: Phys. Rev.D74,029904(2006)].
+
 \bibitem{o2grb}
 Francesco Carotenuto and Badri Krishnan.
 \newblock {Search for gravitational-wave signals associated with gamma-ray
@@ -163,6 +176,18 @@ Neil~J Cornish and Edward~K Porter.
 \newblock The search for massive black hole binaries with {LISA}.
 \newblock {\em Classical and Quantum Gravity}, 24(23):5729--5755, nov 2007.
 
+\bibitem{xpypeline}
+S.~Coughlin.
+\newblock X-pypeline.
+\newblock \url{https://x-pypeline.github.io/}.
+\newblock Accessed: 2019-08-01.
+
+\bibitem{Coughlin:2019ref}
+S.~B. Coughlin et~al.
+\newblock {Classifying the unknown: discovering novel gravitational-wave
+  detector glitches using similarity learning}.
+\newblock {\em Phys. Rev.}, D99(8):082002, 2019.
+
 \bibitem{pycbc_Canton:2014}
 Tito Dal~Canton et~al.
 \newblock {Implementing a search for aligned-spin neutron star-black hole
@@ -203,12 +228,27 @@ E.~Burns et~al (Fermi Gamma-Ray Burst~Monitor).
 
 \bibitem{detchar}
 B~P~Abbott et~al (LIGO~scienfitic collaboration).
-\newblock 33(13):134001, jun 2016.
+\newblock Characterization of transient noise in advanced {LIGO} relevant to
+  gravitational wave signal {GW}150914.
+\newblock {\em Classical and Quantum Gravity}, 33(13):134001, jun 2016.
 
 \bibitem{Faber2012}
 Joshua~A. Faber and Frederic~A. Rasio.
 \newblock Binary neutron star mergers.
 \newblock {\em Living Reviews in Relativity}, 15(1):8, Jul 2012.
+
+\bibitem{Gebhard:2019ldz}
+Timothy~D. Gebhard, Niki Kilbertus, Ian Harry, and Bernhard Schölkopf.
+\newblock {Convolutional neural networks: a magic bullet for gravitational-wave
+  detection?}
+\newblock 2019.
+
+\bibitem{George:2017vlv}
+Daniel George and E.~A. Huerta.
+\newblock {Deep Learning for Real-time Gravitational Wave Detection and
+  Parameter Estimation with LIGO Data}.
+\newblock In {\em {NiPS Summer School 2017 Gubbio, Perugia, Italy, June 30-July
+  3, 2017}}, 2017.
 
 \bibitem{long_jet_angle}
 Adam Goldstein, Valerie Connaughton, Michael~S. Briggs, and Eric Burns.
@@ -416,6 +456,13 @@ Anthony Piro and Eric Pfahl.
   waves.
 \newblock {\em The Astrophysical Journal}, 658, 10 2006.
 
+\bibitem{omicron}
+F.~Robinet.
+\newblock Omicron: an algorithm to detect and characterize transient events in
+  gravitational-wave detectors.
+\newblock \url{https://tds.virgo-gw.eu/?content=3&r=14693}.
+\newblock Accessed: 2019-08-01.
+
 \bibitem{gstlal_Sachdev:2019}
 Sachdev, Surabhi, et~al.
 \newblock {The GstLAL Search Analysis Methods for Compact Binary Mergers in
@@ -426,6 +473,12 @@ Sachdev, Surabhi, et~al.
 B.S. Sathyaprakash and B.F. Schutz.
 \newblock Physics, astrophysics and cosmology with gravitational waves.
 \newblock {\em Living Reviews in Relativity}, 12(2), 2009.
+
+\bibitem{Shen:2019vep}
+Hongyu Shen, E.~A. Huerta, and Zhizhen Zhao.
+\newblock {Deep Learning at Scale for Gravitational Wave Parameter Estimation
+  of Binary Black Hole Mergers}.
+\newblock 2019.
 
 \bibitem{einstein_gr}
 Dieter Simon and A~Einstein.
@@ -442,6 +495,15 @@ Stephen~J. Smartt.
 Nikolaos Stergioulas.
 \newblock Rotating stars in relativity.
 \newblock {\em Living Reviews in Relativity}, 6(1):3, Jun 2003.
+
+\bibitem{Sturani:2010ju}
+R.~Sturani, S.~Fischetti, L.~Cadonati, G.~M. Guidi, J.~Healy, D.~Shoemaker, and
+  A.~Vicere.
+\newblock {Phenomenological gravitational waveforms from spinning coalescing
+  binaries}.
+\newblock In {\em {Theory meets data analysis at comparable and extreme mass
+  ratios. Proceedings, Conference, NRDA/CAPRA 2010, Waterloo, Canada, June
+  20-26, 2010}}, 2010.
 
 \bibitem{xpipeline}
 P.~Sutton, G.~Jones, S.~Chatterji, P.~Kalmus, I.~Leonor, S.~Poprocki,

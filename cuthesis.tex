@@ -127,9 +127,9 @@ Around the same time that GW astronomy was just starting to get off the ground, 
 
 The fact that GRB and GW astronomy were both now targeting the same extreme events made collaboration natural. There are several strategies used to search for coincident GRB/GW signals. The first approach is to look for coincident detections between GW and GRB triggers. The second approach uses the fact that GW detectors are sensitive to most of the sky by making followup observations of GW triggers with electromagnetic (EM) telescopes. The final method is to use advanced data analysis techniques to followup GRB detections with a GW search, which is the focus of this thesis. 
 
-The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made, the signal being a binary inspiral \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, too large to be neutron stars. Several more binary black hole detections were made over the next couple of years. \cite{catalog} And then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal. \cite{GW170817_det} This was the first joint GW/GRB detection, and confirmed that at least some binary neutron star mergers produced short GRBs. This detection led to discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.}
+The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made, the signal being a binary inspiral \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, too large to be neutron stars. Several more binary black hole detections were made over the next couple of years. \cite{catalog} And then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal. \cite{GW170817_det} This was the first joint GW/GRB detection, and confirmed that at least some some short GRBs are produced by binary neutron star mergers. This detection led to discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.}
 
-It is in this context that this thesis looks at improved methods for following up GRB observations. We will see two search pipelines. The first is looks for a binary inspiral signal associated with short GRBs, while the second is an unmodelled search, meaning it is sensitive to any waveform morphology, and looks for GWs associated with both long and short GRBs. We will also look at the results of the most recent searches for GWs associated with GRBs. We begin with an introduction to GW astronomy, followed by a more detailed overview of GRB astronomy than was given above. 
+It is in this context that this thesis looks at improved methods GW followup of GRB observations. We will see two search pipelines. The first is looks for a binary inspiral signal associated with short GRBs, while the second is an unmodelled search, meaning it is sensitive to a wide range of waveform morphologies, and looks for GWs associated with both long and short GRBs. We will also look at the results of the most recent searches for GWs associated with GRBs. We begin with an introduction to GW astronomy, followed by a more detailed overview of GRB astronomy than was given above. 
 
 
 \chapter{Introduction to Gravitational Wave Astronomy} \label{chap: gw bg}
@@ -560,7 +560,7 @@ where $P_0=|E_0|^2$. Thus we see that the output power varies with a change in t
 %\end{figure}
 
 \subsection{Interferometer Antenna Pattern} \label{sec:antenna pattern}
-The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how interferometer sensitivity varies over the sky.\cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
+The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how interferometer response changes with the sky position and polarisation of the GW.\cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
 \begin{equation}
 \Delta L_x = L (1 + \frac{1}{2}h_{xx})) + \mathcal{O}(h^2)
 \end{equation} 
@@ -573,8 +573,7 @@ Dropping the higher order terms, the differential arm length is then given by
 \Delta L_x - \Delta L_y = \frac{1}{2} L(h_{xx} - h_{yy}) \fs
 \end{equation}
 
-So far we have been working in the detector frame. To understand how the interferometer responds to GWs coming from different positions in the sky, we need to understand how $h_{xx}$ and $h_{yy}$ change for GWs coming from different sky positions. To do this, we consider a GW approaching the detector from an arbitrary direction and introduce a new frame of reference $(x',y',z')$ such that the incoming GW is traveling along the $z'$ axis. We relate the detector frame $(x,y,z)$ to the GW frame using the polar angles $\theta$ and $\phi$. The GW polarisation matrix is defined in the GW frame to be
-
+So far we have been working in the detector frame. To understand how the interferometer responds to GWs coming from different positions in the sky, we need to understand how $h_{xx}$ and $h_{yy}$ change for GWs coming from different sky positions. To do this, we consider a GW approaching the detector from an arbitrary direction and introduce a new frame of reference $(x',y',z')$ such that the incoming GW is traveling along the $z'$ axis. We relate the detector frame $(x,y,z)$ to the GW frame using the polar angles $\theta$ and $\phi$ and the polarisation angle $\psi$. The GW polarisation matrix is defined in the GW frame to be
 \begin{equation}
 h_{ij}'
 =
@@ -584,22 +583,28 @@ h_\times & -h_+ & 0 \\
 0 & 0 & 0
 \end{pmatrix} \fs
 \end{equation}
-The rotation that brings the GW frame into the detector frame is rotation through $\theta$ around the y-axis and a rotation through $\phi$ around the z-axis. This gives us
+To bring the GW frame into the detector frame we rotate through an angle $2\psi$ about the $z'$-axis, then through $\theta$ around the $y'$-axis, then through $\phi$ around the $z'$-axis. This gives us
 \begin{equation}
 \mathcal{R}
 =
 \begin{pmatrix}
 \cos \phi & \sin \phi & 0 \\
 -\sin \phi & \cos \phi & 0 \\
-0 & 0 & 0
+0 & 0 & 1
 \end{pmatrix}
 \begin{pmatrix}
 \cos \theta & 0 & \sin \theta \\
 0 & 1 & 0 \\
 -\sin \theta & 0 & \cos \theta
-\end{pmatrix} \fs
+\end{pmatrix}
+\begin{pmatrix}
+\cos 2\psi & \sin 2\psi & 0 \\
+-\sin 2\psi & \cos 2\psi & 0 \\
+0 & 0 & 1
+\end{pmatrix}
+ \fs
 \end{equation}
-We can then calculate $h_{xx}$ and $h_{yy}$ using the formula
+We can simplify by setting $\psi=0$, which corresponds the $x'$ and $y'$ axes of the GW frame being aligned with the arms of the detector when the $z$ and $z'$ axes are aligned. We can then calculate $h_{xx}$ and $h_{yy}$ using the formula
 \begin{equation}
 h_{ij} = \mathcal{R}_{ik} \mathcal{R}_{jl} h_{kl}'
 \end{equation}
@@ -647,7 +652,7 @@ From these we see that the sensitivity of an interferometer varies depending on 
 \begin{center}
 \includegraphics[width=0.8\linewidth]{antenna_pattern.png}
 \end{center}
-\caption{\textbf{Interferometer Antenna Pattern.} Here we see the antenna response on an interferometer with arms aligned with the x and y axes. The detector is most sensitive to GWs coming from perpendicular to the detector plane, while GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector. \cite{lrr-2009-2} }
+\caption{\textbf{Interferometer Antenna Pattern.} Here we see the sensitivity on an interferometer, with arms aligned with the x and y axes, to an unpolarised GW. This is calculated as the root-sum-square of the plus and cross antenna patterns. We can see that the detector is sensitive to most of the sky, and most sensitive to GWs coming from perpendicular to the detector plane. However, GWs approaching from within the detector plane but at an angle off-set from the arms by $\pi/4$ radians will be in a null of the detector.}
 \label{fig:antenna pattern}
 \end{figure}
 
@@ -2351,11 +2356,11 @@ We end with a brief note on some of the other machine learning approaches for GW
 
 This thesis has covered many areas of joint GRB/GW astronomy. After summarising the current state of both GW and GRB astronomy, we discussed two current targeted GW searches for the followup of GRB observations. The first of these was the PyGRB targeted matched filter search for short GRB followup. We showed how PyGRB works and discussed the results of the most recent PyGRB search. We saw that PyGRB detected GWs associated with GRB 170817A, and used this with the non-detection from the 41 other GRBs analysed to make predictions on rates of joint detections in the future. 
 
-We discussed how PyGRB is being developed to make it faster, more sensitive, and more flexible for future development. The new code is able to analyse a GRB in half the CPU time of the old code, and can use new developments in the all-sky search to further improve speed and sensitivity. The shorter analysis time improves the scientific usefulness of a detection. It also allows poorly localised GRBs to be analysed, unlike the current search which cannot analyse poorly localised GRBs in a reasonable amount of time. Faster analysis also allows for more time slides, which allows for more accurate measurements of the false alarm rate. The new code can currently only analyse a single sky point, and cannot use time slides. Work is ongoing to add this functionality. Once this is done, the new pipeline will be ready to carry out a search. 
+We discussed how PyGRB is being developed to make it faster, more sensitive, and more flexible for future development. The new code is able to analyse a GRB in half the CPU time of the old code, and can use new developments in the all-sky search to further improve speed and sensitivity. The shorter analysis time improves the scientific usefulness of a detection by allowing earlier prompting of EM followup. It also allows poorly localised GRBs to be analysed, unlike the current search which cannot analyse poorly localised GRBs in a reasonable amount of time. Faster analysis also allows for more time slides, which allows for more accurate measurements of the false alarm rate. The new code can currently only analyse a single sky point, and cannot use time slides. Work is ongoing to add this functionality. Once this is done, the new pipeline will be ready to carry out a search. 
 
 We also saw the \xp burst search for GWs associated with both long and short GRBs. After summarising the key features of the pipeline and looking at its performance in O2, we looked at how XTMVA attempted to improve the sensitivity of \xp using machine learning. We saw that XTMVA had improved sensitivity and reduced the analysis time compared to X-pipeline. We discussed some of the problems that come with using machine learning, as well as how these problems have been, or can be, overcome. Despite significant progress, it does not seem like XTMVA will be in a position to replace \xp in the near future. This is partly for technical reasons, such as the need to rewrite and update the code to use modern software, and partly for reasons that are intrinsic to the approach we took to machine learning, such as the problem training a machine learning classifier on long waveforms without polluting the signal training set with noise. For these reasons, it is sensible to use \xp with the other improvements, such as generalised clustering, that have been developed alongside the in parallel to XTMVA. That said, there is currently a lot of ongoing work to try and using machine learning for a GW search, and many of the problems we faced will likely affect these searches too. Hopefully they will learn from our experience.
 
-With the detection of GWs associated with GRB 170817A, a new era of multi-messenger astronomy has begun. With the Kagra and LIGO India detectors coming online soon, the future of GW/GRB astronomy is promising. The same techniques can also be used to followup triggers from other messengers, such as neutrino signals, opening up yet more windows into the universe. Within hours of a trigger from anyone of these messengers, followup analysis will be carried out using the others. In the not-too-distant future, we will have a EM, GW, and neutrino observatories acting as different tools for the same searches. 
+With the detection of GWs associated with GRB 170817A, a new era of multi-messenger astronomy has begun. With the KAGRA and LIGO India detectors coming online soon, the future of GW/GRB astronomy is promising. The same techniques can also be used to followup triggers from other messengers, such as neutrino signals, opening up yet more windows into the universe. Within hours of a trigger from anyone of these messengers, followup analysis will be carried out using the others. In the not-too-distant future, we will have a EM, GW, and neutrino observatories acting as different tools for the same searches. 
 \begin{center}
 
 Equipped with these three senses, we explore the universe.

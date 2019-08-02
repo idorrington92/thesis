@@ -1722,9 +1722,9 @@ We also plotted the peak coherent and reweighted SNR in each 6-second off-source
 \label{fig:snrs trials 170112A}
 \end{figure}
 
-We also injected BNS waveforms with an opening angle of up to $30^\circ$ into the off-source data of GRB 170817A to see how well they were recovered. In figure \ref{fig:inj dist time} we have plotted the distance to the injection against time. From this we can see that the BNS waveforms are detectable up to about 200 Mpc. In figure \ref{fig:old inj dist time}, we show an analogous plot from the O2 PyGRB analysis of GRB 170817A. We can see that the old code could also detect these waveforms up to a distance of about 200 Mpc.\footnote{The new code cannot yet provide a FAP for an injection as the old code can.}
+We also injected BNS waveforms with an opening angle of up to $30^\circ$ into the off-source data of GRB 170817A in order to measure the search sensitivity. In figure \ref{fig:inj dist time} we have plotted the injection distance against time. From this we can see that the BNS waveforms are detectable up to about 200 Mpc. In figure \ref{fig:old inj dist time}, we show an analogous plot from the O2 PyGRB analysis of GRB 170817A. We can see that the old code could also detect these waveforms up to a distance of about 200 Mpc.\footnote{The post-processing codes that determines the false alarm probability of injections has not yet been written for the new code.}
 
-In figure \ref{fig:inj dist mchirp} we plot the chirp mass of the injection against the distance. Comparing to the analogous plot from O2 PyGRB search, shown in figure \ref{fig:old inj dist mchirp}, we see that the results are comparable, with an average range of about 200 Mpc, increasing slightly for higher chirp mass systems.
+%In figure \ref{fig:inj dist mchirp} we plot the chirp mass of the injection against the distance. Comparing to the analogous plot from O2 PyGRB search, shown in figure \ref{fig:old inj dist mchirp}, we see that the results are comparable, with an average range of about 200 Mpc, increasing slightly for higher chirp mass systems.
 
 
 
@@ -1746,21 +1746,21 @@ In figure \ref{fig:inj dist mchirp} we plot the chirp mass of the injection agai
 \label{fig:old inj dist time}
 \end{figure}
 
-\begin{figure} % Example of including images
-\begin{center}
-\includegraphics[width=0.8\linewidth]{mchirp_distance_inj.png}
-\end{center}
-\caption{\textbf{Injection Distance against Chirp Mass.} Here we plot the distance against chirp mass for the BNS injections of the GRB 170817A analysis. There appears to be a slight increase in the distance to which injections can be detected as the chirp mass of the injection increases, but more injections are needed to confirm.} 
-\label{fig:inj dist mchirp}
-\end{figure}
-
-\begin{figure} % Example of including images
-\begin{center}
-\includegraphics[width=0.8\linewidth]{found_missed_injections_dist_mchirp.png}
-\end{center}
-\caption{\textbf{Injection Distance against Chirp Mass.} This plot uses the same conventions and injection set as figure \ref{fig:old inj dist time}, but shows the distance (Mpc) against the chirp mass of the signal injections. We can see that, in general, the higher the chirp mass, the lower FAP of the injection, as we would expect.}  
-\label{fig:old inj dist mchirp}
-\end{figure}
+%\begin{figure} % Example of including images
+%\begin{center}
+%\includegraphics[width=0.8\linewidth]{mchirp_distance_inj.png}
+%\end{center}
+%\caption{\textbf{Injection Distance against Chirp Mass.} Here we plot the distance against chirp mass for the BNS injections of the GRB 170817A analysis. There appears to be a slight increase in the distance to which injections can be detected as the chirp mass of the injection increases, but more injections are needed to confirm.} 
+%\label{fig:inj dist mchirp}
+%\end{figure}
+%
+%\begin{figure} % Example of including images
+%\begin{center}
+%\includegraphics[width=0.8\linewidth]{found_missed_injections_dist_mchirp.png}
+%\end{center}
+%\caption{\textbf{Injection Distance against Chirp Mass.} This plot uses the same conventions and injection set as figure \ref{fig:old inj dist time}, but shows the distance (Mpc) against the chirp mass of the signal injections. We can see that, in general, the higher the chirp mass, the lower FAP of the injection, as we would expect.}  
+%\label{fig:old inj dist mchirp}
+%\end{figure}
 
 \subsection{Computational Cost} \label{sec:speed gains}
 As mentioned previously, one of the primary motivations for integrating PyGRB into PyCBC was to speed up the analysis. To see the effect of the changes described above, we compare the analysis time of the new executables with the corresponding executable from the old code. The new matched filtering executable does not yet have all the functionality the old code has, and so any comparison of analysis time should be considered preliminary. 
@@ -1791,11 +1791,11 @@ While the limiting factor on the analysis time is the matched filter jobs,\footn
 \section{Future Plans}
 We have shown that the work to integrate PyGRB into PyCBC has reached a significant milestone in being able to analyse a GRB and achieve a reasonable FAP of $\approx 1/1000$. We have also shown that it is significantly faster than the old code and described the new tools that are available for the PyGRB search. We end this chapter by looking at what there is left to be done to make the new pipeline as sensitive as the old one, and what can be done after this to make PyGRB even more sensitive. 
 
-In order for the new code to achieve the same confidence in a GRB trigger as the old code does, we must implement timeslides. Without timeslides, we can only achieve a FAP of about 1/1000. With timeslides implemented, a FAP of $10^{-5}$ will be achievable. It should be noted that the relative speed increase seen with the new code is likely to be lower when using timeslides. This is because short timeslides do not require the matched-filtering step to be repeated, as mentioned in section \ref{sec:event sig}, and this is the step where most of the speed increase was achieved. Long time slides do require the data to be matched filtered again, so some speed increase will be seen there.
+In order for the new code to achieve the same confidence in a GRB trigger as the old code does, we must implement timeslides. Without timeslides, we can only achieve a FAP of about 1/1000. With timeslides implemented, a FAP of $10^{-5}$ will be achievable. It should be noted that the relative speed increase seen with the new code is likely to be lower when using timeslides. This is because short timeslides do not require the matched-filtering step to be repeated, as mentioned in section \ref{sec:event sig}, and this is the part of the analysis that has seen the biggest reduction in computation time. Long time slides do require the data to be matched filtered again, so some speed increase will be seen there.
 
 The final thing required to make the rewrite as sensitive as the old code is to incorporate the fact that GRB GW signals are expected to be face on, as described in section \ref{sec:circ pol}. This led to a 3\% increase in the sensitivity of the old code, and we expect the same improvement with the new code. 
 
-These changes will make the rewrite as sensitive as the old code, but we also need to be able to search over a sky patch. Some Swift GRBs are localised well enough that PyGRB can search a single sky point, but the majority require multiple sky points to be analysed. This means that the new code currently cannot analyse the majority of short GRBs. Work is currently ongoing to add this functionality, and we expect it to be incorporated into the new code in the near future. 
+These changes will make the new code as sensitive as the old code, but we also need to be able to search over a sky patch. Some Swift GRBs are localised well enough that PyGRB can search a single sky point, but the majority require multiple sky points to be analysed. This means that the new code currently cannot analyse the majority of short GRBs. Work is currently ongoing to add this functionality, and we expect it to be incorporated into the new code in the near future. 
 
 Once the above functionality has been added to the new PyGRB pipeline, it will be faster and more sensitive than the old code. We can then turn our attention to new methods to improve the pipeline, and the new science that can be done. At this point, it will be possible to analyse a GRB on a timescale of hours, significantly increasing the amount of science that can be done with a positive detection. We could also use PyGRB to followup well localised triggers from the all-sky search.\footnote{As with a network of three or more detectors, the localisation can be better than the localisation of some GRBs.} This could be built into the all-sky pipeline, as a hierarchical search, where the all-sky is used to determine candidates and their sky location for coherent followup. With more detectors, such as KAGRA and LIGO India, the case for a hierarchical search strengthens. This is because more detectors improves localisation, which then makes running the coherent analysis computationally cheaper, but also improves the power of the coherent analysis when compared to the coincident search.
 

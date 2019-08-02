@@ -78,6 +78,16 @@ Bruce Allen, Warren~G. Anderson, Patrick~R. Brady, Duncan~A. Brown, and Jolien
   inspiraling compact binaries}.
 \newblock {\em Phys. Rev.}, D85:122006, 2012.
 
+\bibitem{Antoniadis1233232}
+John Antoniadis, Paulo C.~C. Freire, Norbert Wex, Thomas~M. Tauris, Ryan~S.
+  Lynch, Marten~H. van Kerkwijk, Michael Kramer, Cees Bassa, Vik~S. Dhillon,
+  Thomas Driebe, Jason W.~T. Hessels, Victoria~M. Kaspi, Vladislav~I.
+  Kondratiev, Norbert Langer, Thomas~R. Marsh, Maura~A. McLaughlin, Timothy~T.
+  Pennucci, Scott~M. Ransom, Ingrid~H. Stairs, Joeri van Leeuwen, Joris P.~W.
+  Verbiest, and David~G. Whelan.
+\newblock A massive pulsar in a compact relativistic binary.
+\newblock {\em Science}, 340(6131), 2013.
+
 \bibitem{Arcavi:2017xiz}
 Iair Arcavi et~al.
 \newblock {Optical emission from a kilonova following a
@@ -111,12 +121,24 @@ C.~Bond, D.~Brown, A.~Freise, and K.~Strain.
 \newblock Interferometer techniques for gravitational-wave detection, 2009.
 \newblock https://arxiv.org/abs/0909.3661v3.
 
+\bibitem{PhysRevD.86.084017}
+Duncan~A. Brown, Ian Harry, Andrew Lundgren, and Alexander~H. Nitz.
+\newblock Detecting binary neutron star systems with spin in advanced
+  gravitational-wave detectors.
+\newblock {\em Phys. Rev. D}, 86:084017, Oct 2012.
+
 \bibitem{Buonanno:2002fy}
 Alessandra Buonanno, Yan-bei Chen, and Michele Vallisneri.
 \newblock {Detecting gravitational waves from precessing binaries of spinning
   compact objects: Adiabatic limit}.
 \newblock {\em Phys. Rev.}, D67:104025, 2003.
 \newblock [Erratum: Phys. Rev.D74,029904(2006)].
+
+\bibitem{Burgay:2003jj}
+Marta Burgay et~al.
+\newblock {An Increased estimate of the merger rate of double neutron stars
+  from observations of a highly relativistic system}.
+\newblock {\em Nature}, 426:531--533, 2003.
 
 \bibitem{o2grb}
 Francesco Carotenuto and Badri Krishnan.
@@ -213,6 +235,13 @@ E~E.~Fenimore, Richard Epstein, Chienliang Ho, R~W.~Klebesadel, C~Lacey,
   Kouveliotou, and C~Meegan.
 \newblock The intrinsic luminosity of γ-ray bursts and their host galaxies.
 \newblock {\em Nature}, 366:40--42, 11 1993.
+
+\bibitem{Eichler:1989ve}
+David Eichler, Mario Livio, Tsvi Piran, and David~N. Schramm.
+\newblock {Nucleosynthesis, Neutrino Bursts and Gamma-Rays from Coalescing
+  Neutron Stars}.
+\newblock {\em Nature}, 340:126--128, 1989.
+\newblock [,682(1989)].
 
 \bibitem{ul_grbs}
 A.~J.~Levan et~al.
@@ -379,6 +408,11 @@ Truong Le and Vedant Mehta.
   Swift Era}.
 \newblock {\em Astrophys. J.}, 837(1):17, 2017.
 
+\bibitem{lee_2007}
+William~H Lee and Enrico Ramirez-Ruiz.
+\newblock The progenitors of short gamma-ray bursts.
+\newblock {\em New Journal of Physics}, 9(1):17--17, jan 2007.
+
 \bibitem{levan_grbs}
 Andrew Levan.
 \newblock Gamma-ray bursts.
@@ -413,6 +447,23 @@ Cody et~al. Messick.
 \newblock Analysis framework for the prompt discovery of compact binary mergers
   in gravitational-wave data.
 \newblock {\em Phys. Rev. D}, 95:042001, Feb 2017.
+
+\bibitem{MILLER20151}
+M.~Coleman Miller and Jon~M. Miller.
+\newblock The masses and spins of neutron stars and stellar-mass black holes.
+\newblock {\em Physics Reports}, 548:1 -- 34, 2015.
+\newblock The masses and spins of neutron stars and stellar-mass black holes.
+
+\bibitem{NAKAR2007166}
+Ehud Nakar.
+\newblock Short-hard gamma-ray bursts.
+\newblock {\em Physics Reports}, 442(1):166 -- 236, 2007.
+\newblock The Hans Bethe Centennial Volume 1906-2006.
+
+\bibitem{Narayan:1992iy}
+Ramesh Narayan, Bohdan Paczynski, and Tsvi Piran.
+\newblock {Gamma-ray bursts as the death throes of massive binary stars}.
+\newblock {\em Astrophys. J.}, 395:L83--L86, 1992.
 
 \bibitem{fermi}
 NASA.
@@ -463,12 +514,30 @@ Alexander~H. Nitz, Thomas Dent, Tito Dal~Canton, Stephen Fairhurst, and
   Understanding and Improving the sensitivity of the PyCBC search}.
 \newblock {\em Astrophys. J.}, 849(2):118, 2017.
 
+\bibitem{nitz_thesis}
+Alexander~Harvey Nitz.
+\newblock The effect of compact object spin on the search for gravitational
+  waves from binary neutron star and neutron star-black hole mergers.
+\newblock {\em Dissertations - ALL. 316.}, 2015.
+
 \bibitem{Nitz:2017lco}
 Alexander~Harvey Nitz.
 \newblock {Distinguishing short duration noise transients in LIGO data to
   improve the PyCBC search for gravitational waves from high mass binary black
   hole mergers}.
 \newblock {\em Class. Quant. Grav.}, 35(3):035016, 2018.
+
+\bibitem{Paczynski:1991aq}
+Bohdan Paczynski.
+\newblock {Cosmological gamma-ray bursts}.
+\newblock {\em Acta Astron.}, 41:257--267, 1991.
+
+\bibitem{Pannarale_2014}
+Francesco Pannarale and Frank Ohme.
+\newblock {PROSPECTS} {FOR} {JOINT} {GRAVITATIONAL}-{WAVE} {AND}
+  {ELECTROMAGNETIC} {OBSERVATIONS} {OF} {NEUTRON}-{STAR}-{BLACK}-{HOLE}
+  {COALESCING} {BINARIES}.
+\newblock {\em The Astrophysical Journal}, 791(1):L7, jul 2014.
 
 \bibitem{GRBprompt}
 Asaf Pe'er.

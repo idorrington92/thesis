@@ -43,7 +43,8 @@
 \newcommand{\xpc}{X-pipeline, }
 \newcommand{\xpfs}{X-pipeline. }
 
-
+\usepackage[bottom]{footmisc}
+\raggedbottom
 \usepackage{epigraph}
 
 % setup metadata
@@ -69,7 +70,7 @@
 
 In this thesis we will see two targeted searches for gravitational waves (GWs) associated with gamma-ray bursts (GRBs) and how to make them faster and more sensitive. The first of these is PyGRB, a matched filter search that follows up short GRB detections. The second is  \xpc a burst search for both long and short GRBs.                                  
 
-We will begin with a chapter on GW background, where we will show that GWs are a consequence of General Relativity, discuss  sources of GWs, and look into the basics of GW detectors.
+We will begin with a chapter on GW background, where we will show that GWs are a consequence of general relativity, discuss  sources of GWs, and look into the basics of GW detectors.
 
 In chpater \ref{chap:GRBs}, we summarise the current state of GRB science before looking at multi-messenger astronomy and what it can teach us about the universe.
 
@@ -77,7 +78,7 @@ Chapter \ref{chap: CBC} is on PyGRB. This chapter begins by looking at the theor
 
 We then look at PyGRB development work. The code used in O2 is now dated and needs to be rewritten to use modern software tools. We will look at the work that has already been done to update PyGRB and the speed improvements it brings, learn why it is scientifically important that the code runs quickly, and see some of the new tools that we have made available.
 
-We end by looking at \xpfs We will start with the theory behind how \xp works and looking at the results from the \xp analysis of GRBs in O2. Then we will look at how machine learning can be used to improve the sensitivity and speed of \xpfs We end this chapter with a discussion of how to improve the search andthe issues that arise from using machine learning. 
+We end by looking at \xpfs We will start with the theory behind how \xp works and looking at the results from the \xp analysis of GRBs in O2. Then we will look at how machine learning can be used to improve the sensitivity and speed of \xpfs We end this chapter with a discussion of how to improve the search and the issues that arise from using machine learning. 
 \end{abstract}
 
 % declaration - REQUIRED
@@ -96,20 +97,42 @@ We end by looking at \xpfs We will start with the theory behind how \xp works an
 \end{dedication}
 
 \begin{dedication}
-For my parents, not that you'll understand any of it.
+\begin{flushright}
+\textit{For my parents,\\who taught me all the important things}
+\end{flushright}
 \end{dedication}
 
 % ----------------------------
 % main work
 
+\chapter*{Acknowledgments}
+Everyone who knows me knows that I am not a sentimental person. As a general rule, I don't do small talk and I don't do emotional displays. But I am making an exception here,\footnote{To the emotional displays, not the small talk.} in order to give my heartfelt appreciation to just some of the people who helped make this thesis possible. 
 
+First of all, I would like to thank my supervisors, Patrick Sutton and Steve Fairhurst. Thank you for your patience, for never making me feel stupid,\footnote{Even though I frequently was.} and for being good scientists and good people. It was a privilege to have supervisors I honestly look up to. Your mentorship has made me a wiser, humbler, and more confident person.   
+
+Next I would like to thank all the people whose work I have built on. In particular, I would like to thank the giants of PyGRB upon whose shoulders I stand: Ian Harry, Duncan Macleod, Andrew Williamson, and Francesco Pannerale. Thank you for your work, and for helping me build upon what you accomplished. 
+
+I would also like to thank Cameron and Tessa, for agreeing/being told to finish my work for me. I hope my code is readable and not too buggy, and that you use it to detect many gravitational waves (and then share the credit with me!). 
+
+Thanks also go to Dave, Charlie, Rhys, Vasilis, Ed, Eleanor, Chinmay, Virginia,  Ali, the other Ali, Ronaldas, Aldo, Vaibhav, Hong, Paul, Alex, Lionel, Seb, Max, Laura, Soichiro, Jonathon, and all the other students and post docs who I have had the privilege to share an office with these last few years. Without you, I would probably have finished my PhD six months earlier, but it would not have been nearly as much fun. 
+
+I would also like to thank Davide Proment, for helping me move from mathematics into physics, and Johannes Siemons, for teaching me how to write how to write clearly and eloquently. If this thesis is even remotely comprehensible, it is thanks to you. 
+
+Thank you to Tarak, Anuja, and Nikita, for giving me a home when I needed to escape far away from my thesis. 
+
+Thank you to Anna, Laura, Neil, and Emily for putting up with me for 27 years. I am lucky to have such a kind and supportive family, who all share a childish sense of humour. 
+
+Obviously I must thank my Mum and Dad, to whom this thesis is dedicated. Thank you for giving me love and support and all the things that really matter.  
+
+And Preshita, the love of my life. Of all the people and all the places in the world, I am eternally grateful that I happen to sit next to you in Spanish class. Your determination is a constant source of inspiration. Your friendship has made me a stronger person. And your love has made these last few years the happiest of my life. Whatever the future has in store for us, and no matter how far apart we may be, I am always yours. 
+  
 \chapter*{Collaborative Work}
-The following sections of this thesis contain work that has been co-authored with others, or that builds upon software developed by others and previously published:
+The following sections of this thesis contain work that has been co-authored with others, or builds upon work started by others:
 \begin{itemize}
 \item Chapter \ref{chap: CBC} discusses the PyGRB search pipeline. Previous publications describing developments to this pipeline and search results can be found in \cite{pygrb_harry,pygrb_Williamson:2014,o1grb}.
 \item Chapter \ref{chap: CBC} ends with a discussion of the PyGRB search results from the most recent observing run. These results can be found in \cite{o2grb}. I contributed to this paper compiling the required information on the Gamma-ray bursts (GRBs), analysing eight of the 42 GRBs in the PyGRB analysis sample, and co-authoring the paper.
 \item Chapter \ref{chap:pygrb future} discusses development work on PyGRB. I led this work, but with the input of many collaborators, especially from members of the Cardiff University Gravitational Wave group and the GRB working group of the LIGO-Virgo collaboration.
-\item Chapter \ref{chap: mva} discusses development work on {\xp}. \xp has been previously written about in \cite{xpipeline,was_xpipeline}. 
+\item Chapter \ref{chap: mva} discusses development work on \xpfs \xp has been previously written about in \cite{xpipeline,was_xpipeline}. 
 \item The \xp search results from the most recent observing run, used in chapter \ref{chap: mva}, were previously published in \cite{o2grb}, which I co-authored. 
 \item The MVA search for GWs described in chapter \ref{chap: mva} has been previously described in \cite{adams_mva} and the software used is described in \cite{tmva_guide}.  
 \end{itemize}
@@ -117,63 +140,61 @@ The following sections of this thesis contain work that has been co-authored wit
 \mainmatter
 
 \chapter{Introduction}
-In 1915, Albert Einstein published a new theory of gravity: the general theory of relativity \cite{einstein_gr}. This new theory was indistinguishable from Newtonian gravity in most situations, but in the presence of strong gravitational fields the two theories made different predictions. For example, Einstein predicted that the sun would gravitationally lens light by twice the amount predicted using Newtonian arguments. An experiment was soon performed by Arthur Eddington and collaborators to measure the amount of gravitational lensing by the sun. This experiment looked for slight changes in the positions of stars whose light passed near the sun during the 1919 solar eclipse when compared to their positions six months previously \cite{eclipse1919}. They measured the amount of lensing was found it matched the prediction of general relativity. The results of this experiment and others meant general relativity was quickly accepted by the scientific community. However, there was one prediction of general relativity would remain elusive for decades to come: \textit{gravitational waves} (GWs). 
+In 1915, Albert Einstein published a new theory of gravity: the general theory of relativity \cite{einstein_gr}. This new theory was indistinguishable from Newtonian gravity in most situations, but in the presence of strong gravitational fields the two theories made different predictions. For example, Einstein predicted that the sun would gravitationally lens light by twice the amount predicted using Newtonian arguments. An experiment was soon performed by Arthur Eddington and collaborators to measure the amount of gravitational lensing by the sun. To do this, they measured the positions of stars whose light passed near the sun during the 1919 solar eclipse \cite{eclipse1919}. The amount of lensing they measured matched the prediction of general relativity. The results of this experiment and others meant general relativity was quickly accepted by the scientific community. However, there was one prediction of general relativity would remain elusive for decades to come: \textit{gravitational waves} (GWs). 
 
 General relativity was a field theory of gravity, and bore a strong resemblance to Maxwell's theory of electromagnetism. \cite{maxwell} It was reasoned by some that this meant there must be GWs produced by accelerating mass just as there are electromagnetic waves produced by accelerating charge. Others thought this was stretching the analogy to electromagnetism too far, and pointed to key differences between gravitation and electromagnetism \cite{thoughtspeed}. For example, there is no negative mass to act as an analog to the negative charge of electromagnetism.\footnote{It can be shown that this is one of the reasons why GWs are much more difficult to detect than electromagnetic waves.} After much controversy, the consensus built that GWs do exist and experiments were conceived that had the potential to detect GWs. After yet more controversy, with the false claim of a detection by Joseph Weber \cite{weber}, the first experimental evidence for the existence of GWs came in 1975 from observations of a binary star system. According to general relativity, a binary star system should slowly inspiral due to energy lost through GW emission. Hulse and Taylor observed a neutron star binary with precisely the orbital decay predicted by general relativity. \cite{Hulse} 
 
-A few years prior to this, Rainer Weiss set out a new vision for GW astronomy. Weiss proposed building a Michelson interferometer to detect GWs directly. \cite{weiss72} This led to founding of the Laser Interferometer Gravitational-wave Observatory (LIGO) in the early 1980s, which set out to build a pair of 4 km laser interferometers. The new detector network would be able to detect GWs emitted by compact binary systems, such as black hole and neutron star inspirals, and potentially also from nearby supernovas. 
+A few years prior to this, Rainer Weiss set out a new vision for GW astronomy. Weiss proposed building a Michelson interferometer to detect GWs directly. \cite{weiss72} This led to the founding of the Laser Interferometer Gravitational-wave Observatory (LIGO) in the early 1980s, which set out to build a pair of 4 km laser interferometers. The new detector network would be able to detect GWs emitted by compact binary systems, such as black hole and neutron star inspirals, and potentially also from nearby supernovas. 
 
-Around the same time that GW astronomy was just starting to get off the ground, another kind of transient astronomy was hitting its stride. Gamma-ray Bursts (GRBs) are bright short flashes of gamma rays that originate at extra-galactic distances. First detected in the 1960s, the cause of GRBs remained a mystery for decades. With the 1991 launch of the Burst and Transient Source Experiment (BATSE), a space based GRB detector, there was finally a large sample of GRB light curves. This confirmed that there were two populations of GRBs depending on the duration of the burst, called long and short GRBs. Theoretical work done in the early 1990s predicted that GRBs could be produced by compact objects such as neutron stars and black holes, possibly via supernova that creates the compact object. By the end of the decade, astronomical observations confirmed that long GRBs were linked to supernova explosions. Then, in the early 2000s, observations strongly suggested that short GRBs were produced by binary neutron star mergers. 
+Around the same time that GW astronomy was just starting to get off the ground, another kind of transient astronomy was hitting its stride. Gamma-ray bursts (GRBs) are bright flashes of gamma rays that originate at extra-galactic distances. First detected in the 1960s, the cause of GRBs remained a mystery for decades. With the 1991 launch of the Burst and Transient Source Experiment (BATSE), a space based GRB detector, there was for the first time a large sample of GRB light curves. Looking at the durations of these GRBs  confirmed that there were two populations, called long and short GRBs. Theoretical work done in the early 1990s showed that GRBs could be produced by compact objects such as neutron stars and black holes, possibly via the supernova that created them. By the end of the decade, astronomical observations confirmed that long GRBs were linked to supernova explosions. Then, in the early 2000s, observations strongly suggested that short GRBs were produced by binary neutron star mergers. 
 
 The fact that GRB and GW astronomy were both now targeting the same extreme events made collaboration natural. There are several strategies used to search for coincident GRB/GW signals. The first approach is to look for coincident detections between GW and GRB triggers. The second approach uses the fact that GW detectors are sensitive to most of the sky by making followup observations of GW triggers with electromagnetic (EM) telescopes. The final method is to use advanced data analysis techniques to followup GRB detections with a GW search, which is the focus of this thesis. 
 
-The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. In 2010 the LIGO detectos were shut down for upgrades. In September 2015 the detectors came back online, and on the 14th of September 2015, the first GW detection was made, the signal being a binary inspiral \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, making this a binary black hole merger. Several more binary black hole detections were made over the next couple of years \cite{catalog} Then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal. \cite{GW170817_det} This was the first joint GW/GRB detection, and confirmed that at least some some short GRBs are produced by binary neutron star mergers. This detection led to many discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.} 
+The LIGO detectors first came online in 2002 until 2010, but did not detect any GWs. From 2010 until 2015 the detectors were shut down for upgrades. Then, on the 14th of September 2015, the first GW detection was made and the signal was a binary inspiral \cite{150914-det-paper}. The component masses of this binary were $\sim 30M_\odot$, making this a binary black hole merger. Several more binary black hole detections were made over the next couple of years, \cite{catalog} but nothing that could produce a GRB. Then, on the 17th of August 2017, a short GRB was detected in coincidence with a low mass binary GW signal. \cite{GW170817_det} This was the first joint GW/GRB detection, and confirmed that at least some some short GRBs are produced by binary neutron star mergers. This detection led to many discoveries about GRB astrophysics, constrained the rates of binary neutron star mergers, gave a new method to measure the Hubble constant, and many other discoveries.\footnote{See section \ref{sec:gw170817} for more details.} 
 
 It is important to emphasise that these discoveries could not have happened without GW astronomy. The GRB detection was unremarkable, and would not have warranted followup observations had it not been coincident with a GW detection. The GW information was then used to constrain the sky position and distance of the GRB, which made it possible to find the afterglow. It is also worth noting that this GRB was unusually close, which made the GW detectable with low latency all-sky searches. In general, it is expected that GW detections associated with GRBs will be much quieter, requiring more sensitive searches that are specifically designed to find GWs associated with GRBs, in order to make a confident detection.
 
-It is in this context that this thesis looks at improved methods GW followup of GRB observations. We will see two search pipelines. The first is looks for a binary inspiral signal associated with short GRBs, while the second is an unmodelled search, meaning it is sensitive to a wide range of waveform morphologies, and looks for GWs associated with both long and short GRBs. We will also look at the results of the most recent searches for GWs associated with GRBs. We begin with an introduction to GW astronomy, followed by a more detailed overview of GRB astronomy than was given above. 
+It is in this context that this thesis looks at improved methods for GW followup of GRB observations. We will see two search pipelines. The first is looks for a binary inspiral signal associated with short GRBs, while the second is an unmodelled search, meaning it is sensitive to a wide range of waveform morphologies, and looks for GWs associated with both long and short GRBs. We will also look at the results of the most recent searches for GWs associated with GRBs. We begin with an introduction to GW astronomy, followed by a more detailed overview of GRB astronomy than was given above. 
 
 
 \chapter{Introduction to Gravitational Wave Astronomy} \label{chap: gw bg}
-In this chapter we will run through the basics of gravitational wave (GW) astronomy. We will start by showing that GWs are a natural consequence of general relativity and show that binary star systems emit GWs. We will then look at GW detectors, focusing on the noise in the detector and how the sensitivity changes over the sky, as these factors are important for signal detection.
+In this chapter we will run through the basics of gravitational wave (GW) astronomy. We will start by showing that GWs are a natural consequence of general relativity and show that binary star systems emit GWs. We will then look at GW detectors, focusing on the noise in the detector and how the sensitivity changes over the sky, as these factors are important for the searches described in chapters \ref{chap: CBC}, \ref{chap:pygrb future}, and \ref{chap: mva}.
 
 
 \section{Gravitational Waves}
 General relativity shows that spacetime can curve and move. From this, it may seem obvious that waves can travel though spacetime, but this is not a trivial fact. In this section, we will show that gravitational waves do exist. We will do this by considering a perturbation of the flat Minkowski metric. We will then calculate the Ricci tensor and Ricci scalar for the perturbed metric and, with a clever choice of gauge transformation, see that these yield a wave solution to Einstein's equations. This section is based mostly on the derivations in \cite{zee-einstein} and \cite{carroll-spacetime}. In what follows, we will use standard results from general relativity, summarised in appendix \ref{appendix:gr}.
 
 \subsection{Linearised Gravity}
-The infinitesimal spacetime distance $ds$ between two points is given by
+The infinitesimal spacetime interval $ds$ between two points is given by
 \begin{equation}
 ds^2 = g\mn dx^\mu dx^\nu
 \end{equation}  
-where $g\mn$ is the metric tensor. Let the metric the sum of a small perturbation $h_{\mu\nu}$ to the Minkowski metric $\eta\mn=\text{diag}(-1,1,1,1)$. We write this metric as 
+where $g\mn$ is the metric tensor. Let the metric be the sum of a small perturbation $h_{\mu\nu}$ to the Minkowski metric $\eta\mn=\text{diag}(-1,1,1,1)$. We write this metric as 
 \begin{equation} \label{pert metric}
 g\mn=\eta_{\mu\nu}+h_{\mu\nu} \text{, } \hspace{20pt} |h_{\mu\nu}| \ll 1 \text{ .}
 \end{equation}
-
-Using equation (\ref{rt}), we can show the Ricci tensor, to first order in $h$, is given by
+The Ricci tensor (given by equation (\ref{rt})) to first order in $h$ is given by
 \begin{equation} \label{lin rt}
-R\mn =\eta^{\alpha \beta}R_{\alpha \mu \beta \nu} = \frac{1}{2}\left( \pd_\mu \pd ^\alpha h_{\alpha \nu} + \pd_\nu \pd_\alpha h^\alpha_\mu -\Box h\mn -\pd_\mu \pd_\nu h \right) \fs
+R\mn =\eta^{\alpha \beta}R_{\alpha \mu \beta \nu} = \frac{1}{2}\left( \pd_\mu \pd ^\alpha h_{\alpha \nu} + \pd_\nu \pd_\alpha h^\alpha_\mu -\Box h\mn -\pd_\mu \pd_\nu h \right) 
 \end{equation}
-From this, we can show the Ricci scalar (see equation (\ref{rs})) is given by
+where $\Box=\pd_\mu \pd^\mu $ is the d'Alembertian operator and $h=h^\mu_\mu$ is the trace of $h$. From this, we can show the Ricci scalar (see equation (\ref{rs})) is given by
 \begin{equation} \label{lin rs}
-R=\eta^{\mu \nu}R\mn=\pd _\mu \pd_ \alpha h^{\mu \alpha} - \Box h \textbf{,}
+R=\eta^{\mu \nu}R\mn=\pd _\mu \pd_ \alpha h^{\mu \alpha} - \Box h \fs
 \end{equation}
-where $\Box=\pd_\mu \pd^\mu $ is the d'Alembertian operator and $h=h^\mu_\mu$ is the trace of $h$. From these, we find the resulting Einstein tensor (equation \ref{eineq}) is also linear in $h$ 
+From these, we find the resulting Einstein tensor (equation \ref{eineq}) is also linear in $h$ 
 \begin{equation} \label{lin Einstein}
 \begin{split}
 G\mn & \equiv R\mn -\frac{1}{2} R \eta\mn \\
  & = \frac{1}{2} ( \partial_\sigma \partial_\nu h^\sigma_\mu + \partial_\sigma \partial_\mu h^\sigma_\nu - \partial_\mu \partial_\nu h - \square h\mu -\eta\mn \partial_\rho \partial_\lambda h^{\rho \lambda} + \eta\mn \square h ) \fs
 \end{split}
 \end{equation}
-Using this Einstein tensor in the Einstein equations 
+Using this in the Einstein equations gives us the \textit{linearised Einstein equations}
 \begin{equation}
-G\mn =R\mn -\frac{1}{2} R g\mn=\frac{8 \pi G}{c^4}T\mn
+G\mn =R\mn -\frac{1}{2} R g\mn=\frac{8 \pi G}{c^4}T\mn \fs
 \end{equation}
-we have the \textit{linearised Einstein equations}.
 
 \subsection{Gauge Transformation}
-The metric given in \ref{pert metric} does not uniquely define a coordinate system, as there are many other coordinates where the metric is given by the Minkowski metric plus some other perturbation. This gives us the freedom to choose some coordinates that make the linear Einstein equations simpler. To find these coordinates, we start with the following gauge transformation
+The metric given in equation (\ref{pert metric}) does not uniquely define a coordinate system, as there are many coordinates where the metric is given by the Minkowski metric plus some small perturbation. This gives us the freedom to choose coordinates that make the linear Einstein equations simpler. To find these coordinates, we start with the following gauge transformation
 \begin{equation} \label{gauge_transform1}
 x^{\mu'}=x^\mu +\chi ^\mu (x)\text{,} \hspace{20pt}\partial_\mu \chi^\nu \ll 1\fs
 \end{equation} 
@@ -181,7 +202,7 @@ This gives us
 \begin{equation}
 \frac{\pd x^\mu}{\pd x^{\alpha'}}=\delta^\mu_\alpha-\pd_\alpha\chi^\mu +\mathcal{O}(|\pd \chi|^2) \fs
 \end{equation}  
-Applying these results to our metric (\ref{pert metric}) we find
+Applying these results to the metric (\ref{pert metric}) we find
 \begin{equation} 
 g_{\alpha' \beta'}=\frac{\pd x^\mu}{\pd x^{\alpha'}}\frac{\pd x^\nu}{\pd x^{\beta'}}g\mn=g_{\alpha \beta}-\pd_\alpha \chi_\beta -\pd_\beta \chi_\alpha \fs
 \end{equation}
@@ -189,7 +210,6 @@ Subtracting the Minkowski metric from each side, we find \footnote{Note that the
 \begin{equation} \label{pert transf}
 h_{\alpha' \beta'}=h_{\alpha \beta}-\pd_\alpha\chi_\beta-\pd_\beta\chi_\alpha \fs
 \end{equation}
-
 We have some freedom in choosing our $\chi$, so we impose the \textit{harmonic gauge condition}
 \begin{equation} \label{harmonic gauge}
 \partial_\mu h^\mu_\nu = \frac{1}{2} \partial_\nu h \text{,}
@@ -198,12 +218,11 @@ where $h=h^\lambda_\lambda$. We can always choose a $\chi$ such that this is tru
 \begin{equation}
 (\partial_\mu' {h'}_\nu^\mu - \frac{1}{2}\partial_\nu' h') \approx (\partial_\mu h^\mu_\nu - \frac{1}{2} \partial_\nu h ) -\square \chi_\nu \fs
 \end{equation}
-Thus, if we are given an $h$ such that \ref{harmonic gauge} is not true, we can choose a $\chi$ such that 
+Thus, if we are given an $h$ such that equation (\ref{harmonic gauge}) is not true, we can choose a $\chi$ such that 
 \begin{equation} \label{harmonic chi}
 \square \chi_\nu = (\partial_\mu h^\mu_\nu - \frac{1}{2}\partial_\nu h) \fs
 \end{equation}
-
-Using \ref{harmonic gauge}, we can simplify the Ricci tensor and scalar
+Using (\ref{harmonic gauge}), we can simplify the Ricci tensor and scalar
 \begin{equation}
 R\mn = -\frac{1}{2}\Box h\mn
 \end{equation}
@@ -214,7 +233,7 @@ Using these in the linearised Einstein equations (\ref{lin Einstein}) gives us
 \begin{equation} \label{lin einstein eqn}
 \Box h\mn - \frac{1}{2}\eta\mn\partial^2 h =-\frac{16\pi G}{c^4}T\mn \fs
 \end{equation}
-Alternatively, we can use (\ref{alt einstein}) to write this as
+Alternatively, we can use equation (\ref{alt einstein}) to write this as
 \begin{equation}
 \Box h\mn = -16\pi G \left( T\mn -\frac{1}{2} \eta\mn T \right). 
 \end{equation}
@@ -228,20 +247,17 @@ The plane wave solution for the vacuum wave equation is
 \begin{equation} \label{plane wave}
 h\mn (x) = \epsilon\mn e^{ik_\alpha x^\alpha} 
 \end{equation}
-where $\epsilon\mn$, the polarisation tensor for the gravitational wave, is symmetric and constant, and $k^\alpha$ is the wave 4-vector given by $k^\alpha = (\omega,\vec{k})$. Substituting this into the vacuum wave equation, we find 
+where the polarisation tensor for the gravitational wave $\epsilon\mn$ is symmetric and constant, and $k^\alpha$ is the wave 4-vector given by $k^\alpha = (\omega,\vec{k})$. Substituting this into the vacuum wave equation, we find 
 \begin{equation}
 k_\alpha k^\alpha = -\omega^2 + |\vec{k}|^2 =0 \fs
 \end{equation}
 Hence, gravitational waves travel at the speed of light. 
 
-Putting the wave solution (\ref{plane wave}) into the harmonic gauge condition (\ref{harmonic gauge}), we find
-
+Putting the wave solution (\ref{plane wave}) into the harmonic gauge condition (\ref{harmonic gauge}), we have the condition
 \begin{equation}  \label{harmonic gauge2}
 k_\mu \epsilon^\mu_\nu = \frac{1}{2}\partial_\nu \epsilon
 \end{equation}
-where $\epsilon=\epsilon^\lambda_\lambda$.
-
-We can impose further gauge conditions as long as the harmonic gauge (and hence (\ref{harmonic gauge2})) is not violated. As any transformation with $\square \chi = 0$ will satisfy (\ref{harmonic chi}), and hence harmonic gauge condition, we express $\chi$ as 
+where $\epsilon=\epsilon^\lambda_\lambda$. We can impose further gauge conditions as long as the harmonic gauge (and hence (\ref{harmonic gauge2})) is not violated. As any transformation with $\square \chi = 0$ will satisfy (\ref{harmonic chi}), and hence harmonic gauge condition, we express $\chi$ as 
 \begin{equation} \label{chi form}
 \chi_\nu = X_\nu e^{ikx} \fs
 \end{equation}
@@ -261,7 +277,11 @@ We can fix the other elements of $X_\mu$ by setting $\epsilon_{i 0} = 0$ for $i=
 \begin{equation} \label{epsilon 0}
 \epsilon'_{i 0} = \epsilon_{i 0} -ik_i X_0 - ik_0 X_i \fs
 \end{equation}
-Now we see that by choosing the $X_i$ such that $ ik_0 X_i = ik_i X_0 - \epsilon_{i 0}$, we have $\epsilon'_{i 0} = 0$. The gauge defined by the above conditions is called the \textit{transverse-traceless} (TT) gauge.
+Now we see that by choosing the $X_i$ such that $ ik_0 X_i = ik_i X_0 - \epsilon_{i 0}$, we have
+\begin{equation}  \label{harmonic gauge 4}
+\epsilon'_{i 0} = 0 \fs
+\end{equation}
+The gauge defined by equations (\ref{harmonic gauge 3}) and (\ref{harmonic gauge 4}) is called the \textit{transverse-traceless} (TT) gauge.
 
 %These conditions give us that $\epsilon_{0 0} = 0$ as well. Using the fact that the polarisation matrix can be assumed traceless $\epsilon^\mu_\mu$, the wave solution \ref{plane wave} reduces the harmonic gauge condition \ref{harmonic gauge} to 
 %\begin{equation}
@@ -283,7 +303,7 @@ h\mn (x)
 0 & \epsilon_\times & -\epsilon_+ & 0 \\
 0 & 0 & 0 & 0 
 \end{pmatrix}
-e^{(i\omega (z-t))} \fs
+e^{i\omega (z-t)} \fs
 \end{equation}
 We can see that the polarisation matrix is fully described by two real numbers $\epsilon_+$ and $\epsilon_\times$. We call these the plus and cross polarisation of the gravitational wave.
 
@@ -293,7 +313,7 @@ To understand what these two polarisations mean physically, consider two particl
 \end{equation} 
 From this we see that the fractional change in distance between the two particles is
 \begin{equation}
-\frac{1}{2}h_{ij}\hat{\varphi}^i \hat{\varphi}^j = \frac{1}{2}\left( \epsilon_+ \left[ (\hat{\varphi}^1)^2 + (\hat{\varphi}^2)^2 \right] +2\epsilon_\times \hat{\varphi}^1\hat{\varphi}^2 \right) e^{(i\omega (z-t))}
+\frac{1}{2}h_{ij}\hat{\varphi}^i \hat{\varphi}^j = \frac{1}{2}\left( \epsilon_+ \left[ (\hat{\varphi}^1)^2 - (\hat{\varphi}^2)^2 \right] +2\epsilon_\times \hat{\varphi}^1\hat{\varphi}^2 \right) e^{i\omega (z-t)}
 \end{equation}
 where $\hat{\varphi}^i = \varphi^i/|\vec{\varphi}|$. From this formula, it becomes clear (with some thought) that the plus polarisation causes the x-axis and y-axis separation of particles to increase and then decrease $180^\circ$ out of phase with each other. The cross polarisation has the same effect, but offset by $45^\circ$. This is shown more clearly in figure \ref{fig:polarisations}. 
 
@@ -430,7 +450,7 @@ From these, the metric perturbation for an observer on the $x^3$-axis is easily 
 \end{pmatrix}
 \fs
 \end{equation}
-From this we can see that GWs from a binary star system would produce a GW with an oscillating plus and cross polarisation of equal amplitude and $90^\circ$ out of phase. Note that this derivation assumes no energy loss from the GWs. 
+We can see that GWs from a binary star system would produce a GW with an oscillating plus and cross polarisation of equal amplitude and $90^\circ$ out of phase. Note that this derivation assumes no energy loss due to GWs. 
 
 Accounting for the fact that GWs do radiate energy shows that the stars inspiral, a feature not captured by the Newtonian approximation above. As the stars inspiral, the angular frequency of the system increases. This causes the frequency of the GW to increase as well as the amplitude\footnote{Though the inspiral also causes the separation between the black holes to shrink, which acts to lower the amplitude. In reality, the increase in orbital frequency wins out and the amplitude increases near the end of the inspiral, as can be shown using Kepler's laws.}. This is what creates the characteristic \textit{chirp} of the GW from a binary inspiral and merger. Even without taking into account the inspiral, this simple model illustrates many properties that are useful for GW astronomy. First is the $1/r$ dependence on the size of the metric perturbation, which can be used to estimate the distance to the source. Another is the fact that the GW frequency is twice the orbital frequency of the system, so the measured GW frequency gives us the orbital frequency of the system. Also, the metric perturbation is larger for systems with high mass and high orbital frequency. High mass stars are therefore good candidates, but they also have a large radius, meaning that the stars in the binary will begin to merge while the binary still has a low angular frequency. Thus the best GW emitters  are compact object binaries, such as neutron stars and black holes, as they are high mass but also have a small radius. We call these systems \textit{compact binary coalescence} (CBC) systems. 
 
@@ -449,12 +469,12 @@ We end this section by noting that any system with an accelerated quadrupole mom
 As shown in section \ref{sec:GW effects}, a passing GW will change the distance between two points, and this change in length is proportional to the distance between the two points and the amplitude of the GW. As astrophysical sources are expected to produce GWs with amplitudes of $\sim 10^{-21}$ at the Earth, we must choose two points that are as far apart as practical, at least on the order of kilometers, if the effect is to be measurable. Even then, the change in distance between the two points will still be only a fraction of the wavelength of light. To measure this change, we use a \textit{Michelson interferometer} \cite{weiss72}. In this section, we will begin with a basic mathematical description of how a Michelson interferometer works. We will then move on to discuss the aspects of the GW detectors that are important for data analysis, namely the detector noise and directional sensitivity.
 
 \subsection{The Michelson Interferometer} \label{sec:mich}
-We will start with an overview of how the interferometers work before going into the mathematical details. Figure \ref{fig:ifo} is a schematic of a Michelson interferometer. There is a laser on the left which is aimed at at the beam splitter in the middle. The beam splitter is a partially reflective mirror which reflects half the photons into the Y arm and transmits half into the X arm. Both interferometer arms are the same length\footnote{Actually the important thing is that the two light rays have opposite phase in each arm when they return to the beam splitter.}. The light that is reflected into the Y arm picks up a phase shift such that it is completely out of phase with the light transmitted into the X arm. At the end of the X and Y arms are mirrors that reflect the light back to the beam splitter. These mirrors are also known as the end test masses of the X and Y arms (ETMX and ETMY). The light is then transmitted/reflected by the beam splitter into either the symmetric or anti-symmetric arms. If the X and Y arms are the same length, then the light from each arm will be in phase in the symmetric port but out of phase in the anti-symmetric port, also known as the \emph{dark port}. This means that if the arms are the same length then all the light goes into the symmetric port. However, if the arm lengths differ by some small fraction of the wavelength of the laser light (possibly because of a gravitational wave), then some of the light will travel into the anti-symmetric port and be detected by the photodetector that is placed there. This is the basic idea behind an interferometer.
+We will start with an overview of how the interferometers work before going into the mathematical details. Figure \ref{fig:ifo} is a schematic of a Michelson interferometer. There is a laser on the left which is aimed at at the beam splitter in the middle. The beam splitter is a partially reflective mirror which reflects half the photons into the Y arm and transmits half into the X arm. Both interferometer arms are the same length\footnote{Actually the important thing is that the two light rays have opposite phase in each arm when they return to the beam splitter.}. The light that is reflected into the Y arm picks up a phase shift such that it is completely out of phase with the light transmitted into the X arm. At the end of the X and Y arms are mirrors that reflect the light back to the beam splitter. These mirrors are also known as the end test masses of the X and Y arms (ETMX and ETMY). The light is then transmitted/reflected by the beam splitter into either the symmetric or anti-symmetric port. If the X and Y arms are the same length, then the light from each arm will be in phase in the symmetric port but out of phase in the anti-symmetric port, also known as the \emph{dark port}. This means that if the arms are the same length then all the light goes into the symmetric port. However, if the arm lengths differ by some small fraction of the wavelength of the laser light (possibly because of a passing gravitational wave), then some of the light will travel into the anti-symmetric port and be detected by the photodetector that is placed there. This is the basic idea behind an interferometer.
 
 \begin{figure}[ht]
 \centering
 \includegraphics[width=6cm]{michelson.png} 
-\caption{A schematic of a Michelson interferometer. The end test mass of the X and Y arms (ETMX and ETMY) are the mirrors at the end of the interferometer arms. The laser light enters the interferometer from the symmetric port on the left, and the photodetector that measures the differential arm length ($L_Y-L_X$) is in the anti-symmetric port. \cite{ifo_tech} }
+\caption{A schematic of a Michelson interferometer. The end test masses of the X and Y arms (ETMX and ETMY) are the mirrors at the end of the interferometer arms. The laser light enters the interferometer from the symmetric port on the left, and the photodetector that measures the differential arm length ($L_Y-L_X$) is in the anti-symmetric port. \cite{ifo_tech} }
 \label{fig:ifo}
 \end{figure} 
 
@@ -479,14 +499,12 @@ E_5= E_0 \bigg(r^2 \exp \big( i ( 2\varphi_r+\Phi_1) \big)+t^2 \exp \big( i(2 \v
 \begin{equation} \label{E_6}
 E_6=r t E_0 \bigg( \exp \big( i (\varphi_r+\varphi_t+\Phi_1) \big)+ \exp \big( i( \varphi_{r'}+\varphi_t+\Phi_2) \big) \bigg) \fs
 \end{equation}
-
 \begin{figure}[ht]
 \centering
 \includegraphics[width=12cm]{electric_fields} 
 \caption{\textbf{Electric Fields in a Michelson Interferometer.} This figure shows our labeling convention the electric fields in the different parts of the interferometer. The input laser light is labeled $E_0$. At the beam splitter, half of this light $E_1$ is reflected into the Y arm and the other half  $E_2$ is transmitted into the X arm. The light then travels down each arm and is reflected off of the test mass mirrors. The light accumulates a phase shift in the arms, and we call this phase shifted light $E_3$ and $E_4$ for the Y and X arms respectively. The light in both arms then reaches the beam splitter again, when it will either be reflected/transmitted into the symmetric port or the anti-symmetric port. The light in the symmetric port is labeled $E_5$ and in the anti-symmetric port is labeled $E_6$. \cite{ifo_tech} }
 \label{fig:ef}
 \end{figure} 
-
 These equations give us the phase at every step of the lights path back out of the detector, but we can simplify things. First we define 
 \begin{equation}
 \alpha_+ = \varphi_r + \varphi_t + \frac{1}{2}(\Phi_1+\Phi_2)
@@ -528,7 +546,7 @@ Hence we have $2\alpha_-=2\beta_- +\pi(2N+1)$, where $N\in \mathbb{Z}$, which we
 \begin{equation} \label{phase_cond}
 \frac{1}{2}(\varphi_r+\varphi_{r'})-\varphi_t=(2N+1)\frac{\pi}{2} \fs
 \end{equation}
-In most cases we do not know or need to know what the exact phase factors are and can choose any such that \ref{phase_cond} is satisfied. We will use $\varphi_r=\varphi_{r'}=0$ and $\varphi_t=\pi/2$, %Using these values in \ref{E1} and \ref{E2} with an initial electric field $E_i$, we see that the reflected $E_r$ and transmitted $E_t$ beams out of the beam splitter are described by
+In most cases we do not know or need to know what the exact phase factors are and can choose any such that (\ref{phase_cond}) is satisfied. We will use $\varphi_r=\varphi_{r'}=0$ and $\varphi_t=\pi/2$, %Using these values in \ref{E1} and \ref{E2} with an initial electric field $E_i$, we see that the reflected $E_r$ and transmitted $E_t$ beams out of the beam splitter are described by
 %\begin{equation}
 %E_r=r E_i \text{,} \hspace{20pt} E_t=i t E_i \fs 
 %\end{equation} 
@@ -563,7 +581,7 @@ where $P_0=|E_0|^2$. Thus we see that the output power varies with a change in t
 
 
 \subsection{Interferometer Antenna Pattern} \label{sec:antenna pattern}
-The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how interferometer response changes with the sky position and polarisation of the GW.\cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation \ref{deltaL} gives us
+The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how the interferometer response changes with the sky position and polarisation of the GW. \cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation (\ref{deltaL}) gives us
 \begin{equation}
 \Delta L_x = L (1 + \frac{1}{2}h_{xx})) + \mathcal{O}(h^2)
 \end{equation} 
@@ -618,7 +636,7 @@ h_{xx} = h_+(\cos^2 \theta \cos^2 \phi - \sin^2 \phi) + 2h_\times \cos \theta \s
 \begin{equation}
 h_{yy} = h_+(\cos^2 \theta \sin^2 \phi - \cos^2 \phi) - 2h_\times \cos \theta \sin\phi \cos\phi \fs
 \end{equation}
-Plugging these values into \ref{darm eqn}, and setting $L=1$ for convenience, gives us
+Plugging these values into (\ref{darm eqn}), and setting $L=1$ for convenience, gives us
 \begin{equation}
 \frac{1}{2} (h_{xx} - h_{yy}) = \frac{1}{2} h_+ (1+\cos^2\theta)\cos 2\phi + h_\times \cos \theta \sin 2\phi \fs
 \end{equation}
@@ -2415,28 +2433,29 @@ Equipped with these three senses, we explore the universe.
 \appendixpage
 \addappheadtotoc
 \chapter{General Relativity} \label{appendix:gr}
-
-Christoffel Symbol
+Here we collect useful formulas and definitions from general relativity. For more details on these, see, for example, \cite{carroll-spacetime,zee-einstein}.
+\\
+Christoffel symbol
 \begin{equation} \label{christ}
 \Gamma^\lambda\mn=\frac{1}{2}g^{\lambda \rho} [\partial_\nu g_{\mu \rho} + \partial_\mu g_{\nu \rho}-\partial_\rho g\mn]
 \end{equation}
-Riemann Curvature Tensor  
+Riemann curvature tensor  
 \begin{equation} \label{rct}
 R^\mu_{\lambda \alpha \beta} = \partial_\alpha \Gamma^\mu_{\lambda \beta} -\partial_\beta \Gamma^\mu_{\lambda \alpha} + \Gamma^\mu_{\nu \alpha} \Gamma^\nu_{\lambda \beta} - \Gamma^\mu_{\nu \beta} \Gamma^\nu_{\lambda \alpha}
 \end{equation}
-Ricci Tensor
+Ricci tensor
 \begin{equation} \label{rt}
 R\mn=g^{\alpha \beta} R_{\alpha \mu \beta \nu}=R^\beta_{\mu \beta \nu}
 \end{equation}
-Ricci Scalar
+Ricci scalar
 \begin{equation} \label{rs}
 R=g^{\alpha \beta}R_{\alpha \beta}=R^\beta_\beta
 \end{equation}
-The Einstein Equations
+The Einstein equations
 \begin{equation} \label{eineq}
 G\mn =R\mn -\frac{1}{2} R g\mn=\frac{8 \pi G}{c^4}T\mn
 \end{equation}
-Alternative form of the Einstein equations
+An alternative form of the Einstein equations
 \begin{equation} \label{alt einstein}
 R\mn = \frac{8 \pi G}{c^4}\left( T\mn - \frac{1}{2}Tg\mn \right) 
 \end{equation}

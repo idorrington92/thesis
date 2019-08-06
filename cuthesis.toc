@@ -11,14 +11,14 @@
 \contentsline {subsection}{\numberline {2.4.2}Interferometer Antenna Pattern}{17}{subsection.2.4.2}
 \contentsline {subsection}{\numberline {2.4.3}Interferometer Noise}{19}{subsection.2.4.3}
 \contentsline {subsection}{\numberline {2.4.4}Beyond the Michelson Interferometer}{24}{subsection.2.4.4}
-\contentsline {subsection}{\numberline {2.4.5}The Global Network of Interferometers}{25}{subsection.2.4.5}
+\contentsline {subsection}{\numberline {2.4.5}The Global Network of Interferometers}{24}{subsection.2.4.5}
 \contentsline {paragraph}{LIGO}{25}{section*.8}
 \contentsline {paragraph}{Virgo}{25}{section*.9}
 \contentsline {paragraph}{GEO600}{25}{section*.10}
 \contentsline {paragraph}{KAGRA}{25}{section*.11}
 \contentsline {subsection}{\numberline {2.4.6}Previous LIGO and Virgo Observing Runs}{25}{subsection.2.4.6}
 \contentsline {paragraph}{O1}{25}{section*.12}
-\contentsline {paragraph}{O2}{26}{section*.13}
+\contentsline {paragraph}{O2}{25}{section*.13}
 \contentsline {paragraph}{O3}{26}{section*.14}
 \contentsline {chapter}{\numberline {3}Gamma-Ray Bursts}{27}{chapter.3}
 \contentsline {section}{\numberline {3.1}The History of Gamma-ray Burst Astronomy}{27}{section.3.1}
@@ -32,22 +32,22 @@
 \contentsline {subsection}{\numberline {3.1.8}The Short GRB-Compact Binary Connection}{38}{subsection.3.1.8}
 \contentsline {section}{\numberline {3.2}Gravitational Waves and GRB 170817A}{40}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}Initial Observation and Followup}{41}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Kilonova Observation}{46}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Structured Jets}{46}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Other Scientific Results}{51}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.2}Kilonova Observation}{45}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Structured Jets}{45}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Other Scientific Results}{48}{subsection.3.2.4}
 \contentsline {subsubsection}{Speed of Gravity}{51}{section*.15}
 \contentsline {subsubsection}{Hubble Constant}{51}{section*.16}
 \contentsline {subsubsection}{Rates}{52}{section*.17}
 \contentsline {section}{\numberline {3.3}GRB Progenitors}{52}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Compact Binary Coalescence}{52}{subsection.3.3.1}
-\contentsline {paragraph}{NSBH Mergers}{52}{section*.18}
-\contentsline {paragraph}{BNS Mergers}{53}{section*.19}
+\contentsline {paragraph}{Neutron Star - Black Hole Mergers}{52}{section*.18}
+\contentsline {paragraph}{Binary Neutron Star Mergers}{53}{section*.19}
 \contentsline {subsection}{\numberline {3.3.2}Core Collapse}{53}{subsection.3.3.2}
 \contentsline {paragraph}{Rotational Instabilities of Proto-Neutron Stars}{53}{section*.20}
 \contentsline {paragraph}{Non-axisymmetric Instabilities of Accretion Disks}{54}{section*.21}
 \contentsline {section}{\numberline {3.4}GRB Detectors}{54}{section.3.4}
 \contentsline {subsection}{\numberline {3.4.1}Swift}{54}{subsection.3.4.1}
-\contentsline {subsection}{\numberline {3.4.2}Fermi}{55}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.2}Fermi}{54}{subsection.3.4.2}
 \contentsline {subsection}{\numberline {3.4.3}The InterPlanetary Network}{55}{subsection.3.4.3}
 \contentsline {section}{\numberline {3.5}GRB Gravitational Wave Search Strategies}{55}{section.3.5}
 \contentsline {subsection}{\numberline {3.5.1}Triggered and Untriggered Searches}{55}{subsection.3.5.1}

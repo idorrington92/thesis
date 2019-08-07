@@ -111,8 +111,8 @@
 \contentsline {subsubsection}{Result of Optimisation}{128}{section*.34}
 \contentsline {section}{\numberline {6.3}Effectiveness of XTMVA}{129}{section.6.3}
 \contentsline {subsection}{\numberline {6.3.1}Analysis Setup}{129}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{132}{subsection.6.3.2}
-\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{135}{subsection.6.3.3}
+\contentsline {subsection}{\numberline {6.3.2}Sensitivity and Speed Comparison}{129}{subsection.6.3.2}
+\contentsline {subsection}{\numberline {6.3.3}XTMVA Search Results}{134}{subsection.6.3.3}
 \contentsline {section}{\numberline {6.4}Discussion and Future Work}{137}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Low p-value Triggers}{137}{subsection.6.4.1}
 \contentsline {subsection}{\numberline {6.4.2}Long Injections}{137}{subsection.6.4.2}

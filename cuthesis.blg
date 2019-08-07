@@ -3,7 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: cuthesis.aux
 The style file: plain.bst
 Database file #1: refs.bib
-Warning--I didn't find a database entry for "was_thesis"
 Warning--empty journal in catalog
 Warning--empty journal in o2grb
 Warning--empty booktitle in Gebhard:2019ldz
@@ -13,45 +12,45 @@ Warning--empty journal in gstlal_Sachdev:2019
 Warning--empty journal in Shen:2019vep
 Warning--empty publisher in einstein_gr
 Warning--empty journal in Sutton:2013ooa
-You've used 114 entries,
+You've used 115 entries,
             2118 wiz_defined-function locations,
-            1132 strings with 24913 characters,
-and the built_in function-call counts, 38733 in all, are:
-= -- 3537
-> -- 2394
+            1135 strings with 25058 characters,
+and the built_in function-call counts, 38937 in all, are:
+= -- 3557
+> -- 2401
 < -- 0
-+ -- 965
-- -- 838
-* -- 3042
-:= -- 6862
-add.period$ -- 356
-call.type$ -- 114
-change.case$ -- 740
++ -- 968
+- -- 840
+* -- 3050
+:= -- 6901
+add.period$ -- 359
+call.type$ -- 115
+change.case$ -- 744
 chr.to.int$ -- 0
-cite$ -- 123
-duplicate$ -- 1222
-empty$ -- 2696
-format.name$ -- 838
-if$ -- 7681
+cite$ -- 124
+duplicate$ -- 1232
+empty$ -- 2713
+format.name$ -- 840
+if$ -- 7722
 int.to.chr$ -- 0
-int.to.str$ -- 114
-missing$ -- 113
-newline$ -- 586
-num.names$ -- 228
-pop$ -- 688
+int.to.str$ -- 115
+missing$ -- 114
+newline$ -- 591
+num.names$ -- 230
+pop$ -- 692
 preamble$ -- 1
-purify$ -- 634
+purify$ -- 637
 quote$ -- 0
-skip$ -- 820
+skip$ -- 827
 stack$ -- 0
-substring$ -- 1909
-swap$ -- 110
+substring$ -- 1914
+swap$ -- 111
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 440
+type$ -- 444
 warning$ -- 9
-while$ -- 315
-width$ -- 117
-write$ -- 1241
-(There were 10 warnings)
+while$ -- 317
+width$ -- 118
+write$ -- 1251
+(There were 9 warnings)

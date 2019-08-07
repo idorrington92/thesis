@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  7 AUG 2019 13:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.13)  7 AUG 2019 14:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1676,9 +1676,6 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 
 [112]
 
-LaTeX Warning: Citation `was_thesis' on page 113 undefined on input line 1995.
-
-
 Package Fancyhdr Warning: \headheight is too small (15.0pt): 
  Make it at least 17.1291pt.
  We now make it that large for the rest of the document.
@@ -1691,17 +1688,17 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[114] <xpvalue.png, id=2676, 722.7pt x 722.7pt>
+[114] <xpvalue.png, id=2678, 722.7pt x 722.7pt>
 File: xpvalue.png Graphic file (type png)
  <use xpvalue.png>
-Package pdftex.def Info: xpvalue.png used on input line 2017.
+Package pdftex.def Info: xpvalue.png used on input line 2018.
 (pdftex.def)             Requested size: 318.67209pt x 318.67268pt.
 
-<burst_exclusion_distance.png, id=2679, 421.575pt x 316.0608pt>
+<burst_exclusion_distance.png, id=2681, 421.575pt x 316.0608pt>
 File: burst_exclusion_distance.png Graphic file (type png)
 
 <use burst_exclusion_distance.png>
-Package pdftex.def Info: burst_exclusion_distance.png used on input line 2025.
+Package pdftex.def Info: burst_exclusion_distance.png used on input line 2026.
 (pdftex.def)             Requested size: 318.67209pt x 238.91621pt.
 
 
@@ -1718,7 +1715,7 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [116 <./burst_exclusion_distance.png (PNG copy)>]
-Overfull \hbox (12.72588pt too wide) in paragraph at lines 2063--2133
+Overfull \hbox (12.72588pt too wide) in paragraph at lines 2064--2134
 [][] 
  []
 
@@ -1739,14 +1736,14 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 File: decision_tree.png Graphic file (type png)
 
 <use decision_tree.png>
-Package pdftex.def Info: decision_tree.png used on input line 2143.
+Package pdftex.def Info: decision_tree.png used on input line 2144.
 (pdftex.def)             Requested size: 318.67209pt x 179.24924pt.
 
 <mva_trigger_and_score2.png, id=2722, 564.1075pt x 719.68875pt>
 File: mva_trigger_and_score2.png Graphic file (type png)
 
 <use mva_trigger_and_score2.png>
-Package pdftex.def Info: mva_trigger_and_score2.png used on input line 2153.
+Package pdftex.def Info: mva_trigger_and_score2.png used on input line 2154.
 (pdftex.def)             Requested size: 318.67209pt x 406.56999pt.
 
 
@@ -1788,7 +1785,7 @@ File: pc_change_removing_wnb_cusp.png Graphic file (type png)
 
 <use pc_change_removing_wnb_cusp.png>
 Package pdftex.def Info: pc_change_removing_wnb_cusp.png used on input line 224
-6.
+7.
 (pdftex.def)             Requested size: 318.67209pt x 284.735pt.
 
 
@@ -1822,7 +1819,7 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 File: opt_comparison.png Graphic file (type png)
 
 <use opt_comparison.png>
-Package pdftex.def Info: opt_comparison.png used on input line 2270.
+Package pdftex.def Info: opt_comparison.png used on input line 2271.
 (pdftex.def)             Requested size: 318.67209pt x 502.24915pt.
 
 
@@ -1834,7 +1831,7 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 [128] <x_compare.png, id=2801, 457.71pt x 813.0375pt>
 File: x_compare.png Graphic file (type png)
  <use x_compare.png>
-Package pdftex.def Info: x_compare.png used on input line 2278.
+Package pdftex.def Info: x_compare.png used on input line 2279.
 (pdftex.def)             Requested size: 318.67209pt x 566.08292pt.
 
 
@@ -1862,14 +1859,14 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 File: adi_injscale_comparison.png Graphic file (type png)
 
 <use adi_injscale_comparison.png>
-Package pdftex.def Info: adi_injscale_comparison.png used on input line 2297.
+Package pdftex.def Info: adi_injscale_comparison.png used on input line 2298.
 (pdftex.def)             Requested size: 398.3386pt x 302.13412pt.
 
 <csg_injscale_comparison.png, id=2822, 422.57875pt x 315.1775pt>
 File: csg_injscale_comparison.png Graphic file (type png)
 
 <use csg_injscale_comparison.png>
-Package pdftex.def Info: csg_injscale_comparison.png used on input line 2305.
+Package pdftex.def Info: csg_injscale_comparison.png used on input line 2306.
 (pdftex.def)             Requested size: 398.3386pt x 297.1085pt.
 
 
@@ -1890,7 +1887,7 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 File: median_50pc_injscale.png Graphic file (type png)
 
 <use median_50pc_injscale.png>
-Package pdftex.def Info: median_50pc_injscale.png used on input line 2315.
+Package pdftex.def Info: median_50pc_injscale.png used on input line 2316.
 (pdftex.def)             Requested size: 398.3386pt x 284.6877pt.
 
 
@@ -1903,7 +1900,7 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 <mva_pvalue.png, id=2846, 722.7pt x 722.7pt>
 File: mva_pvalue.png Graphic file (type png)
  <use mva_pvalue.png>
-Package pdftex.def Info: mva_pvalue.png used on input line 2328.
+Package pdftex.def Info: mva_pvalue.png used on input line 2329.
 (pdftex.def)             Requested size: 318.67209pt x 318.67268pt.
 
 
@@ -1917,7 +1914,7 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 File: mva_exclusion_plot.png Graphic file (type png)
 
 <use mva_exclusion_plot.png>
-Package pdftex.def Info: mva_exclusion_plot.png used on input line 2338.
+Package pdftex.def Info: mva_exclusion_plot.png used on input line 2339.
 (pdftex.def)             Requested size: 318.67209pt x 318.67122pt.
 
 
@@ -1937,7 +1934,7 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 File: gc_sensitivity_comparison.png Graphic file (type png)
 
 <use gc_sensitivity_comparison.png>
-Package pdftex.def Info: gc_sensitivity_comparison.png used on input line 2363.
+Package pdftex.def Info: gc_sensitivity_comparison.png used on input line 2364.
 
 (pdftex.def)             Requested size: 318.67209pt x 288.23816pt.
 
@@ -1958,20 +1955,20 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
 <no_gc_eff_nsbh.png, id=2895, 867.24pt x 650.43pt>
 File: no_gc_eff_nsbh.png Graphic file (type png)
  <use no_gc_eff_nsbh.png>
-Package pdftex.def Info: no_gc_eff_nsbh.png used on input line 2375.
+Package pdftex.def Info: no_gc_eff_nsbh.png used on input line 2376.
 (pdftex.def)             Requested size: 318.67209pt x 239.00781pt.
 
 <gc_eff_nsbh.png, id=2896, 867.24pt x 650.43pt>
 File: gc_eff_nsbh.png Graphic file (type png)
  <use gc_eff_nsbh.png>
-Package pdftex.def Info: gc_eff_nsbh.png used on input line 2383.
+Package pdftex.def Info: gc_eff_nsbh.png used on input line 2384.
 (pdftex.def)             Requested size: 318.67209pt x 239.00781pt.
 
 <tf_box_histogram.png, id=2897, 393.47pt x 271.0125pt>
 File: tf_box_histogram.png Graphic file (type png)
 
 <use tf_box_histogram.png>
-Package pdftex.def Info: tf_box_histogram.png used on input line 2391.
+Package pdftex.def Info: tf_box_histogram.png used on input line 2392.
 (pdftex.def)             Requested size: 318.67209pt x 219.48996pt.
 
 
@@ -2142,13 +2139,19 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [160]
-Underfull \hbox (badness 1721) in paragraph at lines 660--666
+Missing character: There is no â in font cmti10!
+Missing character: There is no € in font cmti10!
+Missing character: There is no ™ in font cmti10!
+Missing character: There is no Ì in font cmti10!
+Missing character: There is no  in font cmti10!
+
+Underfull \hbox (badness 1721) in paragraph at lines 666--672
 []\OT1/cmr/m/n/10.95 Michal Was, Marie-Anne Bi-zouard, Vi-o-lette Bris-son, Fa-
 bien Cav-a-lier,
  []
 
 
-Underfull \hbox (badness 1721) in paragraph at lines 668--673
+Underfull \hbox (badness 1721) in paragraph at lines 674--679
 []\OT1/cmr/m/n/10.95 Michal Was, Marie-Anne Bi-zouard, Vi-o-lette Bris-son, Fa-
 bien Cav-a-lier,
  []
@@ -2174,7 +2177,7 @@ Missing character: There is no – in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no – in font cmr10!
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2616.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2617.
 
 
 Package Fancyhdr Warning: \headheight is too small (15.0pt): 
@@ -2183,23 +2186,19 @@ Package Fancyhdr Warning: \headheight is too small (15.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [162]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2616.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2617.
  (./cuthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2616.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2616.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2617.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2617.
 
 Package rerunfilecheck Info: File `cuthesis.out' has not changed.
 (rerunfilecheck)             Checksum: 2941307284A8A9521FD85463DE83F0EE;7289.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2616.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2617.
  ) 
 Here is how much of TeX's memory you used:
  9147 strings out of 493089
- 134826 string characters out of 6134842
- 311994 words of memory out of 5000000
+ 134829 string characters out of 6134842
+ 311028 words of memory out of 5000000
  11632 multiletter control sequences out of 15000+600000
  16894 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2234,7 +2233,7 @@ dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-di
 st/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dis
 t/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on cuthesis.pdf (185 pages, 7725285 bytes).
+Output written on cuthesis.pdf (185 pages, 7725169 bytes).
 PDF statistics:
  3303 PDF objects out of 3580 (max. 8388607)
  2931 compressed objects within 30 object streams

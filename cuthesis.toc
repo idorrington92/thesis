@@ -97,11 +97,11 @@
 \contentsline {section}{\numberline {6.1}X-pipeline}{106}{section.6.1}
 \contentsline {subsection}{\numberline {6.1.1}Burst Search Background}{109}{subsection.6.1.1}
 \contentsline {subsection}{\numberline {6.1.2}Standard Likelihood}{110}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Null Energy}{112}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.3}Null Energy}{111}{subsection.6.1.3}
 \contentsline {subsection}{\numberline {6.1.4}Incoherent Energy and Background Rejection}{112}{subsection.6.1.4}
 \contentsline {subsection}{\numberline {6.1.5}Tuning and Trigger Significance}{113}{subsection.6.1.5}
 \contentsline {subsection}{\numberline {6.1.6}O2 X-pipeline Search}{114}{subsection.6.1.6}
-\contentsline {section}{\numberline {6.2}Machine Learning}{116}{section.6.2}
+\contentsline {section}{\numberline {6.2}Machine Learning}{115}{section.6.2}
 \contentsline {subsection}{\numberline {6.2.1}Supervised Machine Learning}{116}{subsection.6.2.1}
 \contentsline {subsection}{\numberline {6.2.2}Boosted Decision Trees}{119}{subsection.6.2.2}
 \contentsline {subsection}{\numberline {6.2.3}Training Data Preprocessing}{122}{subsection.6.2.3}

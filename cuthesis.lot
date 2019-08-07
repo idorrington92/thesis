@@ -3,16 +3,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces \textbf {Time to Complete Single Matched Filter job.} Here we see how long a single matched filter job in the GRB 170817A analysis took to complete with different $\chi ^2$ tests being used. The new code does not use the bank or auto $\chi ^2$ tests. We can see that there is a substantial speed up of the analysis. }}{102}{table.5.1}
+\contentsline {table}{\numberline {5.1}{\ignorespaces \textbf {Time to Complete Single Matched Filter job.} Here we see how long a single matched filter job in the GRB 170817A analysis took to complete with different $\chi ^2$ tests being used. The new code does not use the bank or auto $\chi ^2$ tests. We can see that there is a substantial speed up of the analysis. }}{103}{table.5.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {6.1}{\ignorespaces \textbf {Example MVA training data.} Each event has a label and several attributes. The training sets we actually use have up to 15 attributes and thousands of events. The labels are various coherent and incoherent measures of energy, as well as trigger properties such as the bandwidth and duration. A full list is given in table \ref {tab:labels}.}}{116}{table.6.1}
-\contentsline {table}{\numberline {6.2}{\ignorespaces \textbf {MVA Attributes.}The attributes used by the machine learning classifier.}}{117}{table.6.2}
-\contentsline {table}{\numberline {6.3}{\ignorespaces \textbf {Training Waveforms.} Here we list the waveforms used by XTMVA for both training and testing, together with a short description.}}{124}{table.6.3}
+\contentsline {table}{\numberline {6.1}{\ignorespaces \textbf {Example MVA training data.} Each event has a label and several attributes. The training sets we actually use have up to 15 attributes and thousands of events. The labels are various coherent and incoherent measures of energy, as well as trigger properties such as the bandwidth and duration. A full list is given in table \ref {tab:labels}.}}{117}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces \textbf {MVA Attributes.}The attributes used by the machine learning classifier.}}{118}{table.6.2}
+\contentsline {table}{\numberline {6.3}{\ignorespaces \textbf {Training Waveforms.} Here we list the waveforms used by XTMVA for both training and testing, together with a short description.}}{125}{table.6.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{\ignorespaces \textbf {Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for X-pipeline and XTMVA. }}{147}{table.B.1}
-\contentsline {table}{\numberline {B.2}{\ignorespaces \textbf {PyGRB O2 Results Table.} Here we list the trigger time and sky position of each GRB analysed. We list the GRB detector that provided the sky grid searched over with PyGRB, and the GW detectors that were used for that analysis. The final three columns are the BNS, generic spin NSBH, and aligned spin NSBH 90\% exclusion distances obtained using PyGRB. }}{148}{table.B.2}
-\contentsline {table}{\numberline {B.3}{\ignorespaces \textbf {PyGRB O2 Results Table.} Continuation from previous page.}}{149}{table.B.3}
-\contentsline {table}{\numberline {B.4}{\ignorespaces \textbf {XTMVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed with XTMVA.}}{150}{table.B.4}
-\contentsline {table}{\numberline {B.5}{\ignorespaces \textbf {X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed with X-pipeline. }}{151}{table.B.5}
+\contentsline {table}{\numberline {B.1}{\ignorespaces \textbf {Median 50\% Injection Scale Upper Limits.} Here we list the median 50\% injection scale upper limit values for X-pipeline and XTMVA. }}{148}{table.B.1}
+\contentsline {table}{\numberline {B.2}{\ignorespaces \textbf {PyGRB O2 Results Table.} Here we list the trigger time and sky position of each GRB analysed. We list the GRB detector that provided the sky grid searched over with PyGRB, and the GW detectors that were used for that analysis. The final three columns are the BNS, generic spin NSBH, and aligned spin NSBH 90\% exclusion distances obtained using PyGRB. }}{149}{table.B.2}
+\contentsline {table}{\numberline {B.3}{\ignorespaces \textbf {PyGRB O2 Results Table.} Continuation from previous page.}}{150}{table.B.3}
+\contentsline {table}{\numberline {B.4}{\ignorespaces \textbf {XTMVA 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed with XTMVA.}}{151}{table.B.4}
+\contentsline {table}{\numberline {B.5}{\ignorespaces \textbf {X-pipeline 50\% Injection Scale Upper Limit.} Here we list the 50\% injection scale upper limit for each waveform type tested and for each GRB analysed with X-pipeline. }}{152}{table.B.5}

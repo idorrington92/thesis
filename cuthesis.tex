@@ -82,7 +82,7 @@ We end by looking at \xpfs We will start with the theory behind how \xp works an
 \end{abstract}
 
 % declaration - REQUIRED
-\declaration
+%\declaration
 
 % contents
 \tableofcontents
@@ -130,9 +130,9 @@ And Preshita, the love of my life. Of all the people and all the places in the w
 The following sections of this thesis contain work that has been co-authored with others, or builds upon work started by others:
 \begin{itemize}
 \item Chapter \ref{chap: CBC} discusses the PyGRB search pipeline. Previous publications describing developments to this pipeline and search results can be found in \cite{pygrb_harry,pygrb_Williamson:2014,o1grb}.
-\item Chapter \ref{chap: CBC} ends with a discussion of the PyGRB search results from the most recent observing run. These results can be found in \cite{o2grb}. I contributed to this paper compiling the required information on the Gamma-ray bursts (GRBs), analysing eight of the 42 GRBs in the PyGRB analysis sample, and co-authoring the paper.
-\item Chapter \ref{chap:pygrb future} discusses development work on PyGRB. I led this work, but with the input of many collaborators, especially from members of the Cardiff University Gravitational Wave group and the GRB working group of the LIGO-Virgo collaboration.
-\item Chapter \ref{chap: mva} discusses development work on \xpfs \xp has been previously written about in \cite{xpipeline,was_xpipeline}. 
+\item Chapter \ref{chap: CBC} ends with a discussion of the PyGRB search results from the most recent observing run. These results can be found in \cite{o2grb}. I contributed to this paper compiling the required information on the Gamma-ray bursts (GRBs), analysing eight of the 42 GRBs in the PyGRB analysis sample, and co-authoring the results paper.
+\item Chapter \ref{chap:pygrb future} discusses development work on PyGRB. I led this work, but with the input of many collaborators, especially from members of the Cardiff University Gravitational Wave group and the GRB working group of the LIGO-Virgo collaboration. My main contribution to the development of PyGRB was to rewrite the coherent matched filtering executable of PyGRB to use faster and more efficient code written for the PyCBC software package. To achieve this, I also had to remake many PyCBC functions so that they could handle data from multiple detectors at once. 
+\item Chapter \ref{chap: mva} discusses development work on \xpfs In particular, I worked on a multivariate analysis (MVA) classifier to speed up and improve the sensitivity of \xpfs \xp has been previously written about in \cite{xpipeline,was_xpipeline}. 
 \item The \xp search results from the most recent observing run, used in chapter \ref{chap: mva}, were previously published in \cite{o2grb}, which I co-authored. 
 \item The MVA search for GWs described in chapter \ref{chap: mva} has been previously described in \cite{adams_mva} and the software used is described in \cite{tmva_guide}.  
 \end{itemize}
@@ -188,10 +188,11 @@ G\mn & \equiv R\mn -\frac{1}{2} R \eta\mn \\
  & = \frac{1}{2} ( \partial_\sigma \partial_\nu h^\sigma_\mu + \partial_\sigma \partial_\mu h^\sigma_\nu - \partial_\mu \partial_\nu h - \square h\mu -\eta\mn \partial_\rho \partial_\lambda h^{\rho \lambda} + \eta\mn \square h ) \fs
 \end{split}
 \end{equation}
-Using this in the Einstein equations gives us the \textit{linearised Einstein equations}
+Using this in the Einstein equations
 \begin{equation}
-G\mn =R\mn -\frac{1}{2} R g\mn=\frac{8 \pi G}{c^4}T\mn \fs
+G\mn =R\mn -\frac{1}{2} R g\mn=\frac{8 \pi G}{c^4}T\mn
 \end{equation}
+gives us the \textit{linearised Einstein equations}. 
 
 \subsection{Gauge Transformation}
 The metric given in equation (\ref{pert metric}) does not uniquely define a coordinate system, as there are many coordinates where the metric is given by the Minkowski metric plus some small perturbation. This gives us the freedom to choose coordinates that make the linear Einstein equations simpler. To find these coordinates, we start with the following gauge transformation
@@ -465,7 +466,7 @@ On the 14th of September 2015, the first direct detection of a GW came from a CB
 
 We end this section by noting that any system with an accelerated quadrupole moment could potentially be detected using GWs. There are searches ongoing for GWs from supernovas, short and long gamma-ray bursts, non-axisymmetric pulsars, and black hole accretion disk instabilities. At the time of writing, the only GWs that have been detected are from CBC systems.  
 
-\section{Gravitational Wave Detectors} \label{sec:gw detectors}
+\section{Gravitational Wave Detection} \label{sec:gw detectors}
 As shown in section \ref{sec:GW effects}, a passing GW will change the distance between two points, and this change in length is proportional to the distance between the two points and the amplitude of the GW. As astrophysical sources are expected to produce GWs with amplitudes of $\sim 10^{-21}$ at the Earth, we must choose two points that are as far apart as practical, at least on the order of kilometers, if the effect is to be measurable. Even then, the change in distance between the two points will still be only a fraction of the wavelength of light. To measure this change, we use a \textit{Michelson interferometer} \cite{weiss72}. In this section, we will begin with a basic mathematical description of how a Michelson interferometer works. We will then move on to discuss the aspects of the GW detectors that are important for data analysis, namely the detector noise and directional sensitivity.
 
 \subsection{The Michelson Interferometer} \label{sec:mich}
@@ -690,7 +691,9 @@ Let $s=s(t)$ be the  output of a GW detector. The \textit{power spectral density
 \begin{equation} \label{eqn:PSD}
 \frac{1}{2} S_n(f)=\infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \fs
 \end{equation}
-The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{amplitude spectral density} (ASD). The PSD and ASD are measures of the amount of time variation at a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 1st August 2019. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GW signals in this frequency range. In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment and angular sensing and control systems (ASC), and the thermal noise of the mirror suspensions (thermal Susp) and coating (thermal coating). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. You can also see that at around 20-80 Hz, the sum of noises is much lower than the measured differential arm length (DARM). This indicated that the limiting factor of the detector sensitivity in this frequency range is unknown. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{GW150914-detector,noise_budget_martynov}.
+The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{amplitude spectral density} (ASD). The PSD and ASD are measures of the amount of time variation at a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively quiet, while large values indicate a lot of motion in the detector. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 1st August 2019. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GWs in this frequency range. It should be noted that in practice equation \ref{eqn:PSD} cannot be used as it is not possible to integrate over all time. Instead, interferometer data is divided into chunks, with the PSD calculated for each chunk. The PSD that is used for analysis is an average of the PSD over each chunk. For more details on how the PSD is estimated, see \cite{pycbc_Allen:2005}.  
+
+In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment and angular sensing and control systems (ASC), and the thermal noise of the mirror suspensions (thermal Susp) and coating (thermal coating). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. You can also see that at around 20-80 Hz, the sum of noises is much lower than the measured differential arm length (DARM). This indicated that the limiting factor of the detector sensitivity in this frequency range is unknown. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{GW150914-detector,noise_budget_martynov}.
 
 Interferometer noise is not stationary. Occasionally there will be noise transients that appear in the data, called \textit{glitches}. These can be caused by many different factors. Common causes of glitches include acoustic noise from the environment or saturation overflows, where too much light shines on a photodetector. \cite{detchar} Stationary noise is relatively easy for GW searches to handle, but glitches require more care as they can easily be mistaken for a GW signal. 
 
@@ -712,7 +715,62 @@ Interferometer noise is not stationary. Occasionally there will be noise transie
 \end{figure}
 \end{landscape}
 
+\subsection{Matched Filtering}
+Now we know how to measure the noise in a GW detector, we will discuss how to find a GW of known signal morphology. The method we will use to achieve this is the \textit{matched filter}. We start by describing the detector output $s(t)$ as the sum of the strain induced by a GW $h(t)$ and the detector noise
+\begin{equation}
+s(t) = h(t) + n(t) \fs
+\end{equation}
+Using a filter $K(t)$, we search for for GWs using the following formula
+\begin{equation}
+m = \int_{-\infty}^\infty K(t) s(t) dt = \int_{-\infty}^\infty K(t) h(t) dt + \int_{-\infty}^\infty K(t) n(t) dt
+\end{equation}
+The equivalent frequency domain expression is 
+\begin{equation}
+\int_{-\infty}^\infty K(t) s(t) dt = \int_{-\infty}^\infty \tilde{K}^*(f) \tilde{s}(f) df
+\end{equation}
+The question we must ask now is which filter choice $K(t)$ gives the best separation of signal from background noise? We choose the filter that maximises the SNR, given by $S/N$ where $S$ is the value of $m$ when a signal is present and $N$ is the root-mean-square value of $m$ when no signal is present.
 
+We can calculate $N$ as follows
+\begin{equation}
+\begin{split}
+N^2 & = \langle m^2 \rangle |_{h=0} \\ 
+& = \int^\infty_{-\infty} \int^\infty_{-\infty} \tilde{K}^*(f) \tilde{K}(f) \langle \tilde{n}^* (f) \tilde{n}(f') \rangle df df' \\
+& = \int^\infty_{-\infty}  |\tilde{K}(f) |^2 S^d_n(f)df
+\end{split} 
+\end{equation}
+where we assumed the noise is stationary and Gaussian, giving us
+\begin{equation}
+\langle \tilde{n}(f) \tilde{n}(f') \rangle = \delta (f-f') S^d_n (f) \fs
+\end{equation}
+To find $S$, we use that the expected value of $n(f)$ is zero to obtain
+\begin{equation}
+S = \int^\infty_{-\infty} K(t) h(t) dt  = \int^\infty_{-\infty} \tilde{K}^*(f) \tilde{h}(f) df \fs
+\end{equation} 
+We can thus express the SNR as 
+\begin{equation}
+\rho = \frac{\int^\infty_{-\infty} \tilde{K}^*(f) \tilde{h}(f) df}{ \left( \int^\infty_{-\infty}  |\tilde{K}(f) |^2 S^d_n(f)df \right)^{\frac{1}{2} } } \fs
+\end{equation}
+We can simplify this expression by defining the inner product
+\begin{equation}
+(a|b) = \int^\infty_{-\infty} \frac{\tilde{a}^*(f) \tilde{b}(f)}{S^d_n(f)} df = 4 \text{Re} \int^\infty_0 \frac{\tilde{a}^*(f) \tilde{b}(f)}{S_n(f)} df \fs 
+\end{equation}
+The RHS of this equation assumes that $a(t)$ and $b(t)$ are real functions, such that $\tilde{a}(f)=\tilde{a}^*(-f)$, and uses the fact that $S^d_n(f) = S^d_n(-f)$. We also use the one-sided PSD $S_n(f)$ in the RHS, which is related to the two-sided PSD by $S_n(f)=2S^d_n(f)$. Note that for a given $a(t)$, this inner product is maximised when $b(t)$ is proportional to $a(t)$. Using this inner product, we find
+\begin{equation}
+\rho = \frac{(u|h)}{(u|u)^\frac{1}{2}}
+\end{equation}
+where
+\begin{equation}
+\tilde{u}(f) = \frac{1}{2} \tilde{K}(f) S_n(f) \fs
+\end{equation}
+We see that the SNR is maximised when $u$ is proportional to $h$. Thus the optimal filter is given by
+\begin{equation}
+\tilde{K}(f) = A \frac{\tilde{h}(f)}{S_n(f)}
+\end{equation}
+where $A$ is an arbitrary constant. Note the value of the constant does not affect the SNR, we can therefore set it equal to one without loss of generality. The SNR is therefore given by
+\begin{equation}
+\rho = \frac{(s|h)}{(h|h)^\frac{1}{2}} \fs
+\end{equation} 
+This is the optimal statistic for searching for a GW of known morphology in stationary, Gaussian data. We will see in chapter \ref{chap: CBC} how to extend this statistic to a network of detectors with noise that is non-stationary and non-Gaussian.
 
 \subsection{Beyond the Michelson Interferometer}
 We have learned the basics of Michelson interferometers as GW detectors. We have seen how they work, how their sensitivity varies with sky position, and how to measure the detector noise. But modern GW detectors are not simple Michelson interferometers, as these would not have the sensitivity to detect GWs from any realistic astrophysical source. For example, the largest interferometers in operation today have 4 km long arms. A GW with $h\approx 10^{-21}$, approximately the amplitude of the first detected GW, would induce a differential arm length of $\frac{1}{2} h L = 2\times 10^{-18}$m. A signal this small would easily be swamped by noise in a standard Michelson interferometer. Many methods are implemented to increases the sensitivity of GW detectors, we outline some of these here.
@@ -1090,7 +1148,7 @@ In this chapter we describe PyGRB \cite{pygrb_harry, pygrb_Williamson:2014}, a t
 
 
 \section{Coherent Matched Filtering} \label{sec:PyGRB}
-In this section we will discuss the theory behind PyGRB. The detection statistic of PyGRB is based on the \textit{coherent SNR}, which uses the sky position and time of the GRB with the antenna response function and PSD of each detector in the network. Using these, it is possible to calculate the amount of signal power expected in each detector and factor this into the detection statistic. For example, if a GRB was localised to a point in the sky directly above the most sensitive interferometer in the network, then this detector would be expected to have the highest SNR of all detectors in the network. If one of the other detectors in the network has a higher SNR, then it is less likely that this trigger is a GW. The coherent SNR provides a natural way to use the expected ratio of SNR in each detector into the detection statistic.
+In this section we will discuss the theory behind PyGRB. The detection statistic of PyGRB is based on the \textit{coherent SNR}, which uses the sky position and time of the GRB with the antenna response function and PSD of each detector in the network. Using these, it is possible to calculate the amount of signal power expected in each detector and factor this into the detection statistic. For example, if a GRB was localised to a point in the sky directly above the most sensitive interferometer in the network, then this detector would be expected to have the highest SNR of all detectors in the network. If one of the other detectors in the network has a higher SNR, then it is less likely that this trigger is a GW. The coherent SNR provides a natural way to use the expected ratio of SNR in each detector into the detection statistic. The derivation of the coherent SNR presented here is based on the F-statistic formalism, introduced in \cite{f-stat1,f-stat2}. 
 
 This qualitative description of the coherent SNR is made rigorous in the following sections \ref{sec:binary wf} and \ref{sec:coh snr}. In section \ref{sec: coinc compare}, we compare the coherent SNR to the \textit{coincident SNR}, detection statistic for the all-sky search. In section \ref{sec:null snr} we discuss the \textit{null SNR}, another coherent statistic that measures the consistency of the signal across the detectors in the network. Short GRBs are expected to be emitted perpendicular to the orbital plane of the neutron star merger and with an opening angle of up to $30^\circ$ (see sections \ref{sec:jets} and \ref{sec:structured jets}). In section \ref{sec:circ pol} we will see how this information can be used to build an even more sensitive detection statistic. We then end this section by discussing how to reject non-Gaussianities in the data by checking the consistency of the signal with the template that found the trigger.
 

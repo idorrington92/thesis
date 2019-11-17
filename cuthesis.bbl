@@ -223,6 +223,12 @@ S.~B. Coughlin et~al.
   detector glitches using similarity learning}.
 \newblock {\em Phys. Rev.}, D99(8):082002, 2019.
 
+\bibitem{f-stat2}
+Curt Cutler and Bernard~F. Schutz.
+\newblock {The Generalized F-statistic: Multiple detectors and multiple GW
+  pulsars}.
+\newblock {\em Phys. Rev.}, D72:063006, 2005.
+
 \bibitem{pycbc_Canton:2014}
 Tito Dal~Canton et~al.
 \newblock {Implementing a search for aligned-spin neutron star-black hole
@@ -346,6 +352,12 @@ K.~Hurley, T.~Cline, I.~Mitrofanov, E.~Mazets, S.~Golenetskii, F.~Frontera,
   E.~Montanari, C.~Guidorzi, and M.~Feroci.
 \newblock {The current performance of the third interplanetary network}.
 \newblock {\em AIP Conf. Proc.}, 662(1):473--476, 2003.
+
+\bibitem{f-stat1}
+Piotr Jaranowski, Andrzej Krolak, and Bernard Schutz.
+\newblock Data analysis of gravitational-wave signals from spinning neutron
+  stars. i. the signal and its detection.
+\newblock {\em Physical Review D}, 58, 04 1998.
 
 \bibitem{Kalogera_1996}
 Vassiliki Kalogera and Gordon Baym.

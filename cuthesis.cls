@@ -17,7 +17,7 @@
 % version 2005/12/01 or later.
 %
 % This work has the LPPL maintenance status `maintained'.
-% 
+%
 % The Current Maintainer of this work is Duncan M. Macleod
 
 \NeedsTeXFormat{LaTeX2e} \ProvidesClass{cuthesis}[2012/12/12 v 0.01 %
@@ -52,7 +52,7 @@ Cardiff University, School of Physics and Astronomy thesis format]
 \global\let\@author\@empty
 \global\let\@date\@empty
 
-\newcommand{\Chapter}[2]{\chapter[#1]{#1\\[1ex]\large\textit{#2}}} 
+\newcommand{\Chapter}[2]{\chapter[#1]{#1\\[1ex]\large\textit{#2}}}
 
 % define abstract
 \renewenvironment{abstract}
@@ -109,14 +109,14 @@ Cardiff University, School of Physics and Astronomy thesis format]
         \vskip-\footruleskip\vskip-\footrulewidth
         \hrule width\headwidth height\footrulewidth\vskip\footruleskip}}
     \newcommand{\fancyspacer}{\rule[-2ex]{0pt}{2ex}}
-    
+
     \fancypagestyle{plain}{%
         \fancyhf{}
         \renewcommand{\headrulewidth}{0pt}
         \renewcommand{\footrulewidth}{0.1pt}
         \fancyfoot[c]{-- \small{\thepage}\ --}
     }
-    
+
     \fancypagestyle{thesis}{%
         \fancyhf{}
         \renewcommand{\headrulewidth}{0.1pt}
@@ -129,46 +129,46 @@ Cardiff University, School of Physics and Astronomy thesis format]
 \fi
 
 % define declaration
-\newcommand\declaration{
-    \chapter*{Declaration of authorship}
-    \begin{itemize}
-        \item \textsc{Declaration:}\\
-        This work has not previously been accepted in substance for any
-        degree and is not concurrently submitted in candidature for any degree.
-        \\
-        \\
-        Signed: $_{..................................................................}$
-        (candidate)\ \ Date: $_{...................}$
-        \\
-        \item \textsc{Statement 1:}\\
-        This thesis is being submitted in partial fulfillment of the
-        requirements for the degree of Doctor of Philosophy (PhD).
-        \\
-        \\
-        Signed: $_{..................................................................}$
-        (candidate)\ \ Date: $_{...................}$
-        \\
-        \item \textsc{Statement 2:}\\
-        This thesis is the result of my own independent work/investigation,
-        except where otherwise stated. Other sources are acknowledged by
-        explicit references.
-        \\
-        \\
-        Signed: $_{..................................................................}$
-        (candidate)\ \ Date: $_{...................}$
-        \\
-        \item \textsc{Statement 3}\\
-        I hereby give consent for my thesis, if accepted, to be available for
-        photocopying and for inter-library loan, and for the title and summary
-        to be made available to outside organisations.
-        \\
-        \\
-        Signed: $_{..................................................................}$
-        (candidate)\ \ Date: $_{...................}$
-      \\
-    \end{itemize}
-    \clearpage
-}
+%\newcommand\declaration{
+%    \chapter*{Declaration of authorship}
+%    \begin{itemize}
+%        \item \textsc{Declaration:}\\
+%        This work has not previously been accepted in substance for any
+%        degree and is not concurrently submitted in candidature for any degree.
+%        \\
+%        \\
+%        Signed: $_{..................................................................}$
+%        (candidate)\ \ Date: $_{...................}$
+%        \\
+%        \item \textsc{Statement 1:}\\
+%        This thesis is being submitted in partial fulfillment of the
+%        requirements for the degree of Doctor of Philosophy (PhD).
+%        \\
+%        \\
+%        Signed: $_{..................................................................}$
+%        (candidate)\ \ Date: $_{...................}$
+%        \\
+%        \item \textsc{Statement 2:}\\
+%        This thesis is the result of my own independent work/investigation,
+%        except where otherwise stated. Other sources are acknowledged by
+%        explicit references.
+%        \\
+%        \\
+%        Signed: $_{..................................................................}$
+%        (candidate)\ \ Date: $_{...................}$
+%        \\
+%        \item \textsc{Statement 3}\\
+%        I hereby give consent for my thesis, if accepted, to be available for
+%        photocopying and for inter-library loan, and for the title and summary
+%        to be made available to outside organisations.
+%        \\
+%        \\
+%        Signed: $_{..................................................................}$
+%        (candidate)\ \ Date: $_{...................}$
+%      \\
+%    \end{itemize}
+%    \clearpage
+%}
 
 % define titlepage
 \renewcommand\maketitle{\begin{titlepage}%

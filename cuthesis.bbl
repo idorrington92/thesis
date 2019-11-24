@@ -285,6 +285,12 @@ Joshua~A. Faber and Frederic~A. Rasio.
 \newblock Binary neutron star mergers.
 \newblock {\em Living Reviews in Relativity}, 15(1):8, Jul 2012.
 
+\bibitem{coh5}
+Lee~Samuel Finn.
+\newblock Aperture synthesis for gravitational-wave data analysis:
+  Deterministic sources.
+\newblock {\em Phys. Rev. D}, 63:102001, Apr 2001.
+
 \bibitem{Gebhard:2019ldz}
 Timothy~D. Gebhard, Niki Kilbertus, Ian Harry, and Bernhard Schölkopf.
 \newblock {Convolutional neural networks: a magic bullet for gravitational-wave
@@ -303,6 +309,12 @@ Adam Goldstein, Valerie Connaughton, Michael~S. Briggs, and Eric Burns.
 \newblock {Estimating} {Long} {GRB} {Jet} {Opening} {Angles} {and}
   {Rest}-{Frame} {Energetics}.
 \newblock {\em The Astrophysical Journal}, 818(1):18, feb 2016.
+
+\bibitem{coh4}
+Yekta G\"ursel and Massimo Tinto.
+\newblock Near optimal solution to the inverse problem for gravitational-wave
+  bursts.
+\newblock {\em Phys. Rev. D}, 40:3884--3938, Dec 1989.
 
 \bibitem{hanna-thesis}
 Chad Hanna.
@@ -324,6 +336,12 @@ I.~W. Harry and S.~Fairhurst.
 \newblock Targeted coherent search for gravitational waves from compact binary
   coalescences.
 \newblock {\em Phys. Rev. D}, 83:084002, Apr 2011.
+
+\bibitem{coh3}
+Kazuhiro Hayama, Soumya~D. Mohanty, Malik Rakhmanov, and Shantanu Desai.
+\newblock {Coherent network analysis for triggered gravitational wave burst
+  searches}.
+\newblock {\em Class. Quant. Grav.}, 24:S681--S688, 2007.
 
 \bibitem{Hessels1901}
 Jason W.~T. Hessels, Scott~M. Ransom, Ingrid~H. Stairs, Paulo C.~C. Freire,
@@ -381,6 +399,12 @@ Sebastian Khan, Sascha Husa, Mark Hannam, Frank Ohme, Michael Pürrer, Xisco
 Bülent Kiziltan, Athanasios Kottas, Maria~De Yoreo, and Stephen~E. Thorsett.
 \newblock {THE} {NEUTRON} {STAR} {MASS} {DISTRIBUTION}.
 \newblock {\em The Astrophysical Journal}, 778(1):66, nov 2013.
+
+\bibitem{coh2}
+S.~Klimenko, S.~Mohanty, Malik Rakhmanov, and Guenakh Mitselmakher.
+\newblock {Constraint likelihood analysis for a network of gravitational wave
+  detectors}.
+\newblock {\em Phys. Rev.}, D72:122002, 2005.
 
 \bibitem{CWB}
 S.~Klimenko, G.~Vedovato, M.~Drago, F.~Salemi, V.~Tiwari, G.~A. Prodi,
@@ -705,6 +729,12 @@ Rainer Weiss.
 \newblock Electromagnetically coupled broadband gravitational antenna.
 \newblock In {\em K.S. Thorne, “Gravitational radiation”, 300 Years of
   Gravitation, S W Hawking and W Israel, pp 330–458}. University Press, 1972.
+
+\bibitem{coh1}
+Linqing Wen and Bernard~F Schutz.
+\newblock {Coherent network detection of gravitational waves: The Redundancy
+  veto}.
+\newblock {\em Class. Quant. Grav.}, 22:S1321--S1336, 2005.
 
 \bibitem{pygrb_Williamson:2014}
 A.~R. Williamson, C.~Biwer, S.~Fairhurst, I.~W. Harry, E.~Macdonald,

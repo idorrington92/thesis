@@ -12,45 +12,45 @@ Warning--empty journal in gstlal_Sachdev:2019
 Warning--empty journal in Shen:2019vep
 Warning--empty publisher in einstein_gr
 Warning--empty journal in Sutton:2013ooa
-You've used 117 entries,
+You've used 122 entries,
             2118 wiz_defined-function locations,
-            1147 strings with 25375 characters,
-and the built_in function-call counts, 39520 in all, are:
-= -- 3613
-> -- 2432
+            1172 strings with 26278 characters,
+and the built_in function-call counts, 41260 in all, are:
+= -- 3785
+> -- 2511
 < -- 0
-+ -- 980
-- -- 850
-* -- 3091
-:= -- 7006
-add.period$ -- 365
-call.type$ -- 117
-change.case$ -- 755
++ -- 1011
+- -- 876
+* -- 3226
+:= -- 7301
+add.period$ -- 380
+call.type$ -- 122
+change.case$ -- 783
 chr.to.int$ -- 0
-cite$ -- 126
-duplicate$ -- 1253
-empty$ -- 2755
-format.name$ -- 850
-if$ -- 7839
+cite$ -- 131
+duplicate$ -- 1308
+empty$ -- 2891
+format.name$ -- 876
+if$ -- 8195
 int.to.chr$ -- 0
-int.to.str$ -- 117
-missing$ -- 116
-newline$ -- 601
-num.names$ -- 234
-pop$ -- 699
+int.to.str$ -- 122
+missing$ -- 121
+newline$ -- 626
+num.names$ -- 244
+pop$ -- 717
 preamble$ -- 1
-purify$ -- 646
+purify$ -- 669
 quote$ -- 0
-skip$ -- 843
+skip$ -- 880
 stack$ -- 0
-substring$ -- 1942
-swap$ -- 113
+substring$ -- 2094
+swap$ -- 118
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 452
+type$ -- 472
 warning$ -- 9
-while$ -- 322
-width$ -- 120
-write$ -- 1273
+while$ -- 338
+width$ -- 125
+write$ -- 1328
 (There were 9 warnings)

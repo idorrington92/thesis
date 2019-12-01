@@ -606,7 +606,27 @@ where $P_0=|E_0|^2$. Thus we see that the output power varies with a change in t
 
 
 \subsection{Interferometer Antenna Pattern} \label{sec:antenna pattern}
-The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how the interferometer response changes with the sky position and polarisation of the GW. \cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ and aligned with the x and y axes, then equation (\ref{deltaL}) gives us
+The response of an interferometer to a passing GW depends on the direction that the GW is approaching from, given by $(\theta,\phi)$, and a polarisation angle between the detector and radiation frame $\psi$. In this section we will see how the interferometer response changes with the sky position and polarisation of the GW. \cite{maggiore} The interferometer output depends on the phase shift induced by a change in the differential arm length. If we have an interferometer with arms of length $L$ aligned with the x and y axes, and a plus polarised GW propagating down the z-axis, then the metric at time $t$ is given by
+\begin{equation} \label{ifo metric}
+\begin{split}
+0 & = ds^2 = g\mn dx^\mu dx^\nu \\
+&= -c^2 dt^2 + (1+h_+ (t))dx^2 + (1-h_+ (t))dy^2 \fs
+\end{split}
+\end{equation}
+Using this metric, the distance traveled by a photon traveling down the x-arm is given by
+\begin{equation}
+\Delta L_x = \int c dt = \int_0^L \sqrt{1 + s\left( t + \frac{x}{c} \right) } dx \approx  \int_0^L \left( 1 + \frac{1}{2} s\left( t + \frac{x}{c} \right) \right) dx \fs
+\end{equation}
+For a ground based interferometer, a typical value for $L$ would be about 4 km. In this case, we have $x/c \leq L/c \approx 10$ $\mu$s. The sensitive frequency range of the detectors is normally from 10 to 1000 Hz, meaning that we can use the long wavelength approximation $h_+(t+\frac{x}{c}) \approx h(t)$.\footnote{
+This approximation is valid for ground based detectors search for GWs with frequencies less than a few kHz. To see this consider the GW given by $h_+(t)=h_0\cos(\omega t)$. In this case we have
+\begin{equation}
+\begin{split}
+\Delta L_x & = L \left( 1 + \frac{1}{2} h_0 \frac{\sin(\omega (t +L/c)) - \sin(\omega t) }{\omega L/c} \right) \\
+& = L \left( 1 + \frac{1}{2} h_0 \cos(\omega (t +L/2c)) + O\left(\omega L/c\right)^2 \right)
+\end{split}
+\end{equation}
+Thus, the phase difference caused by using the long wavelength approximation is $\omega L/2c$ to first order, which can be ignored for values of $\omega$ less than a few thousand Hertz. This approximation also breaks down for space based detectors as they have much longer arms.
+} This gives us 
 \begin{equation}
 \Delta L_x = L (1 + \frac{1}{2}h_{xx})) + \mathcal{O}(h^2)
 \end{equation} 

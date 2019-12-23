@@ -726,17 +726,17 @@ There are many sources of noise for a GW detector, from seismic vibrations to qu
 
 The \textit{cross-correlation} of the detector data $s(t)$ and a filter $K(t)$ is defined as
 \begin{equation}
-s \star K(\tau) \equiv \bigg\langle \infint s(t)  K(t+\tau)dt \bigg\rangle
+s \star K(\tau) \equiv \infint s(t)  K(t+\tau)dt
 \end{equation}
-for time offset $\tau$. The angle brackets indicate that this is an expected value due to noise is the detector. The cross-correlation is a measure of how similar the filter and detector output are at a given time offset $\tau$. 
+for time offset $\tau$. The cross-correlation is a measure of how similar the filter and detector output are at a given time offset $\tau$. 
 
-The cross-correlation of a function with itself the \textit{auto-correlation} of that function. The \textit{power spectral density} (PSD) is defined as the Fourier transform of the auto-correlation function of the detector output $s$
+The cross-correlation of a function with itself is the \textit{auto-correlation} of that function. The \textit{power spectral density} (PSD) is defined as the Fourier transform of the auto-correlation function of the detector output $s$
 \begin{equation} \label{eqn:PSD}
 \frac{1}{2} S_n(f)=\bigg\langle \infint s \star s(\tau)e^{i 2\pi f \tau} d\tau \bigg\rangle \fs
 \end{equation}
-The factor of $\frac{1}{2}$ is a convention. Taking the square root of the PSD gives us the \textit{amplitude spectral density} (ASD). The PSD and ASD are measures of the amount of time variation at a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively sensitive, while large values indicate a lot of noise and a lower sensitivity. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 1st August 2019. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GWs in this frequency range. 
+The factor of $\frac{1}{2}$ is a convention. The angle brackets represent that this is an average of multiple chunks of interferometer data, with the auto-correlation calculated for each chunk. For more details on how the PSD is estimated, see \cite{pycbc_Allen:2005}.  
 
-It should be noted that in practice equation (\ref{eqn:PSD}) cannot be used as it is not possible to integrate over all time. Instead, interferometer data is divided into chunks, with the PSD calculated for each chunk. The PSD that is used for analysis is an average of the PSD over each chunk. For more details on how the PSD is estimated, see \cite{pycbc_Allen:2005}.  
+Taking the square root of the PSD gives us the \textit{amplitude spectral density} (ASD). The PSD and ASD are measures of the amount of time variation at a given frequency that occurs in the detector output. The PSD is measured in units of Hz$^{-1}$, which can be interpreted as the amount of variation in each frequency bin. Similarly, the units of the ASD are Hz$^{-\frac{1}{2}}$. Frequencies at which the ASD is small indicate frequencies where the detector is relatively sensitive, while large values indicate a lot of noise and a lower sensitivity. This can be seen in figure \ref{fig:asd}, which shows the ASD for the LIGO Livingston observatory\footnote{A current generation interferometer, see \ref{sec:gw network} for more details.} on 1st August 2019. The ASD is lowest from around 30 Hz to 1000 Hz, and so the detector is most sensitive to GWs in this frequency range. 
 
 In figure \ref{fig:noise budget} we plot all the known sources of noise in the Livingston detector. From this plot you can see that below the sensitive frequency range of the detector, the noise rapidly rises due to low frequency seismic noise, the alignment and angular sensing and control systems (ASC), and the thermal noise of the mirror suspensions (thermal Susp) and coating (thermal coating). Above the sensitive frequency range it is quantum noise that dominates, where quantum noise is given by the sum of radiation pressure and shot noise. You can also see that at around 20-80 Hz, the sum of noises is much lower than the measured differential arm length (DARM). This indicated that the limiting factor of the detector sensitivity in this frequency range is unknown. The spikes in the ASD have multiple sources, including mirror suspension, calibration lines, and interference due to mains electricity. For a more detailed discussion of LIGO detector noise, see \cite{GW150914-detector,noise_budget_martynov}.
 
@@ -761,7 +761,7 @@ Interferometer noise is not stationary. Occasionally there will be noise transie
 \end{landscape}
 
 \subsection{Matched Filtering}
-Now we know how to measure the noise in a GW detector, we will discuss how to find a GW of known signal morphology. The method we will use to achieve this is the \textit{matched filter}. In this section we will derive the formula for the matched filter. This derivation can be found in \cite{maggiore,hawking1989three,blair2005detection}.
+Now we know how to measure the noise in a GW detector, we will discuss how to find a GW of known signal morphology. The method we will use to achieve this is the \textit{matched filter}. In this section we will derive the formula for the matched filter. This derivation can be found in \cite{maggiore,hawking1989three,schutz_1991}.
 
 We start by describing the detector output $s(t)$ as the sum of the strain induced by a GW $h(t)$ and the detector noise $n(t)$
 \begin{equation}

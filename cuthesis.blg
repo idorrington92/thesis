@@ -14,43 +14,43 @@ Warning--empty publisher in einstein_gr
 Warning--empty journal in Sutton:2013ooa
 You've used 125 entries,
             2118 wiz_defined-function locations,
-            1184 strings with 26704 characters,
-and the built_in function-call counts, 42077 in all, are:
-= -- 3862
-> -- 2549
+            1188 strings with 26818 characters,
+and the built_in function-call counts, 42169 in all, are:
+= -- 3869
+> -- 2555
 < -- 0
 + -- 1027
-- -- 888
-* -- 3273
-:= -- 7445
-add.period$ -- 390
+- -- 889
+* -- 3281
+:= -- 7464
+add.period$ -- 391
 call.type$ -- 125
-change.case$ -- 796
+change.case$ -- 797
 chr.to.int$ -- 0
 cite$ -- 134
-duplicate$ -- 1343
-empty$ -- 2960
-format.name$ -- 888
-if$ -- 8366
+duplicate$ -- 1349
+empty$ -- 2974
+format.name$ -- 889
+if$ -- 8388
 int.to.chr$ -- 0
 int.to.str$ -- 125
-missing$ -- 126
+missing$ -- 124
 newline$ -- 641
-num.names$ -- 250
-pop$ -- 736
+num.names$ -- 254
+pop$ -- 735
 preamble$ -- 1
-purify$ -- 681
+purify$ -- 680
 quote$ -- 0
-skip$ -- 900
+skip$ -- 899
 stack$ -- 0
-substring$ -- 2128
+substring$ -- 2127
 swap$ -- 121
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 480
+type$ -- 484
 warning$ -- 9
-while$ -- 345
+while$ -- 347
 width$ -- 128
-write$ -- 1360
+write$ -- 1362
 (There were 9 warnings)

@@ -111,11 +111,6 @@ Imre Bartos, Patrick Brady, and Szabolcs Marka.
   Paradigm}.
 \newblock {\em Class. Quant. Grav.}, 30:123001, 2013.
 
-\bibitem{blair2005detection}
-D.G. Blair.
-\newblock {\em The Detection of Gravitational Waves}.
-\newblock Cambridge University Press, 2005.
-
 \bibitem{bloom_grbs}
 Joshua Bloom.
 \newblock {\em What are gamma-ray bursts?}
@@ -341,12 +336,6 @@ I.~W. Harry and S.~Fairhurst.
 \newblock Targeted coherent search for gravitational waves from compact binary
   coalescences.
 \newblock {\em Phys. Rev. D}, 83:084002, Apr 2011.
-
-\bibitem{hawking1989three}
-S.W. Hawking and W.~Israel.
-\newblock {\em Three Hundred Years of Gravitation}.
-\newblock Philosophiae Naturalis, Principia Mathematica. Cambridge University
-  Press, 1989.
 
 \bibitem{coh3}
 Kazuhiro Hayama, Soumya~D. Mohanty, Malik Rakhmanov, and Shantanu Desai.
@@ -622,6 +611,12 @@ B.S. Sathyaprakash and B.F. Schutz.
 \newblock Physics, astrophysics and cosmology with gravitational waves.
 \newblock {\em Living Reviews in Relativity}, 12(2), 2009.
 
+\bibitem{schutz_1991}
+Bernard~F. Schutz.
+\newblock Data processing, analysis, and storage for interferometric antennas.
+\newblock In David Blair, editor, {\em The Detection of Gravitational Waves}.
+  Cambridge University Press, 1991.
+
 \bibitem{Shen:2019vep}
 Hongyu Shen, E.~A. Huerta, and Zhizhen Zhao.
 \newblock {Deep Learning at Scale for Gravitational Wave Parameter Estimation
@@ -665,6 +660,13 @@ P.~Sutton, G.~Jones, S.~Chatterji, P.~Kalmus, I.~Leonor, S.~Poprocki,
 Patrick~J. Sutton.
 \newblock {A Rule of Thumb for the Detectability of Gravitational-Wave Bursts}.
 \newblock 2013.
+
+\bibitem{hawking1989three}
+K.S. Thorne.
+\newblock Gravitational radiation.
+\newblock In S.W. Hawking and W.~Israel, editors, {\em Three Hundred Years of
+  Gravitation}, Philosophiae Naturalis, Principia Mathematica. Cambridge
+  University Press, 1989.
 
 \bibitem{pycbc_Usman:2015}
 Samantha~A. Usman et~al.

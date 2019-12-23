@@ -111,6 +111,11 @@ Imre Bartos, Patrick Brady, and Szabolcs Marka.
   Paradigm}.
 \newblock {\em Class. Quant. Grav.}, 30:123001, 2013.
 
+\bibitem{blair2005detection}
+D.G. Blair.
+\newblock {\em The Detection of Gravitational Waves}.
+\newblock Cambridge University Press, 2005.
+
 \bibitem{bloom_grbs}
 Joshua Bloom.
 \newblock {\em What are gamma-ray bursts?}
@@ -336,6 +341,12 @@ I.~W. Harry and S.~Fairhurst.
 \newblock Targeted coherent search for gravitational waves from compact binary
   coalescences.
 \newblock {\em Phys. Rev. D}, 83:084002, Apr 2011.
+
+\bibitem{hawking1989three}
+S.W. Hawking and W.~Israel.
+\newblock {\em Three Hundred Years of Gravitation}.
+\newblock Philosophiae Naturalis, Principia Mathematica. Cambridge University
+  Press, 1989.
 
 \bibitem{coh3}
 Kazuhiro Hayama, Soumya~D. Mohanty, Malik Rakhmanov, and Shantanu Desai.
@@ -567,6 +578,13 @@ Alexander~Harvey Nitz.
 Bohdan Paczynski.
 \newblock {Cosmological gamma-ray bursts}.
 \newblock {\em Acta Astron.}, 41:257--267, 1991.
+
+\bibitem{coh6}
+Archana Pai, Sanjeev Dhurandhar, and Sukanta Bose.
+\newblock {A Data analysis strategy for detecting gravitational wave signals
+  from inspiraling compact binaries with a network of laser interferometric
+  detectors}.
+\newblock {\em Phys. Rev.}, D64:042004, 2001.
 
 \bibitem{Pannarale_2014}
 Francesco Pannarale and Frank Ohme.
